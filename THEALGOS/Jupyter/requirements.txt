@@ -1,0 +1,15 @@
+tensorflow
+opencv-python
+keras
+matplotlib
+mlxtend
+numpy
+pandas
+requests
+seaborn
+sklearn
+tabulate
+scikit-fuzzy
+pillow
+beautifulsoup4
+skia-python
