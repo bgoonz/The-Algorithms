@@ -1,6 +1,2110 @@
 # Algorithms For Each Major CS Language:
 
+---
 
+
+
+---
+
+
+
+
+---
+## Navigation:
+
+---
+
+
+
+
+<details>
+<summary>Arithmetic Progression</summary>
+
+# Arithmetic Progression
+
+A sequence of numbers is said to be in an `Arithmetic progression` if the difference between any two consecutive terms is always the same. In simple terms, it means that the next number in the series is calculated by adding a fixed number to the previous number in the series.
+For example, 2, 4, 6, 8, 10 is an AP because the difference between any two consecutive terms in the series (common difference) is same (4 - 2 = 6 - 4 = 8 - 6 = 10 - 8 = 2).
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635132-ce38d100-d0ff-11eb-8fdf-2e14a9f640cc.png">
+</p>
+
+**Facts about Arithmetic Progression:**
+
+1. Initial term: In an arithmetic progression, the first number in the series is called the initial term.
+2. Common difference: The value by which consecutive terms increase or decrease is called the `common difference`.
+3. The behavior of the arithmetic progression depends on the common difference `d`. If the common difference is positive, then the members (terms) will grow towards positive infinity. But if the common difference is negative, then the members (terms) will grow towards negative infinity.
+
+**Formula of the nth term of an A.P:**
+
+`a` is the initial term, and `d` is a common difference. Thus, the explicit formula is:
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635193-25d73c80-d100-11eb-9015-344d36633704.png">
+</p>
+
+**Formula of the sum of first nth term of A.P:**
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635260-7a7ab780-d100-11eb-82a5-8ceeba3aff03.png">
+</p>
+
+**General Formulas to solve problems related to Arithmetic Progressions:**
+
+If `a` is the first term and `d` too, that would be a common difference:
+
+- **nth term of an AP** = `a + (n-1)*d`.
+- **Arithmetic Mean** = `Sum of all terms in the AP / Number of terms in the AP`.
+- **Sum of ‘n’ terms** of an AP = 0.5 n (first term + last term) = `0.5 n [ 2a + (n-1) d ]`.
+
+# Source
+
+- [Arithmetic Progression](https://www.geeksforgeeks.org/arithmetic-progression)
+
+# YouTube
+
+- [Video URL for concept](https://youtu.be/gua96ju_FBk)
+- [Video for understanding AP Dynamic Programming in C++](https://youtu.be/U_qtSRQYoPs)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+<details>
+<summary>                     Average (Mean)                                       </summary>
+
+# Average (Mean)
+
+Calculate the average of a list of numbers using mean.
+
+## Applications
+
+Calculating the mean of a list of numbers is one of the most common ways to
+determine the average of those numbers.
+
+Calculating a mean would be useful in these situations:
+
+- Determining the average score for all players of a video game level.
+- Finding the average grade for tests that a student took this semester.
+- Determining the average size of all files in a directory/folder.
+
+## Steps
+
+1.  Input a list of numbers.
+2.  Calculate the sum of all numbers in the list.
+3.  Count the numbers in the list.
+4.  Divide the sum by the total count of numbers in the list.
+5.  Return mean.
+
+## Example
+
+Given the list `[2, 4, 6, 8, 20, 50, 70]`, let's calculate the average.
+
+### Step 1
+
+Send `[2, 4, 6, 8, 20, 50, 70]` as input for a method/function.
+
+### Step 2
+
+Add all the numbers together.
+
+`2 + 4 + 6 + 8 + 20 + 50 + 70 = 160`, so `sum = 160`.
+
+### Step 3
+
+Count the numbers in the list.
+
+The list has seven numbers, so `count = 7`.
+
+### Step 4
+
+Divide the sum of all the numbers by the count of the numbers.
+
+```
+sum = 160
+count = 7
+```
+
+If we ignore significant digits: `sum / count = `22.<u>857142</u>
+
+If we properly consider significant digits: `sum / count = 23`
+
+### Step 5
+
+Return the value of 22.<u>857142</u> or `23`.
+
+## Implementation
+
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/maths/average_mean.py)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/maths/average_mean.rb)
+
+## Video URL
+
+- [Mean on Khan Academy](https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/measuring-center-quantitative/v/mean-median-and-mode)
+
+## Others
+
+- [Mean on Wikipedia](https://en.wikipedia.org/wiki/Mean)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+
+<details>
+<summary>                          Fibonacci                             </summary>
+
+# Calculating Fibonacci numbers
+
+In mathematics, the Fibonacci numbers commonly denoted F(n), form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. The Sequence looks like this:
+
+`[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...]`
+
+## Applications
+
+Finding
+`N-th` member of this sequence would be useful in many Applications:
+
+- Recently Fibonacci sequence and the golden ratio are of great interest to researchers in many fields of
+  science including high energy physics, quantum mechanics, Cryptography and Coding.
+
+## Steps
+
+1.  Prepare Base Matrice
+2.  Calculate the power of this Matrice
+3.  Take Corresponding value from Matrix
+
+## Example
+
+Find `8-th` member of Fibonacci
+
+### Step 0
+
+```
+| F(n+1)  F(n)  |
+| F(n)    F(n-1)|
+```
+
+### Step 1
+
+```
+Calculate matrix^1
+| 1 1 |
+| 1 0 |
+```
+
+### Step 2
+
+```
+Calculate matrix^2
+| 2 1 |
+| 1 1 |
+```
+
+### Step 3
+
+```
+Calculate matrix^4
+| 5 3 |
+| 3 2 |
+```
+
+### Step 4
+
+```
+Calculate matrix^8
+| 34 21 |
+| 21 13 |
+```
+
+### Step 5
+
+F(8)=21
+
+## Implementation
+
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/math/fibonacci.cpp)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Maths/FibonacciNumber.java)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/80c2dc85d714f73783f133964d6acd9b5625ddd9/Maths/Fibonacci.js)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/maths/fibonacci.py)
+
+## Video URL
+
+- [Youtube](https://www.youtube.com/watch?v=EEb6JP3NXBI)
+
+## Others
+
+- [Proof](https://brilliant.org/wiki/fast-fibonacci-transform/)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+
+<details>
+<summary>                              Finding the number of digits in a number                         </summary>
+
+
+# Finding the number of digits in a number
+
+Let's say `N = 2019`. The number of digits in N here is 4 and the digits are: `2`, `0`, `1`, and `9`.
+
+Some more Examples:
+
+```
+N = 00  [zero]
+Number of digits = 0
+
+N = -123 [negative]
+Number of digits = 3
+
+N = 10000 [positive]
+Number of digits = 5
+```
+
+<div align="center">
+  <h2 align="center"> 1st Solution </h2>
+</div>
+
+### Simple Solution
+
+The first solution that comes to mind is quite simple:
+
+    1. Check whether the number N is equal to zero.
+    2. Increase the count of digits by 1 if N is not zero.
+    3. Reduce the number by dividing it by 10.
+    4. Repeat the above steps until the number is reduced to zero.
+
+**Analysis of the above algorithm:** You can clearly see that the number of operations performed in the above solution is equal to the count of digits present in the number. So, the time complexity of the solution is O(digitsCount).
+
+**Dry-run of the above algorithm:**
+Consider an example, N = 58964. Initialize a variable digitsCount to zero which will store the count of digits. Keep incrementing digitsCount until N is not zero, and reduce it by dividing by 10 at each step.
+
+```
+Iteration 1: N not equals to 0
+Increment digitsCount, digitsCount = digitsCount + 1.
+digitsCount = 0 + 1 = 1.
+N = N/10 = 58964/10 = 5896.
+
+Iteration 2: N not equals to 0
+Increment digitsCount, digitsCount = digitsCount + 1.
+digitsCount = 1 + 1 = 2.
+N = N/10 = 5896/10 = 589.
+
+Iteration 3: N not equals to 0
+Increment digitsCount, digitsCount = digitsCount + 1.
+digitsCount = 2 + 1 = 3.
+N = N/10 = 589/10 = 58.
+
+Iteration 4: N not equals to 0
+Increment digitsCount, digitsCount = digitsCount + 1.
+digitsCount = 3 + 1 = 4.
+N = N/10 = 58/10 = 5.
+
+Iteration 5: N not equals to 0
+Increment digitsCount, digitsCount = digitsCount + 1.
+digitsCount = 4 + 1 = 5.
+N = N/10 = 5/10 = 0.
+
+Iteration 6: N becomes equal to 0.
+Terminate any further operation.
+Return value of digitsCount.
+
+Therefore, number of digits = 5.
+```
+
+<div align="center">
+  <h2 align="center"> 2nd Solution </h2>
+</div>
+
+### Better Solution
+
+A better solution is to use mathematics to solve this problem. The number of digits in a number say N can be easily obtained by using the following formula:
+
+```
+number of digits in N = log10(N) + 1.
+```
+
+**Derivation:** Suppose the number of digits in the number **N** is **K**.
+
+Therefore, we can say that:
+
+```
+10^(K-1) <= N < 10K
+```
+
+Applying base-10 logarithm to both sides in the above equation, we get:
+
+```
+K-1 <= log10(N) < K.
+
+or, K - 1 + 1 <= log10(N) + 1 < K + 1
+or, K <= log10(N) + 1 < K + 1
+```
+
+Therefore,
+
+```
+K = floor(log10(N) + 1)
+```
+
+**Analysis of the above algorithm:** The above algorithm uses two mathematical functions: the `logarithm of a number` and the `floor function`. Therefore, its time complexity depends on the complexity of those two functions. Practically, the `floor function` is always, or can at least easily be made, constant time - all it has to do is: drop the digits behind the decimal point. For practical purposes, one can `assume that the logarithm is constant time` as well, as one will usually be working with fixed-width floating-point values. If one uses `arbitrary-precision "big number" libraries` however, logarithm will not be constant anymore: performance will depend on the logarithm algorithms used.
+
+# Source
+
+- [Proof in GeeksForGeeks](https://www.geeksforgeeks.org/program-count-digits-integer-3-different-methods/)
+
+# YouTube
+
+- [Video URL](https://www.youtube.com/watch?v=ngWnvWR8NkE)
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+<details>
+<summary>                       Geometric Progression                                </summary>
+# Geometric Progression
+
+A sequence of numbers is said to be in a `Geometric progression` if the ratio of any two consecutive terms is always the same. In simple terms, it means that the next number in the series is calculated by multiplying a fixed number to the previous number in the series.
+
+For example, 2, 4, 8, 16 is a GP because ratio of any two consecutive terms in the series (common ratio) is the same (4 / 2 = 8 / 4 = 16 / 8 = 2).
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635376-2fad6f80-d101-11eb-9d06-74c5c854cc9d.png">
+</p>
+
+**Facts about Geometric Progression:**
+
+1. **Initial term:** In a geometric progression, the first number is called the initial term.
+2. **Common ratio:** The ratio of any two consecutive terms by taking the previous term in the denominator.
+3. The behaviour of a geometric sequence depends on the value of the common ratio. If the common ratio is:
+
+- Positive, the terms will all be of the same sign as the initial term.
+- Negative, the terms will alternate between positive and negative.
+- Greater than 1, there will be exponential growth towards positive or negative infinity (depending on the sign of the initial term).
+- 1, the progression is a constant sequence.
+- Between -1 and 1 but not zero, there will be exponential decay towards zero.
+- -1, the progression is an alternating sequence.
+- Less than -1, for the absolute values there is exponential growth towards (unsigned) infinity, due to the alternating sign.
+
+**Formula of the nth term of a G.P:**
+
+`a` is the initial term, and `d` is a common difference. Thus, the explicit formula is:
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635586-6fc12200-d102-11eb-9a87-333c9a578cc8.png">
+</p>
+
+**Formula of the sum of the first nth term of G.P:**
+
+<p align="center">
+    <img width="60%" src="https://user-images.githubusercontent.com/75872316/122635613-9717ef00-d102-11eb-89db-5182e966b1db.png">
+</p>
+
+**General Formulas to solve problems related to Geometric Progressions:**
+
+If `a` is the first term and `r` is the common ratio:
+nth term of a GP = `a*rn-1`.
+
+- Geometric Mean = `nth root of the product of n terms in the GP`.
+- Sum of `n` terms of a GP (r < 1) = `[a (1 – rn)] / [1 – r]`.
+- Sum of `n` terms of a GP (r > 1) = `[a (rn – 1)] / [r – 1]`.
+- Sum of infinite terms of a GP (r < 1) = `(a) / (1 – r)`.
+
+# Source
+
+- [Geometric Progression](https://www.geeksforgeeks.org/geometric-progression/)
+
+# YouTube
+
+- [Video URL for concept](https://youtu.be/gua96ju_FBk)
+- [Video for understanding GP Dynamic Programming in C++](https://youtu.be/92ZldzuGUHs)
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                     Caesar Cipher                                  </summary>
+
+# Caesar Cipher
+
+The Caesar cipher is a simple cipher and one of the best known encryption algorithms. It is very simple to encrypt, decrypt and intercept. The Caesar cipher is a substitution cipher where each letter in the plain-text (decoded text) is replaced by a letter a certain number of spaces to the right of the letter in the alphabet. (The amount of spaces is called the key or shift and is only known by the sender and intended receiver).
+
+**Disclaimer: Do not attempt to encrypt personal data or serious messages with this cipher!!! It takes only half a second to crack by a computer!**
+
+1. It takes a very small amount of time to encode and decode messages. (Less than a second, usually)
+2. No real applications exist for the cipher as it is the most insecure out there.
+3. This cipher was invented by Julius Caesar as a way to send messages of high military significance.
+
+## Steps
+
+### Encryption
+
+1. Choose the alphabet you are going to use.
+2. Choose a secret key (shift) that you are going to use in this case `n`.
+3. For every letter in the plain-text, replace it by a letter of the alphabet that is `n` letters away from the letter. (Ex: for a key of `1`, `a` would become `b`, `z` would become `a`, etc.)
+4. The message should now be encoded.
+
+### Decryption
+
+1. Choose the alphabet that the message was encrypted with.
+2. Let `n` be the secret key the message is encoded in.
+3. For every letter in the cipher-text, replace it by a letter of the alphabet that is `n` letters behind in the alphabet from the letter.
+   `c` would be `b`, `a` would be `z` with a key of `1`.
+4. The message should now be decoded
+
+## Example
+
+### An example of encryption
+
+Let us say we are sending a secret message to a friend.
+
+- We first write out our message. In this case: `The Caesar cipher is a fun substitution cipher`
+- Our alphabet will be: `abcdefghijklmnopqrstuvwxyz`. For the uses of this tutorial, case doesn't matter. (On a shift of `1`: `A` will become `B`, `a` will become `b`)
+- Let our key be 6.
+- Starting with the first letter: `T`. The letter 6 letters away is `Z`. We add `Z` to the message.
+- The second letter is `h`. The letter 6 letters away is `n`. Our message is now `Zn`
+- We continue like that until the end. Our final message is: `Znk Igkygx iovnkx oy g lat yahyzozazout iovnkx.`
+- Decryption is the same way, except instead of going to the right in the alphabet, we go backwards.
+
+## Implementation
+
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/ciphers/caesar_cipher.py)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                         Hill Cipher                              </summary>
+
+# Hill Cipher
+
+The Hill cipher was invented by [Lester S. Hill](https://en.wikipedia.org/wiki/Lester_S._Hill).
+
+Hill cipher is a polygraphic substitution cipher based on linear algebra. Each letter is represented by a number modulo 26. Often the simple scheme `A = 0, B = 1, …, Z = 25` is used, but this is not an essential feature of the cipher. To encrypt a message, each block of `n` letters (considered as an n-component vector) is multiplied by an invertible `n × n` matrix, against modulus 26. To decrypt the message, each block is multiplied by the inverse of the matrix used for encryption.
+
+## Example
+
+Suppose we take an example as:
+Plain Text (PT):ACT
+key:`GYBNQKURP`
+
+## Steps
+
+### Encryption
+
+1. We have to write key as an `n × n` matrix as
+
+```
+   [6 24 1]
+   [13 16 10]
+   [20 17 15]
+```
+
+2. Same way convert PT into a vector as
+
+```
+    [0]
+    [2]
+    [19]
+```
+
+3. Now, we need to encipher the vector by just multiplying these two matrices
+
+```
+    [6 24 1]        [0]         [67]        [15]
+    [13 16 10]  *   [2]     =   [222]   ≈   [4]   (mod 26)
+    [20 17 15]      [19]        [319]       [7]
+```
+
+So we will get the encrypted text as **POH**.
+
+### Decryption
+
+1. We need to first inverse our key matrix
+
+```
+           -1
+   [6 24 1]        [8 5 10]
+   [13 16 10]   ≈  [21 8 21]  (mod 26)
+   [20 17 15]      [21 12 8]
+```
+
+2. For the previous Cipher Text **POH**
+
+```
+    [8 5 10]      [15]      [260]     [0]
+    [21 8 21]  *  [14]  ≈   [574]  ≈  [2]    (mod 26)  ≈ ACT
+    [21 12 8]     [7]       [539]     [19]
+```
+
+## Implementations
+
+[**Python**](https://github.com/TheAlgorithms/Python/blob/master/ciphers/hill_cipher.py)
+
+## Video Explanation
+
+[Video explanation of the Hill Cipher](https://www.youtube.com/watch?v=6T46sgty4Mk)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                         Bellman-Ford                              </summary>
+
+# Bellman-Ford
+
+#### Problem Statement
+
+Given a weighted directed graph G(V,E) and a source vertex s ∈ V, determine for each vertex v ∈ V the shortest path between s and v.
+
+#### Approach
+
+- Initialize the distance from the source to all vertices as infinite.
+- Initialize the distance to itself as 0.
+- Create an array dist[] of size |V| with all values as infinite except dist[s].
+- Repeat the following |V| - 1 times. Where |V| is number of vertices.
+- Create another loop to go through each edge (u, v) in E and do the following:
+  1.  dist[v] = minimum(dist[v], dist[u] + weight of edge).
+- Lastly iterate through all edges on last time to make sure there are no negatively weighted cycles.
+
+#### Time Complexity
+
+O(VE)
+
+#### Space Complexity
+
+O(V^2)
+
+#### Founder's Name
+
+- Richard Bellman & Lester Ford, Jr.
+
+#### Example
+
+```
+    # of vertices in graph = 5 [A, B, C, D, E]
+    # of edges in graph = 8
+
+    edges  [A->B, A->C, B->C, B->D, B->E, D->C, D->B, E->D]
+    weight [ -1,    4,    3,    2,    2,    5,    1,   -4 ]
+    source [  A,    A,    B,    B,    B,    D,    D,    E ]
+
+
+
+    // edge A->B
+    graph->edge[0].src = A
+    graph->edge[0].dest = B
+    graph->edge[0].weight = -1
+
+    // edge A->C
+    graph->edge[1].src = A
+    graph->edge[1].dest = C
+    graph->edge[1].weight = 4
+
+    // edge B->C
+    graph->edge[2].src = B
+    graph->edge[2].dest = C
+    graph->edge[2].weight = 3
+
+    // edge B->D
+    graph->edge[3].src = B
+    graph->edge[3].dest = D
+    graph->edge[3].weight = 2
+
+    // edge B->E
+    graph->edge[4].src = B
+    graph->edge[4].dest = E
+    graph->edge[4].weight = 2
+
+    // edge D->C
+    graph->edge[5].src = D
+    graph->edge[5].dest = C
+    graph->edge[5].weight = 5
+
+    // edge D->B
+    graph->edge[6].src = D
+    graph->edge[6].dest = B
+    graph->edge[6].weight = 1
+
+    // edge E->D
+    graph->edge[7].src = E
+    graph->edge[7].dest = D
+    graph->edge[7].weight = -3
+
+    for source = A
+
+    Vertex   Distance from Source
+	A                0				A->A
+	B                -1				A->B
+	C                2 				A->B->C = -1 + 3
+	D                -2				A->B->E->D = -1 + 2 + -3
+	E                1				A->B->E = -1 + 2
+```
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/DataStructures/Graphs/BellmanFord.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Dynamic%20Programming/Bellman-Ford.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/data_structures/graph/bellman_ford.py)
+- [C](https://github.com/TheAlgorithms/C/blob/master/data_structures/graphs/Bellman-Ford.c)
+
+#### Video Explanation
+
+[A video explaining the Bellman-Ford Algorithm](https://www.youtube.com/watch?v=hxMWBBCpR6A)
+
+#### Others
+
+Sources Used:
+
+- https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+- https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                             Singly Linked List                          </summary>
+# Singly Linked List
+
+Singly Linked List is a linear and connected data structure made of Nodes. Each node is composed of a variable `data` where its content is stored and a pointer to the next Node on the list. The Linked List has a pointer to the first element of this Node sequence and may also have another pointer to the last Node to make operations at the far end less time-consuming. You can also store a `length` variable to store the total length.
+
+### Advantages over Arrays
+
+- Size of a linked list is not fixed (dynamic size)
+- Deleting and adding an element is not expensive compared to an array
+
+### Drawbacks
+
+- Elements can be accessed sequentially not randomly compared to an array
+- Extra memory allocation needs to be done for pointers which connects elements in a linked list
+
+### Time Complexity
+
+| Operation | Average | Worst |
+| --------- | ------- | ----- |
+| Access    | O(n)    | O(n)  |
+| Search    | O(n)    | O(n)  |
+| Insertion | O(1)    | O(1)  |
+| Deletion  | O(1)    | O(1)  |
+
+## Example
+
+```.java
+class LinkedList {
+    Node head;      // Pointer to the first element
+    Node tail;      // Optional. Points to the last element
+
+    int length;     // Optional
+
+    class Node {
+        int data;   // Node data. Can be int, string, float, templates, etc
+        Node next;  // Pointer to the next node on the list
+    }
+}
+```
+
+## Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/DataStructures/Lists/SinglyLinkedList.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Data%20Structure/Linked%20List.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/data_structures/linked_list/singly_linked_list.py)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/data_structures/linked_lists/single_list.rb)
+
+## Video Explanation
+
+[A CS50 video explaining the Linked List Data Structure](https://www.youtube.com/watch?v=5nsKtQuT6E8)
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                  Doubly Linked List
+                                     </summary>
+
+# Doubly Linked List
+
+Singly Linked List is a linear and connected data structure made of Nodes. Each node is composed of a variable `data` where its content is stored and a pointer to the next Node on the list. The Linked List has a pointer to the first element of this Node sequence and may also have another pointer to the last Node to make operations at the far end less time-consuming. You can also store a `length` variable to store the total length.
+
+A **Doubly Linked List (DLL)** contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
+
+### Advantages over singly linked list
+
+- A DLL can be traversed in both forward and backward direction.
+- The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
+- We can quickly insert a new node before a given node.
+  In singly linked list, to delete a node, pointer to the previous node is needed. To get this previous node, sometimes the list is traversed. In DLL, we can get the previous node using previous pointer.
+
+### Disadvantages over singly linked list
+
+- Every node of DLL Require extra space for an previous pointer. It is possible to implement DLL with single pointer though (See this and this).
+- All operations require an extra pointer previous to be maintained. For example, in insertion, we need to modify previous pointers together with next pointers. For example in following functions for insertions at different positions, we need 1 or 2 extra steps to set previous pointer.
+
+### Time Complexity
+
+| Operation | Average | Worst |
+| --------- | ------- | ----- |
+| Access    | Θ(n)    | O(n)  |
+| Search    | Θ(n)    | O(n)  |
+| Insertion | Θ(1)    | O(1)  |
+| Deletion  | Θ(1)    | O(1)  |
+
+## Example
+
+```java
+class LinkedList {
+
+    Node head;      // Pointer to the first element
+	Node tail;      // Optional. Points to the last element
+
+	int length;     // Optional
+
+    class Node {
+        int data;   // Node data. Can be int, string, float, templates, etc
+        Node next;  // Pointer to the next node on the list
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+
+    // Adding a node at the front of the list
+    public void push(int new_data) {
+
+        /* 1. allocate node
+         * 2. put in the data */
+        Node new_Node = new Node(new_data);
+
+        /* 3. Make next of new node as head and previous as NULL */
+        new_Node.next = head;
+        new_Node.prev = null;
+
+        /* 4. change prev of head node to new node */
+        if (head != null)
+            head.prev = new_Node;
+
+        /* 5. move the head to point to the new node */
+        head = new_Node;
+    }
+
+    /* Given a node as prev_node, insert a new node after the given node */
+    public void InsertAfter(Node prev_Node, int new_data) {
+
+        /*1. check if the given prev_node is NULL */
+        if (prev_Node == null) {
+            System.out.println("The given previous node cannot be NULL ");
+            return;
+        }
+
+        /* 2. allocate node
+         * 3. put in the data */
+        Node new_node = new Node(new_data);
+
+        /* 4. Make next of new node as next of prev_node */
+        new_node.next = prev_Node.next;
+
+        /* 5. Make the next of prev_node as new_node */
+        prev_Node.next = new_node;
+
+        /* 6. Make prev_node as previous of new_node */
+        new_node.prev = prev_Node;
+
+        /* 7. Change previous of new_node's next node */
+        if (new_node.next != null)
+            new_node.next.prev = new_node;
+    }
+}
+```
+
+### Adding node at front
+
+![Tracing of algorithm](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/03/DLL_add_front1.png)
+
+### Add a node after a given node
+
+![Tracing of algorithm](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/03/DLL_add_middle1.png)
+
+## Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/DataStructures/Lists/DoublyLinkedList.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Data%20Structure/Doubly%20Linked%20List.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/data_structures/linked_list/doubly_linked_list.py)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/data-structures/linked-list/double-linkedlist.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/data_structures/linked_lists/double_list.rb)
+
+## Video Explanation
+
+[A CS50 video explaining the Doubly Linked List Data Structure](https://www.youtube.com/watch?v=FHMPswJDCvU)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                         Coin Change                              </summary>
+
+# Coin Change
+
+#### Problem Statement
+
+Given a value `N`, if we want to make change for `N` cents, and we have infinite supply of each of `S = {S1, S2, .. , Sm}` valued coins, how many ways can we make the change? The order of coins doesn’t matter.
+
+#### Approach
+
+Let the `dp[i]` be the length of the coin change of prefix `N[1..i]`. Our answer is `dp[N]`.
+We fill `dp[0]` as 1 because there is only one way to get 0 coins (We pick no coins).
+
+Now let's try calculate `dp[i]` for any `i`. `dp[0..i]` will store each sub problems from `0` to `N`. That's why the answer will be `dp[N]`. First, we need to iterate each coin types to pick them one-by-one. Then we iterate the sub problems from current coin that we pick before to `N` cents. That's why we must make dp table with `N` columns.
+
+This is the codes for the Coin Change algorithm:
+
+```
+    for coin_val in S:
+        for i in range(coin_val, n + 1):
+            dp[i] += dp[i - coin_val]
+```
+
+In the second iteration, for every cent that can be exchanged, we take it by subtracting the i-th column by the value of the coin we take and adding it into the current column. So `dp[i]` will store the current sub problem.
+
+#### Time Complexity
+
+`O(N * S)` in any case
+
+#### Space Complexity
+
+`O(N)` - simple implementation. We only need 1D array to store the answer.
+
+#### Example
+
+Let's say we have 3 coin types `[1,2,3]` and we want to change for `7` cents. So we will define our table like this.
+
+```
+[1, 0, 0, 0, 0, 0, 0, 0]
+```
+
+0th column will store 1 since there is only one way to get 0 cents.
+
+- For the first iteration we take a coin that has a value of 1. Then for all sub problems, there is only one way to make change. For 7 cents, the only way is `{1,1,1,1,1,1,1}`. On the final iteration, our table be like:
+
+```
+[1, 1, 1, 1, 1, 1, 1, 1]
+```
+
+- For the second iteration, we take a coin that has a value of 2. From here, all sub problems that can be divided by 2 will store another new way to make change. So, when the iteration stopped at 2nd column it will be like `dp[2] += dp[0]`. We know that `dp[0]` stored a value of 1. Thus, dp[2] will store the value of `1 + 1 = 2`. From here we know that for 2 cents, there are 2 ways `{1,1}` and `{2}`. And this operation will continue. Now our table be like:
+
+```
+[1, 1, 2, 2, 3, 3, 4, 4]
+```
+
+4 ways to make 7 cents using value of 1 and 2. `{{1,1,1,1,1,1,1}, {1,1,1,1,1,2}, {1,1,1,2,2}, {1,2,2,2}}`
+
+- For the final iteration (3rd iteration), we take a coin that has a value of 3. Like before, now all the columns that can be devided by 3 will store another new way. And the final result will be like:
+
+```
+[1, 1, 2, 3, 4, 5, 7, 8]
+```
+
+So the final answer is **8**. 8 ways to make change of 7 cents using all coin types. `{{1,1,1,1,1,1,1}, {1,1,1,1,1,2}, {1,1,1,2,2}, {1,2,2,2}, {1,1,1,1,3}, {1,3,3}, {2,2,3}, {1,1,2,3}}`
+
+#### Code Implementation Link
+
+[Python](https://github.com/TheAlgorithms/Python/blob/master/dynamic_programming/coin_change.py)
+
+#### Video Explanation
+
+[Total Unique Ways To Make Change by Back To Back SWE](https://www.youtube.com/watch?v=DJ4a7cmjZY0)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                              Longest Common Subsequence                         </summary>
+
+
+# Longest Common Subsequence
+
+#### Problem Statement
+
+Given two strings `S` and `T`, find the length of the longest common subsequence (<b>LCS</b>).
+
+#### Approach
+
+Let the `dp[i][j]` be the length of the longest common subsequence of prefixes `S[1..i]` and `T[1..j]`. Our answer (the length of LCS) is `dp[|S|][|T|]` since the prefix of the length of string is the string itself.
+
+Both `dp[0][i]` and `dp[i][0]` are `0` for any `i` since the LCS of empty prefix and anything else is an empty string.
+
+Now let's try to calculate `dp[i][j]` for any `i`, `j`. Let's say `S[1..i] = *A` and `T[1..j] = *B` where `*` stands for any sequence of letters (could be different for `S` and `T`), `A` stands for any letter and `B` stands for any letter different from `A`. Since `A != B`, our LCS doesn't include `A` or `B` as a last character. So we could try to throw away `A` or `B` character. If we throw `A`, our LCS length will be `dp[i - 1][j]` (since we have prefixes `S[1..i - 1]` and `T[1..j]`). If we try to throw `B` character, we will have prefixes `S[1..i]` and `T[1..j - 1]` so the length of LCS will be `dp[i][j - 1]`. As we are looking for the <b>Longest</b> common subsequence, we will pick <b>the maximum value</b> from `dp[i][j - 1]` and `dp[i - 1][j]`.
+
+But what if `S[1..i] = *A` and `T[1..j] = *A`? We could say that the LCS of our prefixes is LCS of prefixes `S[1..i - 1]` and `T[1..j - 1]` <b>plus</b> the letter `A`. So `dp[i][j] = dp[i - 1][j - 1] + 1` if `S[i] = T[j]`.
+
+We could see that we can fill our `dp` table row by row, column by column. So our algorithm will be like:
+
+- Let's say that we have strings `S` of the length N and `T` of the length M (numbered from 1). Let's create the table `dp` of size `(N + 1) x (M + 1)` numbered from 0.
+- Let's fill the 0th row and the 0th column of `dp` with 0.
+- Then, we follow the algorithm:
+
+```
+for i in range(1..N):
+    for j in range(1..M):
+        if(S[i] == T[j])
+            dp[i][j] = dp[i - 1][j - 1] + 1
+        else
+            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+```
+
+#### Time Complexity
+
+`O(N * M)` In any case
+
+#### Space Complexity
+
+`O(N * M)` - simple implementation
+`O(min {N, M})` - two-layers implementation (as `dp[i][j]` depends on only i-th and i-th layers, we coudld store only two layers).
+
+#### Example
+
+Let's say we have strings `ABCB` and `BBCB`. We will build such a table:
+
+```
+# # A B C B
+# 0 0 0 0 0
+B 0 ? ? ? ?
+B 0 ? ? ? ?
+C 0 ? ? ? ?
+B 0 ? ? ? ?
+```
+
+Now we will start to fill our table from 1st row. Since `S[1] = A` and `T[1] = B`, the `dp[1][1]` will be tha maximal value of `dp[0][1] = 0` and `dp[1][0] = 0`. So `dp[1][1] = 0`. But now `S[2] = B = T[1]`, so `dp[1][2] = dp[0][1] + 1 = 1`. `dp[1][3]` is `1` since `A != C` and we pick `max{dp[1][2], dp[0][3]}`. And `dp[1][4] = dp[0][3] + 1 = 1`.
+
+```
+# # A B C B
+# 0 0 0 0 0
+B 0 0 1 1 1
+B 0 ? ? ? ?
+C 0 ? ? ? ?
+B 0 ? ? ? ?
+```
+
+Now let's fill the other part of the table:
+
+```
+# # A B C B
+# 0 0 0 0 0
+B 0 0 1 1 1
+B 0 0 1 1 2
+C 0 0 1 2 2
+B 0 0 1 2 3
+```
+
+So the length of LCS is `dp[4][4] = 3`.
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Dynamic%20Programming/LongestCommonSubsequence.java)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/dynamic_programming/longest_common_subsequence.py)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Dynamic%20Programming/Longest%20Common%20Subsequence.cpp)
+
+#### Video Explanation
+
+[Video explanation by Tushar Roy](https://youtu.be/NnD96abizww)
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                        Binary Search (A divide and conquer algorithm)
+                               </summary>
+# Binary Search (A divide and conquer algorithm)
+
+#### Problem Statement
+
+Given a sorted array of n elements, write a function to search for the index of a given element (target)
+
+#### Approach
+
+- Search for the array by dividing the array in half repeatedly.
+- Initially consider the actual array and pick the element at the middle index
+- Keep a lower index i.e. 0 and higher index i.e. length of array
+- If it is equal to the target element then return the index
+- Else if it is greater than the target element then consider only the left half of array. (lower index = 0, higher = middle - 1)
+- Else if it is less than the target element then consider only the right half of array. (lower index = middle + 1, higher = length of array)
+- Return -1 if target element is not found in the array (Base Case: If lower index is greater than or equal to higher index)
+
+#### Time Complexity
+
+O(log n) Worse Case  
+O(1) Best Case (If middle element of initial array is the target element)
+
+#### Space Complexity
+
+O(1) For iterative approach  
+O(log n) For recursive approach due to recursion call stack
+
+#### Example
+
+```
+arr = [1,2,3,4,5,6,7]
+
+target = 2
+Initially the element at middle index is 4 which is greater than 2. Therefore we search the left half of the
+array i.e. [1,2,3].
+Here we find the middle element equal to target element so we return its index i.e. 1
+
+target = 9
+Binary Search should return -1 as 9 is not present in the array
+```
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Searches/BinarySearch.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Search/Binary%20Search.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/searches/binary_search.py)
+- [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/searches/binary_search.cs)
+- [C](https://github.com/TheAlgorithms/C/blob/master/searching/Binary_Search.c)
+
+#### Video Explanation
+
+[A CS50 video explaining the Binary Search Algorithm](https://www.youtube.com/watch?v=5xlIPT1FRcA)
+
+#### Animation Explanation
+
+- [Tute Board](https://boardhub.github.io/tute/?wd=binarySearchAlgo2)
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+<details>
+<summary>                  Exponential Search                                      </summary>
+
+# Exponential Search
+
+#### Prerequisites
+
+- [Binary Search algorithm](https://github.com/faridevnz/Algorithms-Explanation/blob/master/en/Search%20Algorithms/Binary%20Search.md)
+
+#### Problem Statement
+
+Given a sorted array of _n_ elements, write a function to search for the index of a given element (target)
+
+#### Approach
+
+- Search for the **range** within which the target is included increasing _index_ by powers of 2
+- If this range exists in array apply the Binary Search algorithm over it
+- Else return -1
+
+#### Example
+
+```markdown
+arr = [1, 2, 3, 4, 5, 6, 7, ... 998, 999, 1_000]
+
+target = 998
+index = 0
+
+1. SEARCHING FOR THE RANGE
+   index = 1, 2, 4, 8, 16, 32, 64, ..., 512, ..., 1_024
+   after 10 iteration we have the index at 1_024 and outside of the array
+2. BINARY SEARCH
+   Now we can apply the binary search on the subarray from 512 and 1_000.
+```
+
+**_Note_**: we apply the Binary Search from 512 to 1_000 because at `i = 2^10 = 1_024` the array is finisced and the target number is less than the latest index of the array ( 1_000 ).
+
+#### Time Complexity
+
+**worst case:** `O(log *i*)` where `*i* = index` (position) of the target
+
+**best case:** `O(*1*)`
+
+#### Complexity Explanation
+
+- The complexity of the first part of the algorithm is **O( log _i_ )** because if _i_ is the position of the target in the array, after doubling the search _index_ `⌈log(i)⌉` times, the algorithm will be at a search index that is greater than or equal to _i_. We can write `2^⌈log(i)⌉ >= i`
+- The complexity of the second part of the algorithm also is **O ( log _i_ )** because that is a simple Binary Search. The Binary Search complexity ( as explained [here](https://github.com/faridevnz/Algorithms-Explanation/blob/master/en/Search%20Algorithms/Binary%20Search.md) ) is O( _n_ ) where _n_ is the length of the array. In the Exponential Search, the length of the array on which the algorithm is applied is `2^i - 2^(i-1)`, put into words it means '( the length of the array from start to _i_ ) - ( the part of array skipped until the previous iteration )'. Is simple verify that `2^i - 2^(i-1) = 2^(i-1) `
+
+After this detailed explanation we can say that the the complexity of the Exponential Search is:
+
+```mathematica
+O(log i) + O(log i) = 2O(log i) = O(log i)
+```
+
+#### Binary Search vs Exponential Search
+
+Let's take a look at this comparison with a less theoretical example. Imagine we have an array with`1_000_000` elements and we want to search an element that is in the `4th` position. It's easy to see that:
+
+- The Binary Search start from the middle of the array and arrive to the 4th position after many iterations
+- The Exponential Search arrive at the 4th index after only 2 iterations
+
+#### Code Implementation Links
+
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/search/exponential_search.cpp)
+- [JavaScript](https://github.com/TheAlgorithms/Javascript/blob/master/Search/ExponentialSearch.js)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                     Linear Search                                  </summary>
+# Linear Search
+
+#### Problem Statement
+
+Given an array of n elements, write a function to search for the index of a given element (target)
+
+#### Approach
+
+- Start iterating with the first element in the array.
+- Compare it with the target element
+- If it is equal to the target element then return the index
+- Else continue iterating
+- Return -1 if target element is not found in the array
+
+#### Time Complexity
+
+O(n) Worse Case  
+O(1) Best Case (If first element of array is the target element)
+
+#### Space Complexity
+
+O(1)
+
+#### Example
+
+```
+arr = [1, 3, 9, 5, 0, 2]
+
+target = 5
+Linear Search should return index 3 as 5 is on index 3
+
+target = 6
+Linear Search should return -1 as 6 is not present in the array
+```
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Searches/LinearSearch.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Search/Linear%20Search.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/searches/linear_search.py)
+
+#### Video Explanation
+
+[A CS50 video explaining the Linear Search Algorithm](https://www.youtube.com/watch?v=CX2CYIJLwfg)
+
+#### Animation Explanation
+
+- [Tute Board](https://boardhub.github.io/tute/?wd=linearSearchAlgo)
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                          Quick Sort                              </summary>
+
+
+# Quick Sort
+
+#### Problem Statement
+
+Given an unsorted array of n elements, write a function to sort the array
+
+#### Approach
+
+- Make the right-most index value pivot
+- partition the array using pivot value
+- quicksort left partition recursively
+- quicksort right partition recursively
+
+#### Time Complexity
+
+- `O(n^2)` Worst case performance
+- `O(n log n)` Best-case performance
+- `O(n log n)` Average performance
+
+#### Space Complexity
+
+`O(log n)` Worst case
+
+#### Founder's Name
+
+Tony Hoare in 1959
+
+#### Example
+
+```
+arr[] = {10, 80, 30, 90, 40, 50, 70}
+Indexes:  0   1   2   3   4   5   6
+
+low = 0, high =  6, pivot = arr[h] = 70
+Initialize index of smaller element, i = -1
+
+Traverse elements from j = low to high-1
+j = 0 : Since arr[j] <= pivot, do i++ and swap(arr[i], arr[j])
+i = 0
+arr[] = {10, 80, 30, 90, 40, 50, 70} // No change as i and j
+                                     // are same
+
+j = 1 : Since arr[j] > pivot, do nothing
+// No change in i and arr[]
+
+j = 2 : Since arr[j] <= pivot, do i++ and swap(arr[i], arr[j])
+i = 1
+arr[] = {10, 30, 80, 90, 40, 50, 70} // We swap 80 and 30
+
+j = 3 : Since arr[j] > pivot, do nothing
+// No change in i and arr[]
+
+j = 4 : Since arr[j] <= pivot, do i++ and swap(arr[i], arr[j])
+i = 2
+arr[] = {10, 30, 40, 90, 80, 50, 70} // 80 and 40 Swapped
+j = 5 : Since arr[j] <= pivot, do i++ and swap arr[i] with arr[j]
+i = 3
+arr[] = {10, 30, 40, 50, 80, 90, 70} // 90 and 50 Swapped
+
+We come out of loop because j is now equal to high-1.
+Finally we place pivot at correct position by swapping
+arr[i+1] and arr[high] (or pivot)
+arr[] = {10, 30, 40, 50, 70, 90, 80} // 80 and 70 Swapped
+
+Now 70 is at its correct place. All elements smaller than
+70 are before it and all elements greater than 70 are after
+it.
+```
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/QuickSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Quick%20Sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/quick_sort.py)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/quicksort.rb)
+
+#### Video Explanation
+
+[A video explaining the Quick Sort Algorithm](https://www.youtube.com/watch?v=COk73cpQbFQ)
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                        Recursive Bubble Sort               </summary>
+
+# Recursive Bubble Sort
+
+Bubble Sort is one of the simplest sorting algorithms that compares two elements at a time and swaps them if they are in the wrong order. This process is repeated until the entire sequence is in order.
+
+- Time Complexity: `O(n ^ 2)` for average case; `O(n)` for best case.
+- Space Complexity: `O(n)`; note that iterative bubble sort has space complexity as `O(1)`.
+
+## Steps
+
+Base case: If the size of the array is 1, return.
+
+- We need to fix the last element of the current sub-array. For this, iterate over the entire array using normal Bubble Sort, and perform swapping.
+- Next, call the function on the entire array excluding the last element(which was fixed by the iteration in the above step)
+- Repeat until Base Case is reached.
+
+## Example
+
+Let the given array be: `{5, 3, 2, 1, 4}`
+
+**First Iteration:**
+
+- {`5`, `3`, 2, 1, 4} -> {`3`, `5`, 2, 1, 4} Swap since `5 > 3`
+- {3, `5`, `2`, 1, 4} -> {3, `2`, `5`, 1, 4} Swap since `5 > 2`
+- {3, 2, `5`, `1`, 4} -> {3, 2, `1`, `5`, 4} Swap since `5 > 1`
+- {3, 2, 1, `5`, `4`} -> {3, 2, 1, `4`, `5`} Swap since `5 > 4`
+
+This iteration has fixed the position of 5. Now, we will consider the array up to index 3.
+
+**Second Iteration:**
+
+- {`3`, `2`, 1, 4, 5} -> {`2`, `3`, 1, 4, 5} Swap since `3 > 2`
+- {2, `3`, `1`, 4, 5} -> {2, `1`, `3`, 4, 5} Swap since `3 > 1`
+- {2, 1, `3`, `4`, 5}; As `3 < 4`, do not swap
+
+Note: As we check one less element with every iteration, we do not need elements at index 3 and 4 i.e., `4` and `5`, as 5 is already in order. Formally, for an array with `n` integers, we consider elements only up to index `n - i`, where `i` is the iteration number.
+
+**Third Iteration:**
+
+- {`2`, `1`, 3, 4, 5} -> {`1`, `2`, 3, 4, 5} Swap since `1 > 2`
+- {1, `2`, `3`, 4, 5}; As `2 < 3`, do not swap
+
+**Fourth Iteration:**
+
+- {`1`, `2`, 3, 4, 5}; As `1 < 2`, do not swap
+
+**Fifth Iteration:**
+
+- {`1`, 2, 3, 4, 5}; As the size of the array is 1, return.
+
+Note: This is the base case.
+
+## Pseudo Code
+
+```
+void bubbleSort(arr[], n)
+    if(n==1)
+        return;
+
+    for(i = 0; i<n-1; i++)
+        if(arr[i] > arr[i+1])
+            swap(arr[i], arr[i+1])
+
+    bubbleSort(arr, n-1)
+```
+
+## Implementations
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/BubbleSortRecursion.java)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/bubble_sort_recursion.c)
+
+## Video Explanation
+
+[A video explaining iterative as well as recursive bubble sort](https://www.youtube.com/watch?v=gDMDVLBfCI0)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                   Bubble Sort                                    </summary>
+
+# Bubble Sort
+
+#### Problem Statement
+
+Given an unsorted array of n elements, write a function to sort the array
+
+#### Approach
+
+- select the first element of the array
+- compare it with its next element
+- if it is larger than the next element then swap them
+- else do nothing
+- keep doing this for every index of the array
+- repeat the above process n times.
+
+#### Time Complexity
+
+`O(n^2)` Worst case performance
+
+`O(n)` Best-case performance
+
+`O(n^2)` Average performance
+
+#### Space Complexity
+
+`O(1)` Worst case
+
+#### Founder's Name
+
+- The term “Bubble Sort” was first used by Iverson, K in 1962.
+
+#### Example
+
+```
+arr[] = {10, 80, 40, 30}
+Indexes: 0   1   2   3
+
+1. Index = 0, Number = 10
+2. 10 < 80, do nothing and continue
+
+3. Index = 1, Number = 80
+4. 80 > 40, swap 80 and 40
+5. The array now is {10, 40, 80, 30}
+
+6. Index = 2, Number = 80
+7. 80 > 30, swap 80 and 30
+8. The array now is {10, 40, 30, 80}
+
+Repeat the Above Steps again
+
+arr[] = {10, 40, 30, 80}
+Indexes: 0   1   2   3
+
+1. Index = 0, Number = 10
+2. 10 < 40, do nothing and continue
+
+3. Index = 1, Number = 40
+4. 40 > 30, swap 40 and 30
+5. The array now is {10, 30, 40, 80}
+
+6. Index = 2, Number = 40
+7. 40 < 80, do nothing
+8. The array now is {10, 30, 40, 80}
+
+Repeat the Above Steps again
+
+arr[] = {10, 30, 40, 80}
+Indexes: 0   1   2   3
+
+1. Index = 0, Number = 10
+2. 10 < 30, do nothing and continue
+
+3. Index = 1, Number = 30
+4. 30 < 40, do nothing and continue
+
+5. Index = 2, Number = 40
+6. 40 < 80, do nothing
+
+Since there are no swaps in above steps, it means the array is sorted and we can stop here.
+```
+
+#### Code Implementation Links
+
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/BubbleSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/bubble_sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/bubble_sort.py)
+- [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/BubbleSorter.cs)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/bubblesort.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/bubble_sort.rb)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/bubble_sort.c)
+- [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/BubbleSort.scala)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/BubbleSort.js)
+
+#### Video Explanation
+
+[A video explaining the Bubble Sort Algorithm](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
+
+#### Others
+
+Bubble sort is also known as Sinking sort.
+
+#### Animation Explanation
+
+- [Tute Board](https://boardhub.github.io/tute/?wd=bubbleSortAlgo2)
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+<details>
+<summary>                                                       </summary>
+
+
+
+
+</details>
+
+
+
+
+---
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+---
 
 #### Directory Structure
 
