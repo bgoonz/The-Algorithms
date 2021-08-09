@@ -1,7 +1,24 @@
 # Algorithms For Each Major CS Language:
 
-<<<<<<< HEAD
+
 # Folders:
+
+
+
+---
+---
+
+
+### - [Link To Filelist](./file-list.md)
+
+
+
+
+<details>
+<summary>                         FOLDERS                              </summary>
+
+
+
 
 - [./Algorithms-Explanation](./Algorithms-Explanation)
 - [./Algorithms-Explanation/en](./Algorithms-Explanation/en)
@@ -877,7 +894,19 @@
 - [./website-old/css](./website-old/css)
 - [./website-old/images](./website-old/images)
 - [./website-old/images/svg](./website-old/images/svg)
-=======
+
+---
+
+
+
+
+
+</details>
+
+
+
+
+---
 ---
 
 
@@ -7250,5 +7279,3 @@ Bubble sort is also known as Sinking sort.
 768 directories, 3490 files
 ```
 
-
->>>>>>> eec2f153139c9c0affd92b18eeebc97365eefc11
