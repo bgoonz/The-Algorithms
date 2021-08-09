@@ -1,0 +1,16 @@
+{
+  "slug": "floyd-cycle-detection-algo",
+  "name": "Floyd Cycle Detection Algo",
+  "categories": ["searches"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Swastika Gupta",
+      "email": "64654203+Swastyy@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

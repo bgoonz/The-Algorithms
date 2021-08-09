@@ -1,0 +1,31 @@
+{
+  "slug": "hamming-code",
+  "name": "Hamming Code",
+  "categories": ["hashing"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "João Gustavo A. Amorim",
+      "email": "joaogustavoamorim@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

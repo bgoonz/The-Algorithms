@@ -1,0 +1,26 @@
+{
+  "slug": "max-flow-with-ford-fulkerson-and-edmond-karp-algo",
+  "name": "Max Flow with Ford Fulkerson and Edmond Karp Algo",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Amit Kumar",
+      "email": "offamitkumar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

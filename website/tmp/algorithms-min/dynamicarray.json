@@ -1,0 +1,48 @@
+{
+  "slug": "dynamicarray",
+  "name": "DynamicArray",
+  "categories": ["datastructures", "dynamicarray"],
+  "implementations": {
+    "java": "",
+    "c": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Huayang Sun",
+      "email": "1394466835@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    },
+    {
+      "name": "Ray S",
+      "email": "68674276+rbshealy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "Wesllhey Holanda",
+      "email": "wesllhey.holanda@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}
