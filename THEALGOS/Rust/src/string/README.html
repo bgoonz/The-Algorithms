@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h2 id="string-algorithms">String Algorithms</h2>
-<h3 id="knuth-morris-pratt"><a href="./knuth_morris_pratt.rs">Knuth Morris Pratt</a></h3>
-<p>From <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm">Wikipedia</a>: searches for occurrences of a “word” W within a main “text string” S by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters. Knuth Morris Pratt search runs in linear time in the length of W and S.</p>
-<p><strong>Properties</strong></p>
-<ul>
-<li>Case performance O(s + w)</li>
-<li>Case space complexity O(w)</li>
-</ul>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="string-algorithms">String Algorithms</h2>
+    <h3 id="knuth-morris-pratt">
+      <a href="./knuth_morris_pratt.rs">Knuth Morris Pratt</a>
+    </h3>
+    <p>
+      From
+      <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm"
+        >Wikipedia</a
+      >: searches for occurrences of a “word” W within a main “text string” S by
+      employing the observation that when a mismatch occurs, the word itself
+      embodies sufficient information to determine where the next match could
+      begin, thus bypassing re-examination of previously matched characters.
+      Knuth Morris Pratt search runs in linear time in the length of W and S.
+    </p>
+    <p><strong>Properties</strong></p>
+    <ul>
+      <li>Case performance O(s + w)</li>
+      <li>Case space complexity O(w)</li>
+    </ul>
+  </body>
 </html>

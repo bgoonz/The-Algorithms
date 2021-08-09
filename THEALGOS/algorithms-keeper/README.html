@@ -1,57 +1,223 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<div data-align="center">
-<h1 id="algorithms-keeper">algorithms-keeper</h1>
-<p><a href="https://github.com/TheAlgorithms/algorithms-keeper/actions"><img src="https://img.shields.io/github/workflow/status/TheAlgorithms/algorithms-keeper/CI?label=CI&amp;logo=github&amp;style=flat-square" alt="GitHub Workflow Status" /></a> <a href="https://app.codecov.io/gh/TheAlgorithms/algorithms-keeper"><img src="https://img.shields.io/codecov/c/gh/TheAlgorithms/algorithms-keeper?label=codecov&amp;logo=codecov&amp;style=flat-square" alt="Codecov" /></a> <a href="https://github.com/psf/black"><img src="https://img.shields.io/static/v1?label=code%20style&amp;message=black&amp;color=black&amp;style=flat-square" alt="code style: black" /></a> <a href="http://mypy-lang.org/"><img src="https://img.shields.io/static/v1?label=mypy&amp;message=checked&amp;style=flat-square&amp;color=2a6db2&amp;labelColor=505050" alt="Checked with mypy" /></a></p>
-</div>
-<p>A bot for <a href="https://www.github.com/TheAlgorithms/Python">TheAlgorithms/Python</a> repository. This bot is based on <a href="https://github-app-tutorial.readthedocs.io/en/latest/index.html">this tutorial</a> and also inspired by the ones working for the <a href="https://github.com/python/cpython">CPython</a> repository which are <a href="https://github.com/python/miss-islington">miss-islington</a>, <a href="https://github.com/python/bedevere">bedevere</a> and <a href="https://github.com/python/the-knights-who-say-ni">the-knights-who-say-ni</a>. This bot is basically a GitHub app which can be installed in any repository using <a href="https://github.com/apps/algorithms-keeper">this link</a>.</p>
-<p><strong><em>NOTE: This bot is highly configured for <a href="https://www.github.com/TheAlgorithms/Python">TheAlgorithms/Python</a> repository. DO NOT INSTALL the bot without reading what it actually does.</em></strong></p>
-<h2 id="what-the-bot-does">What the bot does:</h2>
-<h3 id="greet-the-user-for-installing-the-app">Greet the user for installing the app</h3>
-<p>Open an issue with the message greeting the user who either installed the app or added a new repository to the installed app and then close the issue.</p>
-<h3 id="add-or-remove-labels-to-pull-requests">Add or remove label(s) to pull requests</h3>
-<ul>
-<li>To indicate that some tests are failing for this pull request if it is not present and remove it when all the tests are passing. It does nothing if the tests are already passing. <strong><em>NOTE: This check will be skipped if the pull request is in draft mode.</em></strong></li>
-<li>To indicate the stage the pull request is currently at. This is a cycle of two labels which indicates the two stages: The pull request requires a review/re-review, or a maintainer has requested changes for the pull request.</li>
-<li>To indicate whether the pull request contains merge conflicts or not.</li>
-</ul>
-<p>The pull request stages can be best described in a <a href="http://www.webgraphviz.com/">graphviz</a> diagram whose code is in the <a href="https://github.com/TheAlgorithms/algorithms-keeper/blob/master/algorithms_keeper/event/pull_request.py#L3">pull requests module</a>.</p>
-<h3 id="close-invalid-pull-requests">Close invalid pull requests</h3>
-<p>A pull request is considered invalid if:</p>
-<ul>
-<li>It doesn’t contain any description.</li>
-<li>The user has not ticked any of the checkboxes in the provided pull request template.</li>
-<li>The file extension is invalid. For now only PRs with extensionless files are closed.</li>
-</ul>
-<p><strong><em>NOTE: These checks will be skipped for any member or owner of the organization and also for the pull request which is in draft mode.</em></strong></p>
-<h3 id="close-additional-pull-requests-by-user">Close additional pull requests by user</h3>
-<p>A user will be allowed a fix number of pull requests at a time which will be indicated by the <code>MAX_PR_BY_USER</code> constant. This is done to avoid spam pull requests. This can be disabled by updating the constant value to 0: <code>MAX_PR_BY_USER = 0</code>.</p>
-<p><strong><em>NOTE: These checks will be skipped for any member or owner of the organization and also for the pull request which is in draft mode.</em></strong></p>
-<h3 id="check-all-python-files-in-a-pull-request">Check all Python files in a pull request</h3>
-<p>All the Python files will be checked for tests [<code>doctest</code>/<code>unittest</code>/<code>pytest</code>], type hints and descriptive class/function/parameter names. Labels will be added and/or removed according to the latest commit in a pull request. The bot will post the review with all the details regarding the missing requirements.</p>
-<p><strong><em>NOTE: These checks will be skipped if the pull request is in draft mode and if the pull request is invalid.</em></strong></p>
-<h3 id="commands">Commands</h3>
-<p>Some actions of the bot can be triggered using commands:</p>
-<ul>
-<li><code>@algorithms-keeper review</code> to trigger the checks for only added pull request files.</li>
-<li><code>@algorithms-keeper review-all</code> to trigger the checks for all the pull request files, including the modified files. As we cannot post review comments on lines not part of the diff, this command only modify the labels accordingly.</li>
-</ul>
-<p><strong><em>NOTE: Commands are in BETA and valid only if it is commented on a pull request and only by either a member or owner of the organization.</em></strong></p>
-<h2 id="logging">Logging</h2>
-<p>Logging is done using the standard library logging module. All the API calls made by the bot are being logged at INFO level and <code>aiohttp.log.access_logger</code> is logging the POST requests made by GitHub for delivering the payload. Other minor events relevant to the repository is also being logged along with using the using <a href="https://sentry.io/">Sentry</a>. The logs can be viewed best using the following command (<a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install"><em>requires Heroku CLI</em></a>):</p>
-<pre class="shell"><code>heroku logs -a algorithms-keeper -t</code></pre>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-align="center">
+      <h1 id="algorithms-keeper">algorithms-keeper</h1>
+      <p>
+        <a href="https://github.com/TheAlgorithms/algorithms-keeper/actions"
+          ><img
+            src="https://img.shields.io/github/workflow/status/TheAlgorithms/algorithms-keeper/CI?label=CI&amp;logo=github&amp;style=flat-square"
+            alt="GitHub Workflow Status"
+        /></a>
+        <a href="https://app.codecov.io/gh/TheAlgorithms/algorithms-keeper"
+          ><img
+            src="https://img.shields.io/codecov/c/gh/TheAlgorithms/algorithms-keeper?label=codecov&amp;logo=codecov&amp;style=flat-square"
+            alt="Codecov"
+        /></a>
+        <a href="https://github.com/psf/black"
+          ><img
+            src="https://img.shields.io/static/v1?label=code%20style&amp;message=black&amp;color=black&amp;style=flat-square"
+            alt="code style: black"
+        /></a>
+        <a href="http://mypy-lang.org/"
+          ><img
+            src="https://img.shields.io/static/v1?label=mypy&amp;message=checked&amp;style=flat-square&amp;color=2a6db2&amp;labelColor=505050"
+            alt="Checked with mypy"
+        /></a>
+      </p>
+    </div>
+    <p>
+      A bot for
+      <a href="https://www.github.com/TheAlgorithms/Python"
+        >TheAlgorithms/Python</a
+      >
+      repository. This bot is based on
+      <a href="https://github-app-tutorial.readthedocs.io/en/latest/index.html"
+        >this tutorial</a
+      >
+      and also inspired by the ones working for the
+      <a href="https://github.com/python/cpython">CPython</a> repository which
+      are <a href="https://github.com/python/miss-islington">miss-islington</a>,
+      <a href="https://github.com/python/bedevere">bedevere</a> and
+      <a href="https://github.com/python/the-knights-who-say-ni"
+        >the-knights-who-say-ni</a
+      >. This bot is basically a GitHub app which can be installed in any
+      repository using
+      <a href="https://github.com/apps/algorithms-keeper">this link</a>.
+    </p>
+    <p>
+      <strong
+        ><em
+          >NOTE: This bot is highly configured for
+          <a href="https://www.github.com/TheAlgorithms/Python"
+            >TheAlgorithms/Python</a
+          >
+          repository. DO NOT INSTALL the bot without reading what it actually
+          does.</em
+        ></strong
+      >
+    </p>
+    <h2 id="what-the-bot-does">What the bot does:</h2>
+    <h3 id="greet-the-user-for-installing-the-app">
+      Greet the user for installing the app
+    </h3>
+    <p>
+      Open an issue with the message greeting the user who either installed the
+      app or added a new repository to the installed app and then close the
+      issue.
+    </p>
+    <h3 id="add-or-remove-labels-to-pull-requests">
+      Add or remove label(s) to pull requests
+    </h3>
+    <ul>
+      <li>
+        To indicate that some tests are failing for this pull request if it is
+        not present and remove it when all the tests are passing. It does
+        nothing if the tests are already passing.
+        <strong
+          ><em
+            >NOTE: This check will be skipped if the pull request is in draft
+            mode.</em
+          ></strong
+        >
+      </li>
+      <li>
+        To indicate the stage the pull request is currently at. This is a cycle
+        of two labels which indicates the two stages: The pull request requires
+        a review/re-review, or a maintainer has requested changes for the pull
+        request.
+      </li>
+      <li>
+        To indicate whether the pull request contains merge conflicts or not.
+      </li>
+    </ul>
+    <p>
+      The pull request stages can be best described in a
+      <a href="http://www.webgraphviz.com/">graphviz</a> diagram whose code is
+      in the
+      <a
+        href="https://github.com/TheAlgorithms/algorithms-keeper/blob/master/algorithms_keeper/event/pull_request.py#L3"
+        >pull requests module</a
+      >.
+    </p>
+    <h3 id="close-invalid-pull-requests">Close invalid pull requests</h3>
+    <p>A pull request is considered invalid if:</p>
+    <ul>
+      <li>It doesn’t contain any description.</li>
+      <li>
+        The user has not ticked any of the checkboxes in the provided pull
+        request template.
+      </li>
+      <li>
+        The file extension is invalid. For now only PRs with extensionless files
+        are closed.
+      </li>
+    </ul>
+    <p>
+      <strong
+        ><em
+          >NOTE: These checks will be skipped for any member or owner of the
+          organization and also for the pull request which is in draft mode.</em
+        ></strong
+      >
+    </p>
+    <h3 id="close-additional-pull-requests-by-user">
+      Close additional pull requests by user
+    </h3>
+    <p>
+      A user will be allowed a fix number of pull requests at a time which will
+      be indicated by the <code>MAX_PR_BY_USER</code> constant. This is done to
+      avoid spam pull requests. This can be disabled by updating the constant
+      value to 0: <code>MAX_PR_BY_USER = 0</code>.
+    </p>
+    <p>
+      <strong
+        ><em
+          >NOTE: These checks will be skipped for any member or owner of the
+          organization and also for the pull request which is in draft mode.</em
+        ></strong
+      >
+    </p>
+    <h3 id="check-all-python-files-in-a-pull-request">
+      Check all Python files in a pull request
+    </h3>
+    <p>
+      All the Python files will be checked for tests
+      [<code>doctest</code>/<code>unittest</code>/<code>pytest</code>], type
+      hints and descriptive class/function/parameter names. Labels will be added
+      and/or removed according to the latest commit in a pull request. The bot
+      will post the review with all the details regarding the missing
+      requirements.
+    </p>
+    <p>
+      <strong
+        ><em
+          >NOTE: These checks will be skipped if the pull request is in draft
+          mode and if the pull request is invalid.</em
+        ></strong
+      >
+    </p>
+    <h3 id="commands">Commands</h3>
+    <p>Some actions of the bot can be triggered using commands:</p>
+    <ul>
+      <li>
+        <code>@algorithms-keeper review</code> to trigger the checks for only
+        added pull request files.
+      </li>
+      <li>
+        <code>@algorithms-keeper review-all</code> to trigger the checks for all
+        the pull request files, including the modified files. As we cannot post
+        review comments on lines not part of the diff, this command only modify
+        the labels accordingly.
+      </li>
+    </ul>
+    <p>
+      <strong
+        ><em
+          >NOTE: Commands are in BETA and valid only if it is commented on a
+          pull request and only by either a member or owner of the
+          organization.</em
+        ></strong
+      >
+    </p>
+    <h2 id="logging">Logging</h2>
+    <p>
+      Logging is done using the standard library logging module. All the API
+      calls made by the bot are being logged at INFO level and
+      <code>aiohttp.log.access_logger</code> is logging the POST requests made
+      by GitHub for delivering the payload. Other minor events relevant to the
+      repository is also being logged along with using the using
+      <a href="https://sentry.io/">Sentry</a>. The logs can be viewed best using
+      the following command (<a
+        href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install"
+        ><em>requires Heroku CLI</em></a
+      >):
+    </p>
+    <pre class="shell"><code>heroku logs -a algorithms-keeper -t</code></pre>
+  </body>
 </html>

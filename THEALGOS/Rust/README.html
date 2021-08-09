@@ -1,92 +1,143 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="the-algorithms---rust-gitter-build-status">The Algorithms - Rust <a href="https://gitter.im/the-algorithms/rust"><img src="https://img.shields.io/gitter/room/the-algorithms/rust.svg?style=flat-square" alt="Gitter" /></a> <a href="https://travis-ci.com/TheAlgorithms/Rust"><img src="https://travis-ci.com/TheAlgorithms/Rust.svg?branch=master" alt="Build Status" /></a></h1>
-<h3 id="all-algorithms-implemented-in-rust-for-educational-purposes">All algorithms implemented in Rust (for educational purposes)</h3>
-<p>These are for demonstration purposes only.</p>
-<h2 id="sort-algorithms"><a href="./src/sorting">Sort Algorithms</a></h2>
-<ul>
-<li><a href="./src/sorting/bubble_sort.rs">Bubble</a></li>
-<li><a href="./src/sorting/counting_sort.rs">Counting</a></li>
-<li><a href="./src/sorting/heap_sort.rs">Heap</a></li>
-<li><a href="./src/sorting/insertion_sort.rs">Insertion</a></li>
-<li><a href="./src/sorting/merge_sort.rs">Merge</a></li>
-<li><a href="./src/sorting/quick_sort.rs">Quick</a></li>
-<li><a href="./src/sorting/radix_sort.rs">Radix</a></li>
-<li><a href="./src/sorting/selection_sort.rs">Selection</a></li>
-<li><a href="./src/sorting/shell_sort.rs">Shell</a></li>
-</ul>
-<h2 id="graphs">Graphs</h2>
-<ul>
-<li>Dijkstra <em>(Not implemented yet)</em></li>
-<li>Kruskal’s Minimum Spanning Tree <em>(Not implemented yet)</em></li>
-<li>Prim’s Minimum Spanning Tree <em>(Not implemented yet)</em></li>
-<li>BFS <em>(Not implemented yet)</em></li>
-<li>DFS <em>(Not implemented yet)</em></li>
-</ul>
-<h2 id="dynamic-programming"><a href="./src/dynamic_programming">Dynamic Programming</a></h2>
-<ul>
-<li><a href="./src/dynamic_programming/knapsack.rs">0-1 Knapsack</a></li>
-<li><a href="./src/dynamic_programming/edit_distance.rs">Edit Distance</a></li>
-<li><a href="./src/dynamic_programming/longest_common_subsequence.rs">Longest common subsequence</a></li>
-<li>Longest increasing subsequence <em>(Not implemented yet)</em></li>
-<li><a href="./src/general/kmeans.rs">K-Means Clustering</a></li>
-<li>Coin Change <em>(Not implemented yet)</em></li>
-<li>Rod cut <em>(Not implemented yet)</em></li>
-<li><a href="./src/dynamic_programming/egg_dropping.rs">Egg Dropping Puzzle</a></li>
-</ul>
-<h2 id="data-structures">Data Structures</h2>
-<ul>
-<li>Queue <em>(Not implemented yet)</em></li>
-<li><a href="./src/data_structures/heap.rs">Heap</a></li>
-<li><a href="./src/data_structures/linked_list.rs">Linked List</a></li>
-<li>Graph <em>(Not implemented yet)</em>
-<ul>
-<li>Directed <em>(Not implemented yet)</em></li>
-<li>Undirected <em>(Not implemented yet)</em></li>
-</ul></li>
-<li>Trie <em>(Not implemented yet)</em></li>
-<li><a href="./src/data_structures/binary_search_tree.rs">Binary Search Tree</a></li>
-<li><a href="./src/data_structures/b_tree.rs">B-Tree</a></li>
-<li>AVL Tree <em>(Not implemented yet)</em></li>
-</ul>
-<h2 id="strings">Strings</h2>
-<ul>
-<li><a href="./src/string/knuth_morris_pratt.rs">Knuth Morris Pratt</a></li>
-<li>Rabin Carp <em>(Not implemented yet)</em></li>
-</ul>
-<h2 id="general">General</h2>
-<ul>
-<li><a href="./src/general/convex_hull.rs">Convex Hull: Graham Scan</a></li>
-<li>N-Queensp <em>(Not implemented yet)</em></li>
-<li>Graph Coloringp <em>(Not implemented yet)</em></li>
-<li><a href="./src/general/hanoi.rs">Tower of Hanoi</a></li>
-</ul>
-<h2 id="search-algorithms"><a href="./src/searching">Search Algorithms</a></h2>
-<ul>
-<li><a href="./src/searching/linear_search.rs">Linear</a></li>
-<li><a href="./src/searching/binary_search.rs">Binary</a></li>
-</ul>
-<h2 id="ciphers"><a href="./src/ciphers">Ciphers</a></h2>
-<ul>
-<li><a href="./src/ciphers/caesar.rs">Caesar</a></li>
-<li><a href="./src/ciphers/vigenere.rs">Vigenère</a></li>
-<li>Transposition <em>(Not implemented yet)</em></li>
-</ul>
-<hr />
-<h3 id="contributing">Contributing</h3>
-<p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a></p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="the-algorithms---rust-gitter-build-status">
+      The Algorithms - Rust
+      <a href="https://gitter.im/the-algorithms/rust"
+        ><img
+          src="https://img.shields.io/gitter/room/the-algorithms/rust.svg?style=flat-square"
+          alt="Gitter"
+      /></a>
+      <a href="https://travis-ci.com/TheAlgorithms/Rust"
+        ><img
+          src="https://travis-ci.com/TheAlgorithms/Rust.svg?branch=master"
+          alt="Build Status"
+      /></a>
+    </h1>
+    <h3 id="all-algorithms-implemented-in-rust-for-educational-purposes">
+      All algorithms implemented in Rust (for educational purposes)
+    </h3>
+    <p>These are for demonstration purposes only.</p>
+    <h2 id="sort-algorithms"><a href="./src/sorting">Sort Algorithms</a></h2>
+    <ul>
+      <li><a href="./src/sorting/bubble_sort.rs">Bubble</a></li>
+      <li><a href="./src/sorting/counting_sort.rs">Counting</a></li>
+      <li><a href="./src/sorting/heap_sort.rs">Heap</a></li>
+      <li><a href="./src/sorting/insertion_sort.rs">Insertion</a></li>
+      <li><a href="./src/sorting/merge_sort.rs">Merge</a></li>
+      <li><a href="./src/sorting/quick_sort.rs">Quick</a></li>
+      <li><a href="./src/sorting/radix_sort.rs">Radix</a></li>
+      <li><a href="./src/sorting/selection_sort.rs">Selection</a></li>
+      <li><a href="./src/sorting/shell_sort.rs">Shell</a></li>
+    </ul>
+    <h2 id="graphs">Graphs</h2>
+    <ul>
+      <li>Dijkstra <em>(Not implemented yet)</em></li>
+      <li>Kruskal’s Minimum Spanning Tree <em>(Not implemented yet)</em></li>
+      <li>Prim’s Minimum Spanning Tree <em>(Not implemented yet)</em></li>
+      <li>BFS <em>(Not implemented yet)</em></li>
+      <li>DFS <em>(Not implemented yet)</em></li>
+    </ul>
+    <h2 id="dynamic-programming">
+      <a href="./src/dynamic_programming">Dynamic Programming</a>
+    </h2>
+    <ul>
+      <li><a href="./src/dynamic_programming/knapsack.rs">0-1 Knapsack</a></li>
+      <li>
+        <a href="./src/dynamic_programming/edit_distance.rs">Edit Distance</a>
+      </li>
+      <li>
+        <a href="./src/dynamic_programming/longest_common_subsequence.rs"
+          >Longest common subsequence</a
+        >
+      </li>
+      <li>Longest increasing subsequence <em>(Not implemented yet)</em></li>
+      <li><a href="./src/general/kmeans.rs">K-Means Clustering</a></li>
+      <li>Coin Change <em>(Not implemented yet)</em></li>
+      <li>Rod cut <em>(Not implemented yet)</em></li>
+      <li>
+        <a href="./src/dynamic_programming/egg_dropping.rs"
+          >Egg Dropping Puzzle</a
+        >
+      </li>
+    </ul>
+    <h2 id="data-structures">Data Structures</h2>
+    <ul>
+      <li>Queue <em>(Not implemented yet)</em></li>
+      <li><a href="./src/data_structures/heap.rs">Heap</a></li>
+      <li><a href="./src/data_structures/linked_list.rs">Linked List</a></li>
+      <li>
+        Graph <em>(Not implemented yet)</em>
+        <ul>
+          <li>Directed <em>(Not implemented yet)</em></li>
+          <li>Undirected <em>(Not implemented yet)</em></li>
+        </ul>
+      </li>
+      <li>Trie <em>(Not implemented yet)</em></li>
+      <li>
+        <a href="./src/data_structures/binary_search_tree.rs"
+          >Binary Search Tree</a
+        >
+      </li>
+      <li><a href="./src/data_structures/b_tree.rs">B-Tree</a></li>
+      <li>AVL Tree <em>(Not implemented yet)</em></li>
+    </ul>
+    <h2 id="strings">Strings</h2>
+    <ul>
+      <li>
+        <a href="./src/string/knuth_morris_pratt.rs">Knuth Morris Pratt</a>
+      </li>
+      <li>Rabin Carp <em>(Not implemented yet)</em></li>
+    </ul>
+    <h2 id="general">General</h2>
+    <ul>
+      <li>
+        <a href="./src/general/convex_hull.rs">Convex Hull: Graham Scan</a>
+      </li>
+      <li>N-Queensp <em>(Not implemented yet)</em></li>
+      <li>Graph Coloringp <em>(Not implemented yet)</em></li>
+      <li><a href="./src/general/hanoi.rs">Tower of Hanoi</a></li>
+    </ul>
+    <h2 id="search-algorithms">
+      <a href="./src/searching">Search Algorithms</a>
+    </h2>
+    <ul>
+      <li><a href="./src/searching/linear_search.rs">Linear</a></li>
+      <li><a href="./src/searching/binary_search.rs">Binary</a></li>
+    </ul>
+    <h2 id="ciphers"><a href="./src/ciphers">Ciphers</a></h2>
+    <ul>
+      <li><a href="./src/ciphers/caesar.rs">Caesar</a></li>
+      <li><a href="./src/ciphers/vigenere.rs">Vigenère</a></li>
+      <li>Transposition <em>(Not implemented yet)</em></li>
+    </ul>
+    <hr />
+    <h3 id="contributing">Contributing</h3>
+    <p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+  </body>
 </html>

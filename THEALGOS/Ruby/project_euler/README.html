@@ -1,35 +1,107 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="project-euler">Project Euler</h1>
-<p>Problems are taken from https://projecteuler.net/, the Project Euler. <a href="https://projecteuler.net/copyright">Problems are licensed under CC BY-NC-SA 4.0</a>.</p>
-<p>Project Euler is a series of challenging mathematical/computer programming problems that require more than just mathematical insights to solve. Project Euler is ideal for mathematicians who are learning to code.</p>
-<h2 id="solution-guidelines">Solution Guidelines</h2>
-<p>Welcome to <a href="https://github.com/TheAlgorithms/Ruby">TheAlgorithms/Ruby</a>! Before reading the solution guidelines, make sure you read the whole <a href="https://github.com/TheAlgorithms/Ruby/blob/master/CONTRIBUTING.md">Contributing Guidelines</a> as it won’t be repeated in here. If you have any doubt on the guidelines, please feel free to <a href="https://github.com/TheAlgorithms/Ruby/issues/new">state it clearly in an issue</a> or ask the community in <a href="https://gitter.im/TheAlgorithms">Gitter</a>. Be sure to read the <a href="https://github.com/TheAlgorithms/Ruby/blob/master/project_euler/README.md#coding-style">Coding Style</a> before starting solution.</p>
-<h3 id="coding-style">Coding Style</h3>
-<ul>
-<li><p>Please maintain consistency in project directory and solution file names. Keep the following points in mind:</p>
-<ul>
-<li>Create a new directory only for the problems which do not exist yet.</li>
-<li>Please name the project <strong>directory</strong> as <code>problem_&lt;problem_number&gt;</code> where <code>problem_number</code> should be filled with 0s so as to occupy 3 digits. Example: <code>problem_001</code>, <code>problem_002</code>, <code>problem_067</code>, <code>problem_145</code>, and so on.</li>
-</ul></li>
-<li>You can have as many helper functions as you want but there should be one main function called <code>solution</code> which should satisfy the conditions as stated below:
-<ul>
-<li>It should contain positional argument(s) whose default value is the question input. Example: Please take a look at <a href="https://projecteuler.net/problem=1">Problem 1</a> where the question is to <em>Find the sum of all the multiples of 3 or 5 below 1000.</em> In this case the main solution function will be <code>solution(limit = 1000)</code>.</li>
-<li>When the <code>solution</code> function is called without any arguments like so: <code>solution()</code>, it should return the answer to the problem.</li>
-</ul></li>
-</ul>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="project-euler">Project Euler</h1>
+    <p>
+      Problems are taken from https://projecteuler.net/, the Project Euler.
+      <a href="https://projecteuler.net/copyright"
+        >Problems are licensed under CC BY-NC-SA 4.0</a
+      >.
+    </p>
+    <p>
+      Project Euler is a series of challenging mathematical/computer programming
+      problems that require more than just mathematical insights to solve.
+      Project Euler is ideal for mathematicians who are learning to code.
+    </p>
+    <h2 id="solution-guidelines">Solution Guidelines</h2>
+    <p>
+      Welcome to
+      <a href="https://github.com/TheAlgorithms/Ruby">TheAlgorithms/Ruby</a>!
+      Before reading the solution guidelines, make sure you read the whole
+      <a
+        href="https://github.com/TheAlgorithms/Ruby/blob/master/CONTRIBUTING.md"
+        >Contributing Guidelines</a
+      >
+      as it won’t be repeated in here. If you have any doubt on the guidelines,
+      please feel free to
+      <a href="https://github.com/TheAlgorithms/Ruby/issues/new"
+        >state it clearly in an issue</a
+      >
+      or ask the community in
+      <a href="https://gitter.im/TheAlgorithms">Gitter</a>. Be sure to read the
+      <a
+        href="https://github.com/TheAlgorithms/Ruby/blob/master/project_euler/README.md#coding-style"
+        >Coding Style</a
+      >
+      before starting solution.
+    </p>
+    <h3 id="coding-style">Coding Style</h3>
+    <ul>
+      <li>
+        <p>
+          Please maintain consistency in project directory and solution file
+          names. Keep the following points in mind:
+        </p>
+        <ul>
+          <li>
+            Create a new directory only for the problems which do not exist yet.
+          </li>
+          <li>
+            Please name the project <strong>directory</strong> as
+            <code>problem_&lt;problem_number&gt;</code> where
+            <code>problem_number</code> should be filled with 0s so as to occupy
+            3 digits. Example: <code>problem_001</code>,
+            <code>problem_002</code>, <code>problem_067</code>,
+            <code>problem_145</code>, and so on.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You can have as many helper functions as you want but there should be
+        one main function called <code>solution</code> which should satisfy the
+        conditions as stated below:
+        <ul>
+          <li>
+            It should contain positional argument(s) whose default value is the
+            question input. Example: Please take a look at
+            <a href="https://projecteuler.net/problem=1">Problem 1</a> where the
+            question is to
+            <em>Find the sum of all the multiples of 3 or 5 below 1000.</em> In
+            this case the main solution function will be
+            <code>solution(limit = 1000)</code>.
+          </li>
+          <li>
+            When the <code>solution</code> function is called without any
+            arguments like so: <code>solution()</code>, it should return the
+            answer to the problem.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
 </html>

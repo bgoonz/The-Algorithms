@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h3 id="binary"><a href="./binary_search.rs">Binary</a></h3>
-<p>B-Trees are version of 2-3 trees, which are self-balancing. They are used to improve Disk reads and have a complexity of O(log(n)), for every tree operations.The number of Childrens/Keys a particular node has, is determined by the Branching Factor/Degree of that tree. Btrees will always have sorted keys.</p>
-<ul>
-<li>Branching Factor(B) / Degree (D): If B = n, n &lt;= Children per Node &lt; 2(n), n-1 &lt;= Keys per Node &lt; 2(n) - 1</li>
-</ul>
-<p><strong>Properties</strong></p>
-<ul>
-<li>Worst/Average case performance for all operations O(log n)</li>
-<li>Space complexity O(n)</li>
-</ul>
-<p><strong>Sources to read:</strong></p>
-<ul>
-<li><a href="https://medium.com/basecs/busying-oneself-with-b-trees-78bbf10522e7">Busying Oneself with B-Trees</a></li>
-<li><a href="https://www.geeksforgeeks.org/introduction-of-b-tree-2/">Geeksforgeeks</a></li>
-<li><a href="https://doc.rust-lang.org/std/collections/struct.BTreeMap.html">Rust API Docs</a></li>
-<li><a href="https://github.com/keon/algorithms">Keon Algorithms</a></li>
-<li><a href="https://www.youtube.com/watch?v=TOb1tuEZ2X4">MIT Open Course</a></li>
-</ul>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="binary"><a href="./binary_search.rs">Binary</a></h3>
+    <p>
+      B-Trees are version of 2-3 trees, which are self-balancing. They are used
+      to improve Disk reads and have a complexity of O(log(n)), for every tree
+      operations.The number of Childrens/Keys a particular node has, is
+      determined by the Branching Factor/Degree of that tree. Btrees will always
+      have sorted keys.
+    </p>
+    <ul>
+      <li>
+        Branching Factor(B) / Degree (D): If B = n, n &lt;= Children per Node
+        &lt; 2(n), n-1 &lt;= Keys per Node &lt; 2(n) - 1
+      </li>
+    </ul>
+    <p><strong>Properties</strong></p>
+    <ul>
+      <li>Worst/Average case performance for all operations O(log n)</li>
+      <li>Space complexity O(n)</li>
+    </ul>
+    <p><strong>Sources to read:</strong></p>
+    <ul>
+      <li>
+        <a
+          href="https://medium.com/basecs/busying-oneself-with-b-trees-78bbf10522e7"
+          >Busying Oneself with B-Trees</a
+        >
+      </li>
+      <li>
+        <a href="https://www.geeksforgeeks.org/introduction-of-b-tree-2/"
+          >Geeksforgeeks</a
+        >
+      </li>
+      <li>
+        <a href="https://doc.rust-lang.org/std/collections/struct.BTreeMap.html"
+          >Rust API Docs</a
+        >
+      </li>
+      <li><a href="https://github.com/keon/algorithms">Keon Algorithms</a></li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=TOb1tuEZ2X4"
+          >MIT Open Course</a
+        >
+      </li>
+    </ul>
+  </body>
 </html>
