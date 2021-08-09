@@ -1,10 +1,6 @@
 # Algorithms For Each Major CS Language:
 
-
-
-
 # Folders:
-
 
 - [./Algorithms-Explanation](./Algorithms-Explanation)
 - [./Algorithms-Explanation/en](./Algorithms-Explanation/en)
@@ -101,11 +97,9 @@
 - [./C/searching](./C/searching)
 - [./C/searching/pattern_search](./C/searching/pattern_search)
 - [./C/sorting](./C/sorting)
--
+- ***
 
----
-
----
+  ***
 
 - [./Clojure](./Clojure)
 - [./Clojure/src](./Clojure/src)
@@ -114,11 +108,9 @@
 - [./Clojure/test](./Clojure/test)
 - [./Clojure/test/data_structures](./Clojure/test/data_structures)
 - [./Clojure/test/data_structures/lists](./Clojure/test/data_structures/lists)
--
+- ***
 
----
-
----
+  ***
 
 - [./C-Plus-Plus](./C-Plus-Plus)
 - [./C-Plus-Plus/backtracking](./C-Plus-Plus/backtracking)
@@ -145,11 +137,9 @@
 - [./C-Plus-Plus/search](./C-Plus-Plus/search)
 - [./C-Plus-Plus/sorting](./C-Plus-Plus/sorting)
 - [./C-Plus-Plus/strings](./C-Plus-Plus/strings)
--
+- ***
 
----
-
----
+  ***
 
 - [./C-Sharp](./C-Sharp)
 - [./C-Sharp/Algorithms](./C-Sharp/Algorithms)
@@ -224,11 +214,9 @@
 - [./C-Sharp/Utilities/Extensions](./C-Sharp/Utilities/Extensions)
 - [./C-Sharp/Utilities.Tests](./C-Sharp/Utilities.Tests)
 - [./C-Sharp/Utilities.Tests/Extensions](./C-Sharp/Utilities.Tests/Extensions)
--
+- ***
 
----
-
----
+  ***
 
 - [./Dart](./Dart)
 - [./Dart/array](./Dart/array)
@@ -265,11 +253,9 @@
 - [./Dart/sort](./Dart/sort)
 - [./Dart/strings](./Dart/strings)
 - [./Dart/tests](./Dart/tests)
--
+- ***
 
----
-
----
+  ***
 
 - [./Elixir](./Elixir)
 - [./Elixir/lib](./Elixir/lib)
@@ -283,11 +269,9 @@
 - [./Elm](./Elm)
 - [./Elm/src](./Elm/src)
 - [./Elm/src/Sorting](./Elm/src/Sorting)
--
+- ***
 
----
-
----
+  ***
 
 - [./F-Sharp](./F-Sharp)
 - [./F-Sharp/Algorithms](./F-Sharp/Algorithms)
@@ -298,11 +282,9 @@
 - [./F-Sharp/Algorithms.Tests](./F-Sharp/Algorithms.Tests)
 - [./F-Sharp/Algorithms.Tests/Math](./F-Sharp/Algorithms.Tests/Math)
 - [./F-Sharp/Algorithms.Tests/Strings](./F-Sharp/Algorithms.Tests/Strings)
--
+- ***
 
----
-
----
+  ***
 
 - [./Go](./Go)
 - [./Go/ciphers](./Go/ciphers)
@@ -362,11 +344,9 @@
 - [./Go/strings/single-string-matching/bom](./Go/strings/single-string-matching/bom)
 - [./Go/strings/single-string-matching/horspool](./Go/strings/single-string-matching/horspool)
 - [./Go/strings/single-string-matching/kmp](./Go/strings/single-string-matching/kmp)
--
+- ***
 
----
-
----
+  ***
 
 - [./Haskell](./Haskell)
 - [./Haskell/specs](./Haskell/specs)
@@ -390,11 +370,9 @@
 - [./Haskell/src/Sorts](./Haskell/src/Sorts)
 - [./Haskell/src/SpecializedStructure](./Haskell/src/SpecializedStructure)
 - [./Haskell/src/Statistics](./Haskell/src/Statistics)
--
+- ***
 
----
-
----
+  ***
 
 - [./Java](./Java)
 - [./Java/ciphers](./Java/ciphers)
@@ -425,11 +403,9 @@
 - [./Java/Searches](./Java/Searches)
 - [./Java/Sorts](./Java/Sorts)
 - [./Java/strings](./Java/strings)
--
+- ***
 
----
-
----
+  ***
 
 - [./Javascript](./Javascript)
 - [./Javascript/Backtracking](./Javascript/Backtracking)
@@ -470,11 +446,9 @@
 - [./Javascript/Timing-Functions](./Javascript/Timing-Functions)
 - [./Javascript/Trees](./Javascript/Trees)
 - [./Javascript/Web-Programming](./Javascript/Web-Programming)
--
+- ***
 
----
-
----
+  ***
 
 - [./Julia](./Julia)
 - [./Julia/docs](./Julia/docs)
@@ -495,11 +469,9 @@
 - [./Julia/src/statistics](./Julia/src/statistics)
 - [./Julia/src/strings](./Julia/src/strings)
 - [./Julia/test](./Julia/test)
--
+- ***
 
----
-
----
+  ***
 
 - [./Jupyter](./Jupyter)
 - [./Jupyter/assets](./Jupyter/assets)
@@ -537,11 +509,9 @@
 - [./Jupyter/neural_network/RNN](./Jupyter/neural_network/RNN)
 - [./Jupyter/numerical_methods](./Jupyter/numerical_methods)
 - [./Jupyter/other](./Jupyter/other)
--
+- ***
 
----
-
----
+  ***
 
 - [./Kotlin](./Kotlin)
 - [./Kotlin/gradle](./Kotlin/gradle)
@@ -551,11 +521,9 @@
 - [./Kotlin/src/main/kotlin](./Kotlin/src/main/kotlin)
 - [./Kotlin/src/test](./Kotlin/src/test)
 - [./Kotlin/src/test/kotlin](./Kotlin/src/test/kotlin)
--
+- ***
 
----
-
----
+  ***
 
 - [./MATLAB-Octave](./MATLAB-Octave)
 - [./MATLAB-Octave/algorithms](./MATLAB-Octave/algorithms)
@@ -596,11 +564,9 @@
 - [./MATLAB-Octave/project-euler/Problem2](./MATLAB-Octave/project-euler/Problem2)
 - [./MATLAB-Octave/project-euler/Problem3](./MATLAB-Octave/project-euler/Problem3)
 - [./MATLAB-Octave/project-euler/Problem4](./MATLAB-Octave/project-euler/Problem4)
--
+- ***
 
----
-
----
+  ***
 
 - [./OCaml](./OCaml)
 - [./OCaml/searches](./OCaml/searches)
@@ -614,11 +580,9 @@
 - [./PHP/String](./PHP/String)
 - [./PHP/tests](./PHP/tests)
 - [./PHP/tests/sorting](./PHP/tests/sorting)
--
+- ***
 
----
-
----
+  ***
 
 - [./Python](./Python)
 - [./Python/arithmetic_analysis](./Python/arithmetic_analysis)
@@ -796,11 +760,9 @@
 - [./Python/sorts](./Python/sorts)
 - [./Python/strings](./Python/strings)
 - [./Python/web_programming](./Python/web_programming)
--
+- ***
 
----
-
----
+  ***
 
 - [./R](./R)
 - [./R/Association-Algorithms](./R/Association-Algorithms)
@@ -813,11 +775,9 @@
 - [./R/Mathematics](./R/Mathematics)
 - [./R/Regression-Algorithms](./R/Regression-Algorithms)
 - [./R/Sorting-Algorithms](./R/Sorting-Algorithms)
--
+- ***
 
----
-
----
+  ***
 
 - [./Ruby](./Ruby)
 - [./Ruby/backtracking](./Ruby/backtracking)
@@ -848,11 +808,9 @@
 - [./Ruby/project_euler/problem_5](./Ruby/project_euler/problem_5)
 - [./Ruby/searches](./Ruby/searches)
 - [./Ruby/sorting](./Ruby/sorting)
--
+- ***
 
----
-
----
+  ***
 
 - [./Rust](./Rust)
 - [./Rust/git_hooks](./Rust/git_hooks)
@@ -864,11 +822,9 @@
 - [./Rust/src/searching](./Rust/src/searching)
 - [./Rust/src/sorting](./Rust/src/sorting)
 - [./Rust/src/string](./Rust/src/string)
--
+- ***
 
----
-
----
+  ***
 
 - [./Scala](./Scala)
 - [./Scala/project](./Scala/project)
@@ -877,18 +833,14 @@
 - [./Scala/src/main/scala](./Scala/src/main/scala)
 - [./Scala/src/test](./Scala/src/test)
 - [./Scala/src/test/scala](./Scala/src/test/scala)
--
+- ***
 
----
-
----
+  ***
 
 - [./scripts](./scripts)
--
+- ***
 
----
-
----
+  ***
 
 - [./Swift](./Swift)
 - [./Swift/algorithms](./Swift/algorithms)
@@ -905,11 +857,9 @@
 - [./Swift/recursion](./Swift/recursion)
 - [./Swift/sorts](./Swift/sorts)
 - [./Swift/trees](./Swift/trees)
--
+- ***
 
----
-
----
+  ***
 
 - [./TheAlgorithms.github.io](./TheAlgorithms.github.io)
 - [./TheAlgorithms.github.io/images](./TheAlgorithms.github.io/images)
@@ -917,15 +867,12 @@
 - [./TheAlgorithms.github.io/static](./TheAlgorithms.github.io/static)
 - [./TheAlgorithms.github.io/static/css](./TheAlgorithms.github.io/static/css)
 - [./TheAlgorithms.github.io/static/img](./TheAlgorithms.github.io/static/img)
--
+- ***
 
----
-
----
+  ***
 
 - [./website](./website)
 - [./website-old](./website-old)
 - [./website-old/css](./website-old/css)
 - [./website-old/images](./website-old/images)
 - [./website-old/images/svg](./website-old/images/svg)
-

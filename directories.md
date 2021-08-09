@@ -1,8 +1,4 @@
-
-
-
 #### Directory Structure
-
 
 ```
 .
