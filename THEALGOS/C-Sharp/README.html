@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="the-algorithms---c">The Algorithms - C</h1>
+<p><a href="https://travis-ci.com/TheAlgorithms/C-Sharp"><img src="https://travis-ci.com/TheAlgorithms/C-Sharp.svg?branch=master" alt="Build Status" /></a> <a href="https://www.codacy.com/app/siriak/C-Sharp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TheAlgorithms/C-Sharp&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/6f6c4c370fc04857914dd04b91c5d675" alt="Codacy Badge" /></a> <a href="https://codecov.io/gh/TheAlgorithms/C-Sharp"><img src="https://codecov.io/gh/TheAlgorithms/C-Sharp/branch/master/graph/badge.svg" alt="codecov" /></a> <a href="https://dashboard.guardrails.io/default/gh/TheAlgorithms/C-Sharp"><img src="https://badges.guardrails.io/TheAlgorithms/C-Sharp.svg?token=84805208ba243f0931a74c5148883f894cbe9fd97fe54d64d6d0a89852067548" alt="GuardRails badge" /></a></p>
+<p>This repository contains algorithms and data structures implemented in C# for educational purposes.</p>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><p><a href="./Algorithms">Algorithms</a></p>
+<ul>
+<li><a href="./Algorithms/DataCompression">Data Compression</a>
+<ul>
+<li><a href="./Algorithms/DataCompression/BurrowsWheelerTransform.cs">Burrows-Wheeler transform</a></li>
+<li><a href="./Algorithms/DataCompression/HuffmanCompressor.cs">Huffman Compressor</a></li>
+<li><a href="./Algorithms/DataCompression/ShannonFanoCompressor.cs">Shannon-Fano Compressor</a></li>
+</ul></li>
+<li><a href="./Algorithms/Encoders">Encoders</a>
+<ul>
+<li><a href="./Algorithms/Encoders/CaesarEncoder.cs">Caesar</a></li>
+<li><a href="./Algorithms/Encoders/VigenereEncoder.cs">Vigenere</a></li>
+<li><a href="./Algorithms/Encoders/HillEncoder.cs">Hill</a></li>
+<li><a href="./Algorithms/Encoders/NysiisEncoder.cs">NYSIIS</a></li>
+<li><a href="./Algorithms/Encoders/SoundexEncoder.cs">Soundex</a></li>
+</ul></li>
+<li><a href="./Algorithms/Knapsack">Knapsack problem</a>
+<ul>
+<li><a href="./Algorithms/Knapsack/NaiveKnapsackSolver.cs">Naive solver</a></li>
+<li><a href="./Algorithms/Knapsack/DynamicProgrammingKnapsackSolver.cs">Dynamic Programming solver</a></li>
+<li><a href="./Algorithms/Knapsack/BranchAndBoundKnapsackSolver.cs">Branch and bound solver</a></li>
+</ul></li>
+<li><a href="./Algorithms/LinearAlgebra">Linear Algebra</a>
+<ul>
+<li><a href="./Algorithms/LinearAlgebra/Eigenvalue">Eigenvalue</a>
+<ul>
+<li><a href="./Algorithms/LinearAlgebra/Eigenvalue/PowerIteration.cs">Power Iteration</a></li>
+</ul></li>
+</ul></li>
+<li><a href="./Algorithms/Numeric">Numeric</a>
+<ul>
+<li><a href="./Algorithms/Numeric/AliquotSumCalculator.cs">Aliquot Sum Calculator</a></li>
+<li><a href="./Algorithms/Numeric/Decomposition">Decomposition</a>
+<ul>
+<li><a href="./Algorithms/Numeric/Decomposition/LU.cs">LU Decomposition</a></li>
+<li><a href="./Algorithms/Numeric/Decomposition/ThinSVD.cs">Thin Singular Vector Decomposition</a></li>
+</ul></li>
+<li><a href="./Algorithms/Numeric/GreatestCommonDivisor">Greatest Common Divisor</a>
+<ul>
+<li><a href="./Algorithms/Numeric/GreatestCommonDivisor/EuclideanGreatestCommonDivisorFinder.cs">Euclidean GCD</a></li>
+<li><a href="./Algorithms/Numeric/GreatestCommonDivisor/BinaryGreatestCommonDivisorFinder.cs">Binary GCD</a></li>
+</ul></li>
+<li><a href="./Algorithms/Numeric/Factorization">Factorization</a>
+<ul>
+<li><a href="./Algorithms/Numeric/Factorization/TrialDivisionFactorizer.cs">Trial division Factorization</a></li>
+</ul></li>
+<li><a href="./Algorithms/Numeric/Series">Series</a>
+<ul>
+<li><a href="./Algorithms/Numeric/Series/Maclaurin.cs">Maclaurin Series</a></li>
+</ul></li>
+<li><a href="./Algorithms/Numeric/GaussJordanElimination.cs">Gauss-Jordan Elimination</a></li>
+<li><a href="./Algorithms/Numeric/Pseudoinverse/PseudoInverse.cs">Pseudo-Inverse</a></li>
+<li><a href="./Algorithms/Numeric/NarcissisticNumberChecker.cs">Narcissistic Number Checker</a></li>
+<li><a href="./Algorithms/Numeric/PerfectNumberChecker.cs">Perfect Number Checker</a></li>
+<li><a href="./Algorithms/Numeric/PerfectSquareChecker.cs">Perfect Square Checker</a></li>
+<li><a href="./Algorithms/Numeric/EulerMethod.cs">Euler Method</a></li>
+</ul></li>
+<li><a href="./Algorithms/Search">Searches</a>
+<ul>
+<li><a href="./Algorithms/Search/AStar/">A-Star</a></li>
+<li><a href="./Algorithms/Search/BinarySearcher.cs">Binary Search</a></li>
+<li><a href="./Algorithms/Search/RecursiveBinarySearcher.cs">Recursive Binary Search</a></li>
+<li><a href="./Algorithms/Search/LinearSearcher.cs">Linear Search</a></li>
+<li><a href="./Algorithms/Search/FastSearcher.cs">Fast Search</a></li>
+<li><a href="./Algorithms/Search/JumpSearcher.cs">Jump Search</a></li>
+</ul></li>
+<li><a href="./Algorithms/Sorters">Sorts</a>
+<ul>
+<li><a href="./Algorithms/Sorters/Comparison">Comparison</a>
+<ul>
+<li><a href="./Algorithms/Sorters/Comparison/BinaryInsertionSorter.cs">Binary Insertion Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/BogoSorter.cs">Bogo Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/BubbleSorter.cs">Bubble Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/CocktailSorter.cs">Cocktail Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/CombSorter.cs">Comb Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/CycleSorter.cs">Cycle Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/HeapSorter.cs">Heap Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/InsertionSorter.cs">Insertion Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/MergeSorter.cs">Merge Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/PancakeSorter.cs">Pancake Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/QuickSorter.cs">Quick Sort</a>
+<ul>
+<li><a href="./Algorithms/Sorters/Comparison/MedianOfThreeQuickSorter.cs">Median of three pivot</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/MiddlePointQuickSorter.cs">Middle point pivot</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/RandomPivotQuickSorter.cs">Random pivot</a></li>
+</ul></li>
+<li><a href="./Algorithms/Sorters/Comparison/SelectionSorter.cs">Selection Sort</a></li>
+<li><a href="./Algorithms/Sorters/Comparison/ShellSorter.cs">Shell Sort</a></li>
+</ul></li>
+<li><a href="./Algorithms/Sorters/External">External</a>
+<ul>
+<li><a href="./Algorithms/Sorters/External/ExternalMergeSorter.cs">Merge Sort</a></li>
+</ul></li>
+<li><a href="./Algorithms/Sorters/Integer">Integer</a>
+<ul>
+<li><a href="./Algorithms/Sorters/Integer/CountingSorter.cs">Counting Sort</a></li>
+<li><a href="./Algorithms/Sorters/Integer/BucketSorter.cs">Bucket Sort</a></li>
+<li><a href="./Algorithms/Sorters/Integer/RadixSorter.cs">Radix Sort</a></li>
+</ul></li>
+<li><a href="./Algorithms/Sorters/String">String</a>
+<ul>
+<li><a href="./Algorithms/Sorters/String/MsdRadixStringSorter.cs">MSD Radix Sort</a></li>
+<li><a href="./Algorithms/Strings/KnuthMorrisPrattSearcher.cs">Knuth–Morris–Pratt Search</a></li>
+</ul></li>
+</ul></li>
+<li><a href="./Algorithms/Sequences">Sequences</a>
+<ul>
+<li><a href="./Algorithms/Sequences/NaturalSequence.cs">A000027 Natural</a></li>
+<li><a href="./Algorithms/Sequences/PrimesSequence.cs">A000040 Primes</a></li>
+<li><a href="./Algorithms/Sequences/FibonacciSequence.cs">A000045 Fibonacci</a></li>
+<li><a href="./Algorithms/Sequences/FactorialSequence.cs">A000142 Factorial</a></li>
+<li><a href="./Algorithms/Sequences/BinomialSequence.cs">A007318 Binomial</a></li>
+</ul></li>
+<li><a href="./Algorithms/Strings">String</a>
+<ul>
+<li><a href="./Algorithms/Strings/GeneralStringAlgorithms.cs">Longest Consecutive Character</a></li>
+<li><a href="./Algorithms/Strings/NaiveStringSearch.cs">Naive String Search</a></li>
+<li><a href="./Algorithms/Strings/RabinKarp.cs">Rabin Karp</a></li>
+<li><a href="./Algorithms/Strings/BoyerMoore.cs">Boyer Moore</a></li>
+<li><a href="./Algorithms/Strings/palindrome.cs">Palindrome Checker</a></li>
+</ul></li>
+<li><a href="./Algorithms/Other">Other</a>
+<ul>
+<li><a href="./Algorithms/Other/FermatPrimeChecker.cs">Fermat Prime Checker</a></li>
+<li><a href="./Algorithms/Other/SieveOfEratosthenes.cs">Sieve of Eratosthenes</a></li>
+<li><a href="./Algorithms/Other/Luhn.cs">Luhn</a></li>
+<li><a href="./Algorithms/Other/Mandelbrot.cs">Mandelbrot</a></li>
+<li><a href="./Algorithms/Other/KochSnowflake.cs">Koch Snowflake</a></li>
+<li><a href="./Algorithms/Other/RGBHSVConversion.cs">RGB-HSV Conversion</a></li>
+<li><a href="./Algorithms/Other/FloodFill.cs">Flood Fill</a></li>
+</ul></li>
+<li><a href="./Algorithms/Problems">Problems</a>
+<ul>
+<li><a href="./Algorithms/Problems/StableMarriage">Stable Marriage</a>
+<ul>
+<li><a href="./Algorithms/Problems/StableMarriage/GaleShapley.cs">Gale-Shapley</a></li>
+</ul></li>
+<li><a href="./Algorithms/Problems/NQueens">N-Queens</a>
+<ul>
+<li><a href="./Algorithms/Problems/NQueens/BacktrackingNQueensSolver.cs">Backtracking</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="./DataStructures">Data Structures</a>
+<ul>
+<li><a href="./DataStructures/BitArray.cs">Bit Array</a></li>
+<li><a href="./DataStructures/Timeline.cs">Timeline</a></li>
+<li><a href="./DataStructures/SegmentTrees">Segment Trees</a>
+<ul>
+<li><a href="./DataStructures/SegmentTrees/SegmentTree.cs">Segment Tree</a></li>
+<li><a href="./DataStructures/SegmentTrees/SegmentTreeApply.cs">Segment Tree Multiplication</a></li>
+<li><a href="./DataStructures/SegmentTrees/SegmentTreeUpdate.cs">Segment Tree Update</a></li>
+</ul></li>
+<li><a href="./DataStructures/BinarySearchTree">Binary Search Tree</a></li>
+<li><a href="./DataStructures/AATree">AA Tree</a></li>
+<li><a href="./DataStructures/Stack">Stack</a>
+<ul>
+<li><a href="./DataStructures/Stack/ArrayBasedStack.cs">Array-based Stack</a></li>
+<li><a href="./DataStructures/Stack/ListBasedStack.cs">List-based Stack</a></li>
+</ul></li>
+<li><a href="./DataStructures/Heap">Heap</a>
+<ul>
+<li><a href="./DataStructures/Heap/MinMaxHeap.cs">Min-Max Heap</a></li>
+<li><a href="./DataStructures/Heap/BinaryHeap.cs">Binary Heap</a></li>
+<li><a href="./DataStructures/Heap/FibonacciHeap/FibonacciHeap.cs">Fibonacci Heap</a></li>
+</ul></li>
+<li><a href="./DataStructures/Queue">Queue</a>
+<ul>
+<li><a href="./DataStructures/Queue/ArrayBasedQueue.cs">Array-based Queue</a></li>
+<li><a href="./DataStructures/Queue/ListBasedQueue.cs">List-based Queue</a></li>
+<li><a href="./DataStructures/Queue/StackBasedQueue.cs">Stack-based Queue</a></li>
+</ul></li>
+<li><a href="./DataStructures/LinkedList">Linked List</a>
+<ul>
+<li><a href="./DataStructures/LinkedList/SinglyLinkedList/SinglyLinkedList.cs">Singly Linked List</a></li>
+<li><a href="./DataStructures/LinkedList/DoublyLinkedList/DoublyLinkedList.cs">Doubly Linked List</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>You can contribute with pleasure to this repository. Please orient on the directory structure and overall code style of this repository and refer to <a href="./CONTRIBUTING.md">our contributing guidelines</a> for more detail. If you want to ask a question or suggest something, please open an issue.</p>
+</body>
+</html>
