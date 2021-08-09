@@ -1,0 +1,31 @@
+{
+  "slug": "remove-duplicate",
+  "name": "Remove Duplicate",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/remove_duplicate.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/remove_duplicate.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">remove_duplicates</span>(<span class=\"hljs-params\">sentence: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Remove duplicates from sentence\n    &gt;&gt;&gt; remove_duplicates(&quot;Python is great and Java is also great&quot;)\n    &#x27;Java Python also and great is&#x27;\n    &gt;&gt;&gt; remove_duplicates(&quot;Python   is      great and Java is also great&quot;)\n    &#x27;Java Python also and great is&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot; &quot;</span>.join(<span class=\"hljs-built_in\">sorted</span>(<span class=\"hljs-built_in\">set</span>(sentence.split())))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sarath Kaul",
+      "email": "sarath.kaul@searce.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

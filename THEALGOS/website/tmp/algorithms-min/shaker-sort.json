@@ -1,0 +1,21 @@
+{
+  "slug": "shaker-sort",
+  "name": "Shaker Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "neelneelpurk",
+      "email": "soumyadeep1999.np@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

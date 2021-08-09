@@ -1,0 +1,16 @@
+{
+  "slug": "bidirectional-dijkstra",
+  "name": "Bidirectional Dijkstra",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Ricardo Andrés Marino Rojas",
+      "email": "47573394+Marinovsky@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

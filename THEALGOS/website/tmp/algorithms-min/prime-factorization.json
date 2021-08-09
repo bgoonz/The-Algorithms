@@ -1,0 +1,47 @@
+{
+  "slug": "prime-factorization",
+  "name": "Prime Factorization",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": "",
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "NorthernBrain",
+      "email": "ofmyhub@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "VTolas",
+      "email": "64403418+vtolas@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "linus-xuzixuan",
+      "email": "32212868+linus-xuzixuan@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "akhem301",
+      "email": "akhem301@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

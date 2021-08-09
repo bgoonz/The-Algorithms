@@ -1,0 +1,17 @@
+{
+  "slug": "spirograph",
+  "name": "Spirograph",
+  "categories": ["graphics"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

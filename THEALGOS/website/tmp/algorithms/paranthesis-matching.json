@@ -1,0 +1,41 @@
+{
+  "slug": "paranthesis-matching",
+  "name": "Paranthesis Matching",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "others/paranthesis_matching.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/others/paranthesis_matching.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief Perform paranthesis matching. \\note Do not know the application of\n * this, however.\n * @note Implementation is C-type and does not utilize the C++ constructs\n * @todo implement as a C++ class\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">ifdef</span> _MSC_VER</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;string&gt;</span>  <span class=\"hljs-comment\">// Visual Studio C requires this include</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">else</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cstring&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">endif</span></span>\n\n<span class=\"hljs-comment\">/** check number */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">define</span> MAX 100</span>\n\n<span class=\"hljs-comment\">//! @{-------------- stack --------------</span>\n<span class=\"hljs-comment\">//! global stack</span>\n<span class=\"hljs-type\">char</span> stack[MAX];\n\n<span class=\"hljs-comment\">//! pointer to track stack index</span>\n<span class=\"hljs-type\">int</span> stack_idx = <span class=\"hljs-number\">-1</span>;\n\n<span class=\"hljs-comment\">//! push byte to stack variable</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">push</span><span class=\"hljs-params\">(<span class=\"hljs-type\">char</span> ch)</span> </span>{ stack[++stack_idx] = ch; }\n\n<span class=\"hljs-comment\">//! pop a byte out of stack variable</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">char</span> <span class=\"hljs-title\">pop</span><span class=\"hljs-params\">()</span> </span>{ <span class=\"hljs-keyword\">return</span> stack[stack_idx--]; }\n\n<span class=\"hljs-comment\">//! @}-------------- end stack -----------</span>\n\n<span class=\"hljs-comment\">/** return opening paranthesis corresponding to the close paranthesis\n * @param[in] ch closed paranthesis character\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">char</span> <span class=\"hljs-title\">opening</span><span class=\"hljs-params\">(<span class=\"hljs-type\">char</span> ch)</span> </span>{\n    <span class=\"hljs-built_in\">switch</span> (ch) {\n    <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;}&#x27;</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;{&#x27;</span>;\n    <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;]&#x27;</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;[&#x27;</span>;\n    <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;)&#x27;</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;(&#x27;</span>;\n    <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;&gt;&#x27;</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;&lt;&#x27;</span>;\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;\\0&#x27;</span>;\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    std::string exp;\n    <span class=\"hljs-type\">int</span> valid = <span class=\"hljs-number\">1</span>, i = <span class=\"hljs-number\">0</span>;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter The Expression : &quot;</span>;\n    std::cin &gt;&gt; exp;\n\n    <span class=\"hljs-keyword\">while</span> (valid == <span class=\"hljs-number\">1</span> &amp;&amp; i &lt; exp.<span class=\"hljs-built_in\">length</span>()) {\n        <span class=\"hljs-keyword\">if</span> (exp[i] == <span class=\"hljs-string\">&#x27;(&#x27;</span> || exp[i] == <span class=\"hljs-string\">&#x27;{&#x27;</span> || exp[i] == <span class=\"hljs-string\">&#x27;[&#x27;</span> || exp[i] == <span class=\"hljs-string\">&#x27;&lt;&#x27;</span>) {\n            <span class=\"hljs-built_in\">push</span>(exp[i]);\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (stack_idx &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; stack[stack_idx] == <span class=\"hljs-built_in\">opening</span>(exp[i])) {\n            <span class=\"hljs-built_in\">pop</span>();\n        } <span class=\"hljs-keyword\">else</span> {\n            valid = <span class=\"hljs-number\">0</span>;\n        }\n        i++;\n    }\n\n    <span class=\"hljs-comment\">// makes sure the stack is empty after processsing (above)</span>\n    <span class=\"hljs-keyword\">if</span> (valid == <span class=\"hljs-number\">1</span> &amp;&amp; stack_idx == <span class=\"hljs-number\">-1</span>) {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nCorrect Expression&quot;</span>;\n    } <span class=\"hljs-keyword\">else</span> {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nWrong Expression&quot;</span>;\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

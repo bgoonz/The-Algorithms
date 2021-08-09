@@ -1,0 +1,26 @@
+{
+  "slug": "eulerian-path-and-circuit-for-undirected-graph",
+  "name": "Eulerian Path and Circuit for Undirected Graph",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Reshad Hasan",
+      "email": "reshadhasan555@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

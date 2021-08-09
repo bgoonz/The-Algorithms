@@ -1,0 +1,70 @@
+{
+  "slug": "trie",
+  "name": "Trie",
+  "categories": ["datastructures", "trie"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c": "",
+    "go": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "lakhan_nad",
+      "email": "lakhannad1999@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ranadeep Biswas",
+      "email": "ranadip.bswas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sangeet K",
+      "email": "sangeethk.137@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Javon Davis",
+      "email": "JavonDavis@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Shashike Dissanayake",
+      "email": "shashikedissanayake@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "longest-increasing-subsequence-onlogn",
+  "name": "Longest Increasing Subsequence O(nlogn)",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/longest_increasing_subsequence_o(nlogn).py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/longest_increasing_subsequence_o(nlogn).py",
+      "code": "<span class=\"hljs-comment\">#############################</span>\n<span class=\"hljs-comment\"># Author: Aravind Kashyap</span>\n<span class=\"hljs-comment\"># File: lis.py</span>\n<span class=\"hljs-comment\"># comments: This programme outputs the Longest Strictly Increasing Subsequence in</span>\n<span class=\"hljs-comment\">#           O(NLogN) Where N is the Number of elements in the list</span>\n<span class=\"hljs-comment\">#############################</span>\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">CeilIndex</span>(<span class=\"hljs-params\">v, l, r, key</span>):  <span class=\"hljs-comment\"># noqa: E741</span>\n    <span class=\"hljs-keyword\">while</span> r - l &gt; <span class=\"hljs-number\">1</span>:\n        m = (l + r) // <span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">if</span> v[m] &gt;= key:\n            r = m\n        <span class=\"hljs-keyword\">else</span>:\n            l = m  <span class=\"hljs-comment\"># noqa: E741</span>\n    <span class=\"hljs-keyword\">return</span> r\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">LongestIncreasingSubsequenceLength</span>(<span class=\"hljs-params\">v: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; LongestIncreasingSubsequenceLength([2, 5, 3, 7, 11, 8, 10, 13, 6])\n    6\n    &gt;&gt;&gt; LongestIncreasingSubsequenceLength([])\n    0\n    &gt;&gt;&gt; LongestIncreasingSubsequenceLength([0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3,\n    ...                                     11, 7, 15])\n    6\n    &gt;&gt;&gt; LongestIncreasingSubsequenceLength([5, 4, 3, 2, 1])\n    1\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(v) == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n\n    tail = [<span class=\"hljs-number\">0</span>] * <span class=\"hljs-built_in\">len</span>(v)\n    length = <span class=\"hljs-number\">1</span>\n\n    tail[<span class=\"hljs-number\">0</span>] = v[<span class=\"hljs-number\">0</span>]\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-built_in\">len</span>(v)):\n        <span class=\"hljs-keyword\">if</span> v[i] &lt; tail[<span class=\"hljs-number\">0</span>]:\n            tail[<span class=\"hljs-number\">0</span>] = v[i]\n        <span class=\"hljs-keyword\">elif</span> v[i] &gt; tail[length - <span class=\"hljs-number\">1</span>]:\n            tail[length] = v[i]\n            length += <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">else</span>:\n            tail[CeilIndex(tail, -<span class=\"hljs-number\">1</span>, length - <span class=\"hljs-number\">1</span>, v[i])] = v[i]\n\n    <span class=\"hljs-keyword\">return</span> length\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "aravindiiitb",
+      "email": "konakondla.sak@iiitb.org",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

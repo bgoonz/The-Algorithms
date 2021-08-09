@@ -1,0 +1,11 @@
+{
+  "slug": "fibonacci-fast",
+  "name": "Fibonacci Fast",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

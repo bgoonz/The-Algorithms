@@ -1,0 +1,21 @@
+{
+  "slug": "reverse-words-of-string",
+  "name": "Reverse Words of String",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "strings/reverse_words_of_string.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/strings/reverse_words_of_string.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;package:test/test.dart&#x27;</span>;\n\n<span class=\"hljs-built_in\">String</span> reverseStringWords(<span class=\"hljs-built_in\">String</span> s) {\n  <span class=\"hljs-built_in\">String</span> res = <span class=\"hljs-string\">&quot;&quot;</span>;\n  <span class=\"hljs-built_in\">int</span> m = s.length;\n  <span class=\"hljs-built_in\">int</span> j = m - <span class=\"hljs-number\">1</span>;\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = m - <span class=\"hljs-number\">1</span>; i &gt;= <span class=\"hljs-number\">0</span>; i--) {\n    <span class=\"hljs-keyword\">if</span> (s[i] == <span class=\"hljs-string\">&#x27;.&#x27;</span>) {\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> j1 = i + <span class=\"hljs-number\">1</span>; j1 &lt;= j; j1++) {\n        res += s[j1];\n      }\n      res += s[i];\n      j = i - <span class=\"hljs-number\">1</span>;\n    } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (i == <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> j1 = i; j1 &lt;= j; j1++) {\n        res += s[j1];\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> res;\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  test(<span class=\"hljs-string\">&quot;reverseStringWords single word returns same word&quot;</span>, () {\n    expect(reverseStringWords(<span class=\"hljs-string\">&quot;word&quot;</span>), equals(<span class=\"hljs-string\">&quot;word&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;reverseStringWords w1.w2 returns w2.w1&quot;</span>, () {\n    expect(reverseStringWords(<span class=\"hljs-string\">&quot;w1.w2&quot;</span>), equals(<span class=\"hljs-string\">&quot;w2.w1&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;reverseStringWords on empty string returns empty string&quot;</span>, () {\n    expect(reverseStringWords(<span class=\"hljs-string\">&quot;&quot;</span>), equals(<span class=\"hljs-string\">&quot;&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;reverseStringWords&quot;</span>, () {\n    expect(reverseStringWords(<span class=\"hljs-string\">&quot;abhishek.is.a.good.boy&quot;</span>),\n        equals(<span class=\"hljs-string\">&quot;boy.good.a.is.abhishek&quot;</span>));\n  });\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ganesh Agarwal",
+      "email": "69008792+Ganesh-Agarwal-25@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

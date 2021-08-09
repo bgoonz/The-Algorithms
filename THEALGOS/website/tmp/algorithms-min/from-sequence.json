@@ -1,0 +1,21 @@
+{
+  "slug": "from-sequence",
+  "name": "From Sequence",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Hanif Ali",
+      "email": "alihanif016@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "lu-decomposition",
+  "name": "Lu Decomposition",
+  "categories": ["numericalanalysis"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "dart": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "arfy slowy",
+      "email": "slowy.arfy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sven",
+      "email": "69042800+Svn-Sp@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rafael García Cuéllar",
+      "email": "r.gc@hotmail.es",
+      "commits": 1
+    },
+    {
+      "name": "Mavroudo",
+      "email": "mavroudo@csd.auth.gr",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

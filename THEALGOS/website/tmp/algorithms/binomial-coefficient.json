@@ -1,0 +1,31 @@
+{
+  "slug": "binomial-coefficient",
+  "name": "Binomial Coefficient",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/binomial_coefficient.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/binomial_coefficient.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">binomial_coefficient</span>(<span class=\"hljs-params\">n, r</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Find binomial coefficient using pascals triangle.\n\n    &gt;&gt;&gt; binomial_coefficient(10, 5)\n    252\n    &quot;&quot;&quot;</span>\n    C = [<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(r + <span class=\"hljs-number\">1</span>)]\n    <span class=\"hljs-comment\"># nc0 = 1</span>\n    C[<span class=\"hljs-number\">0</span>] = <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, n + <span class=\"hljs-number\">1</span>):\n        <span class=\"hljs-comment\"># to compute current row from previous row.</span>\n        j = <span class=\"hljs-built_in\">min</span>(i, r)\n        <span class=\"hljs-keyword\">while</span> j &gt; <span class=\"hljs-number\">0</span>:\n            C[j] += C[j - <span class=\"hljs-number\">1</span>]\n            j -= <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">return</span> C[r]\n\n\n<span class=\"hljs-built_in\">print</span>(binomial_coefficient(n=<span class=\"hljs-number\">10</span>, r=<span class=\"hljs-number\">5</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "1fisedi",
+      "email": "51143882+1fisedi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "prathmesh1199",
+      "email": "51616294+prathmesh1199@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

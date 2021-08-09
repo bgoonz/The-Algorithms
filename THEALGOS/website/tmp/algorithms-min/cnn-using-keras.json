@@ -1,0 +1,16 @@
+{
+  "slug": "cnn-using-keras",
+  "name": "CNN-Using Keras",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "DeepankarAcharyya",
+      "email": "deepankaracharyya@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

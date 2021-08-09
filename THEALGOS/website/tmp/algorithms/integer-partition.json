@@ -1,0 +1,31 @@
+{
+  "slug": "integer-partition",
+  "name": "Integer Partition",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/integer_partition.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/integer_partition.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThe number of partitions of a number n into at least k parts equals the number of\npartitions into exactly k parts plus the number of partitions into at least k-1 parts.\nSubtracting 1 from each part of a partition of n into k parts gives a partition of n-k\ninto k parts. These two facts together are used for this algorithm.\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">partition</span>(<span class=\"hljs-params\">m</span>):\n    memo = [[<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(m)] <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(m + <span class=\"hljs-number\">1</span>)]\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(m + <span class=\"hljs-number\">1</span>):\n        memo[i][<span class=\"hljs-number\">0</span>] = <span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">for</span> n <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(m + <span class=\"hljs-number\">1</span>):\n        <span class=\"hljs-keyword\">for</span> k <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, m):\n            memo[n][k] += memo[n][k - <span class=\"hljs-number\">1</span>]\n            <span class=\"hljs-keyword\">if</span> n - k &gt; <span class=\"hljs-number\">0</span>:\n                memo[n][k] += memo[n - k - <span class=\"hljs-number\">1</span>][k]\n\n    <span class=\"hljs-keyword\">return</span> memo[m][m - <span class=\"hljs-number\">1</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> sys\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(sys.argv) == <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">try</span>:\n            n = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter a number: &quot;</span>).strip())\n            <span class=\"hljs-built_in\">print</span>(partition(n))\n        <span class=\"hljs-keyword\">except</span> ValueError:\n            <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Please enter a number.&quot;</span>)\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">try</span>:\n            n = <span class=\"hljs-built_in\">int</span>(sys.argv[<span class=\"hljs-number\">1</span>])\n            <span class=\"hljs-built_in\">print</span>(partition(n))\n        <span class=\"hljs-keyword\">except</span> ValueError:\n            <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Please pass a number.&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Daniel Ingram",
+      "email": "ingramds@appstate.edu",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "iterating-through-submasks",
+  "name": "Iterating Through Submasks",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "faizan2700",
+      "email": "46817346+faizan2700@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

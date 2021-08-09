@@ -1,0 +1,21 @@
+{
+  "slug": "minimum-steps-to-one",
+  "name": "Minimum Steps to One",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/minimum_steps_to_one.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/minimum_steps_to_one.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nYouTube Explanation: https://www.youtube.com/watch?v=f2xi3c1S95M\n\nGiven an integer n, return the minimum steps to 1\n\nAVAILABLE STEPS:\n    * Decrement by 1\n    * if n is divisible by 2, divide by 2\n    * if n is divisible by 3, divide by 3\n\n\nExample 1: n = 10\n10 -&gt; 9 -&gt; 3 -&gt; 1\nResult: 3 steps\n\nExample 2: n = 15\n15 -&gt; 5 -&gt; 4 -&gt; 2 -&gt; 1\nResult: 4 steps\n\nExample 3: n = 6\n6 -&gt; 2 -&gt; 1\nResult: 2 step\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n__author__ = <span class=\"hljs-string\">&quot;Alexander Joslin&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">min_steps_to_one</span>(<span class=\"hljs-params\">number: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Minimum steps to 1 implemented using tabulation.\n    &gt;&gt;&gt; min_steps_to_one(10)\n    3\n    &gt;&gt;&gt; min_steps_to_one(15)\n    4\n    &gt;&gt;&gt; min_steps_to_one(6)\n    2\n\n    :param number:\n    :return int:\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> number &lt;= <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">f&quot;n must be greater than 0. Got n = <span class=\"hljs-subst\">{number}</span>&quot;</span>)\n\n    table = [number + <span class=\"hljs-number\">1</span>] * (number + <span class=\"hljs-number\">1</span>)\n\n    <span class=\"hljs-comment\"># starting position</span>\n    table[<span class=\"hljs-number\">1</span>] = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, number):\n        table[i + <span class=\"hljs-number\">1</span>] = <span class=\"hljs-built_in\">min</span>(table[i + <span class=\"hljs-number\">1</span>], table[i] + <span class=\"hljs-number\">1</span>)\n        <span class=\"hljs-comment\"># check if out of bounds</span>\n        <span class=\"hljs-keyword\">if</span> i * <span class=\"hljs-number\">2</span> &lt;= number:\n            table[i * <span class=\"hljs-number\">2</span>] = <span class=\"hljs-built_in\">min</span>(table[i * <span class=\"hljs-number\">2</span>], table[i] + <span class=\"hljs-number\">1</span>)\n        <span class=\"hljs-comment\"># check if out of bounds</span>\n        <span class=\"hljs-keyword\">if</span> i * <span class=\"hljs-number\">3</span> &lt;= number:\n            table[i * <span class=\"hljs-number\">3</span>] = <span class=\"hljs-built_in\">min</span>(table[i * <span class=\"hljs-number\">3</span>], table[i] + <span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">return</span> table[number]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Alex Joslin",
+      "email": "aljoslin13@yahoo.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

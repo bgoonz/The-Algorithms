@@ -1,0 +1,36 @@
+{
+  "slug": "floydtriangle",
+  "name": "FloydTriangle",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/FloydTriangle.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/FloydTriangle.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">FloydTriangle</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">sc</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n    System.out.println(<span class=\"hljs-string\">&quot;Enter the number of rows which you want in your Floyd Triangle: &quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">r</span> <span class=\"hljs-operator\">=</span> sc.nextInt(), n = <span class=\"hljs-number\">0</span>;\n    sc.close();\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; r; i++) {\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; j &lt;= i; j++) {\n        System.out.print(++n + <span class=\"hljs-string\">&quot; &quot;</span>);\n      }\n      System.out.println();\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "JeonSeongBae",
+      "email": "tjdqo6042@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "sorted-arrays-intersection",
+  "name": "Sorted Arrays Intersection",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

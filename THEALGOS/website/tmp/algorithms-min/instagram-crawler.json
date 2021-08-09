@@ -1,0 +1,21 @@
+{
+  "slug": "instagram-crawler",
+  "name": "Instagram Crawler",
+  "categories": ["webprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "YOGESHWARAN R",
+      "email": "yogeshin247@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

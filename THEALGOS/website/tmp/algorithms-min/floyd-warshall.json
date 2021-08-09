@@ -1,0 +1,96 @@
+{
+  "slug": "floyd-warshall",
+  "name": "Floyd Warshall",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ioane margiani",
+      "email": "imarg16@freeuni.edu.ge",
+      "commits": 1
+    },
+    {
+      "name": "utkarsh",
+      "email": "ucponia@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Chen Ostrovski",
+      "email": "chenostrovski@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Stephen Gemin",
+      "email": "45926479+StephenGemin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "ashu01",
+      "email": "as01hu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sarot Busala",
+      "email": "sabuza97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayush Nagar",
+      "email": "32647423+ayushnagar123@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "arpanjain97",
+      "email": "arpanjain97@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "hammingdistance",
+  "name": "HammingDistance",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": "",
+    "c-plus-plus": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "cozek",
+      "email": "kaushikamardas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Verma",
+      "email": "50954641+sarcastic-verma@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ravishankar Joshi",
+      "email": "21024229+ravibitsgoa@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "AbhinavXT",
+      "email": "abhinavpathaka17@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "whileloopfactorial",
+  "name": "WhileLoopFactorial",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/WhileLoopFactorial.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/WhileLoopFactorial.js",
+      "code": "<span class=\"hljs-comment\">/*\n    author: Theepag\n */</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">factorialize</span> = (<span class=\"hljs-params\">num</span>) =&gt; {\n  <span class=\"hljs-comment\">// Step 1. variable result to store num</span>\n  <span class=\"hljs-keyword\">let</span> result = num\n  <span class=\"hljs-comment\">// If num = 0 OR 1, the factorial will return 1</span>\n  <span class=\"hljs-keyword\">if</span> (num === <span class=\"hljs-number\">0</span> || num === <span class=\"hljs-number\">1</span>) { <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span> }\n  <span class=\"hljs-comment\">// Step 2. WHILE loop</span>\n  <span class=\"hljs-keyword\">while</span> (num &gt; <span class=\"hljs-number\">1</span>) {\n    num-- <span class=\"hljs-comment\">// decrement 1 at each iteration</span>\n    result = result * num <span class=\"hljs-comment\">// or result = result * num;</span>\n  }\n  <span class=\"hljs-comment\">// Step 3. Return the factorial</span>\n  <span class=\"hljs-keyword\">return</span> result\n}\n<span class=\"hljs-comment\">// test</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">factorialize</span>(<span class=\"hljs-number\">5</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">factorialize</span>(<span class=\"hljs-number\">4</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "theepag",
+      "email": "theepag@live.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

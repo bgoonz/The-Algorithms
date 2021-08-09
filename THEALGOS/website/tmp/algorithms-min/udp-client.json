@@ -1,0 +1,21 @@
+{
+  "slug": "udp-client",
+  "name": "Udp Client",
+  "categories": ["clientserver"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Prathamesh Sahasrabhojane",
+      "email": "ssahasrabhojane@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

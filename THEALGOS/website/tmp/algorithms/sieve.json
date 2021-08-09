@@ -1,0 +1,26 @@
+{
+  "slug": "sieve",
+  "name": "Sieve",
+  "categories": ["math", "sieve"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "math/sieve/Sieve.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/math/sieve/Sieve.go",
+      "code": "<span class=\"hljs-keyword\">package</span> sieve\n\n<span class=\"hljs-comment\">// Generate generates the sequence of integers starting at 2 and sends it to the channel `ch`</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">Generate</span><span class=\"hljs-params\">(ch <span class=\"hljs-keyword\">chan</span>&lt;- <span class=\"hljs-keyword\">int</span>)</span></span> {\n\t<span class=\"hljs-keyword\">for</span> i := <span class=\"hljs-number\">2</span>; ; i++ {\n\t\tch &lt;- i\n\t}\n}\n\n<span class=\"hljs-comment\">// Sieve Sieving the numbers that are not prime from the channel - basically removing them from the channels</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">Sieve</span><span class=\"hljs-params\">(in &lt;-<span class=\"hljs-keyword\">chan</span> <span class=\"hljs-keyword\">int</span>, out <span class=\"hljs-keyword\">chan</span>&lt;- <span class=\"hljs-keyword\">int</span>, prime <span class=\"hljs-keyword\">int</span>)</span></span> {\n\t<span class=\"hljs-keyword\">for</span> {\n\t\ti := &lt;-in\n\t\t<span class=\"hljs-keyword\">if</span> i%prime != <span class=\"hljs-number\">0</span> {\n\t\t\tout &lt;- i\n\t\t}\n\t}\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "rselect",
+  "name": "Rselect",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

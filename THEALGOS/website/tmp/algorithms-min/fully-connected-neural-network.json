@@ -1,0 +1,16 @@
+{
+  "slug": "fully-connected-neural-network",
+  "name": "Fully Connected Neural Network",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

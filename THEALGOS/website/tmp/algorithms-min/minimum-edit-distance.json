@@ -1,0 +1,16 @@
+{
+  "slug": "minimum-edit-distance",
+  "name": "Minimum Edit Distance",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Nirjas Jakilim",
+      "email": "Nirzak@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

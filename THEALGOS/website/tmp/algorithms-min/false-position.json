@@ -1,0 +1,47 @@
+{
+  "slug": "false-position",
+  "name": "False Position",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c-plus-plus": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "MatteoRaso",
+      "email": "33975162+MatteoRaso@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "samruddha patil",
+      "email": "45798222+sampatil578@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "苏淞丰",
+      "email": "50102735+Arctic2333@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

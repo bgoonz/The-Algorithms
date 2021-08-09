@@ -1,0 +1,10 @@
+{
+  "slug": "lexicographic-permutations",
+  "name": "Lexicographic Permutations",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "closestpair",
+  "name": "ClosestPair",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Emrullah YILDIRIM",
+      "email": "emrullahyildirim@windowslive.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "Marisa Afuera",
+      "email": "marisaafuera@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "SeonJae",
+      "email": "dbtjswo4733@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

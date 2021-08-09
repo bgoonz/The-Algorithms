@@ -1,0 +1,51 @@
+{
+  "slug": "lazy-segment-tree",
+  "name": "Lazy Segment Tree",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hao LI",
+      "email": "8520588+Leo-LiHao@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sarot Busala",
+      "email": "sabuza97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "kanthuc",
+      "email": "srikanthuchavali@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

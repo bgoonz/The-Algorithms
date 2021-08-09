@@ -1,0 +1,172 @@
+{
+  "slug": "counting-sort",
+  "name": "Counting Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "rust": "",
+    "aarch64_assembly": "",
+    "matlab-octave": "",
+    "julia": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Norbert Melzer",
+      "email": "timmelzer@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anshul",
+      "email": "malikanshul29@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Emilien Fugier",
+      "email": "mail@emilienfugier.xyz",
+      "commits": 1
+    },
+    {
+      "name": "KheeLong",
+      "email": "kheelong0387@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "gohpeijin",
+      "email": "72803504+gohpeijin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "nomisrevol",
+      "email": "vdn1999bxvp@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "wdy",
+      "email": "2664683329@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Chandan Vishwakarma",
+      "email": "33517793+meet-cv@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "olshansky",
+      "email": "olshansky0@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ubc1729",
+      "email": "udayudaya1729@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Youssef Ali",
+      "email": "youssefali6212@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "camilne",
+      "email": "cameronm213@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam sharma",
+      "email": "shivams334@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "André Almeida",
+      "email": "fda.andre@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 2
+    },
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 2
+    },
+    {
+      "name": "marsonya",
+      "email": "akhil.marsonya27@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Mandy8055",
+      "email": "msankrit8055@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Sorting Algorithms/Counting Sort.md"
+  }
+}

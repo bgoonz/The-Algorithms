@@ -1,0 +1,57 @@
+{
+  "slug": "minimax",
+  "name": "Minimax",
+  "categories": ["backtracking"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Aditi Agarwal",
+      "email": "31546143+aditiagarwal34550@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Gleison Batista",
+      "email": "gleisonbs@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Abdujabbar Mirkhalikov",
+      "email": "abdujabbar.mirkhalikov@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

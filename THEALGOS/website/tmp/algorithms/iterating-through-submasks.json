@@ -1,0 +1,31 @@
+{
+  "slug": "iterating-through-submasks",
+  "name": "Iterating Through Submasks",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/iterating_through_submasks.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/iterating_through_submasks.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nAuthor : Syed Faizan (3rd Year Student IIIT Pune)\ngithub : faizan2700\nYou are given a bitmask m and you want to efficiently iterate through all of\nits submasks. The mask s is submask of m if only bits that were included in\nbitmask are set\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">list_of_submasks</span>(<span class=\"hljs-params\">mask: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]:\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Args:\n        mask : number which shows mask ( always integer &gt; 0, zero does not have any\n            submasks )\n\n    Returns:\n        all_submasks : the list of submasks of mask (mask s is called submask of mask\n        m if only bits that were included in original mask are set\n\n    Raises:\n        AssertionError: mask not positive integer\n\n    &gt;&gt;&gt; list_of_submasks(15)\n    [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n    &gt;&gt;&gt; list_of_submasks(13)\n    [13, 12, 9, 8, 5, 4, 1]\n    &gt;&gt;&gt; list_of_submasks(-7)  # doctest: +ELLIPSIS\n    Traceback (most recent call last):\n        ...\n    AssertionError: mask needs to be positive integer, your input -7\n    &gt;&gt;&gt; list_of_submasks(0)  # doctest: +ELLIPSIS\n    Traceback (most recent call last):\n        ...\n    AssertionError: mask needs to be positive integer, your input 0\n\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">assert</span> (\n        <span class=\"hljs-built_in\">isinstance</span>(mask, <span class=\"hljs-built_in\">int</span>) <span class=\"hljs-keyword\">and</span> mask &gt; <span class=\"hljs-number\">0</span>\n    ), <span class=\"hljs-string\">f&quot;mask needs to be positive integer, your input <span class=\"hljs-subst\">{mask}</span>&quot;</span>\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    first submask iterated will be mask itself then operation will be performed\n    to get other submasks till we reach empty submask that is zero ( zero is not\n    included in final submasks list )\n    &quot;&quot;&quot;</span>\n    all_submasks = []\n    submask = mask\n\n    <span class=\"hljs-keyword\">while</span> submask:\n        all_submasks.append(submask)\n        submask = (submask - <span class=\"hljs-number\">1</span>) &amp; mask\n\n    <span class=\"hljs-keyword\">return</span> all_submasks\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "faizan2700",
+      "email": "46817346+faizan2700@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

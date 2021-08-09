@@ -1,0 +1,26 @@
+{
+  "slug": "kadanes-algorithm",
+  "name": "Kadanes Algorithm",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "dynamic_programming/kadanes_algorithm.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/dynamic_programming/kadanes_algorithm.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;package:test/test.dart&#x27;</span>;\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;dart:math&#x27;</span>;\n\n<span class=\"hljs-built_in\">int</span> kadanesAlgorithm(<span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; array) {\n  <span class=\"hljs-built_in\">int</span> maxEndingHere = array[<span class=\"hljs-number\">0</span>];\n  <span class=\"hljs-built_in\">int</span> maxSoFar = array[<span class=\"hljs-number\">0</span>];\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> <span class=\"hljs-built_in\">num</span> <span class=\"hljs-keyword\">in</span> array.sublist(<span class=\"hljs-number\">1</span>, array.length)) {\n    maxEndingHere = max(maxEndingHere + <span class=\"hljs-built_in\">num</span>, <span class=\"hljs-built_in\">num</span>);\n    maxSoFar = max(maxSoFar, maxEndingHere);\n  }\n  <span class=\"hljs-keyword\">return</span> maxSoFar;\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; array;\n  <span class=\"hljs-built_in\">int</span> maxContiniousSubarraySum;\n\n  test((<span class=\"hljs-string\">&#x27;.Check the response for each test case&#x27;</span>), () {\n    array = [<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">-9</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">-2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">-9</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">-5</span>, <span class=\"hljs-number\">4</span>];\n\n    maxContiniousSubarraySum = kadanesAlgorithm(array);\n    expect(maxContiniousSubarraySum, equals(<span class=\"hljs-number\">19</span>));\n  });\n\n  test((<span class=\"hljs-string\">&#x27;.Check the response for each test case&#x27;</span>), () {\n    array = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">10</span>];\n    maxContiniousSubarraySum = kadanesAlgorithm(array);\n    expect(maxContiniousSubarraySum, equals(<span class=\"hljs-number\">55</span>));\n  });\n\n  test((<span class=\"hljs-string\">&#x27;.Check the response for each test case&#x27;</span>), () {\n    array = [<span class=\"hljs-number\">-1</span>, <span class=\"hljs-number\">-2</span>, <span class=\"hljs-number\">-3</span>, <span class=\"hljs-number\">-4</span>, <span class=\"hljs-number\">-5</span>, <span class=\"hljs-number\">-6</span>, <span class=\"hljs-number\">-7</span>, <span class=\"hljs-number\">-8</span>, <span class=\"hljs-number\">-9</span>, <span class=\"hljs-number\">-10</span>];\n    maxContiniousSubarraySum = kadanesAlgorithm(array);\n    expect(maxContiniousSubarraySum, equals(<span class=\"hljs-number\">-1</span>));\n  });\n\n  test((<span class=\"hljs-string\">&#x27;.Check the response for each test case&#x27;</span>), () {\n    array = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">-22</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">10</span>];\n    maxContiniousSubarraySum = kadanesAlgorithm(array);\n    expect(maxContiniousSubarraySum, equals(<span class=\"hljs-number\">34</span>));\n  });\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Raj-Parekh24",
+      "email": "54325945+Raj-Parekh24@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akash G Krishnan",
+      "email": "krishnanag1996@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

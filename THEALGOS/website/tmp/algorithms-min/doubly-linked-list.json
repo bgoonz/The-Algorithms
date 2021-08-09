@@ -1,0 +1,202 @@
+{
+  "slug": "doubly-linked-list",
+  "name": "Doubly Linked List",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "go": "",
+    "ruby": "",
+    "elixir": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Oskar Niburski",
+      "email": "oskarniburski@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "David Chavarria",
+      "email": "dvchavarriam@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Juliano Nunes",
+      "email": "julianomarquesnunes@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Gabriel Mota Bromonschenkel Lima",
+      "email": "gabriel.mota.b.lima@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    },
+    {
+      "name": "rnitish",
+      "email": "nitishrajput2020.nr@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "Moetez Skouri",
+      "email": "moetezskouri@Moetezs-MacBook.local",
+      "commits": 1
+    },
+    {
+      "name": "Yang Libin",
+      "email": "contact@yanglibin.info",
+      "commits": 1
+    },
+    {
+      "name": "Abhijay Kumar",
+      "email": "abhijaynsit@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Pratham Gupta",
+      "email": "pratham18072@iiitd.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "zacharyjones123",
+      "email": "zrjones@ncsu.edu",
+      "commits": 1
+    },
+    {
+      "name": "liushubin-gitHub",
+      "email": "65377959+liushubin-gitHub@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "TheSuperNoob",
+      "email": "larsthorland@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Aditya Sharma",
+      "email": "32771292+adityasharma1234@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "hmizz",
+      "email": "hamza.chabchoub@medtech.tn",
+      "commits": 2
+    },
+    {
+      "name": "Abhijay Kumar",
+      "email": "abhijay.kumar@centricconsulting.com",
+      "commits": 2
+    },
+    {
+      "name": "Rian Gallagher",
+      "email": "rianogallagher@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Doru Kesriyeli",
+      "email": "dkesriyelI@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    },
+    {
+      "name": "Samrat De",
+      "email": "rajmalhotra2016iitjee@gmail.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Data Structures/Linked Lists/Doubly Linked List.md",
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Estructuras de datos/Listas vinculadas/Doble lista vinculada.md"
+  }
+}

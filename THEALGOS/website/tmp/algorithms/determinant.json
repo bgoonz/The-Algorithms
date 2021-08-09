@@ -1,0 +1,26 @@
+{
+  "slug": "determinant",
+  "name": "Determinant",
+  "categories": ["matrix"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/matrix/determinant.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/matrix/determinant.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    determinant(mat)\n\nGiven a non singluar matrix, calculate its determinant using LU decomposition.\n\nL and U are lower triangular and upper triangular matrices respectively such that\n\nA = L*U\n\nIf we want to find the determinant, then\n\ndet(A) = det(LU) = det(L)*det(U)\n\nDeterminant of triangualar matrices is the product of their diagonal entries. Hence, makes finding the determinant easy.\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> determinant(mat)\n\tn, m = size(mat)\n\t<span class=\"hljs-keyword\">if</span> n != m\n\t\t<span class=\"hljs-built_in\">DomainError</span>(mat, <span class=\"hljs-string\">&quot;The matrix should be a square matrix.&quot;</span>)\n\t<span class=\"hljs-keyword\">end</span>\n\tL, U = lu_decompose(mat)\n\tl_prod = prod([L[i,i] <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-number\">1</span>:n])\n\tu_prod = prod([U[i,i] <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-number\">1</span>:n])\n\n\t<span class=\"hljs-keyword\">return</span> l_prod * u_prod\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

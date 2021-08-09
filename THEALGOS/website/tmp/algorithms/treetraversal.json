@@ -1,0 +1,66 @@
+{
+  "slug": "treetraversal",
+  "name": "TreeTraversal",
+  "categories": ["datastructures", "tree"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Trees/TreeTraversal.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Trees/TreeTraversal.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Trees;\n\n<span class=\"hljs-keyword\">import</span> java.util.LinkedList;\n\n<span class=\"hljs-comment\">/** <span class=\"hljs-doctag\">@author</span> Varun Upadhyay (https://github.com/varunu28) */</span>\n\n<span class=\"hljs-comment\">// Driver Program</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">TreeTraversal</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">tree</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Node</span>(<span class=\"hljs-number\">5</span>);\n    tree.insert(<span class=\"hljs-number\">3</span>);\n    tree.insert(<span class=\"hljs-number\">2</span>);\n    tree.insert(<span class=\"hljs-number\">7</span>);\n    tree.insert(<span class=\"hljs-number\">4</span>);\n    tree.insert(<span class=\"hljs-number\">6</span>);\n    tree.insert(<span class=\"hljs-number\">8</span>);\n\n    <span class=\"hljs-comment\">// Prints 5 3 2 4 7 6 8</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Pre order traversal:&quot;</span>);\n    tree.printPreOrder();\n    System.out.println();\n    <span class=\"hljs-comment\">// Prints 2 3 4 5 6 7 8</span>\n    System.out.println(<span class=\"hljs-string\">&quot;In order traversal:&quot;</span>);\n    tree.printInOrder();\n    System.out.println();\n    <span class=\"hljs-comment\">// Prints 2 4 3 6 8 7 5</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Post order traversal:&quot;</span>);\n    tree.printPostOrder();\n    System.out.println();\n    <span class=\"hljs-comment\">// Prints 5 3 7 2 4 6 8</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Level order traversal:&quot;</span>);\n    tree.printLevelOrder();\n    System.out.println();\n  }\n}\n\n<span class=\"hljs-comment\">/**\n * The Node class which initializes a Node of a tree Consists of all 4 traversal methods:\n * printInOrder, printPostOrder， printPreOrder &amp; printLevelOrder printInOrder: LEFT -&gt; ROOT -&gt; RIGHT\n * printPreOrder: ROOT -&gt; LEFT -&gt; RIGHT printPostOrder: LEFT -&gt; RIGHT -&gt; ROOT printLevelOrder:\n * Prints by level (starting at root), from left to right.\n */</span>\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span> {\n  Node left, right;\n  <span class=\"hljs-type\">int</span> data;\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">Node</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> data)</span> {\n    <span class=\"hljs-built_in\">this</span>.data = data;\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">insert</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> value)</span> {\n    <span class=\"hljs-keyword\">if</span> (value &lt; data) {\n      <span class=\"hljs-keyword\">if</span> (left == <span class=\"hljs-literal\">null</span>) {\n        left = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Node</span>(value);\n      } <span class=\"hljs-keyword\">else</span> {\n        left.insert(value);\n      }\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-keyword\">if</span> (right == <span class=\"hljs-literal\">null</span>) {\n        right = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Node</span>(value);\n      } <span class=\"hljs-keyword\">else</span> {\n        right.insert(value);\n      }\n    }\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">printInOrder</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">if</span> (left != <span class=\"hljs-literal\">null</span>) {\n      left.printInOrder();\n    }\n    System.out.print(data + <span class=\"hljs-string\">&quot; &quot;</span>);\n    <span class=\"hljs-keyword\">if</span> (right != <span class=\"hljs-literal\">null</span>) {\n      right.printInOrder();\n    }\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">printPreOrder</span><span class=\"hljs-params\">()</span> {\n    System.out.print(data + <span class=\"hljs-string\">&quot; &quot;</span>);\n    <span class=\"hljs-keyword\">if</span> (left != <span class=\"hljs-literal\">null</span>) {\n      left.printPreOrder();\n    }\n    <span class=\"hljs-keyword\">if</span> (right != <span class=\"hljs-literal\">null</span>) {\n      right.printPreOrder();\n    }\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">printPostOrder</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">if</span> (left != <span class=\"hljs-literal\">null</span>) {\n      left.printPostOrder();\n    }\n    <span class=\"hljs-keyword\">if</span> (right != <span class=\"hljs-literal\">null</span>) {\n      right.printPostOrder();\n    }\n    System.out.print(data + <span class=\"hljs-string\">&quot; &quot;</span>);\n  }\n\n  <span class=\"hljs-comment\">/** O(n) time algorithm. Uses O(n) space to store nodes in a queue to aid in traversal. */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">printLevelOrder</span><span class=\"hljs-params\">()</span> {\n    LinkedList&lt;Node&gt; queue = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">LinkedList</span>&lt;&gt;();\n    queue.add(<span class=\"hljs-built_in\">this</span>);\n    <span class=\"hljs-keyword\">while</span> (queue.size() &gt; <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">head</span> <span class=\"hljs-operator\">=</span> queue.remove();\n      System.out.print(head.data + <span class=\"hljs-string\">&quot; &quot;</span>);\n      <span class=\"hljs-comment\">// Add children of recently-printed node to queue, if they exist.</span>\n      <span class=\"hljs-keyword\">if</span> (head.left != <span class=\"hljs-literal\">null</span>) {\n        queue.add(head.left);\n      }\n      <span class=\"hljs-keyword\">if</span> (head.right != <span class=\"hljs-literal\">null</span>) {\n        queue.add(head.right);\n      }\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "gattlin1",
+      "email": "gattlin1@live.missouristate.edu",
+      "commits": 1
+    },
+    {
+      "name": "hong skkusosc",
+      "email": "--hsp5125@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "Keqi Huang",
+      "email": "keqih@smu.edu",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Miki Pokryvailo",
+      "email": "mpokryva@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

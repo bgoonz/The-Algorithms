@@ -1,0 +1,51 @@
+{
+  "slug": "scc-kosaraju",
+  "name": "Scc Kosaraju",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/scc_kosaraju.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/scc_kosaraju.py",
+      "code": "<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">dfs</span>(<span class=\"hljs-params\">u</span>):\n    <span class=\"hljs-keyword\">global</span> graph, reversedGraph, scc, component, visit, stack\n    <span class=\"hljs-keyword\">if</span> visit[u]:\n        <span class=\"hljs-keyword\">return</span>\n    visit[u] = <span class=\"hljs-literal\">True</span>\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> graph[u]:\n        dfs(v)\n    stack.append(u)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">dfs2</span>(<span class=\"hljs-params\">u</span>):\n    <span class=\"hljs-keyword\">global</span> graph, reversedGraph, scc, component, visit, stack\n    <span class=\"hljs-keyword\">if</span> visit[u]:\n        <span class=\"hljs-keyword\">return</span>\n    visit[u] = <span class=\"hljs-literal\">True</span>\n    component.append(u)\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> reversedGraph[u]:\n        dfs2(v)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">kosaraju</span>():\n    <span class=\"hljs-keyword\">global</span> graph, reversedGraph, scc, component, visit, stack\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n        dfs(i)\n    visit = [<span class=\"hljs-literal\">False</span>] * n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> stack[::-<span class=\"hljs-number\">1</span>]:\n        <span class=\"hljs-keyword\">if</span> visit[i]:\n            <span class=\"hljs-keyword\">continue</span>\n        component = []\n        dfs2(i)\n        scc.append(component)\n    <span class=\"hljs-keyword\">return</span> scc\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># n - no of nodes, m - no of edges</span>\n    n, m = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">map</span>(<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">input</span>().strip().split()))\n\n    graph: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]] = [[] <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]  <span class=\"hljs-comment\"># graph</span>\n    reversedGraph: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]] = [[] <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]  <span class=\"hljs-comment\"># reversed graph</span>\n    <span class=\"hljs-comment\"># input graph data (edges)</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(m):\n        u, v = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">map</span>(<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">input</span>().strip().split()))\n        graph[u].append(v)\n        reversedGraph[v].append(u)\n\n    stack: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>] = []\n    visit: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">bool</span>] = [<span class=\"hljs-literal\">False</span>] * n\n    scc: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>] = []\n    component: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>] = []\n    <span class=\"hljs-built_in\">print</span>(kosaraju())\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "strambake",
+      "email": "86815109+strambake@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "bT-53",
+      "email": "phanu.bjstp@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

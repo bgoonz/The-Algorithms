@@ -1,0 +1,31 @@
+{
+  "slug": "swap-nodes",
+  "name": "Swap Nodes",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "lanzhiwang",
+      "email": "hzhilamp@163.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jithendra Yenugula",
+      "email": "jithendra1230@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "sepia",
+  "name": "Sepia",
+  "categories": ["digitalimageprocessing"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

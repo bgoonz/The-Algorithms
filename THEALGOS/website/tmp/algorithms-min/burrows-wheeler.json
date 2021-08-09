@@ -1,0 +1,31 @@
+{
+  "slug": "burrows-wheeler",
+  "name": "Burrows Wheeler",
+  "categories": ["compression"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Bruno Simas Hadlich",
+      "email": "brunosimashadlich@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

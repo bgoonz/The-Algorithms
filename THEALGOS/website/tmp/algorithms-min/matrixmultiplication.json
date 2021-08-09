@@ -1,0 +1,27 @@
+{
+  "slug": "matrixmultiplication",
+  "name": "MatrixMultiplication",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Himanshu Shekhar",
+      "email": "himanshushekharb16@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Pete Looney",
+      "email": "petelooney81@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

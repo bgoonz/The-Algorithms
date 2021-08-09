@@ -1,0 +1,36 @@
+{
+  "slug": "swap-case",
+  "name": "Swap Case",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/swap_case.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/swap_case.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThis algorithm helps you to swap cases.\n\nUser will give input and then program will perform swap cases.\n\nIn other words, convert all lowercase letters to uppercase letters and vice versa.\nFor example:\n1. Please input sentence: Algorithm.Python@89\n  aLGORITHM.pYTHON@89\n2. Please input sentence: github.com/mayur200\n  GITHUB.COM/MAYUR200\n\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">swap_case</span>(<span class=\"hljs-params\">sentence: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    This function will convert all lowercase letters to uppercase letters\n    and vice versa.\n\n    &gt;&gt;&gt; swap_case(&#x27;Algorithm.Python@89&#x27;)\n    &#x27;aLGORITHM.pYTHON@89&#x27;\n    &quot;&quot;&quot;</span>\n    new_string = <span class=\"hljs-string\">&quot;&quot;</span>\n    <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> sentence:\n        <span class=\"hljs-keyword\">if</span> char.isupper():\n            new_string += char.lower()\n        <span class=\"hljs-keyword\">elif</span> char.islower():\n            new_string += char.upper()\n        <span class=\"hljs-keyword\">else</span>:\n            new_string += char\n\n    <span class=\"hljs-keyword\">return</span> new_string\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(swap_case(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Please input sentence: &quot;</span>)))\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/SwapCase.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/SwapCase.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\n\n<span class=\"hljs-keyword\">module</span> SwapCase =\n    <span class=\"hljs-class\"><span class=\"hljs-keyword\">type</span> <span class=\"hljs-title\">System</span>.<span class=\"hljs-title\">Char</span> <span class=\"hljs-title\">with</span></span>\n        <span class=\"hljs-keyword\">member</span> this.IsUpper(): bool =\n            <span class=\"hljs-keyword\">match</span> this <span class=\"hljs-keyword\">with</span>\n            | c <span class=\"hljs-keyword\">when</span> c &gt;= <span class=\"hljs-symbol\">&#x27;A</span>&#x27; &amp;&amp; c &lt;= <span class=\"hljs-symbol\">&#x27;Z</span>&#x27; -&gt; <span class=\"hljs-keyword\">true</span>\n            | _ -&gt; <span class=\"hljs-keyword\">false</span>\n\n        <span class=\"hljs-keyword\">member</span> this.IsLower(): bool =\n            <span class=\"hljs-keyword\">match</span> this <span class=\"hljs-keyword\">with</span>\n            | c <span class=\"hljs-keyword\">when</span> c &gt;= <span class=\"hljs-symbol\">&#x27;a</span>&#x27; &amp;&amp; c &lt;= <span class=\"hljs-symbol\">&#x27;z</span>&#x27; -&gt; <span class=\"hljs-keyword\">true</span>\n            | _ -&gt; <span class=\"hljs-keyword\">false</span>\n\n        <span class=\"hljs-keyword\">member</span> this.Lower(): char =\n            <span class=\"hljs-keyword\">match</span> this <span class=\"hljs-keyword\">with</span>\n            | c <span class=\"hljs-keyword\">when</span> c &gt;= <span class=\"hljs-symbol\">&#x27;A</span>&#x27; &amp;&amp; c &lt;= <span class=\"hljs-symbol\">&#x27;Z</span>&#x27; -&gt; (char) ((int) this + <span class=\"hljs-number\">32</span>)\n            | _ -&gt; this\n\n        <span class=\"hljs-keyword\">member</span> this.Upper(): char =\n            <span class=\"hljs-keyword\">match</span> this <span class=\"hljs-keyword\">with</span>\n            | c <span class=\"hljs-keyword\">when</span> c &gt;= <span class=\"hljs-symbol\">&#x27;a</span>&#x27; &amp;&amp; c &lt;= <span class=\"hljs-symbol\">&#x27;z</span>&#x27; -&gt; (char) ((int) this - <span class=\"hljs-number\">32</span>)\n            | _ -&gt; this\n\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\n    <span class=\"hljs-comment\">/// This function will convert all lowercase letters to uppercase letters and vice versa</span>\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\n    <span class=\"hljs-keyword\">let</span> swapCase (sentence: string): string =\n        <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> newString = <span class=\"hljs-string\">&quot;&quot;</span>\n        <span class=\"hljs-keyword\">for</span> character <span class=\"hljs-keyword\">in</span> sentence <span class=\"hljs-keyword\">do</span>\n            <span class=\"hljs-keyword\">match</span> character <span class=\"hljs-keyword\">with</span>\n            | c <span class=\"hljs-keyword\">when</span> c.IsUpper() -&gt; newString &lt;- newString + (string) (character.Lower())\n            | c <span class=\"hljs-keyword\">when</span> c.IsLower() -&gt; newString &lt;- newString + (string) (character.Upper())\n            | _ -&gt; newString &lt;- newString + (string) character\n        newString\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Frank Schmitt",
+      "email": "frank@qwhon.de",
+      "commits": 1
+    },
+    {
+      "name": "Mayur Pardeshi",
+      "email": "45143349+mayur200@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "01knapsack-recursive",
+  "name": "01knapsack Recursive",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "CrisesKhaos",
+      "email": "76253854+CrisesKhaos@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akash G Krishnan",
+      "email": "krishnanag1996@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "a1z26",
+  "name": "A1z26",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/a1z26.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/a1z26.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nConvert a string of characters to a sequence of numbers\ncorresponding to the character&#x27;s position in the alphabet.\n\nhttps://www.dcode.fr/letter-number-cipher\nhttp://bestcodes.weebly.com/a1z26.html\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encode</span>(<span class=\"hljs-params\">plain: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; encode(&quot;myname&quot;)\n    [13, 25, 14, 1, 13, 5]\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> [<span class=\"hljs-built_in\">ord</span>(elem) - <span class=\"hljs-number\">96</span> <span class=\"hljs-keyword\">for</span> elem <span class=\"hljs-keyword\">in</span> plain]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decode</span>(<span class=\"hljs-params\">encoded: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; decode([13, 25, 14, 1, 13, 5])\n    &#x27;myname&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;&quot;</span>.join(<span class=\"hljs-built_in\">chr</span>(elem + <span class=\"hljs-number\">96</span>) <span class=\"hljs-keyword\">for</span> elem <span class=\"hljs-keyword\">in</span> encoded)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    encoded = encode(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;-&gt; &quot;</span>).strip().lower())\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Encoded: &quot;</span>, encoded)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Decoded:&quot;</span>, decode(encoded))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "LethargicLeprechaun",
+      "email": "64550669+LethargicLeprechaun@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

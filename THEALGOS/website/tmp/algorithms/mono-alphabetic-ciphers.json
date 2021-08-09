@@ -1,0 +1,26 @@
+{
+  "slug": "mono-alphabetic-ciphers",
+  "name": "Mono Alphabetic Ciphers",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/mono_alphabetic_ciphers.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/mono_alphabetic_ciphers.py",
+      "code": "<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Literal</span>\n\nLETTERS = <span class=\"hljs-string\">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">translate_message</span>(<span class=\"hljs-params\">\n    key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span>, mode: <span class=\"hljs-type\">Literal</span>[<span class=\"hljs-string\">&quot;encrypt&quot;</span>, <span class=\"hljs-string\">&quot;decrypt&quot;</span>]\n</span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; translate_message(&quot;QWERTYUIOPASDFGHJKLZXCVBNM&quot;,&quot;Hello World&quot;,&quot;encrypt&quot;)\n    &#x27;Pcssi Bidsm&#x27;\n    &quot;&quot;&quot;</span>\n    chars_a = LETTERS <span class=\"hljs-keyword\">if</span> mode == <span class=\"hljs-string\">&quot;decrypt&quot;</span> <span class=\"hljs-keyword\">else</span> key\n    chars_b = key <span class=\"hljs-keyword\">if</span> mode == <span class=\"hljs-string\">&quot;decrypt&quot;</span> <span class=\"hljs-keyword\">else</span> LETTERS\n    translated = <span class=\"hljs-string\">&quot;&quot;</span>\n    <span class=\"hljs-comment\"># loop through each symbol in the message</span>\n    <span class=\"hljs-keyword\">for</span> symbol <span class=\"hljs-keyword\">in</span> message:\n        <span class=\"hljs-keyword\">if</span> symbol.upper() <span class=\"hljs-keyword\">in</span> chars_a:\n            <span class=\"hljs-comment\"># encrypt/decrypt the symbol</span>\n            sym_index = chars_a.find(symbol.upper())\n            <span class=\"hljs-keyword\">if</span> symbol.isupper():\n                translated += chars_b[sym_index].upper()\n            <span class=\"hljs-keyword\">else</span>:\n                translated += chars_b[sym_index].lower()\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-comment\"># symbol is not in LETTERS, just add it</span>\n            translated += symbol\n    <span class=\"hljs-keyword\">return</span> translated\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encrypt_message</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; encrypt_message(&quot;QWERTYUIOPASDFGHJKLZXCVBNM&quot;, &quot;Hello World&quot;)\n    &#x27;Pcssi Bidsm&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> translate_message(key, message, <span class=\"hljs-string\">&quot;encrypt&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decrypt_message</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; decrypt_message(&quot;QWERTYUIOPASDFGHJKLZXCVBNM&quot;, &quot;Hello World&quot;)\n    &#x27;Itssg Vgksr&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> translate_message(key, message, <span class=\"hljs-string\">&quot;decrypt&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    message = <span class=\"hljs-string\">&quot;Hello World&quot;</span>\n    key = <span class=\"hljs-string\">&quot;QWERTYUIOPASDFGHJKLZXCVBNM&quot;</span>\n    mode = <span class=\"hljs-string\">&quot;decrypt&quot;</span>  <span class=\"hljs-comment\"># set to &#x27;encrypt&#x27; or &#x27;decrypt&#x27;</span>\n\n    <span class=\"hljs-keyword\">if</span> mode == <span class=\"hljs-string\">&quot;encrypt&quot;</span>:\n        translated = encrypt_message(key, message)\n    <span class=\"hljs-keyword\">elif</span> mode == <span class=\"hljs-string\">&quot;decrypt&quot;</span>:\n        translated = decrypt_message(key, message)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Using the key <span class=\"hljs-subst\">{key}</span>, the <span class=\"hljs-subst\">{mode}</span>ed message is: <span class=\"hljs-subst\">{translated}</span>&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "RadadiyaMohit",
+      "email": "30775542+radadiyamohit81@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "comparison",
+  "name": "Comparison",
+  "categories": ["strings"],
+  "implementations": {
+    "aarch64_assembly": ""
+  },
+  "contributors": [
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

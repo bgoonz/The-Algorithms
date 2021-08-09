@@ -1,0 +1,21 @@
+{
+  "slug": "dispersion",
+  "name": "Dispersion",
+  "categories": ["statistics"],
+  "implementations": {
+    "haskell": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mihai Maruseac",
+      "email": "mihai.maruseac@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

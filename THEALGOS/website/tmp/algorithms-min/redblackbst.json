@@ -1,0 +1,31 @@
+{
+  "slug": "redblackbst",
+  "name": "RedBlackBST",
+  "categories": ["datastructures", "tree"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "EAlexa",
+      "email": "rubi_81@outlook.de",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jack",
+      "email": "34185019+jack870131@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

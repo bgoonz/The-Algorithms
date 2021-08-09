@@ -1,0 +1,76 @@
+{
+  "slug": "reversestring",
+  "name": "ReverseString",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/ReverseString.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/ReverseString.js",
+      "code": "<span class=\"hljs-comment\">/**\n * A short example showing how to reverse a string\n * <span class=\"hljs-doctag\">@flow</span>\n */</span>\n\n<span class=\"hljs-comment\">/**\n * Create a new string and append\n * <span class=\"hljs-doctag\">@complexity</span> O(n)\n *\n *  Doctests\n *\n * &gt; ReverseStringIterative(&#x27;some&#x27;)\n *  &#x27;emos&#x27;\n * &gt; ReverseStringIterative(&#x27;string&#x27;)\n *  &#x27;gnirts&#x27;\n * &gt; ReverseStringIterative(&#x27;The Algorithms Javascript&#x27;)\n *  &#x27;tpircsavaJ smhtiroglA ehT&#x27;\n * &gt; ReverseStringIterative([])\n *  ! TypeError\n * &gt; ReverseStringIterative({})\n *  ! TypeError\n * &gt; ReverseStringIterative(null)\n *  ! TypeError\n */</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">ReverseStringIterative</span> (string) {\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> string !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;The given value is not a string&#x27;</span>)\n  }\n  <span class=\"hljs-keyword\">let</span> reversedString = <span class=\"hljs-string\">&#x27;&#x27;</span>\n  <span class=\"hljs-keyword\">let</span> index\n\n  <span class=\"hljs-keyword\">for</span> (index = string.<span class=\"hljs-property\">length</span> - <span class=\"hljs-number\">1</span>; index &gt;= <span class=\"hljs-number\">0</span>; index--) {\n    reversedString += string[index]\n  }\n\n  <span class=\"hljs-keyword\">return</span> reversedString\n}\n\n<span class=\"hljs-comment\">/**\n * JS disallows string mutation so we&#x27;re actually a bit slower.\n *\n * <span class=\"hljs-doctag\">@complexity</span> O(n)\n *\n * &#x27;some&#x27; -&gt; &#x27;eoms&#x27; -&gt; &#x27;emos&#x27;\n *\n *  Doctests\n *\n * &gt; ReverseStringIterativeInplace(&#x27;some&#x27;)\n *  &#x27;emos&#x27;\n * &gt; ReverseStringIterativeInplace(&#x27;string&#x27;)\n *  &#x27;gnirts&#x27;\n * &gt; ReverseStringIterativeInplace(&#x27;The Algorithms Javascript&#x27;)\n *  &#x27;tpircsavaJ smhtiroglA ehT&#x27;\n * &gt; ReverseStringIterativeInplace([])\n *  ! TypeError\n * &gt; ReverseStringIterativeInplace({})\n *  ! TypeError\n * &gt; ReverseStringIterativeInplace(null)\n *  ! TypeError\n */</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">ReverseStringIterativeInplace</span> (string) {\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> string !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;The given value is not a string&#x27;</span>)\n  }\n  <span class=\"hljs-keyword\">const</span> _string = string.<span class=\"hljs-title function_\">split</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">floor</span>(_string.<span class=\"hljs-property\">length</span> / <span class=\"hljs-number\">2</span>); i++) {\n    <span class=\"hljs-keyword\">const</span> first = _string[i]\n    <span class=\"hljs-keyword\">const</span> second = _string[_string.<span class=\"hljs-property\">length</span> - <span class=\"hljs-number\">1</span> - i]\n    _string[i] = second\n    _string[_string.<span class=\"hljs-property\">length</span> - <span class=\"hljs-number\">1</span> - i] = first\n  }\n\n  <span class=\"hljs-keyword\">return</span> _string.<span class=\"hljs-title function_\">join</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n}\n\n<span class=\"hljs-keyword\">export</span> { <span class=\"hljs-title class_\">ReverseStringIterative</span>, <span class=\"hljs-title class_\">ReverseStringIterativeInplace</span> }\n"
+    },
+    "java": {
+      "dir": "strings/ReverseString.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/strings/ReverseString.java",
+      "code": "<span class=\"hljs-keyword\">package</span> strings;\n\n<span class=\"hljs-comment\">/** Reverse String using different version */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">ReverseString</span> {\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">reverse</span><span class=\"hljs-params\">(<span class=\"hljs-string\">&quot;abc123&quot;</span>)</span>.equals(<span class=\"hljs-string\">&quot;321cba&quot;</span>);\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">reverse2</span><span class=\"hljs-params\">(<span class=\"hljs-string\">&quot;abc123&quot;</span>)</span>.equals(<span class=\"hljs-string\">&quot;321cba&quot;</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * easiest way to reverses the string str and returns it\n   *\n   * <span class=\"hljs-doctag\">@param</span> str string to be reversed\n   * <span class=\"hljs-doctag\">@return</span> reversed string\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">reverse</span><span class=\"hljs-params\">(String str)</span> {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">StringBuilder</span>(str).reverse().toString();\n  }\n\n  <span class=\"hljs-comment\">/**\n   * second way to reverses the string str and returns it\n   *\n   * <span class=\"hljs-doctag\">@param</span> str string to be reversed\n   * <span class=\"hljs-doctag\">@return</span> reversed string\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">reverse2</span><span class=\"hljs-params\">(String str)</span> {\n\n    <span class=\"hljs-keyword\">if</span> (str == <span class=\"hljs-literal\">null</span> || str.isEmpty()) {\n      <span class=\"hljs-keyword\">return</span> str;\n    }\n\n    <span class=\"hljs-type\">char</span>[] value = str.toCharArray();\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>, j = str.length() - <span class=\"hljs-number\">1</span>; i &lt; j; i++, j--) {\n      <span class=\"hljs-type\">char</span> <span class=\"hljs-variable\">temp</span> <span class=\"hljs-operator\">=</span> value[i];\n      value[i] = value[j];\n      value[j] = temp;\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">String</span>(value);\n  }\n}\n"
+    },
+    "dart": {
+      "dir": "strings/reverse_string.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/strings/reverse_string.dart",
+      "code": "<span class=\"hljs-comment\"><span class=\"language-markdown\">/<span class=\"hljs-strong\">**\n <span class=\"hljs-emphasis\">* Reverse String\n *</span>/</span></span></span>\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">String</span> stringToReverse = <span class=\"hljs-string\">&quot;The Algorithms:Dart&quot;</span>;\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;Method 1 =&gt;  <span class=\"hljs-subst\">$stringToReverse</span>\\t   <span class=\"hljs-subst\">${reverseString(stringToReverse)}</span>&#x27;</span>);\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;Method 2 =&gt;  <span class=\"hljs-subst\">$stringToReverse</span>\\t   <span class=\"hljs-subst\">${reverseString2(stringToReverse)}</span>&#x27;</span>);\n}\n\n<span class=\"hljs-comment\"><span class=\"language-markdown\"><span class=\"hljs-strong\">/**</span>\n<span class=\"hljs-bullet\"> *</span> <span class=\"hljs-emphasis\">*</span></span> easiest way to <span class=\"language-markdown\"><span class=\"hljs-emphasis\">reverses the string\n *</span>/</span></span>\n<span class=\"hljs-built_in\">String</span> reverseString(<span class=\"hljs-built_in\">String</span> str) {\n  <span class=\"hljs-keyword\">return</span> str.split(<span class=\"hljs-string\">&#x27;&#x27;</span>).reversed.join();\n}\n\n<span class=\"hljs-comment\"><span class=\"language-markdown\">/<span class=\"hljs-strong\">**\n <span class=\"hljs-emphasis\">*</span></span></span> Second way to <span class=\"language-markdown\"><span class=\"hljs-strong\"><span class=\"hljs-emphasis\">reverses the string\n *</span>/</span></span></span>\n<span class=\"hljs-built_in\">String</span> reverseString2(<span class=\"hljs-built_in\">String</span> str) {\n  <span class=\"hljs-built_in\">String</span> reversed = <span class=\"hljs-string\">&quot;&quot;</span>;\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = str.length - <span class=\"hljs-number\">1</span>; i &gt;= <span class=\"hljs-number\">0</span>; i--) reversed += str[i];\n  <span class=\"hljs-keyword\">return</span> reversed;\n}\n"
+    },
+    "php": {
+      "dir": "String/ReverseString.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/String/ReverseString.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">reverse_string</span>(<span class=\"hljs-params\"><span class=\"hljs-keyword\">string</span> <span class=\"hljs-variable\">$string</span></span>)\n</span>{\n    <span class=\"hljs-variable\">$string</span> = trim(<span class=\"hljs-variable\">$string</span>); <span class=\"hljs-comment\">// Removing leading and trailing spaces</span>\n\n    <span class=\"hljs-variable\">$characters</span> = str_split(<span class=\"hljs-variable\">$string</span>);\n\n    <span class=\"hljs-variable\">$reversedCharacters</span> = [];\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-variable\">$i</span> = (count(<span class=\"hljs-variable\">$characters</span>) - <span class=\"hljs-number\">1</span>); <span class=\"hljs-variable\">$i</span> &gt;= <span class=\"hljs-number\">0</span>; <span class=\"hljs-variable\">$i</span>--) {\n        <span class=\"hljs-variable\">$reversedCharacters</span>[] = <span class=\"hljs-variable\">$characters</span>[<span class=\"hljs-variable\">$i</span>];\n    }\n\n    <span class=\"hljs-keyword\">return</span> implode(<span class=\"hljs-string\">&#x27;&#x27;</span>, <span class=\"hljs-variable\">$reversedCharacters</span>);\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mauricio Flores Hernandez",
+      "email": "mau1361317@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nour B",
+      "email": "56294154+nourrrrrrrr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Cristian Lupu",
+      "email": "khez@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Alexandre Xavier",
+      "email": "ale.bxsantos@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

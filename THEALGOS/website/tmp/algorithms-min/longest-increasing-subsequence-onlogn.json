@@ -1,0 +1,41 @@
+{
+  "slug": "longest-increasing-subsequence-onlogn",
+  "name": "Longest Increasing Subsequence O(nlogn)",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "aravindiiitb",
+      "email": "konakondla.sak@iiitb.org",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

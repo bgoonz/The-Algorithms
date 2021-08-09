@@ -1,0 +1,26 @@
+{
+  "slug": "hardy-ramanujanalgo",
+  "name": "Hardy Ramanujanalgo",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/hardy_ramanujanalgo.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/hardy_ramanujanalgo.py",
+      "code": "<span class=\"hljs-comment\"># This theorem states that the number of prime factors of n</span>\n<span class=\"hljs-comment\"># will be approximately log(log(n)) for most natural numbers n</span>\n\n<span class=\"hljs-keyword\">import</span> math\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">exactPrimeFactorCount</span>(<span class=\"hljs-params\">n</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; exactPrimeFactorCount(51242183)\n    3\n    &quot;&quot;&quot;</span>\n    count = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">if</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\n        count += <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">while</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\n            n = <span class=\"hljs-built_in\">int</span>(n / <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-comment\"># the n input value must be odd so that</span>\n    <span class=\"hljs-comment\"># we can skip one element (ie i += 2)</span>\n\n    i = <span class=\"hljs-number\">3</span>\n\n    <span class=\"hljs-keyword\">while</span> i &lt;= <span class=\"hljs-built_in\">int</span>(math.sqrt(n)):\n        <span class=\"hljs-keyword\">if</span> n % i == <span class=\"hljs-number\">0</span>:\n            count += <span class=\"hljs-number\">1</span>\n            <span class=\"hljs-keyword\">while</span> n % i == <span class=\"hljs-number\">0</span>:\n                n = <span class=\"hljs-built_in\">int</span>(n / i)\n        i = i + <span class=\"hljs-number\">2</span>\n\n    <span class=\"hljs-comment\"># this condition checks the prime</span>\n    <span class=\"hljs-comment\"># number n is greater than 2</span>\n\n    <span class=\"hljs-keyword\">if</span> n &gt; <span class=\"hljs-number\">2</span>:\n        count += <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">return</span> count\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    n = <span class=\"hljs-number\">51242183</span>\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;The number of distinct prime factors is/are <span class=\"hljs-subst\">{exactPrimeFactorCount(n)}</span>&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The value of log(log(n)) is {:.4f}&quot;</span>.<span class=\"hljs-built_in\">format</span>(math.log(math.log(n))))\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    The number of distinct prime factors is/are 3\n    The value of log(log(n)) is 2.8765\n    &quot;&quot;&quot;</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Alfin_William",
+      "email": "alfinwilliam@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

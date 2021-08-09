@@ -1,0 +1,16 @@
+{
+  "slug": "02-imdb-binary-classification",
+  "name": "02-Imdb-Binary-Classification",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Hussnain Fareed",
+      "email": "14870938+husnainfareed@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "realtime-stats",
+  "name": "Realtime Stats",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

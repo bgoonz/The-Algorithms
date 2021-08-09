@@ -1,0 +1,10 @@
+{
+  "slug": "stringcombinations",
+  "name": "Stringcombinations",
+  "categories": ["others", "stringcombinations"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

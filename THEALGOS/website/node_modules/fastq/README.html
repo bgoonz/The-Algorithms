@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="fastq">fastq</h1>
+<p><img src="https://github.com/mcollina/fastq/workflows/ci/badge.svg" alt="ci" /> <a href="https://badge.fury.io/js/fastq"><img src="https://badge.fury.io/js/fastq.svg" alt="npm version" /></a> <a href="https://david-dm.org/mcollina/fastq"><img src="https://david-dm.org/mcollina/fastq.svg" alt="Dependency Status" /></a></p>
+<p>Fast, in memory work queue.</p>
+<p>Benchmarks (1 million tasks):</p>
+<ul>
+<li>setImmediate: 812ms</li>
+<li>fastq: 854ms</li>
+<li>async.queue: 1298ms</li>
+<li>neoAsync.queue: 1249ms</li>
+</ul>
+<p>Obtained on node 12.16.1, on a dedicated server.</p>
+<p>If you need zero-overhead series function call, check out <a href="http://npm.im/fastseries">fastseries</a>. For zero-overhead parallel function call, check out <a href="http://npm.im/fastparallel">fastparallel</a>.</p>
+<p><a href="https://github.com/feross/standard"><img src="https://raw.githubusercontent.com/feross/standard/master/badge.png" alt="js-standard-style" /></a></p>
+<ul>
+<li><a href="#install">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#license">Licence &amp; copyright</a></li>
+</ul>
+<h2 id="install">Install</h2>
+<p><code>npm i fastq --save</code></p>
+<h2 id="usage">Usage</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="st">&#39;use strict&#39;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">var</span> queue <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fastq&#39;</span>)(worker<span class="op">,</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="va">queue</span>.<span class="at">push</span>(<span class="dv">42</span><span class="op">,</span> <span class="kw">function</span> (err<span class="op">,</span> result) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="cf">if</span> (err) <span class="op">{</span> <span class="cf">throw</span> err <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;the result is&#39;</span><span class="op">,</span> result)</a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="op">}</span>)</a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw">function</span> <span class="at">worker</span> (arg<span class="op">,</span> cb) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-11" title="11">  <span class="at">cb</span>(<span class="kw">null</span><span class="op">,</span> <span class="dv">42</span> <span class="op">*</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="op">}</span></a></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">var</span> queue <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fastq&#39;</span>).<span class="at">promise</span>(worker<span class="op">,</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">async</span> <span class="kw">function</span> <span class="at">worker</span> (arg) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="cf">return</span> <span class="dv">42</span> <span class="op">*</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="op">}</span></a>
+<a class="sourceLine" id="cb2-6" title="6"></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="kw">async</span> <span class="kw">function</span> <span class="at">run</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> <span class="va">queue</span>.<span class="at">push</span>(<span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;the result is&#39;</span><span class="op">,</span> result)</a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="op">}</span>)</a>
+<a class="sourceLine" id="cb2-11" title="11">}</a>
+<a class="sourceLine" id="cb2-12" title="12"></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="at">run</span>()</a></code></pre></div>
+<h3 id="setting-this">Setting this</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="st">&#39;use strict&#39;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">var</span> that <span class="op">=</span> <span class="op">{</span> <span class="dt">hello</span><span class="op">:</span> <span class="st">&#39;world&#39;</span> <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">var</span> queue <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fastq&#39;</span>)(that<span class="op">,</span> worker<span class="op">,</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">queue</span>.<span class="at">push</span>(<span class="dv">42</span><span class="op">,</span> <span class="kw">function</span> (err<span class="op">,</span> result) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="cf">if</span> (err) <span class="op">{</span> <span class="cf">throw</span> err <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-8" title="8">  <span class="va">console</span>.<span class="at">log</span>(<span class="kw">this</span>)</a>
+<a class="sourceLine" id="cb3-9" title="9">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;the result is&#39;</span><span class="op">,</span> result)</a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-11" title="11"></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="kw">function</span> <span class="at">worker</span> (arg<span class="op">,</span> cb) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-13" title="13">  <span class="va">console</span>.<span class="at">log</span>(<span class="kw">this</span>)</a>
+<a class="sourceLine" id="cb3-14" title="14">  <span class="at">cb</span>(<span class="kw">null</span><span class="op">,</span> <span class="dv">42</span> <span class="op">*</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="op">}</span></a></code></pre></div>
+<h2 id="api">API</h2>
+<ul>
+<li><a href="#fastqueue"><code>fastqueue()</code></a></li>
+<li><a href="#push"><code>queue#<b>push()</b></code></a></li>
+<li><a href="#unshift"><code>queue#<b>unshift()</b></code></a></li>
+<li><a href="#pause"><code>queue#<b>pause()</b></code></a></li>
+<li><a href="#resume"><code>queue#<b>resume()</b></code></a></li>
+<li><a href="#idle"><code>queue#<b>idle()</b></code></a></li>
+<li><a href="#length"><code>queue#<b>length()</b></code></a></li>
+<li><a href="#getQueue"><code>queue#<b>getQueue()</b></code></a></li>
+<li><a href="#kill"><code>queue#<b>kill()</b></code></a></li>
+<li><a href="#killAndDrain"><code>queue#<b>killAndDrain()</b></code></a></li>
+<li><a href="#error"><code>queue#<b>error()</b></code></a></li>
+<li><a href="#concurrency"><code>queue#<b>concurrency</b></code></a></li>
+<li><a href="#drain"><code>queue#<b>drain</b></code></a></li>
+<li><a href="#empty"><code>queue#<b>empty</b></code></a></li>
+<li><a href="#saturated"><code>queue#<b>saturated</b></code></a></li>
+<li><a href="#promise"><code>fastqueue.promise()</code></a></li>
+</ul>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="fastqueue"></a> ### fastqueue([that], worker, concurrency)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Creates a new queue.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arguments:</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* <code>that</code>, optional context of the <code>worker</code> function. * <code>worker</code>, worker function, it would be called with <code>that</code> as <code>this</code>, if that is specified. * <code>concurrency</code>, number of concurrent tasks that could be executed in parallel.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="push"></a> ### queue.push(task, done)</p>
+<p>Add a task at the end of the queue. <code>done(err, result)</code> will be called when the task was processed.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="unshift"></a> ### queue.unshift(task, done)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Add a task at the beginning of the queue. <code>done(err, result)</code> will be called when the task was processed.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="pause"></a> ### queue.pause()</p>
+<p>Pause the processing of tasks. Currently worked tasks are not stopped.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="resume"></a> ### queue.resume()</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Resume the processing of tasks.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="idle"></a> ### queue.idle()</p>
+<p>Returns <code>false</code> if there are tasks being processed or waiting to be processed. <code>true</code> otherwise.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="length"></a> ### queue.length()</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Returns the number of tasks waiting to be processed (in the queue).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="getQueue"></a> ### queue.getQueue()</p>
+<p>Returns all the tasks be processed (in the queue). Returns empty array when there are no tasks</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="kill"></a> ### queue.kill()</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Removes all tasks waiting to be processed, and reset <code>drain</code> to an empty function.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="killAndDrain"></a> ### queue.killAndDrain()</p>
+<p>Same than <code>kill</code> but the <code>drain</code> function will be called before reset to empty.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="error"></a> ### queue.error(handler)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set a global error handler. <code>handler(err, task)</code> will be called when any of the tasks return an error.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="concurrency"></a> ### queue.concurrency</p>
+<p>Property that returns the number of concurrent tasks that could be executed in parallel. It can be altered at runtime.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="drain"></a> ### queue.drain</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function that will be called when the last item from the queue has been processed by a worker. It can be altered at runtime.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="empty"></a> ### queue.empty</p>
+<p>Function that will be called when the last item from the queue has been assigned to a worker. It can be altered at runtime.</p>
+<table style="width:78%;">
+<colgroup>
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a name="saturated"></a> ### queue.saturated</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function that will be called when the queue hits the concurrency limit. It can be altered at runtime.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="promise"></a> ### fastqueue.promise([that], worker(arg), concurrency)</p>
+<p>Creates a new queue with <code>Promise</code> apis. It also offers all the methods and properties of the object returned by <a href="#fastqueue"><code>fastqueue</code></a> with the modified <a href="#pushPromise"><code>push</code></a> and <a href="#unshiftPromise"><code>unshift</code></a> methods.</p>
+<p>Node v10+ is required to use the promisified version.</p>
+<p>Arguments: * <code>that</code>, optional context of the <code>worker</code> function. * <code>worker</code>, worker function, it would be called with <code>that</code> as <code>this</code>, if that is specified. It MUST return a <code>Promise</code>. * <code>concurrency</code>, number of concurrent tasks that could be executed in parallel.</p>
+<p><a name="pushPromise"></a> #### queue.push(task) =&gt; Promise</p>
+<p>Add a task at the end of the queue. The returned <code>Promise</code> will be fulfilled when the task is processed.</p>
+<p><a name="unshiftPromise"></a> #### queue.unshift(task) =&gt; Promise</p>
+<p>Add a task at the beginning of the queue. The returned <code>Promise</code> will be fulfilled when the task is processed.</p>
+<h2 id="license">License</h2>
+<p>ISC</p>
+</body>
+</html>

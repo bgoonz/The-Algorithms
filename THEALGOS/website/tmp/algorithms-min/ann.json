@@ -1,0 +1,16 @@
+{
+  "slug": "ann",
+  "name": "ANN",
+  "categories": ["regressionalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Ron Lee",
+      "email": "ronlee12355@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

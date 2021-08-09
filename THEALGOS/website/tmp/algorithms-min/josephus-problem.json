@@ -1,0 +1,10 @@
+{
+  "slug": "josephus-problem",
+  "name": "Josephus Problem",
+  "categories": ["others"],
+  "implementations": {
+    "aarch64_assembly": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

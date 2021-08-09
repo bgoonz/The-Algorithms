@@ -1,0 +1,16 @@
+{
+  "slug": "arbitrarybase",
+  "name": "ArbitraryBase",
+  "categories": ["conversions"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Kaustubh Badrike",
+      "email": "kaustubh.badrike15@siesgst.ac.in",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

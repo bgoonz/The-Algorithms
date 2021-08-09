@@ -1,0 +1,36 @@
+{
+  "slug": "stackarray",
+  "name": "StackArray",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "yeongmo-j",
+      "email": "yeongmoj94@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hayder Hassan",
+      "email": "hayderh@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

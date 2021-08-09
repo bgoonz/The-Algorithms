@@ -1,0 +1,10 @@
+{
+  "slug": "colorcontrastratio",
+  "name": "ColorContrastRatio",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

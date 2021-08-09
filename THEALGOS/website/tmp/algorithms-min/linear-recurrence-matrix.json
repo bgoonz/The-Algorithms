@@ -1,0 +1,10 @@
+{
+  "slug": "linear-recurrence-matrix",
+  "name": "Linear Recurrence Matrix",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

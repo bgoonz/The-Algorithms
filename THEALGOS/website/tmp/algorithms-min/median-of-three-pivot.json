@@ -1,0 +1,10 @@
+{
+  "slug": "median-of-three-pivot",
+  "name": "Median of three pivot",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

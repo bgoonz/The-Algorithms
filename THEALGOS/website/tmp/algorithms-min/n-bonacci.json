@@ -1,0 +1,11 @@
+{
+  "slug": "n-bonacci",
+  "name": "N Bonacci",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": "",
+    "dart": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "quantum-entanglement",
+  "name": "Quantum Entanglement",
+  "categories": ["quantum"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "quantum/quantum_entanglement.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/quantum/quantum_entanglement.py",
+      "code": "<span class=\"hljs-comment\">#!/usr/bin/env python3</span>\n<span class=\"hljs-string\">&quot;&quot;&quot;\nBuild a quantum circuit with pair or group of qubits to perform\nquantum entanglement.\nQuantum entanglement is a phenomenon observed at the quantum scale\nwhere entangled particles stay connected (in some sense) so that\nthe actions performed on one of the particles affects the other,\nno matter the distance between two particles.\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> qiskit\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">quantum_entanglement</span>(<span class=\"hljs-params\">qubits: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">2</span></span>) -&gt; qiskit.result.counts.Counts:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    # &gt;&gt;&gt; quantum_entanglement(2)\n    # {&#x27;00&#x27;: 500, &#x27;11&#x27;: 500}\n    #      ┌───┐     ┌─┐\n    # q_0: ┤ H ├──■──┤M├───\n    #      └───┘┌─┴─┐└╥┘┌─┐\n    # q_1: ─────┤ X ├─╫─┤M├\n    #           └───┘ ║ └╥┘\n    # c: 2/═══════════╩══╩═\n    #                 0  1\n    Args:\n        qubits (int): number of quibits to use. Defaults to 2\n    Returns:\n        qiskit.result.counts.Counts: mapping of states to its counts\n    &quot;&quot;&quot;</span>\n    classical_bits = qubits\n\n    <span class=\"hljs-comment\"># Using Aer&#x27;s qasm_simulator</span>\n    simulator = qiskit.Aer.get_backend(<span class=\"hljs-string\">&quot;qasm_simulator&quot;</span>)\n\n    <span class=\"hljs-comment\"># Creating a Quantum Circuit acting on the q register</span>\n    circuit = qiskit.QuantumCircuit(qubits, classical_bits)\n\n    <span class=\"hljs-comment\"># Adding a H gate on qubit 0 (now q0 in superposition)</span>\n    circuit.h(<span class=\"hljs-number\">0</span>)\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, qubits):\n        <span class=\"hljs-comment\"># Adding CX (CNOT) gate</span>\n        circuit.cx(i - <span class=\"hljs-number\">1</span>, i)\n\n    <span class=\"hljs-comment\"># Mapping the quantum measurement to the classical bits</span>\n    circuit.measure(<span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">range</span>(qubits)), <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">range</span>(classical_bits)))\n\n    <span class=\"hljs-comment\"># Now measuring any one qubit would affect other qubits to collapse</span>\n    <span class=\"hljs-comment\"># their super position and have same state as the measured one.</span>\n\n    <span class=\"hljs-comment\"># Executing the circuit on the qasm simulator</span>\n    job = qiskit.execute(circuit, simulator, shots=<span class=\"hljs-number\">1000</span>)\n\n    <span class=\"hljs-keyword\">return</span> job.result().get_counts(circuit)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Total count for various states are: <span class=\"hljs-subst\">{quantum_entanglement(<span class=\"hljs-number\">3</span>)}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "NAVEEN S R",
+      "email": "56086391+nkpro2000sr@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

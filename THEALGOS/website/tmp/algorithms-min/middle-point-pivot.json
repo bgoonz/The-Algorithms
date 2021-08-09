@@ -1,0 +1,10 @@
+{
+  "slug": "middle-point-pivot",
+  "name": "Middle point pivot",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

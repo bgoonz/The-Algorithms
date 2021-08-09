@@ -1,0 +1,36 @@
+{
+  "slug": "countchar",
+  "name": "CountChar",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/CountChar.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/CountChar.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">CountChar</span> {\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">input</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n    System.out.print(<span class=\"hljs-string\">&quot;Enter your text: &quot;</span>);\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">str</span> <span class=\"hljs-operator\">=</span> input.nextLine();\n    input.close();\n    System.out.println(<span class=\"hljs-string\">&quot;There are &quot;</span> + CountCharacters(str) + <span class=\"hljs-string\">&quot; characters.&quot;</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Count non space character in string\n   *\n   * <span class=\"hljs-doctag\">@param</span> str String to count the characters\n   * <span class=\"hljs-doctag\">@return</span> number of character in the specified string\n   */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">CountCharacters</span><span class=\"hljs-params\">(String str)</span> {\n    <span class=\"hljs-keyword\">return</span> str.replaceAll(<span class=\"hljs-string\">&quot;\\\\s&quot;</span>, <span class=\"hljs-string\">&quot;&quot;</span>).length();\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayush Varshney",
+      "email": "34279863+blast314@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Prasoon",
+      "email": "prasoonpandey06@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

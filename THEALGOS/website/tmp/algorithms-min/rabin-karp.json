@@ -1,0 +1,75 @@
+{
+  "slug": "rabin-karp",
+  "name": "Rabin Karp",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "java": "",
+    "f-sharp": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Antony",
+      "email": "45163503+DuckNrOne@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Prateek Kumar Oraon",
+      "email": "b170078@nitsikkim.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Hector S",
+      "email": "hfsam88@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Amit Kumar",
+      "email": "offamitkumar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nolan Emirot",
+      "email": "emirot.nolan@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Md. Mahbubur Rahman",
+      "email": "mahbuburrahman2111@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "damelLP",
+      "email": "dlambertpowell@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

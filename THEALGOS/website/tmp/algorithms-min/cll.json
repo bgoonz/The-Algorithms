@@ -1,0 +1,26 @@
+{
+  "slug": "cll",
+  "name": "Cll",
+  "categories": ["datastructures", "cll"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shubham Sah",
+      "email": "42349247+shubhamsah@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

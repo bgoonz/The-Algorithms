@@ -1,0 +1,10 @@
+{
+  "slug": "a000040-primes",
+  "name": "A000040 Primes",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

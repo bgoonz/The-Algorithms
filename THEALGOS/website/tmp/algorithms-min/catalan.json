@@ -1,0 +1,10 @@
+{
+  "slug": "catalan",
+  "name": "Catalan",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

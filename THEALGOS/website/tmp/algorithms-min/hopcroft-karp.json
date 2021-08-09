@@ -1,0 +1,16 @@
+{
+  "slug": "hopcroft-karp",
+  "name": "Hopcroft Karp",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Pal Deora",
+      "email": "53469625+Krishnapal4050@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

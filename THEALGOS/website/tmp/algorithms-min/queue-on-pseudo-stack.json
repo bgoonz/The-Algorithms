@@ -1,0 +1,31 @@
+{
+  "slug": "queue-on-pseudo-stack",
+  "name": "Queue on Pseudo Stack",
+  "categories": ["datastructures", "queue"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "",
+      "email": "shyam.thiagarajan@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

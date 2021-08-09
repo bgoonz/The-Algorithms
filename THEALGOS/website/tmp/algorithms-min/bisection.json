@@ -1,0 +1,52 @@
+{
+  "slug": "bisection",
+  "name": "Bisection",
+  "categories": ["numericalanalysis"],
+  "implementations": {
+    "python": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "MatteoRaso",
+      "email": "33975162+MatteoRaso@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "spamegg",
+      "email": "4255997+spamegg1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "billpaps",
+      "email": "37051006+billpaps@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "wuminbin",
+      "email": "wuminbin@yeah.net",
+      "commits": 1
+    },
+    {
+      "name": "Rafael García Cuéllar",
+      "email": "r.gc@hotmail.es",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "insertion-sort-recursive",
+  "name": "Insertion Sort Recursive",
+  "categories": ["sorts"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

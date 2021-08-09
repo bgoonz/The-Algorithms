@@ -1,0 +1,21 @@
+{
+  "slug": "dbscan",
+  "name": "Dbscan",
+  "categories": ["machinelearning", "dbscan"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Kaushik Amar Das",
+      "email": "cozek@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

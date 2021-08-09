@@ -1,0 +1,21 @@
+{
+  "slug": "medianofrunningarray",
+  "name": "MedianOfRunningArray",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Misc/MedianOfRunningArray.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Misc/MedianOfRunningArray.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Misc;\n\n<span class=\"hljs-keyword\">import</span> java.util.Collections;\n<span class=\"hljs-keyword\">import</span> java.util.PriorityQueue;\n\n<span class=\"hljs-comment\">/** <span class=\"hljs-doctag\">@author</span> shrutisheoran */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">MedianOfRunningArray</span> {\n  <span class=\"hljs-keyword\">private</span> PriorityQueue&lt;Integer&gt; p1;\n  <span class=\"hljs-keyword\">private</span> PriorityQueue&lt;Integer&gt; p2;\n\n  <span class=\"hljs-comment\">// Constructor</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">MedianOfRunningArray</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-built_in\">this</span>.p1 = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">PriorityQueue</span>&lt;&gt;(Collections.reverseOrder()); <span class=\"hljs-comment\">// Max Heap</span>\n    <span class=\"hljs-built_in\">this</span>.p2 = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">PriorityQueue</span>&lt;&gt;(); <span class=\"hljs-comment\">// Min Heap</span>\n  }\n\n  <span class=\"hljs-comment\">/*\n      Inserting lower half of array to max Heap\n      and upper half to min heap\n  */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">insert</span><span class=\"hljs-params\">(Integer e)</span> {\n    p2.add(e);\n    <span class=\"hljs-keyword\">if</span> (p2.size() - p1.size() &gt; <span class=\"hljs-number\">1</span>) p1.add(p2.remove());\n  }\n\n  <span class=\"hljs-comment\">/*\n      Returns median at any given point\n  */</span>\n  <span class=\"hljs-keyword\">public</span> Integer <span class=\"hljs-title function_\">median</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">if</span> (p1.size() == p2.size()) <span class=\"hljs-keyword\">return</span> (p1.peek() + p2.peek()) / <span class=\"hljs-number\">2</span>;\n    <span class=\"hljs-keyword\">return</span> p1.size() &gt; p2.size() ? p1.peek() : p2.peek();\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-comment\">/*\n        Testing the median function\n    */</span>\n\n    <span class=\"hljs-type\">MedianOfRunningArray</span> <span class=\"hljs-variable\">p</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">MedianOfRunningArray</span>();\n    <span class=\"hljs-type\">int</span> arr[] = {<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">11</span>, <span class=\"hljs-number\">17</span>, <span class=\"hljs-number\">14</span>};\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-number\">9</span>; i++) {\n      p.insert(arr[i]);\n      System.out.print(p.median() + <span class=\"hljs-string\">&quot; &quot;</span>);\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

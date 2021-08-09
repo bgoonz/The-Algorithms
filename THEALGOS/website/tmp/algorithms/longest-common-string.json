@@ -1,0 +1,31 @@
+{
+  "slug": "longest-common-string",
+  "name": "Longest Common String",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "dynamic_programming/longest_common_string.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/dynamic_programming/longest_common_string.cpp",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iosrteam&gt;</span></span>\n<span class=\"hljs-keyword\">using</span> <span class=\"hljs-keyword\">namespace</span> std;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">max</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> b)</span> </span>{ <span class=\"hljs-keyword\">return</span> (a &gt; b) ? a : b; }\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">char</span> str1[] = <span class=\"hljs-string\">&quot;DEFBCD&quot;</span>;\n    <span class=\"hljs-type\">char</span> str2[] = <span class=\"hljs-string\">&quot;ABDEFJ&quot;</span>;\n    <span class=\"hljs-type\">int</span> i, j, k;\n    <span class=\"hljs-type\">int</span> n = <span class=\"hljs-built_in\">strlen</span>(str1) + <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-type\">int</span> m = <span class=\"hljs-built_in\">strlen</span>(str2) + <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-comment\">// cout&lt;&lt;n&lt;&lt;&quot; &quot;&lt;&lt;m&lt;&lt;&quot;\\n&quot;;</span>\n    <span class=\"hljs-type\">int</span> a[m][n];\n\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; m; i++) {\n        <span class=\"hljs-keyword\">for</span> (j = <span class=\"hljs-number\">0</span>; j &lt; n; j++) {\n            <span class=\"hljs-keyword\">if</span> (i == <span class=\"hljs-number\">0</span> || j == <span class=\"hljs-number\">0</span>)\n                a[i][j] = <span class=\"hljs-number\">0</span>;\n\n            <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (str1[i - <span class=\"hljs-number\">1</span>] == str2[j - <span class=\"hljs-number\">1</span>])\n                a[i][j] = a[i - <span class=\"hljs-number\">1</span>][j - <span class=\"hljs-number\">1</span>] + <span class=\"hljs-number\">1</span>;\n\n            <span class=\"hljs-keyword\">else</span>\n                a[i][j] = <span class=\"hljs-number\">0</span>;\n        }\n    }\n\n    <span class=\"hljs-comment\">/*for(i=0;i&lt;m;i++)\n        {\n            for(j=0;j&lt;n;j++)\n                cout&lt;&lt;a[i][j]&lt;&lt;&quot; &quot;;\n            cout&lt;&lt;&quot;\\n&quot;;\n        }*/</span>\n\n    <span class=\"hljs-type\">int</span> ma = <span class=\"hljs-number\">-1</span>;\n    <span class=\"hljs-type\">int</span> indi, indj;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; m; i++) {\n        <span class=\"hljs-keyword\">for</span> (j = <span class=\"hljs-number\">0</span>; j &lt; n; j++) {\n            <span class=\"hljs-keyword\">if</span> (a[i][j] &gt; ma) {\n                ma = a[i][j];\n                indi = i;\n                indj = j;\n            }\n        }\n    }\n\n    cout &lt;&lt; str1 &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span>;\n    cout &lt;&lt; str2 &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span>;\n\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;longest string size = &quot;</span> &lt;&lt; ma <span class=\"hljs-comment\">/*&lt;&lt;&quot; &quot;&lt;&lt;indi&lt;&lt;&quot; &quot;&lt;&lt;indj*/</span> &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span>;\n    <span class=\"hljs-keyword\">for</span> (i = indi - <span class=\"hljs-number\">3</span>; i &lt; indi; i++) cout &lt;&lt; str1[i];\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nikhil Arora",
+      "email": "nikhilarora068@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

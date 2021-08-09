@@ -1,0 +1,21 @@
+{
+  "slug": "crawl-google-scholar-citation",
+  "name": "Crawl Google Scholar Citation",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/crawl_google_scholar_citation.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/crawl_google_scholar_citation.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nGet the citation from google scholar\nusing title and year of publication, and volume and pages of journal.\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> requests\n<span class=\"hljs-keyword\">from</span> bs4 <span class=\"hljs-keyword\">import</span> BeautifulSoup\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_citation</span>(<span class=\"hljs-params\">base_url: <span class=\"hljs-built_in\">str</span>, params: <span class=\"hljs-built_in\">dict</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Return the citation number.\n    &quot;&quot;&quot;</span>\n    soup = BeautifulSoup(requests.get(base_url, params=params).content, <span class=\"hljs-string\">&quot;html.parser&quot;</span>)\n    div = soup.find(<span class=\"hljs-string\">&quot;div&quot;</span>, attrs={<span class=\"hljs-string\">&quot;class&quot;</span>: <span class=\"hljs-string\">&quot;gs_ri&quot;</span>})\n    anchors = div.find(<span class=\"hljs-string\">&quot;div&quot;</span>, attrs={<span class=\"hljs-string\">&quot;class&quot;</span>: <span class=\"hljs-string\">&quot;gs_fl&quot;</span>}).find_all(<span class=\"hljs-string\">&quot;a&quot;</span>)\n    <span class=\"hljs-keyword\">return</span> anchors[<span class=\"hljs-number\">2</span>].get_text()\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    params = {\n        <span class=\"hljs-string\">&quot;title&quot;</span>: (\n            <span class=\"hljs-string\">&quot;Precisely geometry controlled microsupercapacitors for ultrahigh areal &quot;</span>\n            <span class=\"hljs-string\">&quot;capacitance, volumetric capacitance, and energy density&quot;</span>\n        ),\n        <span class=\"hljs-string\">&quot;journal&quot;</span>: <span class=\"hljs-string\">&quot;Chem. Mater.&quot;</span>,\n        <span class=\"hljs-string\">&quot;volume&quot;</span>: <span class=\"hljs-number\">30</span>,\n        <span class=\"hljs-string\">&quot;pages&quot;</span>: <span class=\"hljs-string\">&quot;3979-3990&quot;</span>,\n        <span class=\"hljs-string\">&quot;year&quot;</span>: <span class=\"hljs-number\">2018</span>,\n        <span class=\"hljs-string\">&quot;hl&quot;</span>: <span class=\"hljs-string\">&quot;en&quot;</span>,\n    }\n    <span class=\"hljs-built_in\">print</span>(get_citation(<span class=\"hljs-string\">&quot;http://scholar.google.com/scholar_lookup&quot;</span>, params=params))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "boyuuuun",
+      "email": "44187125+boyuuuun@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

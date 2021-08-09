@@ -1,0 +1,16 @@
+{
+  "slug": "fareyapproximation",
+  "name": "FareyApproximation",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Rak Laptudirm",
+      "email": "raklaptudirm@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

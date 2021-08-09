@@ -1,0 +1,21 @@
+{
+  "slug": "whileloopfactorial",
+  "name": "WhileLoopFactorial",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "theepag",
+      "email": "theepag@live.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

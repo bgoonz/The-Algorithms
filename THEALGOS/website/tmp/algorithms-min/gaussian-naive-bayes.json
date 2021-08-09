@@ -1,0 +1,21 @@
+{
+  "slug": "gaussian-naive-bayes",
+  "name": "Gaussian Naive Bayes",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Prince Gangurde",
+      "email": "50592495+Prince326@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

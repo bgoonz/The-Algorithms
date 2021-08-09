@@ -1,0 +1,21 @@
+{
+  "slug": "nodeinterface",
+  "name": "nodeInterface",
+  "categories": ["designpatterns", "prototype"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "designpatterns/prototype/nodeInterface.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/designpatterns/prototype/nodeInterface.go",
+      "code": "<span class=\"hljs-keyword\">package</span> prototype\n<span class=\"hljs-keyword\">type</span> nodeInterface <span class=\"hljs-keyword\">interface</span> {\n\t<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-keyword\">string</span>)\n\tclone() nodeInterface\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "abdelrhman",
+      "email": "mohamed95zoytak@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

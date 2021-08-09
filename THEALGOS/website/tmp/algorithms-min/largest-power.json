@@ -1,0 +1,10 @@
+{
+  "slug": "largest-power",
+  "name": "Largest Power",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "greedy-best-first",
+  "name": "Greedy Best First",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "hasan",
+      "email": "hasanuli10@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Erwin Lejeune",
+      "email": "erwin.lejeune15@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

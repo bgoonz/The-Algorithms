@@ -1,0 +1,16 @@
+{
+  "slug": "minimum-steps-to-one",
+  "name": "Minimum Steps to One",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Alex Joslin",
+      "email": "aljoslin13@yahoo.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

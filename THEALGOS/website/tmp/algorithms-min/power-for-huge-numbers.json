@@ -1,0 +1,10 @@
+{
+  "slug": "power-for-huge-numbers",
+  "name": "Power for Huge Numbers",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

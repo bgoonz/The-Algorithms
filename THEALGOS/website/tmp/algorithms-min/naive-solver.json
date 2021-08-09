@@ -1,0 +1,10 @@
+{
+  "slug": "naive-solver",
+  "name": "Naive solver",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

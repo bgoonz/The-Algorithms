@@ -1,0 +1,37 @@
+{
+  "slug": "absolutemax",
+  "name": "AbsoluteMax",
+  "categories": ["math"],
+  "implementations": {
+    "java": "",
+    "php": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    },
+    {
+      "name": "Ray S",
+      "email": "68674276+rbshealy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arogon1",
+      "email": "40372809+Arogon1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

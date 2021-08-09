@@ -1,0 +1,10 @@
+{
+  "slug": "integral-approximation",
+  "name": "Integral Approximation",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "simple-substitution-cipher",
+  "name": "Simple Substitution Cipher",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/simple_substitution_cipher.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/simple_substitution_cipher.py",
+      "code": "<span class=\"hljs-keyword\">import</span> random\n<span class=\"hljs-keyword\">import</span> sys\n\nLETTERS = <span class=\"hljs-string\">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    message = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter message: &quot;</span>)\n    key = <span class=\"hljs-string\">&quot;LFWOAYUISVKMNXPBDCRJTQEGHZ&quot;</span>\n    resp = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Encrypt/Decrypt [e/d]: &quot;</span>)\n\n    checkValidKey(key)\n\n    <span class=\"hljs-keyword\">if</span> resp.lower().startswith(<span class=\"hljs-string\">&quot;e&quot;</span>):\n        mode = <span class=\"hljs-string\">&quot;encrypt&quot;</span>\n        translated = encryptMessage(key, message)\n    <span class=\"hljs-keyword\">elif</span> resp.lower().startswith(<span class=\"hljs-string\">&quot;d&quot;</span>):\n        mode = <span class=\"hljs-string\">&quot;decrypt&quot;</span>\n        translated = decryptMessage(key, message)\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;\\n<span class=\"hljs-subst\">{mode.title()}</span>ion: \\n<span class=\"hljs-subst\">{translated}</span>&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">checkValidKey</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    keyList = <span class=\"hljs-built_in\">list</span>(key)\n    lettersList = <span class=\"hljs-built_in\">list</span>(LETTERS)\n    keyList.sort()\n    lettersList.sort()\n\n    <span class=\"hljs-keyword\">if</span> keyList != lettersList:\n        sys.exit(<span class=\"hljs-string\">&quot;Error in the key or symbol set.&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encryptMessage</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; encryptMessage(&#x27;LFWOAYUISVKMNXPBDCRJTQEGHZ&#x27;, &#x27;Harshil Darji&#x27;)\n    &#x27;Ilcrism Olcvs&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> translateMessage(key, message, <span class=\"hljs-string\">&quot;encrypt&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decryptMessage</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; decryptMessage(&#x27;LFWOAYUISVKMNXPBDCRJTQEGHZ&#x27;, &#x27;Ilcrism Olcvs&#x27;)\n    &#x27;Harshil Darji&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> translateMessage(key, message, <span class=\"hljs-string\">&quot;decrypt&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">translateMessage</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span>, message: <span class=\"hljs-built_in\">str</span>, mode: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    translated = <span class=\"hljs-string\">&quot;&quot;</span>\n    charsA = LETTERS\n    charsB = key\n\n    <span class=\"hljs-keyword\">if</span> mode == <span class=\"hljs-string\">&quot;decrypt&quot;</span>:\n        charsA, charsB = charsB, charsA\n\n    <span class=\"hljs-keyword\">for</span> symbol <span class=\"hljs-keyword\">in</span> message:\n        <span class=\"hljs-keyword\">if</span> symbol.upper() <span class=\"hljs-keyword\">in</span> charsA:\n            symIndex = charsA.find(symbol.upper())\n            <span class=\"hljs-keyword\">if</span> symbol.isupper():\n                translated += charsB[symIndex].upper()\n            <span class=\"hljs-keyword\">else</span>:\n                translated += charsB[symIndex].lower()\n        <span class=\"hljs-keyword\">else</span>:\n            translated += symbol\n\n    <span class=\"hljs-keyword\">return</span> translated\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">getRandomKey</span>() -&gt; <span class=\"hljs-built_in\">str</span>:\n    key = <span class=\"hljs-built_in\">list</span>(LETTERS)\n    random.shuffle(key)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;&quot;</span>.join(key)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    },
+    "java": {
+      "dir": "ciphers/SimpleSubstitutionCipher.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/ciphers/SimpleSubstitutionCipher.java",
+      "code": "<span class=\"hljs-keyword\">package</span> ciphers;\n\n<span class=\"hljs-keyword\">import</span> java.util.*;\n\n<span class=\"hljs-comment\">/**\n * The simple substitution cipher is a cipher that has been in use for many hundreds of years (an\n * excellent history is given in Simon Singhs &#x27;the Code Book&#x27;). It basically consists of\n * substituting every plaintext character for a different ciphertext character. It differs from the\n * Caesar cipher in that the cipher alphabet is not simply the alphabet shifted, it is completely\n * jumbled.\n *\n * <span class=\"hljs-doctag\">@author</span> Hassan Elseoudy\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">SimpleSubstitutionCipher</span> {\n\n  <span class=\"hljs-comment\">/**\n   * Encrypt text by replacing each element with its opposite character.\n   *\n   * <span class=\"hljs-doctag\">@param</span> message\n   * <span class=\"hljs-doctag\">@param</span> cipherSmall\n   * <span class=\"hljs-doctag\">@return</span> Encrypted message\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">encode</span><span class=\"hljs-params\">(String message, String cipherSmall)</span> {\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">encoded</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&quot;&quot;</span>;\n\n    <span class=\"hljs-comment\">// This map is used to encode</span>\n    Map&lt;Character, Character&gt; cipherMap = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">HashMap</span>&lt;Character, Character&gt;();\n\n    <span class=\"hljs-type\">char</span> <span class=\"hljs-variable\">beginSmallLetter</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&#x27;a&#x27;</span>;\n    <span class=\"hljs-type\">char</span> <span class=\"hljs-variable\">beginCapitalLetter</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&#x27;A&#x27;</span>;\n\n    cipherSmall = cipherSmall.toLowerCase();\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">cipherCapital</span> <span class=\"hljs-operator\">=</span> cipherSmall.toUpperCase();\n\n    <span class=\"hljs-comment\">// To handle Small and Capital letters</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; cipherSmall.length(); i++) {\n      cipherMap.put(beginSmallLetter++, cipherSmall.charAt(i));\n      cipherMap.put(beginCapitalLetter++, cipherCapital.charAt(i));\n    }\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; message.length(); i++) {\n      <span class=\"hljs-keyword\">if</span> (Character.isAlphabetic(message.charAt(i))) encoded += cipherMap.get(message.charAt(i));\n      <span class=\"hljs-keyword\">else</span> encoded += message.charAt(i);\n    }\n\n    <span class=\"hljs-keyword\">return</span> encoded;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Decrypt message by replacing each element with its opposite character in cipher.\n   *\n   * <span class=\"hljs-doctag\">@param</span> encryptedMessage\n   * <span class=\"hljs-doctag\">@param</span> cipherSmall\n   * <span class=\"hljs-doctag\">@return</span> message\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">decode</span><span class=\"hljs-params\">(String encryptedMessage, String cipherSmall)</span> {\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">decoded</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&quot;&quot;</span>;\n\n    Map&lt;Character, Character&gt; cipherMap = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">HashMap</span>&lt;Character, Character&gt;();\n\n    <span class=\"hljs-type\">char</span> <span class=\"hljs-variable\">beginSmallLetter</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&#x27;a&#x27;</span>;\n    <span class=\"hljs-type\">char</span> <span class=\"hljs-variable\">beginCapitalLetter</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&#x27;A&#x27;</span>;\n\n    cipherSmall = cipherSmall.toLowerCase();\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">cipherCapital</span> <span class=\"hljs-operator\">=</span> cipherSmall.toUpperCase();\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; cipherSmall.length(); i++) {\n      cipherMap.put(cipherSmall.charAt(i), beginSmallLetter++);\n      cipherMap.put(cipherCapital.charAt(i), beginCapitalLetter++);\n    }\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; encryptedMessage.length(); i++) {\n      <span class=\"hljs-keyword\">if</span> (Character.isAlphabetic(encryptedMessage.charAt(i)))\n        decoded += cipherMap.get(encryptedMessage.charAt(i));\n      <span class=\"hljs-keyword\">else</span> decoded += encryptedMessage.charAt(i);\n    }\n\n    <span class=\"hljs-keyword\">return</span> decoded;\n  }\n\n  <span class=\"hljs-comment\">/** TODO remove main and make JUnit Testing */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">a</span> <span class=\"hljs-operator\">=</span> encode(<span class=\"hljs-string\">&quot;defend the east wall of the castle&quot;</span>, <span class=\"hljs-string\">&quot;phqgiumeaylnofdxjkrcvstzwb&quot;</span>);\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">b</span> <span class=\"hljs-operator\">=</span> decode(a, <span class=\"hljs-string\">&quot;phqgiumeaylnofdxjkrcvstzwb&quot;</span>);\n    System.out.println(b);\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "nikhil kala",
+      "email": "nikhilkala8@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

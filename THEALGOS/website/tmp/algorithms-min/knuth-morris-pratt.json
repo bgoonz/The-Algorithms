@@ -1,0 +1,60 @@
+{
+  "slug": "knuth-morris-pratt",
+  "name": "Knuth Morris Pratt",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "f-sharp": "",
+    "rust": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Pierre Gimalac",
+      "email": "pierre.gimalac@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Raman Preet Singh",
+      "email": "ramanpre0810@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mahbubur.rahman",
+      "email": "mahbubur.rahman@bjitgroup.com",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "damelLP",
+      "email": "dlambertpowell@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

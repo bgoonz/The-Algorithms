@@ -1,0 +1,16 @@
+{
+  "slug": "sort-color",
+  "name": "Sort Color",
+  "categories": ["sorts"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

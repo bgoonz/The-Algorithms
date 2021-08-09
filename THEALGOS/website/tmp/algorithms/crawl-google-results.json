@@ -1,0 +1,31 @@
+{
+  "slug": "crawl-google-results",
+  "name": "Crawl Google Results",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/crawl_google_results.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/crawl_google_results.py",
+      "code": "<span class=\"hljs-keyword\">import</span> sys\n<span class=\"hljs-keyword\">import</span> webbrowser\n\n<span class=\"hljs-keyword\">import</span> requests\n<span class=\"hljs-keyword\">from</span> bs4 <span class=\"hljs-keyword\">import</span> BeautifulSoup\n<span class=\"hljs-keyword\">from</span> fake_useragent <span class=\"hljs-keyword\">import</span> UserAgent\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Googling.....&quot;</span>)\n    url = <span class=\"hljs-string\">&quot;https://www.google.com/search?q=&quot;</span> + <span class=\"hljs-string\">&quot; &quot;</span>.join(sys.argv[<span class=\"hljs-number\">1</span>:])\n    res = requests.get(url, headers={<span class=\"hljs-string\">&quot;UserAgent&quot;</span>: UserAgent().random})\n    <span class=\"hljs-comment\"># res.raise_for_status()</span>\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;project1a.html&quot;</span>, <span class=\"hljs-string\">&quot;wb&quot;</span>) <span class=\"hljs-keyword\">as</span> out_file:  <span class=\"hljs-comment\"># only for knowing the class</span>\n        <span class=\"hljs-keyword\">for</span> data <span class=\"hljs-keyword\">in</span> res.iter_content(<span class=\"hljs-number\">10000</span>):\n            out_file.write(data)\n    soup = BeautifulSoup(res.text, <span class=\"hljs-string\">&quot;html.parser&quot;</span>)\n    links = <span class=\"hljs-built_in\">list</span>(soup.select(<span class=\"hljs-string\">&quot;.eZt8xd&quot;</span>))[:<span class=\"hljs-number\">5</span>]\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-built_in\">len</span>(links))\n    <span class=\"hljs-keyword\">for</span> link <span class=\"hljs-keyword\">in</span> links:\n        <span class=\"hljs-keyword\">if</span> link.text == <span class=\"hljs-string\">&quot;Maps&quot;</span>:\n            webbrowser.<span class=\"hljs-built_in\">open</span>(link.get(<span class=\"hljs-string\">&quot;href&quot;</span>))\n        <span class=\"hljs-keyword\">else</span>:\n            webbrowser.<span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">f&quot;http://google.com<span class=\"hljs-subst\">{link.get(<span class=\"hljs-string\">&#x27;href&#x27;</span>)}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mantas Zimnickas",
+      "email": "sirexas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "kunal kumar barman",
+      "email": "kumar96kunal@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "gcd",
+  "name": "GCD",
+  "categories": ["math"],
+  "implementations": {
+    "java": "",
+    "c": "",
+    "go": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "João Marcos",
+      "email": "joao.medeiros@ccc.ufcg.edu.br",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "teerapat1739",
+      "email": "teerapat12345678@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

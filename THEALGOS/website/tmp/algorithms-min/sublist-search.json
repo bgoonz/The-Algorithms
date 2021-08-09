@@ -1,0 +1,16 @@
+{
+  "slug": "sublist-search",
+  "name": "Sublist Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Nitin Sharma",
+      "email": "32377892+foo290@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

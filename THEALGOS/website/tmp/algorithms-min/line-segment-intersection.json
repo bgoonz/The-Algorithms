@@ -1,0 +1,21 @@
+{
+  "slug": "line-segment-intersection",
+  "name": "Line Segment Intersection",
+  "categories": ["geometry"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sajied Shah Yousuf",
+      "email": "40203390+meSajied@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

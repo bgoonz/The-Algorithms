@@ -1,0 +1,16 @@
+{
+  "slug": "horspoolsearch",
+  "name": "HorspoolSearch",
+  "categories": ["strings"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "George B",
+      "email": "geompokon@csd.auth.gr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

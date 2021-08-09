@@ -1,0 +1,21 @@
+{
+  "slug": "instagram-video",
+  "name": "Instagram Video",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/instagram_video.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/instagram_video.py",
+      "code": "<span class=\"hljs-keyword\">from</span> datetime <span class=\"hljs-keyword\">import</span> datetime\n\n<span class=\"hljs-keyword\">import</span> requests\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">download_video</span>(<span class=\"hljs-params\">url: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">bytes</span>:\n    base_url = <span class=\"hljs-string\">&quot;https://downloadgram.net/wp-json/wppress/video-downloader/video?url=&quot;</span>\n    video_url = requests.get(base_url + url).json()[<span class=\"hljs-number\">0</span>][<span class=\"hljs-string\">&quot;urls&quot;</span>][<span class=\"hljs-number\">0</span>][<span class=\"hljs-string\">&quot;src&quot;</span>]\n    <span class=\"hljs-keyword\">return</span> requests.get(video_url).content\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    url = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter Video/IGTV url: &quot;</span>).strip()\n    file_name = <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{datetime.now():%Y-%m-%d_%H:%M:%S}</span>.mp4&quot;</span>\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(file_name, <span class=\"hljs-string\">&quot;wb&quot;</span>) <span class=\"hljs-keyword\">as</span> fp:\n        fp.write(download_video(url))\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Done. Video saved to disk as <span class=\"hljs-subst\">{file_name}</span>.&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Sullivan",
+      "email": "38718448+Epic-R-R@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

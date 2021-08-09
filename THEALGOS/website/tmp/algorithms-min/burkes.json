@@ -1,0 +1,21 @@
+{
+  "slug": "burkes",
+  "name": "Burkes",
+  "categories": ["digitalimageprocessing", "dithering"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

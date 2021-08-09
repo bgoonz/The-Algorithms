@@ -1,0 +1,26 @@
+{
+  "slug": "median-search",
+  "name": "Median Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayush Nagar",
+      "email": "32647423+ayushnagar123@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sushil Kumar",
+      "email": "sushil.18je0861@am.iitism.ac.in",
+      "commits": 10
+    }
+  ],
+  "explanationUrl": {}
+}

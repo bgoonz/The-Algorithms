@@ -1,0 +1,31 @@
+{
+  "slug": "index-calculation",
+  "name": "Index Calculation",
+  "categories": ["digitalimageprocessing"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Níkolas Vargas",
+      "email": "vargasnikolass@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "João Gustavo A. Amorim",
+      "email": "joaogustavoamorim@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

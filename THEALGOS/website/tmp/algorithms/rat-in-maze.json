@@ -1,0 +1,41 @@
+{
+  "slug": "rat-in-maze",
+  "name": "Rat in Maze",
+  "categories": ["backtracking"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "backtracking/rat_in_maze.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/backtracking/rat_in_maze.py",
+      "code": "<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">solve_maze</span>(<span class=\"hljs-params\">maze: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]]</span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    This method solves the &quot;rat in maze&quot; problem.\n    In this problem we have some n by n matrix, a start point and an end point.\n    We want to go from the start to the end. In this matrix zeroes represent walls\n    and ones paths we can use.\n    Parameters :\n        maze(2D matrix) : maze\n    Returns:\n        Return: True if the maze has a solution or False if it does not.\n    &gt;&gt;&gt; maze = [[0, 1, 0, 1, 1],\n    ...         [0, 0, 0, 0, 0],\n    ...         [1, 0, 1, 0, 1],\n    ...         [0, 0, 1, 0, 0],\n    ...         [1, 0, 0, 1, 0]]\n    &gt;&gt;&gt; solve_maze(maze)\n    [1, 0, 0, 0, 0]\n    [1, 1, 1, 1, 0]\n    [0, 0, 0, 1, 0]\n    [0, 0, 0, 1, 1]\n    [0, 0, 0, 0, 1]\n    True\n\n    &gt;&gt;&gt; maze = [[0, 1, 0, 1, 1],\n    ...         [0, 0, 0, 0, 0],\n    ...         [0, 0, 0, 0, 1],\n    ...         [0, 0, 0, 0, 0],\n    ...         [0, 0, 0, 0, 0]]\n    &gt;&gt;&gt; solve_maze(maze)\n    [1, 0, 0, 0, 0]\n    [1, 0, 0, 0, 0]\n    [1, 0, 0, 0, 0]\n    [1, 0, 0, 0, 0]\n    [1, 1, 1, 1, 1]\n    True\n\n    &gt;&gt;&gt; maze = [[0, 0, 0],\n    ...         [0, 1, 0],\n    ...         [1, 0, 0]]\n    &gt;&gt;&gt; solve_maze(maze)\n    [1, 1, 1]\n    [0, 0, 1]\n    [0, 0, 1]\n    True\n\n    &gt;&gt;&gt; maze = [[0, 1, 0],\n    ...         [0, 1, 0],\n    ...         [1, 0, 0]]\n    &gt;&gt;&gt; solve_maze(maze)\n    No solution exists!\n    False\n\n    &gt;&gt;&gt; maze = [[0, 1],\n    ...         [1, 0]]\n    &gt;&gt;&gt; solve_maze(maze)\n    No solution exists!\n    False\n    &quot;&quot;&quot;</span>\n    size = <span class=\"hljs-built_in\">len</span>(maze)\n    <span class=\"hljs-comment\"># We need to create solution object to save path.</span>\n    solutions = [[<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(size)] <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(size)]\n    solved = run_maze(maze, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, solutions)\n    <span class=\"hljs-keyword\">if</span> solved:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>.join(<span class=\"hljs-built_in\">str</span>(row) <span class=\"hljs-keyword\">for</span> row <span class=\"hljs-keyword\">in</span> solutions))\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;No solution exists!&quot;</span>)\n    <span class=\"hljs-keyword\">return</span> solved\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">run_maze</span>(<span class=\"hljs-params\">maze: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]], i: <span class=\"hljs-built_in\">int</span>, j: <span class=\"hljs-built_in\">int</span>, solutions: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]]</span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    This method is recursive starting from (i, j) and going in one of four directions:\n    up, down, left, right.\n    If a path is found to destination it returns True otherwise it returns False.\n    Parameters:\n        maze(2D matrix) : maze\n        i, j : coordinates of matrix\n        solutions(2D matrix) : solutions\n    Returns:\n        Boolean if path is found True, Otherwise False.\n    &quot;&quot;&quot;</span>\n    size = <span class=\"hljs-built_in\">len</span>(maze)\n    <span class=\"hljs-comment\"># Final check point.</span>\n    <span class=\"hljs-keyword\">if</span> i == j == (size - <span class=\"hljs-number\">1</span>):\n        solutions[i][j] = <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n\n    lower_flag = (<span class=\"hljs-keyword\">not</span> (i &lt; <span class=\"hljs-number\">0</span>)) <span class=\"hljs-keyword\">and</span> (<span class=\"hljs-keyword\">not</span> (j &lt; <span class=\"hljs-number\">0</span>))  <span class=\"hljs-comment\"># Check lower bounds</span>\n    upper_flag = (i &lt; size) <span class=\"hljs-keyword\">and</span> (j &lt; size)  <span class=\"hljs-comment\"># Check upper bounds</span>\n\n    <span class=\"hljs-keyword\">if</span> lower_flag <span class=\"hljs-keyword\">and</span> upper_flag:\n        <span class=\"hljs-comment\"># check for already visited and block points.</span>\n        block_flag = (<span class=\"hljs-keyword\">not</span> (solutions[i][j])) <span class=\"hljs-keyword\">and</span> (<span class=\"hljs-keyword\">not</span> (maze[i][j]))\n        <span class=\"hljs-keyword\">if</span> block_flag:\n            <span class=\"hljs-comment\"># check visited</span>\n            solutions[i][j] = <span class=\"hljs-number\">1</span>\n\n            <span class=\"hljs-comment\"># check for directions</span>\n            <span class=\"hljs-keyword\">if</span> (\n                run_maze(maze, i + <span class=\"hljs-number\">1</span>, j, solutions)\n                <span class=\"hljs-keyword\">or</span> run_maze(maze, i, j + <span class=\"hljs-number\">1</span>, solutions)\n                <span class=\"hljs-keyword\">or</span> run_maze(maze, i - <span class=\"hljs-number\">1</span>, j, solutions)\n                <span class=\"hljs-keyword\">or</span> run_maze(maze, i, j - <span class=\"hljs-number\">1</span>, solutions)\n            ):\n                <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n\n            solutions[i][j] = <span class=\"hljs-number\">0</span>\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hasenn",
+      "email": "eliottarloveyrier@live.fr",
+      "commits": 1
+    },
+    {
+      "name": "beqakd",
+      "email": "39763019+beqakd@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

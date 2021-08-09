@@ -1,0 +1,26 @@
+{
+  "slug": "crawl-google-results",
+  "name": "Crawl Google Results",
+  "categories": ["webprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Mantas Zimnickas",
+      "email": "sirexas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "kunal kumar barman",
+      "email": "kumar96kunal@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

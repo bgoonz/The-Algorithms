@@ -1,0 +1,26 @@
+{
+  "slug": "skylineproblem",
+  "name": "SkylineProblem",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "rmakynen",
+      "email": "rmakynen@W10-178.student.yo.oulu.fi",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "sangjun2",
+      "email": "sj27294626@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

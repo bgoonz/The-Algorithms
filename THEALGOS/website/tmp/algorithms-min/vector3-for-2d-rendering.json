@@ -1,0 +1,21 @@
+{
+  "slug": "vector3-for-2d-rendering",
+  "name": "Vector3 for 2d Rendering",
+  "categories": ["graphics"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "xcodz-dot",
+      "email": "71920621+xcodz-dot@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

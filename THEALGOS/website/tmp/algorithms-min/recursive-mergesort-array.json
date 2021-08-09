@@ -1,0 +1,16 @@
+{
+  "slug": "recursive-mergesort-array",
+  "name": "Recursive Mergesort Array",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Benjamin Fein",
+      "email": "benaaronfein@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "decimaltoanyusingstack",
+  "name": "DecimalToAnyUsingStack",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

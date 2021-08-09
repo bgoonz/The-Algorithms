@@ -1,0 +1,41 @@
+{
+  "slug": "factorial-python",
+  "name": "Factorial Python",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/factorial_python.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/factorial_python.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">factorial</span>(<span class=\"hljs-params\">input_number: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Calculate the factorial of specified number\n\n    &gt;&gt;&gt; factorial(1)\n    1\n    &gt;&gt;&gt; factorial(6)\n    720\n    &gt;&gt;&gt; factorial(0)\n    1\n    &gt;&gt;&gt; factorial(-1)\n    Traceback (most recent call last):\n        ...\n    ValueError: factorial() not defined for negative values\n    &gt;&gt;&gt; factorial(0.1)\n    Traceback (most recent call last):\n        ...\n    ValueError: factorial() only accepts integral values\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> input_number &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;factorial() not defined for negative values&quot;</span>)\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-built_in\">isinstance</span>(input_number, <span class=\"hljs-built_in\">int</span>):\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;factorial() only accepts integral values&quot;</span>)\n    result = <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, input_number):\n        result = result * (i + <span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">return</span> result\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Yurii",
+      "email": "33547678+yuriimchg@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

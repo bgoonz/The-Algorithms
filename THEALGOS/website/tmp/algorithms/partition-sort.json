@@ -1,0 +1,26 @@
+{
+  "slug": "partition-sort",
+  "name": "Partition Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "sorting/partition_sort.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/sorting/partition_sort.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">swap</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> *a, <span class=\"hljs-type\">int</span> *b)</span>\n{\n    <span class=\"hljs-type\">int</span> tmp = *a;\n    *a = *b;\n    *b = tmp;\n}\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">partition</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> arr[], <span class=\"hljs-type\">int</span> low, <span class=\"hljs-type\">int</span> high)</span>\n{\n    <span class=\"hljs-type\">int</span> pivot = arr[low];\n    <span class=\"hljs-type\">int</span> i = low - <span class=\"hljs-number\">1</span>, j = high + <span class=\"hljs-number\">1</span>;\n\n    <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-number\">1</span>)\n    {\n        <span class=\"hljs-comment\">/* Find leftmost element &gt;= pivot */</span>\n        <span class=\"hljs-keyword\">do</span>\n        {\n            i++;\n        } <span class=\"hljs-keyword\">while</span> (arr[i] &lt; pivot);\n\n        <span class=\"hljs-comment\">/* Find rightmost element &lt;= pivot */</span>\n        <span class=\"hljs-keyword\">do</span>\n        {\n            j--;\n        } <span class=\"hljs-keyword\">while</span> (arr[j] &gt; pivot);\n\n        <span class=\"hljs-comment\">/* if two pointers met */</span>\n        <span class=\"hljs-keyword\">if</span> (i &gt;= j)\n            <span class=\"hljs-keyword\">return</span> j;\n\n        swap(&amp;arr[i], &amp;arr[j]);\n    }\n}\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">partitionSort</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> arr[], <span class=\"hljs-type\">int</span> low, <span class=\"hljs-type\">int</span> high)</span>\n{\n    <span class=\"hljs-keyword\">if</span> (low &lt; high)\n    {\n        <span class=\"hljs-type\">int</span> value = partition(arr, low, high);\n        partitionSort(arr, low, value);\n        partitionSort(arr, value + <span class=\"hljs-number\">1</span>, high);\n    }\n}\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">printArray</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> arr[], <span class=\"hljs-type\">int</span> n)</span>\n{\n    <span class=\"hljs-type\">int</span> i;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++) <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d &quot;</span>, arr[i]);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>);\n}\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> arr[<span class=\"hljs-number\">20</span>];\n    <span class=\"hljs-type\">int</span> i, range = <span class=\"hljs-number\">100</span>;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-number\">20</span>; i++)\n    {\n        arr[i] = rand() % range + <span class=\"hljs-number\">1</span>;\n    }\n    <span class=\"hljs-type\">int</span> size = <span class=\"hljs-keyword\">sizeof</span> arr / <span class=\"hljs-keyword\">sizeof</span> arr[<span class=\"hljs-number\">0</span>];\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Array: \\n&quot;</span>);\n    printArray(arr, size);\n    partitionSort(arr, <span class=\"hljs-number\">0</span>, size - <span class=\"hljs-number\">1</span>);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Sorted Array: \\n&quot;</span>);\n    printArray(arr, size);\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

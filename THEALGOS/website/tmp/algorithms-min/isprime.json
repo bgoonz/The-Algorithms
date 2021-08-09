@@ -1,0 +1,21 @@
+{
+  "slug": "isprime",
+  "name": "isPrime",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "kotlin": ""
+  },
+  "contributors": [
+    {
+      "name": "Caio Fernando",
+      "email": "caio.fernandooficial35@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

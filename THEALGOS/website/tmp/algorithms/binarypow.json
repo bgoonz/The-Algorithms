@@ -1,0 +1,21 @@
+{
+  "slug": "binarypow",
+  "name": "BinaryPow",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Maths/BinaryPow.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/BinaryPow.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">BinaryPow</span> {\n  <span class=\"hljs-comment\">/**\n   * Calculate a^p using binary exponentiation\n   * [Binary-Exponentiation](https://cp-algorithms.com/algebra/binary-exp.html)\n   *\n   * <span class=\"hljs-doctag\">@param</span> a the base for exponentiation\n   * <span class=\"hljs-doctag\">@param</span> p the exponent - must be greater than 0\n   * <span class=\"hljs-doctag\">@return</span> a^p\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">binPow</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> p)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">res</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-keyword\">while</span> (p &gt; <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">if</span> ((p &amp; <span class=\"hljs-number\">1</span>) == <span class=\"hljs-number\">1</span>) {\n        res = res * a;\n      }\n      a = a * a;\n      p &gt;&gt;&gt;= <span class=\"hljs-number\">1</span>;\n    }\n    <span class=\"hljs-keyword\">return</span> res;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Function for testing binary exponentiation\n   *\n   * <span class=\"hljs-doctag\">@param</span> a the base\n   * <span class=\"hljs-doctag\">@param</span> p the exponent\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">test</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> p)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">res</span> <span class=\"hljs-operator\">=</span> binPow(a, p);\n    <span class=\"hljs-type\">assert</span> <span class=\"hljs-variable\">res</span> <span class=\"hljs-operator\">=</span>= (<span class=\"hljs-type\">int</span>) Math.pow(a, p) : <span class=\"hljs-string\">&quot;Incorrect Implementation&quot;</span>;\n    System.out.println(a + <span class=\"hljs-string\">&quot;^&quot;</span> + p + <span class=\"hljs-string\">&quot;: &quot;</span> + res);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Main Function to call tests\n   *\n   * <span class=\"hljs-doctag\">@param</span> args System Line Arguments\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-comment\">// prints 2^15: 32768</span>\n    test(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">15</span>);\n\n    <span class=\"hljs-comment\">// prints 3^9: 19683</span>\n    test(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">9</span>);\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "lakhan_nad",
+      "email": "lakhannad1999@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

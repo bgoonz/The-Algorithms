@@ -1,0 +1,21 @@
+{
+  "slug": "fcfs",
+  "name": "Fcfs",
+  "categories": ["scheduling"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

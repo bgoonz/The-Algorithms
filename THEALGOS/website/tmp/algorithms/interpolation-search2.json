@@ -1,0 +1,21 @@
+{
+  "slug": "interpolation-search2",
+  "name": "Interpolation Search2",
+  "categories": ["searches"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "search/interpolation_search2.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/search/interpolation_search2.cpp",
+      "code": "<span class=\"hljs-comment\">/**\r\n * \\file\r\n * \\brief [Interpolation\r\n * search](https://en.wikipedia.org/wiki/Interpolation_search) algorithm\r\n */</span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\r\n\r\n<span class=\"hljs-comment\">/** function to search the value in an array using interpolation search\r\n * \\param [in] arr array to search in\r\n * \\param [in] value value to search for\r\n * \\param [in] len length of array\r\n * \\returns index where the value is found\r\n * \\returns -1 if not found\r\n */</span>\r\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">InterpolationSearch</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> A[], <span class=\"hljs-type\">int</span> n, <span class=\"hljs-type\">int</span> x)</span> </span>{\r\n    <span class=\"hljs-type\">int</span> low = <span class=\"hljs-number\">0</span>;\r\n    <span class=\"hljs-type\">int</span> high = n - <span class=\"hljs-number\">1</span>;\r\n    <span class=\"hljs-keyword\">while</span> (low &lt;= high) {\r\n        <span class=\"hljs-type\">int</span> mid = low + (((high - <span class=\"hljs-number\">1</span>) * (x - A[low])) / (A[high] - A[low]));\r\n        <span class=\"hljs-keyword\">if</span> (x == A[mid])\r\n            <span class=\"hljs-keyword\">return</span> mid;  <span class=\"hljs-comment\">// Found x, return (exit)</span>\r\n        <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (x &lt; A[mid])\r\n            high = mid - <span class=\"hljs-number\">1</span>;  <span class=\"hljs-comment\">// X lies before mid</span>\r\n        <span class=\"hljs-keyword\">else</span>\r\n            low = mid + <span class=\"hljs-number\">1</span>;  <span class=\"hljs-comment\">// x lies after mid</span>\r\n    }\r\n\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">-1</span>;\r\n}\r\n\r\n<span class=\"hljs-comment\">/** main function */</span>\r\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\r\n    <span class=\"hljs-type\">int</span> A[] = {<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">13</span>, <span class=\"hljs-number\">14</span>, <span class=\"hljs-number\">15</span>, <span class=\"hljs-number\">23</span>};\r\n    <span class=\"hljs-type\">int</span> x = <span class=\"hljs-number\">17</span>;\r\n\r\n    <span class=\"hljs-comment\">///&lt; passed array A inside the InterpolationSearch function</span>\r\n    <span class=\"hljs-type\">int</span> index = <span class=\"hljs-built_in\">InterpolationSearch</span>(A, <span class=\"hljs-number\">8</span>, x);\r\n    <span class=\"hljs-keyword\">if</span> (index &lt; <span class=\"hljs-number\">0</span>)\r\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Number &quot;</span> &lt;&lt; x &lt;&lt; <span class=\"hljs-string\">&quot; not found&quot;</span> &lt;&lt; std::endl;\r\n    <span class=\"hljs-keyword\">else</span>\r\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Number &quot;</span> &lt;&lt; x &lt;&lt; <span class=\"hljs-string\">&quot; is at &quot;</span> &lt;&lt; index &lt;&lt; std::endl;\r\n}\r\n\r\n<span class=\"hljs-comment\">// randomly set x bcoz array was defined by us , therefore not reasonable for</span>\r\n<span class=\"hljs-comment\">// asking input. We could have asked for input if array elements were inputed by</span>\r\n<span class=\"hljs-comment\">// the user.</span>\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "sphenic-number",
+  "name": "Sphenic Number",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Neha Hasija",
+      "email": "nehahasija9@gmail.com",
+      "commits": 12
+    }
+  ],
+  "explanationUrl": {}
+}

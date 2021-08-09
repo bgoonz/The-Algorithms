@@ -1,0 +1,10 @@
+{
+  "slug": "2048",
+  "name": "2048",
+  "categories": ["others"],
+  "implementations": {
+    "aarch64_assembly": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

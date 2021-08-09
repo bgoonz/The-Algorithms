@@ -1,0 +1,45 @@
+{
+  "slug": "pigeonhole-sort",
+  "name": "Pigeonhole Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "c": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Hiyabye",
+      "email": "jihoon7373@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lownish Rai Sookha",
+      "email": "69192570+Lownish@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Níkolas Vargas",
+      "email": "vargasnikolass@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "SHAKTI SINGH",
+      "email": "mohittanwar2323@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Chris Kolonas",
+      "email": "ckolonas@csd.auth.gr",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

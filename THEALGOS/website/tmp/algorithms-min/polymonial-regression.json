@@ -1,0 +1,31 @@
+{
+  "slug": "polymonial-regression",
+  "name": "Polymonial Regression",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Mantas Zimnickas",
+      "email": "sirexas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "archit kaushal",
+      "email": "38643326+archu5@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

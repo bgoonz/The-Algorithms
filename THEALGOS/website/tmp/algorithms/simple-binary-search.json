@@ -1,0 +1,36 @@
+{
+  "slug": "simple-binary-search",
+  "name": "Simple Binary Search",
+  "categories": ["searches"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "searches/simple_binary_search.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/searches/simple_binary_search.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nPure Python implementation of a binary search algorithm.\n\nFor doctests run following command:\npython3 -m doctest -v simple_binary_search.py\n\nFor manual testing run:\npython3 simple_binary_search.py\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">binary_search</span>(<span class=\"hljs-params\">a_list: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>], item: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; test_list = [0, 1, 2, 8, 13, 17, 19, 32, 42]\n    &gt;&gt;&gt; print(binary_search(test_list, 3))\n    False\n    &gt;&gt;&gt; print(binary_search(test_list, 13))\n    True\n    &gt;&gt;&gt; print(binary_search([4, 4, 5, 6, 7], 4))\n    True\n    &gt;&gt;&gt; print(binary_search([4, 4, 5, 6, 7], -10))\n    False\n    &gt;&gt;&gt; print(binary_search([-18, 2], -18))\n    True\n    &gt;&gt;&gt; print(binary_search([5], 5))\n    True\n    &gt;&gt;&gt; print(binary_search([&#x27;a&#x27;, &#x27;c&#x27;, &#x27;d&#x27;], &#x27;c&#x27;))\n    True\n    &gt;&gt;&gt; print(binary_search([&#x27;a&#x27;, &#x27;c&#x27;, &#x27;d&#x27;], &#x27;f&#x27;))\n    False\n    &gt;&gt;&gt; print(binary_search([], 1))\n    False\n    &gt;&gt;&gt; print(binary_search([-.1, .1 , .8], .1))\n    True\n    &gt;&gt;&gt; binary_search(range(-5000, 5000, 10), 80)\n    True\n    &gt;&gt;&gt; binary_search(range(-5000, 5000, 10), 1255)\n    False\n    &gt;&gt;&gt; binary_search(range(0, 10000, 5), 2)\n    False\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(a_list) == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n    midpoint = <span class=\"hljs-built_in\">len</span>(a_list) // <span class=\"hljs-number\">2</span>\n    <span class=\"hljs-keyword\">if</span> a_list[midpoint] == item:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n    <span class=\"hljs-keyword\">if</span> item &lt; a_list[midpoint]:\n        <span class=\"hljs-keyword\">return</span> binary_search(a_list[:midpoint], item)\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">return</span> binary_search(a_list[midpoint + <span class=\"hljs-number\">1</span> :], item)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    user_input = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter numbers separated by comma:\\n&quot;</span>).strip()\n    sequence = [<span class=\"hljs-built_in\">int</span>(item.strip()) <span class=\"hljs-keyword\">for</span> item <span class=\"hljs-keyword\">in</span> user_input.split(<span class=\"hljs-string\">&quot;,&quot;</span>)]\n    target = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter the number to be found in the list:\\n&quot;</span>).strip())\n    not_str = <span class=\"hljs-string\">&quot;&quot;</span> <span class=\"hljs-keyword\">if</span> binary_search(sequence, target) <span class=\"hljs-keyword\">else</span> <span class=\"hljs-string\">&quot;not &quot;</span>\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{target}</span> was <span class=\"hljs-subst\">{not_str}</span>found in <span class=\"hljs-subst\">{sequence}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "praisearts",
+      "email": "34782930+praisearts@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "poloso",
+      "email": "posorio@sier.com.co",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

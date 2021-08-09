@@ -1,0 +1,22 @@
+{
+  "slug": "base64-encoding",
+  "name": "Base64 Encoding",
+  "categories": ["ciphers"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashish Bhanu Daulatabad",
+      "email": "supersonic12910@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hafidh",
+      "email": "32499116+hfz1337@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

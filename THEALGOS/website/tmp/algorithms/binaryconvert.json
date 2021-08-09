@@ -1,0 +1,21 @@
+{
+  "slug": "binaryconvert",
+  "name": "BinaryConvert",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/BinaryConvert.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/BinaryConvert.js",
+      "code": "<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">BinaryConvert</span> = (<span class=\"hljs-params\">number</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> result = []\n  <span class=\"hljs-keyword\">let</span> i\n  <span class=\"hljs-keyword\">for</span> (i = number; i &gt; <span class=\"hljs-number\">0</span>; i = <span class=\"hljs-built_in\">parseInt</span>(i / <span class=\"hljs-number\">2</span>)) {\n    result.<span class=\"hljs-title function_\">push</span>(i % <span class=\"hljs-number\">2</span>) <span class=\"hljs-comment\">// push the value (remainder)to array</span>\n  } <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title class_\">Number</span>(result.<span class=\"hljs-title function_\">reverse</span>().<span class=\"hljs-title function_\">join</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>))\n  <span class=\"hljs-comment\">// reverse index of array as string ,join and change the type of value to become Number</span>\n}\n<span class=\"hljs-comment\">// call function and value as parameter to passing the value</span>\n<span class=\"hljs-keyword\">export</span> { <span class=\"hljs-title class_\">BinaryConvert</span> }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Arwy Syahputra Siregar",
+      "email": "55026697+arwysyah@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

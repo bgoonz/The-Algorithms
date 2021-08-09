@@ -1,0 +1,21 @@
+{
+  "slug": "fibonacci-recursion",
+  "name": "Fibonacci Recursion",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "maths/fibonacci_recursion.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/fibonacci_recursion.dart",
+      "code": "<span class=\"hljs-comment\">/* Driver */</span>\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">1</span>) == <span class=\"hljs-number\">1</span>);\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">2</span>) == <span class=\"hljs-number\">1</span>);\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">3</span>) == <span class=\"hljs-number\">2</span>);\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">4</span>) == <span class=\"hljs-number\">3</span>);\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">5</span>) == <span class=\"hljs-number\">5</span>);\n  <span class=\"hljs-keyword\">assert</span>(fibonacci(<span class=\"hljs-number\">8</span>) == <span class=\"hljs-number\">21</span>);\n}\n\n<span class=\"hljs-comment\"><span class=\"language-markdown\">/<span class=\"hljs-strong\">**\n <span class=\"hljs-emphasis\">*</span></span></span> get Nth item <span class=\"language-markdown\"><span class=\"hljs-strong\"><span class=\"hljs-emphasis\">of fibonacci\n *</span> fibonacci: 1 1 2 3 5 8 13 21 ...\n <span class=\"hljs-emphasis\">*/</span></span></span></span>\n<span class=\"hljs-built_in\">int</span> fibonacci(<span class=\"hljs-built_in\">int</span> n) =&gt;\n    n == <span class=\"hljs-number\">1</span> || n == <span class=\"hljs-number\">2</span> ? <span class=\"hljs-number\">1</span> : fibonacci(n - <span class=\"hljs-number\">1</span>) + fibonacci(n - <span class=\"hljs-number\">2</span>);\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

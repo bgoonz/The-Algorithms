@@ -1,0 +1,26 @@
+{
+  "slug": "add-digits",
+  "name": "Add Digits",
+  "categories": ["datastructures", "array"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "maths/add_digits.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/maths/add_digits.rb",
+      "code": "<span class=\"hljs-comment\"># Challenge name: Add Digits</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Input: 38</span>\n<span class=\"hljs-comment\"># Output: 2</span>\n<span class=\"hljs-comment\"># Explanation: 3 + 8 = 11, 1 + 1 = 2.</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach: Mathematical: Digital Root</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Digital_root</span>\n<span class=\"hljs-comment\"># https://brilliant.org/wiki/digital-root/</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Complexity Analysis</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexity: O(1).</span>\n<span class=\"hljs-comment\"># Space Complexity: O(1).</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">add_digits</span><span class=\"hljs-params\">(num)</span></span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">if</span> num == <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">9</span> <span class=\"hljs-keyword\">if</span> num % <span class=\"hljs-number\">9</span> == <span class=\"hljs-number\">0</span>\n\n  num % <span class=\"hljs-number\">9</span>\n<span class=\"hljs-keyword\">end</span>\n\nputs(add_digits(<span class=\"hljs-number\">38</span>))\n<span class=\"hljs-comment\"># # =&gt; 2</span>\n\nputs(add_digits(<span class=\"hljs-number\">284</span>))\n<span class=\"hljs-comment\"># # =&gt; 5</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

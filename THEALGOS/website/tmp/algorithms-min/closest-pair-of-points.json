@@ -1,0 +1,36 @@
+{
+  "slug": "closest-pair-of-points",
+  "name": "Closest Pair of Points",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "rsun0013",
+      "email": "50036197+rsun0013@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dharni0607",
+      "email": "30770547+Dharni0607@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "validate-solutions",
+  "name": "Validate Solutions",
+  "categories": ["scripts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Malte Jürgens",
+      "email": "maltejur@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Aniruddha Bhattacharjee",
+      "email": "aniruddha97bhatt@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

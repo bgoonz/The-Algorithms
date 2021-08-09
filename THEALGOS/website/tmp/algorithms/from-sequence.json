@@ -1,0 +1,26 @@
+{
+  "slug": "from-sequence",
+  "name": "From Sequence",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/linked_list/from_sequence.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/linked_list/from_sequence.py",
+      "code": "<span class=\"hljs-comment\"># Recursive Prorgam to create a Linked List from a sequence and</span>\n<span class=\"hljs-comment\"># print a string representation of it.</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, data=<span class=\"hljs-literal\">None</span></span>):\n        self.data = data\n        self.<span class=\"hljs-built_in\">next</span> = <span class=\"hljs-literal\">None</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__repr__</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-string\">&quot;&quot;&quot;Returns a visual representation of the node and all its following nodes.&quot;&quot;&quot;</span>\n        string_rep = <span class=\"hljs-string\">&quot;&quot;</span>\n        temp = self\n        <span class=\"hljs-keyword\">while</span> temp:\n            string_rep += <span class=\"hljs-string\">f&quot;&lt;<span class=\"hljs-subst\">{temp.data}</span>&gt; ---&gt; &quot;</span>\n            temp = temp.<span class=\"hljs-built_in\">next</span>\n        string_rep += <span class=\"hljs-string\">&quot;&lt;END&gt;&quot;</span>\n        <span class=\"hljs-keyword\">return</span> string_rep\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">make_linked_list</span>(<span class=\"hljs-params\">elements_list</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;Creates a Linked List from the elements of the given sequence\n    (list/tuple) and returns the head of the Linked List.&quot;&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># if elements_list is empty</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> elements_list:\n        <span class=\"hljs-keyword\">raise</span> Exception(<span class=\"hljs-string\">&quot;The Elements List is empty&quot;</span>)\n\n    <span class=\"hljs-comment\"># Set first element as Head</span>\n    head = Node(elements_list[<span class=\"hljs-number\">0</span>])\n    current = head\n    <span class=\"hljs-comment\"># Loop through elements from position 1</span>\n    <span class=\"hljs-keyword\">for</span> data <span class=\"hljs-keyword\">in</span> elements_list[<span class=\"hljs-number\">1</span>:]:\n        current.<span class=\"hljs-built_in\">next</span> = Node(data)\n        current = current.<span class=\"hljs-built_in\">next</span>\n    <span class=\"hljs-keyword\">return</span> head\n\n\nlist_data = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">32</span>, <span class=\"hljs-number\">44</span>, <span class=\"hljs-number\">12</span>, <span class=\"hljs-number\">43</span>]\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;List: <span class=\"hljs-subst\">{list_data}</span>&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Creating Linked List from List.&quot;</span>)\nlinked_list = make_linked_list(list_data)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Linked List:&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(linked_list)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Hanif Ali",
+      "email": "alihanif016@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

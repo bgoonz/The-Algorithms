@@ -1,0 +1,46 @@
+{
+  "slug": "scc-kosaraju",
+  "name": "Scc Kosaraju",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "strambake",
+      "email": "86815109+strambake@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "bT-53",
+      "email": "phanu.bjstp@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "linked-list-stack",
+  "name": "Linked List Stack",
+  "categories": ["datastructures", "stack"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

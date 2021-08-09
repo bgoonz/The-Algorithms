@@ -1,0 +1,26 @@
+{
+  "slug": "modified-binary-search",
+  "name": "Modified Binary Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "agnimish",
+      "email": "31532652+agnimish@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

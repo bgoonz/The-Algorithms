@@ -1,0 +1,36 @@
+{
+  "slug": "stock-span-problem",
+  "name": "Stock Span Problem",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "S-Sanyal",
+      "email": "prosanyal123@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

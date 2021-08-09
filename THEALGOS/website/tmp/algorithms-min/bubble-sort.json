@@ -1,0 +1,374 @@
+{
+  "slug": "bubble-sort",
+  "name": "Bubble Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "haskell": "",
+    "f-sharp": "",
+    "go": "",
+    "rust": "",
+    "aarch64_assembly": "",
+    "dart": "",
+    "r": "",
+    "ruby": "",
+    "php": "",
+    "kotlin": "",
+    "scala": "",
+    "swift": "",
+    "elm": "",
+    "matlab-octave": "",
+    "julia": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Lalit Umbarkar",
+      "email": "MrL1605@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lalit Umbarkar",
+      "email": "lalit.umbarkar9@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "khanhhuynguyenvu",
+      "email": "khanhhuynguyenvu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Emil Suleymanov",
+      "email": "emil.suleymanov@tum.de",
+      "commits": 1
+    },
+    {
+      "name": "goodnic",
+      "email": "43970044+goodnic@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "horahh",
+      "email": "1816137+horahh@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anshul",
+      "email": "malikanshul29@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Yashwanth Reddy Gondi",
+      "email": "yashwanthreddy.g@live.com",
+      "commits": 1
+    },
+    {
+      "name": "Artur Parowicz",
+      "email": "arturparowicz@gmail,com",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "73381027+Rratic@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohsen Asi",
+      "email": "mohsen.asi87@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anirban166",
+      "email": "bloodraven166@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "nomisrevol",
+      "email": "vdn1999bxvp@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "q",
+      "email": "qzqsmile@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Doppon",
+      "email": "zaxpkuraudo7777@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "marsonya",
+      "email": "16393876+marsonya@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "zoomdong",
+      "email": "1344492820@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohit Sharma",
+      "email": "mohit1532.cse16@chitkara.edu.in",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "shivam agarwal",
+      "email": "43515429+shivamagarwal1999@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Igor Kvashnin",
+      "email": "astralcake@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "valery noname",
+      "email": "valerydec17@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Chase Ganey",
+      "email": "11964615+cganey@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "赵坤",
+      "email": "zhaokun@ziipin.com",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "UsernameToLon",
+      "email": "casey.a.laclair@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Singhal",
+      "email": "shivamsinghal0610@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PRITI1999",
+      "email": "35490584+PRITI1999@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Grigor",
+      "email": "wgrigor21@nwphs.org",
+      "commits": 1
+    },
+    {
+      "name": "Ishmeet-Singh-Saggu",
+      "email": "40631164+Ishmeet-Singh-Saggu@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vaibhav Gupta",
+      "email": "vaibhavgupta40@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sujitkumar Singh",
+      "email": "37760194+SinghSujitkumar@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "YasirChoudhary",
+      "email": "yasirchoudhary81@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Prateek",
+      "email": "43875858+prateekyo@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hossam Al-Dokkani",
+      "email": "hossam.o@trufla.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Sharma",
+      "email": "akshay.sharma09695@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "phlai",
+      "email": "toy112221@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "yyeltsyn",
+      "email": "crawler2.0@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "JakeBonek",
+      "email": "jake.bonek@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anant Kanchan",
+      "email": "66024577+anantcodes@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "nikhil kala",
+      "email": "nikhilkala8@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    },
+    {
+      "name": "Connor Bottum",
+      "email": "cbb692@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "vzvu3k6k",
+      "email": "vzvu3k6k@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "marsonya",
+      "email": "akhil.marsonya27@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "mertkoca",
+      "email": "mert.koca@bil.omu.edu.tr",
+      "commits": 2
+    },
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "sungbin",
+      "email": "21700613@handong.edu",
+      "commits": 3
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 6
+    },
+    {
+      "name": "Abose Ukhun",
+      "email": "bexis17@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Algoritmos de Ordenamiento/Ordenamiento Burbuja.md",
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Sorting Algorithms/Bubble Sort.md"
+  }
+}

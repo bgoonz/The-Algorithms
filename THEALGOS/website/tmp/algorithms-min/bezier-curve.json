@@ -1,0 +1,26 @@
+{
+  "slug": "bezier-curve",
+  "name": "Bezier Curve",
+  "categories": ["graphics"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Faraz Ahmed Khan",
+      "email": "31242842+fk03983@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

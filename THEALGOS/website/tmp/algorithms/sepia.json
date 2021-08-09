@@ -1,0 +1,31 @@
+{
+  "slug": "sepia",
+  "name": "Sepia",
+  "categories": ["digitalimageprocessing"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "digital_image_processing/sepia.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/digital_image_processing/sepia.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    Implemented an algorithm using opencv to tone an image with sepia technique\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> cv2 <span class=\"hljs-keyword\">import</span> destroyAllWindows, imread, imshow, waitKey\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">make_sepia</span>(<span class=\"hljs-params\">img, factor: <span class=\"hljs-built_in\">int</span></span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Function create sepia tone.\n    Source: https://en.wikipedia.org/wiki/Sepia_(color)\n    &quot;&quot;&quot;</span>\n    pixel_h, pixel_v = img.shape[<span class=\"hljs-number\">0</span>], img.shape[<span class=\"hljs-number\">1</span>]\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">to_grayscale</span>(<span class=\"hljs-params\">blue, green, red</span>):\n        <span class=\"hljs-string\">&quot;&quot;&quot;\n        Helper function to create pixel&#x27;s greyscale representation\n        Src: https://pl.wikipedia.org/wiki/YUV\n        &quot;&quot;&quot;</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0.2126</span> * red + <span class=\"hljs-number\">0.587</span> * green + <span class=\"hljs-number\">0.114</span> * blue\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">normalize</span>(<span class=\"hljs-params\">value</span>):\n        <span class=\"hljs-string\">&quot;&quot;&quot;Helper function to normalize R/G/B value -&gt; return 255 if value &gt; 255&quot;&quot;&quot;</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">min</span>(value, <span class=\"hljs-number\">255</span>)\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(pixel_h):\n        <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(pixel_v):\n            greyscale = <span class=\"hljs-built_in\">int</span>(to_grayscale(*img[i][j]))\n            img[i][j] = [\n                normalize(greyscale),\n                normalize(greyscale + factor),\n                normalize(greyscale + <span class=\"hljs-number\">2</span> * factor),\n            ]\n\n    <span class=\"hljs-keyword\">return</span> img\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># read original image</span>\n    images = {\n        percentage: imread(<span class=\"hljs-string\">&quot;image_data/lena.jpg&quot;</span>, <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">for</span> percentage <span class=\"hljs-keyword\">in</span> (<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">20</span>, <span class=\"hljs-number\">30</span>, <span class=\"hljs-number\">40</span>)\n    }\n\n    <span class=\"hljs-keyword\">for</span> percentage, img <span class=\"hljs-keyword\">in</span> images.items():\n        make_sepia(img, percentage)\n\n    <span class=\"hljs-keyword\">for</span> percentage, img <span class=\"hljs-keyword\">in</span> images.items():\n        imshow(<span class=\"hljs-string\">f&quot;Original image with sepia (factor: <span class=\"hljs-subst\">{percentage}</span>)&quot;</span>, img)\n\n    waitKey(<span class=\"hljs-number\">0</span>)\n    destroyAllWindows()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

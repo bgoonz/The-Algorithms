@@ -1,0 +1,26 @@
+{
+  "slug": "fibonaccinumberrecursive",
+  "name": "FibonacciNumberRecursive",
+  "categories": ["recursive"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Recursive/FibonacciNumberRecursive.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Recursive/FibonacciNumberRecursive.js",
+      "code": "<span class=\"hljs-comment\">//  https://en.wikipedia.org/wiki/Fibonacci_number</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">fibonacci</span> = (<span class=\"hljs-params\">N</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (N === <span class=\"hljs-number\">0</span> || N === <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">return</span> N\n\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title function_\">fibonacci</span>(N - <span class=\"hljs-number\">2</span>) + <span class=\"hljs-title function_\">fibonacci</span>(N - <span class=\"hljs-number\">1</span>)\n}\n\n<span class=\"hljs-comment\">// testing</span>\n(<span class=\"hljs-function\">() =&gt;</span> {\n  <span class=\"hljs-keyword\">const</span> number = <span class=\"hljs-number\">5</span>\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(number + <span class=\"hljs-string\">&#x27;th Fibonacci number is &#x27;</span> + <span class=\"hljs-title function_\">fibonacci</span>(number))\n})()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "illegalcall",
+      "email": "44542765+illegalcall@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

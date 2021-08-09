@@ -1,0 +1,21 @@
+{
+  "slug": "pi-monte-carlo-estimation",
+  "name": "Pi Monte Carlo Estimation",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "cschuerc",
+      "email": "57899042+cschuerc@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

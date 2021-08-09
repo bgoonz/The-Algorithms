@@ -1,0 +1,21 @@
+{
+  "slug": "center",
+  "name": "Center",
+  "categories": ["statistics"],
+  "implementations": {
+    "haskell": ""
+  },
+  "contributors": [
+    {
+      "name": "Mihai Maruseac",
+      "email": "mihai.maruseac@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

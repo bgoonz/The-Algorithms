@@ -1,0 +1,27 @@
+{
+  "slug": "intro-sort",
+  "name": "Intro Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "lakhan_nad",
+      "email": "lakhannad1999@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "YeonJeongLee00",
+      "email": "67946956+YeonJeongLee00@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

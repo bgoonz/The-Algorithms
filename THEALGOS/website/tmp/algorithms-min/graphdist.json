@@ -1,0 +1,16 @@
+{
+  "slug": "graphdist",
+  "name": "GraphDist",
+  "categories": ["math"],
+  "implementations": {
+    "haskell": ""
+  },
+  "contributors": [
+    {
+      "name": "liamdp",
+      "email": "liam.pickering@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

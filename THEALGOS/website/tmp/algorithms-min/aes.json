@@ -1,0 +1,26 @@
+{
+  "slug": "aes",
+  "name": "AES",
+  "categories": ["ciphers"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Mahmoud khalil",
+      "email": "khalil2535@yahoo.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Phil-Schmidt",
+      "email": "phil.schmidt@gmx.de",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "predict",
+  "name": "Predict",
+  "categories": ["machinelearning", "logisticregression"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Logistic-Regression/Predict.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Logistic-Regression/Predict.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">P</span> = <span class=\"hljs-title\">Predict</span><span class=\"hljs-params\">(Theta, X)</span></span>\n\nn = <span class=\"hljs-built_in\">size</span>(X, <span class=\"hljs-number\">1</span>); \n\nP = <span class=\"hljs-built_in\">zeros</span>(n, <span class=\"hljs-number\">1</span>);\n\n<span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span> = <span class=\"hljs-number\">1</span> : n,\n\n    <span class=\"hljs-keyword\">if</span> Sigmoid(X * Theta)(<span class=\"hljs-built_in\">i</span>) &gt;= <span class=\"hljs-number\">0.5</span>\n\n        P(<span class=\"hljs-built_in\">i</span>) = <span class=\"hljs-number\">1</span>; \n\n    <span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-keyword\">end</span>"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "aneshkaul@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

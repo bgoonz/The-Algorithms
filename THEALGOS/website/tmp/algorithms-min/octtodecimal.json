@@ -1,0 +1,21 @@
+{
+  "slug": "octtodecimal",
+  "name": "OctToDecimal",
+  "categories": ["conversions"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vishnu",
+      "email": "vishnupothan2@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

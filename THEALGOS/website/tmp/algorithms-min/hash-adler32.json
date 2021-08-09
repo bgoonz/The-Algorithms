@@ -1,0 +1,10 @@
+{
+  "slug": "hash-adler32",
+  "name": "Hash Adler32",
+  "categories": ["hashing"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

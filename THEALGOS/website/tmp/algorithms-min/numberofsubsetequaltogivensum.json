@@ -1,0 +1,16 @@
+{
+  "slug": "numberofsubsetequaltogivensum",
+  "name": "NumberOfSubsetEqualToGivenSum",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "rverma13927",
+      "email": "65550578+rverma13927@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

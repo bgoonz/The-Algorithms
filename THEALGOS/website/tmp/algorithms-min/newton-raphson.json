@@ -1,0 +1,61 @@
+{
+  "slug": "newton-raphson",
+  "name": "Newton Raphson",
+  "categories": ["numericalanalysis"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rohit Joshi",
+      "email": "34398948+rohitjoshi21@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "guij15",
+      "email": "43374716+guij15@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "P-Shreyas-Shetty",
+      "email": "ps2shreyas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

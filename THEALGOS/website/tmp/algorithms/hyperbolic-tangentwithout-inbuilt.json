@@ -1,0 +1,21 @@
+{
+  "slug": "hyperbolic-tangentwithout-inbuilt",
+  "name": "Hyperbolic tangent(without Inbuilt)",
+  "categories": ["machinelearning", "activationfunctions"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Activation Functions/Hyperbolic_tangent(without inbuilt).m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Activation Functions/Hyperbolic_tangent(without inbuilt).m",
+      "code": "<span class=\"hljs-comment\">%hyperbolic tangent function without using inbuilt func</span>\nx = <span class=\"hljs-number\">-10</span>:<span class=\"hljs-number\">0.01</span>:<span class=\"hljs-number\">10</span>;\na = input(<span class=\"hljs-string\">&#x27;Enter the slope parameter&#x27;</span>)\ny = (<span class=\"hljs-built_in\">exp</span>(a.*(x))-<span class=\"hljs-built_in\">exp</span>(-a.*(x)))./(<span class=\"hljs-built_in\">exp</span>(a.*(x))+<span class=\"hljs-built_in\">exp</span>(-a.*(x)));\n<span class=\"hljs-built_in\">plot</span>(x,y);\nxlabel(<span class=\"hljs-string\">&#x27;x&#x27;</span>)\nylabel(<span class=\"hljs-string\">&#x27;y&#x27;</span>)\ngrid on\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

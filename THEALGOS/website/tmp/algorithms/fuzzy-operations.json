@@ -1,0 +1,41 @@
+{
+  "slug": "fuzzy-operations",
+  "name": "Fuzzy Operations",
+  "categories": ["fuzzylogic"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "fuzzy_logic/fuzzy_operations.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/fuzzy_logic/fuzzy_operations.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;README, Author - Jigyasa Gandhi(mailto:jigsgandhi97@gmail.com)\nRequirements:\n  - scikit-fuzzy\n  - numpy\n  - matplotlib\nPython:\n  - 3.5\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">import</span> numpy <span class=\"hljs-keyword\">as</span> np\n<span class=\"hljs-keyword\">import</span> skfuzzy <span class=\"hljs-keyword\">as</span> fuzz\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># Create universe of discourse in Python using linspace ()</span>\n    X = np.linspace(start=<span class=\"hljs-number\">0</span>, stop=<span class=\"hljs-number\">75</span>, num=<span class=\"hljs-number\">75</span>, endpoint=<span class=\"hljs-literal\">True</span>, retstep=<span class=\"hljs-literal\">False</span>)\n\n    <span class=\"hljs-comment\"># Create two fuzzy sets by defining any membership function</span>\n    <span class=\"hljs-comment\"># (trapmf(), gbellmf(), gaussmf(), etc).</span>\n    abc1 = [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">25</span>, <span class=\"hljs-number\">50</span>]\n    abc2 = [<span class=\"hljs-number\">25</span>, <span class=\"hljs-number\">50</span>, <span class=\"hljs-number\">75</span>]\n    young = fuzz.membership.trimf(X, abc1)\n    middle_aged = fuzz.membership.trimf(X, abc2)\n\n    <span class=\"hljs-comment\"># Compute the different operations using inbuilt functions.</span>\n    one = np.ones(<span class=\"hljs-number\">75</span>)\n    zero = np.zeros((<span class=\"hljs-number\">75</span>,))\n    <span class=\"hljs-comment\"># 1. Union = max(µA(x), µB(x))</span>\n    union = fuzz.fuzzy_or(X, young, X, middle_aged)[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-comment\"># 2. Intersection = min(µA(x), µB(x))</span>\n    intersection = fuzz.fuzzy_and(X, young, X, middle_aged)[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-comment\"># 3. Complement (A) = (1- min(µA(x))</span>\n    complement_a = fuzz.fuzzy_not(young)\n    <span class=\"hljs-comment\"># 4. Difference (A/B) = min(µA(x),(1- µB(x)))</span>\n    difference = fuzz.fuzzy_and(X, young, X, fuzz.fuzzy_not(middle_aged)[<span class=\"hljs-number\">1</span>])[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-comment\"># 5. Algebraic Sum = [µA(x) + µB(x) – (µA(x) * µB(x))]</span>\n    alg_sum = young + middle_aged - (young * middle_aged)\n    <span class=\"hljs-comment\"># 6. Algebraic Product = (µA(x) * µB(x))</span>\n    alg_product = young * middle_aged\n    <span class=\"hljs-comment\"># 7. Bounded Sum = min[1,(µA(x), µB(x))]</span>\n    bdd_sum = fuzz.fuzzy_and(X, one, X, young + middle_aged)[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-comment\"># 8. Bounded difference = min[0,(µA(x), µB(x))]</span>\n    bdd_difference = fuzz.fuzzy_or(X, zero, X, young - middle_aged)[<span class=\"hljs-number\">1</span>]\n\n    <span class=\"hljs-comment\"># max-min composition</span>\n    <span class=\"hljs-comment\"># max-product composition</span>\n\n    <span class=\"hljs-comment\"># Plot each set A, set B and each operation result using plot() and subplot().</span>\n    <span class=\"hljs-keyword\">from</span> matplotlib <span class=\"hljs-keyword\">import</span> pyplot <span class=\"hljs-keyword\">as</span> plt\n\n    plt.figure()\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">1</span>)\n    plt.plot(X, young)\n    plt.title(<span class=\"hljs-string\">&quot;Young&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">2</span>)\n    plt.plot(X, middle_aged)\n    plt.title(<span class=\"hljs-string\">&quot;Middle aged&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">3</span>)\n    plt.plot(X, union)\n    plt.title(<span class=\"hljs-string\">&quot;union&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>)\n    plt.plot(X, intersection)\n    plt.title(<span class=\"hljs-string\">&quot;intersection&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>)\n    plt.plot(X, complement_a)\n    plt.title(<span class=\"hljs-string\">&quot;complement_a&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">6</span>)\n    plt.plot(X, difference)\n    plt.title(<span class=\"hljs-string\">&quot;difference a/b&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">7</span>)\n    plt.plot(X, alg_sum)\n    plt.title(<span class=\"hljs-string\">&quot;alg_sum&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">8</span>)\n    plt.plot(X, alg_product)\n    plt.title(<span class=\"hljs-string\">&quot;alg_product&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">9</span>)\n    plt.plot(X, bdd_sum)\n    plt.title(<span class=\"hljs-string\">&quot;bdd_sum&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplot(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">10</span>)\n    plt.plot(X, bdd_difference)\n    plt.title(<span class=\"hljs-string\">&quot;bdd_difference&quot;</span>)\n    plt.grid(<span class=\"hljs-literal\">True</span>)\n\n    plt.subplots_adjust(hspace=<span class=\"hljs-number\">0.5</span>)\n    plt.show()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mantas Zimnickas",
+      "email": "sirexas@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jigyasa G",
+      "email": "jigsgandhi97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

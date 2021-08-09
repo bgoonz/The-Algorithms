@@ -1,0 +1,10 @@
+{
+  "slug": "a000027-natural",
+  "name": "A000027 Natural",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

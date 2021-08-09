@@ -1,0 +1,10 @@
+{
+  "slug": "the-simpsons-method",
+  "name": "The Simpson’s Method",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

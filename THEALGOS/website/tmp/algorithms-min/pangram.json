@@ -1,0 +1,16 @@
+{
+  "slug": "pangram",
+  "name": "Pangram",
+  "categories": ["strings"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

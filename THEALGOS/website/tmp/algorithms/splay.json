@@ -1,0 +1,21 @@
+{
+  "slug": "splay",
+  "name": "Splay",
+  "categories": ["datastructures", "binarytree"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/data_structures/binary_tree/splay.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/data_structures/binary_tree/splay.jl",
+      "code": "include(<span class=\"hljs-string\">&quot;basic_binary_search_tree.jl&quot;</span>)\n<span class=\"hljs-keyword\">mutable struct</span> Splay{T}&lt;:AbstractBinarySearchTree_arr <span class=\"hljs-keyword\">where</span> T\n    n::<span class=\"hljs-built_in\">Int</span>\n    root::<span class=\"hljs-built_in\">Int</span>\n    par::<span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}\n    lch::<span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}\n    rch::<span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}\n    val::<span class=\"hljs-built_in\">Vector</span>{T}\n\n    cnt::<span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}\n    size::<span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

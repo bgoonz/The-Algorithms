@@ -1,0 +1,21 @@
+{
+  "slug": "shreedharacharya",
+  "name": "Shreedharacharya",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

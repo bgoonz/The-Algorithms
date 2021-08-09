@@ -1,0 +1,26 @@
+{
+  "slug": "autocomplete-using-trie",
+  "name": "Autocomplete Using Trie",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/autocomplete_using_trie.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/autocomplete_using_trie.py",
+      "code": "END = <span class=\"hljs-string\">&quot;#&quot;</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Trie</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self</span>):\n        self._trie = {}\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">insert_word</span>(<span class=\"hljs-params\">self, text</span>):\n        trie = self._trie\n        <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> text:\n            <span class=\"hljs-keyword\">if</span> char <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> trie:\n                trie[char] = {}\n            trie = trie[char]\n        trie[END] = <span class=\"hljs-literal\">True</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">find_word</span>(<span class=\"hljs-params\">self, prefix</span>):\n        trie = self._trie\n        <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> prefix:\n            <span class=\"hljs-keyword\">if</span> char <span class=\"hljs-keyword\">in</span> trie:\n                trie = trie[char]\n            <span class=\"hljs-keyword\">else</span>:\n                <span class=\"hljs-keyword\">return</span> []\n        <span class=\"hljs-keyword\">return</span> self._elements(trie)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_elements</span>(<span class=\"hljs-params\">self, d</span>):\n        result = []\n        <span class=\"hljs-keyword\">for</span> c, v <span class=\"hljs-keyword\">in</span> d.items():\n            <span class=\"hljs-keyword\">if</span> c == END:\n                sub_result = [<span class=\"hljs-string\">&quot; &quot;</span>]\n            <span class=\"hljs-keyword\">else</span>:\n                sub_result = [c + s <span class=\"hljs-keyword\">for</span> s <span class=\"hljs-keyword\">in</span> self._elements(v)]\n            result.extend(sub_result)\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">tuple</span>(result)\n\n\ntrie = Trie()\nwords = (<span class=\"hljs-string\">&quot;depart&quot;</span>, <span class=\"hljs-string\">&quot;detergent&quot;</span>, <span class=\"hljs-string\">&quot;daring&quot;</span>, <span class=\"hljs-string\">&quot;dog&quot;</span>, <span class=\"hljs-string\">&quot;deer&quot;</span>, <span class=\"hljs-string\">&quot;deal&quot;</span>)\n<span class=\"hljs-keyword\">for</span> word <span class=\"hljs-keyword\">in</span> words:\n    trie.insert_word(word)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">autocomplete_using_trie</span>(<span class=\"hljs-params\">s</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; trie = Trie()\n    &gt;&gt;&gt; for word in words:\n    ...     trie.insert_word(word)\n    ...\n    &gt;&gt;&gt; matches = autocomplete_using_trie(&quot;de&quot;)\n\n    &quot;detergent &quot; in matches\n    True\n    &quot;dog &quot; in matches\n    False\n    &quot;&quot;&quot;</span>\n    suffixes = trie.find_word(s)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">tuple</span>(s + w <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> suffixes)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-built_in\">print</span>(autocomplete_using_trie(<span class=\"hljs-string\">&quot;de&quot;</span>))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Archana Prabhu",
+      "email": "prabhuarc27@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

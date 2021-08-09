@@ -1,0 +1,16 @@
+{
+  "slug": "similarity",
+  "name": "Similarity",
+  "categories": ["machinelearning", "cosinesimilarity"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Hritik Jaiswal",
+      "email": "44053202+hritik5102@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

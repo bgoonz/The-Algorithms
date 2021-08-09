@@ -1,0 +1,21 @@
+{
+  "slug": "threaded-binary-trees",
+  "name": "Threaded Binary Trees",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Amit",
+      "email": "nayak.amit.blr@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

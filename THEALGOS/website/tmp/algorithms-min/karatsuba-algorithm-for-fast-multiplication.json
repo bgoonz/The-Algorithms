@@ -1,0 +1,16 @@
+{
+  "slug": "karatsuba-algorithm-for-fast-multiplication",
+  "name": "Karatsuba Algorithm for Fast Multiplication",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Swastika Gupta",
+      "email": "64654203+Swastyy@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

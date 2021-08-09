@@ -1,0 +1,26 @@
+{
+  "slug": "linked-stack",
+  "name": "Linked Stack",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ahmed Haj Abdel Khaleq",
+      "email": "31858489+AhmedHaj@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mariusz Skoneczko",
+      "email": "mariusz@skoneczko.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "djikstra",
+  "name": "Djikstra",
+  "categories": ["greedyapproach"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "sagnik-chatterjee",
+      "email": "chatterjeesagnik88@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

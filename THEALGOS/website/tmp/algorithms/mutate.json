@@ -1,0 +1,21 @@
+{
+  "slug": "mutate",
+  "name": "Mutate",
+  "categories": ["geneticalgorithm", "minimizationofpolynomialfunction"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/Genetic-Algorithm/Minimization of polynomial function/Mutate.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/Genetic-Algorithm/Minimization of polynomial function/Mutate.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">y</span> = <span class=\"hljs-title\">Mutate</span><span class=\"hljs-params\">(x,mu)</span></span>\n    flag = <span class=\"hljs-built_in\">rand</span>(<span class=\"hljs-built_in\">size</span>(x)) &lt; mu;\n    y=x;\n    y(flag) = <span class=\"hljs-number\">1</span>-x(flag);\n<span class=\"hljs-keyword\">end</span>"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

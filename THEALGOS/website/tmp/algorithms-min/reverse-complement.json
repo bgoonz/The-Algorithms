@@ -1,0 +1,26 @@
+{
+  "slug": "reverse-complement",
+  "name": "Reverse Complement",
+  "categories": ["projectrosalind"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

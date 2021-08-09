@@ -1,0 +1,16 @@
+{
+  "slug": "current-stock-price",
+  "name": "Current Stock Price",
+  "categories": ["webprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "vansh bhardwaj",
+      "email": "39709733+vansh1999@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

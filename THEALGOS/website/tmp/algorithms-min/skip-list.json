@@ -1,0 +1,27 @@
+{
+  "slug": "skip-list",
+  "name": "Skip List",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 7
+    },
+    {
+      "name": "enqidu",
+      "email": "dachikurcxalia@gmail.com",
+      "commits": 33
+    }
+  ],
+  "explanationUrl": {}
+}

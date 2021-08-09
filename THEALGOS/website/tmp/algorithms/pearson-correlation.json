@@ -1,0 +1,21 @@
+{
+  "slug": "pearson-correlation",
+  "name": "Pearson Correlation",
+  "categories": ["statistics"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/statistics/pearson_correlation.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/statistics/pearson_correlation.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    pearson_correlation(x, y)\n\nFind the pearson correlation between two variables.\n\n# Example:\n\njulia&gt; PearsonCorrelation([12,11,16,17,19,21],[11,51,66,72,12,15])\n-0.2092706263573845\n\nContribution by: [Aru Bhardwaj](https://github.com/arubhardwaj)\n\n\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">function</span> pearson_correlation(x, y)\n    mean_x = sum(x) / length(x)\n    mean_y = sum(y) / length(y)\n    XY = (x .- mean_x) .* (y .- mean_y)\n    XXs = sum((x .- mean_x) .* (x .- mean_x))\n    YYs = sum((y .- mean_y) .* (y .- mean_y))\n    <span class=\"hljs-keyword\">return</span>(sum(XY) / (sqrt(XXs .* YYs)))\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

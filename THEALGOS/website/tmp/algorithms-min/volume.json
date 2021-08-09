@@ -1,0 +1,38 @@
+{
+  "slug": "volume",
+  "name": "Volume",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Yurii",
+      "email": "33547678+yuriimchg@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "ErikQQY",
+      "email": "2283984853@qq.com",
+      "commits": 7
+    },
+    {
+      "name": "leeyan44",
+      "email": "86589062+leeyan44@users.noreply.github.com",
+      "commits": 11
+    }
+  ],
+  "explanationUrl": {}
+}

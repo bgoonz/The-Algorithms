@@ -1,0 +1,16 @@
+{
+  "slug": "basic-binary-search-tree",
+  "name": "Basic Binary Search Tree",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

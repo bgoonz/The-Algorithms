@@ -1,0 +1,21 @@
+{
+  "slug": "hash-search",
+  "name": "Hash Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "苏淞丰",
+      "email": "50102735+Arctic2333@users.noreply.github.com",
+      "commits": 9
+    }
+  ],
+  "explanationUrl": {}
+}

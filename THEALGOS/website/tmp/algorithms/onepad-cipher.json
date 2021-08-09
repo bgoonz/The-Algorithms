@@ -1,0 +1,61 @@
+{
+  "slug": "onepad-cipher",
+  "name": "Onepad Cipher",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/onepad_cipher.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/onepad_cipher.py",
+      "code": "<span class=\"hljs-keyword\">import</span> random\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Onepad</span>:\n<span class=\"hljs-meta\">    @staticmethod</span>\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encrypt</span>(<span class=\"hljs-params\">text: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>], <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]]:\n        <span class=\"hljs-string\">&quot;&quot;&quot;Function to encrypt text using pseudo-random numbers&quot;&quot;&quot;</span>\n        plain = [<span class=\"hljs-built_in\">ord</span>(i) <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> text]\n        key = []\n        cipher = []\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> plain:\n            k = random.randint(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">300</span>)\n            c = (i + k) * k\n            cipher.append(c)\n            key.append(k)\n        <span class=\"hljs-keyword\">return</span> cipher, key\n\n<span class=\"hljs-meta\">    @staticmethod</span>\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decrypt</span>(<span class=\"hljs-params\">cipher: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>], key: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n        <span class=\"hljs-string\">&quot;&quot;&quot;Function to decrypt text using pseudo-random numbers.&quot;&quot;&quot;</span>\n        plain = []\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(key)):\n            p = <span class=\"hljs-built_in\">int</span>((cipher[i] - (key[i]) ** <span class=\"hljs-number\">2</span>) / key[i])\n            plain.append(<span class=\"hljs-built_in\">chr</span>(p))\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;&quot;</span>.join([i <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> plain])\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    c, k = Onepad().encrypt(<span class=\"hljs-string\">&quot;Hello&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(c, k)\n    <span class=\"hljs-built_in\">print</span>(Onepad().decrypt(c, k))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jonathan Gómez",
+      "email": "jonicgp97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Syed Haseeb Shah",
+      "email": "yesiamhasi@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

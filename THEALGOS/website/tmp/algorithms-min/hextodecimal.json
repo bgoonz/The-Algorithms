@@ -1,0 +1,16 @@
+{
+  "slug": "hextodecimal",
+  "name": "HexToDecimal",
+  "categories": ["conversions"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Higor Castilho",
+      "email": "castilhohf@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

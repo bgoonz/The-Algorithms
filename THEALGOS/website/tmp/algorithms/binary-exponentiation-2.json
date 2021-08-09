@@ -1,0 +1,31 @@
+{
+  "slug": "binary-exponentiation-2",
+  "name": "Binary Exponentiation 2",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/binary_exponentiation_2.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/binary_exponentiation_2.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n* Binary Exponentiation with Multiplication\n* This is a method to find a*b in a time complexity of O(log b)\n* This is one of the most commonly used methods of finding result of multiplication.\n* Also useful in cases where solution to (a*b)%c is required,\n* where a,b,c can be numbers over the computers calculation limits.\n* Done using iteration, can also be done using recursion\n\n* @author chinmoy159\n* @version 1.0 dated 10/08/2017\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">b_expo</span>(<span class=\"hljs-params\">a, b</span>):\n    res = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span> b &gt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">if</span> b &amp; <span class=\"hljs-number\">1</span>:\n            res += a\n\n        a += a\n        b &gt;&gt;= <span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">return</span> res\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">b_expo_mod</span>(<span class=\"hljs-params\">a, b, c</span>):\n    res = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span> b &gt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">if</span> b &amp; <span class=\"hljs-number\">1</span>:\n            res = ((res % c) + (a % c)) % c\n\n        a += a\n        b &gt;&gt;= <span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">return</span> res\n\n\n<span class=\"hljs-string\">&quot;&quot;&quot;\n* Wondering how this method works !\n* It&#x27;s pretty simple.\n* Let&#x27;s say you need to calculate a ^ b\n* RULE 1 : a * b = (a+a) * (b/2) ---- example : 4 * 4 = (4+4) * (4/2) = 8 * 2\n* RULE 2 : IF b is ODD, then ---- a * b = a + (a * (b - 1)) :: where (b - 1) is even.\n* Once b is even, repeat the process to get a * b\n* Repeat the process till b = 1 OR b = 0, because a*1 = a AND a*0 = 0\n*\n* As far as the modulo is concerned,\n* the fact : (a+b) % c = ((a%c) + (b%c)) % c\n* Now apply RULE 1 OR 2, whichever is required.\n&quot;&quot;&quot;</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Chinmoy Das",
+      "email": "chinmoy159@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

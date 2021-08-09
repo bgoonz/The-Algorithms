@@ -1,0 +1,16 @@
+{
+  "slug": "lower-bound",
+  "name": "Lower Bound",
+  "categories": ["searches"],
+  "implementations": {
+    "php": ""
+  },
+  "contributors": [
+    {
+      "name": "lakhan_nad",
+      "email": "lakhannad1999@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

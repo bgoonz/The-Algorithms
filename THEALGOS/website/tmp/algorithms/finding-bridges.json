@@ -1,0 +1,36 @@
+{
+  "slug": "finding-bridges",
+  "name": "Finding Bridges",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/finding_bridges.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/finding_bridges.py",
+      "code": "<span class=\"hljs-comment\"># Finding Bridges in Undirected Graph</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">computeBridges</span>(<span class=\"hljs-params\">graph</span>):\n    <span class=\"hljs-built_in\">id</span> = <span class=\"hljs-number\">0</span>\n    n = <span class=\"hljs-built_in\">len</span>(graph)  <span class=\"hljs-comment\"># No of vertices in graph</span>\n    low = [<span class=\"hljs-number\">0</span>] * n\n    visited = [<span class=\"hljs-literal\">False</span>] * n\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">dfs</span>(<span class=\"hljs-params\">at, parent, bridges, <span class=\"hljs-built_in\">id</span></span>):\n        visited[at] = <span class=\"hljs-literal\">True</span>\n        low[at] = <span class=\"hljs-built_in\">id</span>\n        <span class=\"hljs-built_in\">id</span> += <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> to <span class=\"hljs-keyword\">in</span> graph[at]:\n            <span class=\"hljs-keyword\">if</span> to == parent:\n                <span class=\"hljs-keyword\">pass</span>\n            <span class=\"hljs-keyword\">elif</span> <span class=\"hljs-keyword\">not</span> visited[to]:\n                dfs(to, at, bridges, <span class=\"hljs-built_in\">id</span>)\n                low[at] = <span class=\"hljs-built_in\">min</span>(low[at], low[to])\n                <span class=\"hljs-keyword\">if</span> at &lt; low[to]:\n                    bridges.append([at, to])\n            <span class=\"hljs-keyword\">else</span>:\n                <span class=\"hljs-comment\"># This edge is a back edge and cannot be a bridge</span>\n                low[at] = <span class=\"hljs-built_in\">min</span>(low[at], to)\n\n    bridges = []\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> visited[i]:\n            dfs(i, -<span class=\"hljs-number\">1</span>, bridges, <span class=\"hljs-built_in\">id</span>)\n    <span class=\"hljs-built_in\">print</span>(bridges)\n\n\ngraph = {\n    <span class=\"hljs-number\">0</span>: [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>],\n    <span class=\"hljs-number\">1</span>: [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>],\n    <span class=\"hljs-number\">2</span>: [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>],\n    <span class=\"hljs-number\">3</span>: [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>],\n    <span class=\"hljs-number\">4</span>: [<span class=\"hljs-number\">3</span>],\n    <span class=\"hljs-number\">5</span>: [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">8</span>],\n    <span class=\"hljs-number\">6</span>: [<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">7</span>],\n    <span class=\"hljs-number\">7</span>: [<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">8</span>],\n    <span class=\"hljs-number\">8</span>: [<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">7</span>],\n}\ncomputeBridges(graph)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Farhan",
+      "email": "farhankasmani956@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "mergesortedsinglylinkedlist",
+  "name": "MergeSortedSinglyLinkedList",
+  "categories": ["datastructures", "list"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

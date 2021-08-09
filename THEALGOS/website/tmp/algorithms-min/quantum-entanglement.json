@@ -1,0 +1,16 @@
+{
+  "slug": "quantum-entanglement",
+  "name": "Quantum Entanglement",
+  "categories": ["quantum"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "NAVEEN S R",
+      "email": "56086391+nkpro2000sr@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

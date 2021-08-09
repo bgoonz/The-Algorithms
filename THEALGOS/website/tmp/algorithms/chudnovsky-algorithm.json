@@ -1,0 +1,26 @@
+{
+  "slug": "chudnovsky-algorithm",
+  "name": "Chudnovsky Algorithm",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/chudnovsky_algorithm.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/chudnovsky_algorithm.py",
+      "code": "<span class=\"hljs-keyword\">from</span> decimal <span class=\"hljs-keyword\">import</span> Decimal, getcontext\n<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> ceil, factorial\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">pi</span>(<span class=\"hljs-params\">precision: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    The Chudnovsky algorithm is a fast method for calculating the digits of PI,\n    based on Ramanujan’s PI formulae.\n\n    https://en.wikipedia.org/wiki/Chudnovsky_algorithm\n\n    PI = constant_term / ((multinomial_term * linear_term) / exponential_term)\n        where constant_term = 426880 * sqrt(10005)\n\n    The linear_term and the exponential_term can be defined iteratively as follows:\n        L_k+1 = L_k + 545140134            where L_0 = 13591409\n        X_k+1 = X_k * -262537412640768000  where X_0 = 1\n\n    The multinomial_term is defined as follows:\n        6k! / ((3k)! * (k!) ^ 3)\n            where k is the k_th iteration.\n\n    This algorithm correctly calculates around 14 digits of PI per iteration\n\n    &gt;&gt;&gt; pi(10)\n    &#x27;3.14159265&#x27;\n    &gt;&gt;&gt; pi(100)\n    &#x27;3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706&#x27;\n    &gt;&gt;&gt; pi(&#x27;hello&#x27;)\n    Traceback (most recent call last):\n        ...\n    TypeError: Undefined for non-integers\n    &gt;&gt;&gt; pi(-1)\n    Traceback (most recent call last):\n        ...\n    ValueError: Undefined for non-natural numbers\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-built_in\">isinstance</span>(precision, <span class=\"hljs-built_in\">int</span>):\n        <span class=\"hljs-keyword\">raise</span> TypeError(<span class=\"hljs-string\">&quot;Undefined for non-integers&quot;</span>)\n    <span class=\"hljs-keyword\">elif</span> precision &lt; <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Undefined for non-natural numbers&quot;</span>)\n\n    getcontext().prec = precision\n    num_iterations = ceil(precision / <span class=\"hljs-number\">14</span>)\n    constant_term = <span class=\"hljs-number\">426880</span> * Decimal(<span class=\"hljs-number\">10005</span>).sqrt()\n    exponential_term = <span class=\"hljs-number\">1</span>\n    linear_term = <span class=\"hljs-number\">13591409</span>\n    partial_sum = Decimal(linear_term)\n    <span class=\"hljs-keyword\">for</span> k <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, num_iterations):\n        multinomial_term = factorial(<span class=\"hljs-number\">6</span> * k) // (factorial(<span class=\"hljs-number\">3</span> * k) * factorial(k) ** <span class=\"hljs-number\">3</span>)\n        linear_term += <span class=\"hljs-number\">545140134</span>\n        exponential_term *= -<span class=\"hljs-number\">262537412640768000</span>\n        partial_sum += Decimal(multinomial_term * linear_term) / exponential_term\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">str</span>(constant_term / partial_sum)[:-<span class=\"hljs-number\">1</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    n = <span class=\"hljs-number\">50</span>\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;The first <span class=\"hljs-subst\">{n}</span> digits of pi is: <span class=\"hljs-subst\">{pi(n)}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Hasenn",
+      "email": "eliottarloveyrier@live.fr",
+      "commits": 1
+    },
+    {
+      "name": "TheSuperNoob",
+      "email": "larsthorland@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

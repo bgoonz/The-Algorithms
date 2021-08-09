@@ -1,0 +1,21 @@
+{
+  "slug": "markov-chain",
+  "name": "Markov Chain",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "boyer-moore-search",
+  "name": "Boyer Moore Search",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Denis Trofimov",
+      "email": "silaradost@yandex.ru",
+      "commits": 1
+    },
+    {
+      "name": "Dharni0607",
+      "email": "30770547+Dharni0607@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

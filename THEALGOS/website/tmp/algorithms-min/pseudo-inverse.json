@@ -1,0 +1,21 @@
+{
+  "slug": "pseudo-inverse",
+  "name": "Pseudo-Inverse",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "1fisedi",
+      "email": "51143882+1fisedi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "run",
+  "name": "Run",
+  "categories": ["machinelearning", "forecasting"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nandiya",
+      "email": "ri_nandiya@yahoo.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

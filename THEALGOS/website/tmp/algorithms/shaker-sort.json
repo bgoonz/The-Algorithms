@@ -1,0 +1,26 @@
+{
+  "slug": "shaker-sort",
+  "name": "Shaker Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "sorting/shaker_sort.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/sorting/shaker_sort.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">swap</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> *a, <span class=\"hljs-type\">int</span> *b)</span>\n{\n    <span class=\"hljs-type\">int</span> temp;\n    temp = *a;\n    *a = *b;\n    *b = temp;\n}\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">shakersort</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> *a, <span class=\"hljs-type\">int</span> n)</span>\n{\n    <span class=\"hljs-type\">int</span> p, i;\n    <span class=\"hljs-keyword\">for</span> (p = <span class=\"hljs-number\">1</span>; p &lt;= n / <span class=\"hljs-number\">2</span>; p++)\n    {\n        <span class=\"hljs-keyword\">for</span> (i = p - <span class=\"hljs-number\">1</span>; i &lt; n - p; i++)\n            <span class=\"hljs-keyword\">if</span> (a[i] &gt; a[i + <span class=\"hljs-number\">1</span>])\n            {\n                swap(&amp;a[i], &amp;a[i + <span class=\"hljs-number\">1</span>]);\n            }\n        <span class=\"hljs-keyword\">for</span> (i = n - p - <span class=\"hljs-number\">1</span>; i &gt;= p; i--)\n            <span class=\"hljs-keyword\">if</span> (a[i] &lt; a[i - <span class=\"hljs-number\">1</span>])\n            {\n                swap(&amp;a[i], &amp;a[i - <span class=\"hljs-number\">1</span>]);\n            }\n    }\n}\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> n;\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;n);\n    <span class=\"hljs-type\">int</span> *arr = (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-built_in\">malloc</span>(n * <span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-type\">int</span>));\n    <span class=\"hljs-type\">int</span> i;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++) <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d &quot;</span>, &amp;arr[i]);\n    shakersort(arr, n);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++) <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d &quot;</span>, arr[i]);\n    <span class=\"hljs-built_in\">free</span>(arr);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "neelneelpurk",
+      "email": "soumyadeep1999.np@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "binary-tree-traversals",
+  "name": "Binary Tree Traversals",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "Anshraj Shrivastava",
+      "email": "42239140+rajansh87@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nishant Aklecha",
+      "email": "31594715+Naklecha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vivek",
+      "email": "vivektheintel@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Gini5",
+      "email": "gini5@163.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "amankumargupta",
+      "email": "gupta2140@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Akshay Sharma",
+      "email": "akshay.sharma09695@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

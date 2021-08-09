@@ -1,0 +1,16 @@
+{
+  "slug": "gcdrecursion",
+  "name": "GCDRecursion",
+  "categories": ["math"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

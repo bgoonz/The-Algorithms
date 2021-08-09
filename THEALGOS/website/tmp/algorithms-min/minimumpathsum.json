@@ -1,0 +1,16 @@
+{
+  "slug": "minimumpathsum",
+  "name": "MinimumPathSum",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "EATONJIANGHAHAHA",
+      "email": "pillow_103@yeah.net",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

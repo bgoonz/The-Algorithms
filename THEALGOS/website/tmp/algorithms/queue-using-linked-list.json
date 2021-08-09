@@ -1,0 +1,41 @@
+{
+  "slug": "queue-using-linked-list",
+  "name": "Queue Using Linked List",
+  "categories": ["datastructures"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "data_structures/queue_using_linkedlist.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/data_structures/queue_using_linkedlist.cpp",
+      "code": "<span class=\"hljs-comment\">/*\n    Write a program to implement Queue using linkedlist.\n*/</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n\n<span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title class_\">linkedlist</span> {\n    <span class=\"hljs-type\">int</span> data;\n    linkedlist *next;\n};\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">stack_linkedList</span> {\n <span class=\"hljs-keyword\">public</span>:\n    linkedlist *front;\n    linkedlist *rear;\n\n    <span class=\"hljs-built_in\">stack_linkedList</span>() { front = rear = <span class=\"hljs-literal\">NULL</span>; }\n    <span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">enqueue</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>)</span></span>;\n    <span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">dequeue</span><span class=\"hljs-params\">()</span></span>;\n    <span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">display</span><span class=\"hljs-params\">()</span></span>;\n};\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">stack_linkedList::enqueue</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> ele)</span> </span>{\n    linkedlist *temp = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">linkedlist</span>();\n    temp-&gt;data = ele;\n    temp-&gt;next = <span class=\"hljs-literal\">NULL</span>;\n\n    <span class=\"hljs-keyword\">if</span> (front == <span class=\"hljs-literal\">NULL</span>)\n        front = rear = temp;\n    <span class=\"hljs-keyword\">else</span> {\n        rear-&gt;next = temp;\n        rear = temp;\n    }\n}\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">stack_linkedList::dequeue</span><span class=\"hljs-params\">()</span> </span>{\n    linkedlist *temp;\n    <span class=\"hljs-type\">int</span> ele;\n    <span class=\"hljs-keyword\">if</span> (front == <span class=\"hljs-literal\">NULL</span>)\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nStack is empty&quot;</span>;\n    <span class=\"hljs-keyword\">else</span> {\n        temp = front;\n        ele = temp-&gt;data;\n        <span class=\"hljs-keyword\">if</span> (front == rear)  <span class=\"hljs-comment\">// if length of queue is 1;</span>\n            rear = rear-&gt;next;\n        front = front-&gt;next;\n        <span class=\"hljs-built_in\">delete</span> (temp);\n    }\n    <span class=\"hljs-keyword\">return</span> ele;\n}\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">stack_linkedList::display</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-keyword\">if</span> (front == <span class=\"hljs-literal\">NULL</span>)\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nStack is empty&quot;</span>;\n\n    <span class=\"hljs-keyword\">else</span> {\n        linkedlist *temp;\n        temp = front;\n        <span class=\"hljs-keyword\">while</span> (temp != <span class=\"hljs-literal\">NULL</span>) {\n            std::cout &lt;&lt; temp-&gt;data &lt;&lt; <span class=\"hljs-string\">&quot; &quot;</span>;\n            temp = temp-&gt;next;\n        }\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> op, data;\n    stack_linkedList ob;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n1. enqueue(Insertion) &quot;</span>;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n2. dequeue(Deletion)&quot;</span>;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n3. Display&quot;</span>;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n4. Exit&quot;</span>;\n\n    <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-number\">1</span>) {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nEnter your choice &quot;</span>;\n        std::cin &gt;&gt; op;\n        <span class=\"hljs-keyword\">if</span> (op == <span class=\"hljs-number\">1</span>) {\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter data &quot;</span>;\n            std::cin &gt;&gt; data;\n            ob.<span class=\"hljs-built_in\">enqueue</span>(data);\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (op == <span class=\"hljs-number\">2</span>)\n            data = ob.<span class=\"hljs-built_in\">dequeue</span>();\n        <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (op == <span class=\"hljs-number\">3</span>)\n            ob.<span class=\"hljs-built_in\">display</span>();\n        <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (op == <span class=\"hljs-number\">4</span>)\n            <span class=\"hljs-built_in\">exit</span>(<span class=\"hljs-number\">0</span>);\n        <span class=\"hljs-keyword\">else</span>\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nWrong choice &quot;</span>;\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Omkar Kolate",
+      "email": "53403067+omkarkolate@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Pooja",
+      "email": "pooja016mca19@igdtuw.ac.in",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "modular-division",
+  "name": "Modular Division",
+  "categories": ["blockchain"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jie Han",
+      "email": "jay.cn@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Phyllipe Bezerra",
+      "email": "32442929+pmba@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sushil Singh",
+      "email": "36241112+OddExtension5@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

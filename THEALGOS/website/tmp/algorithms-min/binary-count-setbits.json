@@ -1,0 +1,23 @@
+{
+  "slug": "binary-count-setbits",
+  "name": "Binary Count Setbits",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vijay Siva",
+      "email": "vijay.sivasubramaniam@instacart.com",
+      "commits": 2
+    },
+    {
+      "name": "Vivek Patel",
+      "email": "vicky.p8980@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

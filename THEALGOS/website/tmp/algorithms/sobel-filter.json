@@ -1,0 +1,31 @@
+{
+  "slug": "sobel-filter",
+  "name": "Sobel Filter",
+  "categories": ["digitalimageprocessing", "filters"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "digital_image_processing/filters/sobel_filter.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/digital_image_processing/filters/sobel_filter.py",
+      "code": "<span class=\"hljs-comment\"># @Author  : lightXu</span>\n<span class=\"hljs-comment\"># @File    : sobel_filter.py</span>\n<span class=\"hljs-comment\"># @Time    : 2019/7/8 0008 下午 16:26</span>\n<span class=\"hljs-keyword\">import</span> numpy <span class=\"hljs-keyword\">as</span> np\n<span class=\"hljs-keyword\">from</span> cv2 <span class=\"hljs-keyword\">import</span> COLOR_BGR2GRAY, cvtColor, imread, imshow, waitKey\n\n<span class=\"hljs-keyword\">from</span> digital_image_processing.filters.convolve <span class=\"hljs-keyword\">import</span> img_convolve\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">sobel_filter</span>(<span class=\"hljs-params\">image</span>):\n    kernel_x = np.array([[-<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>], [-<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>], [-<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>]])\n    kernel_y = np.array([[<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">1</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [-<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">2</span>, -<span class=\"hljs-number\">1</span>]])\n\n    dst_x = np.<span class=\"hljs-built_in\">abs</span>(img_convolve(image, kernel_x))\n    dst_y = np.<span class=\"hljs-built_in\">abs</span>(img_convolve(image, kernel_y))\n    <span class=\"hljs-comment\"># modify the pix within [0, 255]</span>\n    dst_x = dst_x * <span class=\"hljs-number\">255</span> / np.<span class=\"hljs-built_in\">max</span>(dst_x)\n    dst_y = dst_y * <span class=\"hljs-number\">255</span> / np.<span class=\"hljs-built_in\">max</span>(dst_y)\n\n    dst_xy = np.sqrt((np.square(dst_x)) + (np.square(dst_y)))\n    dst_xy = dst_xy * <span class=\"hljs-number\">255</span> / np.<span class=\"hljs-built_in\">max</span>(dst_xy)\n    dst = dst_xy.astype(np.uint8)\n\n    theta = np.arctan2(dst_y, dst_x)\n    <span class=\"hljs-keyword\">return</span> dst, theta\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># read original image</span>\n    img = imread(<span class=\"hljs-string\">&quot;../image_data/lena.jpg&quot;</span>)\n    <span class=\"hljs-comment\"># turn image in gray scale value</span>\n    gray = cvtColor(img, COLOR_BGR2GRAY)\n\n    sobel_grad, sobel_theta = sobel_filter(gray)\n\n    <span class=\"hljs-comment\"># show result images</span>\n    imshow(<span class=\"hljs-string\">&quot;sobel filter&quot;</span>, sobel_grad)\n    imshow(<span class=\"hljs-string\">&quot;sobel theta&quot;</span>, sobel_theta)\n    waitKey(<span class=\"hljs-number\">0</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shoujue Xu",
+      "email": "lightxusj@126.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

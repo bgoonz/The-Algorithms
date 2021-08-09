@@ -1,0 +1,10 @@
+{
+  "slug": "binomial-calculate",
+  "name": "Binomial Calculate",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

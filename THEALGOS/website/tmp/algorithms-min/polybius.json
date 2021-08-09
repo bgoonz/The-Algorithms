@@ -1,0 +1,26 @@
+{
+  "slug": "polybius",
+  "name": "Polybius",
+  "categories": ["ciphers", "polybius"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Carlo Federico Vescovo",
+      "email": "vescovocarlofederico@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "task4233",
+      "email": "tks.m1205@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

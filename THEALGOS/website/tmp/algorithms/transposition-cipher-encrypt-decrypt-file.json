@@ -1,0 +1,61 @@
+{
+  "slug": "transposition-cipher-encrypt-decrypt-file",
+  "name": "Transposition Cipher Encrypt Decrypt File",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/transposition_cipher_encrypt_decrypt_file.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/transposition_cipher_encrypt_decrypt_file.py",
+      "code": "<span class=\"hljs-keyword\">import</span> os\n<span class=\"hljs-keyword\">import</span> sys\n<span class=\"hljs-keyword\">import</span> time\n\n<span class=\"hljs-keyword\">from</span> . <span class=\"hljs-keyword\">import</span> transposition_cipher <span class=\"hljs-keyword\">as</span> transCipher\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    inputFile = <span class=\"hljs-string\">&quot;Prehistoric Men.txt&quot;</span>\n    outputFile = <span class=\"hljs-string\">&quot;Output.txt&quot;</span>\n    key = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter key: &quot;</span>))\n    mode = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Encrypt/Decrypt [e/d]: &quot;</span>)\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> os.path.exists(inputFile):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;File %s does not exist. Quitting...&quot;</span> % inputFile)\n        sys.exit()\n    <span class=\"hljs-keyword\">if</span> os.path.exists(outputFile):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Overwrite %s? [y/n]&quot;</span> % outputFile)\n        response = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;&gt; &quot;</span>)\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> response.lower().startswith(<span class=\"hljs-string\">&quot;y&quot;</span>):\n            sys.exit()\n\n    startTime = time.time()\n    <span class=\"hljs-keyword\">if</span> mode.lower().startswith(<span class=\"hljs-string\">&quot;e&quot;</span>):\n        <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(inputFile) <span class=\"hljs-keyword\">as</span> f:\n            content = f.read()\n        translated = transCipher.encryptMessage(key, content)\n    <span class=\"hljs-keyword\">elif</span> mode.lower().startswith(<span class=\"hljs-string\">&quot;d&quot;</span>):\n        <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(outputFile) <span class=\"hljs-keyword\">as</span> f:\n            content = f.read()\n        translated = transCipher.decryptMessage(key, content)\n\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(outputFile, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> outputObj:\n        outputObj.write(translated)\n\n    totalTime = <span class=\"hljs-built_in\">round</span>(time.time() - startTime, <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-built_in\">print</span>((<span class=\"hljs-string\">&quot;Done (&quot;</span>, totalTime, <span class=\"hljs-string\">&quot;seconds )&quot;</span>))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mickaël Schoentgen",
+      "email": "contact@tiger-222.fr",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

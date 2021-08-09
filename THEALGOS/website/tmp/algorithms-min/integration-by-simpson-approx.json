@@ -1,0 +1,10 @@
+{
+  "slug": "integration-by-simpson-approx",
+  "name": "Integration by Simpson Approx",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

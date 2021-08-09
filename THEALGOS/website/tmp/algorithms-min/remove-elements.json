@@ -1,0 +1,21 @@
+{
+  "slug": "remove-elements",
+  "name": "Remove Elements",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

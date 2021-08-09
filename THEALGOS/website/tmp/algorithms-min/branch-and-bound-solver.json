@@ -1,0 +1,10 @@
+{
+  "slug": "branch-and-bound-solver",
+  "name": "Branch and bound solver",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

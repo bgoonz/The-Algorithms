@@ -1,0 +1,36 @@
+{
+  "slug": "list-array",
+  "name": "List Array",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 3
+    },
+    {
+      "name": "Sagar Pandya",
+      "email": "31953933+sagarpandyansit@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

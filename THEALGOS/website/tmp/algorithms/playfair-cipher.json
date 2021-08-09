@@ -1,0 +1,61 @@
+{
+  "slug": "playfair-cipher",
+  "name": "Playfair Cipher",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/playfair_cipher.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/playfair_cipher.py",
+      "code": "<span class=\"hljs-keyword\">import</span> itertools\n<span class=\"hljs-keyword\">import</span> string\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> Generator, Iterable\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">chunker</span>(<span class=\"hljs-params\">seq: Iterable[<span class=\"hljs-built_in\">str</span>], size: <span class=\"hljs-built_in\">int</span></span>) -&gt; Generator[<span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">str</span>, ...], <span class=\"hljs-literal\">None</span>, <span class=\"hljs-literal\">None</span>]:\n    it = <span class=\"hljs-built_in\">iter</span>(seq)\n    <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\n        chunk = <span class=\"hljs-built_in\">tuple</span>(itertools.islice(it, size))\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> chunk:\n            <span class=\"hljs-keyword\">return</span>\n        <span class=\"hljs-keyword\">yield</span> chunk\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">prepare_input</span>(<span class=\"hljs-params\">dirty: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Prepare the plaintext by up-casing it\n    and separating repeated letters with X&#x27;s\n    &quot;&quot;&quot;</span>\n\n    dirty = <span class=\"hljs-string\">&quot;&quot;</span>.join([c.upper() <span class=\"hljs-keyword\">for</span> c <span class=\"hljs-keyword\">in</span> dirty <span class=\"hljs-keyword\">if</span> c <span class=\"hljs-keyword\">in</span> string.ascii_letters])\n    clean = <span class=\"hljs-string\">&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(dirty) &lt; <span class=\"hljs-number\">2</span>:\n        <span class=\"hljs-keyword\">return</span> dirty\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(dirty) - <span class=\"hljs-number\">1</span>):\n        clean += dirty[i]\n\n        <span class=\"hljs-keyword\">if</span> dirty[i] == dirty[i + <span class=\"hljs-number\">1</span>]:\n            clean += <span class=\"hljs-string\">&quot;X&quot;</span>\n\n    clean += dirty[-<span class=\"hljs-number\">1</span>]\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(clean) &amp; <span class=\"hljs-number\">1</span>:\n        clean += <span class=\"hljs-string\">&quot;X&quot;</span>\n\n    <span class=\"hljs-keyword\">return</span> clean\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">generate_table</span>(<span class=\"hljs-params\">key: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">str</span>]:\n\n    <span class=\"hljs-comment\"># I and J are used interchangeably to allow</span>\n    <span class=\"hljs-comment\"># us to use a 5x5 table (25 letters)</span>\n    alphabet = <span class=\"hljs-string\">&quot;ABCDEFGHIKLMNOPQRSTUVWXYZ&quot;</span>\n    <span class=\"hljs-comment\"># we&#x27;re using a list instead of a &#x27;2d&#x27; array because it makes the math</span>\n    <span class=\"hljs-comment\"># for setting up the table and doing the actual encoding/decoding simpler</span>\n    table = []\n\n    <span class=\"hljs-comment\"># copy key chars into the table if they are in `alphabet` ignoring duplicates</span>\n    <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> key.upper():\n        <span class=\"hljs-keyword\">if</span> char <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> table <span class=\"hljs-keyword\">and</span> char <span class=\"hljs-keyword\">in</span> alphabet:\n            table.append(char)\n\n    <span class=\"hljs-comment\"># fill the rest of the table in with the remaining alphabet chars</span>\n    <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> alphabet:\n        <span class=\"hljs-keyword\">if</span> char <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> table:\n            table.append(char)\n\n    <span class=\"hljs-keyword\">return</span> table\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encode</span>(<span class=\"hljs-params\">plaintext: <span class=\"hljs-built_in\">str</span>, key: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    table = generate_table(key)\n    plaintext = prepare_input(plaintext)\n    ciphertext = <span class=\"hljs-string\">&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Playfair_cipher#Description</span>\n    <span class=\"hljs-keyword\">for</span> char1, char2 <span class=\"hljs-keyword\">in</span> chunker(plaintext, <span class=\"hljs-number\">2</span>):\n        row1, col1 = <span class=\"hljs-built_in\">divmod</span>(table.index(char1), <span class=\"hljs-number\">5</span>)\n        row2, col2 = <span class=\"hljs-built_in\">divmod</span>(table.index(char2), <span class=\"hljs-number\">5</span>)\n\n        <span class=\"hljs-keyword\">if</span> row1 == row2:\n            ciphertext += table[row1 * <span class=\"hljs-number\">5</span> + (col1 + <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>]\n            ciphertext += table[row2 * <span class=\"hljs-number\">5</span> + (col2 + <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>]\n        <span class=\"hljs-keyword\">elif</span> col1 == col2:\n            ciphertext += table[((row1 + <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>) * <span class=\"hljs-number\">5</span> + col1]\n            ciphertext += table[((row2 + <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>) * <span class=\"hljs-number\">5</span> + col2]\n        <span class=\"hljs-keyword\">else</span>:  <span class=\"hljs-comment\"># rectangle</span>\n            ciphertext += table[row1 * <span class=\"hljs-number\">5</span> + col2]\n            ciphertext += table[row2 * <span class=\"hljs-number\">5</span> + col1]\n\n    <span class=\"hljs-keyword\">return</span> ciphertext\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decode</span>(<span class=\"hljs-params\">ciphertext: <span class=\"hljs-built_in\">str</span>, key: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    table = generate_table(key)\n    plaintext = <span class=\"hljs-string\">&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Playfair_cipher#Description</span>\n    <span class=\"hljs-keyword\">for</span> char1, char2 <span class=\"hljs-keyword\">in</span> chunker(ciphertext, <span class=\"hljs-number\">2</span>):\n        row1, col1 = <span class=\"hljs-built_in\">divmod</span>(table.index(char1), <span class=\"hljs-number\">5</span>)\n        row2, col2 = <span class=\"hljs-built_in\">divmod</span>(table.index(char2), <span class=\"hljs-number\">5</span>)\n\n        <span class=\"hljs-keyword\">if</span> row1 == row2:\n            plaintext += table[row1 * <span class=\"hljs-number\">5</span> + (col1 - <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>]\n            plaintext += table[row2 * <span class=\"hljs-number\">5</span> + (col2 - <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>]\n        <span class=\"hljs-keyword\">elif</span> col1 == col2:\n            plaintext += table[((row1 - <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>) * <span class=\"hljs-number\">5</span> + col1]\n            plaintext += table[((row2 - <span class=\"hljs-number\">1</span>) % <span class=\"hljs-number\">5</span>) * <span class=\"hljs-number\">5</span> + col2]\n        <span class=\"hljs-keyword\">else</span>:  <span class=\"hljs-comment\"># rectangle</span>\n            plaintext += table[row1 * <span class=\"hljs-number\">5</span> + col2]\n            plaintext += table[row2 * <span class=\"hljs-number\">5</span> + col1]\n\n    <span class=\"hljs-keyword\">return</span> plaintext\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Riot",
+      "email": "misike1111@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ashu01",
+      "email": "as01hu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "eevee",
+      "email": "quine.618033988@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

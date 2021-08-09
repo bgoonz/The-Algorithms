@@ -1,0 +1,21 @@
+{
+  "slug": "almost-palindrome-checker",
+  "name": "Almost Palindrome Checker",
+  "categories": ["datastructures", "array", "strings"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

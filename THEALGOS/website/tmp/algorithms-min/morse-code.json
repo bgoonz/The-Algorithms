@@ -1,0 +1,16 @@
+{
+  "slug": "morse-code",
+  "name": "Morse Code",
+  "categories": ["ciphers"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Deep Raval",
+      "email": "deepraval2905@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "pythagoras",
+  "name": "Pythagoras",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "localleon",
+      "email": "leon.rauschenbach@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Bruno Santos",
+      "email": "7022432+dunderbruno@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "trial-division-factorization",
+  "name": "Trial division Factorization",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "aliquot-sum-calculator",
+  "name": "Aliquot Sum Calculator",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

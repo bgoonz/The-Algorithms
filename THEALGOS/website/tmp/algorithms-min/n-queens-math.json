@@ -1,0 +1,26 @@
+{
+  "slug": "n-queens-math",
+  "name": "N Queens Math",
+  "categories": ["backtracking"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "David Aaron Banda Gutierrez",
+      "email": "44423937+DavidBanda@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

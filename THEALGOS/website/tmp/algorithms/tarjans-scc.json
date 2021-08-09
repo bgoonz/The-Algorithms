@@ -1,0 +1,36 @@
+{
+  "slug": "tarjans-scc",
+  "name": "Tarjans Scc",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/tarjans_scc.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/tarjans_scc.py",
+      "code": "<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> deque\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">tarjan</span>(<span class=\"hljs-params\">g</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Tarjan&#x27;s algo for finding strongly connected components in a directed graph\n\n    Uses two main attributes of each node to track reachability, the index of that node\n    within a component(index), and the lowest index reachable from that node(lowlink).\n\n    We then perform a dfs of the each component making sure to update these parameters\n    for each node and saving the nodes we visit on the way.\n\n    If ever we find that the lowest reachable node from a current node is equal to the\n    index of the current node then it must be the root of a strongly connected\n    component and so we save it and it&#x27;s equireachable vertices as a strongly\n    connected component.\n\n    Complexity: strong_connect() is called at most once for each node and has a\n    complexity of O(|E|) as it is DFS.\n    Therefore this has complexity O(|V| + |E|) for a graph G = (V, E)\n    &quot;&quot;&quot;</span>\n\n    n = <span class=\"hljs-built_in\">len</span>(g)\n    stack = deque()\n    on_stack = [<span class=\"hljs-literal\">False</span> <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]\n    index_of = [-<span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]\n    lowlink_of = index_of[:]\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">strong_connect</span>(<span class=\"hljs-params\">v, index, components</span>):\n        index_of[v] = index  <span class=\"hljs-comment\"># the number when this node is seen</span>\n        lowlink_of[v] = index  <span class=\"hljs-comment\"># lowest rank node reachable from here</span>\n        index += <span class=\"hljs-number\">1</span>\n        stack.append(v)\n        on_stack[v] = <span class=\"hljs-literal\">True</span>\n\n        <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> g[v]:\n            <span class=\"hljs-keyword\">if</span> index_of[w] == -<span class=\"hljs-number\">1</span>:\n                index = strong_connect(w, index, components)\n                lowlink_of[v] = (\n                    lowlink_of[w] <span class=\"hljs-keyword\">if</span> lowlink_of[w] &lt; lowlink_of[v] <span class=\"hljs-keyword\">else</span> lowlink_of[v]\n                )\n            <span class=\"hljs-keyword\">elif</span> on_stack[w]:\n                lowlink_of[v] = (\n                    lowlink_of[w] <span class=\"hljs-keyword\">if</span> lowlink_of[w] &lt; lowlink_of[v] <span class=\"hljs-keyword\">else</span> lowlink_of[v]\n                )\n\n        <span class=\"hljs-keyword\">if</span> lowlink_of[v] == index_of[v]:\n            component = []\n            w = stack.pop()\n            on_stack[w] = <span class=\"hljs-literal\">False</span>\n            component.append(w)\n            <span class=\"hljs-keyword\">while</span> w != v:\n                w = stack.pop()\n                on_stack[w] = <span class=\"hljs-literal\">False</span>\n                component.append(w)\n            components.append(component)\n        <span class=\"hljs-keyword\">return</span> index\n\n    components = []\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n        <span class=\"hljs-keyword\">if</span> index_of[v] == -<span class=\"hljs-number\">1</span>:\n            strong_connect(v, <span class=\"hljs-number\">0</span>, components)\n\n    <span class=\"hljs-keyword\">return</span> components\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">create_graph</span>(<span class=\"hljs-params\">n, edges</span>):\n    g = [[] <span class=\"hljs-keyword\">for</span> _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]\n    <span class=\"hljs-keyword\">for</span> u, v <span class=\"hljs-keyword\">in</span> edges:\n        g[u].append(v)\n    <span class=\"hljs-keyword\">return</span> g\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># Test</span>\n    n_vertices = <span class=\"hljs-number\">7</span>\n    source = [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">6</span>]\n    target = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">5</span>]\n    edges = [(u, v) <span class=\"hljs-keyword\">for</span> u, v <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">zip</span>(source, target)]\n    g = create_graph(n_vertices, edges)\n\n    <span class=\"hljs-keyword\">assert</span> [[<span class=\"hljs-number\">5</span>], [<span class=\"hljs-number\">6</span>], [<span class=\"hljs-number\">4</span>], [<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>]] == tarjan(g)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "damelLP",
+      "email": "dlambertpowell@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

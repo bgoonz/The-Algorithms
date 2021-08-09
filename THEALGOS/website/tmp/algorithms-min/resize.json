@@ -1,0 +1,21 @@
+{
+  "slug": "resize",
+  "name": "Resize",
+  "categories": ["digitalimageprocessing", "resize"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "nysiis",
+  "name": "NYSIIS",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

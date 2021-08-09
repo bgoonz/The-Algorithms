@@ -1,0 +1,15 @@
+{
+  "slug": "heapsortv2",
+  "name": "HeapSortV2",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Sorts/HeapSortV2.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Sorts/HeapSortV2.js",
+      "code": "<span class=\"hljs-keyword\">let</span> arrayLength = <span class=\"hljs-number\">0</span>\n\n<span class=\"hljs-comment\">/* to create MAX  array */</span>\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">heapRoot</span> (input, i) {\n  <span class=\"hljs-keyword\">const</span> left = <span class=\"hljs-number\">2</span> * i + <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">const</span> right = <span class=\"hljs-number\">2</span> * i + <span class=\"hljs-number\">2</span>\n  <span class=\"hljs-keyword\">let</span> max = i\n\n  <span class=\"hljs-keyword\">if</span> (left &lt; arrayLength &amp;&amp; input[left] &gt; input[max]) {\n    max = left\n  }\n\n  <span class=\"hljs-keyword\">if</span> (right &lt; arrayLength &amp;&amp; input[right] &gt; input[max]) {\n    max = right\n  }\n\n  <span class=\"hljs-keyword\">if</span> (max !== i) {\n    <span class=\"hljs-title function_\">swap</span>(input, i, max)\n    <span class=\"hljs-title function_\">heapRoot</span>(input, max)\n  }\n}\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">swap</span> (input, indexA, indexB) {\n  [input[indexA], input[indexB]] = [input[indexB], input[indexA]]\n}\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">heapSort</span> (input) {\n  arrayLength = input.<span class=\"hljs-property\">length</span>\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">floor</span>(arrayLength / <span class=\"hljs-number\">2</span>); i &gt;= <span class=\"hljs-number\">0</span>; i -= <span class=\"hljs-number\">1</span>) {\n    <span class=\"hljs-title function_\">heapRoot</span>(input, i)\n  }\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = input.<span class=\"hljs-property\">length</span> - <span class=\"hljs-number\">1</span>; i &gt; <span class=\"hljs-number\">0</span>; i--) {\n    <span class=\"hljs-title function_\">swap</span>(input, <span class=\"hljs-number\">0</span>, i)\n    arrayLength--\n\n    <span class=\"hljs-title function_\">heapRoot</span>(input, <span class=\"hljs-number\">0</span>)\n  }\n}\n\n<span class=\"hljs-keyword\">const</span> arr = [<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">5</span>, -<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">1</span>]\n<span class=\"hljs-title function_\">heapSort</span>(arr)\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(arr)\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

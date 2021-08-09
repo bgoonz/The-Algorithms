@@ -1,0 +1,31 @@
+{
+  "slug": "validateemail",
+  "name": "ValidateEmail",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/ValidateEmail.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/ValidateEmail.js",
+      "code": "<span class=\"hljs-comment\">/*\n  Function that takes a string input and return either true or false\n  If it is a valid email address\n*/</span>\n\n<span class=\"hljs-comment\">/*\n*  Doctests\n*\n* &gt; validateEmail(&#x27;mahfoudh.arous@gmail.com&#x27;)\n*  true\n* &gt; validateEmail(&#x27;mahfoudh.arous@helsinki.edu&#x27;)\n*  true\n* &gt; validateEmail(&#x27;mahfoudh.arous.com&#x27;)\n*  false\n* &gt; validateEmail(&#x27;&#x27;)\n*  ! TypeError\n* &gt; validateEmail(null)\n*  ! TypeError\n*/</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">validateEmail</span> = (<span class=\"hljs-params\">str</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (str === <span class=\"hljs-string\">&#x27;&#x27;</span> || str === <span class=\"hljs-literal\">null</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;Email Address String Null or Empty.&#x27;</span>)\n  }\n\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-regexp\">/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/</span>.<span class=\"hljs-title function_\">test</span>(str)\n}\n\n<span class=\"hljs-keyword\">export</span> { validateEmail }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Cristian Baciu",
+      "email": "icristianbaciu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cristian Lupu",
+      "email": "khez@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mahfoudh Arous",
+      "email": "mahfoudh.arous@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

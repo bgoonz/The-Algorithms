@@ -1,0 +1,16 @@
+{
+  "slug": "heavy-light-decomposition",
+  "name": "Heavy Light Decomposition",
+  "categories": ["rangequeries"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Aniruthan R",
+      "email": "67466816+aneee004@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

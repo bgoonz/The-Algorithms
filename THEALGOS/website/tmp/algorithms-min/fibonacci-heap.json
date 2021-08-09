@@ -1,0 +1,16 @@
+{
+  "slug": "fibonacci-heap",
+  "name": "Fibonacci Heap",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Brian Mata",
+      "email": "CyberMobius@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "brightness",
+  "name": "Brightness",
+  "categories": ["machinelearning", "nearestneighbor"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

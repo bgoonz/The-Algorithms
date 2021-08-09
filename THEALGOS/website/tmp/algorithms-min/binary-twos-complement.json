@@ -1,0 +1,16 @@
+{
+  "slug": "binary-twos-complement",
+  "name": "Binary Twos Complement",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Leyza",
+      "email": "56138111+Leyza@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

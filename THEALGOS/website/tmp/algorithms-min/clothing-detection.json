@@ -1,0 +1,16 @@
+{
+  "slug": "clothing-detection",
+  "name": "Clothing Detection",
+  "categories": ["others"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "vinay6023",
+      "email": "53485613+vinay6023@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

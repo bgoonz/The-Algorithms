@@ -1,0 +1,21 @@
+{
+  "slug": "quadratic-probing-hash-table",
+  "name": "Quadratic Probing Hash Table",
+  "categories": ["hashing"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "achance6",
+      "email": "45263295+achance6@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 8
+    }
+  ],
+  "explanationUrl": {}
+}

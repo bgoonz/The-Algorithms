@@ -1,0 +1,21 @@
+{
+  "slug": "basic-binary-search-tree",
+  "name": "Basic Binary Search Tree",
+  "categories": ["datastructures", "binarytree"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/data_structures/binary_tree/basic_binary_search_tree.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/data_structures/binary_tree/basic_binary_search_tree.jl",
+      "code": "include(<span class=\"hljs-string\">&quot;basic_binary_tree.jl&quot;</span>)\n<span class=\"hljs-string\">&quot;&quot;&quot;\narray-based binary search tree\nleft tree values &lt; root value &lt; right tree values\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">abstract type</span> AbstractBinarySearchTree_arr&lt;:AbstractBinaryTree_arr <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">function</span> Base.findfirst(value::T,tree::Tree,place::<span class=\"hljs-built_in\">Int</span>=tree.root)<span class=\"hljs-keyword\">where</span> {T,Tree&lt;:AbstractBinarySearchTree_arr}\n    <span class=\"hljs-keyword\">if</span> tree.val[place]==value\n        <span class=\"hljs-keyword\">return</span> place\n    <span class=\"hljs-keyword\">elseif</span> tree.val[place]&gt;value\n        <span class=\"hljs-keyword\">if</span> tree.lch[place]==<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">end</span>\n        <span class=\"hljs-keyword\">return</span> findfirst(value,tree,tree.lch[place])\n    <span class=\"hljs-keyword\">else</span>\n        <span class=\"hljs-keyword\">if</span> tree.rch[place]==<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">end</span>\n        <span class=\"hljs-keyword\">return</span> findfirst(value,tree,tree.rch[place])\n    <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

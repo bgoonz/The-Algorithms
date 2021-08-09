@@ -1,0 +1,10 @@
+{
+  "slug": "check-factorial",
+  "name": "Check Factorial",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

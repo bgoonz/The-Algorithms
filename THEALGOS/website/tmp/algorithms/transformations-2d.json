@@ -1,0 +1,31 @@
+{
+  "slug": "transformations-2d",
+  "name": "Transformations 2d",
+  "categories": ["linearalgebra", "src"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "linear_algebra/src/transformations_2d.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/linear_algebra/src/transformations_2d.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n2D Transformations are regularly used in Linear Algebra.\n\nI have added the codes for reflection, projection, scaling and rotation 2D matrices.\n\n    scaling(5) = [[5.0, 0.0], [0.0, 5.0]]\n  rotation(45) = [[0.5253219888177297, -0.8509035245341184],\n                  [0.8509035245341184, 0.5253219888177297]]\nprojection(45) = [[0.27596319193541496, 0.446998331800279],\n                  [0.446998331800279, 0.7240368080645851]]\nreflection(45) = [[0.05064397763545947, 0.893996663600558],\n                  [0.893996663600558, 0.7018070490682369]]\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> cos, sin\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">scaling</span>(<span class=\"hljs-params\">scaling_factor: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">float</span>]]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; scaling(5)\n    [[5.0, 0.0], [0.0, 5.0]]\n    &quot;&quot;&quot;</span>\n    scaling_factor = <span class=\"hljs-built_in\">float</span>(scaling_factor)\n    <span class=\"hljs-keyword\">return</span> [[scaling_factor * <span class=\"hljs-built_in\">int</span>(x == y) <span class=\"hljs-keyword\">for</span> x <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">2</span>)] <span class=\"hljs-keyword\">for</span> y <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">2</span>)]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">rotation</span>(<span class=\"hljs-params\">angle: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">float</span>]]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; rotation(45)  # doctest: +NORMALIZE_WHITESPACE\n    [[0.5253219888177297, -0.8509035245341184],\n     [0.8509035245341184, 0.5253219888177297]]\n    &quot;&quot;&quot;</span>\n    c, s = cos(angle), sin(angle)\n    <span class=\"hljs-keyword\">return</span> [[c, -s], [s, c]]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">projection</span>(<span class=\"hljs-params\">angle: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">float</span>]]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; projection(45)  # doctest: +NORMALIZE_WHITESPACE\n    [[0.27596319193541496, 0.446998331800279],\n     [0.446998331800279, 0.7240368080645851]]\n    &quot;&quot;&quot;</span>\n    c, s = cos(angle), sin(angle)\n    cs = c * s\n    <span class=\"hljs-keyword\">return</span> [[c * c, cs], [cs, s * s]]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">reflection</span>(<span class=\"hljs-params\">angle: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">float</span>]]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; reflection(45)  # doctest: +NORMALIZE_WHITESPACE\n    [[0.05064397763545947, 0.893996663600558],\n     [0.893996663600558, 0.7018070490682369]]\n    &quot;&quot;&quot;</span>\n    c, s = cos(angle), sin(angle)\n    cs = c * s\n    <span class=\"hljs-keyword\">return</span> [[<span class=\"hljs-number\">2</span> * c - <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span> * cs], [<span class=\"hljs-number\">2</span> * cs, <span class=\"hljs-number\">2</span> * s - <span class=\"hljs-number\">1</span>]]\n\n\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;    <span class=\"hljs-subst\">{scaling(<span class=\"hljs-number\">5</span>) = }</span>&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;  <span class=\"hljs-subst\">{rotation(<span class=\"hljs-number\">45</span>) = }</span>&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{projection(<span class=\"hljs-number\">45</span>) = }</span>&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{reflection(<span class=\"hljs-number\">45</span>) = }</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

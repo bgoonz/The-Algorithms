@@ -1,0 +1,26 @@
+{
+  "slug": "g-topological-sort",
+  "name": "G Topological Sort",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/g_topological_sort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/g_topological_sort.py",
+      "code": "<span class=\"hljs-comment\"># Author: Phyllipe Bezerra (https://github.com/pmba)</span>\n\nclothes = {\n    <span class=\"hljs-number\">0</span>: <span class=\"hljs-string\">&quot;underwear&quot;</span>,\n    <span class=\"hljs-number\">1</span>: <span class=\"hljs-string\">&quot;pants&quot;</span>,\n    <span class=\"hljs-number\">2</span>: <span class=\"hljs-string\">&quot;belt&quot;</span>,\n    <span class=\"hljs-number\">3</span>: <span class=\"hljs-string\">&quot;suit&quot;</span>,\n    <span class=\"hljs-number\">4</span>: <span class=\"hljs-string\">&quot;shoe&quot;</span>,\n    <span class=\"hljs-number\">5</span>: <span class=\"hljs-string\">&quot;socks&quot;</span>,\n    <span class=\"hljs-number\">6</span>: <span class=\"hljs-string\">&quot;shirt&quot;</span>,\n    <span class=\"hljs-number\">7</span>: <span class=\"hljs-string\">&quot;tie&quot;</span>,\n    <span class=\"hljs-number\">8</span>: <span class=\"hljs-string\">&quot;watch&quot;</span>,\n}\n\ngraph = [[<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">4</span>], [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>], [<span class=\"hljs-number\">3</span>], [], [], [<span class=\"hljs-number\">4</span>], [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">7</span>], [<span class=\"hljs-number\">3</span>], []]\n\nvisited = [<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">for</span> x <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(graph))]\nstack = []\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">print_stack</span>(<span class=\"hljs-params\">stack, clothes</span>):\n    order = <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">while</span> stack:\n        current_clothing = stack.pop()\n        <span class=\"hljs-built_in\">print</span>(order, clothes[current_clothing])\n        order += <span class=\"hljs-number\">1</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">depth_first_search</span>(<span class=\"hljs-params\">u, visited, graph</span>):\n    visited[u] = <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> graph[u]:\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> visited[v]:\n            depth_first_search(v, visited, graph)\n\n    stack.append(u)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">topological_sort</span>(<span class=\"hljs-params\">graph, visited</span>):\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(graph)):\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> visited[v]:\n            depth_first_search(v, visited, graph)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    topological_sort(graph, visited)\n    <span class=\"hljs-built_in\">print</span>(stack)\n    print_stack(stack, clothes)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Sanders Lin",
+      "email": "45224617+SandersLin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Phyllipe Bezerra",
+      "email": "32442929+pmba@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

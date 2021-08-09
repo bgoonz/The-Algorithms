@@ -1,0 +1,31 @@
+{
+  "slug": "word-occurrence",
+  "name": "Word Occurrence",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/word_occurrence.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/word_occurrence.py",
+      "code": "<span class=\"hljs-comment\"># Created by sarathkaul on 17/11/19</span>\n<span class=\"hljs-comment\"># Modified by Arkadip Bhattacharya(@darkmatter18) on 20/04/2020</span>\n<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> defaultdict\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">word_occurence</span>(<span class=\"hljs-params\">sentence: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">dict</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; from collections import Counter\n    &gt;&gt;&gt; SENTENCE = &quot;a b A b c b d b d e f e g e h e i e j e 0&quot;\n    &gt;&gt;&gt; occurence_dict = word_occurence(SENTENCE)\n    &gt;&gt;&gt; all(occurence_dict[word] == count for word, count\n    ...     in Counter(SENTENCE.split()).items())\n    True\n    &gt;&gt;&gt; dict(word_occurence(&quot;Two  spaces&quot;))\n    {&#x27;Two&#x27;: 1, &#x27;spaces&#x27;: 1}\n    &quot;&quot;&quot;</span>\n    occurrence = defaultdict(<span class=\"hljs-built_in\">int</span>)\n    <span class=\"hljs-comment\"># Creating a dictionary containing count of each word</span>\n    <span class=\"hljs-keyword\">for</span> word <span class=\"hljs-keyword\">in</span> sentence.split():\n        occurrence[word] += <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">return</span> occurrence\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">for</span> word, count <span class=\"hljs-keyword\">in</span> word_occurence(<span class=\"hljs-string\">&quot;INPUT STRING&quot;</span>).items():\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{word}</span>: <span class=\"hljs-subst\">{count}</span>&quot;</span>)\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/WordOccurrence.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/WordOccurrence.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\r\n\r\n<span class=\"hljs-keyword\">open</span> System.Collections.Generic\r\n\r\n<span class=\"hljs-keyword\">module</span> WordOccurrence =\r\n    <span class=\"hljs-keyword\">let</span> wordOccurrence (sentence: string): Map&lt;string, int&gt; =\r\n        <span class=\"hljs-comment\">// Creating a dictionary containing count of each word</span>\r\n        <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> occurrence: Map&lt;string, int&gt; = Map.empty\r\n\r\n        <span class=\"hljs-keyword\">for</span> word <span class=\"hljs-keyword\">in</span> sentence.Split() <span class=\"hljs-keyword\">do</span>\r\n            <span class=\"hljs-keyword\">match</span> word <span class=\"hljs-keyword\">with</span>\r\n            | <span class=\"hljs-string\">&quot;&quot;</span> -&gt; ignore word\r\n            | w <span class=\"hljs-keyword\">when</span> occurrence.ContainsKey(word) -&gt; printfn <span class=\"hljs-string\">&quot;%A&quot;</span> (word)\r\n            | _ -&gt; occurrence &lt;- occurrence.Add(word, <span class=\"hljs-number\">1</span>)\r\n\r\n        occurrence\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Arkadip Bhattacharya",
+      "email": "in2arkadipb13@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

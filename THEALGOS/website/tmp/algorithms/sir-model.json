@@ -1,0 +1,21 @@
+{
+  "slug": "sir-model",
+  "name": "Sir Model",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/math/sir_model.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/sir_model.jl",
+      "code": "<span class=\"hljs-comment\"># Based on the introductory discussion on</span>\n<span class=\"hljs-comment\"># https://www.maa.org/press/periodicals/loci/joma/the-sir-model-for-spread-of-disease-the-differential-equation-model</span>\n\n<span class=\"hljs-comment\">## Uncomment the following lines if used as a standalone</span>\n<span class=\"hljs-comment\"># using DifferentialEquations</span>\n<span class=\"hljs-comment\"># using Plots</span>\n\n<span class=\"hljs-keyword\">function</span> SIR(du, u, p, t)\n    s, i, r = u\n    b, k = p\n    du[<span class=\"hljs-number\">1</span>] = -b * s * i\n    du[<span class=\"hljs-number\">2</span>] = b * s * i - k * i\n    du[<span class=\"hljs-number\">3</span>] = k * i\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-comment\"># TODO: make the following a doctest example</span>\n    <span class=\"hljs-comment\"># #initian conditions</span>\n    <span class=\"hljs-comment\"># p = [0.5/7900000.0,0.33]</span>\n    <span class=\"hljs-comment\"># u0 = [7900000.0,10.0,0.0]</span>\n    <span class=\"hljs-comment\"># tspan = (0.0,140.0)</span>\n\n    <span class=\"hljs-comment\"># #solve</span>\n    <span class=\"hljs-comment\"># sir = ODEProblem(SIR,u0,tspan,p)</span>\n    <span class=\"hljs-comment\"># sol = solve(sir)</span>\n\n    <span class=\"hljs-comment\"># #plot</span>\n    <span class=\"hljs-comment\"># plot(sol)</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

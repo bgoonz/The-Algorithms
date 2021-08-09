@@ -1,0 +1,41 @@
+{
+  "slug": "validate-filenames",
+  "name": "Validate Filenames",
+  "categories": ["scripts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "scripts/validate_filenames.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/scripts/validate_filenames.py",
+      "code": "<span class=\"hljs-comment\">#!/usr/bin/env python3</span>\n<span class=\"hljs-keyword\">import</span> os\n\n<span class=\"hljs-keyword\">try</span>:\n    <span class=\"hljs-keyword\">from</span> .build_directory_md <span class=\"hljs-keyword\">import</span> good_file_paths\n<span class=\"hljs-keyword\">except</span> ImportError:\n    <span class=\"hljs-keyword\">from</span> build_directory_md <span class=\"hljs-keyword\">import</span> good_file_paths  <span class=\"hljs-comment\"># type: ignore</span>\n\nfilepaths = <span class=\"hljs-built_in\">list</span>(good_file_paths())\n<span class=\"hljs-keyword\">assert</span> filepaths, <span class=\"hljs-string\">&quot;good_file_paths() failed!&quot;</span>\n\nupper_files = [file <span class=\"hljs-keyword\">for</span> file <span class=\"hljs-keyword\">in</span> filepaths <span class=\"hljs-keyword\">if</span> file != file.lower()]\n<span class=\"hljs-keyword\">if</span> upper_files:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{<span class=\"hljs-built_in\">len</span>(upper_files)}</span> files contain uppercase characters:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>.join(upper_files) + <span class=\"hljs-string\">&quot;\\n&quot;</span>)\n\nspace_files = [file <span class=\"hljs-keyword\">for</span> file <span class=\"hljs-keyword\">in</span> filepaths <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">&quot; &quot;</span> <span class=\"hljs-keyword\">in</span> file]\n<span class=\"hljs-keyword\">if</span> space_files:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{<span class=\"hljs-built_in\">len</span>(space_files)}</span> files contain space characters:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>.join(space_files) + <span class=\"hljs-string\">&quot;\\n&quot;</span>)\n\nhyphen_files = [file <span class=\"hljs-keyword\">for</span> file <span class=\"hljs-keyword\">in</span> filepaths <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">&quot;-&quot;</span> <span class=\"hljs-keyword\">in</span> file]\n<span class=\"hljs-keyword\">if</span> hyphen_files:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{<span class=\"hljs-built_in\">len</span>(hyphen_files)}</span> files contain hyphen characters:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>.join(hyphen_files) + <span class=\"hljs-string\">&quot;\\n&quot;</span>)\n\nnodir_files = [file <span class=\"hljs-keyword\">for</span> file <span class=\"hljs-keyword\">in</span> filepaths <span class=\"hljs-keyword\">if</span> os.sep <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> file]\n<span class=\"hljs-keyword\">if</span> nodir_files:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{<span class=\"hljs-built_in\">len</span>(nodir_files)}</span> files are not in a directory:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>.join(nodir_files) + <span class=\"hljs-string\">&quot;\\n&quot;</span>)\n\nbad_files = <span class=\"hljs-built_in\">len</span>(upper_files + space_files + hyphen_files + nodir_files)\n<span class=\"hljs-keyword\">if</span> bad_files:\n    <span class=\"hljs-keyword\">import</span> sys\n\n    sys.exit(bad_files)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sam Holst",
+      "email": "sawohol@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

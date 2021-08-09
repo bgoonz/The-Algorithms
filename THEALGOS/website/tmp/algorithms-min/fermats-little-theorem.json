@@ -1,0 +1,21 @@
+{
+  "slug": "fermats-little-theorem",
+  "name": "Fermats Little Theorem",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

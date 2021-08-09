@@ -1,0 +1,21 @@
+{
+  "slug": "instagram-pic",
+  "name": "Instagram Pic",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/instagram_pic.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/instagram_pic.py",
+      "code": "<span class=\"hljs-keyword\">from</span> datetime <span class=\"hljs-keyword\">import</span> datetime\n\n<span class=\"hljs-keyword\">import</span> requests\n<span class=\"hljs-keyword\">from</span> bs4 <span class=\"hljs-keyword\">import</span> BeautifulSoup\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    url = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter image url: &quot;</span>).strip()\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Downloading image from <span class=\"hljs-subst\">{url}</span> ...&quot;</span>)\n    soup = BeautifulSoup(requests.get(url).content, <span class=\"hljs-string\">&quot;html.parser&quot;</span>)\n    <span class=\"hljs-comment\"># The image URL is in the content field of the first meta tag with property og:image</span>\n    image_url = soup.find(<span class=\"hljs-string\">&quot;meta&quot;</span>, {<span class=\"hljs-string\">&quot;property&quot;</span>: <span class=\"hljs-string\">&quot;og:image&quot;</span>})[<span class=\"hljs-string\">&quot;content&quot;</span>]\n    image_data = requests.get(image_url).content\n    file_name = <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{datetime.now():%Y-%m-%d_%H:%M:%S}</span>.jpg&quot;</span>\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(file_name, <span class=\"hljs-string\">&quot;wb&quot;</span>) <span class=\"hljs-keyword\">as</span> fp:\n        fp.write(image_data)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Done. Image saved to disk as <span class=\"hljs-subst\">{file_name}</span>.&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Sullivan",
+      "email": "38718448+Epic-R-R@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

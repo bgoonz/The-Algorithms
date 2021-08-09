@@ -1,0 +1,21 @@
+{
+  "slug": "shreedharacharyaformula",
+  "name": "shreeDharacharyaFormula",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/maths/shreeDharacharyaFormula.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/maths/shreeDharacharyaFormula.m",
+      "code": "<span class=\"hljs-comment\">%% Shree Dharacharya Formula</span>\n<span class=\"hljs-comment\">% aX^2 + bX + c = 0</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-params\">[x1,x2]</span> = <span class=\"hljs-title\">shreeDharacharyaFormula</span><span class=\"hljs-params\">(a,b,c)</span></span>\n    <span class=\"hljs-comment\">% calculates the roots of a quadratic equation.</span>\n    d = b^<span class=\"hljs-number\">2</span> - <span class=\"hljs-number\">4</span>*a*c;\n\n    <span class=\"hljs-keyword\">if</span> d &lt; <span class=\"hljs-number\">0</span>\n        <span class=\"hljs-built_in\">disp</span>(<span class=\"hljs-string\">&#x27;Imaginary roots&#x27;</span>);\n\n    <span class=\"hljs-keyword\">else</span>\n        x1 = (-b + d^(<span class=\"hljs-number\">1</span>/<span class=\"hljs-number\">2</span>))/(<span class=\"hljs-number\">2</span>*a);\n    \n        x2 = (-b - d^(<span class=\"hljs-number\">1</span>/<span class=\"hljs-number\">2</span>))/(<span class=\"hljs-number\">2</span>*a);\n    <span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

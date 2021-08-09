@@ -1,0 +1,21 @@
+{
+  "slug": "departmentfactory",
+  "name": "departmentFactory",
+  "categories": ["designpatterns", "factorymethod"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "designpatterns/factorymethod/departmentFactory.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/designpatterns/factorymethod/departmentFactory.go",
+      "code": "<span class=\"hljs-keyword\">package</span> factorymethod\n\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&quot;fmt&quot;</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">getDepartment</span><span class=\"hljs-params\">(departmentType <span class=\"hljs-keyword\">string</span>)</span> <span class=\"hljs-params\">(iDepartment, error)</span></span> {\n\t<span class=\"hljs-keyword\">if</span> departmentType == <span class=\"hljs-string\">&quot;accounting&quot;</span> {\n\t\t<span class=\"hljs-keyword\">return</span> newAccounting(), <span class=\"hljs-literal\">nil</span>\n\t}\n\t<span class=\"hljs-keyword\">if</span> departmentType == <span class=\"hljs-string\">&quot;finance&quot;</span> {\n\t\t<span class=\"hljs-keyword\">return</span> newFinance(), <span class=\"hljs-literal\">nil</span>\n\t}\n\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">nil</span>, fmt.Errorf(<span class=\"hljs-string\">&quot;wrong department type passed&quot;</span>)\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mohamed",
+      "email": "m.abdelrhman@baianat.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

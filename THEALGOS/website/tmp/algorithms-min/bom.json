@@ -1,0 +1,21 @@
+{
+  "slug": "bom",
+  "name": "Bom",
+  "categories": ["strings", "singlestringmatching", "backwardoraclematching"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "halafi",
+      "email": "filiphalas74@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

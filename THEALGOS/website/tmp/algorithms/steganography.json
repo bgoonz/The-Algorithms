@@ -1,0 +1,21 @@
+{
+  "slug": "steganography",
+  "name": "Steganography",
+  "categories": ["imageprocessing", "lsbbasedimagesteganography"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/ImageProcessing/LSB based Image Steganography/steganography.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/ImageProcessing/LSB based Image Steganography/steganography.m",
+      "code": "clc;\nclear variables;\n<span class=\"hljs-comment\">% Load the image and convert to grayscale if it is RGB</span>\nI=imread(<span class=\"hljs-string\">&#x27;input.png&#x27;</span>);\n[rows, columns, numberOfColorChannels] = <span class=\"hljs-built_in\">size</span>(I);\n<span class=\"hljs-keyword\">if</span> numberOfColorChannels &gt; <span class=\"hljs-number\">1</span>\n    I = rgb2gray(I);\n<span class=\"hljs-keyword\">end</span>\nL=<span class=\"hljs-number\">256</span>;\nimage_hide=I;\n\nmessage=input(<span class=\"hljs-string\">&#x27;Please enter the message you want to hide: &#x27;</span>,<span class=\"hljs-string\">&#x27;s&#x27;</span>);\n<span class=\"hljs-comment\">% Each character occupies a byte, so total bits can be found by multiplying</span>\n<span class=\"hljs-comment\">% string length by 8</span>\nlen=strlength(message)*<span class=\"hljs-number\">8</span>; \nascii_values=uint8(message);   \nascii2binary=dec2bin(ascii_values,<span class=\"hljs-number\">8</span>);\n\n<span class=\"hljs-comment\">% Append all binary equivalents of ascii values into one string</span>\nbinary_sequence=<span class=\"hljs-string\">&#x27;&#x27;</span>;  \n<span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-number\">1</span>:strlength(message)\n    binary_sequence=append(binary_sequence,ascii2binary(<span class=\"hljs-built_in\">i</span>,:));\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-comment\">% To track how many bits of message have been hidden</span>\nbitCount=<span class=\"hljs-number\">1</span>;\n\n<span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-number\">1</span>:rows\n    <span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">j</span>=<span class=\"hljs-number\">1</span>:columns\n        \n        <span class=\"hljs-keyword\">if</span> bitCount&lt;=len\n            <span class=\"hljs-comment\">%Obtain the LSB of the grey level of the pixel</span>\n            LSB=<span class=\"hljs-built_in\">mod</span>(I(<span class=\"hljs-built_in\">i</span>,<span class=\"hljs-built_in\">j</span>),<span class=\"hljs-number\">2</span>);\n            \n            <span class=\"hljs-comment\">%Convert the bit from the message to numeric form</span>\n            a=str2double(binary_sequence(bitCount));\n\n            <span class=\"hljs-comment\">%Perform XOR operation between the bit and the LSB</span>\n            temp=double(xor(LSB,a));\n            \n            <span class=\"hljs-comment\">%Change the bit of the image_hide accordingly</span>\n            image_hide(<span class=\"hljs-built_in\">i</span>,<span class=\"hljs-built_in\">j</span>)=I(<span class=\"hljs-built_in\">i</span>,<span class=\"hljs-built_in\">j</span>)+temp;\n            \n            bitCount=bitCount+<span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n\nsubplot(<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">1</span>);\nimshow(I);\ntitle(<span class=\"hljs-string\">&#x27;Input Image&#x27;</span>);\n\nsubplot(<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">2</span>);\nimshow(image_hide);\ntitle(<span class=\"hljs-string\">&#x27;Image with Hidden Data&#x27;</span>);\n\nimwrite(image_hide,<span class=\"hljs-string\">&#x27;output.png&#x27;</span>)\n\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Navkiran",
+      "email": "singh.navkiran1515@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

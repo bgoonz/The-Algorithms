@@ -1,0 +1,16 @@
+{
+  "slug": "knn",
+  "name": "KNN",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Thomas",
+      "email": "thomas.lentali@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

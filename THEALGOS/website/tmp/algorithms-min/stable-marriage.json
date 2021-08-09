@@ -1,0 +1,10 @@
+{
+  "slug": "stable-marriage",
+  "name": "Stable Marriage",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

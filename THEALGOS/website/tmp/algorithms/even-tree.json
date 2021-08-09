@@ -1,0 +1,46 @@
+{
+  "slug": "even-tree",
+  "name": "Even Tree",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/even_tree.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/even_tree.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nYou are given a tree(a simple connected graph with no cycles). The tree has N\nnodes numbered from 1 to N and is rooted at node 1.\n\nFind the maximum number of edges you can remove from the tree to get a forest\nsuch that each connected component of the forest contains an even number of\nnodes.\n\nConstraints\n2 &lt;= 2 &lt;= 100\n\nNote: The tree input will be such that it can always be decomposed into\ncomponents containing an even number of nodes.\n&quot;&quot;&quot;</span>\n<span class=\"hljs-comment\"># pylint: disable=invalid-name</span>\n<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> defaultdict\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">dfs</span>(<span class=\"hljs-params\">start: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;DFS traversal&quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># pylint: disable=redefined-outer-name</span>\n    ret = <span class=\"hljs-number\">1</span>\n    visited[start] = <span class=\"hljs-literal\">True</span>\n    <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> tree[start]:\n        <span class=\"hljs-keyword\">if</span> v <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> visited:\n            ret += dfs(v)\n    <span class=\"hljs-keyword\">if</span> ret % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\n        cuts.append(start)\n    <span class=\"hljs-keyword\">return</span> ret\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">even_tree</span>():\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    2 1\n    3 1\n    4 3\n    5 2\n    6 1\n    7 2\n    8 6\n    9 8\n    10 8\n    On removing edges (1,3) and (1,6), we can get the desired result 2.\n    &quot;&quot;&quot;</span>\n    dfs(<span class=\"hljs-number\">1</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    n, m = <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">9</span>\n    tree = defaultdict(<span class=\"hljs-built_in\">list</span>)\n    visited: <span class=\"hljs-built_in\">dict</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">bool</span>] = {}\n    cuts: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>] = []\n    count = <span class=\"hljs-number\">0</span>\n    edges = [(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">1</span>), (<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">1</span>), (<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">3</span>), (<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">2</span>), (<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">1</span>), (<span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">2</span>), (<span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">6</span>), (<span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">8</span>), (<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">8</span>)]\n    <span class=\"hljs-keyword\">for</span> u, v <span class=\"hljs-keyword\">in</span> edges:\n        tree[u].append(v)\n        tree[v].append(u)\n    even_tree()\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-built_in\">len</span>(cuts) - <span class=\"hljs-number\">1</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "hasan",
+      "email": "hasanuli10@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "Erdenezul",
+      "email": "erdenezul@shine.mn",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

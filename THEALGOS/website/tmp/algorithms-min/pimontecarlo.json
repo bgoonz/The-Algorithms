@@ -1,0 +1,16 @@
+{
+  "slug": "pimontecarlo",
+  "name": "PiMonteCarlo",
+  "categories": ["math"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Alex Garland",
+      "email": "alex@numinar.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

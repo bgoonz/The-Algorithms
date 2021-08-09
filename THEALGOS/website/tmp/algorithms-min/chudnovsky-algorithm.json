@@ -1,0 +1,21 @@
+{
+  "slug": "chudnovsky-algorithm",
+  "name": "Chudnovsky Algorithm",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Hasenn",
+      "email": "eliottarloveyrier@live.fr",
+      "commits": 1
+    },
+    {
+      "name": "TheSuperNoob",
+      "email": "larsthorland@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "richest-customer-wealth",
+  "name": "Richest Customer Wealth",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

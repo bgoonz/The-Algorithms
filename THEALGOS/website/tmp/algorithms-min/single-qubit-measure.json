@@ -1,0 +1,21 @@
+{
+  "slug": "single-qubit-measure",
+  "name": "Single Qubit Measure",
+  "categories": ["quantum"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek Jaisingh",
+      "email": "abhi2254015@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

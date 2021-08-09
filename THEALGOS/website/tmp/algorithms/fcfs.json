@@ -1,0 +1,26 @@
+{
+  "slug": "fcfs",
+  "name": "Fcfs",
+  "categories": ["scheduling"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/scheduling/fcfs.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/scheduling/fcfs.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    fcfs(n, process_id, burst_time)\n\nImplementation of first come first served scheduling algorithm\n\n# Output\nTuple of vectors (process_id, burst_time, waiting_time, turnaround_time, avg_waiting_time, avg_turnaround_time)\n\n# Example\n\n```julia\nn = 3 # number of processes\nprocess_id = Any[1, 2, 3] # process ids\nburst_times = Any[3, 4, 5] # burst times\nfcfs(n, process_id, burst_times)\n```\n# Reference\n\nhttps://en.wikipedia.org/wiki/Scheduling_(computing)#First_come,_first_served\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> fcfs(n, process_id, burst_time)\n    waiting_time = []\n    push!(waiting_time, <span class=\"hljs-number\">0</span>)\n    <span class=\"hljs-keyword\">for</span> i = <span class=\"hljs-number\">2</span>:n\n        <span class=\"hljs-comment\"># Calculates waiting time</span>\n        push!(waiting_time, burst_time[i - <span class=\"hljs-number\">1</span>] + waiting_time[i - <span class=\"hljs-number\">1</span>])\n    <span class=\"hljs-keyword\">end</span>\n\n    turnaround_time = []\n    <span class=\"hljs-keyword\">for</span> i = <span class=\"hljs-number\">1</span>:n\n        <span class=\"hljs-comment\"># Calculates turnaround time</span>\n        push!(turnaround_time, burst_time[i] + waiting_time[i])\n    <span class=\"hljs-keyword\">end</span>\n\n    <span class=\"hljs-comment\"># Calculates Average waiting time</span>\n    avg_waiting_time = sum(waiting_time) / length(waiting_time)\n\n    <span class=\"hljs-comment\"># Calculates Average turnaround time</span>\n    avg_turnaround_time = sum(turnaround_time) / length(turnaround_time)\n\n    <span class=\"hljs-keyword\">return</span> process_id, burst_time, waiting_time, turnaround_time, avg_waiting_time, avg_turnaround_time\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

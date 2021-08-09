@@ -1,0 +1,31 @@
+{
+  "slug": "lamberts-ellipsoidal-distance",
+  "name": "Lamberts Ellipsoidal Distance",
+  "categories": ["geodesy"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "geodesy/lamberts_ellipsoidal_distance.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/geodesy/lamberts_ellipsoidal_distance.py",
+      "code": "<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> atan, cos, radians, sin, tan\n\n<span class=\"hljs-keyword\">from</span> .haversine_distance <span class=\"hljs-keyword\">import</span> haversine_distance\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">lamberts_ellipsoidal_distance</span>(<span class=\"hljs-params\">\n    lat1: <span class=\"hljs-built_in\">float</span>, lon1: <span class=\"hljs-built_in\">float</span>, lat2: <span class=\"hljs-built_in\">float</span>, lon2: <span class=\"hljs-built_in\">float</span>\n</span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Calculate the shortest distance along the surface of an ellipsoid between\n    two points on the surface of earth given longitudes and latitudes\n    https://en.wikipedia.org/wiki/Geographical_distance#Lambert&#x27;s_formula_for_long_lines\n\n    NOTE: This algorithm uses geodesy/haversine_distance.py to compute central angle,\n        sigma\n\n    Representing the earth as an ellipsoid allows us to approximate distances between\n    points on the surface much better than a sphere. Ellipsoidal formulas treat the\n    Earth as an oblate ellipsoid which means accounting for the flattening that happens\n    at the North and South poles. Lambert&#x27;s formulae provide accuracy on the order of\n    10 meteres over thousands of kilometeres. Other methods can provide\n    millimeter-level accuracy but this is a simpler method to calculate long range\n    distances without increasing computational intensity.\n\n    Args:\n        lat1, lon1: latitude and longitude of coordinate 1\n        lat2, lon2: latitude and longitude of coordinate 2\n    Returns:\n        geographical distance between two points in metres\n\n    &gt;&gt;&gt; from collections import namedtuple\n    &gt;&gt;&gt; point_2d = namedtuple(&quot;point_2d&quot;, &quot;lat lon&quot;)\n    &gt;&gt;&gt; SAN_FRANCISCO = point_2d(37.774856, -122.424227)\n    &gt;&gt;&gt; YOSEMITE = point_2d(37.864742, -119.537521)\n    &gt;&gt;&gt; NEW_YORK = point_2d(40.713019, -74.012647)\n    &gt;&gt;&gt; VENICE = point_2d(45.443012, 12.313071)\n    &gt;&gt;&gt; f&quot;{lamberts_ellipsoidal_distance(*SAN_FRANCISCO, *YOSEMITE):0,.0f} meters&quot;\n    &#x27;254,351 meters&#x27;\n    &gt;&gt;&gt; f&quot;{lamberts_ellipsoidal_distance(*SAN_FRANCISCO, *NEW_YORK):0,.0f} meters&quot;\n    &#x27;4,138,992 meters&#x27;\n    &gt;&gt;&gt; f&quot;{lamberts_ellipsoidal_distance(*SAN_FRANCISCO, *VENICE):0,.0f} meters&quot;\n    &#x27;9,737,326 meters&#x27;\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># CONSTANTS per WGS84 https://en.wikipedia.org/wiki/World_Geodetic_System</span>\n    <span class=\"hljs-comment\"># Distance in metres(m)</span>\n    AXIS_A = <span class=\"hljs-number\">6378137.0</span>\n    AXIS_B = <span class=\"hljs-number\">6356752.314245</span>\n    EQUATORIAL_RADIUS = <span class=\"hljs-number\">6378137</span>\n\n    <span class=\"hljs-comment\"># Equation Parameters</span>\n    <span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Geographical_distance#Lambert&#x27;s_formula_for_long_lines</span>\n    flattening = (AXIS_A - AXIS_B) / AXIS_A\n    <span class=\"hljs-comment\"># Parametric latitudes</span>\n    <span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Latitude#Parametric_(or_reduced)_latitude</span>\n    b_lat1 = atan((<span class=\"hljs-number\">1</span> - flattening) * tan(radians(lat1)))\n    b_lat2 = atan((<span class=\"hljs-number\">1</span> - flattening) * tan(radians(lat2)))\n\n    <span class=\"hljs-comment\"># Compute central angle between two points</span>\n    <span class=\"hljs-comment\"># using haversine theta. sigma =  haversine_distance / equatorial radius</span>\n    sigma = haversine_distance(lat1, lon1, lat2, lon2) / EQUATORIAL_RADIUS\n\n    <span class=\"hljs-comment\"># Intermediate P and Q values</span>\n    P_value = (b_lat1 + b_lat2) / <span class=\"hljs-number\">2</span>\n    Q_value = (b_lat2 - b_lat1) / <span class=\"hljs-number\">2</span>\n\n    <span class=\"hljs-comment\"># Intermediate X value</span>\n    <span class=\"hljs-comment\"># X = (sigma - sin(sigma)) * sin^2Pcos^2Q / cos^2(sigma/2)</span>\n    X_numerator = (sin(P_value) ** <span class=\"hljs-number\">2</span>) * (cos(Q_value) ** <span class=\"hljs-number\">2</span>)\n    X_demonimator = cos(sigma / <span class=\"hljs-number\">2</span>) ** <span class=\"hljs-number\">2</span>\n    X_value = (sigma - sin(sigma)) * (X_numerator / X_demonimator)\n\n    <span class=\"hljs-comment\"># Intermediate Y value</span>\n    <span class=\"hljs-comment\"># Y = (sigma + sin(sigma)) * cos^2Psin^2Q / sin^2(sigma/2)</span>\n    Y_numerator = (cos(P_value) ** <span class=\"hljs-number\">2</span>) * (sin(Q_value) ** <span class=\"hljs-number\">2</span>)\n    Y_denominator = sin(sigma / <span class=\"hljs-number\">2</span>) ** <span class=\"hljs-number\">2</span>\n    Y_value = (sigma + sin(sigma)) * (Y_numerator / Y_denominator)\n\n    <span class=\"hljs-keyword\">return</span> EQUATORIAL_RADIUS * (sigma - ((flattening / <span class=\"hljs-number\">2</span>) * (X_value + Y_value)))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "eightysixth",
+      "email": "25541207+eightysixth@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

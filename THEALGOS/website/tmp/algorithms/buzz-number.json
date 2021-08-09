@@ -1,0 +1,31 @@
+{
+  "slug": "buzz-number",
+  "name": "Buzz Number",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "others/buzz_number.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/others/buzz_number.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief A buzz number is a number that is either divisible by 7 or has last\n * digit as 7.\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n\n<span class=\"hljs-comment\">/** main function */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> n, t;\n    std::cin &gt;&gt; t;\n    <span class=\"hljs-keyword\">while</span> (t--) {\n        std::cin &gt;&gt; n;\n        <span class=\"hljs-keyword\">if</span> ((n % <span class=\"hljs-number\">7</span> == <span class=\"hljs-number\">0</span>) || (n % <span class=\"hljs-number\">10</span> == <span class=\"hljs-number\">7</span>))\n            std::cout &lt;&lt; n &lt;&lt; <span class=\"hljs-string\">&quot; is a buzz number&quot;</span> &lt;&lt; std::endl;\n        <span class=\"hljs-keyword\">else</span>\n            std::cout &lt;&lt; n &lt;&lt; <span class=\"hljs-string\">&quot; is not a buzz number&quot;</span> &lt;&lt; std::endl;\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

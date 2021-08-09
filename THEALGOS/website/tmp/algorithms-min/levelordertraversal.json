@@ -1,0 +1,46 @@
+{
+  "slug": "levelordertraversal",
+  "name": "LevelOrderTraversal",
+  "categories": ["datastructures", "tree"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ayaanfaiz",
+      "email": "ayaan2103@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "JayH2018",
+      "email": "42029911+JayH2018@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

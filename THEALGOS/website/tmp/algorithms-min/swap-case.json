@@ -1,0 +1,27 @@
+{
+  "slug": "swap-case",
+  "name": "Swap Case",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "f-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Frank Schmitt",
+      "email": "frank@qwhon.de",
+      "commits": 1
+    },
+    {
+      "name": "Mayur Pardeshi",
+      "email": "45143349+mayur200@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

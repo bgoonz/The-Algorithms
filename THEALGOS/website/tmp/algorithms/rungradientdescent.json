@@ -1,0 +1,21 @@
+{
+  "slug": "rungradientdescent",
+  "name": "runGradientDescent",
+  "categories": ["machinelearning", "gradientdescent"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Gradient-Descent/runGradientDescent.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Gradient-Descent/runGradientDescent.m",
+      "code": "<span class=\"hljs-comment\">% This script will pass sample parameters to gradient descent function and get Theta.</span>\n\n<span class=\"hljs-comment\">% I have used data consisting of populations as variables and profits as target values.</span>\n\n<span class=\"hljs-comment\">% Navigate to directory where you keep these three files on octave cli and then execute.  </span>\n\ndata = load(<span class=\"hljs-string\">&#x27;data_.txt&#x27;</span>);\n\nY = data(:, <span class=\"hljs-number\">2</span>); <span class=\"hljs-comment\">% Y is a column vector with all entries in second column of data matrix.</span>\n\nn = <span class=\"hljs-built_in\">length</span>(Y);  \n\nx = [<span class=\"hljs-built_in\">ones</span>(n, <span class=\"hljs-number\">1</span>), data(:,<span class=\"hljs-number\">1</span>)]; <span class=\"hljs-comment\">% x is the matrix with first column as ones and second data. </span>\n\nTheta = <span class=\"hljs-built_in\">zeros</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">1</span>); <span class=\"hljs-comment\">% Initial Theta vector with both theta values set to zero (column).  </span>\n\nAlpha = <span class=\"hljs-number\">0.01</span>; \n\nnoi = <span class=\"hljs-number\">1500</span>;\n\nTheta = gradientdescent(x, Y, Theta, Alpha, noi);\n\nfprintf(<span class=\"hljs-string\">&#x27;New theta vector is below:\\n&#x27;</span>);\n\nfprintf(<span class=\"hljs-string\">&#x27;%f\\n&#x27;</span>, Theta);\n\nfprintf(<span class=\"hljs-string\">&#x27;Expected Theta vector (approx)\\n&#x27;</span>);\n\nfprintf(<span class=\"hljs-string\">&#x27; -3.6303\\n 1.1664\\n\\n&#x27;</span>);"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "koulanish787@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "isomorphic-strings",
+  "name": "Isomorphic Strings",
+  "categories": ["datastructures", "hashtable"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

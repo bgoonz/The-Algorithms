@@ -1,0 +1,16 @@
+{
+  "slug": "lightgbm",
+  "name": "LightGBM",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Thomas",
+      "email": "thomas.lentali@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

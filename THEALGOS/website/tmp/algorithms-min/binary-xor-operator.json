@@ -1,0 +1,32 @@
+{
+  "slug": "binary-xor-operator",
+  "name": "Binary Xor Operator",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "python": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vivek Patel",
+      "email": "vicky.p8980@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vijay Siva",
+      "email": "vijay.sivasubramaniam@instacart.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

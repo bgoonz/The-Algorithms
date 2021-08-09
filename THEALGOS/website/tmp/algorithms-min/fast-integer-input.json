@@ -1,0 +1,10 @@
+{
+  "slug": "fast-integer-input",
+  "name": "Fast Integer Input",
+  "categories": ["others"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "random-anime-character",
+  "name": "Random Anime Character",
+  "categories": ["webprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Lucifer",
+      "email": "63491234+ashish-patwal@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

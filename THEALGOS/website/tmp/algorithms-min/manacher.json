@@ -1,0 +1,47 @@
+{
+  "slug": "manacher",
+  "name": "Manacher",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "f-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "faizan2700",
+      "email": "46817346+faizan2700@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Erfan Alimohammadi",
+      "email": "erfan.aa@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jitendra_Sharma",
+      "email": "jitendra.sharma_cs16@gla.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "select-sort",
+  "name": "Select Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "dart": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "andrescontreras96",
+      "email": "contreras9996@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andres Contreras",
+      "email": "nsl-midintern1@NSL-ACONTRERAS.local",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

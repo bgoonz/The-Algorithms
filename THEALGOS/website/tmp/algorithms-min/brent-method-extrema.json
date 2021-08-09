@@ -1,0 +1,16 @@
+{
+  "slug": "brent-method-extrema",
+  "name": "Brent Method Extrema",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

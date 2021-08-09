@@ -1,0 +1,46 @@
+{
+  "slug": "quadratic-probing",
+  "name": "Quadratic Probing",
+  "categories": ["datastructures", "hashing"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KDH",
+      "email": "ehdgua01@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Bruno Simas Hadlich",
+      "email": "brunosimashadlich@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "gabriel",
+      "email": "gabriel.goncalves@trilogo.com.br",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

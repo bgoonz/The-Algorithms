@@ -1,0 +1,41 @@
+{
+  "slug": "combinations",
+  "name": "Combinations",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/combinations.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/combinations.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nhttps://en.wikipedia.org/wiki/Combination\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> factorial\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">combinations</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span>, k: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Returns the number of different combinations of k length which can\n    be made from n values, where n &gt;= k.\n\n    Examples:\n    &gt;&gt;&gt; combinations(10,5)\n    252\n\n    &gt;&gt;&gt; combinations(6,3)\n    20\n\n    &gt;&gt;&gt; combinations(20,5)\n    15504\n\n    &gt;&gt;&gt; combinations(52, 5)\n    2598960\n\n    &gt;&gt;&gt; combinations(0, 0)\n    1\n\n    &gt;&gt;&gt; combinations(-4, -5)\n    ...\n    Traceback (most recent call last):\n    ValueError: Please enter positive integers for n and k where n &gt;= k\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># If either of the conditions are true, the function is being asked</span>\n    <span class=\"hljs-comment\"># to calculate a factorial of a negative number, which is not possible</span>\n    <span class=\"hljs-keyword\">if</span> n &lt; k <span class=\"hljs-keyword\">or</span> k &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Please enter positive integers for n and k where n &gt;= k&quot;</span>)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">int</span>(factorial(n) / ((factorial(k)) * (factorial(n - k))))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n\n    <span class=\"hljs-built_in\">print</span>(\n        <span class=\"hljs-string\">&quot;\\nThe number of five-card hands possible from a standard&quot;</span>,\n        <span class=\"hljs-string\">f&quot;fifty-two card deck is: <span class=\"hljs-subst\">{combinations(<span class=\"hljs-number\">52</span>, <span class=\"hljs-number\">5</span>)}</span>&quot;</span>,\n    )\n\n    <span class=\"hljs-built_in\">print</span>(\n        <span class=\"hljs-string\">&quot;\\nIf a class of 40 students must be arranged into groups of&quot;</span>,\n        <span class=\"hljs-string\">f&quot;4 for group projects, there are <span class=\"hljs-subst\">{combinations(<span class=\"hljs-number\">40</span>, <span class=\"hljs-number\">4</span>)}</span> ways&quot;</span>,\n        <span class=\"hljs-string\">&quot;to arrange them.\\n&quot;</span>,\n    )\n\n    <span class=\"hljs-built_in\">print</span>(\n        <span class=\"hljs-string\">&quot;If 10 teams are competing in a Formula One race, there&quot;</span>,\n        <span class=\"hljs-string\">f&quot;are <span class=\"hljs-subst\">{combinations(<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">3</span>)}</span> ways that first, second and&quot;</span>,\n        <span class=\"hljs-string\">&quot;third place can be awarded.\\n&quot;</span>,\n    )\n"
+    },
+    "java": {
+      "dir": "Maths/Combinations.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/Combinations.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/** <span class=\"hljs-doctag\">@see</span> &lt;a href=&quot;https://en.wikipedia.org/wiki/Combination&quot;&gt;Combination&lt;/a&gt; */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Combinations</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">combinations</span><span class=\"hljs-params\">(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>)</span> == <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">combinations</span><span class=\"hljs-params\">(<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">5</span>)</span> == <span class=\"hljs-number\">252</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">combinations</span><span class=\"hljs-params\">(<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">3</span>)</span> == <span class=\"hljs-number\">20</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">combinations</span><span class=\"hljs-params\">(<span class=\"hljs-number\">20</span>, <span class=\"hljs-number\">5</span>)</span> == <span class=\"hljs-number\">15504</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Calculate of factorial\n   *\n   * <span class=\"hljs-doctag\">@param</span> n the number\n   * <span class=\"hljs-doctag\">@return</span> factorial of given number\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">long</span> <span class=\"hljs-title function_\">factorial</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> n)</span> {\n    <span class=\"hljs-keyword\">if</span> (n &lt; <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">IllegalArgumentException</span>(<span class=\"hljs-string\">&quot;number is negative&quot;</span>);\n    }\n    <span class=\"hljs-type\">return</span> <span class=\"hljs-variable\">n</span> <span class=\"hljs-operator\">=</span>= <span class=\"hljs-number\">0</span> || n == <span class=\"hljs-number\">1</span> ? <span class=\"hljs-number\">1</span> : n * factorial(n - <span class=\"hljs-number\">1</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Calculate combinations\n   *\n   * <span class=\"hljs-doctag\">@param</span> n first number\n   * <span class=\"hljs-doctag\">@param</span> k second number\n   * <span class=\"hljs-doctag\">@return</span> combinations of given {<span class=\"hljs-doctag\">@code</span> n} and {<span class=\"hljs-doctag\">@code</span> k}\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">long</span> <span class=\"hljs-title function_\">combinations</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> n, <span class=\"hljs-type\">int</span> k)</span> {\n    <span class=\"hljs-keyword\">return</span> factorial(n) / (factorial(k) * factorial(n - k));\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Chetan Kaushik",
+      "email": "dynamitechetan@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rolv Apneseth",
+      "email": "rolv.apneseth@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "support-vector-machine",
+  "name": "Support Vector Machine",
+  "categories": ["machinelearning", "supportvectormachine"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "tehliang01",
+      "email": "tehl64@1utar.my",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

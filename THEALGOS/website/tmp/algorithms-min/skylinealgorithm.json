@@ -1,0 +1,21 @@
+{
+  "slug": "skylinealgorithm",
+  "name": "SkylineAlgorithm",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "dimgrichr",
+      "email": "32580033+dimgrichr@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

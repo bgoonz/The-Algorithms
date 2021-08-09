@@ -1,0 +1,32 @@
+{
+  "slug": "weight-conversion",
+  "name": "Weight Conversion",
+  "categories": ["conversions"],
+  "implementations": {
+    "python": "",
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anubhav Solanki",
+      "email": "55892162+AnubhavSolanki@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

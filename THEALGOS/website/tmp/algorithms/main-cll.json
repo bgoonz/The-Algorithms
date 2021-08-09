@@ -1,0 +1,26 @@
+{
+  "slug": "main-cll",
+  "name": "Main Cll",
+  "categories": ["datastructures", "cll"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "data_structures/cll/main_cll.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/data_structures/cll/main_cll.cpp",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&quot;cll.h&quot;</span></span>\n<span class=\"hljs-keyword\">using</span> <span class=\"hljs-keyword\">namespace</span> std;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-comment\">/* Test CLL */</span>\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test construct -----------&quot;</span> &lt;&lt; endl;\n    cll list1;\n    list1.<span class=\"hljs-built_in\">display</span>();\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test insert front -----------&quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">insert_front</span>(<span class=\"hljs-number\">5</span>);\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;After insert 5 at front: &quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">display</span>();\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;After insert 10 3 7 at front: &quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">insert_front</span>(<span class=\"hljs-number\">10</span>);\n    list1.<span class=\"hljs-built_in\">insert_front</span>(<span class=\"hljs-number\">3</span>);\n    list1.<span class=\"hljs-built_in\">insert_front</span>(<span class=\"hljs-number\">7</span>);\n    list1.<span class=\"hljs-built_in\">display</span>();\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test insert tail -----------&quot;</span> &lt;&lt; endl;\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;After insert 18 19 20 at tail: &quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">insert_tail</span>(<span class=\"hljs-number\">18</span>);\n    list1.<span class=\"hljs-built_in\">insert_tail</span>(<span class=\"hljs-number\">19</span>);\n    list1.<span class=\"hljs-built_in\">insert_tail</span>(<span class=\"hljs-number\">20</span>);\n    list1.<span class=\"hljs-built_in\">display</span>();\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test find item -----------&quot;</span> &lt;&lt; endl;\n    <span class=\"hljs-keyword\">if</span> (list1.<span class=\"hljs-built_in\">find_item</span>(<span class=\"hljs-number\">10</span>))\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;PASS&quot;</span> &lt;&lt; endl;\n    <span class=\"hljs-keyword\">else</span>\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;FAIL&quot;</span> &lt;&lt; endl;\n    <span class=\"hljs-keyword\">if</span> (!list1.<span class=\"hljs-built_in\">find_item</span>(<span class=\"hljs-number\">30</span>))\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;PASS&quot;</span> &lt;&lt; endl;\n    <span class=\"hljs-keyword\">else</span>\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;FAIL&quot;</span> &lt;&lt; endl;\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test * operator -----------&quot;</span> &lt;&lt; endl;\n    <span class=\"hljs-type\">int</span> value = *list1;\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;Value at *list1: &quot;</span> &lt;&lt; value &lt;&lt; endl;\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;----------- Test ++ operator -----------&quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">display</span>();\n    ++list1;\n    cout &lt;&lt; <span class=\"hljs-string\">&quot;After ++list1: &quot;</span> &lt;&lt; endl;\n    list1.<span class=\"hljs-built_in\">display</span>();\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

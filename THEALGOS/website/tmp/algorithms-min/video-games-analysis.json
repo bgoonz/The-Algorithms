@@ -1,0 +1,16 @@
+{
+  "slug": "video-games-analysis",
+  "name": "Video Games Analysis",
+  "categories": ["others"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Kaif",
+      "email": "kaifkohari10@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

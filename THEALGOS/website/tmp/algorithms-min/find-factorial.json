@@ -1,0 +1,10 @@
+{
+  "slug": "find-factorial",
+  "name": "Find Factorial",
+  "categories": ["math"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

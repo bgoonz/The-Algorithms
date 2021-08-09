@@ -1,0 +1,56 @@
+{
+  "slug": "boyer-moore-search",
+  "name": "Boyer Moore Search",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/boyer_moore_search.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/boyer_moore_search.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThe algorithm finds the pattern in given text using following rule.\n\nThe bad-character rule considers the mismatched character in Text.\nThe next occurrence of that character to the left in Pattern is found,\n\nIf the mismatched character occurs to the left in Pattern,\na shift is proposed that aligns text block and pattern.\n\nIf the mismatched character does not occur to the left in Pattern,\na shift is proposed that moves the entirety of Pattern past\nthe point of mismatch in the text.\n\nIf there no mismatch then the pattern matches with text block.\n\nTime Complexity : O(n/m)\n    n=length of main string\n    m=length of pattern string\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">BoyerMooreSearch</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, text: <span class=\"hljs-built_in\">str</span>, pattern: <span class=\"hljs-built_in\">str</span></span>):\n        self.text, self.pattern = text, pattern\n        self.textLen, self.patLen = <span class=\"hljs-built_in\">len</span>(text), <span class=\"hljs-built_in\">len</span>(pattern)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">match_in_pattern</span>(<span class=\"hljs-params\">self, char: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n        <span class=\"hljs-string\">&quot;&quot;&quot;finds the index of char in pattern in reverse order\n\n        Parameters :\n            char (chr): character to be searched\n\n        Returns :\n            i (int): index of char from last in pattern\n            -1 (int): if char is not found in pattern\n        &quot;&quot;&quot;</span>\n\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(self.patLen - <span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>):\n            <span class=\"hljs-keyword\">if</span> char == self.pattern[i]:\n                <span class=\"hljs-keyword\">return</span> i\n        <span class=\"hljs-keyword\">return</span> -<span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">mismatch_in_text</span>(<span class=\"hljs-params\">self, currentPos: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n        <span class=\"hljs-string\">&quot;&quot;&quot;\n        find the index of mis-matched character in text when compared with pattern\n        from last\n\n        Parameters :\n            currentPos (int): current index position of text\n\n        Returns :\n            i (int): index of mismatched char from last in text\n            -1 (int): if there is no mismatch between pattern and text block\n        &quot;&quot;&quot;</span>\n\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(self.patLen - <span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>):\n            <span class=\"hljs-keyword\">if</span> self.pattern[i] != self.text[currentPos + i]:\n                <span class=\"hljs-keyword\">return</span> currentPos + i\n        <span class=\"hljs-keyword\">return</span> -<span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">bad_character_heuristic</span>(<span class=\"hljs-params\">self</span>) -&gt; <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]:\n        <span class=\"hljs-comment\"># searches pattern in text and returns index positions</span>\n        positions = []\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(self.textLen - self.patLen + <span class=\"hljs-number\">1</span>):\n            mismatch_index = self.mismatch_in_text(i)\n            <span class=\"hljs-keyword\">if</span> mismatch_index == -<span class=\"hljs-number\">1</span>:\n                positions.append(i)\n            <span class=\"hljs-keyword\">else</span>:\n                match_index = self.match_in_pattern(self.text[mismatch_index])\n                i = (\n                    mismatch_index - match_index\n                )  <span class=\"hljs-comment\"># shifting index lgtm [py/multiple-definition]</span>\n        <span class=\"hljs-keyword\">return</span> positions\n\n\ntext = <span class=\"hljs-string\">&quot;ABAABA&quot;</span>\npattern = <span class=\"hljs-string\">&quot;AB&quot;</span>\nbms = BoyerMooreSearch(text, pattern)\npositions = bms.bad_character_heuristic()\n\n<span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(positions) == <span class=\"hljs-number\">0</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;No match found&quot;</span>)\n<span class=\"hljs-keyword\">else</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Pattern found in following positions: &quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(positions)\n"
+    },
+    "c": {
+      "dir": "searching/pattern_search/boyer_moore_search.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/searching/pattern_search/boyer_moore_search.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;string.h&gt;</span></span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">define</span> NUM_OF_CHARS 256</span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">max</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> b)</span> { <span class=\"hljs-keyword\">return</span> (a &gt; b) ? a : b; }\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">computeArray</span><span class=\"hljs-params\">(<span class=\"hljs-type\">char</span> *pattern, <span class=\"hljs-type\">int</span> size, <span class=\"hljs-type\">int</span> arr[NUM_OF_CHARS])</span>\n{\n    <span class=\"hljs-type\">int</span> i;\n\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; NUM_OF_CHARS; i++) arr[i] = <span class=\"hljs-number\">-1</span>;\n    <span class=\"hljs-comment\">/* Fill the actual value of last occurrence of a character */</span>\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; size; i++) arr[(<span class=\"hljs-type\">int</span>)pattern[i]] = i;\n}\n<span class=\"hljs-comment\">/* Boyer Moore Search algorithm  */</span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">boyer_moore_search</span><span class=\"hljs-params\">(<span class=\"hljs-type\">char</span> *str, <span class=\"hljs-type\">char</span> *pattern)</span>\n{\n    <span class=\"hljs-type\">int</span> n = <span class=\"hljs-built_in\">strlen</span>(str);\n    <span class=\"hljs-type\">int</span> m = <span class=\"hljs-built_in\">strlen</span>(pattern);\n    <span class=\"hljs-type\">int</span> shift = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-type\">int</span> arr[NUM_OF_CHARS];\n\n    computeArray(pattern, m, arr);\n    <span class=\"hljs-keyword\">while</span> (shift &lt;= (n - m))\n    {\n        <span class=\"hljs-type\">int</span> j = m - <span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-keyword\">while</span> (j &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; pattern[j] == str[shift + j]) j--;\n        <span class=\"hljs-keyword\">if</span> (j &lt; <span class=\"hljs-number\">0</span>)\n        {\n            <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;--Pattern is found at: %d\\n&quot;</span>, shift);\n            shift += (shift + m &lt; n) ? m - arr[str[shift + m]] : <span class=\"hljs-number\">1</span>;\n        }\n        <span class=\"hljs-keyword\">else</span>\n        {\n            shift += max(<span class=\"hljs-number\">1</span>, j - arr[str[shift + j]]);\n        }\n    }\n}\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">char</span> str[] = <span class=\"hljs-string\">&quot;AABCAB12AFAABCABFFEGABCAB&quot;</span>;\n    <span class=\"hljs-type\">char</span> pat1[] = <span class=\"hljs-string\">&quot;ABCAB&quot;</span>;\n    <span class=\"hljs-type\">char</span> pat2[] = <span class=\"hljs-string\">&quot;FFF&quot;</span>; <span class=\"hljs-comment\">/* not found */</span>\n    <span class=\"hljs-type\">char</span> pat3[] = <span class=\"hljs-string\">&quot;CAB&quot;</span>;\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;String test: %s\\n&quot;</span>, str);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Test1: search pattern %s\\n&quot;</span>, pat1);\n    boyer_moore_search(str, pat1);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Test2: search pattern %s\\n&quot;</span>, pat2);\n    boyer_moore_search(str, pat2);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Test3: search pattern %s\\n&quot;</span>, pat3);\n    boyer_moore_search(str, pat3);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Denis Trofimov",
+      "email": "silaradost@yandex.ru",
+      "commits": 1
+    },
+    {
+      "name": "Dharni0607",
+      "email": "30770547+Dharni0607@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

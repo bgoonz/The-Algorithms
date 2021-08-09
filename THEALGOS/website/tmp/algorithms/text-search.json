@@ -1,0 +1,21 @@
+{
+  "slug": "text-search",
+  "name": "Text Search",
+  "categories": ["searches"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "search/text_search.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/search/text_search.cpp",
+      "code": "<span class=\"hljs-comment\">/**\r\n * \\file\r\n * \\brief Search for words in a long textual paragraph.\r\n */</span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cstdlib&gt;</span></span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">ifdef</span> _MSC_VER</span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;string&gt;</span>  <span class=\"hljs-comment\">// required for MS Visual C++</span></span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">else</span></span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cstring&gt;</span></span>\r\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">endif</span></span>\r\n\r\n<span class=\"hljs-comment\">/** Main function\r\n */</span>\r\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\r\n    std::string paragraph;\r\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Please enter your paragraph: \\n&quot;</span>;\r\n    std::<span class=\"hljs-built_in\">getline</span>(std::cin, paragraph);\r\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nHello, your paragraph is:\\n &quot;</span> &lt;&lt; paragraph &lt;&lt; <span class=\"hljs-string\">&quot;!\\n&quot;</span>;\r\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nThe size of your paragraph = &quot;</span> &lt;&lt; paragraph.<span class=\"hljs-built_in\">size</span>()\r\n              &lt;&lt; <span class=\"hljs-string\">&quot; characters. \\n\\n&quot;</span>;\r\n\r\n    <span class=\"hljs-keyword\">if</span> (paragraph.<span class=\"hljs-built_in\">empty</span>()) {\r\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nThe paragraph is empty&quot;</span> &lt;&lt; std::endl;\r\n    } <span class=\"hljs-keyword\">else</span> {\r\n        <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-literal\">true</span>) {\r\n            std::string word;\r\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Please enter the word you are searching for: &quot;</span>;\r\n            std::<span class=\"hljs-built_in\">getline</span>(std::cin, word);\r\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Hello, your word is &quot;</span> &lt;&lt; word &lt;&lt; <span class=\"hljs-string\">&quot;!\\n&quot;</span>;\r\n            <span class=\"hljs-keyword\">if</span> (paragraph.<span class=\"hljs-built_in\">find</span>(word) == std::string::npos) {\r\n                std::cout &lt;&lt; word &lt;&lt; <span class=\"hljs-string\">&quot; does not exist in the sentence&quot;</span>\r\n                          &lt;&lt; std::endl;\r\n            } <span class=\"hljs-keyword\">else</span> {\r\n                std::cout &lt;&lt; <span class=\"hljs-string\">&quot;The word &quot;</span> &lt;&lt; word &lt;&lt; <span class=\"hljs-string\">&quot; is now found at location &quot;</span>\r\n                          &lt;&lt; paragraph.<span class=\"hljs-built_in\">find</span>(word) &lt;&lt; std::endl\r\n                          &lt;&lt; std::endl;\r\n            }\r\n            std::cin.<span class=\"hljs-built_in\">get</span>();\r\n        }\r\n    }\r\n}\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

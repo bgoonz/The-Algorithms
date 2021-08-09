@@ -1,0 +1,26 @@
+{
+  "slug": "countsinglylinkedlistrecursion",
+  "name": "CountSinglyLinkedListRecursion",
+  "categories": ["datastructures", "list"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Lists/CountSinglyLinkedListRecursion.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Lists/CountSinglyLinkedListRecursion.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Lists;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">CountSinglyLinkedListRecursion</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title class_\">SinglyLinkedList</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">CountSinglyLinkedListRecursion</span> <span class=\"hljs-variable\">list</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">CountSinglyLinkedListRecursion</span>();\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; i &lt;= <span class=\"hljs-number\">5</span>; ++i) {\n      list.insert(i);\n    }\n    <span class=\"hljs-keyword\">assert</span> list.count() == <span class=\"hljs-number\">5</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Calculate the count of the list manually using recursion.\n   *\n   * <span class=\"hljs-doctag\">@param</span> head head of the list.\n   * <span class=\"hljs-doctag\">@return</span> count of the list.\n   */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">countRecursion</span><span class=\"hljs-params\">(Node head)</span> {\n    <span class=\"hljs-type\">return</span> <span class=\"hljs-variable\">head</span> <span class=\"hljs-operator\">=</span>= <span class=\"hljs-literal\">null</span> ? <span class=\"hljs-number\">0</span> : <span class=\"hljs-number\">1</span> + countRecursion(head.next);\n  }\n  <span class=\"hljs-comment\">/** Returns the count of the list. */</span>\n  <span class=\"hljs-meta\">@Override</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">count</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> countRecursion(getHead());\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dennis Nilsson",
+      "email": "71315756+DennisVNilsson@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

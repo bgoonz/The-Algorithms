@@ -1,0 +1,16 @@
+{
+  "slug": "movie-recommendation-system",
+  "name": "Movie Recommendation System",
+  "categories": ["machinelearning", "movierecommendationsystem"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Archit",
+      "email": "46870255+Architkumar13@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

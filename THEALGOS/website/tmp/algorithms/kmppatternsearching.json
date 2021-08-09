@@ -1,0 +1,21 @@
+{
+  "slug": "kmppatternsearching",
+  "name": "KMPPatternSearching",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/KMPPatternSearching.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/KMPPatternSearching.js",
+      "code": "<span class=\"hljs-comment\">// Implementing KMP Search Algorithm to search all the instances of pattern in</span>\n<span class=\"hljs-comment\">// given text</span>\n<span class=\"hljs-comment\">// Reference Book: Introduction to Algorithms, CLRS</span>\n\n<span class=\"hljs-comment\">// Explanation: https://www.topcoder.com/community/competitive-programming/tutorials/introduction-to-string-searching-algorithms/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">computeLPS</span> = (<span class=\"hljs-params\">pattern</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> lps = <span class=\"hljs-title class_\">Array</span>(pattern.<span class=\"hljs-property\">length</span>)\n  lps[<span class=\"hljs-number\">0</span>] = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">1</span>; i &lt; pattern.<span class=\"hljs-property\">length</span>; i++) {\n    <span class=\"hljs-keyword\">let</span> matched = lps[i - <span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">while</span> (matched &gt; <span class=\"hljs-number\">0</span> &amp;&amp; pattern[i] !== pattern[matched]) {\n      matched = lps[matched - <span class=\"hljs-number\">1</span>]\n    }\n    <span class=\"hljs-keyword\">if</span> (pattern[i] === pattern[matched]) {\n      matched++\n    }\n    lps[i] = matched\n  }\n  <span class=\"hljs-keyword\">return</span> lps\n}\n\n<span class=\"hljs-comment\">/**\n * Returns all indices where pattern starts in text\n * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">*</span>} text a big text in which pattern string is to find\n * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">*</span>} pattern the string to find\n */</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">KMPSearch</span> = (<span class=\"hljs-params\">text, pattern</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (!pattern || !text) {\n    <span class=\"hljs-keyword\">return</span> [] <span class=\"hljs-comment\">// no results</span>\n  }\n\n  <span class=\"hljs-comment\">// lps[i] = length of proper prefix of pattern[0]...pattern[i-1]</span>\n  <span class=\"hljs-comment\">//          which is also proper suffix of it</span>\n  <span class=\"hljs-keyword\">const</span> lps = <span class=\"hljs-title function_\">computeLPS</span>(pattern)\n  <span class=\"hljs-keyword\">const</span> result = []\n\n  <span class=\"hljs-keyword\">let</span> matched = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; text.<span class=\"hljs-property\">length</span>; i++) {\n    <span class=\"hljs-keyword\">while</span> (matched &gt; <span class=\"hljs-number\">0</span> &amp;&amp; text[i] !== pattern[matched]) {\n      matched = lps[matched - <span class=\"hljs-number\">1</span>]\n    }\n    <span class=\"hljs-keyword\">if</span> (text[i] === pattern[matched]) {\n      matched++\n    }\n    <span class=\"hljs-keyword\">if</span> (matched === pattern.<span class=\"hljs-property\">length</span>) {\n      result.<span class=\"hljs-title function_\">push</span>(i - pattern.<span class=\"hljs-property\">length</span> + <span class=\"hljs-number\">1</span>)\n      matched = lps[matched - <span class=\"hljs-number\">1</span>]\n    }\n  }\n\n  <span class=\"hljs-keyword\">return</span> result\n}\n\n<span class=\"hljs-keyword\">export</span> { KMPSearch }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "rahul1995",
+      "email": "jainrahul6620@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

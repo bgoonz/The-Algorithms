@@ -1,0 +1,10 @@
+{
+  "slug": "poly-add",
+  "name": "Poly Add",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

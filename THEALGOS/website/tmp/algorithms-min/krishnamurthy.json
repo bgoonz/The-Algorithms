@@ -1,0 +1,26 @@
+{
+  "slug": "krishnamurthy",
+  "name": "Krishnamurthy",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

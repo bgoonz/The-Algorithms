@@ -1,0 +1,16 @@
+{
+  "slug": "get-products-of-all-other-elements",
+  "name": "Get Products of All Other Elements",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 12
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "exponential-search",
+  "name": "Exponential Search",
+  "categories": ["searches"],
+  "implementations": {
+    "javascript": "",
+    "c-plus-plus": "",
+    "c": "",
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Alessio Farinelli",
+      "email": "alessio.farinelli.developer@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Riot",
+      "email": "misike1111@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "LefterisD",
+      "email": "elefthed@csd.auth.gr",
+      "commits": 2
+    },
+    {
+      "name": "Soc Virnyl S. Estela",
+      "email": "66054069+uncomfyhalomacro@users.noreply.github.com",
+      "commits": 3
+    },
+    {
+      "name": "Divide-et-impera-11",
+      "email": "54957167+Divide-et-impera-11@users.noreply.github.com",
+      "commits": 13
+    }
+  ],
+  "explanationUrl": {
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Algoritmos de búsqueda/Búsqueda exponencial.md",
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Search Algorithms/Exponential Search.md"
+  }
+}

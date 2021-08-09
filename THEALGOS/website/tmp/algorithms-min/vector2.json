@@ -1,0 +1,16 @@
+{
+  "slug": "vector2",
+  "name": "Vector2",
+  "categories": ["datastructures", "vectors"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

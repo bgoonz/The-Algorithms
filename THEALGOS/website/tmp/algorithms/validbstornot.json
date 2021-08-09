@@ -1,0 +1,41 @@
+{
+  "slug": "validbstornot",
+  "name": "ValidBSTOrNot",
+  "categories": ["datastructures", "tree"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Trees/ValidBSTOrNot.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Trees/ValidBSTOrNot.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Trees;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">ValidBSTOrNot</span> {\n\n  <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span> {\n    <span class=\"hljs-type\">int</span> data;\n    Node left, right;\n\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">Node</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> item)</span> {\n      data = item;\n      left = right = <span class=\"hljs-literal\">null</span>;\n    }\n  }\n\n  <span class=\"hljs-comment\">// Root of the Binary Tree</span>\n\n  <span class=\"hljs-comment\">/* can give min and max value according to your code or\n  can write a function to find min and max value of tree. */</span>\n\n  <span class=\"hljs-comment\">/* returns true if given search tree is binary\n  search tree (efficient version) */</span>\n  <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isBST</span><span class=\"hljs-params\">(Node root)</span> {\n    <span class=\"hljs-keyword\">return</span> isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);\n  }\n\n  <span class=\"hljs-comment\">/* Returns true if the given tree is a BST and its\n  values are &gt;= min and &lt;= max. */</span>\n  <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isBSTUtil</span><span class=\"hljs-params\">(Node node, <span class=\"hljs-type\">int</span> min, <span class=\"hljs-type\">int</span> max)</span> {\n    <span class=\"hljs-comment\">/* an empty tree is BST */</span>\n    <span class=\"hljs-keyword\">if</span> (node == <span class=\"hljs-literal\">null</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n\n    <span class=\"hljs-comment\">/* false if this node violates the min/max constraints */</span>\n    <span class=\"hljs-keyword\">if</span> (node.data &lt; min || node.data &gt; max) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n\n    <span class=\"hljs-comment\">/* otherwise check the subtrees recursively\n    tightening the min/max constraints */</span>\n    <span class=\"hljs-comment\">// Allow only distinct values</span>\n    <span class=\"hljs-keyword\">return</span> (isBSTUtil(node.left, min, node.data - <span class=\"hljs-number\">1</span>) &amp;&amp; isBSTUtil(node.right, node.data + <span class=\"hljs-number\">1</span>, max));\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "ayaanfaiz",
+      "email": "ayaan2103@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

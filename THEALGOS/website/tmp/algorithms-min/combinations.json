@@ -1,0 +1,32 @@
+{
+  "slug": "combinations",
+  "name": "Combinations",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Chetan Kaushik",
+      "email": "dynamitechetan@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rolv Apneseth",
+      "email": "rolv.apneseth@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

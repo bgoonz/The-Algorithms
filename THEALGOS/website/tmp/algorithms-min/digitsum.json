@@ -1,0 +1,21 @@
+{
+  "slug": "digitsum",
+  "name": "DigitSum",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Aayush2011",
+      "email": "72185339+Aayush2011@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

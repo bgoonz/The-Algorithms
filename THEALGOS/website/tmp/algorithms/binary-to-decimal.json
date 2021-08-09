@@ -1,0 +1,116 @@
+{
+  "slug": "binary-to-decimal",
+  "name": "Binary to Decimal",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "conversions/binary_to_decimal.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/conversions/binary_to_decimal.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">bin_to_decimal</span>(<span class=\"hljs-params\">bin_string: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Convert a binary value to its decimal equivalent\n\n    &gt;&gt;&gt; bin_to_decimal(&quot;101&quot;)\n    5\n    &gt;&gt;&gt; bin_to_decimal(&quot; 1010   &quot;)\n    10\n    &gt;&gt;&gt; bin_to_decimal(&quot;-11101&quot;)\n    -29\n    &gt;&gt;&gt; bin_to_decimal(&quot;0&quot;)\n    0\n    &gt;&gt;&gt; bin_to_decimal(&quot;a&quot;)\n    Traceback (most recent call last):\n    ...\n    ValueError: Non-binary value was passed to the function\n    &gt;&gt;&gt; bin_to_decimal(&quot;&quot;)\n    Traceback (most recent call last):\n    ...\n    ValueError: Empty string was passed to the function\n    &gt;&gt;&gt; bin_to_decimal(&quot;39&quot;)\n    Traceback (most recent call last):\n    ...\n    ValueError: Non-binary value was passed to the function\n    &quot;&quot;&quot;</span>\n    bin_string = <span class=\"hljs-built_in\">str</span>(bin_string).strip()\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> bin_string:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Empty string was passed to the function&quot;</span>)\n    is_negative = bin_string[<span class=\"hljs-number\">0</span>] == <span class=\"hljs-string\">&quot;-&quot;</span>\n    <span class=\"hljs-keyword\">if</span> is_negative:\n        bin_string = bin_string[<span class=\"hljs-number\">1</span>:]\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-built_in\">all</span>(char <span class=\"hljs-keyword\">in</span> <span class=\"hljs-string\">&quot;01&quot;</span> <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> bin_string):\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Non-binary value was passed to the function&quot;</span>)\n    decimal_number = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> bin_string:\n        decimal_number = <span class=\"hljs-number\">2</span> * decimal_number + <span class=\"hljs-built_in\">int</span>(char)\n    <span class=\"hljs-keyword\">return</span> -decimal_number <span class=\"hljs-keyword\">if</span> is_negative <span class=\"hljs-keyword\">else</span> decimal_number\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">from</span> doctest <span class=\"hljs-keyword\">import</span> testmod\n\n    testmod()\n"
+    },
+    "javascript": {
+      "dir": "Conversions/BinaryToDecimal.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Conversions/BinaryToDecimal.js",
+      "code": "<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">binaryToDecimal</span> = (<span class=\"hljs-params\">binaryString</span>) =&gt; {\n  <span class=\"hljs-keyword\">let</span> decimalNumber = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">const</span> binaryDigits = binaryString.<span class=\"hljs-title function_\">split</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>).<span class=\"hljs-title function_\">reverse</span>() <span class=\"hljs-comment\">// Splits the binary number into reversed single digits</span>\n  binaryDigits.<span class=\"hljs-title function_\">forEach</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">binaryDigit, index</span>) =&gt;</span> {\n    decimalNumber += binaryDigit * (<span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">pow</span>(<span class=\"hljs-number\">2</span>, index)) <span class=\"hljs-comment\">// Summation of all the decimal converted digits</span>\n  })\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-string\">`Decimal of <span class=\"hljs-subst\">${binaryString}</span> is <span class=\"hljs-subst\">${decimalNumber}</span>`</span>)\n  <span class=\"hljs-keyword\">return</span> decimalNumber\n}\n\n(<span class=\"hljs-function\">() =&gt;</span> {\n  <span class=\"hljs-title function_\">binaryToDecimal</span>(<span class=\"hljs-string\">&#x27;111001&#x27;</span>)\n  <span class=\"hljs-title function_\">binaryToDecimal</span>(<span class=\"hljs-string\">&#x27;101&#x27;</span>)\n})()\n"
+    },
+    "java": {
+      "dir": "Conversions/BinaryToDecimal.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Conversions/BinaryToDecimal.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Conversions;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-comment\">/** This class converts a Binary number to a Decimal number */</span>\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">BinaryToDecimal</span> {\n\n  <span class=\"hljs-comment\">/**\n   * Main Method\n   *\n   * <span class=\"hljs-doctag\">@param</span> args Command line arguments\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String args[])</span> {\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">sc</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n    <span class=\"hljs-type\">int</span> binNum, binCopy, d, s = <span class=\"hljs-number\">0</span>, power = <span class=\"hljs-number\">0</span>;\n    System.out.print(<span class=\"hljs-string\">&quot;Binary number: &quot;</span>);\n    binNum = sc.nextInt();\n    binCopy = binNum;\n    <span class=\"hljs-keyword\">while</span> (binCopy != <span class=\"hljs-number\">0</span>) {\n      d = binCopy % <span class=\"hljs-number\">10</span>;\n      s += d * (<span class=\"hljs-type\">int</span>) Math.pow(<span class=\"hljs-number\">2</span>, power++);\n      binCopy /= <span class=\"hljs-number\">10</span>;\n    }\n    System.out.println(<span class=\"hljs-string\">&quot;Decimal equivalent:&quot;</span> + s);\n    sc.close();\n  }\n}\n"
+    },
+    "c": {
+      "dir": "conversions/binary_to_decimal.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/conversions/binary_to_decimal.c",
+      "code": "<span class=\"hljs-comment\">/**\n * Modified 07/12/2017, Kyler Smith\n *\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> remainder, number = <span class=\"hljs-number\">0</span>, decimal_number = <span class=\"hljs-number\">0</span>, temp = <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\n Enter any binary number= &quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;number);\n\n    <span class=\"hljs-comment\">// Iterate over the number until the end.</span>\n    <span class=\"hljs-keyword\">while</span> (number &gt; <span class=\"hljs-number\">0</span>)\n    {\n        remainder = number % <span class=\"hljs-number\">10</span>;\n        number = number / <span class=\"hljs-number\">10</span>;\n        decimal_number += remainder * temp;\n        temp = temp * <span class=\"hljs-number\">2</span>;  <span class=\"hljs-comment\">// used as power of 2</span>\n    }\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d\\n&quot;</span>, decimal_number);\n}\n"
+    },
+    "dart": {
+      "dir": "conversions/binary_to_decimal.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/conversions/binary_to_decimal.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&quot;dart:math&quot;</span> <span class=\"hljs-keyword\">show</span> pow;\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">print</span>(binary_to_decimal(<span class=\"hljs-string\">&quot;-111&quot;</span>)); <span class=\"hljs-comment\">// -7</span>\n  <span class=\"hljs-built_in\">print</span>(binary_to_decimal(<span class=\"hljs-string\">&quot; 101011 &quot;</span>)); <span class=\"hljs-comment\">// 43</span>\n  <span class=\"hljs-keyword\">try</span> {\n    <span class=\"hljs-built_in\">print</span>(binary_to_decimal(<span class=\"hljs-string\">&quot;1a1&quot;</span>)); <span class=\"hljs-comment\">//error</span>\n  } <span class=\"hljs-keyword\">catch</span> (ex) {\n    <span class=\"hljs-built_in\">print</span>(ex);\n  }\n}\n\n<span class=\"hljs-built_in\">int</span> binary_to_decimal(<span class=\"hljs-built_in\">String</span> bin_string) {\n  bin_string = bin_string.trim();\n  <span class=\"hljs-keyword\">if</span> (bin_string == <span class=\"hljs-keyword\">null</span> || bin_string == <span class=\"hljs-string\">&quot;&quot;</span>) {\n    <span class=\"hljs-keyword\">throw</span> Exception(<span class=\"hljs-string\">&quot;An empty value was passed to the function&quot;</span>);\n  }\n  <span class=\"hljs-built_in\">bool</span> is_negative = bin_string[<span class=\"hljs-number\">0</span>] == <span class=\"hljs-string\">&quot;-&quot;</span>;\n  <span class=\"hljs-keyword\">if</span> (is_negative) bin_string = bin_string.substring(<span class=\"hljs-number\">1</span>);\n  <span class=\"hljs-built_in\">int</span> decimal_val = <span class=\"hljs-number\">0</span>;\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; bin_string.length; i++) {\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-string\">&quot;01&quot;</span>.contains(bin_string[i]) == <span class=\"hljs-keyword\">false</span>) {\n      <span class=\"hljs-keyword\">throw</span> Exception(<span class=\"hljs-string\">&quot;Non-binary value was passed to the function&quot;</span>);\n    } <span class=\"hljs-keyword\">else</span> {\n      decimal_val +=\n          pow(<span class=\"hljs-number\">2</span>, bin_string.length - i - <span class=\"hljs-number\">1</span>) * <span class=\"hljs-built_in\">int</span>.parse((bin_string[i]));\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> is_negative ? <span class=\"hljs-number\">-1</span> * decimal_val : decimal_val;\n}\n"
+    },
+    "ruby": {
+      "dir": "maths/binary_to_decimal.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/maths/binary_to_decimal.rb",
+      "code": "<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># For any binary number of n digits i.e dn-1 ... d3 d2 d1 d0</span>\n<span class=\"hljs-comment\"># The equivalent decimal number is equal to the sum of binary digits (dn) times their power of 2 (2n):</span>\n<span class=\"hljs-comment\"># decimal = d0×2^0 + d1×2^1 + d2×2^2 + ...</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">binary_to_decimal</span><span class=\"hljs-params\">(n)</span></span>\n  decimal = <span class=\"hljs-number\">0</span>\n  base = <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">until</span> n.zero?\n    x = n % <span class=\"hljs-number\">10</span>\n    n /= <span class=\"hljs-number\">10</span>\n    decimal += x * base\n    base *= <span class=\"hljs-number\">2</span>\n  <span class=\"hljs-keyword\">end</span>\n  decimal\n<span class=\"hljs-keyword\">end</span>\n\nputs <span class=\"hljs-string\">&#x27;Decimal value of 110011 is &#x27;</span> + binary_to_decimal(<span class=\"hljs-number\">110_011</span>).to_s\n<span class=\"hljs-comment\"># Decimal value of 110011 is 51</span>\nputs <span class=\"hljs-string\">&#x27;Decimal value of 11110 is &#x27;</span> + binary_to_decimal(<span class=\"hljs-number\">11_110</span>).to_s\n<span class=\"hljs-comment\"># Decimal value of 11110 is 30</span>\nputs <span class=\"hljs-string\">&#x27;Decimal value of 101 is &#x27;</span> + binary_to_decimal(<span class=\"hljs-number\">101</span>).to_s\n<span class=\"hljs-comment\"># Decimal value of 101 is 5</span>\n"
+    },
+    "php": {
+      "dir": "Conversions/BinaryToDecimal.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/Conversions/BinaryToDecimal.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n<span class=\"hljs-comment\">/**\n * This function converts the\n * submitted Binary Number to\n * Decimal Number.\n *\n * Working of Algorithm\n * (10) base 2\n * (1 * (2 ^ 1) + 0 * (2 ^ 0)) base 10\n * (2 + 0) base 10\n * 2 base 10\n * <span class=\"hljs-doctag\">@param</span> string $binaryNumber\n * <span class=\"hljs-doctag\">@return</span> int\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">binaryToDecimal</span>(<span class=\"hljs-params\"><span class=\"hljs-variable\">$binaryNumber</span></span>)\n</span>{\n    <span class=\"hljs-keyword\">if</span> (!is_numeric(<span class=\"hljs-variable\">$binaryNumber</span>)) {\n        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> \\<span class=\"hljs-built_in\">Exception</span>(<span class=\"hljs-string\">&#x27;Please pass a valid Binary Number for Converting it to a Decimal Number.&#x27;</span>);\n    }\n\n    <span class=\"hljs-variable\">$decimalNumber</span> = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-variable\">$binaryDigits</span>  = array_reverse(str_split(<span class=\"hljs-variable\">$binaryNumber</span>));\n\n    <span class=\"hljs-keyword\">foreach</span> (<span class=\"hljs-variable\">$binaryDigits</span> <span class=\"hljs-keyword\">as</span> <span class=\"hljs-variable\">$index</span> =&gt; <span class=\"hljs-variable\">$digit</span>) {\n        <span class=\"hljs-variable\">$decimalNumber</span> += <span class=\"hljs-variable\">$digit</span> * pow(<span class=\"hljs-number\">2</span>, <span class=\"hljs-variable\">$index</span>);\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-variable\">$decimalNumber</span>;\n}\n\n<span class=\"hljs-comment\">/**\n * This function converts the\n * submitted Decimal Number to\n * Binary Number.\n *\n * <span class=\"hljs-doctag\">@param</span> string $decimalNumber\n * <span class=\"hljs-doctag\">@return</span> string\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decimalToBinary</span>(<span class=\"hljs-params\"><span class=\"hljs-variable\">$decimalNumber</span></span>)\n</span>{\n    <span class=\"hljs-keyword\">if</span> (!is_numeric(<span class=\"hljs-variable\">$decimalNumber</span>)) {\n        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> \\<span class=\"hljs-built_in\">Exception</span>(<span class=\"hljs-string\">&#x27;Please pass a valid Decimal Number for Converting it to a Binary Number.&#x27;</span>);\n    }\n\n    <span class=\"hljs-variable\">$binaryNumber</span> = <span class=\"hljs-string\">&#x27;&#x27;</span>;\n\n    <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-variable\">$decimalNumber</span> &gt; <span class=\"hljs-number\">0</span>) {\n        <span class=\"hljs-variable\">$binaryNumber</span> = (<span class=\"hljs-variable\">$decimalNumber</span> % <span class=\"hljs-number\">2</span>) . <span class=\"hljs-variable\">$binaryNumber</span>;\n        <span class=\"hljs-variable\">$decimalNumber</span> /= <span class=\"hljs-number\">2</span>;\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-variable\">$binaryNumber</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khale.akshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "CrisesKhaos",
+      "email": "76253854+CrisesKhaos@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhinav Anand",
+      "email": "manasgmishra@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Badrike",
+      "email": "kaustubh.badrike15@siesgst.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Chaitanya Raj",
+      "email": "chaitanyarajdixit@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "neha-saggam",
+      "email": "nehasaggam@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nicola Masarone",
+      "email": "nick67.android@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Aditibansal2603",
+      "email": "43889158+Aditibansal2603@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Priyansh-Kedia",
+      "email": "52661249+Priyansh-Kedia@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

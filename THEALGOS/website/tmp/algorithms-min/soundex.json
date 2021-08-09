@@ -1,0 +1,10 @@
+{
+  "slug": "soundex",
+  "name": "Soundex",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

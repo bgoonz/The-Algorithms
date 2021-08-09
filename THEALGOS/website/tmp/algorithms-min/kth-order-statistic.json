@@ -1,0 +1,16 @@
+{
+  "slug": "kth-order-statistic",
+  "name": "Kth Order Statistic",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Cho Yin Yong",
+      "email": "choyiny@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

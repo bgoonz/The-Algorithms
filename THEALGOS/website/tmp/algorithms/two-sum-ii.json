@@ -1,0 +1,21 @@
+{
+  "slug": "two-sum-ii",
+  "name": "Two Sum Ii",
+  "categories": ["datastructures", "array"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/arrays/two_sum_ii.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/arrays/two_sum_ii.rb",
+      "code": "<span class=\"hljs-comment\"># Given an array of integers numbers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.</span>\n\n<span class=\"hljs-comment\"># Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length.</span>\n\n<span class=\"hljs-comment\"># You may assume that each input would have exactly one solution and you may not use the same element twice.</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 1: Two pointers</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-comment\"># Complexity analysis</span>\n\n<span class=\"hljs-comment\"># Time complexity: O(n). Each of the n elements is visited at</span>\n<span class=\"hljs-comment\"># most once, thus the time complexity is O(n).</span>\n\n<span class=\"hljs-comment\"># Space complexity: O(1). We only use two indexes, the space</span>\n<span class=\"hljs-comment\"># complexity is O(1).</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">two_sum</span><span class=\"hljs-params\">(numbers, target)</span></span>\n  i = <span class=\"hljs-number\">0</span>\n  j = numbers.length - <span class=\"hljs-number\">1</span>\n\n  <span class=\"hljs-keyword\">while</span> i &lt; j\n    sum = numbers[i] + numbers[j]\n\n    <span class=\"hljs-keyword\">if</span> target &lt; sum\n      j -= <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">elsif</span> target &gt; sum\n      i += <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span>\n      <span class=\"hljs-keyword\">return</span> [i + <span class=\"hljs-number\">1</span>, j + <span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n\nnums = [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">11</span>, <span class=\"hljs-number\">15</span>]\ntarget = <span class=\"hljs-number\">9</span>\nprint(two_sum(nums, target))\n<span class=\"hljs-comment\"># =&gt; [1,2]</span>\n\nnums = [<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>]\ntarget = <span class=\"hljs-number\">6</span>\nprint(two_sum(nums, target))\n<span class=\"hljs-comment\"># =&gt; [1,3]</span>\n\nnums = [-<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>]\ntarget = -<span class=\"hljs-number\">1</span>\nprint(two_sum(nums, target))\n<span class=\"hljs-comment\"># =&gt; [1,2]</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

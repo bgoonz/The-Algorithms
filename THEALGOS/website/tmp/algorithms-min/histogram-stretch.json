@@ -1,0 +1,21 @@
+{
+  "slug": "histogram-stretch",
+  "name": "Histogram Stretch",
+  "categories": ["digitalimageprocessing", "histogramequalization"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Binish Manandhar",
+      "email": "37204996+binish784@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

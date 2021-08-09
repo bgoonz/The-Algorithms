@@ -1,0 +1,41 @@
+{
+  "slug": "hextorgb",
+  "name": "HexToRGB",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Conversions/HexToRGB.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Conversions/HexToRGB.js",
+      "code": "<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">hexStringToRGB</span> (hexString) {\n  <span class=\"hljs-keyword\">let</span> r = hexString.<span class=\"hljs-title function_\">substring</span>(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>)\n  <span class=\"hljs-keyword\">let</span> g = hexString.<span class=\"hljs-title function_\">substring</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>)\n  <span class=\"hljs-keyword\">let</span> b = hexString.<span class=\"hljs-title function_\">substring</span>(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">6</span>)\n\n  r = <span class=\"hljs-built_in\">parseInt</span>(r, <span class=\"hljs-number\">16</span>)\n  g = <span class=\"hljs-built_in\">parseInt</span>(g, <span class=\"hljs-number\">16</span>)\n  b = <span class=\"hljs-built_in\">parseInt</span>(b, <span class=\"hljs-number\">16</span>)\n  <span class=\"hljs-keyword\">const</span> obj = { r, g, b }\n\n  <span class=\"hljs-keyword\">return</span> obj\n}\n\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">hexStringToRGB</span>(<span class=\"hljs-string\">&#x27;ffffff&#x27;</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "abney317",
+      "email": "abney317@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ChaymaJaziri",
+      "email": "41198550+ChaymaJaziri@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

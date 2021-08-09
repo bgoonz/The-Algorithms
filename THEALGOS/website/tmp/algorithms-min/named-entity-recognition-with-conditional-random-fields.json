@@ -1,0 +1,16 @@
+{
+  "slug": "named-entity-recognition-with-conditional-random-fields",
+  "name": "Named Entity Recognition with Conditional Random Fields",
+  "categories": ["machinelearning", "naturallanguageprocessing"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Pal Deora",
+      "email": "53469625+Krishnapal4050@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

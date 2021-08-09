@@ -1,0 +1,26 @@
+{
+  "slug": "nodeneighbors",
+  "name": "NodeNeighbors",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Graphs/NodeNeighbors.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Graphs/NodeNeighbors.js",
+      "code": "<span class=\"hljs-comment\">// https://en.wikipedia.org/wiki/Neighbourhood_(graph_theory)</span>\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Graph</span> {\n  <span class=\"hljs-comment\">// Generic graph: the algorithm works regardless of direction or weight</span>\n  <span class=\"hljs-title function_\">constructor</span> () {\n    <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">edges</span> = []\n  }\n\n  addEdge (node1, node2) {\n    <span class=\"hljs-comment\">// Adding edges to the graph</span>\n    <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">edges</span>.<span class=\"hljs-title function_\">push</span>({\n      node1,\n      node2\n    })\n  }\n\n  nodeNeighbors (node) {\n    <span class=\"hljs-comment\">// Returns an array with all of the node neighbors</span>\n    <span class=\"hljs-keyword\">const</span> neighbors = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Set</span>()\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> edge <span class=\"hljs-keyword\">of</span> <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">edges</span>) {\n      <span class=\"hljs-comment\">// Checks if they have an edge between them and if the neighbor is not</span>\n      <span class=\"hljs-comment\">// already in the neighbors array</span>\n      <span class=\"hljs-keyword\">if</span> (edge.<span class=\"hljs-property\">node1</span> === node &amp;&amp; !(neighbors.<span class=\"hljs-title function_\">has</span>(edge.<span class=\"hljs-property\">node2</span>))) {\n        neighbors.<span class=\"hljs-title function_\">add</span>(edge.<span class=\"hljs-property\">node2</span>)\n      } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (edge.<span class=\"hljs-property\">node2</span> === node &amp;&amp; !(neighbors.<span class=\"hljs-title function_\">has</span>(edge.<span class=\"hljs-property\">node1</span>))) {\n        neighbors.<span class=\"hljs-title function_\">add</span>(edge.<span class=\"hljs-property\">node1</span>)\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> neighbors\n  }\n}\n\n(<span class=\"hljs-function\">() =&gt;</span> {\n  <span class=\"hljs-keyword\">const</span> graph = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Graph</span>()\n  graph.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>)\n  graph.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>)\n  graph.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>)\n  graph.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">5</span>)\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(graph.<span class=\"hljs-title function_\">nodeNeighbors</span>(<span class=\"hljs-number\">1</span>))\n})()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rodrigo Morais",
+      "email": "58960796+rodigu@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rodrigo",
+      "email": "rmoraisu@protonmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

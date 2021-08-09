@@ -1,0 +1,61 @@
+{
+  "slug": "perfect-cube",
+  "name": "Perfect Cube",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/perfect_cube.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/perfect_cube.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">perfect_cube</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Check if a number is a perfect cube or not.\n\n    &gt;&gt;&gt; perfect_cube(27)\n    True\n    &gt;&gt;&gt; perfect_cube(4)\n    False\n    &quot;&quot;&quot;</span>\n    val = n ** (<span class=\"hljs-number\">1</span> / <span class=\"hljs-number\">3</span>)\n    <span class=\"hljs-keyword\">return</span> (val * val * val) == n\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(perfect_cube(<span class=\"hljs-number\">27</span>))\n    <span class=\"hljs-built_in\">print</span>(perfect_cube(<span class=\"hljs-number\">4</span>))\n"
+    },
+    "javascript": {
+      "dir": "Maths/PerfectCube.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/PerfectCube.js",
+      "code": "<span class=\"hljs-comment\">/**\n * Author: dephraiim\n * License: GPL-3.0 or later\n *\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">perfectCube</span> = (<span class=\"hljs-params\">num</span>) =&gt; <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">round</span>(num ** (<span class=\"hljs-number\">1</span> / <span class=\"hljs-number\">3</span>)) ** <span class=\"hljs-number\">3</span> === num\n\n<span class=\"hljs-keyword\">export</span> { perfectCube }\n"
+    },
+    "java": {
+      "dir": "Maths/PerfectCube.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PerfectCube.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/** https://en.wikipedia.org/wiki/Cube_(algebra) */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PerfectCube</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> !isPerfectCube(-<span class=\"hljs-number\">1</span>);\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectCube</span><span class=\"hljs-params\">(<span class=\"hljs-number\">0</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectCube</span><span class=\"hljs-params\">(<span class=\"hljs-number\">1</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> !isPerfectCube(<span class=\"hljs-number\">4</span>);\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectCube</span><span class=\"hljs-params\">(<span class=\"hljs-number\">8</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectCube</span><span class=\"hljs-params\">(<span class=\"hljs-number\">27</span>)</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Check if a number is perfect cube or not\n   *\n   * <span class=\"hljs-doctag\">@param</span> number number to check\n   * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-doctag\">@code</span> true} if {<span class=\"hljs-doctag\">@code</span> number} is perfect cube, otherwise {<span class=\"hljs-doctag\">@code</span> false}\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isPerfectCube</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> number)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">a</span> <span class=\"hljs-operator\">=</span> (<span class=\"hljs-type\">int</span>) Math.pow(number, <span class=\"hljs-number\">1.0</span> / <span class=\"hljs-number\">3</span>);\n    <span class=\"hljs-keyword\">return</span> a * a * a == number;\n  }\n}\n"
+    },
+    "julia": {
+      "dir": "src/math/perfect_cube.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/perfect_cube.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    perfect_cube(number)\n\nCheck if a number is a perfect cube or not.\n\n# Example\n```jula\nperfect_cube(27) # returns true\nperfect_cube(4)  # returns false\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> perfect_cube(number::N)<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Integer</span>\n    val = trunc(cbrt(number))\n    <span class=\"hljs-keyword\">return</span> (val * val * val) == number\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nika Losaberidze",
+      "email": "nlosa16@freeuni.edu.ge",
+      "commits": 1
+    },
+    {
+      "name": "Vignesh",
+      "email": "ravivignesh2000@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

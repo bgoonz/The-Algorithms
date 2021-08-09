@@ -1,0 +1,10 @@
+{
+  "slug": "mirror",
+  "name": "Mirror",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "rootprecision",
+  "name": "RootPrecision",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

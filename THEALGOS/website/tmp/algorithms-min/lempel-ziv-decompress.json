@@ -1,0 +1,21 @@
+{
+  "slug": "lempel-ziv-decompress",
+  "name": "Lempel Ziv Decompress",
+  "categories": ["compression"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Ioane Margiani",
+      "email": "margianiioane@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

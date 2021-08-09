@@ -1,0 +1,21 @@
+{
+  "slug": "kadane2",
+  "name": "Kadane2",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Pardeep Bhatt",
+      "email": "pardeepbhatt5254@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayush Singh",
+      "email": "ayushsingh523@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

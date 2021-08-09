@@ -1,0 +1,16 @@
+{
+  "slug": "binpow",
+  "name": "Binpow",
+  "categories": ["others"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "KAUSHAL DEVRARI",
+      "email": "71590645+KaushalDevrari@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

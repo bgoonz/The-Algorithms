@@ -1,0 +1,16 @@
+{
+  "slug": "intervaltimer",
+  "name": "IntervalTimer",
+  "categories": ["timingfunctions"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Nandan V",
+      "email": "nvpotti.mec@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

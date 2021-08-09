@@ -1,0 +1,86 @@
+{
+  "slug": "graph",
+  "name": "Graph",
+  "categories": ["datastructures", "graphs"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Data-Structures/Graph/Graph.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Data-Structures/Graph/Graph.js",
+      "code": "<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Graph</span> {\n  <span class=\"hljs-title function_\">constructor</span> () {\n    <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span> = {}\n  }\n\n  addVertex (v) {\n    <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[v] = []\n  }\n\n  containsVertex (vertex) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">typeof</span> (<span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[vertex]) !== <span class=\"hljs-string\">&#x27;undefined&#x27;</span>\n  }\n\n  addEdge (v, w) {\n    <span class=\"hljs-keyword\">let</span> result = <span class=\"hljs-literal\">false</span>\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-title function_\">containsVertex</span>(v) &amp;&amp; <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-title function_\">containsVertex</span>(w)) {\n      <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[v].<span class=\"hljs-title function_\">push</span>(w)\n      <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[w].<span class=\"hljs-title function_\">push</span>(v)\n      result = <span class=\"hljs-literal\">true</span>\n    }\n    <span class=\"hljs-keyword\">return</span> result\n  }\n\n  printGraph () {\n    <span class=\"hljs-keyword\">const</span> keys = <span class=\"hljs-title class_\">Object</span>.<span class=\"hljs-title function_\">keys</span>(<span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>)\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> i <span class=\"hljs-keyword\">of</span> keys) {\n      <span class=\"hljs-keyword\">const</span> values = <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[i]\n      <span class=\"hljs-keyword\">let</span> vertex = <span class=\"hljs-string\">&#x27;&#x27;</span>\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> j <span class=\"hljs-keyword\">of</span> values) { vertex += j + <span class=\"hljs-string\">&#x27; &#x27;</span> }\n      <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(i + <span class=\"hljs-string\">&#x27; -&gt; &#x27;</span> + vertex)\n    }\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Prints the Breadth first traversal of the graph from source.\n   *\n   * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">number</span>} source The source vertex to start BFS.\n   */</span>\n  bfs (source) {\n    <span class=\"hljs-keyword\">const</span> queue = []\n    <span class=\"hljs-keyword\">const</span> visited = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Set</span>()\n    queue.<span class=\"hljs-title function_\">unshift</span>([source, <span class=\"hljs-number\">0</span>]) <span class=\"hljs-comment\">// level of source is 0</span>\n    visited.<span class=\"hljs-title function_\">add</span>(source)\n    <span class=\"hljs-keyword\">while</span> (queue.<span class=\"hljs-property\">length</span>) {\n      <span class=\"hljs-keyword\">const</span> front = queue[<span class=\"hljs-number\">0</span>]\n      <span class=\"hljs-keyword\">const</span> node = front[<span class=\"hljs-number\">0</span>]\n      <span class=\"hljs-keyword\">const</span> level = front[<span class=\"hljs-number\">1</span>]\n      queue.<span class=\"hljs-title function_\">shift</span>() <span class=\"hljs-comment\">// remove the front of the queue</span>\n      <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-string\">`Visited node <span class=\"hljs-subst\">${node}</span> at level <span class=\"hljs-subst\">${level}</span>.`</span>)\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">const</span> next <span class=\"hljs-keyword\">of</span> <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">adjacencyMap</span>[node]) {\n        <span class=\"hljs-keyword\">if</span> (!visited.<span class=\"hljs-title function_\">has</span>(next)) { <span class=\"hljs-comment\">// not visited</span>\n          queue.<span class=\"hljs-title function_\">unshift</span>([next, level + <span class=\"hljs-number\">1</span>]) <span class=\"hljs-comment\">// level 1 more than current</span>\n          visited.<span class=\"hljs-title function_\">add</span>(next)\n        }\n      }\n    }\n  }\n}\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">example</span> = (<span class=\"hljs-params\"></span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> g = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Graph</span>()\n  g.<span class=\"hljs-title function_\">addVertex</span>(<span class=\"hljs-number\">1</span>)\n  g.<span class=\"hljs-title function_\">addVertex</span>(<span class=\"hljs-number\">2</span>)\n  g.<span class=\"hljs-title function_\">addVertex</span>(<span class=\"hljs-number\">3</span>)\n  g.<span class=\"hljs-title function_\">addVertex</span>(<span class=\"hljs-number\">4</span>)\n  g.<span class=\"hljs-title function_\">addVertex</span>(<span class=\"hljs-number\">5</span>)\n  g.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>)\n  g.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>)\n  g.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>)\n  g.<span class=\"hljs-title function_\">addEdge</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">5</span>)\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-string\">&#x27;Printing the adjacency list:\\n&#x27;</span>)\n  g.<span class=\"hljs-title function_\">printGraph</span>()\n\n  <span class=\"hljs-comment\">// perform a breadth first search</span>\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-string\">&#x27;\\nBreadth first search at node 1:\\n&#x27;</span>)\n  g.<span class=\"hljs-title function_\">bfs</span>(<span class=\"hljs-number\">1</span>)\n}\n<span class=\"hljs-title function_\">example</span>()\n"
+    },
+    "c": {
+      "dir": "data_structures/graphs/graph.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/data_structures/graphs/graph.c",
+      "code": "<span class=\"hljs-comment\">// Graph ADT</span>\n<span class=\"hljs-comment\">// Adjacency Matrix Representation</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&quot;Graph.h&quot;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;assert.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-keyword\">typedef</span> <span class=\"hljs-class\"><span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title\">GraphRep</span>\n{</span>\n    <span class=\"hljs-type\">int</span> **edges;  <span class=\"hljs-comment\">// adjacency matrix</span>\n    <span class=\"hljs-type\">int</span> nV;       <span class=\"hljs-comment\">// #vertices</span>\n    <span class=\"hljs-type\">int</span> nE;       <span class=\"hljs-comment\">// #edges</span>\n} GraphRep;\n\nGraph <span class=\"hljs-title function_\">newGraph</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> V)</span>\n{\n    assert(V &gt;= <span class=\"hljs-number\">0</span>);\n    <span class=\"hljs-type\">int</span> i;\n\n    Graph g = <span class=\"hljs-built_in\">malloc</span>(<span class=\"hljs-keyword\">sizeof</span>(GraphRep));\n    assert(g != <span class=\"hljs-literal\">NULL</span>);\n    g-&gt;nV = V;\n    g-&gt;nE = <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">// allocate memory for each row</span>\n    g-&gt;edges = <span class=\"hljs-built_in\">malloc</span>(V * <span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-type\">int</span> *));\n    assert(g-&gt;edges != <span class=\"hljs-literal\">NULL</span>);\n    <span class=\"hljs-comment\">// allocate memory for each column and initialise with 0</span>\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; V; i++)\n    {\n        g-&gt;edges[i] = <span class=\"hljs-built_in\">calloc</span>(V, <span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-type\">int</span>));\n        assert(g-&gt;edges[i] != <span class=\"hljs-literal\">NULL</span>);\n    }\n\n    <span class=\"hljs-keyword\">return</span> g;\n}\n\n<span class=\"hljs-comment\">// check if vertex is valid in a graph</span>\n<span class=\"hljs-type\">bool</span> <span class=\"hljs-title function_\">validV</span><span class=\"hljs-params\">(Graph g, Vertex v)</span> { <span class=\"hljs-keyword\">return</span> (g != <span class=\"hljs-literal\">NULL</span> &amp;&amp; v &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; v &lt; g-&gt;nV); }\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">insertEdge</span><span class=\"hljs-params\">(Graph g, Edge e)</span>\n{\n    assert(g != <span class=\"hljs-literal\">NULL</span> &amp;&amp; validV(g, e.v) &amp;&amp; validV(g, e.w));\n\n    <span class=\"hljs-keyword\">if</span> (!g-&gt;edges[e.v][e.w])\n    {  <span class=\"hljs-comment\">// edge e not in graph</span>\n        g-&gt;edges[e.v][e.w] = <span class=\"hljs-number\">1</span>;\n        g-&gt;edges[e.w][e.v] = <span class=\"hljs-number\">1</span>;\n        g-&gt;nE++;\n    }\n}\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">removeEdge</span><span class=\"hljs-params\">(Graph g, Edge e)</span>\n{\n    assert(g != <span class=\"hljs-literal\">NULL</span> &amp;&amp; validV(g, e.v) &amp;&amp; validV(g, e.w));\n\n    <span class=\"hljs-keyword\">if</span> (g-&gt;edges[e.v][e.w])\n    {  <span class=\"hljs-comment\">// edge e in graph</span>\n        g-&gt;edges[e.v][e.w] = <span class=\"hljs-number\">0</span>;\n        g-&gt;edges[e.w][e.v] = <span class=\"hljs-number\">0</span>;\n        g-&gt;nE--;\n    }\n}\n\n<span class=\"hljs-type\">bool</span> <span class=\"hljs-title function_\">adjacent</span><span class=\"hljs-params\">(Graph g, Vertex v, Vertex w)</span>\n{\n    assert(g != <span class=\"hljs-literal\">NULL</span> &amp;&amp; validV(g, v) &amp;&amp; validV(g, w));\n\n    <span class=\"hljs-keyword\">return</span> (g-&gt;edges[v][w] != <span class=\"hljs-number\">0</span>);\n}\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">showGraph</span><span class=\"hljs-params\">(Graph g)</span>\n{\n    assert(g != <span class=\"hljs-literal\">NULL</span>);\n    <span class=\"hljs-type\">int</span> i, j;\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Number of vertices: %d\\n&quot;</span>, g-&gt;nV);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Number of edges: %d\\n&quot;</span>, g-&gt;nE);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; g-&gt;nV; i++)\n        <span class=\"hljs-keyword\">for</span> (j = i + <span class=\"hljs-number\">1</span>; j &lt; g-&gt;nV; j++)\n            <span class=\"hljs-keyword\">if</span> (g-&gt;edges[i][j])\n                <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Edge %d - %d\\n&quot;</span>, i, j);\n}\n\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">freeGraph</span><span class=\"hljs-params\">(Graph g)</span>\n{\n    assert(g != <span class=\"hljs-literal\">NULL</span>);\n\n    <span class=\"hljs-type\">int</span> i;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; g-&gt;nV; i++) <span class=\"hljs-built_in\">free</span>(g-&gt;edges[i]);\n    <span class=\"hljs-built_in\">free</span>(g-&gt;edges);\n    <span class=\"hljs-built_in\">free</span>(g);\n}\n\n<span class=\"hljs-comment\">// By</span>\n<span class=\"hljs-comment\">//  .----------------.  .----------------.  .----------------.</span>\n<span class=\"hljs-comment\">//  .-----------------.  .----------------.  .----------------.</span>\n<span class=\"hljs-comment\">// | .--------------. || .--------------. || .--------------. ||</span>\n<span class=\"hljs-comment\">// .--------------. | | .--------------. || .--------------. | | |  _________ |</span>\n<span class=\"hljs-comment\">// || | _____  _____ | || |      __      | || | ____  _____  | | | |  ____  ____</span>\n<span class=\"hljs-comment\">// | || |     ____     | | | | |  _   _  |  | || ||_   _||_   _|| || |     /  \\\n// | || ||_   \\|_   _| | | | | |_   ||   _| | || |   .&#x27;    `.   | | | | |_/ | |</span>\n<span class=\"hljs-comment\">// \\_|  | || |  | |    | |  | || |    / /\\ \\    | || |  |   \\ | |   | | | |   |</span>\n<span class=\"hljs-comment\">// |__| |   | || |  /  .--.  \\  | | | |     | |      | || |  | &#x27;    &#x27; |  | || |</span>\n<span class=\"hljs-comment\">// / ____ \\   | || |  | |\\ \\| |   | | | |   |  __  |   | || |  | |    | |  | |</span>\n<span class=\"hljs-comment\">// | |    _| |_     | || |   \\ `--&#x27; /   | || | _/ /    \\ \\_ | || | _| |_\\   |_</span>\n<span class=\"hljs-comment\">// | | | |  _| |  | |_  | || |  \\  `--&#x27;  /  | | | |   |_____|    | || | `.__.&#x27;</span>\n<span class=\"hljs-comment\">// | || ||____|  |____|| || ||_____|\\____| | | | | |____||____| | || | `.____.&#x27;</span>\n<span class=\"hljs-comment\">// | | | |              | || |              | || |              | || | | | | |</span>\n<span class=\"hljs-comment\">// | || |              | | | &#x27;--------------&#x27; || &#x27;--------------&#x27; ||</span>\n<span class=\"hljs-comment\">// &#x27;--------------&#x27; || &#x27;--------------&#x27; | | &#x27;--------------&#x27; || &#x27;--------------&#x27;</span>\n<span class=\"hljs-comment\">// |</span>\n<span class=\"hljs-comment\">//  &#x27;----------------&#x27;  &#x27;----------------&#x27;  &#x27;----------------&#x27;</span>\n<span class=\"hljs-comment\">//  &#x27;----------------&#x27;   &#x27;----------------&#x27;  &#x27;----------------&#x27;</span>\n\n<span class=\"hljs-comment\">//  Email :    z5261243@unsw.edu.au</span>\n<span class=\"hljs-comment\">//             hhoanhtuann@gmail.com</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sahil",
+      "email": "shlbnsl843@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nur69",
+      "email": "60115902+Nur69@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "naor",
+      "email": "naor2205@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ImNandha",
+      "email": "49323522+ImNandha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Omkar Pathak",
+      "email": "omkarpathak27@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "ttuanho",
+      "email": "hhoanhtuann@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "skew-heap",
+  "name": "Skew Heap",
+  "categories": ["datastructures", "heap"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Phil Bazun",
+      "email": "Phil9lne@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "gaussian-naive-bayes",
+  "name": "Gaussian Naive Bayes",
+  "categories": ["machinelearning"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "machine_learning/gaussian_naive_bayes.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/machine_learning/gaussian_naive_bayes.py",
+      "code": "<span class=\"hljs-comment\"># Gaussian Naive Bayes Example</span>\n<span class=\"hljs-keyword\">from</span> matplotlib <span class=\"hljs-keyword\">import</span> pyplot <span class=\"hljs-keyword\">as</span> plt\n<span class=\"hljs-keyword\">from</span> sklearn.datasets <span class=\"hljs-keyword\">import</span> load_iris\n<span class=\"hljs-keyword\">from</span> sklearn.metrics <span class=\"hljs-keyword\">import</span> plot_confusion_matrix\n<span class=\"hljs-keyword\">from</span> sklearn.model_selection <span class=\"hljs-keyword\">import</span> train_test_split\n<span class=\"hljs-keyword\">from</span> sklearn.naive_bayes <span class=\"hljs-keyword\">import</span> GaussianNB\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Gaussian Naive Bayes Example using sklearn function.\n    Iris type dataset is used to demonstrate algorithm.\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># Load Iris dataset</span>\n    iris = load_iris()\n\n    <span class=\"hljs-comment\"># Split dataset into train and test data</span>\n    X = iris[<span class=\"hljs-string\">&quot;data&quot;</span>]  <span class=\"hljs-comment\"># features</span>\n    Y = iris[<span class=\"hljs-string\">&quot;target&quot;</span>]\n    x_train, x_test, y_train, y_test = train_test_split(\n        X, Y, test_size=<span class=\"hljs-number\">0.3</span>, random_state=<span class=\"hljs-number\">1</span>\n    )\n\n    <span class=\"hljs-comment\"># Gaussian Naive Bayes</span>\n    NB_model = GaussianNB()\n    NB_model.fit(x_train, y_train)\n\n    <span class=\"hljs-comment\"># Display Confusion Matrix</span>\n    plot_confusion_matrix(\n        NB_model,\n        x_test,\n        y_test,\n        display_labels=iris[<span class=\"hljs-string\">&quot;target_names&quot;</span>],\n        cmap=<span class=\"hljs-string\">&quot;Blues&quot;</span>,\n        normalize=<span class=\"hljs-string\">&quot;true&quot;</span>,\n    )\n    plt.title(<span class=\"hljs-string\">&quot;Normalized Confusion Matrix - IRIS Dataset&quot;</span>)\n    plt.show()\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Prince Gangurde",
+      "email": "50592495+Prince326@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

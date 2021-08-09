@@ -1,0 +1,21 @@
+{
+  "slug": "sieve",
+  "name": "Sieve",
+  "categories": ["math", "sieve"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

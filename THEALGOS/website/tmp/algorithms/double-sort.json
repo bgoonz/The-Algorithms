@@ -1,0 +1,31 @@
+{
+  "slug": "double-sort",
+  "name": "Double Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "sorts/double_sort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/sorts/double_sort.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">double_sort</span>(<span class=\"hljs-params\">lst</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;this sorting algorithm sorts an array using the principle of bubble sort,\r\n    but does it both from left to right and right to left,\r\n    hence i decided to call it &quot;double sort&quot;\r\n    :param collection: mutable ordered sequence of elements\r\n    :return: the same collection in ascending order\r\n    Examples:\r\n    &gt;&gt;&gt; double_sort([-1 ,-2 ,-3 ,-4 ,-5 ,-6 ,-7])\r\n    [-7, -6, -5, -4, -3, -2, -1]\r\n    &gt;&gt;&gt; double_sort([])\r\n    []\r\n    &gt;&gt;&gt; double_sort([-1 ,-2 ,-3 ,-4 ,-5 ,-6])\r\n    [-6, -5, -4, -3, -2, -1]\r\n    &gt;&gt;&gt; double_sort([-3, 10, 16, -42, 29]) == sorted([-3, 10, 16, -42, 29])\r\n    True\r\n    &quot;&quot;&quot;</span>\r\n    no_of_elements = <span class=\"hljs-built_in\">len</span>(lst)\r\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(\r\n        <span class=\"hljs-number\">0</span>, <span class=\"hljs-built_in\">int</span>(((no_of_elements - <span class=\"hljs-number\">1</span>) / <span class=\"hljs-number\">2</span>) + <span class=\"hljs-number\">1</span>)\r\n    ):  <span class=\"hljs-comment\"># we don&#x27;t need to traverse to end of list as</span>\r\n        <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">0</span>, no_of_elements - <span class=\"hljs-number\">1</span>):\r\n            <span class=\"hljs-keyword\">if</span> (\r\n                lst[j + <span class=\"hljs-number\">1</span>] &lt; lst[j]\r\n            ):  <span class=\"hljs-comment\"># applying bubble sort algorithm from left to right (or forwards)</span>\r\n                temp = lst[j + <span class=\"hljs-number\">1</span>]\r\n                lst[j + <span class=\"hljs-number\">1</span>] = lst[j]\r\n                lst[j] = temp\r\n            <span class=\"hljs-keyword\">if</span> (\r\n                lst[no_of_elements - <span class=\"hljs-number\">1</span> - j] &lt; lst[no_of_elements - <span class=\"hljs-number\">2</span> - j]\r\n            ):  <span class=\"hljs-comment\"># applying bubble sort algorithm from right to left (or backwards)</span>\r\n                temp = lst[no_of_elements - <span class=\"hljs-number\">1</span> - j]\r\n                lst[no_of_elements - <span class=\"hljs-number\">1</span> - j] = lst[no_of_elements - <span class=\"hljs-number\">2</span> - j]\r\n                lst[no_of_elements - <span class=\"hljs-number\">2</span> - j] = temp\r\n    <span class=\"hljs-keyword\">return</span> lst\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;enter the list to be sorted&quot;</span>)\r\n    lst = [<span class=\"hljs-built_in\">int</span>(x) <span class=\"hljs-keyword\">for</span> x <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">input</span>().split()]  <span class=\"hljs-comment\"># inputing elements of the list in one line</span>\r\n    sorted_lst = double_sort(lst)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;the sorted list is&quot;</span>)\r\n    <span class=\"hljs-built_in\">print</span>(sorted_lst)\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ayush246",
+      "email": "37112252+ayush246@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

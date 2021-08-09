@@ -1,0 +1,62 @@
+{
+  "slug": "hashmap",
+  "name": "HashMap",
+  "categories": ["datastructures", "hashmap", "hashing"],
+  "implementations": {
+    "java": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Wesllhey Holanda",
+      "email": "wesllhey.holanda@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    },
+    {
+      "name": "Ray S",
+      "email": "68674276+rbshealy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shivg7706",
+      "email": "shivamgupta7706@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "bakurits",
+      "email": "bakuricucxashvili@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "ParitoshAggarwal",
+      "email": "paritoshmait@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

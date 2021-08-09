@@ -1,0 +1,31 @@
+{
+  "slug": "adler32",
+  "name": "Adler32",
+  "categories": ["hashing"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "hashes/adler32.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/hashes/adler32.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    Adler-32 is a checksum algorithm which was invented by Mark Adler in 1995.\n    Compared to a cyclic redundancy check of the same length, it trades reliability for\n    speed (preferring the latter).\n    Adler-32 is more reliable than Fletcher-16, and slightly less reliable than\n    Fletcher-32.[2]\n\n    source: https://en.wikipedia.org/wiki/Adler-32\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">adler32</span>(<span class=\"hljs-params\">plain_text: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Function implements adler-32 hash.\n    Iterates and evaluates a new value for each character\n\n    &gt;&gt;&gt; adler32(&#x27;Algorithms&#x27;)\n    363791387\n\n    &gt;&gt;&gt; adler32(&#x27;go adler em all&#x27;)\n    708642122\n    &quot;&quot;&quot;</span>\n    MOD_ADLER = <span class=\"hljs-number\">65521</span>\n    a = <span class=\"hljs-number\">1</span>\n    b = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> plain_chr <span class=\"hljs-keyword\">in</span> plain_text:\n        a = (a + <span class=\"hljs-built_in\">ord</span>(plain_chr)) % MOD_ADLER\n        b = (b + a) % MOD_ADLER\n    <span class=\"hljs-keyword\">return</span> (b &lt;&lt; <span class=\"hljs-number\">16</span>) | a\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "bnMikheili",
+      "email": "39998190+bnMikheili@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

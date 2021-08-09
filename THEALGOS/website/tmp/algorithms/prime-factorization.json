@@ -1,0 +1,56 @@
+{
+  "slug": "prime-factorization",
+  "name": "Prime Factorization",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "math/prime_factorization.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/math/prime_factorization.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief Prime factorization of positive integers\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;algorithm&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cstring&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;vector&gt;</span></span>\n\n<span class=\"hljs-comment\">/** Declaring variables for maintaing prime numbers and to check whether a\n * number is prime or not\n */</span>\n<span class=\"hljs-type\">bool</span> isprime[<span class=\"hljs-number\">1000006</span>];\n\n<span class=\"hljs-comment\">/** list of prime numbers */</span>\nstd::vector&lt;<span class=\"hljs-type\">int</span>&gt; prime_numbers;\n\n<span class=\"hljs-comment\">/** list of prime factor-pairs */</span>\nstd::vector&lt;std::pair&lt;<span class=\"hljs-type\">int</span>, <span class=\"hljs-type\">int</span>&gt;&gt; factors;\n\n<span class=\"hljs-comment\">/** Calculating prime number upto a given range\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">SieveOfEratosthenes</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> N)</span> </span>{\n    <span class=\"hljs-comment\">// initializes the array isprime</span>\n    <span class=\"hljs-built_in\">memset</span>(isprime, <span class=\"hljs-literal\">true</span>, <span class=\"hljs-keyword\">sizeof</span> isprime);\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">2</span>; i &lt;= N; i++) {\n        <span class=\"hljs-keyword\">if</span> (isprime[i]) {\n            <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> j = <span class=\"hljs-number\">2</span> * i; j &lt;= N; j += i) isprime[j] = <span class=\"hljs-literal\">false</span>;\n        }\n    }\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">2</span>; i &lt;= N; i++) {\n        <span class=\"hljs-keyword\">if</span> (isprime[i])\n            prime_numbers.<span class=\"hljs-built_in\">push_back</span>(i);\n    }\n}\n\n<span class=\"hljs-comment\">/** Prime factorization of a number */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">prime_factorization</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> num)</span> </span>{\n    <span class=\"hljs-type\">int</span> number = num;\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; prime_numbers[i] &lt;= num; i++) {\n        <span class=\"hljs-type\">int</span> count = <span class=\"hljs-number\">0</span>;\n\n        <span class=\"hljs-comment\">// termination condition</span>\n        <span class=\"hljs-keyword\">if</span> (number == <span class=\"hljs-number\">1</span>) {\n            <span class=\"hljs-keyword\">break</span>;\n        }\n\n        <span class=\"hljs-keyword\">while</span> (number % prime_numbers[i] == <span class=\"hljs-number\">0</span>) {\n            count++;\n            number = number / prime_numbers[i];\n        }\n\n        <span class=\"hljs-keyword\">if</span> (count)\n            factors.<span class=\"hljs-built_in\">push_back</span>(std::<span class=\"hljs-built_in\">make_pair</span>(prime_numbers[i], count));\n    }\n}\n\n<span class=\"hljs-comment\">/** Main program */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> num;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\t\\tComputes the prime factorization\\n\\n&quot;</span>;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Type in a number: &quot;</span>;\n    std::cin &gt;&gt; num;\n\n    <span class=\"hljs-built_in\">SieveOfEratosthenes</span>(num);\n\n    <span class=\"hljs-built_in\">prime_factorization</span>(num);\n\n    <span class=\"hljs-comment\">// Prime factors with their powers in the given number in new line</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">auto</span> it : factors) {\n        std::cout &lt;&lt; it.first &lt;&lt; <span class=\"hljs-string\">&quot; &quot;</span> &lt;&lt; it.second &lt;&lt; std::endl;\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    },
+    "java": {
+      "dir": "Maths/PrimeFactorization.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PrimeFactorization.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PrimeFactorization</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    System.out.println(<span class=\"hljs-string\">&quot;## all prime factors ##&quot;</span>);\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">scanner</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n    System.out.print(<span class=\"hljs-string\">&quot;Enter a number: &quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">n</span> <span class=\"hljs-operator\">=</span> scanner.nextInt();\n    System.out.print((<span class=\"hljs-string\">&quot;printing factors of &quot;</span> + n + <span class=\"hljs-string\">&quot; : &quot;</span>));\n    pfactors(n);\n    scanner.close();\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">pfactors</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> n)</span> {\n\n    <span class=\"hljs-keyword\">while</span> (n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>) {\n      System.out.print(<span class=\"hljs-number\">2</span> + <span class=\"hljs-string\">&quot; &quot;</span>);\n      n /= <span class=\"hljs-number\">2</span>;\n    }\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">3</span>; i &lt;= Math.sqrt(n); i += <span class=\"hljs-number\">2</span>) {\n      <span class=\"hljs-keyword\">while</span> (n % i == <span class=\"hljs-number\">0</span>) {\n        System.out.print(i + <span class=\"hljs-string\">&quot; &quot;</span>);\n        n /= i;\n      }\n    }\n\n    <span class=\"hljs-keyword\">if</span> (n &gt; <span class=\"hljs-number\">2</span>) System.out.print(n);\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "NorthernBrain",
+      "email": "ofmyhub@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "VTolas",
+      "email": "64403418+vtolas@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "linus-xuzixuan",
+      "email": "32212868+linus-xuzixuan@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "akhem301",
+      "email": "akhem301@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

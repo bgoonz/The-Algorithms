@@ -1,0 +1,16 @@
+{
+  "slug": "normalbuilder",
+  "name": "Normalbuilder",
+  "categories": ["designpatterns", "builder"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Mohamed",
+      "email": "m.abdelrhman@baianat.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

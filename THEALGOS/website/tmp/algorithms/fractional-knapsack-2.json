@@ -1,0 +1,26 @@
+{
+  "slug": "fractional-knapsack-2",
+  "name": "Fractional Knapsack 2",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/fractional_knapsack_2.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/fractional_knapsack_2.py",
+      "code": "<span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Continuous_knapsack_problem</span>\r\n<span class=\"hljs-comment\"># https://www.guru99.com/fractional-knapsack-problem-greedy.html</span>\r\n<span class=\"hljs-comment\"># https://medium.com/walkinthecode/greedy-algorithm-fractional-knapsack-problem-9aba1daecc93</span>\r\n\r\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fractional_knapsack</span>(<span class=\"hljs-params\">\r\n    value: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>], weight: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>], capacity: <span class=\"hljs-built_in\">int</span>\r\n</span>) -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]]:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    &gt;&gt;&gt; value = [1, 3, 5, 7, 9]\r\n    &gt;&gt;&gt; weight = [0.9, 0.7, 0.5, 0.3, 0.1]\r\n    &gt;&gt;&gt; fractional_knapsack(value, weight, 5)\r\n    (25, [1, 1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack(value, weight, 15)\r\n    (25, [1, 1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack(value, weight, 25)\r\n    (25, [1, 1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack(value, weight, 26)\r\n    (25, [1, 1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack(value, weight, -1)\r\n    (-90.0, [0, 0, 0, 0, -10.0])\r\n    &gt;&gt;&gt; fractional_knapsack([1, 3, 5, 7], weight, 30)\r\n    (16, [1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack(value, [0.9, 0.7, 0.5, 0.3, 0.1], 30)\r\n    (25, [1, 1, 1, 1, 1])\r\n    &gt;&gt;&gt; fractional_knapsack([], [], 30)\r\n    (0, [])\r\n    &quot;&quot;&quot;</span>\r\n    index = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(value)))\r\n    ratio = [v / w <span class=\"hljs-keyword\">for</span> v, w <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">zip</span>(value, weight)]\r\n    index.sort(key=<span class=\"hljs-keyword\">lambda</span> i: ratio[i], reverse=<span class=\"hljs-literal\">True</span>)\r\n\r\n    max_value = <span class=\"hljs-number\">0</span>\r\n    fractions = [<span class=\"hljs-number\">0</span>] * <span class=\"hljs-built_in\">len</span>(value)\r\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> index:\r\n        <span class=\"hljs-keyword\">if</span> weight[i] &lt;= capacity:\r\n            fractions[i] = <span class=\"hljs-number\">1</span>\r\n            max_value += value[i]\r\n            capacity -= weight[i]\r\n        <span class=\"hljs-keyword\">else</span>:\r\n            fractions[i] = capacity / weight[i]\r\n            max_value += value[i] * capacity / weight[i]\r\n            <span class=\"hljs-keyword\">break</span>\r\n\r\n    <span class=\"hljs-keyword\">return</span> max_value, fractions\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    n = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter number of items: &quot;</span>))\r\n    value = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">f&quot;Enter the values of the <span class=\"hljs-subst\">{n}</span> item(s) in order: &quot;</span>).split()\r\n    value = [<span class=\"hljs-built_in\">int</span>(v) <span class=\"hljs-keyword\">for</span> v <span class=\"hljs-keyword\">in</span> value]\r\n    weight = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">f&quot;Enter the positive weights of the <span class=\"hljs-subst\">{n}</span> item(s) in order: &quot;</span>.split())\r\n    weight = [<span class=\"hljs-built_in\">int</span>(w) <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> weight]\r\n    capacity = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter maximum weight: &quot;</span>))\r\n\r\n    max_value, fractions = fractional_knapsack(value, weight, capacity)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The maximum value of items that can be carried:&quot;</span>, max_value)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The fractions in which the items should be taken:&quot;</span>, fractions)\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Arun Babu PT",
+      "email": "36483987+ptarun@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

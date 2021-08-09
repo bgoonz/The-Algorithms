@@ -1,0 +1,32 @@
+{
+  "slug": "relu",
+  "name": "Relu",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "yoshitaka-i",
+      "email": "8393063+inoue0426@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "polynomial",
+  "name": "Polynomial",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Divyajyoti Ukirde",
+      "email": "30872426+divyajyotiuk@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

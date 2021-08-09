@@ -1,0 +1,21 @@
+{
+  "slug": "depth-first-search-with-stack",
+  "name": "Depth First Search with Stack",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Saurav Uppoor",
+      "email": "41644947+sauravUppoor@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

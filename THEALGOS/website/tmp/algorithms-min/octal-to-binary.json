@@ -1,0 +1,32 @@
+{
+  "slug": "octal-to-binary",
+  "name": "Octal to Binary",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Suraj Patro",
+      "email": "47288675+Suraj-Patro@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vishnu P",
+      "email": "36571320+vishnu0pothan@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrés Jozef Jiménez Leandro",
+      "email": "AndrewJey@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vishnu",
+      "email": "vishnupothan2@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

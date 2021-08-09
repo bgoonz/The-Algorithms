@@ -1,0 +1,16 @@
+{
+  "slug": "pushdown-automata-implementation",
+  "name": "Pushdown Automata Implementation",
+  "categories": ["automaton"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "DeepankarAcharyya",
+      "email": "deepankaracharyya@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

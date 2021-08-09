@@ -1,0 +1,10 @@
+{
+  "slug": "a000142-factorial",
+  "name": "A000142 Factorial",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

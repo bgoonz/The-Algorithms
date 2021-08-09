@@ -1,0 +1,21 @@
+{
+  "slug": "has-loop",
+  "name": "Has Loop",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/linked_list/has_loop.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/linked_list/has_loop.py",
+      "code": "<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Any</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">ContainsLoopError</span>(<span class=\"hljs-title class_ inherited__\">Exception</span>):\n    <span class=\"hljs-keyword\">pass</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, data: <span class=\"hljs-type\">Any</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n        self.data = data\n        self.next_node = <span class=\"hljs-literal\">None</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__iter__</span>(<span class=\"hljs-params\">self</span>):\n        node = self\n        visited = []\n        <span class=\"hljs-keyword\">while</span> node:\n            <span class=\"hljs-keyword\">if</span> node <span class=\"hljs-keyword\">in</span> visited:\n                <span class=\"hljs-keyword\">raise</span> ContainsLoopError\n            visited.append(node)\n            <span class=\"hljs-keyword\">yield</span> node.data\n            node = node.next_node\n\n<span class=\"hljs-meta\">    @property</span>\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">has_loop</span>(<span class=\"hljs-params\">self</span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n        <span class=\"hljs-string\">&quot;&quot;&quot;\n        A loop is when the exact same Node appears more than once in a linked list.\n        &gt;&gt;&gt; root_node = Node(1)\n        &gt;&gt;&gt; root_node.next_node = Node(2)\n        &gt;&gt;&gt; root_node.next_node.next_node = Node(3)\n        &gt;&gt;&gt; root_node.next_node.next_node.next_node = Node(4)\n        &gt;&gt;&gt; root_node.has_loop\n        False\n        &gt;&gt;&gt; root_node.next_node.next_node.next_node = root_node.next_node\n        &gt;&gt;&gt; root_node.has_loop\n        True\n        &quot;&quot;&quot;</span>\n        <span class=\"hljs-keyword\">try</span>:\n            <span class=\"hljs-built_in\">list</span>(self)\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n        <span class=\"hljs-keyword\">except</span> ContainsLoopError:\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    root_node = Node(<span class=\"hljs-number\">1</span>)\n    root_node.next_node = Node(<span class=\"hljs-number\">2</span>)\n    root_node.next_node.next_node = Node(<span class=\"hljs-number\">3</span>)\n    root_node.next_node.next_node.next_node = Node(<span class=\"hljs-number\">4</span>)\n    <span class=\"hljs-built_in\">print</span>(root_node.has_loop)  <span class=\"hljs-comment\"># False</span>\n    root_node.next_node.next_node.next_node = root_node.next_node\n    <span class=\"hljs-built_in\">print</span>(root_node.has_loop)  <span class=\"hljs-comment\"># True</span>\n\n    root_node = Node(<span class=\"hljs-number\">5</span>)\n    root_node.next_node = Node(<span class=\"hljs-number\">6</span>)\n    root_node.next_node.next_node = Node(<span class=\"hljs-number\">5</span>)\n    root_node.next_node.next_node.next_node = Node(<span class=\"hljs-number\">6</span>)\n    <span class=\"hljs-built_in\">print</span>(root_node.has_loop)  <span class=\"hljs-comment\"># False</span>\n\n    root_node = Node(<span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-built_in\">print</span>(root_node.has_loop)  <span class=\"hljs-comment\"># False</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "kanthuc",
+      "email": "srikanthuchavali@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

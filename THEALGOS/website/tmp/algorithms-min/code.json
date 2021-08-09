@@ -1,0 +1,16 @@
+{
+  "slug": "code",
+  "name": "Code",
+  "categories": ["particleswarmoptimization", "polynomialminimization"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "puneet-pr-arya",
+      "email": "71585635+puneet-pr-arya@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

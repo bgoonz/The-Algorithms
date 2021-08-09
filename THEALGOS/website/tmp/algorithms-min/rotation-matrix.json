@@ -1,0 +1,16 @@
+{
+  "slug": "rotation-matrix",
+  "name": "Rotation-Matrix",
+  "categories": ["matrix"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

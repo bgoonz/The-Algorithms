@@ -1,0 +1,16 @@
+{
+  "slug": "quad-tree",
+  "name": "Quad Tree",
+  "categories": ["datastructures", "quadtree"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Jerold Albertson",
+      "email": "jerold.albertson@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

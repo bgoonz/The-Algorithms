@@ -1,0 +1,10 @@
+{
+  "slug": "vector-cross-product",
+  "name": "Vector Cross Product",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

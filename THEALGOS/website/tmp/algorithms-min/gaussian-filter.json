@@ -1,0 +1,31 @@
+{
+  "slug": "gaussian-filter",
+  "name": "Gaussian Filter",
+  "categories": ["digitalimageprocessing", "filters"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Fakher Mokadem",
+      "email": "fmokadem@umich.edu",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shoujue Xu",
+      "email": "lightxusj@126.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

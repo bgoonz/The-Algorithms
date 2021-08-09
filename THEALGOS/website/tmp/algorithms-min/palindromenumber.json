@@ -1,0 +1,17 @@
+{
+  "slug": "palindromenumber",
+  "name": "PalindromeNumber",
+  "categories": ["math"],
+  "implementations": {
+    "java": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

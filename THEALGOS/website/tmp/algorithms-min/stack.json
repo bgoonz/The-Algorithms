@@ -1,0 +1,151 @@
+{
+  "slug": "stack",
+  "name": "Stack",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "c": "",
+    "ruby": "",
+    "swift": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Harish sambasivam",
+      "email": "39916450+harishsambasivam@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Juliano Nunes",
+      "email": "julianomarquesnunes@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohit Sharma",
+      "email": "mohit1532.cse16@chitkara.edu.in",
+      "commits": 1
+    },
+    {
+      "name": "Shezza221b",
+      "email": "41204318+Shezza221b@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "megahertz66",
+      "email": "38521608+megahertz66@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hert Zhao",
+      "email": "zhao13836892152@foxmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rian Gallagher",
+      "email": "rianogallagher@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ahmed Haj Abdel Khaleq",
+      "email": "31858489+AhmedHaj@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akash",
+      "email": "akash0babu0@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Maxim Semenyuk",
+      "email": "33791308+semenuk@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Chris McLennon",
+      "email": "mclennon@indeed.com",
+      "commits": 1
+    },
+    {
+      "name": "Omkar Pathak",
+      "email": "omkarpathak27@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Gustavo Tiecker",
+      "email": "gustavotiecker@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "KylerSmith",
+      "email": "Kyler@macBookAir.local",
+      "commits": 2
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 4
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 5
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

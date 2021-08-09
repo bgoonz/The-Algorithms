@@ -1,0 +1,86 @@
+{
+  "slug": "perfect-square",
+  "name": "Perfect Square",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/perfect_square.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/perfect_square.py",
+      "code": "<span class=\"hljs-keyword\">import</span> math\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">perfect_square</span>(<span class=\"hljs-params\">num: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Check if a number is perfect square number or not\n    :param num: the number to be checked\n    :return: True if number is square number, otherwise False\n\n    &gt;&gt;&gt; perfect_square(9)\n    True\n    &gt;&gt;&gt; perfect_square(16)\n    True\n    &gt;&gt;&gt; perfect_square(1)\n    True\n    &gt;&gt;&gt; perfect_square(0)\n    True\n    &gt;&gt;&gt; perfect_square(10)\n    False\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> math.sqrt(num) * math.sqrt(num) == num\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">perfect_square_binary_search</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Check if a number is perfect square using binary search.\n    Time complexity : O(Log(n))\n    Space complexity: O(1)\n\n    &gt;&gt;&gt; perfect_square_binary_search(9)\n    True\n    &gt;&gt;&gt; perfect_square_binary_search(16)\n    True\n    &gt;&gt;&gt; perfect_square_binary_search(1)\n    True\n    &gt;&gt;&gt; perfect_square_binary_search(0)\n    True\n    &gt;&gt;&gt; perfect_square_binary_search(10)\n    False\n    &gt;&gt;&gt; perfect_square_binary_search(-1)\n    False\n    &gt;&gt;&gt; perfect_square_binary_search(1.1)\n    False\n    &gt;&gt;&gt; perfect_square_binary_search(&quot;a&quot;)\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;&lt;=&#x27; not supported between instances of &#x27;int&#x27; and &#x27;str&#x27;\n    &gt;&gt;&gt; perfect_square_binary_search(None)\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;&lt;=&#x27; not supported between instances of &#x27;int&#x27; and &#x27;NoneType&#x27;\n    &gt;&gt;&gt; perfect_square_binary_search([])\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;&lt;=&#x27; not supported between instances of &#x27;int&#x27; and &#x27;list&#x27;\n    &quot;&quot;&quot;</span>\n    left = <span class=\"hljs-number\">0</span>\n    right = n\n    <span class=\"hljs-keyword\">while</span> left &lt;= right:\n        mid = (left + right) // <span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">if</span> mid ** <span class=\"hljs-number\">2</span> == n:\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n        <span class=\"hljs-keyword\">elif</span> mid ** <span class=\"hljs-number\">2</span> &gt; n:\n            right = mid - <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">else</span>:\n            left = mid + <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "javascript": {
+      "dir": "Maths/PerfectSquare.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/PerfectSquare.js",
+      "code": "<span class=\"hljs-comment\">/**\n * Author: dephraiim\n * License: GPL-3.0 or later\n *\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">perfectSquare</span> = (<span class=\"hljs-params\">num</span>) =&gt; <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">sqrt</span>(num) ** <span class=\"hljs-number\">2</span> === num\n\n<span class=\"hljs-keyword\">export</span> { perfectSquare }\n"
+    },
+    "java": {
+      "dir": "Maths/PerfectSquare.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PerfectSquare.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/** https://en.wikipedia.org/wiki/Perfect_square */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PerfectSquare</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> !isPerfectSquare(-<span class=\"hljs-number\">1</span>);\n    <span class=\"hljs-keyword\">assert</span> !isPerfectSquare(<span class=\"hljs-number\">3</span>);\n    <span class=\"hljs-keyword\">assert</span> !isPerfectSquare(<span class=\"hljs-number\">5</span>);\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectSquare</span><span class=\"hljs-params\">(<span class=\"hljs-number\">9</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectSquare</span><span class=\"hljs-params\">(<span class=\"hljs-number\">100</span>)</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Check if a number is perfect square number\n   *\n   * <span class=\"hljs-doctag\">@param</span> number the number to be checked\n   * <span class=\"hljs-doctag\">@return</span> &lt;tt&gt;true&lt;/tt&gt; if {<span class=\"hljs-doctag\">@code</span> number} is perfect square, otherwise &lt;tt&gt;false&lt;/tt&gt;\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isPerfectSquare</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> number)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">sqrt</span> <span class=\"hljs-operator\">=</span> (<span class=\"hljs-type\">int</span>) Math.sqrt(number);\n    <span class=\"hljs-keyword\">return</span> sqrt * sqrt == number;\n  }\n}\n"
+    },
+    "r": {
+      "dir": "Mathematics/PerfectSquare.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Mathematics/PerfectSquare.R",
+      "code": "perfectSquare <span class=\"hljs-operator\">&lt;-</span> <span class=\"hljs-keyword\">function</span><span class=\"hljs-punctuation\">(</span>x<span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-built_in\">return</span><span class=\"hljs-punctuation\">(</span><span class=\"hljs-built_in\">floor</span><span class=\"hljs-punctuation\">(</span><span class=\"hljs-built_in\">sqrt</span><span class=\"hljs-punctuation\">(</span>x<span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">==</span> <span class=\"hljs-built_in\">sqrt</span><span class=\"hljs-punctuation\">(</span>x<span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span>\n<span class=\"hljs-punctuation\">}</span>\n\nset.seed<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">)</span>\ninputs <span class=\"hljs-operator\">&lt;-</span> sample<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1</span><span class=\"hljs-operator\">:</span><span class=\"hljs-number\">100</span><span class=\"hljs-punctuation\">,</span> <span class=\"hljs-number\">10</span><span class=\"hljs-punctuation\">)</span>\nperfectSquare<span class=\"hljs-punctuation\">(</span>inputs<span class=\"hljs-punctuation\">)</span>"
+    },
+    "php": {
+      "dir": "Maths/PerfectSquare.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/Maths/PerfectSquare.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n<span class=\"hljs-comment\">/**\n * This function check whether\n * the provided number is a\n * perfect square or not.\n *\n * <span class=\"hljs-doctag\">@param</span> Decimal $number A decimal input\n * <span class=\"hljs-doctag\">@return</span> boolean whether the number is perfect square or not\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">is_perfect_square</span>(<span class=\"hljs-params\"><span class=\"hljs-variable\">$number</span></span>)\n</span>{\n    <span class=\"hljs-variable\">$root</span> = (<span class=\"hljs-keyword\">int</span>) sqrt(<span class=\"hljs-variable\">$number</span>);\n    <span class=\"hljs-keyword\">return</span> ((<span class=\"hljs-variable\">$root</span> * <span class=\"hljs-variable\">$root</span>) === <span class=\"hljs-variable\">$number</span>); <span class=\"hljs-comment\">// If number&#x27;s square root is an integer then it&#x27;s a perfect square else not</span>\n}\n"
+    },
+    "julia": {
+      "dir": "src/math/perfect_square.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/perfect_square.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nperfect_square(number)\n\nCheck if a number is a perfect square or not.\n\n# Example\n```jula\nperfect_square(9)   # returns True\nperfect_square(16)  # returns True\nperfect_square(1)   # returns True\nperfect_square(0)   # returns True\nperfect_square(10)  # returns False\nperfect_square(-9)  # returns False\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> perfect_square(number::N)<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Integer</span>\n    number&lt;<span class=\"hljs-number\">0</span>&amp;&amp;<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n    val=isqrt(number)\n    <span class=\"hljs-keyword\">return</span> val*val == number\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Alex Garland",
+      "email": "alex@numinar.com",
+      "commits": 1
+    },
+    {
+      "name": "simolab99",
+      "email": "68537129+simolab99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Iheb Haboubi",
+      "email": "iheb.haboubi56@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

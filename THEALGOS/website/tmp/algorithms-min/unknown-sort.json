@@ -1,0 +1,21 @@
+{
+  "slug": "unknown-sort",
+  "name": "Unknown Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

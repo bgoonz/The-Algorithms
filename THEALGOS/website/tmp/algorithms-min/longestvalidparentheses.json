@@ -1,0 +1,27 @@
+{
+  "slug": "longestvalidparentheses",
+  "name": "LongestValidParentheses",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "javascript": "",
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Suhail Malik",
+      "email": "devmsuhail@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Serwio YK",
+      "email": "56473255+Serwios@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

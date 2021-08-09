@@ -1,0 +1,21 @@
+{
+  "slug": "reversestackusingrecursion",
+  "name": "ReverseStackUsingRecursion",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

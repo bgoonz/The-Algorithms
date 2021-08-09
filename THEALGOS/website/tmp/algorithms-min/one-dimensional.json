@@ -1,0 +1,36 @@
+{
+  "slug": "one-dimensional",
+  "name": "One Dimensional",
+  "categories": ["cellularautomata"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Novice :)",
+      "email": "72334601+noviicee@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hasenn",
+      "email": "eliottarloveyrier@live.fr",
+      "commits": 1
+    },
+    {
+      "name": "8Dion8",
+      "email": "62215043+8Dion8@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

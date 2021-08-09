@@ -1,0 +1,21 @@
+{
+  "slug": "gamma",
+  "name": "Gamma",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

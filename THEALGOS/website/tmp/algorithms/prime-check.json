@@ -1,0 +1,146 @@
+{
+  "slug": "prime-check",
+  "name": "Prime Check",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/prime_check.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/prime_check.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;Prime Check.&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> math\n<span class=\"hljs-keyword\">import</span> unittest\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">prime_check</span>(<span class=\"hljs-params\">number: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;Checks to see if a number is a prime.\n\n    A number is prime if it has exactly two factors: 1 and itself.\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-number\">1</span> &lt; number &lt; <span class=\"hljs-number\">4</span>:\n        <span class=\"hljs-comment\"># 2 and 3 are primes</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n    <span class=\"hljs-keyword\">elif</span> number &lt; <span class=\"hljs-number\">2</span> <span class=\"hljs-keyword\">or</span> <span class=\"hljs-keyword\">not</span> number % <span class=\"hljs-number\">2</span>:\n        <span class=\"hljs-comment\"># Negatives, 0, 1 and all even numbers are not primes</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n    odd_numbers = <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-built_in\">int</span>(math.sqrt(number) + <span class=\"hljs-number\">1</span>), <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-built_in\">any</span>(<span class=\"hljs-keyword\">not</span> number % i <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> odd_numbers)\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Test</span>(unittest.TestCase):\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">test_primes</span>(<span class=\"hljs-params\">self</span>):\n        self.assertTrue(prime_check(<span class=\"hljs-number\">2</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">3</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">5</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">7</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">11</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">13</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">17</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">19</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">23</span>))\n        self.assertTrue(prime_check(<span class=\"hljs-number\">29</span>))\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">test_not_primes</span>(<span class=\"hljs-params\">self</span>):\n        self.assertFalse(\n            prime_check(-<span class=\"hljs-number\">19</span>),\n            <span class=\"hljs-string\">&quot;Negative numbers are excluded by definition of prime numbers.&quot;</span>,\n        )\n        self.assertFalse(\n            prime_check(<span class=\"hljs-number\">0</span>),\n            <span class=\"hljs-string\">&quot;Zero doesn&#x27;t have any positive factors, primes must have exactly two.&quot;</span>,\n        )\n        self.assertFalse(\n            prime_check(<span class=\"hljs-number\">1</span>),\n            <span class=\"hljs-string\">&quot;One only has 1 positive factor, primes must have exactly two.&quot;</span>,\n        )\n        self.assertFalse(prime_check(<span class=\"hljs-number\">2</span> * <span class=\"hljs-number\">2</span>))\n        self.assertFalse(prime_check(<span class=\"hljs-number\">2</span> * <span class=\"hljs-number\">3</span>))\n        self.assertFalse(prime_check(<span class=\"hljs-number\">3</span> * <span class=\"hljs-number\">3</span>))\n        self.assertFalse(prime_check(<span class=\"hljs-number\">3</span> * <span class=\"hljs-number\">5</span>))\n        self.assertFalse(prime_check(<span class=\"hljs-number\">3</span> * <span class=\"hljs-number\">5</span> * <span class=\"hljs-number\">7</span>))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    unittest.main()\n"
+    },
+    "javascript": {
+      "dir": "Maths/PrimeCheck.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/PrimeCheck.js",
+      "code": "<span class=\"hljs-comment\">/*\r\n  Modified from:\r\n    https://github.com/TheAlgorithms/Python/blob/master/maths/prime_check.py\r\n\r\n  Complexity:\r\n    O(sqrt(n))\r\n*/</span>\r\n\r\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">PrimeCheck</span> = (<span class=\"hljs-params\">n</span>) =&gt; {\r\n  <span class=\"hljs-comment\">// input: n: int</span>\r\n  <span class=\"hljs-comment\">// output: boolean</span>\r\n  <span class=\"hljs-keyword\">if</span> (n === <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\r\n  <span class=\"hljs-keyword\">if</span> (n === <span class=\"hljs-number\">0</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\r\n  <span class=\"hljs-keyword\">if</span> (n === <span class=\"hljs-number\">2</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\r\n  <span class=\"hljs-keyword\">if</span> (n % <span class=\"hljs-number\">2</span> === <span class=\"hljs-number\">0</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\r\n\r\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">3</span>; i * i &lt;= n; i += <span class=\"hljs-number\">2</span>) {\r\n    <span class=\"hljs-keyword\">if</span> (n % i === <span class=\"hljs-number\">0</span>) {\r\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\r\n    }\r\n  }\r\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\r\n}\r\n\r\n<span class=\"hljs-keyword\">export</span> { <span class=\"hljs-title class_\">PrimeCheck</span> }\r\n"
+    },
+    "java": {
+      "dir": "Maths/PrimeCheck.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PrimeCheck.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PrimeCheck</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">scanner</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n\n    System.out.print(<span class=\"hljs-string\">&quot;Enter a number: &quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">n</span> <span class=\"hljs-operator\">=</span> scanner.nextInt();\n    <span class=\"hljs-keyword\">if</span> (isPrime(n)) {\n      System.out.println(n + <span class=\"hljs-string\">&quot; is a prime number&quot;</span>);\n    } <span class=\"hljs-keyword\">else</span> {\n      System.out.println(n + <span class=\"hljs-string\">&quot; is not a prime number&quot;</span>);\n    }\n    scanner.close();\n  }\n\n  <span class=\"hljs-comment\">/***\n   * Checks if a number is prime or not\n   * <span class=\"hljs-doctag\">@param</span> n the number\n   * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-doctag\">@code</span> true} if {<span class=\"hljs-doctag\">@code</span> n} is prime\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isPrime</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> n)</span> {\n    <span class=\"hljs-keyword\">if</span> (n == <span class=\"hljs-number\">2</span>) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n    }\n    <span class=\"hljs-keyword\">if</span> (n &lt; <span class=\"hljs-number\">2</span> || n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n    }\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">3</span>, limit = (<span class=\"hljs-type\">int</span>) Math.sqrt(n); i &lt;= limit; i += <span class=\"hljs-number\">2</span>) {\n      <span class=\"hljs-keyword\">if</span> (n % i == <span class=\"hljs-number\">0</span>) {\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n  }\n}\n"
+    },
+    "go": {
+      "dir": "math/prime/primecheck.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/math/prime/primecheck.go",
+      "code": "<span class=\"hljs-keyword\">package</span> prime\n\n<span class=\"hljs-comment\">// A primality test is an algorithm for determining whether an input number is prime.Among other fields of mathematics, it is used for cryptography.</span>\n<span class=\"hljs-comment\">//Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number is prime or not.</span>\n<span class=\"hljs-comment\">//Source - Wikipedia https://en.wikipedia.org/wiki/Primality_test</span>\n\n<span class=\"hljs-comment\">// NaiveApproach checks if an integer is prime or not. Returns a bool.</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">NaiveApproach</span><span class=\"hljs-params\">(n <span class=\"hljs-keyword\">int</span>)</span> <span class=\"hljs-title\">bool</span></span> {\n\t<span class=\"hljs-keyword\">if</span> n &lt; <span class=\"hljs-number\">2</span> {\n\t\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n\t}\n\t<span class=\"hljs-keyword\">for</span> i := <span class=\"hljs-number\">2</span>; i &lt; n; i++ {\n\n\t\t<span class=\"hljs-keyword\">if</span> n%i == <span class=\"hljs-number\">0</span> {\n\t\t\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n\t\t}\n\t}\n\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n}\n\n<span class=\"hljs-comment\">// PairApproach checks primality of an integer and returns a bool. More efficient than the naive approach as number of iterations are less.</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">PairApproach</span><span class=\"hljs-params\">(n <span class=\"hljs-keyword\">int</span>)</span> <span class=\"hljs-title\">bool</span></span> {\n\t<span class=\"hljs-keyword\">if</span> n &lt; <span class=\"hljs-number\">2</span> {\n\t\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n\t}\n\t<span class=\"hljs-keyword\">for</span> i := <span class=\"hljs-number\">2</span>; i*i &lt;= n; i++ {\n\t\t<span class=\"hljs-keyword\">if</span> n%i == <span class=\"hljs-number\">0</span> {\n\t\t\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n\t\t}\n\t}\n\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n}\n"
+    },
+    "dart": {
+      "dir": "maths/prime_check.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/prime_check.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;dart:math&#x27;</span>;\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; numbers = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">13</span>];\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> number <span class=\"hljs-keyword\">in</span> numbers) {\n    <span class=\"hljs-keyword\">if</span> (isPrime(number)) {\n      <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;<span class=\"hljs-subst\">$number</span> is prime.&quot;</span>);\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;<span class=\"hljs-subst\">$number</span> is not prime.&quot;</span>);\n    }\n  }\n}\n\n<span class=\"hljs-comment\"><span class=\"language-markdown\">/<span class=\"hljs-strong\">**\n <span class=\"hljs-emphasis\">*check</span></span></span> out whether number <span class=\"language-markdown\"><span class=\"hljs-strong\"><span class=\"hljs-emphasis\">is prime number or not.\n *</span>/</span></span></span>\n<span class=\"hljs-built_in\">bool</span> isPrime(<span class=\"hljs-built_in\">int</span> number) {\n  <span class=\"hljs-keyword\">if</span> (number == <span class=\"hljs-number\">2</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">true</span>;\n  }\n  <span class=\"hljs-keyword\">if</span> (number &lt;= <span class=\"hljs-number\">1</span> || number % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">false</span>;\n  }\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = <span class=\"hljs-number\">3</span>, limit = sqrt(number).toInt(); i &lt;= limit; i += <span class=\"hljs-number\">2</span>) {\n    <span class=\"hljs-keyword\">if</span> (number % i == <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">false</span>;\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">true</span>;\n}\n"
+    },
+    "matlab-octave": {
+      "dir": "algorithms/maths/prime_check.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/maths/prime_check.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">p</span> = <span class=\"hljs-title\">prime_check</span><span class=\"hljs-params\">(n)</span></span>\n<span class=\"hljs-comment\">%% Prime Check</span>\n<span class=\"hljs-comment\">% Tis function checks wheather the input number is prime of not.</span>\n<span class=\"hljs-comment\">% For this, it checks if the input number is dividable by numbers less than</span>\n<span class=\"hljs-comment\">% its half+1. </span>\n<span class=\"hljs-comment\">% If number is dividable by one of these numbers function displays &quot;not</span>\n<span class=\"hljs-comment\">% prime number&quot; and returns 0 as output, otherwise it displays &quot;prime</span>\n<span class=\"hljs-comment\">% number&quot; and returns 1 as output.</span>\n\n<span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-built_in\">disp</span>(<span class=\"hljs-string\">&#x27;input must be positive integer&#x27;</span>)\n<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">floor</span>(n)~= n \n       <span class=\"hljs-built_in\">disp</span>(<span class=\"hljs-string\">&#x27;input must be positive integer&#x27;</span>) \n    <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> n == <span class=\"hljs-number\">2</span>\n            <span class=\"hljs-built_in\">disp</span>([num2str(n), <span class=\"hljs-string\">&#x27; is prime number&#x27;</span>])\n            p = <span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-keyword\">else</span>\n            half_n = <span class=\"hljs-built_in\">floor</span>(n/<span class=\"hljs-number\">2</span>)+<span class=\"hljs-number\">1</span>;\n            <span class=\"hljs-built_in\">i</span> = <span class=\"hljs-number\">2</span>;\n           <span class=\"hljs-keyword\">while</span> <span class=\"hljs-built_in\">i</span> &lt;= half_n\n                 residual = <span class=\"hljs-built_in\">mod</span>(n,<span class=\"hljs-built_in\">i</span>); \n                 <span class=\"hljs-keyword\">if</span> residual == <span class=\"hljs-number\">0</span>\n                    <span class=\"hljs-built_in\">disp</span>([num2str(n), <span class=\"hljs-string\">&#x27; is not prime number&#x27;</span>])\n                    p = <span class=\"hljs-number\">0</span>;\n                    <span class=\"hljs-keyword\">break</span>\n                 <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">i</span> == half_n\n                         <span class=\"hljs-built_in\">disp</span>([num2str(n), <span class=\"hljs-string\">&#x27; is prime number&#x27;</span>])\n                         p = <span class=\"hljs-number\">1</span>;\n                         <span class=\"hljs-keyword\">break</span>\n                     <span class=\"hljs-keyword\">else</span>\n                         <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-built_in\">i</span>+<span class=\"hljs-number\">1</span>;\n                     <span class=\"hljs-keyword\">end</span>\n                 <span class=\"hljs-keyword\">end</span>\n           <span class=\"hljs-keyword\">end</span>\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    },
+    "julia": {
+      "dir": "src/math/prime_check.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/prime_check.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nprime_check(number)\n\nChecks to see if a number is a prime or not\n    \nA number is prime if it has exactly two factors: 1 and itself.\n\n# Example\n\n```julia\nprime_check(2) # returns true\nprime_check(3) # returns true\nprime_check(5) # returns true\nprime_check(7) # returns true\nprime_check(11) # returns true\nprime_check(13) # returns true\nprime_check(17) # returns true\nprime_check(19) # returns true\nprime_check(23) # returns true\nprime_check(29) # returns true\nprime_check(30) # returns false\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> prime_check(number::N)<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Integer</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-number\">1</span> &lt; number &lt; <span class=\"hljs-number\">4</span>\n        <span class=\"hljs-comment\"># 2, 3 are primes</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">elseif</span> number &lt; <span class=\"hljs-number\">2</span> || number % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>\n        <span class=\"hljs-comment\"># Negative ,0,1, and even numbers except 2 are not primes</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-number\">3</span>:<span class=\"hljs-number\">2</span>:isqrt(number) + <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">if</span> number % i == <span class=\"hljs-number\">0</span>\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaushik Amar Das",
+      "email": "cozek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vedant Mamgain",
+      "email": "mamgainvedant@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "utkarsh",
+      "email": "ucponia@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Lucas",
+      "email": "0Zeta@protonmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jas",
+      "email": "12792882+Spikatrix@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rolv Apneseth",
+      "email": "rolv.apneseth@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Björn Olsson Jarl",
+      "email": "frangiz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Julien Castiaux",
+      "email": "Julien.castiaux@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kushal Naidu",
+      "email": "akushalnaidu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kiyoto Kai",
+      "email": "35162413+Kaiyoto@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "dheerajreddymumma",
+      "email": "dheerajreddymumma@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

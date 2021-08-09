@@ -1,0 +1,21 @@
+{
+  "slug": "naive-search",
+  "name": "Naive Search",
+  "categories": ["searches", "patternsearch"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

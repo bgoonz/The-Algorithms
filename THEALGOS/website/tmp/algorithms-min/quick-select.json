@@ -1,0 +1,59 @@
+{
+  "slug": "quick-select",
+  "name": "Quick Select",
+  "categories": ["searches"],
+  "implementations": {
+    "python": "",
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "hasan",
+      "email": "hasanuli10@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "zoomdong",
+      "email": "1344492820@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "jbaenaxd",
+      "email": "jobaco04@hotmail.com",
+      "commits": 1
+    },
+    {
+      "name": "percy07",
+      "email": "56677891+percy07@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "weixuanhu",
+      "email": "44716380+weixuanhu@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "fickleEfrit",
+      "email": "powerhungry7@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Selection Algorithms/Quick Select.md"
+  }
+}

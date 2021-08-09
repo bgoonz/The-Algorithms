@@ -1,0 +1,26 @@
+{
+  "slug": "gale-shapley-bigraph",
+  "name": "Gale Shapley Bigraph",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "hasan",
+      "email": "hasanuli10@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akash Shroff",
+      "email": "63399889+akashvshroff@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

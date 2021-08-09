@@ -1,0 +1,36 @@
+{
+  "slug": "countwords",
+  "name": "CountWords",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "UntouchedOdin0",
+      "email": "UntouchedOdin0@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Furaha Damién",
+      "email": "furaha.damien@mail.mcgill.ca",
+      "commits": 1
+    },
+    {
+      "name": "JeonSeongBae",
+      "email": "tjdqo6042@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Prasoon",
+      "email": "prasoonpandey06@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

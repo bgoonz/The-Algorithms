@@ -1,0 +1,26 @@
+{
+  "slug": "middle-element-of-linked-list",
+  "name": "Middle Element of Linked List",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/linked_list/middle_element_of_linked_list.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/linked_list/middle_element_of_linked_list.py",
+      "code": "<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, data: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n        self.data = data\n        self.<span class=\"hljs-built_in\">next</span> = <span class=\"hljs-literal\">None</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">LinkedList</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self</span>):\n        self.head = <span class=\"hljs-literal\">None</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">push</span>(<span class=\"hljs-params\">self, new_data: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n        new_node = Node(new_data)\n        new_node.<span class=\"hljs-built_in\">next</span> = self.head\n        self.head = new_node\n        <span class=\"hljs-keyword\">return</span> self.head.data\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">middle_element</span>(<span class=\"hljs-params\">self</span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n        <span class=\"hljs-string\">&quot;&quot;&quot;\n        &gt;&gt;&gt; link = LinkedList()\n        &gt;&gt;&gt; link.middle_element()\n        No element found.\n        &gt;&gt;&gt; link.push(5)\n        5\n        &gt;&gt;&gt; link.push(6)\n        6\n        &gt;&gt;&gt; link.push(8)\n        8\n        &gt;&gt;&gt; link.push(8)\n        8\n        &gt;&gt;&gt; link.push(10)\n        10\n        &gt;&gt;&gt; link.push(12)\n        12\n        &gt;&gt;&gt; link.push(17)\n        17\n        &gt;&gt;&gt; link.push(7)\n        7\n        &gt;&gt;&gt; link.push(3)\n        3\n        &gt;&gt;&gt; link.push(20)\n        20\n        &gt;&gt;&gt; link.push(-20)\n        -20\n        &gt;&gt;&gt; link.middle_element()\n        12\n        &gt;&gt;&gt;\n        &quot;&quot;&quot;</span>\n        slow_pointer = self.head\n        fast_pointer = self.head\n        <span class=\"hljs-keyword\">if</span> self.head:\n            <span class=\"hljs-keyword\">while</span> fast_pointer <span class=\"hljs-keyword\">and</span> fast_pointer.<span class=\"hljs-built_in\">next</span>:\n                fast_pointer = fast_pointer.<span class=\"hljs-built_in\">next</span>.<span class=\"hljs-built_in\">next</span>\n                slow_pointer = slow_pointer.<span class=\"hljs-built_in\">next</span>\n            <span class=\"hljs-keyword\">return</span> slow_pointer.data\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;No element found.&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    link = LinkedList()\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>().strip())):\n        data = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>().strip())\n        link.push(data)\n    <span class=\"hljs-built_in\">print</span>(link.middle_element())\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Sajied Shah Yousuf",
+      "email": "40203390+meSajied@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

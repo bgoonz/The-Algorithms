@@ -1,0 +1,16 @@
+{
+  "slug": "prime-number",
+  "name": "Prime Number",
+  "categories": ["math"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Sahil Afrid Farookhi",
+      "email": "msafarookhi@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

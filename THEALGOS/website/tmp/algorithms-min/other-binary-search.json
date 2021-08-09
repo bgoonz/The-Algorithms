@@ -1,0 +1,26 @@
+{
+  "slug": "other-binary-search",
+  "name": "Other Binary Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "koseokkyu",
+      "email": "dighrh@naver.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

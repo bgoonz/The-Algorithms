@@ -1,0 +1,21 @@
+{
+  "slug": "minimum-cut",
+  "name": "Minimum Cut",
+  "categories": ["networkingflow"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Sichen Liu",
+      "email": "sl2947@cornell.edu",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

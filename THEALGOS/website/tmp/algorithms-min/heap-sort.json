@@ -1,0 +1,239 @@
+{
+  "slug": "heap-sort",
+  "name": "Heap Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "haskell": "",
+    "f-sharp": "",
+    "go": "",
+    "rust": "",
+    "aarch64_assembly": "",
+    "dart": "",
+    "r": "",
+    "ruby": "",
+    "kotlin": "",
+    "scala": "",
+    "matlab-octave": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Olexandr Yermilov",
+      "email": "olexandr.yermilov@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Emil Suleymanov",
+      "email": "emil.suleymanov@tum.de",
+      "commits": 1
+    },
+    {
+      "name": "goodnic",
+      "email": "43970044+goodnic@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jan Teske",
+      "email": "jteske@posteo.net",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek Mehra",
+      "email": "52788025+Triaro@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Anirban166",
+      "email": "bloodraven166@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mattan",
+      "email": "mattany@gmali.com",
+      "commits": 1
+    },
+    {
+      "name": "Connor Bottum",
+      "email": "cbb692@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Daniel Garcia",
+      "email": "Dgarcia1@umassd.edu",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "--global",
+      "commits": 1
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Doppon",
+      "email": "zaxpkuraudo7777@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "zoomdong",
+      "email": "1344492820@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "Nour B",
+      "email": "56294154+nourrrrrrrr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Panzki",
+      "email": "Panzki@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Tran Hau",
+      "email": "hauvipapro@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Sharma",
+      "email": "akshay.sharma09695@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "yyeltsyn",
+      "email": "crawler2.0@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Sam Jones",
+      "email": "sam.jones240699@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "vzvu3k6k",
+      "email": "vzvu3k6k@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "koseokkyu",
+      "email": "dighrh@naver.com",
+      "commits": 2
+    },
+    {
+      "name": "arijit pande",
+      "email": "pande.arijit@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Eric Curtin",
+      "email": "ericcurtin17@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "JakeBonek",
+      "email": "jake.bonek@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Ayaan Khan",
+      "email": "ayaankhan98@gmail.com",
+      "commits": 9
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Sorting Algorithms/Heap Sort.md"
+  }
+}

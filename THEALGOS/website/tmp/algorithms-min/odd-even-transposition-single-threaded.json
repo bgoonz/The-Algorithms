@@ -1,0 +1,26 @@
+{
+  "slug": "odd-even-transposition-single-threaded",
+  "name": "Odd Even Transposition Single Threaded",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "CharlesRitter",
+      "email": "crritte@g.clemson.edu",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

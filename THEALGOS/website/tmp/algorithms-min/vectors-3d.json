@@ -1,0 +1,21 @@
+{
+  "slug": "vectors-3d",
+  "name": "Vectors 3d",
+  "categories": ["geometry"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "lasgel",
+      "email": "lasse.gellrich@gmx.de",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

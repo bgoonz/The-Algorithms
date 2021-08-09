@@ -1,0 +1,10 @@
+{
+  "slug": "pid",
+  "name": "Pid",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "binary-tree-traversals",
+  "name": "Binary Tree Traversals",
+  "categories": ["datastructures", "binarytree"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/binary_tree/binary_tree_traversals.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/binary_tree/binary_tree_traversals.py",
+      "code": "<span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Tree_traversal</span>\r\n<span class=\"hljs-keyword\">from</span> dataclasses <span class=\"hljs-keyword\">import</span> data<span class=\"hljs-keyword\">class</span>\r\n<span class=\"hljs-title class_\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Optional</span>\r\n\r\n\r\n<span class=\"hljs-meta\">@dataclass</span>\r\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\r\n    data: <span class=\"hljs-built_in\">int</span>\r\n    left: <span class=\"hljs-type\">Optional</span>[<span class=\"hljs-string\">&quot;Node&quot;</span>] = <span class=\"hljs-literal\">None</span>\r\n    right: <span class=\"hljs-type\">Optional</span>[<span class=\"hljs-string\">&quot;Node&quot;</span>] = <span class=\"hljs-literal\">None</span>\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">make_tree</span>() -&gt; Node:\r\n    <span class=\"hljs-keyword\">return</span> Node(<span class=\"hljs-number\">1</span>, Node(<span class=\"hljs-number\">2</span>, Node(<span class=\"hljs-number\">4</span>), Node(<span class=\"hljs-number\">5</span>)), Node(<span class=\"hljs-number\">3</span>))\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">preorder</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Pre-order traversal visits root node, left subtree, right subtree.\r\n    &gt;&gt;&gt; preorder(make_tree())\r\n    [1, 2, 4, 5, 3]\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">return</span> [root.data] + preorder(root.left) + preorder(root.right) <span class=\"hljs-keyword\">if</span> root <span class=\"hljs-keyword\">else</span> []\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">postorder</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Post-order traversal visits left subtree, right subtree, root node.\r\n    &gt;&gt;&gt; postorder(make_tree())\r\n    [4, 5, 2, 3, 1]\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">return</span> postorder(root.left) + postorder(root.right) + [root.data] <span class=\"hljs-keyword\">if</span> root <span class=\"hljs-keyword\">else</span> []\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">inorder</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    In-order traversal visits left subtree, root node, right subtree.\r\n    &gt;&gt;&gt; inorder(make_tree())\r\n    [4, 2, 5, 1, 3]\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">return</span> inorder(root.left) + [root.data] + inorder(root.right) <span class=\"hljs-keyword\">if</span> root <span class=\"hljs-keyword\">else</span> []\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">height</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Recursive function for calculating the height of the binary tree.\r\n    &gt;&gt;&gt; height(None)\r\n    0\r\n    &gt;&gt;&gt; height(make_tree())\r\n    3\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-built_in\">max</span>(height(root.left), height(root.right)) + <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">if</span> root <span class=\"hljs-keyword\">else</span> <span class=\"hljs-number\">0</span>\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">level_order_1</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Print whole binary tree in Level Order Traverse.\r\n    Level Order traverse: Visit nodes of the tree level-by-level.\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> root:\r\n        <span class=\"hljs-keyword\">return</span>\r\n    temp = root\r\n    que = [temp]\r\n    <span class=\"hljs-keyword\">while</span> <span class=\"hljs-built_in\">len</span>(que) &gt; <span class=\"hljs-number\">0</span>:\r\n        <span class=\"hljs-built_in\">print</span>(que[<span class=\"hljs-number\">0</span>].data, end=<span class=\"hljs-string\">&quot; &quot;</span>)\r\n        temp = que.pop(<span class=\"hljs-number\">0</span>)\r\n        <span class=\"hljs-keyword\">if</span> temp.left:\r\n            que.append(temp.left)\r\n        <span class=\"hljs-keyword\">if</span> temp.right:\r\n            que.append(temp.right)\r\n    <span class=\"hljs-keyword\">return</span> que\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">level_order_2</span>(<span class=\"hljs-params\">root: Node, level: <span class=\"hljs-built_in\">int</span></span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Level-wise traversal: Print all nodes present at the given level of the binary tree\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> root:\r\n        <span class=\"hljs-keyword\">return</span> root\r\n    <span class=\"hljs-keyword\">if</span> level == <span class=\"hljs-number\">1</span>:\r\n        <span class=\"hljs-built_in\">print</span>(root.data, end=<span class=\"hljs-string\">&quot; &quot;</span>)\r\n    <span class=\"hljs-keyword\">elif</span> level &gt; <span class=\"hljs-number\">1</span>:\r\n        level_order_2(root.left, level - <span class=\"hljs-number\">1</span>)\r\n        level_order_2(root.right, level - <span class=\"hljs-number\">1</span>)\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">print_left_to_right</span>(<span class=\"hljs-params\">root: Node, level: <span class=\"hljs-built_in\">int</span></span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Print elements on particular level from left to right direction of the binary tree.\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> root:\r\n        <span class=\"hljs-keyword\">return</span>\r\n    <span class=\"hljs-keyword\">if</span> level == <span class=\"hljs-number\">1</span>:\r\n        <span class=\"hljs-built_in\">print</span>(root.data, end=<span class=\"hljs-string\">&quot; &quot;</span>)\r\n    <span class=\"hljs-keyword\">elif</span> level &gt; <span class=\"hljs-number\">1</span>:\r\n        print_left_to_right(root.left, level - <span class=\"hljs-number\">1</span>)\r\n        print_left_to_right(root.right, level - <span class=\"hljs-number\">1</span>)\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">print_right_to_left</span>(<span class=\"hljs-params\">root: Node, level: <span class=\"hljs-built_in\">int</span></span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Print elements on particular level from right to left direction of the binary tree.\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> root:\r\n        <span class=\"hljs-keyword\">return</span>\r\n    <span class=\"hljs-keyword\">if</span> level == <span class=\"hljs-number\">1</span>:\r\n        <span class=\"hljs-built_in\">print</span>(root.data, end=<span class=\"hljs-string\">&quot; &quot;</span>)\r\n    <span class=\"hljs-keyword\">elif</span> level &gt; <span class=\"hljs-number\">1</span>:\r\n        print_right_to_left(root.right, level - <span class=\"hljs-number\">1</span>)\r\n        print_right_to_left(root.left, level - <span class=\"hljs-number\">1</span>)\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">zigzag</span>(<span class=\"hljs-params\">root: Node</span>):\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    ZigZag traverse: Print node left to right and right to left, alternatively.\r\n    &quot;&quot;&quot;</span>\r\n    flag = <span class=\"hljs-number\">0</span>\r\n    height_tree = height(root)\r\n    <span class=\"hljs-keyword\">for</span> h <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, height_tree + <span class=\"hljs-number\">1</span>):\r\n        <span class=\"hljs-keyword\">if</span> flag == <span class=\"hljs-number\">0</span>:\r\n            print_left_to_right(root, h)\r\n            flag = <span class=\"hljs-number\">1</span>\r\n        <span class=\"hljs-keyword\">else</span>:\r\n            print_right_to_left(root, h)\r\n            flag = <span class=\"hljs-number\">0</span>\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():  <span class=\"hljs-comment\"># Main function for testing.</span>\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Create binary tree.\r\n    &quot;&quot;&quot;</span>\r\n    root = make_tree()\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    All Traversals of the binary are as follows:\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;  In-order Traversal is <span class=\"hljs-subst\">{inorder(root)}</span>&quot;</span>)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot; Pre-order Traversal is <span class=\"hljs-subst\">{preorder(root)}</span>&quot;</span>)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Post-order Traversal is <span class=\"hljs-subst\">{postorder(root)}</span>&quot;</span>)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Height of Tree is <span class=\"hljs-subst\">{height(root)}</span>&quot;</span>)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Complete Level Order Traversal is : &quot;</span>)\r\n    level_order_1(root)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nLevel-wise order Traversal is : &quot;</span>)\r\n    <span class=\"hljs-keyword\">for</span> h <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, height(root) + <span class=\"hljs-number\">1</span>):\r\n        level_order_2(root, h)\r\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nZigZag order Traversal is : &quot;</span>)\r\n    zigzag(root)\r\n    <span class=\"hljs-built_in\">print</span>()\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-keyword\">import</span> doctest\r\n\r\n    doctest.testmod()\r\n    main()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "Anshraj Shrivastava",
+      "email": "42239140+rajansh87@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nishant Aklecha",
+      "email": "31594715+Naklecha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vivek",
+      "email": "vivektheintel@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Gini5",
+      "email": "gini5@163.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "amankumargupta",
+      "email": "gupta2140@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Akshay Sharma",
+      "email": "akshay.sharma09695@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

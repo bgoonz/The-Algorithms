@@ -1,0 +1,21 @@
+{
+  "slug": "crcalgorithm",
+  "name": "CRCAlgorithm",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "dimgrichr",
+      "email": "32580033+dimgrichr@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

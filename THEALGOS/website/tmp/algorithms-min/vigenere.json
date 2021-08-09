@@ -1,0 +1,43 @@
+{
+  "slug": "vigenere",
+  "name": "Vigenere",
+  "categories": ["ciphers"],
+  "implementations": {
+    "java": "",
+    "rust": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Matthias Gilch",
+      "email": "matthias.gilch.mg@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "gfabrizi",
+      "email": "5486679+gfabrizi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankit Sharma",
+      "email": "beingbmc12@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Fractum",
+      "email": "24612656+straiffix@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "straiffix",
+      "email": "straiffix@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

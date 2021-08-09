@@ -1,0 +1,10 @@
+{
+  "slug": "minimum-coin-change",
+  "name": "Minimum Coin Change",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

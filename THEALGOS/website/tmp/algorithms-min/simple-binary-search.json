@@ -1,0 +1,31 @@
+{
+  "slug": "simple-binary-search",
+  "name": "Simple Binary Search",
+  "categories": ["searches"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "praisearts",
+      "email": "34782930+praisearts@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "poloso",
+      "email": "posorio@sier.com.co",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

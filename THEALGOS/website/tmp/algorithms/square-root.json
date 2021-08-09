@@ -1,0 +1,46 @@
+{
+  "slug": "square-root",
+  "name": "Square Root",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/square_root.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/square_root.py",
+      "code": "<span class=\"hljs-keyword\">import</span> math\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fx</span>(<span class=\"hljs-params\">x: <span class=\"hljs-built_in\">float</span>, a: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-keyword\">return</span> math.<span class=\"hljs-built_in\">pow</span>(x, <span class=\"hljs-number\">2</span>) - a\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fx_derivative</span>(<span class=\"hljs-params\">x: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">2</span> * x\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_initial_point</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    start = <span class=\"hljs-number\">2.0</span>\n\n    <span class=\"hljs-keyword\">while</span> start &lt;= a:\n        start = math.<span class=\"hljs-built_in\">pow</span>(start, <span class=\"hljs-number\">2</span>)\n\n    <span class=\"hljs-keyword\">return</span> start\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">square_root_iterative</span>(<span class=\"hljs-params\">\n    a: <span class=\"hljs-built_in\">float</span>, max_iter: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">9999</span>, tolerance: <span class=\"hljs-built_in\">float</span> = <span class=\"hljs-number\">0.00000000000001</span>\n</span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Square root is aproximated using Newtons method.\n    https://en.wikipedia.org/wiki/Newton%27s_method\n\n    &gt;&gt;&gt; all(abs(square_root_iterative(i)-math.sqrt(i)) &lt;= .00000000000001\n    ...     for i in range(500))\n    True\n\n    &gt;&gt;&gt; square_root_iterative(-1)\n    Traceback (most recent call last):\n        ...\n    ValueError: math domain error\n\n    &gt;&gt;&gt; square_root_iterative(4)\n    2.0\n\n    &gt;&gt;&gt; square_root_iterative(3.2)\n    1.788854381999832\n\n    &gt;&gt;&gt; square_root_iterative(140)\n    11.832159566199232\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> a &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;math domain error&quot;</span>)\n\n    value = get_initial_point(a)\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(max_iter):\n        prev_value = value\n        value = value - fx(value, a) / fx_derivative(value)\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">abs</span>(prev_value - value) &lt; tolerance:\n            <span class=\"hljs-keyword\">return</span> value\n\n    <span class=\"hljs-keyword\">return</span> value\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">from</span> doctest <span class=\"hljs-keyword\">import</span> testmod\n\n    testmod()\n"
+    },
+    "javascript": {
+      "dir": "Maths/SquareRoot.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/SquareRoot.js",
+      "code": "<span class=\"hljs-comment\">/*\n* Author: Rak Laptudirm\n*\n* https://en.wikipedia.org/wiki/Newton%27s_method\n*\n* Finding the square root of a number using Newton&#x27;s method.\n*/</span>\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">sqrt</span> (num, precision = <span class=\"hljs-number\">4</span>) {\n  <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-title class_\">Number</span>.<span class=\"hljs-built_in\">isFinite</span>(num)) { <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">`Expected a number, received <span class=\"hljs-subst\">${<span class=\"hljs-keyword\">typeof</span> num}</span>`</span>) }\n  <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-title class_\">Number</span>.<span class=\"hljs-built_in\">isFinite</span>(precision)) { <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">`Expected a number, received <span class=\"hljs-subst\">${<span class=\"hljs-keyword\">typeof</span> precision}</span>`</span>) }\n  <span class=\"hljs-keyword\">let</span> sqrt = <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; precision; i++) {\n    sqrt -= (sqrt * sqrt - num) / (<span class=\"hljs-number\">2</span> * sqrt)\n  }\n  <span class=\"hljs-keyword\">return</span> sqrt\n}\n\n<span class=\"hljs-keyword\">export</span> { sqrt }\n"
+    },
+    "ruby": {
+      "dir": "maths/square_root.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/maths/square_root.rb",
+      "code": "<span class=\"hljs-comment\"># frozen_string_literal: true</span>\n\n<span class=\"hljs-comment\"># Calculates the square root of a number</span>\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">SquareRoot</span></span>\n  <span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> &lt;&lt; self</span>\n    EPSILON = <span class=\"hljs-number\">1E-10</span>\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">call</span><span class=\"hljs-params\">(number)</span></span>\n      raise DomainError, <span class=\"hljs-string\">&#x27;Cannot find square root of negative number&#x27;</span> <span class=\"hljs-keyword\">if</span> number.negative?\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">if</span> number.zero?\n\n      find_root(number)\n    <span class=\"hljs-keyword\">end</span>\n\n    private\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">find_root</span><span class=\"hljs-params\">(x0, xn = x0)</span></span>\n      xn1 = xn - ((xn * xn - x0) / (<span class=\"hljs-number\">2.0</span> * xn))\n      <span class=\"hljs-keyword\">return</span> xn1 <span class=\"hljs-keyword\">if</span> (xn1 - xn).abs &lt;= EPSILON\n\n      find_root(x0, xn1)\n    <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">DomainError</span> &lt; StandardError;</span> <span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Eli Sadoff",
+      "email": "eli.sadoff@broadlume.com",
+      "commits": 1
+    },
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

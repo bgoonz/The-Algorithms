@@ -1,0 +1,24 @@
+{
+  "slug": "mandelbrot",
+  "name": "Mandelbrot",
+  "categories": ["fractals"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "java": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

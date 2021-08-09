@@ -1,0 +1,22 @@
+{
+  "slug": "palindrome-partitioning",
+  "name": "Palindrome Partitioning",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": "",
+    "kotlin": ""
+  },
+  "contributors": [
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sujay008",
+      "email": "45827775+sujaykaushik008@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

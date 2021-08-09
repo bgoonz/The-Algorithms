@@ -1,0 +1,58 @@
+{
+  "slug": "main",
+  "name": "Main",
+  "categories": ["datastructures", "hashmap", "hashing"],
+  "implementations": {
+    "java": "",
+    "c": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rupeshiya",
+      "email": "31209617+Rupeshiya@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "EAlexa",
+      "email": "rubi_81@outlook.de",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    },
+    {
+      "name": "Wesllhey Holanda",
+      "email": "wesllhey.holanda@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "shivg7706",
+      "email": "shivamgupta7706@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

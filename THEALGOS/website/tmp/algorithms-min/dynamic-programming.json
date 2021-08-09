@@ -1,0 +1,16 @@
+{
+  "slug": "dynamic-programming",
+  "name": "Dynamic Programming",
+  "categories": ["knapsack"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "KheeLong",
+      "email": "kheelong0387@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

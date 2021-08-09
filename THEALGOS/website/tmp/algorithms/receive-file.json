@@ -1,0 +1,21 @@
+{
+  "slug": "receive-file",
+  "name": "Receive File",
+  "categories": ["filetransfer"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "file_transfer/receive_file.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/file_transfer/receive_file.py",
+      "code": "<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> socket  <span class=\"hljs-comment\"># Import socket module</span>\n\n    sock = socket.socket()  <span class=\"hljs-comment\"># Create a socket object</span>\n    host = socket.gethostname()  <span class=\"hljs-comment\"># Get local machine name</span>\n    port = <span class=\"hljs-number\">12312</span>\n\n    sock.connect((host, port))\n    sock.send(<span class=\"hljs-string\">b&quot;Hello server!&quot;</span>)\n\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;Received_file&quot;</span>, <span class=\"hljs-string\">&quot;wb&quot;</span>) <span class=\"hljs-keyword\">as</span> out_file:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;File opened&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Receiving data...&quot;</span>)\n        <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\n            data = sock.recv(<span class=\"hljs-number\">1024</span>)\n            <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{data = }</span>&quot;</span>)\n            <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> data:\n                <span class=\"hljs-keyword\">break</span>\n            out_file.write(data)  <span class=\"hljs-comment\"># Write data to a file</span>\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Successfully got the file&quot;</span>)\n    sock.close()\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Connection closed&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

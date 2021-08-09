@@ -1,0 +1,26 @@
+{
+  "slug": "greedy",
+  "name": "Greedy",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "other/greedy.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/other/greedy.py",
+      "code": "<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">things</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, name, value, weight</span>):\n        self.name = name\n        self.value = value\n        self.weight = weight\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__repr__</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{self.__class__.__name__}</span>(<span class=\"hljs-subst\">{self.name}</span>, <span class=\"hljs-subst\">{self.value}</span>, <span class=\"hljs-subst\">{self.weight}</span>)&quot;</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_value</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> self.value\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_name</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> self.name\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_weight</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> self.weight\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">value_Weight</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> self.value / self.weight\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">build_menu</span>(<span class=\"hljs-params\">name, value, weight</span>):\n    menu = []\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(value)):\n        menu.append(things(name[i], value[i], weight[i]))\n    <span class=\"hljs-keyword\">return</span> menu\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">greedy</span>(<span class=\"hljs-params\">item, maxCost, keyFunc</span>):\n    itemsCopy = <span class=\"hljs-built_in\">sorted</span>(item, key=keyFunc, reverse=<span class=\"hljs-literal\">True</span>)\n    result = []\n    totalValue, total_cost = <span class=\"hljs-number\">0.0</span>, <span class=\"hljs-number\">0.0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(itemsCopy)):\n        <span class=\"hljs-keyword\">if</span> (total_cost + itemsCopy[i].get_weight()) &lt;= maxCost:\n            result.append(itemsCopy[i])\n            total_cost += itemsCopy[i].get_weight()\n            totalValue += itemsCopy[i].get_value()\n    <span class=\"hljs-keyword\">return</span> (result, totalValue)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">test_greedy</span>():\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; food = [&quot;Burger&quot;, &quot;Pizza&quot;, &quot;Coca Cola&quot;, &quot;Rice&quot;,\n    ...         &quot;Sambhar&quot;, &quot;Chicken&quot;, &quot;Fries&quot;, &quot;Milk&quot;]\n    &gt;&gt;&gt; value = [80, 100, 60, 70, 50, 110, 90, 60]\n    &gt;&gt;&gt; weight = [40, 60, 40, 70, 100, 85, 55, 70]\n    &gt;&gt;&gt; foods = build_menu(food, value, weight)\n    &gt;&gt;&gt; foods  # doctest: +NORMALIZE_WHITESPACE\n    [things(Burger, 80, 40), things(Pizza, 100, 60), things(Coca Cola, 60, 40),\n     things(Rice, 70, 70), things(Sambhar, 50, 100), things(Chicken, 110, 85),\n     things(Fries, 90, 55), things(Milk, 60, 70)]\n    &gt;&gt;&gt; greedy(foods, 500, things.get_value)  # doctest: +NORMALIZE_WHITESPACE\n    ([things(Chicken, 110, 85), things(Pizza, 100, 60), things(Fries, 90, 55),\n      things(Burger, 80, 40), things(Rice, 70, 70), things(Coca Cola, 60, 40),\n      things(Milk, 60, 70)], 570.0)\n    &quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Prince Gangurde",
+      "email": "50592495+Prince326@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "DanishSheikh1999",
+      "email": "43725095+DanishSheikh1999@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

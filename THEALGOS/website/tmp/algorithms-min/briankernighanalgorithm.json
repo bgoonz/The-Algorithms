@@ -1,0 +1,26 @@
+{
+  "slug": "briankernighanalgorithm",
+  "name": "BrianKernighanAlgorithm",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Nishita Aggarwal",
+      "email": "naggarwal97@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

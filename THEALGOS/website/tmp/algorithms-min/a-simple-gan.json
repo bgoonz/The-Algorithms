@@ -1,0 +1,16 @@
+{
+  "slug": "a-simple-gan",
+  "name": "A-Simple-GAN",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "DeepankarAcharyya",
+      "email": "deepankaracharyya@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

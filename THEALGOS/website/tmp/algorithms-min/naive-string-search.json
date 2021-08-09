@@ -1,0 +1,64 @@
+{
+  "slug": "naive-string-search",
+  "name": "Naive String Search",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "f-sharp": "",
+    "go": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "halafi",
+      "email": "filiphalas74@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "dharni0607",
+      "email": "dharanidevi.a16@iiits.in",
+      "commits": 1
+    },
+    {
+      "name": "Vasken Houdoverdov",
+      "email": "vhcomptech@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Reshad Hasan",
+      "email": "reshadhasan555@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

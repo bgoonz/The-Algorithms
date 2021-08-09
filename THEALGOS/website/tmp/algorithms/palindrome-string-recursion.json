@@ -1,0 +1,21 @@
+{
+  "slug": "palindrome-string-recursion",
+  "name": "Palindrome String Recursion",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "maths/palindrome_string_recursion.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/palindrome_string_recursion.dart",
+      "code": "<span class=\"hljs-comment\">/* Driver */</span>\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-keyword\">assert</span>(isPalindrome(<span class=\"hljs-string\">&quot;abcba&quot;</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">4</span>));\n  <span class=\"hljs-keyword\">assert</span>(isPalindrome(<span class=\"hljs-string\">&quot;a&quot;</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>));\n  <span class=\"hljs-keyword\">assert</span>(isPalindrome(<span class=\"hljs-string\">&quot;abbcba&quot;</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">5</span>) == <span class=\"hljs-keyword\">false</span>);\n}\n\n<span class=\"hljs-comment\"><span class=\"language-markdown\">/<span class=\"hljs-strong\">**\n <span class=\"hljs-emphasis\">*</span></span></span> Return true if <span class=\"language-markdown\"><span class=\"hljs-strong\"><span class=\"hljs-emphasis\">[string] is palindrome string, otherwise false\n *</span>/</span></span></span>\n<span class=\"hljs-built_in\">bool</span> isPalindrome(<span class=\"hljs-built_in\">String</span> string, <span class=\"hljs-built_in\">int</span> low, <span class=\"hljs-built_in\">int</span> high) {\n  <span class=\"hljs-keyword\">if</span> (low == high) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">true</span>;\n  } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (string[low] != string[high]) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">false</span>;\n  } <span class=\"hljs-keyword\">else</span> {\n    <span class=\"hljs-keyword\">return</span> isPalindrome(string, low + <span class=\"hljs-number\">1</span>, high - <span class=\"hljs-number\">1</span>);\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

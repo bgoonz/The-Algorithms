@@ -1,0 +1,36 @@
+{
+  "slug": "median-filter",
+  "name": "Median Filter",
+  "categories": ["digitalimageprocessing", "filters"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Matheus T. Guimarães",
+      "email": "matheusguimr@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Marvin M. Michum",
+      "email": "mrvnmchm@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shoujue Xu",
+      "email": "lightxusj@126.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

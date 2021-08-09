@@ -1,0 +1,21 @@
+{
+  "slug": "exchange-sort",
+  "name": "Exchange Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/sorts/exchange_sort.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/sorts/exchange_sort.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    ExchangeSort(arr)\n\nSort an array by exchanging elements that are not in their proper position, hence Exchange Sort\n\nExchange Sort Steps\n1. Compares each element of an array\n2. Swap those elements that are not in their proper position\n\nExample\n1. An array of [1, 2, 4, 3, 5] and compare each elements\n2. Since 4 is greater than 3\n3. Swap both position\n4. Returns [1, 2, 3, 4, 5]\n\nProgram to sort an array\n\n# Example\n```julia\nExchangeSort([5, 4, 3, 2, 1]) # returns [1, 2, 3, 4, 5]\nExchangeSort([1, 2, 3, 4, 5]) # returns [1, 2, 3, 4, 5]\nExchangeSort([&#x27;5&#x27;, &#x27;4&#x27;, &#x27;3&#x27;, &#x27;2&#x27;, &#x27;1&#x27;]) # returns [&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;, &#x27;5&#x27;]\n```\n\nContributed By:- [Gervin Fung](https://github.com/GervinFung)\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">function</span> ExchangeSort!(arr::<span class=\"hljs-built_in\">Vector</span>{T})<span class=\"hljs-keyword\">where</span> T\n    size=length(arr)\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-number\">1</span>:size\n        <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> i:size\n            <span class=\"hljs-keyword\">if</span> (arr[i]&gt;arr[j])\n                temp = arr[j];\n                arr[j] = arr[i];\n                arr[i] = temp;\n            <span class=\"hljs-keyword\">end</span>\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "PoolOfDeath20",
+      "email": "gervinfungdaxuen@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

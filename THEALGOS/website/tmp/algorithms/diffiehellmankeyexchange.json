@@ -1,0 +1,31 @@
+{
+  "slug": "diffiehellmankeyexchange",
+  "name": "diffieHellmanKeyExchange",
+  "categories": ["ciphers", "diffiehelkeyexchange"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "ciphers/diffiehelkeyexchange/diffieHellmanKeyExchange.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/ciphers/diffiehelkeyexchange/diffieHellmanKeyExchange.go",
+      "code": "<span class=\"hljs-comment\">// Package diffiehelkeyexchange implements Deffie Hellman Key Exchange Algorithm</span>\n<span class=\"hljs-comment\">// for more information watch : https://www.youtube.com/watch?v=NmM9HA2MQGI</span>\n<span class=\"hljs-keyword\">package</span> diffiehelkeyexchange\n\n<span class=\"hljs-keyword\">const</span> (\n\tgenerator         = <span class=\"hljs-number\">3</span>\n\tprimeNumber <span class=\"hljs-keyword\">int64</span> = <span class=\"hljs-number\">6700417</span> <span class=\"hljs-comment\">// prime number discovered by Leonhard Euler</span>\n)\n\n<span class=\"hljs-comment\">// GenerateShareKey : generates a key using client private key , generator and primeNumber</span>\n<span class=\"hljs-comment\">// this key can be made public</span>\n<span class=\"hljs-comment\">// shareKey = (g^key)%primeNumber</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">GenerateShareKey</span><span class=\"hljs-params\">(prvKey <span class=\"hljs-keyword\">int64</span>)</span> <span class=\"hljs-title\">int64</span></span> {\n\t<span class=\"hljs-keyword\">return</span> modularExponentiation(generator, prvKey, primeNumber)\n}\n\n<span class=\"hljs-comment\">// GenerateMutualKey : generates a mutual key that can be used by only alice and bob</span>\n<span class=\"hljs-comment\">// mutualKey = (shareKey^prvKey)%primeNumber</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">GenerateMutualKey</span><span class=\"hljs-params\">(prvKey, shareKey <span class=\"hljs-keyword\">int64</span>)</span> <span class=\"hljs-title\">int64</span></span> {\n\t<span class=\"hljs-keyword\">return</span> modularExponentiation(shareKey, prvKey, primeNumber)\n}\n\n<span class=\"hljs-comment\">// r = (b^e)%mod</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">modularExponentiation</span><span class=\"hljs-params\">(b, e, mod <span class=\"hljs-keyword\">int64</span>)</span> <span class=\"hljs-title\">int64</span></span> {\n\n\t<span class=\"hljs-comment\">//runs in O(log(n)) where n = e</span>\n\t<span class=\"hljs-comment\">//uses exponentiation by squaring to speed up the process</span>\n\t<span class=\"hljs-keyword\">if</span> mod == <span class=\"hljs-number\">1</span> {\n\t\t<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n\t}\n\t<span class=\"hljs-keyword\">var</span> r <span class=\"hljs-keyword\">int64</span> = <span class=\"hljs-number\">1</span>\n\tb = b % mod\n\t<span class=\"hljs-keyword\">for</span> e &gt; <span class=\"hljs-number\">0</span> {\n\t\t<span class=\"hljs-keyword\">if</span> e&amp;<span class=\"hljs-number\">1</span> == <span class=\"hljs-number\">1</span> {\n\t\t\tr = (r * b) % mod\n\t\t}\n\t\te = e &gt;&gt; <span class=\"hljs-number\">1</span>\n\t\tb = (b * b) % mod\n\t}\n\t<span class=\"hljs-keyword\">return</span> r\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Pritam Singh",
+      "email": "43764373+Zzocker@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "yicheng wang",
+      "email": "yichengww@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "tree-height",
+  "name": "Tree Height",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "dynamic_programming/tree_height.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/dynamic_programming/tree_height.cpp",
+      "code": "<span class=\"hljs-comment\">// C++ Program to find height of the tree using bottom-up dynamic programming.</span>\n\n<span class=\"hljs-comment\">/*\n * Given a rooted tree with node 1.\n * Task is to find the height of the tree.\n * Example: -\n * 4\n * 1 2\n * 1 3\n * 2 4\n * which can be represented as\n *   1\n *  / \\\n * 2   3\n * |\n * 4\n *\n * Height of the tree : - 2\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;vector&gt;</span></span>\n\n<span class=\"hljs-comment\">// global declarations</span>\n<span class=\"hljs-comment\">// no of nodes max limit.</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-type\">int</span> MAX = <span class=\"hljs-number\">1e5</span>;\n<span class=\"hljs-comment\">// adjacency list</span>\nstd::vector&lt;<span class=\"hljs-type\">int</span>&gt; adj[MAX];\nstd::vector&lt;<span class=\"hljs-type\">bool</span>&gt; visited;\nstd::vector&lt;<span class=\"hljs-type\">int</span>&gt; dp;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">depth_first_search</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> u)</span> </span>{\n    visited[u] = <span class=\"hljs-literal\">true</span>;\n    <span class=\"hljs-type\">int</span> child_height = <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> v : adj[u]) {\n        <span class=\"hljs-keyword\">if</span> (!visited[v]) {\n            <span class=\"hljs-built_in\">depth_first_search</span>(v);\n\n            <span class=\"hljs-comment\">// select maximum sub-tree height from all children.</span>\n            child_height = std::<span class=\"hljs-built_in\">max</span>(child_height, dp[v] + <span class=\"hljs-number\">1</span>);\n        }\n    }\n    <span class=\"hljs-comment\">// assigned the max child height to current visited node.</span>\n    dp[u] = child_height;\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-comment\">// number of nodes</span>\n    <span class=\"hljs-type\">int</span> number_of_nodes;\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter number of nodes of the tree : &quot;</span> &lt;&lt; std::endl;\n    std::cin &gt;&gt; number_of_nodes;\n\n    <span class=\"hljs-comment\">// u, v denotes an undirected edge of tree.</span>\n    <span class=\"hljs-type\">int</span> u, v;\n    <span class=\"hljs-comment\">// Tree contains exactly n-1 edges where n denotes the number of nodes.</span>\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter edges of the tree : &quot;</span> &lt;&lt; std::endl;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; number_of_nodes - <span class=\"hljs-number\">1</span>; i++) {\n        std::cin &gt;&gt; u &gt;&gt; v;\n        <span class=\"hljs-comment\">// undirected tree u -&gt; v and v -&gt; u.</span>\n        adj[u].<span class=\"hljs-built_in\">push_back</span>(v);\n        adj[v].<span class=\"hljs-built_in\">push_back</span>(u);\n    }\n    <span class=\"hljs-comment\">// initialize all nodes as unvisited.</span>\n    visited.<span class=\"hljs-built_in\">assign</span>(number_of_nodes + <span class=\"hljs-number\">1</span>, <span class=\"hljs-literal\">false</span>);\n    <span class=\"hljs-comment\">// initialize depth of all nodes to 0.</span>\n    dp.<span class=\"hljs-built_in\">assign</span>(number_of_nodes + <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>);\n    <span class=\"hljs-comment\">// function call which will initialize the height of all nodes.</span>\n    <span class=\"hljs-built_in\">depth_first_search</span>(<span class=\"hljs-number\">1</span>);\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Height of the Tree : &quot;</span> &lt;&lt; dp[<span class=\"hljs-number\">1</span>] &lt;&lt; std::endl;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Mann Mehta",
+      "email": "mannmehta2199@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Mann Mehta",
+      "email": "44433995+mann2108@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

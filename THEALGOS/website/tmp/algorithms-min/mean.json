@@ -1,0 +1,26 @@
+{
+  "slug": "mean",
+  "name": "Mean",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Satbek Abdyldayev",
+      "email": "satbekmyrza@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

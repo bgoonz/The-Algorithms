@@ -1,0 +1,16 @@
+{
+  "slug": "pearson-correlation",
+  "name": "Pearson Correlation",
+  "categories": ["statistics"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

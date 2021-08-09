@@ -1,0 +1,31 @@
+{
+  "slug": "tree-height",
+  "name": "Tree Height",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Mann Mehta",
+      "email": "mannmehta2199@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Mann Mehta",
+      "email": "44433995+mann2108@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "sum-of-geometric-progression",
+  "name": "Sum of Geometric Progression",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/sum_of_geometric_progression.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/sum_of_geometric_progression.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">sum_of_geometric_progression</span>(<span class=\"hljs-params\">\r\n    first_term: <span class=\"hljs-built_in\">int</span>, common_ratio: <span class=\"hljs-built_in\">int</span>, num_of_terms: <span class=\"hljs-built_in\">int</span>\r\n</span>) -&gt; <span class=\"hljs-built_in\">float</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot; &quot;\r\n    Return the sum of n terms in a geometric progression.\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, 2, 10)\r\n    1023.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, 10, 5)\r\n    11111.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(0, 2, 10)\r\n    0.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, 0, 10)\r\n    1.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, 2, 0)\r\n    -0.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(-1, 2, 10)\r\n    -1023.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, -2, 10)\r\n    -341.0\r\n    &gt;&gt;&gt; sum_of_geometric_progression(1, 2, -10)\r\n    -0.9990234375\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> common_ratio == <span class=\"hljs-number\">1</span>:\r\n        <span class=\"hljs-comment\"># Formula for sum if common ratio is 1</span>\r\n        <span class=\"hljs-keyword\">return</span> num_of_terms * first_term\r\n\r\n    <span class=\"hljs-comment\"># Formula for finding sum of n terms of a GeometricProgression</span>\r\n    <span class=\"hljs-keyword\">return</span> (first_term / (<span class=\"hljs-number\">1</span> - common_ratio)) * (<span class=\"hljs-number\">1</span> - common_ratio ** num_of_terms)\r\n"
+    },
+    "julia": {
+      "dir": "src/math/sum_of_geometric_progression.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/sum_of_geometric_progression.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    sum_gp(first_term, ratio, num_terms)\n\nFinds sum of n terms in a geometric progression\n\n# Input parameters\n\n- first_term : first term of the series\n- raio      : common ratio between consecutive terms -&gt; a2/a1 or a3/a2 or a4/a3\n- num_terms  : number of terms in the series till which we count sum\n\n# Example\n\n```julia\nsum_gp(1, 2, 10)    # 1023.0\nsum_gp(1, 10, 5)    # 11111.0\nsum_gp(0, 2, 10)    # 0.0\nsum_gp(1, 0, 10)    # 1.0\nsum_gp(1, 2, 0)     # -0.0\nsum_gp(-1, 2, 10)   # -1023.0\nsum_gp(1, -2, 10)   # -341.0\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> sum_gp(first_term, ratio, num_terms)\n    <span class=\"hljs-comment\"># case where ratio is 1</span>\n    <span class=\"hljs-keyword\">if</span> ratio == <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">return</span> num_terms * first_term\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-comment\"># ormula for finding sum of n terms of a geometric progression</span>\n    <span class=\"hljs-keyword\">return</span> (first_term / (<span class=\"hljs-number\">1</span> - ratio)) * (<span class=\"hljs-number\">1</span> - ratio^num_terms)\n<span class=\"hljs-keyword\">end</span>\n\n\n\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Advik Kulkarni",
+      "email": "56193714+AxSmasher44@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

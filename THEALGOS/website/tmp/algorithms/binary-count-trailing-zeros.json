@@ -1,0 +1,21 @@
+{
+  "slug": "binary-count-trailing-zeros",
+  "name": "Binary Count Trailing Zeros",
+  "categories": ["bitmanipulation"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "bit_manipulation/binary_count_trailing_zeros.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/bit_manipulation/binary_count_trailing_zeros.py",
+      "code": "<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> log2\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">binary_count_trailing_zeros</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Take in 1 integer, return a number that is\n    the number of trailing zeros in binary representation of that number.\n\n    &gt;&gt;&gt; binary_count_trailing_zeros(25)\n    0\n    &gt;&gt;&gt; binary_count_trailing_zeros(36)\n    2\n    &gt;&gt;&gt; binary_count_trailing_zeros(16)\n    4\n    &gt;&gt;&gt; binary_count_trailing_zeros(58)\n    1\n    &gt;&gt;&gt; binary_count_trailing_zeros(4294967296)\n    32\n    &gt;&gt;&gt; binary_count_trailing_zeros(0)\n    0\n    &gt;&gt;&gt; binary_count_trailing_zeros(-10)\n    Traceback (most recent call last):\n        ...\n    ValueError: Input value must be a positive integer\n    &gt;&gt;&gt; binary_count_trailing_zeros(0.8)\n    Traceback (most recent call last):\n        ...\n    TypeError: Input value must be a &#x27;int&#x27; type\n    &gt;&gt;&gt; binary_count_trailing_zeros(&quot;0&quot;)\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> a &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Input value must be a positive integer&quot;</span>)\n    <span class=\"hljs-keyword\">elif</span> <span class=\"hljs-built_in\">isinstance</span>(a, <span class=\"hljs-built_in\">float</span>):\n        <span class=\"hljs-keyword\">raise</span> TypeError(<span class=\"hljs-string\">&quot;Input value must be a &#x27;int&#x27; type&quot;</span>)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">if</span> (a == <span class=\"hljs-number\">0</span>) <span class=\"hljs-keyword\">else</span> <span class=\"hljs-built_in\">int</span>(log2(a &amp; -a))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vivek Patel",
+      "email": "vicky.p8980@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

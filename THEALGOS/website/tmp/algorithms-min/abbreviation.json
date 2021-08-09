@@ -1,0 +1,42 @@
+{
+  "slug": "abbreviation",
+  "name": "Abbreviation",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashish Bhanu Daulatabad",
+      "email": "supersonic12910@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sanders Lin",
+      "email": "45224617+SandersLin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jigyasa G",
+      "email": "jigsgandhi97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "Erdenezul",
+      "email": "erdenezul@shine.mn",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

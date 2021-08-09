@@ -1,0 +1,26 @@
+{
+  "slug": "back-propagation-neural-network",
+  "name": "Back Propagation Neural Network",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Yash Bhardwaj",
+      "email": "yashbhardwaj911@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

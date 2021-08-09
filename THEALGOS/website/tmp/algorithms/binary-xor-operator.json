@@ -1,0 +1,41 @@
+{
+  "slug": "binary-xor-operator",
+  "name": "Binary Xor Operator",
+  "categories": ["bitmanipulation"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "bit_manipulation/binary_xor_operator.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/bit_manipulation/binary_xor_operator.py",
+      "code": "<span class=\"hljs-comment\"># https://www.tutorialspoint.com/python3/bitwise_operators_example.htm</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">binary_xor</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">int</span>, b: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Take in 2 integers, convert them to binary,\n    return a binary number that is the\n    result of a binary xor operation on the integers provided.\n\n    &gt;&gt;&gt; binary_xor(25, 32)\n    &#x27;0b111001&#x27;\n    &gt;&gt;&gt; binary_xor(37, 50)\n    &#x27;0b010111&#x27;\n    &gt;&gt;&gt; binary_xor(21, 30)\n    &#x27;0b01011&#x27;\n    &gt;&gt;&gt; binary_xor(58, 73)\n    &#x27;0b1110011&#x27;\n    &gt;&gt;&gt; binary_xor(0, 255)\n    &#x27;0b11111111&#x27;\n    &gt;&gt;&gt; binary_xor(256, 256)\n    &#x27;0b000000000&#x27;\n    &gt;&gt;&gt; binary_xor(0, -1)\n    Traceback (most recent call last):\n        ...\n    ValueError: the value of both input must be positive\n    &gt;&gt;&gt; binary_xor(0, 1.1)\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;float&#x27; object cannot be interpreted as an integer\n    &gt;&gt;&gt; binary_xor(&quot;0&quot;, &quot;1&quot;)\n    Traceback (most recent call last):\n        ...\n    TypeError: &#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> a &lt; <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">or</span> b &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;the value of both input must be positive&quot;</span>)\n\n    a_binary = <span class=\"hljs-built_in\">str</span>(<span class=\"hljs-built_in\">bin</span>(a))[<span class=\"hljs-number\">2</span>:]  <span class=\"hljs-comment\"># remove the leading &quot;0b&quot;</span>\n    b_binary = <span class=\"hljs-built_in\">str</span>(<span class=\"hljs-built_in\">bin</span>(b))[<span class=\"hljs-number\">2</span>:]  <span class=\"hljs-comment\"># remove the leading &quot;0b&quot;</span>\n\n    max_len = <span class=\"hljs-built_in\">max</span>(<span class=\"hljs-built_in\">len</span>(a_binary), <span class=\"hljs-built_in\">len</span>(b_binary))\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;0b&quot;</span> + <span class=\"hljs-string\">&quot;&quot;</span>.join(\n        <span class=\"hljs-built_in\">str</span>(<span class=\"hljs-built_in\">int</span>(char_a != char_b))\n        <span class=\"hljs-keyword\">for</span> char_a, char_b <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">zip</span>(a_binary.zfill(max_len), b_binary.zfill(max_len))\n    )\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "ruby": {
+      "dir": "bit_manipulation/binary_xor_operator.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/bit_manipulation/binary_xor_operator.rb",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">binary_xor</span><span class=\"hljs-params\">(x, y)</span></span>\n  raise <span class=\"hljs-string\">&#x27;Input must only contain positive integers&#x27;</span> <span class=\"hljs-keyword\">if</span> x &lt; <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">or</span> y &lt; <span class=\"hljs-number\">0</span>\n\n  binary_x = x.to_s(<span class=\"hljs-number\">2</span>)\n  binary_y = y.to_s(<span class=\"hljs-number\">2</span>)\n\n  <span class=\"hljs-keyword\">if</span> binary_x.length &gt; binary_y.length\n    prefix = <span class=\"hljs-string\">&quot;0&quot;</span> * (binary_x.length - binary_y.length)\n    binary_y = prefix + binary_y\n  <span class=\"hljs-keyword\">elsif</span> binary_y.length &gt; binary_x.length\n    prefix = <span class=\"hljs-string\">&quot;0&quot;</span> * (binary_y.length - binary_x.length)\n    binary_x = prefix + binary_x\n  <span class=\"hljs-keyword\">end</span>\n  result = <span class=\"hljs-string\">&quot;0b&quot;</span>\n  binary_x.each_char.with_index <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|x_char, i|</span>\n    y_char = binary_y[i]\n\n    <span class=\"hljs-keyword\">if</span> (x_char == <span class=\"hljs-string\">&quot;1&quot;</span> &amp;&amp; y_char != <span class=\"hljs-string\">&quot;1&quot;</span>) <span class=\"hljs-params\">||</span> (x_char != <span class=\"hljs-string\">&quot;1&quot;</span> &amp;&amp; y_char == <span class=\"hljs-string\">&quot;1&quot;</span>)\n      result += <span class=\"hljs-string\">&quot;1&quot;</span>\n    <span class=\"hljs-keyword\">else</span>\n      result += <span class=\"hljs-string\">&quot;0&quot;</span>\n    <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  result\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-keyword\">begin</span>\n  binary_xor(-<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>)\n<span class=\"hljs-keyword\">rescue</span> =&gt; e\n  puts e.message\n<span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-comment\"># Input must only contain positive integers</span>\n\nputs binary_xor(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>)\n<span class=\"hljs-comment\"># 0b0</span>\nputs binary_xor(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>)\n<span class=\"hljs-comment\"># 0b1</span>\nputs binary_xor(<span class=\"hljs-number\">1024</span>, <span class=\"hljs-number\">1024</span>)\n<span class=\"hljs-comment\"># 0b00000000000</span>\nputs binary_xor(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1023</span>)\n<span class=\"hljs-comment\"># 0b1111111111</span>\nputs binary_xor(<span class=\"hljs-number\">16</span>, <span class=\"hljs-number\">58</span>)\n<span class=\"hljs-comment\"># 0b101010</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vivek Patel",
+      "email": "vicky.p8980@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vijay Siva",
+      "email": "vijay.sivasubramaniam@instacart.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "decimal-to-hexa",
+  "name": "Decimal to Hexa",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

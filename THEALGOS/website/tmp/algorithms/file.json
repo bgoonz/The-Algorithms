@@ -1,0 +1,21 @@
+{
+  "slug": "file",
+  "name": "File",
+  "categories": ["designpatterns", "prototype"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "designpatterns/prototype/file.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/designpatterns/prototype/file.go",
+      "code": "<span class=\"hljs-keyword\">package</span> prototype\n\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&quot;fmt&quot;</span>\n\n<span class=\"hljs-keyword\">type</span> file <span class=\"hljs-keyword\">struct</span> {\n\tname <span class=\"hljs-keyword\">string</span>\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(f *file)</span> <span class=\"hljs-title\">print</span><span class=\"hljs-params\">(indentation <span class=\"hljs-keyword\">string</span>)</span></span> {\n\tfmt.Println(indentation + f.name)\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(f *file)</span> <span class=\"hljs-title\">clone</span><span class=\"hljs-params\">()</span> <span class=\"hljs-title\">nodeInterface</span></span> {\n\t<span class=\"hljs-keyword\">return</span> &amp;file{name: f.name + <span class=\"hljs-string\">&quot;_clone&quot;</span>}\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "abdelrhman",
+      "email": "mohamed95zoytak@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

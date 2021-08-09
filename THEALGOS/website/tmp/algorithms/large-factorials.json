@@ -1,0 +1,15 @@
+{
+  "slug": "large-factorials",
+  "name": "Large Factorials",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "misc/large_factorials.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/misc/large_factorials.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> a[<span class=\"hljs-number\">16500</span>], T;\n    <span class=\"hljs-type\">long</span> <span class=\"hljs-type\">long</span> <span class=\"hljs-type\">int</span> i, j;\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter number of test cases : &quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;T);\n\n    <span class=\"hljs-keyword\">while</span> (T--)\n    {\n        <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-number\">16500</span>; i++)\n        {\n            a[i] = <span class=\"hljs-number\">0</span>;\n        }\n\n        a[<span class=\"hljs-number\">1</span>] = <span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-type\">int</span> N, carry = <span class=\"hljs-number\">0</span>, count = <span class=\"hljs-number\">0</span>;\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter a number : &quot;</span>);\n        <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;N);\n\n        <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">1</span>; i &lt;= N; i++)\n        {\n            carry = <span class=\"hljs-number\">0</span>;\n            <span class=\"hljs-keyword\">for</span> (j = <span class=\"hljs-number\">0</span>; j &lt; <span class=\"hljs-number\">16500</span>; j++)\n            {\n                a[j] = a[j] * i + carry;\n                carry = a[j] / <span class=\"hljs-number\">10</span>;\n                a[j] = a[j] % <span class=\"hljs-number\">10</span>;\n            }\n        }\n\n        <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-number\">16500</span>; i++)\n        {\n            <span class=\"hljs-keyword\">if</span> (a[i] != <span class=\"hljs-number\">0</span>)\n            {\n                count = i;\n            }\n        }\n\n        <span class=\"hljs-keyword\">for</span> (i = count; i &gt; <span class=\"hljs-number\">0</span>; i--)\n        {\n            <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, a[i]);\n        }\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>);\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

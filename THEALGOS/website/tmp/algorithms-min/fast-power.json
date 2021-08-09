@@ -1,0 +1,10 @@
+{
+  "slug": "fast-power",
+  "name": "Fast Power",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

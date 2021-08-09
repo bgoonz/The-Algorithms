@@ -1,0 +1,43 @@
+{
+  "slug": "stooge-sort",
+  "name": "Stooge Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "c": "",
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Aruj Sharma",
+      "email": "aruj123sharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "Marcos Vinicius",
+      "email": "mvhb@cin.ufpe.br",
+      "commits": 1
+    },
+    {
+      "name": "Phyllipe Bezerra",
+      "email": "32442929+pmba@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Charitoc",
+      "email": "37042130+Charitoc@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

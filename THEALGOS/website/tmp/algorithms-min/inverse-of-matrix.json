@@ -1,0 +1,21 @@
+{
+  "slug": "inverse-of-matrix",
+  "name": "Inverse of Matrix",
+  "categories": ["matrix"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "RobotGuy999",
+      "email": "68413067+RobotGuy999@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

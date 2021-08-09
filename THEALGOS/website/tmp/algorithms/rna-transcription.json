@@ -1,0 +1,21 @@
+{
+  "slug": "rna-transcription",
+  "name": "Rna Transcription",
+  "categories": ["exercism", "rnatranscription"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "exercism/rna_transcription/rna_transcription.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/exercism/rna_transcription/rna_transcription.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;string.h&gt;</span></span>\n\n<span class=\"hljs-type\">char</span> *<span class=\"hljs-title function_\">to_rna</span><span class=\"hljs-params\">(<span class=\"hljs-keyword\">const</span> <span class=\"hljs-type\">char</span> s[])</span>\n{\n    <span class=\"hljs-comment\">/* determines the length of the given string */</span>\n    <span class=\"hljs-type\">int</span> len = <span class=\"hljs-built_in\">strlen</span>(s);\n\n    <span class=\"hljs-comment\">/* creates a return string */</span>\n    <span class=\"hljs-type\">char</span> *ans = <span class=\"hljs-built_in\">malloc</span>(<span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-type\">char</span>) * len);\n\n    <span class=\"hljs-comment\">/* for the loop */</span>\n    <span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">/* actual compile process */</span>\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; len; i++)\n    {\n        <span class=\"hljs-keyword\">switch</span> (s[i])\n        {\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;G&#x27;</span>:\n            ans[i] = <span class=\"hljs-string\">&#x27;C&#x27;</span>;\n            <span class=\"hljs-keyword\">break</span>;\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;C&#x27;</span>:\n            ans[i] = <span class=\"hljs-string\">&#x27;G&#x27;</span>;\n            <span class=\"hljs-keyword\">break</span>;\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;T&#x27;</span>:\n            ans[i] = <span class=\"hljs-string\">&#x27;A&#x27;</span>;\n            <span class=\"hljs-keyword\">break</span>;\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;A&#x27;</span>:\n            ans[i] = <span class=\"hljs-string\">&#x27;U&#x27;</span>;\n            <span class=\"hljs-keyword\">break</span>;\n        }\n    }\n\n    <span class=\"hljs-keyword\">return</span> ans;\n}"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

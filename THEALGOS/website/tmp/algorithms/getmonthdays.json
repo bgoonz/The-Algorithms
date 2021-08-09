@@ -1,0 +1,26 @@
+{
+  "slug": "getmonthdays",
+  "name": "GetMonthDays",
+  "categories": ["timingfunctions"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Timing-Functions/GetMonthDays.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Timing-Functions/GetMonthDays.js",
+      "code": "<span class=\"hljs-comment\">/**\n  function that takes month number and its year and returns the number of days within it\n  * <span class=\"hljs-doctag\">@param</span> monthNumber.\n  * <span class=\"hljs-doctag\">@param</span> year.\n  e.g.: mahfoudh.arous<span class=\"hljs-doctag\">@gmail</span>.com -&gt; true\n  e.g.: mahfoudh.arous.com -&gt;false\n*/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">getMonthDays</span> = (<span class=\"hljs-params\">monthNumber, year</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> the31DaysMonths = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">12</span>]\n  <span class=\"hljs-keyword\">const</span> the30DaysMonths = [<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">11</span>]\n\n  <span class=\"hljs-keyword\">if</span> (!the31DaysMonths.<span class=\"hljs-title function_\">includes</span>(monthNumber) &amp;&amp; !the30DaysMonths.<span class=\"hljs-title function_\">includes</span>(monthNumber) &amp;&amp;\n    (monthNumber !== <span class=\"hljs-number\">2</span>)\n  ) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;Invalid Month Number.&#x27;</span>)\n  }\n\n  <span class=\"hljs-keyword\">if</span> (the31DaysMonths.<span class=\"hljs-title function_\">includes</span>(monthNumber)) { <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">31</span> }\n\n  <span class=\"hljs-keyword\">if</span> (the30DaysMonths.<span class=\"hljs-title function_\">includes</span>(monthNumber)) { <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">30</span> }\n\n  <span class=\"hljs-comment\">// Check for Leap year</span>\n  <span class=\"hljs-keyword\">if</span> (year % <span class=\"hljs-number\">4</span> === <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">if</span> ((year % <span class=\"hljs-number\">100</span> !== <span class=\"hljs-number\">0</span>) || (year % <span class=\"hljs-number\">100</span> === <span class=\"hljs-number\">0</span> &amp;&amp; year % <span class=\"hljs-number\">400</span> === <span class=\"hljs-number\">0</span>)) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">29</span>\n    }\n  }\n\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">28</span>\n}\n\n<span class=\"hljs-keyword\">export</span> { getMonthDays }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mahfoudh Arous",
+      "email": "mahfoudh.arous@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

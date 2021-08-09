@@ -1,0 +1,16 @@
+{
+  "slug": "convexhullgraham",
+  "name": "ConvexHullGraham",
+  "categories": ["geometry"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "arnabuchiha",
+      "email": "arnabkeya04@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

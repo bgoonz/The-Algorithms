@@ -1,0 +1,36 @@
+{
+  "slug": "extended-euclidean-algorithm",
+  "name": "Extended Euclidean Algorithm",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/extended_euclidean_algorithm.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/extended_euclidean_algorithm.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nExtended Euclidean Algorithm.\n\nFinds 2 numbers a and b such that it satisfies\nthe equation am + bn = gcd(m, n) (a.k.a Bezout&#x27;s Identity)\n\nhttps://en.wikipedia.org/wiki/Extended_Euclidean_algorithm\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-comment\"># @Author: S. Sharma &lt;silentcat&gt;</span>\n<span class=\"hljs-comment\"># @Date:   2019-02-25T12:08:53-06:00</span>\n<span class=\"hljs-comment\"># @Email:  silentcat@protonmail.com</span>\n<span class=\"hljs-comment\"># @Last modified by:   pikulet</span>\n<span class=\"hljs-comment\"># @Last modified time: 2020-10-02</span>\n\n<span class=\"hljs-keyword\">import</span> sys\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Tuple</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">extended_euclidean_algorithm</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">int</span>, b: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-type\">Tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Extended Euclidean Algorithm.\n\n    Finds 2 numbers a and b such that it satisfies\n    the equation am + bn = gcd(m, n) (a.k.a Bezout&#x27;s Identity)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(1, 24)\n    (1, 0)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(8, 14)\n    (2, -1)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(240, 46)\n    (-9, 47)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(1, -4)\n    (1, 0)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(-2, -4)\n    (-1, 0)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(0, -4)\n    (0, -1)\n\n    &gt;&gt;&gt; extended_euclidean_algorithm(2, 0)\n    (1, 0)\n\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># base cases</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">abs</span>(a) == <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> a, <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">elif</span> <span class=\"hljs-built_in\">abs</span>(b) == <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>, b\n\n    old_remainder, remainder = a, b\n    old_coeff_a, coeff_a = <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>\n    old_coeff_b, coeff_b = <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">while</span> remainder != <span class=\"hljs-number\">0</span>:\n        quotient = old_remainder // remainder\n        old_remainder, remainder = remainder, old_remainder - quotient * remainder\n        old_coeff_a, coeff_a = coeff_a, old_coeff_a - quotient * coeff_a\n        old_coeff_b, coeff_b = coeff_b, old_coeff_b - quotient * coeff_b\n\n    <span class=\"hljs-comment\"># sign correction for negative numbers</span>\n    <span class=\"hljs-keyword\">if</span> a &lt; <span class=\"hljs-number\">0</span>:\n        old_coeff_a = -old_coeff_a\n    <span class=\"hljs-keyword\">if</span> b &lt; <span class=\"hljs-number\">0</span>:\n        old_coeff_b = -old_coeff_b\n\n    <span class=\"hljs-keyword\">return</span> old_coeff_a, old_coeff_b\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-string\">&quot;&quot;&quot;Call Extended Euclidean Algorithm.&quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(sys.argv) &lt; <span class=\"hljs-number\">3</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;2 integer arguments required&quot;</span>)\n        exit(<span class=\"hljs-number\">1</span>)\n    a = <span class=\"hljs-built_in\">int</span>(sys.argv[<span class=\"hljs-number\">1</span>])\n    b = <span class=\"hljs-built_in\">int</span>(sys.argv[<span class=\"hljs-number\">2</span>])\n    <span class=\"hljs-built_in\">print</span>(extended_euclidean_algorithm(a, b))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Joyce",
+      "email": "jycyeo@yahoo.com.sg",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "S. Sharma",
+      "email": "36388139+s1l3ntcat@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

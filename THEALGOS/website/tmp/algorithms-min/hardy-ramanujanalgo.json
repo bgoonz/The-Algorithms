@@ -1,0 +1,21 @@
+{
+  "slug": "hardy-ramanujanalgo",
+  "name": "Hardy Ramanujanalgo",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Alfin_William",
+      "email": "alfinwilliam@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

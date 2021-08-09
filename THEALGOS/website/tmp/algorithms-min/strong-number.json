@@ -1,0 +1,10 @@
+{
+  "slug": "strong-number",
+  "name": "Strong Number",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

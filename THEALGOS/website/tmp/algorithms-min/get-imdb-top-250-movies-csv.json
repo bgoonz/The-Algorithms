@@ -1,0 +1,21 @@
+{
+  "slug": "get-imdb-top-250-movies-csv",
+  "name": "Get Imdb Top 250 Movies Csv",
+  "categories": ["webprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "nishithshowri006",
+      "email": "58651995+nishithshowri006@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

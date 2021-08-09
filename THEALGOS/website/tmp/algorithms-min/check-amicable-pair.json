@@ -1,0 +1,10 @@
+{
+  "slug": "check-amicable-pair",
+  "name": "Check Amicable Pair",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

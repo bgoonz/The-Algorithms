@@ -1,0 +1,21 @@
+{
+  "slug": "karatsuba",
+  "name": "Karatsuba",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rishabh Kumar",
+      "email": "rishabh0098@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

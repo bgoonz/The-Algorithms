@@ -1,0 +1,16 @@
+{
+  "slug": "change-brightness",
+  "name": "Change Brightness",
+  "categories": ["digitalimageprocessing"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Furkan Atesli",
+      "email": "31884209+furkanatesli@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

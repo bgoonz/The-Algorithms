@@ -1,0 +1,26 @@
+{
+  "slug": "factorial-iterative",
+  "name": "Factorial Iterative",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Abhinav Anand",
+      "email": "manasgmishra@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Pooja",
+      "email": "pooja016mca19@igdtuw.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

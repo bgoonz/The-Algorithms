@@ -1,0 +1,31 @@
+{
+  "slug": "edmonds-karp-multiple-source-and-sink",
+  "name": "Edmonds Karp Multiple Source and Sink",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Viraat Das",
+      "email": "viraat.laldas@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

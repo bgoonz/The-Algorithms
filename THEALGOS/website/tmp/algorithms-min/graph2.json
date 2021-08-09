@@ -1,0 +1,10 @@
+{
+  "slug": "graph2",
+  "name": "Graph2",
+  "categories": ["datastructures", "graphs"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

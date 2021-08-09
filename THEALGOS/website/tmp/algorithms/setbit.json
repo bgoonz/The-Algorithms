@@ -1,0 +1,21 @@
+{
+  "slug": "setbit",
+  "name": "SetBit",
+  "categories": ["bitmanipulation"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Bit-Manipulation/SetBit.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Bit-Manipulation/SetBit.js",
+      "code": "<span class=\"hljs-comment\">/*\n * Setting Bit: https://www.geeksforgeeks.org/set-k-th-bit-given-number/\n *\n * To set any bit we use bitwise OR (|) operator.\n *\n * Bitwise OR (|) compares the bits of the 32\n * bit binary representations of the number and\n * returns a number after comparing each bit.\n *\n * 0 | 0 -&gt; 0\n * 0 | 1 -&gt; 1\n * 1 | 0 -&gt; 1\n * 1 | 1 -&gt; 1\n *\n * In-order to set kth bit of a number (where k is the position where bit is to be changed)\n * we need to shift 1 k times to its left and then perform bitwise OR operation with the\n * number and result of left shift performed just before.\n *\n * References:\n * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR\n */</span>\n\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">number</span>} <span class=\"hljs-variable\">number</span>\n * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">number</span>} <span class=\"hljs-variable\">bitPosition</span> - zero based.\n * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-type\">number</span>}\n */</span>\n\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">setBit</span> = (<span class=\"hljs-params\">number, bitPosition</span>) =&gt; {\n  <span class=\"hljs-keyword\">return</span> number | (<span class=\"hljs-number\">1</span> &lt;&lt; bitPosition)\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AbhinavXT",
+      "email": "abhinavpathaka17@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

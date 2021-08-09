@@ -1,0 +1,112 @@
+{
+  "slug": "palindrome",
+  "name": "Palindrome",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "java": "",
+    "c": "",
+    "haskell": "",
+    "ruby": "",
+    "kotlin": ""
+  },
+  "contributors": [
+    {
+      "name": "1fisedi",
+      "email": "51143882+1fisedi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "najtmarr",
+      "email": "najtmarr@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ali Hassan",
+      "email": "malihassan20@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nour B",
+      "email": "56294154+nourrrrrrrr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Furaha Damién",
+      "email": "furaha.damien@mail.mcgill.ca",
+      "commits": 1
+    },
+    {
+      "name": "jasonptong",
+      "email": "43040084+jasonptong@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Prasoon",
+      "email": "prasoonpandey06@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "percy07",
+      "email": "56677891+percy07@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Arora",
+      "email": "shivam.arora@inficold.com",
+      "commits": 1
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "alessandro_gsantos",
+      "email": "alessandro.santos@bemobi.com.br",
+      "commits": 2
+    },
+    {
+      "name": "liamdp",
+      "email": "liam.pickering@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Gerasimos Alexiou",
+      "email": "jerrak0s@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

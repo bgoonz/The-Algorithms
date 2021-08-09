@@ -1,0 +1,21 @@
+{
+  "slug": "lstm-prediction",
+  "name": "Lstm Prediction",
+  "categories": ["machinelearning", "lstm"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Jeffin Francis",
+      "email": "francisjeffin07@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "parenthesis",
+  "name": "Parenthesis",
+  "categories": ["datastructures", "stack"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

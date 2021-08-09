@@ -1,0 +1,16 @@
+{
+  "slug": "fftbluestein",
+  "name": "FFTBluestein",
+  "categories": ["math"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "JohnKara",
+      "email": "kcioannis@csd.auth.gr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

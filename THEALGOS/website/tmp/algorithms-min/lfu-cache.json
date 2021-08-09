@@ -1,0 +1,22 @@
+{
+  "slug": "lfu-cache",
+  "name": "Lfu Cache",
+  "categories": ["others"],
+  "implementations": {
+    "python": "",
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

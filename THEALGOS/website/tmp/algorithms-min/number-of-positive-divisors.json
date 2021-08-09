@@ -1,0 +1,10 @@
+{
+  "slug": "number-of-positive-divisors",
+  "name": "Number of Positive Divisors",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

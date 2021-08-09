@@ -1,0 +1,115 @@
+{
+  "slug": "knapsack",
+  "name": "Knapsack",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "java": "",
+    "go": "",
+    "rust": ""
+  },
+  "contributors": [
+    {
+      "name": "Egor Bronnikov",
+      "email": "52889537+endygamedev@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "73381027+Rratic@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "rxaru",
+      "email": "ai.kanaria.ai@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Serwio YK",
+      "email": "56473255+Serwios@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "qwerty50000a",
+      "email": "37273442+qwerty50000a@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Deepak",
+      "email": "deepakkumar180997@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "pkdism",
+      "email": "pawan.dwivedi94@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Tobias Schröder",
+      "email": "5970416+tbsschroeder@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Maxwell Aladago",
+      "email": "maxwell.aladago@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "dhruvsaini",
+      "email": "dhruv_saini@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "bharath-123",
+      "email": "vedabharath12345@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 8
+    }
+  ],
+  "explanationUrl": {}
+}

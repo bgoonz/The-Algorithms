@@ -1,0 +1,31 @@
+{
+  "slug": "sherman-morrison",
+  "name": "Sherman Morrison",
+  "categories": ["matrix"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "McDic",
+      "email": "spongbob9876@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

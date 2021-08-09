@@ -1,0 +1,10 @@
+{
+  "slug": "n-choose-r",
+  "name": "N Choose R",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

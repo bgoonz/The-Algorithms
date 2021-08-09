@@ -1,0 +1,21 @@
+{
+  "slug": "removeduplicatefromstring",
+  "name": "RemoveDuplicateFromString",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/RemoveDuplicateFromString.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/RemoveDuplicateFromString.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-keyword\">import</span> java.io.BufferedReader;\n<span class=\"hljs-keyword\">import</span> java.io.InputStreamReader;\n\n<span class=\"hljs-comment\">/** <span class=\"hljs-doctag\">@author</span> Varun Upadhyay (https://github.com/varunu28) */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">RemoveDuplicateFromString</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> <span class=\"hljs-keyword\">throws</span> Exception {\n    <span class=\"hljs-type\">BufferedReader</span> <span class=\"hljs-variable\">br</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">BufferedReader</span>(<span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">InputStreamReader</span>(System.in));\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">inpStr</span> <span class=\"hljs-operator\">=</span> br.readLine();\n\n    System.out.println(<span class=\"hljs-string\">&quot;Actual string is: &quot;</span> + inpStr);\n    System.out.println(<span class=\"hljs-string\">&quot;String after removing duplicates: &quot;</span> + removeDuplicate(inpStr));\n\n    br.close();\n  }\n\n  <span class=\"hljs-comment\">/**\n   * This method produces a string after removing all the duplicate characters from input string and\n   * returns it Example: Input String - &quot;aabbbccccddddd&quot; Output String - &quot;abcd&quot;\n   *\n   * <span class=\"hljs-doctag\">@param</span> s String from which duplicate characters have to be removed\n   * <span class=\"hljs-doctag\">@return</span> string with only unique characters\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">removeDuplicate</span><span class=\"hljs-params\">(String s)</span> {\n    <span class=\"hljs-keyword\">if</span> (s == <span class=\"hljs-literal\">null</span> || s.isEmpty()) {\n      <span class=\"hljs-keyword\">return</span> s;\n    }\n\n    <span class=\"hljs-type\">StringBuilder</span> <span class=\"hljs-variable\">sb</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">StringBuilder</span>();\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">n</span> <span class=\"hljs-operator\">=</span> s.length();\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; n; i++) {\n      <span class=\"hljs-keyword\">if</span> (sb.toString().indexOf(s.charAt(i)) == -<span class=\"hljs-number\">1</span>) {\n        sb.append(String.valueOf(s.charAt(i)));\n      }\n    }\n\n    <span class=\"hljs-keyword\">return</span> sb.toString();\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

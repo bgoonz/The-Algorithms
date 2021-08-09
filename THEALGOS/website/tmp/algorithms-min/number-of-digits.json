@@ -1,0 +1,54 @@
+{
+  "slug": "number-of-digits",
+  "name": "Number of Digits",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "java": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Vasu Gamdha",
+      "email": "40864108+vasugamdha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vignesh",
+      "email": "ravivignesh2000@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jeffin Francis",
+      "email": "francisjeffin07@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Abhinav Anand",
+      "email": "manasgmishra@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

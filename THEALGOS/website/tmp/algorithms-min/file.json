@@ -1,0 +1,16 @@
+{
+  "slug": "file",
+  "name": "File",
+  "categories": ["designpatterns", "prototype"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "abdelrhman",
+      "email": "mohamed95zoytak@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

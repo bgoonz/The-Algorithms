@@ -1,0 +1,21 @@
+{
+  "slug": "min-max-heap",
+  "name": "Min-Max Heap",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "petrogavriluk",
+      "email": "petrogavriluk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

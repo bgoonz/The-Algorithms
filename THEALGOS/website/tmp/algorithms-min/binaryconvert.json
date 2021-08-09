@@ -1,0 +1,16 @@
+{
+  "slug": "binaryconvert",
+  "name": "BinaryConvert",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Arwy Syahputra Siregar",
+      "email": "55026697+arwysyah@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

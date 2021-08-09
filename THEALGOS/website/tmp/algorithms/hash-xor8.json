@@ -1,0 +1,15 @@
+{
+  "slug": "hash-xor8",
+  "name": "Hash Xor8",
+  "categories": ["hashing"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "hash/hash_xor8.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/hash/hash_xor8.c",
+      "code": "<span class=\"hljs-comment\">/**\n * @addtogroup hash Hash algorithms\n * @{\n * @file hash_xor8.c\n * @author [Christian Bender](https://github.com/christianbender)\n * @brief 8-bit [XOR hash](https://en.wikipedia.org/wiki/XOR_cipher) algorithm\n * for ASCII characters\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;assert.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;inttypes.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n\n<span class=\"hljs-comment\">/**\n * @brief 8-bit XOR algorithm implementation\n *\n * @param s NULL terminated ASCII string to hash\n * @return 8-bit hash result\n */</span>\n<span class=\"hljs-type\">uint8_t</span> <span class=\"hljs-title function_\">xor8</span><span class=\"hljs-params\">(<span class=\"hljs-keyword\">const</span> <span class=\"hljs-type\">char</span>* s)</span>\n{\n    <span class=\"hljs-type\">uint8_t</span> hash = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-type\">size_t</span> i = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">while</span> (s[i] != <span class=\"hljs-string\">&#x27;\\0&#x27;</span>)\n    {\n        hash = (hash + s[i]) &amp; <span class=\"hljs-number\">0xff</span>;\n        i++;\n    }\n    <span class=\"hljs-keyword\">return</span> (((hash ^ <span class=\"hljs-number\">0xff</span>) + <span class=\"hljs-number\">1</span>) &amp; <span class=\"hljs-number\">0xff</span>);\n}\n\n<span class=\"hljs-comment\">/**\n * @brief Test function for ::xor8\n * \\returns None\n */</span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">test_xor8</span><span class=\"hljs-params\">()</span>\n{\n    assert(xor8(<span class=\"hljs-string\">&quot;Hello World&quot;</span>) == <span class=\"hljs-number\">228</span>);\n    assert(xor8(<span class=\"hljs-string\">&quot;Hello World!&quot;</span>) == <span class=\"hljs-number\">195</span>);\n    assert(xor8(<span class=\"hljs-string\">&quot;Hello world&quot;</span>) == <span class=\"hljs-number\">196</span>);\n    assert(xor8(<span class=\"hljs-string\">&quot;Hello world!&quot;</span>) == <span class=\"hljs-number\">163</span>);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Tests passed\\n&quot;</span>);\n}\n\n<span class=\"hljs-comment\">/** @} */</span>\n\n<span class=\"hljs-comment\">/** Main function */</span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    test_xor8();\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

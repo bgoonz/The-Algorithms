@@ -1,0 +1,31 @@
+{
+  "slug": "monte-carlo-dice",
+  "name": "Monte Carlo Dice",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/monte_carlo_dice.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/monte_carlo_dice.py",
+      "code": "<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n<span class=\"hljs-keyword\">import</span> random\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Dice</span>:\n    NUM_SIDES = <span class=\"hljs-number\">6</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-string\">&quot;&quot;&quot;Initialize a six sided dice&quot;&quot;&quot;</span>\n        self.sides = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, Dice.NUM_SIDES + <span class=\"hljs-number\">1</span>))\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">roll</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> random.choice(self.sides)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_str_</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;Fair Dice&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">throw_dice</span>(<span class=\"hljs-params\">num_throws: <span class=\"hljs-built_in\">int</span>, num_dice: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">2</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">float</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Return probability list of all possible sums when throwing dice.\n\n    &gt;&gt;&gt; random.seed(0)\n    &gt;&gt;&gt; throw_dice(10, 1)\n    [10.0, 0.0, 30.0, 50.0, 10.0, 0.0]\n    &gt;&gt;&gt; throw_dice(100, 1)\n    [19.0, 17.0, 17.0, 11.0, 23.0, 13.0]\n    &gt;&gt;&gt; throw_dice(1000, 1)\n    [18.8, 15.5, 16.3, 17.6, 14.2, 17.6]\n    &gt;&gt;&gt; throw_dice(10000, 1)\n    [16.35, 16.89, 16.93, 16.6, 16.52, 16.71]\n    &gt;&gt;&gt; throw_dice(10000, 2)\n    [2.74, 5.6, 7.99, 11.26, 13.92, 16.7, 14.44, 10.63, 8.05, 5.92, 2.75]\n    &quot;&quot;&quot;</span>\n    dices = [Dice() <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(num_dice)]\n    count_of_sum = [<span class=\"hljs-number\">0</span>] * (<span class=\"hljs-built_in\">len</span>(dices) * Dice.NUM_SIDES + <span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(num_throws):\n        count_of_sum[<span class=\"hljs-built_in\">sum</span>(dice.roll() <span class=\"hljs-keyword\">for</span> dice <span class=\"hljs-keyword\">in</span> dices)] += <span class=\"hljs-number\">1</span>\n    probability = [<span class=\"hljs-built_in\">round</span>((count * <span class=\"hljs-number\">100</span>) / num_throws, <span class=\"hljs-number\">2</span>) <span class=\"hljs-keyword\">for</span> count <span class=\"hljs-keyword\">in</span> count_of_sum]\n    <span class=\"hljs-keyword\">return</span> probability[num_dice:]  <span class=\"hljs-comment\"># remove probability of sums that never appear</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Naveen M V",
+      "email": "30305957+naviji@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

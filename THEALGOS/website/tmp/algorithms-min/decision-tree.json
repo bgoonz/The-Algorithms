@@ -1,0 +1,58 @@
+{
+  "slug": "decision-tree",
+  "name": "Decision Tree",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": "",
+    "r": "",
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hrishikesh Suslade",
+      "email": "41867989+hash84@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Aaryan Singh",
+      "email": "aaryansingh.18je0005@mme.iitism.ac.in",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Nathan Berger",
+      "email": "berger1954@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

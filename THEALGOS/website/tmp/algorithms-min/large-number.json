@@ -1,0 +1,10 @@
+{
+  "slug": "large-number",
+  "name": "Large Number",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "is-palindrome",
+  "name": "Is Palindrome",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/is_palindrome.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/is_palindrome.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">is_palindrome</span>(<span class=\"hljs-params\">s: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Determine whether the string is palindrome\n    :param s:\n    :return: Boolean\n    &gt;&gt;&gt; is_palindrome(&quot;a man a plan a canal panama&quot;.replace(&quot; &quot;, &quot;&quot;))\n    True\n    &gt;&gt;&gt; is_palindrome(&quot;Hello&quot;)\n    False\n    &gt;&gt;&gt; is_palindrome(&quot;Able was I ere I saw Elba&quot;)\n    True\n    &gt;&gt;&gt; is_palindrome(&quot;racecar&quot;)\n    True\n    &gt;&gt;&gt; is_palindrome(&quot;Mr. Owl ate my metal worm?&quot;)\n    True\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># Since Punctuation, capitalization, and spaces are usually ignored while checking</span>\n    <span class=\"hljs-comment\"># Palindrome,  we first remove them from our string.</span>\n    s = <span class=\"hljs-string\">&quot;&quot;</span>.join([character <span class=\"hljs-keyword\">for</span> character <span class=\"hljs-keyword\">in</span> s.lower() <span class=\"hljs-keyword\">if</span> character.isalnum()])\n    <span class=\"hljs-keyword\">return</span> s == s[::-<span class=\"hljs-number\">1</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    s = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter string to determine whether its palindrome or not: &quot;</span>).strip()\n    <span class=\"hljs-keyword\">if</span> is_palindrome(s):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Given string is palindrome&quot;</span>)\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Given string is not palindrome&quot;</span>)\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/IsPalindrome.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/IsPalindrome.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\n\n<span class=\"hljs-keyword\">module</span> IsPalindrome =\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\n    <span class=\"hljs-comment\">/// Determine whether the string is palindrome</span>\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;str&quot;&gt;&lt;/param&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;returns&gt;Boolean&lt;/returns&gt;</span>\n    <span class=\"hljs-keyword\">let</span> isPalindrome (str: string): bool =\n        <span class=\"hljs-keyword\">let</span> str =\n            str.ToLower()\n            |&gt; Seq.filter (System.Char.IsLetterOrDigit)\n            |&gt; Seq.toList\n\n        str = (str |&gt; List.rev)\n"
+    },
+    "matlab-octave": {
+      "dir": "algorithms/Strings/isPalindrome.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/Strings/isPalindrome.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">y</span> = <span class=\"hljs-title\">isPalindrome</span><span class=\"hljs-params\">(inputWord)</span></span>\n    <span class=\"hljs-comment\">% Return 1 if input string is a palindrome; 0 otherwise. </span>\n    \n    <span class=\"hljs-comment\">% Gets the length of the input word.</span>\n    inputLength = <span class=\"hljs-built_in\">length</span>(inputWord);\n    \n    <span class=\"hljs-comment\">% Number of pairs to compare.</span>\n    lastIndex = <span class=\"hljs-built_in\">floor</span>( inputLength / <span class=\"hljs-number\">2</span>);\n    \n    <span class=\"hljs-comment\">% for every pair of letters in the word check if they match.</span>\n    <span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span> = <span class=\"hljs-number\">1</span> : lastIndex\n        <span class=\"hljs-keyword\">if</span> inputWord(<span class=\"hljs-built_in\">i</span>) ~= inputWord(<span class=\"hljs-keyword\">end</span> + (<span class=\"hljs-number\">1</span> - <span class=\"hljs-built_in\">i</span>))\n            y = <span class=\"hljs-number\">0</span>;\n        <span class=\"hljs-keyword\">else</span>\n            y = <span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    \n<span class=\"hljs-keyword\">end</span>\n"
+    },
+    "julia": {
+      "dir": "src/strings/is_palindrome.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/strings/is_palindrome.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    is_palindrome(s)\nA set of functions to check if a given string\nis a palindrome.\n\nArguments:\n - s - a string =#\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">function</span> is_palindrome(s) <span class=\"hljs-comment\"># Named function</span>\n    s = lowercase(s)\n    s == reverse(s)\n<span class=\"hljs-keyword\">end</span>\n\ns -&gt; s == reverse(s) <span class=\"hljs-comment\"># Anonymous</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Soc Virnyl S. Estela",
+      "email": "66054069+ReneganRonin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Madison Estabrook",
+      "email": "madison.estabrook@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaushik Amar Das",
+      "email": "cozek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "1fisedi",
+      "email": "51143882+1fisedi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwin Das",
+      "email": "ashwindasr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Muhammad Umer Farooq",
+      "email": "mumerfarooqlablnet01@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ishani",
+      "email": "ishanigarkoti08@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

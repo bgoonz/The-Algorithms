@@ -1,0 +1,21 @@
+{
+  "slug": "find-all-duplicates-in-an-array",
+  "name": "Find All Duplicates in an Array",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

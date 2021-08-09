@@ -1,0 +1,10 @@
+{
+  "slug": "large-factorial",
+  "name": "Large Factorial",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

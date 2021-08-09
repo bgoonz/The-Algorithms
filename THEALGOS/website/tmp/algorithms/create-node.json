@@ -1,0 +1,21 @@
+{
+  "slug": "create-node",
+  "name": "Create Node",
+  "categories": ["datastructures", "binarytree"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "data_structures/binary_trees/create_node.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/data_structures/binary_trees/create_node.c",
+      "code": "<span class=\"hljs-comment\">/* Includes structure for a node and a newNode() function which\n   can be used to create a new node in the tree.\n   It is assumed that the data in nodes will be an integer, though\n   function can be modified according to the data type, easily.\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title\">node</span>\n{</span>\n    <span class=\"hljs-class\"><span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title\">node</span> *<span class=\"hljs-title\">leftNode</span>;</span>\n    <span class=\"hljs-type\">int</span> data;\n    <span class=\"hljs-class\"><span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title\">node</span> *<span class=\"hljs-title\">rightNode</span>;</span>\n};\n\n<span class=\"hljs-keyword\">struct</span> node *<span class=\"hljs-title function_\">newNode</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> data)</span>\n{\n    <span class=\"hljs-class\"><span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title\">node</span> *<span class=\"hljs-title\">node</span> =</span> (<span class=\"hljs-keyword\">struct</span> node *)<span class=\"hljs-built_in\">malloc</span>(<span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-keyword\">struct</span> node));\n\n    node-&gt;leftNode = <span class=\"hljs-literal\">NULL</span>;\n    node-&gt;data = data;\n    node-&gt;rightNode = <span class=\"hljs-literal\">NULL</span>;\n\n    <span class=\"hljs-keyword\">return</span> node;\n}\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">void</span>)</span>\n{\n    <span class=\"hljs-comment\">/* new node can be created here as :-\n\n       struct node *nameOfNode = newNode(data);\n\n       and tree can be formed by creating further nodes at\n       nameOfNode-&gt;leftNode and so on.\n    */</span>\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Naman Bhalla",
+      "email": "namanbhalla1998@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

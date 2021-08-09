@@ -1,0 +1,31 @@
+{
+  "slug": "page-rank",
+  "name": "Page Rank",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/page_rank.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/page_rank.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nAuthor: https://github.com/bhushan-borole\n&quot;&quot;&quot;</span>\n<span class=\"hljs-string\">&quot;&quot;&quot;\nThe input graph for the algorithm is:\n\n  A B C\nA 0 1 1\nB 0 0 1\nC 1 0 0\n\n&quot;&quot;&quot;</span>\n\ngraph = [[<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>], [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>]]\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, name</span>):\n        self.name = name\n        self.inbound = []\n        self.outbound = []\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">add_inbound</span>(<span class=\"hljs-params\">self, node</span>):\n        self.inbound.append(node)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">add_outbound</span>(<span class=\"hljs-params\">self, node</span>):\n        self.outbound.append(node)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__repr__</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">f&quot;Node <span class=\"hljs-subst\">{self.name}</span>: Inbound: <span class=\"hljs-subst\">{self.inbound}</span> ; Outbound: <span class=\"hljs-subst\">{self.outbound}</span>&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">page_rank</span>(<span class=\"hljs-params\">nodes, limit=<span class=\"hljs-number\">3</span>, d=<span class=\"hljs-number\">0.85</span></span>):\n    ranks = {}\n    <span class=\"hljs-keyword\">for</span> node <span class=\"hljs-keyword\">in</span> nodes:\n        ranks[node.name] = <span class=\"hljs-number\">1</span>\n\n    outbounds = {}\n    <span class=\"hljs-keyword\">for</span> node <span class=\"hljs-keyword\">in</span> nodes:\n        outbounds[node.name] = <span class=\"hljs-built_in\">len</span>(node.outbound)\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(limit):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;======= Iteration <span class=\"hljs-subst\">{i + <span class=\"hljs-number\">1</span>}</span> =======&quot;</span>)\n        <span class=\"hljs-keyword\">for</span> j, node <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(nodes):\n            ranks[node.name] = (<span class=\"hljs-number\">1</span> - d) + d * <span class=\"hljs-built_in\">sum</span>(\n                [ranks[ib] / outbounds[ib] <span class=\"hljs-keyword\">for</span> ib <span class=\"hljs-keyword\">in</span> node.inbound]\n            )\n        <span class=\"hljs-built_in\">print</span>(ranks)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    names = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter Names of the Nodes: &quot;</span>).split())\n\n    nodes = [Node(name) <span class=\"hljs-keyword\">for</span> name <span class=\"hljs-keyword\">in</span> names]\n\n    <span class=\"hljs-keyword\">for</span> ri, row <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(graph):\n        <span class=\"hljs-keyword\">for</span> ci, col <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(row):\n            <span class=\"hljs-keyword\">if</span> col == <span class=\"hljs-number\">1</span>:\n                nodes[ci].add_inbound(names[ri])\n                nodes[ri].add_outbound(names[ci])\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;======= Nodes =======&quot;</span>)\n    <span class=\"hljs-keyword\">for</span> node <span class=\"hljs-keyword\">in</span> nodes:\n        <span class=\"hljs-built_in\">print</span>(node)\n\n    page_rank(nodes)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Bhushan Borole",
+      "email": "37565807+bhushan-borole@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

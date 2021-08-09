@@ -1,0 +1,31 @@
+{
+  "slug": "mean",
+  "name": "Mean",
+  "categories": ["numericalmethods"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "numerical_methods/mean.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/numerical_methods/mean.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;limits.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;math.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">define</span> MAX_LEN INT_MAX</span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> argc, <span class=\"hljs-type\">char</span> **argv)</span>\n{\n    <span class=\"hljs-type\">int</span> *a, n = <span class=\"hljs-number\">10</span>, i, j, temp, sum = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-type\">float</span> mean;\n\n    <span class=\"hljs-keyword\">if</span> (argc == <span class=\"hljs-number\">2</span>)\n    {\n        n = atoi(argv[<span class=\"hljs-number\">1</span>]);\n        <span class=\"hljs-keyword\">if</span> (n &gt;= MAX_LEN)\n        {\n            <span class=\"hljs-built_in\">fprintf</span>(<span class=\"hljs-built_in\">stderr</span>, <span class=\"hljs-string\">&quot;Maximum %d!\\n&quot;</span>, MAX_LEN);\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span>;\n        }\n    }\n    \n    a = (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-built_in\">malloc</span>(n * <span class=\"hljs-keyword\">sizeof</span>(<span class=\"hljs-type\">int</span>));\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Random Numbers Generated are: &quot;</span>);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++)\n    {\n        a[i] = rand() % <span class=\"hljs-number\">100</span>;\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%2d, &quot;</span>, a[i]);\n    }\n    <span class=\"hljs-built_in\">putchar</span>(<span class=\"hljs-string\">&#x27;\\n&#x27;</span>);\n\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++) sum = sum + a[i];\n\n    mean = sum / (<span class=\"hljs-type\">float</span>)n;\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\nMean: &quot;</span>);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%f\\n&quot;</span>, mean);\n\n    <span class=\"hljs-built_in\">free</span>(a);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Satbek Abdyldayev",
+      "email": "satbekmyrza@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

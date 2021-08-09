@@ -1,0 +1,31 @@
+{
+  "slug": "electric-power",
+  "name": "Electric Power",
+  "categories": ["electronics"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "electronics/electric_power.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/electronics/electric_power.py",
+      "code": "<span class=\"hljs-comment\"># https://en.m.wikipedia.org/wiki/Electric_power</span>\n<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> namedtuple\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Tuple</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">electric_power</span>(<span class=\"hljs-params\">voltage: <span class=\"hljs-built_in\">float</span>, current: <span class=\"hljs-built_in\">float</span>, power: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-type\">Tuple</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    This function can calculate any one of the three (voltage, current, power),\n    fundamental value of electrical system.\n    examples are below:\n    &gt;&gt;&gt; electric_power(voltage=0, current=2, power=5)\n    result(name=&#x27;voltage&#x27;, value=2.5)\n    &gt;&gt;&gt; electric_power(voltage=2, current=2, power=0)\n    result(name=&#x27;power&#x27;, value=4.0)\n    &gt;&gt;&gt; electric_power(voltage=-2, current=3, power=0)\n    result(name=&#x27;power&#x27;, value=6.0)\n    &gt;&gt;&gt; electric_power(voltage=2, current=4, power=2)\n    Traceback (most recent call last):\n        File &quot;&lt;stdin&gt;&quot;, line 15, in &lt;module&gt;\n    ValueError: Only one argument must be 0\n    &gt;&gt;&gt; electric_power(voltage=0, current=0, power=2)\n    Traceback (most recent call last):\n        File &quot;&lt;stdin&gt;&quot;, line 19, in &lt;module&gt;\n    ValueError: Only one argument must be 0\n    &gt;&gt;&gt; electric_power(voltage=0, current=2, power=-4)\n    Traceback (most recent call last):\n        File &quot;&lt;stdin&gt;&quot;, line 23, in &lt;modulei\n    ValueError: Power cannot be negative in any electrical/electronics system\n    &gt;&gt;&gt; electric_power(voltage=2.2, current=2.2, power=0)\n    result(name=&#x27;power&#x27;, value=4.84)\n    &quot;&quot;&quot;</span>\n    result = namedtuple(<span class=\"hljs-string\">&quot;result&quot;</span>, <span class=\"hljs-string\">&quot;name value&quot;</span>)\n    <span class=\"hljs-keyword\">if</span> (voltage, current, power).count(<span class=\"hljs-number\">0</span>) != <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Only one argument must be 0&quot;</span>)\n    <span class=\"hljs-keyword\">elif</span> power &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(\n            <span class=\"hljs-string\">&quot;Power cannot be negative in any electrical/electronics system&quot;</span>\n        )\n    <span class=\"hljs-keyword\">elif</span> voltage == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> result(<span class=\"hljs-string\">&quot;voltage&quot;</span>, power / current)\n    <span class=\"hljs-keyword\">elif</span> current == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> result(<span class=\"hljs-string\">&quot;current&quot;</span>, power / voltage)\n    <span class=\"hljs-keyword\">elif</span> power == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> result(<span class=\"hljs-string\">&quot;power&quot;</span>, <span class=\"hljs-built_in\">float</span>(<span class=\"hljs-built_in\">round</span>(<span class=\"hljs-built_in\">abs</span>(voltage * current), <span class=\"hljs-number\">2</span>)))\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Exactly one argument must be 0&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shantanu Joshi",
+      "email": "42472191+shan7030@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Erdum",
+      "email": "erdumadnan@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

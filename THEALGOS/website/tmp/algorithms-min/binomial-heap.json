@@ -1,0 +1,36 @@
+{
+  "slug": "binomial-heap",
+  "name": "Binomial Heap",
+  "categories": ["datastructures", "heap"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "himanshujain171",
+      "email": "43314193+himanshujain171@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Denis Trofimov",
+      "email": "silaradost@yandex.ru",
+      "commits": 1
+    },
+    {
+      "name": "Kiril Bangachev",
+      "email": "51961981+KirilBangachev@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "binary-exponent",
+  "name": "Binary Exponent",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

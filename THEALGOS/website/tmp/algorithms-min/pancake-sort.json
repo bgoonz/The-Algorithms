@@ -1,0 +1,103 @@
+{
+  "slug": "pancake-sort",
+  "name": "Pancake Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "f-sharp": "",
+    "aarch64_assembly": "",
+    "ruby": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Aruj Sharma",
+      "email": "aruj123sharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "maxbarsukov",
+      "email": "maximbarsukov@bk.ru",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "Zykiel",
+      "email": "48471587+ZykielErx@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mehdi ALAOUI",
+      "email": "alaoui.mehdi.1995@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "divyansh12323",
+      "email": "53469850+divyansh12323@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parth Paradkar",
+      "email": "parthparadkar3@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sichen Liu",
+      "email": "sl2947@cornell.edu",
+      "commits": 1
+    },
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

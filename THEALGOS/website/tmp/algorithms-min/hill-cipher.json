@@ -1,0 +1,54 @@
+{
+  "slug": "hill-cipher",
+  "name": "Hill Cipher",
+  "categories": ["ciphers"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Bharath kumar Reddy Kotha",
+      "email": "bharath.charan.reddy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sravan Kumar Vinakota",
+      "email": "35956127+JekyllAndHyde8999@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Ciphers/hill_cipher.md"
+  }
+}

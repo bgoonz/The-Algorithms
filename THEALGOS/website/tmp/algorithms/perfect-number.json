@@ -1,0 +1,76 @@
+{
+  "slug": "perfect-number",
+  "name": "Perfect Number",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/perfect_number.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/perfect_number.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n== Perfect Number ==\nIn number theory, a perfect number is a positive integer that is equal to the sum of\nits positive divisors, excluding the number itself.\nFor example: 6 ==&gt; divisors[1, 2, 3, 6]\n    Excluding 6, the sum(divisors) is 1 + 2 + 3 = 6\n    So, 6 is a Perfect Number\n\nOther examples of Perfect Numbers: 28, 486, ...\n\nhttps://en.wikipedia.org/wiki/Perfect_number\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">perfect</span>(<span class=\"hljs-params\">number: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; perfect(27)\n    False\n    &gt;&gt;&gt; perfect(28)\n    True\n    &gt;&gt;&gt; perfect(29)\n    False\n\n    Start from 1 because dividing by 0 will raise ZeroDivisionError.\n    A number at most can be divisible by the half of the number except the number\n    itself.  For example, 6 is at most can be divisible by 3 except by 6 itself.\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">sum</span>(i <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, number // <span class=\"hljs-number\">2</span> + <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">if</span> number % i == <span class=\"hljs-number\">0</span>) == number\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Program to check whether a number is a Perfect number or not...&quot;</span>)\n    number = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter number: &quot;</span>).strip())\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{number}</span> is <span class=\"hljs-subst\">{<span class=\"hljs-string\">&#x27;&#x27;</span> <span class=\"hljs-keyword\">if</span> perfect(number) <span class=\"hljs-keyword\">else</span> <span class=\"hljs-string\">&#x27;not &#x27;</span>}</span>a Perfect Number.&quot;</span>)\n"
+    },
+    "javascript": {
+      "dir": "Maths/PerfectNumber.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/PerfectNumber.js",
+      "code": "<span class=\"hljs-comment\">/**\n * Author: dephraiim\n * License: GPL-3.0 or later\n *\n * == Perfect Number ==\n * In number theory, a perfect number is a positive integer that is equal to the sum of\n * its positive divisors(factors), excluding the number itself.\n * For example: 6 ==&gt; divisors[1, 2, 3, 6]\n *      Excluding 6, the sum(divisors) is 1 + 2 + 3 = 6\n *      So, 6 is a Perfect Number\n * Other examples of Perfect Numbers: 28, 486, ...\n *\n * More on Perfect Number:\n *      https://en.wikipedia.org/wiki/Perfect_number\n *\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">factorsExcludingNumber</span> = (<span class=\"hljs-params\">n</span>) =&gt; {\n  <span class=\"hljs-keyword\">return</span> [...<span class=\"hljs-title class_\">Array</span>(n).<span class=\"hljs-title function_\">keys</span>()].<span class=\"hljs-title function_\">filter</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">num</span>) =&gt;</span> n % num === <span class=\"hljs-number\">0</span>)\n}\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">perfectNumber</span> = (<span class=\"hljs-params\">n</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> factorSum = <span class=\"hljs-title function_\">factorsExcludingNumber</span>(n).<span class=\"hljs-title function_\">reduce</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">num, initialValue</span>) =&gt;</span> {\n    <span class=\"hljs-keyword\">return</span> num + initialValue\n  }, <span class=\"hljs-number\">0</span>)\n\n  <span class=\"hljs-keyword\">return</span> factorSum === n\n}\n\n<span class=\"hljs-keyword\">export</span> { perfectNumber }\n"
+    },
+    "java": {
+      "dir": "Maths/PerfectNumber.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PerfectNumber.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/**\n * In number theory, a perfect number is a positive integer that is equal to the sum of its positive\n * divisors, excluding the number itself. For instance, 6 has divisors 1, 2 and 3 (excluding\n * itself), and 1 + 2 + 3 = 6, so 6 is a perfect number.\n *\n * &lt;p&gt;link:https://en.wikipedia.org/wiki/Perfect_number\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PerfectNumber</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectNumber</span><span class=\"hljs-params\">(<span class=\"hljs-number\">6</span>)</span>; <span class=\"hljs-comment\">/* 1 + 2 + 3 == 6 */</span>\n    <span class=\"hljs-keyword\">assert</span> !isPerfectNumber(<span class=\"hljs-number\">8</span>); <span class=\"hljs-comment\">/* 1 + 2 + 4 != 8 */</span>\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPerfectNumber</span><span class=\"hljs-params\">(<span class=\"hljs-number\">28</span>)</span>; <span class=\"hljs-comment\">/* 1 + 2 + 4 + 7 + 14 == 28 */</span>\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Check if {<span class=\"hljs-doctag\">@code</span> number} is perfect number or not\n   *\n   * <span class=\"hljs-doctag\">@param</span> number the number\n   * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-doctag\">@code</span> true} if {<span class=\"hljs-doctag\">@code</span> number} is perfect number, otherwise false\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isPerfectNumber</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> number)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">sum</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">/* sum of its positive divisors */</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; i &lt; number; ++i) {\n      <span class=\"hljs-keyword\">if</span> (number % i == <span class=\"hljs-number\">0</span>) {\n        sum += i;\n      }\n    }\n    <span class=\"hljs-type\">return</span> <span class=\"hljs-variable\">sum</span> <span class=\"hljs-operator\">=</span>= number;\n  }\n}\n"
+    },
+    "dart": {
+      "dir": "maths/perfect_number.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/perfect_number.dart",
+      "code": "<span class=\"hljs-comment\">/* \n * From: https://www.britannica.com/science/perfect-number\n *\n * A positive integer that is equal to the sum of its proper divisors. \n * The smallest perfect number is 6, which is the sum of 1, 2, and 3. \n * Other perfect numbers are 28, 496, and 8,128.\n * \n * */</span>\n\n<span class=\"hljs-comment\">//this function returns true if number is perfect and false otherwise</span>\n<span class=\"hljs-built_in\">bool</span> perfect_number(<span class=\"hljs-built_in\">int</span> number) {\n  <span class=\"hljs-keyword\">if</span> (number &lt;= <span class=\"hljs-number\">1</span>) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">false</span>;\n  <span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; divisors = [];\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = <span class=\"hljs-number\">1</span>; i &lt; number; i++) {\n    <span class=\"hljs-keyword\">if</span> (number % i == <span class=\"hljs-number\">0</span>) divisors.add(i);\n  }\n  <span class=\"hljs-keyword\">return</span> divisors.reduce((a, b) =&gt; a + b) == number;\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">-1</span>)); <span class=\"hljs-comment\">// false</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">6</span>)); <span class=\"hljs-comment\">// true</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">12</span>)); <span class=\"hljs-comment\">// false</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">16</span>)); <span class=\"hljs-comment\">// false</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">26</span>)); <span class=\"hljs-comment\">// false</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">27</span>)); <span class=\"hljs-comment\">// false</span>\n  <span class=\"hljs-built_in\">print</span>(perfect_number(<span class=\"hljs-number\">28</span>)); <span class=\"hljs-comment\">// true</span>\n}\n"
+    },
+    "julia": {
+      "dir": "src/math/perfect_number.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/perfect_number.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    perfect_number(number)\n\nChecks if a number is a perfect_number number or not\n\n# Details\n\nperfect_number number is a positive integer that is equal to the sum of\nits positive divisors, excluding the number itself.\n\nFor example : 6 is perfect_number number\n\nDivisors of 6 =&gt; [1,2,3]\n\nSum of divisors =&gt; 1+2+3 = 6\n\n6 == sum(divisors) # which is true\n\n# Example\n\n```julia\nperfect_number(27)     # returns false\nperfect_number(28)     # returns true\nperfect_number(496)    # returns true\nperfect_number(8128)   # returns true\nperfect_number(123)    # returns false\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> perfect_number(number::N)<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Number</span>\n    divisors = <span class=\"hljs-built_in\">Vector</span>{<span class=\"hljs-built_in\">Int</span>}()\n    <span class=\"hljs-keyword\">for</span> i = <span class=\"hljs-number\">1</span>:(number÷<span class=\"hljs-number\">2</span>+<span class=\"hljs-number\">1</span>)\n        <span class=\"hljs-keyword\">if</span> number % i == <span class=\"hljs-number\">0</span>\n            push!(divisors, i)\n        <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">return</span> sum(divisors) == number\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "simolab99",
+      "email": "68537129+simolab99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Utsav1999",
+      "email": "utsavakash123@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

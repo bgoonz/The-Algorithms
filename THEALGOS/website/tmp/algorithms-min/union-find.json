@@ -1,0 +1,27 @@
+{
+  "slug": "union-find",
+  "name": "Union Find",
+  "categories": ["others"],
+  "implementations": {
+    "c": "",
+    "swift": ""
+  },
+  "contributors": [
+    {
+      "name": "Sven Weidauer",
+      "email": "sven@5sw.de",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Gilberto Alexandre dos Santos",
+      "email": "gilberto.alexsantos@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

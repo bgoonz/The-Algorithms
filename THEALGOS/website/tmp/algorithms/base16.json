@@ -1,0 +1,31 @@
+{
+  "slug": "base16",
+  "name": "Base16",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/base16.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/base16.py",
+      "code": "<span class=\"hljs-keyword\">import</span> base64\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">encode_to_b16</span>(<span class=\"hljs-params\">inp: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">bytes</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Encodes a given utf-8 string into base-16.\n    &gt;&gt;&gt; encode_to_b16(&#x27;Hello World!&#x27;)\n    b&#x27;48656C6C6F20576F726C6421&#x27;\n    &gt;&gt;&gt; encode_to_b16(&#x27;HELLO WORLD!&#x27;)\n    b&#x27;48454C4C4F20574F524C4421&#x27;\n    &gt;&gt;&gt; encode_to_b16(&#x27;&#x27;)\n    b&#x27;&#x27;\n    &quot;&quot;&quot;</span>\n    encoded = inp.encode(<span class=\"hljs-string\">&quot;utf-8&quot;</span>)  <span class=\"hljs-comment\"># encoded the input (we need a bytes like object)</span>\n    b16encoded = base64.b16encode(encoded)  <span class=\"hljs-comment\"># b16encoded the encoded string</span>\n    <span class=\"hljs-keyword\">return</span> b16encoded\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Tan Yong He",
+      "email": "tyhshana@hotmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "gerroo",
+      "email": "gerensuner@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

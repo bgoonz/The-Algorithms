@@ -1,0 +1,16 @@
+{
+  "slug": "malloc-dbg",
+  "name": "Malloc Dbg",
+  "categories": ["developertools"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "tinouduart33",
+      "email": "38814052+tinouduart33@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

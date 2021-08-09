@@ -1,0 +1,26 @@
+{
+  "slug": "is-armstrong",
+  "name": "Is Armstrong",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "misc/is_armstrong.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/misc/is_armstrong.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> n, sum = <span class=\"hljs-number\">0</span>, i, num;\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter number: &quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;n);\n    num = n;\n    <span class=\"hljs-keyword\">while</span> (n != <span class=\"hljs-number\">0</span>)\n    {\n        i = n % <span class=\"hljs-number\">10</span>;\n        sum = sum + (i * i * i);\n        n = n / <span class=\"hljs-number\">10</span>;\n    }\n    <span class=\"hljs-keyword\">if</span> (sum == num)\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d is an armstrong number!\\n&quot;</span>, num);\n    }\n    <span class=\"hljs-keyword\">else</span>\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d is not an armstrong number!\\n&quot;</span>, num);\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    },
+    "matlab-octave": {
+      "dir": "algorithms/maths/is_armstrong.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/maths/is_armstrong.m",
+      "code": "<span class=\"hljs-comment\">%% Armstrong no</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">n</span>= <span class=\"hljs-title\">is_armstrong</span><span class=\"hljs-params\">(num)</span></span>\n<span class=\"hljs-keyword\">if</span>(num&lt;<span class=\"hljs-number\">0</span>)\n    n=<span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">%as negative no can&#x27;t be armstrong</span>\n<span class=\"hljs-keyword\">end</span>\nsum=<span class=\"hljs-number\">0</span>;\ntemp=num;\n<span class=\"hljs-keyword\">while</span>(temp&gt;<span class=\"hljs-number\">0</span>)\n    sum=sum*<span class=\"hljs-number\">10</span> + <span class=\"hljs-built_in\">rem</span>(temp,<span class=\"hljs-number\">10</span>);\n    temp=<span class=\"hljs-built_in\">fix</span>(temp/<span class=\"hljs-number\">10</span>);\n<span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">if</span>(sum==num)\n    n=<span class=\"hljs-number\">1</span>;    <span class=\"hljs-comment\">% the no is armstrong</span>\n<span class=\"hljs-keyword\">else</span>\n    n=<span class=\"hljs-number\">0</span>;    <span class=\"hljs-comment\">% the no is not armstrong</span>\n<span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "kNOzone",
+      "email": "72206118+kNOzone@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

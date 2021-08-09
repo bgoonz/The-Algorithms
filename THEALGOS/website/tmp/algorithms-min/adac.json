@@ -1,0 +1,21 @@
+{
+  "slug": "adac",
+  "name": "Adac",
+  "categories": ["strings", "multiplestringmatching", "advancedahocorasick"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "halafi",
+      "email": "filiphalas74@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

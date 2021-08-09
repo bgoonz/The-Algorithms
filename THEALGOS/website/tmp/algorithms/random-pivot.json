@@ -1,0 +1,15 @@
+{
+  "slug": "random-pivot",
+  "name": "Random pivot",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "c-sharp": {
+      "dir": "Algorithms/Sorters/Comparison/RandomPivotQuickSorter.cs",
+      "url": "https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/RandomPivotQuickSorter.cs",
+      "code": "﻿<span class=\"hljs-keyword\">using</span> System;\n<span class=\"hljs-keyword\">using</span> System.Collections.Generic;\n\n<span class=\"hljs-keyword\">namespace</span> <span class=\"hljs-title\">Algorithms.Sorters.Comparison</span>\n{\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     Sorts arrays using quicksort (selecting random point as a pivot).</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;typeparam name=&quot;T&quot;&gt;</span>Type of array element.<span class=\"hljs-doctag\">&lt;/typeparam&gt;</span></span>\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">sealed</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">RandomPivotQuickSorter</span>&lt;<span class=\"hljs-title\">T</span>&gt; : <span class=\"hljs-title\">QuickSorter</span>&lt;<span class=\"hljs-title\">T</span>&gt;\n    {\n        <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">readonly</span> Random random = <span class=\"hljs-keyword\">new</span>();\n\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">protected</span> <span class=\"hljs-keyword\">override</span> T <span class=\"hljs-title\">SelectPivot</span>(<span class=\"hljs-params\">T[] array, IComparer&lt;T&gt; comparer, <span class=\"hljs-built_in\">int</span> left, <span class=\"hljs-built_in\">int</span> right</span>)</span> =&gt;\n            array[random.Next(left, right + <span class=\"hljs-number\">1</span>)];\n    }\n}\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

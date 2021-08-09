@@ -1,0 +1,31 @@
+{
+  "slug": "countchar",
+  "name": "CountChar",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayush Varshney",
+      "email": "34279863+blast314@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Prasoon",
+      "email": "prasoonpandey06@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "circular-linked-list",
+  "name": "Circular Linked List",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": "",
+    "c": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "NEERAJ ADITYANANTH POLAMPALLI",
+      "email": "65017645+NEERAJAP2001@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

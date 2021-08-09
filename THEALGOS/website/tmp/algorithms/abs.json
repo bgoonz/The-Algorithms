@@ -1,0 +1,131 @@
+{
+  "slug": "abs",
+  "name": "Abs",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/abs.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/abs.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;Absolute Value.&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">abs_val</span>(<span class=\"hljs-params\">num</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Find the absolute value of a number.\n\n    &gt;&gt;&gt; abs_val(-5.1)\n    5.1\n    &gt;&gt;&gt; abs_val(-5) == abs_val(5)\n    True\n    &gt;&gt;&gt; abs_val(0)\n    0\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> -num <span class=\"hljs-keyword\">if</span> num &lt; <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">else</span> num\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">test_abs_val</span>():\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; test_abs_val()\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-number\">0</span> == abs_val(<span class=\"hljs-number\">0</span>)\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-number\">34</span> == abs_val(<span class=\"hljs-number\">34</span>)\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-number\">100000000000</span> == abs_val(-<span class=\"hljs-number\">100000000000</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(abs_val(-<span class=\"hljs-number\">34</span>))  <span class=\"hljs-comment\"># --&gt; 34</span>\n"
+    },
+    "javascript": {
+      "dir": "Maths/Abs.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/Abs.js",
+      "code": "<span class=\"hljs-comment\">/*\n    author: PatOnTheBack\n    license: GPL-3.0 or later\n\n    Modified from:\n        https://github.com/TheAlgorithms/Python/blob/master/maths/abs.py\n\n    This script will find the absolute value of a number.\n\n    More about absolute values:\n        https://en.wikipedia.org/wiki/Absolute_value\n*/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">absVal</span> = (<span class=\"hljs-params\">num</span>) =&gt; {\n  <span class=\"hljs-comment\">// Find absolute value of `num`.</span>\n  <span class=\"hljs-string\">&#x27;use strict&#x27;</span>\n  <span class=\"hljs-keyword\">if</span> (num &lt; <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> -num\n  }\n  <span class=\"hljs-comment\">// Executes if condition is not met.</span>\n  <span class=\"hljs-keyword\">return</span> num\n}\n\n<span class=\"hljs-keyword\">export</span> { absVal }\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Math/Abs.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Math/Abs.fs",
+      "code": "<span class=\"hljs-keyword\">namespace</span> Algorithms.Math\n\n<span class=\"hljs-keyword\">module</span> Abs =\n    <span class=\"hljs-keyword\">let</span> absVal num = <span class=\"hljs-keyword\">if</span> num &lt; <span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">then</span> -num <span class=\"hljs-keyword\">else</span> num\n"
+    },
+    "dart": {
+      "dir": "maths/abs.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/abs.dart",
+      "code": "abs_value(number) {\n  <span class=\"hljs-keyword\">return</span> number &lt; <span class=\"hljs-number\">0</span> ? -number : number;\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">print</span>(abs_value(<span class=\"hljs-number\">-34</span>));\n}\n"
+    },
+    "ruby": {
+      "dir": "maths/abs.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/maths/abs.rb",
+      "code": "<span class=\"hljs-comment\"># frozen_string_literal: true</span>\n\n<span class=\"hljs-comment\"># Calculates the absolute value of a number</span>\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Abs</span></span>\n  def <span class=\"hljs-keyword\">self</span>.call(number)\n    <span class=\"hljs-keyword\">return</span> -number <span class=\"hljs-keyword\">if</span> number.negative?\n\n    number\n  <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n"
+    },
+    "scala": {
+      "dir": "src/main/scala/Mathematics/Abs.scala",
+      "url": "https://github.com/TheAlgorithms/scala/tree/master/src/main/scala/Mathematics/Abs.scala",
+      "code": "<span class=\"hljs-keyword\">package</span> <span class=\"hljs-type\">Mathematics</span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">object</span> <span class=\"hljs-title\">Abs</span> </span>{\n\n\t<span class=\"hljs-comment\">/**\n\t    * Method returns absolute value of the number\n\t    *\n\t    * @param Int\n    \t    * @return\n    \t*/</span>\n\n\t<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">abs</span></span>(number : <span class=\"hljs-type\">Int</span>): <span class=\"hljs-type\">Int</span> = {\n\t    <span class=\"hljs-keyword\">if</span> (number &lt; <span class=\"hljs-number\">0</span>)\n\t\t<span class=\"hljs-keyword\">return</span> number * <span class=\"hljs-number\">-1</span>\n\t    <span class=\"hljs-keyword\">return</span> number;\n\t}\n}\n"
+    },
+    "julia": {
+      "dir": "src/math/abs.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/abs.jl",
+      "code": "\n<span class=\"hljs-string\">&quot;&quot;&quot;\n    abs_val(num)\n\nProgram to find the absolute value of a number\n\n# Example\n```julia\nabs_val(-100) # returns 100\nabs_val(0) # returns 0\nabs(123.1) # returns 123.1\n-1000 == abs_val(-1000) #returns false\n1000 == abs_val(1000) #returns true\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> abs_val(num::N)<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Real</span>\n    <span class=\"hljs-keyword\">return</span> num &lt; <span class=\"hljs-number\">0</span> ? -num : num\n<span class=\"hljs-keyword\">end</span>\n\n\n<span class=\"hljs-string\">&quot;&quot;&quot;\n    abs_max(x)\n\nProgram to find the max absolute value in a vector\n\n# Example\n```julia\nabs_max([1,3,4]) # returns 4\nabs_max([-3,1,2]) # returns -3\nabs_max([-7,-3,6]) #returns -7\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> abs_max(x::<span class=\"hljs-built_in\">Vector</span>{N})<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Real</span>\n    _max=x[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> x\n        <span class=\"hljs-keyword\">if</span> abs(i)&gt;abs(_max) _max=i <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">return</span> _max\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-string\">&quot;&quot;&quot;\n    abs_min(num)\n\nProgram to find the min absolute value in a vector\n\n# Example\n```julia\nabs_min([1,3,4]) # returns 1\nabs_min([-3,1,2]) # returns 1\nabs_min([-7,-3,6]) #returns -3\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee) and [Rratic](https://github.com/Rratic)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> abs_min(x::<span class=\"hljs-built_in\">Vector</span>{N})<span class=\"hljs-keyword\">where</span> N&lt;:<span class=\"hljs-built_in\">Real</span>\n    _min=x[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> x\n        <span class=\"hljs-keyword\">if</span> abs(i)&lt;abs(_min) _min=i <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">return</span> _min\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "aditiagarwal34550",
+      "email": "aditiagarwal34550@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Eli Sadoff",
+      "email": "eli.sadoff@broadlume.com",
+      "commits": 1
+    },
+    {
+      "name": "moita69",
+      "email": "fmj1988@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ahviplc!~LC",
+      "email": "ahlc@sina.cn",
+      "commits": 1
+    },
+    {
+      "name": "gerroo",
+      "email": "gerensuner@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Aditi Agarwal",
+      "email": "31546143+aditiagarwal34550@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "sieveer",
+  "name": "sieveER",
+  "categories": ["sieveoferatosthenes"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

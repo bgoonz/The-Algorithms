@@ -1,0 +1,56 @@
+{
+  "slug": "fibonacci-sequence-recursion",
+  "name": "Fibonacci Sequence Recursion",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/fibonacci_sequence_recursion.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/fibonacci_sequence_recursion.py",
+      "code": "<span class=\"hljs-comment\"># Fibonacci Sequence Using Recursion</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">recur_fibo</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; [recur_fibo(i) for i in range(12)]\n    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> n <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">else</span> recur_fibo(n - <span class=\"hljs-number\">1</span>) + recur_fibo(n - <span class=\"hljs-number\">2</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    limit = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;How many terms to include in fibonacci series: &quot;</span>))\n    <span class=\"hljs-keyword\">if</span> limit &gt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;The first <span class=\"hljs-subst\">{limit}</span> terms of the fibonacci series are as follows:&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>([recur_fibo(n) <span class=\"hljs-keyword\">for</span> n <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(limit)])\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Please enter a positive integer: &quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Björn Olsson Jarl",
+      "email": "frangiz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Phyllipe Bezerra",
+      "email": "32442929+pmba@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nikhil Nayak",
+      "email": "nikhil.nixel@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rafael García Cuéllar",
+      "email": "r.gc@hotmail.es",
+      "commits": 1
+    },
+    {
+      "name": "gerroo",
+      "email": "gerensuner@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

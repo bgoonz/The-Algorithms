@@ -1,0 +1,21 @@
+{
+  "slug": "coin-change-topdown",
+  "name": "Coin Change Topdown",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "webdesignbydivyansh",
+      "email": "62607594+webdesignbydivyansh@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

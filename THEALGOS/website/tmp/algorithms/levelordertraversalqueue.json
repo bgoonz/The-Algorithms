@@ -1,0 +1,36 @@
+{
+  "slug": "levelordertraversalqueue",
+  "name": "LevelOrderTraversalQueue",
+  "categories": ["datastructures", "tree"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Trees/LevelOrderTraversalQueue.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Trees/LevelOrderTraversalQueue.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Trees;\n\n<span class=\"hljs-keyword\">import</span> java.util.LinkedList;\n<span class=\"hljs-keyword\">import</span> java.util.Queue;\n\n<span class=\"hljs-comment\">/* Class to print Level Order Traversal */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">LevelOrderTraversalQueue</span> {\n\n  <span class=\"hljs-comment\">/* Class to represent Tree node */</span>\n  <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span> {\n    <span class=\"hljs-type\">int</span> data;\n    Node left, right;\n\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">Node</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> item)</span> {\n      data = item;\n      left = <span class=\"hljs-literal\">null</span>;\n      right = <span class=\"hljs-literal\">null</span>;\n    }\n  }\n\n  <span class=\"hljs-comment\">/* Given a binary tree. Print its nodes in level order\n  using array for implementing queue  */</span>\n  <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">printLevelOrder</span><span class=\"hljs-params\">(Node root)</span> {\n    Queue&lt;Node&gt; queue = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">LinkedList</span>&lt;Node&gt;();\n    queue.add(root);\n    <span class=\"hljs-keyword\">while</span> (!queue.isEmpty()) {\n\n      <span class=\"hljs-comment\">/* poll() removes the present head.\n      For more information on poll() visit\n      http://www.tutorialspoint.com/java/util/linkedlist_poll.htm */</span>\n      <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">tempNode</span> <span class=\"hljs-operator\">=</span> queue.poll();\n      System.out.print(tempNode.data + <span class=\"hljs-string\">&quot; &quot;</span>);\n\n      <span class=\"hljs-comment\">/*Enqueue left child */</span>\n      <span class=\"hljs-keyword\">if</span> (tempNode.left != <span class=\"hljs-literal\">null</span>) {\n        queue.add(tempNode.left);\n      }\n\n      <span class=\"hljs-comment\">/*Enqueue right child */</span>\n      <span class=\"hljs-keyword\">if</span> (tempNode.right != <span class=\"hljs-literal\">null</span>) {\n        queue.add(tempNode.right);\n      }\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

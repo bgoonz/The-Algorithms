@@ -1,0 +1,134 @@
+{
+  "slug": "longest-common-subsequence",
+  "name": "Longest Common Subsequence",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "go": "",
+    "rust": ""
+  },
+  "contributors": [
+    {
+      "name": "Boyd Johnson",
+      "email": "boydjohnson@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nathan Moreau",
+      "email": "nathan.moreau@m4x.org",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "rajneesh44",
+      "email": "rajneeshsharma338@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "rahul1995",
+      "email": "jainrahul6620@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mayank Kumar Jha",
+      "email": "mk9440@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "pkdism",
+      "email": "pawan.dwivedi94@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jigyasa G",
+      "email": "jigsgandhi97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Maxwell Aladago",
+      "email": "maxwell.aladago@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rwithik Manoj",
+      "email": "thoriumnitride@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "Erdenezul",
+      "email": "erdenezul@shine.mn",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "dhruvsaini",
+      "email": "dhruv_saini@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Omkarnath Parida",
+      "email": "pomkarnath98@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Dynamic Programming/Longest Common Subsequence.md",
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Programación dinamica/Subsecuencia común más larga.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "doubly-linked-list-two",
+  "name": "Doubly Linked List Two",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Akash G Krishnan",
+      "email": "krishnanag1996@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "checkrearrangepalindrome",
+  "name": "CheckRearrangePalindrome",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Maily Santos",
+      "email": "mailysantos@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "ohms-law",
+  "name": "Ohms Law",
+  "categories": ["electronics"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "electronics/ohms_law.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/electronics/ohms_law.py",
+      "code": "<span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Ohm%27s_law</span>\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Dict</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">ohms_law</span>(<span class=\"hljs-params\">voltage: <span class=\"hljs-built_in\">float</span>, current: <span class=\"hljs-built_in\">float</span>, resistance: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-type\">Dict</span>[<span class=\"hljs-built_in\">str</span>, <span class=\"hljs-built_in\">float</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Apply Ohm&#x27;s Law, on any two given electrical values, which can be voltage, current,\n    and resistance, and then in a Python dict return name/value pair of the zero value.\n\n    &gt;&gt;&gt; ohms_law(voltage=10, resistance=5, current=0)\n    {&#x27;current&#x27;: 2.0}\n    &gt;&gt;&gt; ohms_law(voltage=0, current=0, resistance=10)\n    Traceback (most recent call last):\n      ...\n    ValueError: One and only one argument must be 0\n    &gt;&gt;&gt; ohms_law(voltage=0, current=1, resistance=-2)\n    Traceback (most recent call last):\n      ...\n    ValueError: Resistance cannot be negative\n    &gt;&gt;&gt; ohms_law(resistance=0, voltage=-10, current=1)\n    {&#x27;resistance&#x27;: -10.0}\n    &gt;&gt;&gt; ohms_law(voltage=0, current=-1.5, resistance=2)\n    {&#x27;voltage&#x27;: -3.0}\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> (voltage, current, resistance).count(<span class=\"hljs-number\">0</span>) != <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;One and only one argument must be 0&quot;</span>)\n    <span class=\"hljs-keyword\">if</span> resistance &lt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Resistance cannot be negative&quot;</span>)\n    <span class=\"hljs-keyword\">if</span> voltage == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> {<span class=\"hljs-string\">&quot;voltage&quot;</span>: <span class=\"hljs-built_in\">float</span>(current * resistance)}\n    <span class=\"hljs-keyword\">elif</span> current == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> {<span class=\"hljs-string\">&quot;current&quot;</span>: voltage / resistance}\n    <span class=\"hljs-keyword\">elif</span> resistance == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> {<span class=\"hljs-string\">&quot;resistance&quot;</span>: voltage / current}\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Exactly one argument must be 0&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shantanu Joshi",
+      "email": "42472191+shan7030@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Erdum",
+      "email": "erdumadnan@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

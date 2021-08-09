@@ -1,0 +1,31 @@
+{
+  "slug": "flashsort",
+  "name": "FlashSort",
+  "categories": ["sorts"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "olshansky",
+      "email": "olshansky0@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "marsonya",
+      "email": "akhil.marsonya27@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

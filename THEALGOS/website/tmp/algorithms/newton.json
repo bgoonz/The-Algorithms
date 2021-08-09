@@ -1,0 +1,21 @@
+{
+  "slug": "newton",
+  "name": "Newton",
+  "categories": ["numericalanalysis"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/arithmetic_analysis/newton.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/arithmetic_analysis/newton.m",
+      "code": "<span class=\"hljs-comment\">%Newton&#x27;s method is one of the fastest algorithms to converge on a root.</span>\r\n<span class=\"hljs-comment\">%It does not require you to provide any endpoints, but it does require for</span>\r\n<span class=\"hljs-comment\">%you to provide the derivative of the function. It is faster than the secant</span>\r\n<span class=\"hljs-comment\">%method, but is also not guaranteed to converge.</span>\r\n\r\n<span class=\"hljs-comment\">%INPUTS:</span>\r\n<span class=\"hljs-comment\">%function handle f</span>\r\n<span class=\"hljs-comment\">%function handle df for the derivative of f</span>\r\n<span class=\"hljs-comment\">%initial x-value</span>\r\n<span class=\"hljs-comment\">%maximum tolerated error</span>\r\n\r\n<span class=\"hljs-comment\">%OUTPUTS:</span>\r\n<span class=\"hljs-comment\">%An approximated value for the root of f.</span>\r\n\r\n<span class=\"hljs-comment\">%Written by MatteoRaso</span>\r\n\r\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">y</span> = <span class=\"hljs-title\">newton</span><span class=\"hljs-params\">(f, df, x, error)</span></span>\r\n  <span class=\"hljs-keyword\">while</span> <span class=\"hljs-built_in\">abs</span>(f(x)) &gt; error\r\n    x = x - f(x) / df(x);\r\n    <span class=\"hljs-built_in\">disp</span>(f(x))\r\n  endwhile\r\n  A = [<span class=\"hljs-string\">&quot;The root is approximately located at &quot;</span>, num2str(x)];\r\n  <span class=\"hljs-built_in\">disp</span>(A)\r\n  y = x;\r\nendfunction\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "MatteoRaso",
+      "email": "33975162+MatteoRaso@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

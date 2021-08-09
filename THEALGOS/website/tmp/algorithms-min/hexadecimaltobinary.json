@@ -1,0 +1,37 @@
+{
+  "slug": "hexadecimaltobinary",
+  "name": "HexaDecimalToBinary",
+  "categories": ["conversions"],
+  "implementations": {
+    "java": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Arogon1",
+      "email": "40372809+Arogon1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "SeonJae",
+      "email": "dbtjswo4733@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Harvey Gómez",
+      "email": "hygomezm@est.utn.ac.cr",
+      "commits": 1
+    },
+    {
+      "name": "Vishnu",
+      "email": "vishnupothan2@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

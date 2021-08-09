@@ -1,0 +1,10 @@
+{
+  "slug": "longest-consecutive-character",
+  "name": "Longest Consecutive Character",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

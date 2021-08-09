@@ -1,0 +1,21 @@
+{
+  "slug": "palindrome-checker",
+  "name": "Palindrome Checker",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "c-sharp": {
+      "dir": "Algorithms/Strings/palindrome.cs",
+      "url": "https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Strings/palindrome.cs",
+      "code": "<span class=\"hljs-keyword\">using</span> System;\n<span class=\"hljs-keyword\">using</span> System.Text.RegularExpressions;\n\n<span class=\"hljs-keyword\">namespace</span> <span class=\"hljs-title\">Algorithms.Strings</span>\n{\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     TODO.</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Palindrome</span>\n    {\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     TODO.</span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;param name=&quot;word&quot;&gt;</span>TODO. 2.<span class=\"hljs-doctag\">&lt;/param&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;returns&gt;</span>TODO. 3.<span class=\"hljs-doctag\">&lt;/returns&gt;</span></span>\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-built_in\">bool</span> <span class=\"hljs-title\">IsStringPalindrome</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">string</span> word</span>)</span> =&gt;\n            TypifyString(word).Equals(TypifyString(ReverseString(word)));\n\n        <span class=\"hljs-comment\">// Typify string to lower and remove white spaces.</span>\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-built_in\">string</span> <span class=\"hljs-title\">TypifyString</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">string</span> word</span>)</span> =&gt;\n            Regex.Replace(word.ToLowerInvariant(), <span class=\"hljs-string\">@&quot;\\s+&quot;</span>, <span class=\"hljs-built_in\">string</span>.Empty);\n\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-built_in\">string</span> <span class=\"hljs-title\">ReverseString</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">string</span> s</span>)</span>\n        {\n            <span class=\"hljs-keyword\">var</span> arr = s.ToCharArray();\n            Array.Reverse(arr);\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">string</span>(arr);\n        }\n    }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

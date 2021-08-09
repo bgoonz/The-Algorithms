@@ -1,0 +1,10 @@
+{
+  "slug": "logistic-regression2",
+  "name": "Logistic Regression2",
+  "categories": ["regressionalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

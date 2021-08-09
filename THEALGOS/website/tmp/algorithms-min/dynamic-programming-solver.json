@@ -1,0 +1,10 @@
+{
+  "slug": "dynamic-programming-solver",
+  "name": "Dynamic Programming solver",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

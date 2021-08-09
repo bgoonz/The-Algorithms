@@ -1,0 +1,26 @@
+{
+  "slug": "isomorphic-strings",
+  "name": "Isomorphic Strings",
+  "categories": ["datastructures", "hashtable"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/hash_table/isomorphic_strings.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/hash_table/isomorphic_strings.rb",
+      "code": "<span class=\"hljs-comment\"># Challenge name: Isomorphic Strings</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Given two strings s and t, determine if they are isomorphic.</span>\n<span class=\"hljs-comment\"># Two strings s and t are isomorphic if the characters in s can be replaced to get t.</span>\n<span class=\"hljs-comment\"># All occurrences of a character must be replaced with another character while preserving the order of characters. </span>\n<span class=\"hljs-comment\"># No two characters may map to the same character, but a character may map to itself.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 1:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;egg&quot;, t = &quot;add&quot;</span>\n<span class=\"hljs-comment\"># Output: true</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 2:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;foo&quot;, t = &quot;bar&quot;</span>\n<span class=\"hljs-comment\"># Output: false</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 3:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;paper&quot;, t = &quot;title&quot;</span>\n<span class=\"hljs-comment\"># Output: true</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Constraints:</span>\n<span class=\"hljs-comment\"># 1 &lt;= s.length &lt;= 5 * 104</span>\n<span class=\"hljs-comment\"># t.length == s.length</span>\n<span class=\"hljs-comment\"># s and t consist of any valid ascii character.</span>\n\n<span class=\"hljs-comment\"># Approach 1: Hash Map</span>\n<span class=\"hljs-comment\"># Time Complexity: O(N)</span>\n<span class=\"hljs-comment\"># Space Complexity: O(N)</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">isomorphic_strings_check</span><span class=\"hljs-params\">(s, t)</span></span>\n  <span class=\"hljs-comment\"># store character mappings</span>\n  map = {}\n  <span class=\"hljs-comment\"># store already mapped characters</span>\n  set = []\n\n  (<span class=\"hljs-number\">0</span>..s.length - <span class=\"hljs-number\">1</span>).each <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|i|</span>\n    <span class=\"hljs-comment\"># store characters to compare</span>\n    char1 = s[i]\n    char2 = t[i]\n\n    <span class=\"hljs-comment\"># if char1 is mapped</span>\n    <span class=\"hljs-keyword\">if</span> map[char1] \n      <span class=\"hljs-comment\"># return false if char1 is mapped to a different character than already present</span>\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span> <span class=\"hljs-keyword\">if</span> map[char1] != char2\n    <span class=\"hljs-comment\"># if char1 is not mapped</span>\n    <span class=\"hljs-keyword\">else</span>\n      <span class=\"hljs-comment\"># return false if char2 is already mapped to a different character</span>\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span> <span class=\"hljs-keyword\">if</span> set.<span class=\"hljs-keyword\">include</span>?(char2)\n      <span class=\"hljs-comment\"># checks passed: add new character map and track that char2 has been mapped</span>\n      map[char1] = char2\n      set &lt;&lt; char2\n    <span class=\"hljs-keyword\">end</span>\n\n  <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n<span class=\"hljs-keyword\">end</span>\n\nputs isomorphic_strings_check(<span class=\"hljs-string\">&quot;egg&quot;</span>, <span class=\"hljs-string\">&quot;add&quot;</span>)\n<span class=\"hljs-comment\"># =&gt; true</span>\n\nputs isomorphic_strings_check(<span class=\"hljs-string\">&quot;foo&quot;</span>, <span class=\"hljs-string\">&quot;bar&quot;</span>)\n<span class=\"hljs-comment\"># =&gt; false</span>\n\nputs isomorphic_strings_check(<span class=\"hljs-string\">&quot;paper&quot;</span>, <span class=\"hljs-string\">&quot;title&quot;</span>)\n<span class=\"hljs-comment\"># =&gt; true</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,148 @@
+{
+  "slug": "interpolation-search",
+  "name": "Interpolation Search",
+  "categories": ["searches"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "dart": "",
+    "kotlin": "",
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek",
+      "email": "raabhishek2@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "walter-ind",
+      "email": "52423075+walter-ind@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "James Mc Dermott",
+      "email": "james.mcdermott89@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "CrisesKhaos",
+      "email": "76253854+CrisesKhaos@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "akshayanvi",
+      "email": "35013678+akshayanvi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Yang Libin",
+      "email": "contact@yanglibin.info",
+      "commits": 1
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lakshika Parihar",
+      "email": "31981299+lakshika1064@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "weixuanhu",
+      "email": "44716380+weixuanhu@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sarbajit Saha",
+      "email": "sarbajitsaha1@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "LefterisD",
+      "email": "elefthed@csd.auth.gr",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Akshay Kumar",
+      "email": "gakkikumar@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

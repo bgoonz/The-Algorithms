@@ -1,0 +1,61 @@
+{
+  "slug": "treetraversal",
+  "name": "TreeTraversal",
+  "categories": ["datastructures", "tree"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "gattlin1",
+      "email": "gattlin1@live.missouristate.edu",
+      "commits": 1
+    },
+    {
+      "name": "hong skkusosc",
+      "email": "--hsp5125@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "Keqi Huang",
+      "email": "keqih@smu.edu",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Miki Pokryvailo",
+      "email": "mpokryva@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

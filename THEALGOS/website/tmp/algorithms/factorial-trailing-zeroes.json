@@ -1,0 +1,15 @@
+{
+  "slug": "factorial-trailing-zeroes",
+  "name": "Factorial Trailing Zeroes",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "misc/factorial_trailing_zeroes.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/misc/factorial_trailing_zeroes.c",
+      "code": "<span class=\"hljs-comment\">/*\nprogramme for computing number of zeroes at the end of factorial of a given\nnumber n\n*/</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;math.h&gt;</span>  <span class=\"hljs-comment\">//including math.h header file to use pow function</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">int</span> i, n, test = <span class=\"hljs-number\">0</span>, count = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-comment\">// taking input number n</span>\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;n);\n\n    <span class=\"hljs-comment\">// looping from 1 till loop break</span>\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">1</span>;; i++)\n    {\n        test =\n            n /\n            <span class=\"hljs-built_in\">pow</span>(<span class=\"hljs-number\">5</span>,\n                i);  <span class=\"hljs-comment\">// division of n by ith power of 5(storing in integer form)</span>\n        <span class=\"hljs-keyword\">if</span> (test !=\n            <span class=\"hljs-number\">0</span>)  <span class=\"hljs-comment\">// condition for zeroes at end corresponding individual ith case</span>\n        {\n            count = count + test;\n        }\n        <span class=\"hljs-keyword\">else</span>\n            <span class=\"hljs-keyword\">break</span>;  <span class=\"hljs-comment\">// break the loop for if test=0</span>\n    }\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d\\n&quot;</span>, count);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

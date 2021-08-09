@@ -1,0 +1,16 @@
+{
+  "slug": "doomsday",
+  "name": "Doomsday",
+  "categories": ["others"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Ron U",
+      "email": "sharpblade4@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

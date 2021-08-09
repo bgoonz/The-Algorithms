@@ -1,0 +1,43 @@
+{
+  "slug": "factors",
+  "name": "Factors",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "NIKHIL WANI",
+      "email": "65514201+Nikhil-Wani@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "himanshujain171",
+      "email": "43314193+himanshujain171@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

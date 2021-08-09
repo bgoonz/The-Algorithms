@@ -1,0 +1,10 @@
+{
+  "slug": "scikit-learn",
+  "name": "Scikit-Learn",
+  "categories": ["machinelearning", "scikitlearn"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

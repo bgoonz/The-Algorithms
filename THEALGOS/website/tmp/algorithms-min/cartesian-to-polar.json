@@ -1,0 +1,10 @@
+{
+  "slug": "cartesian-to-polar",
+  "name": "Cartesian to Polar",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

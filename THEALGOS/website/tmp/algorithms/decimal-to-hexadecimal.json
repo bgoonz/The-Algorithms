@@ -1,0 +1,91 @@
+{
+  "slug": "decimal-to-hexadecimal",
+  "name": "Decimal to Hexadecimal",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "conversions/decimal_to_hexadecimal.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/conversions/decimal_to_hexadecimal.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot; Convert Base 10 (Decimal) Values to Hexadecimal Representations &quot;&quot;&quot;</span>\n\n<span class=\"hljs-comment\"># set decimal value for each hexadecimal digit</span>\nvalues = {\n    <span class=\"hljs-number\">0</span>: <span class=\"hljs-string\">&quot;0&quot;</span>,\n    <span class=\"hljs-number\">1</span>: <span class=\"hljs-string\">&quot;1&quot;</span>,\n    <span class=\"hljs-number\">2</span>: <span class=\"hljs-string\">&quot;2&quot;</span>,\n    <span class=\"hljs-number\">3</span>: <span class=\"hljs-string\">&quot;3&quot;</span>,\n    <span class=\"hljs-number\">4</span>: <span class=\"hljs-string\">&quot;4&quot;</span>,\n    <span class=\"hljs-number\">5</span>: <span class=\"hljs-string\">&quot;5&quot;</span>,\n    <span class=\"hljs-number\">6</span>: <span class=\"hljs-string\">&quot;6&quot;</span>,\n    <span class=\"hljs-number\">7</span>: <span class=\"hljs-string\">&quot;7&quot;</span>,\n    <span class=\"hljs-number\">8</span>: <span class=\"hljs-string\">&quot;8&quot;</span>,\n    <span class=\"hljs-number\">9</span>: <span class=\"hljs-string\">&quot;9&quot;</span>,\n    <span class=\"hljs-number\">10</span>: <span class=\"hljs-string\">&quot;a&quot;</span>,\n    <span class=\"hljs-number\">11</span>: <span class=\"hljs-string\">&quot;b&quot;</span>,\n    <span class=\"hljs-number\">12</span>: <span class=\"hljs-string\">&quot;c&quot;</span>,\n    <span class=\"hljs-number\">13</span>: <span class=\"hljs-string\">&quot;d&quot;</span>,\n    <span class=\"hljs-number\">14</span>: <span class=\"hljs-string\">&quot;e&quot;</span>,\n    <span class=\"hljs-number\">15</span>: <span class=\"hljs-string\">&quot;f&quot;</span>,\n}\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decimal_to_hexadecimal</span>(<span class=\"hljs-params\">decimal: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    take integer decimal value, return hexadecimal representation as str beginning\n    with 0x\n    &gt;&gt;&gt; decimal_to_hexadecimal(5)\n    &#x27;0x5&#x27;\n    &gt;&gt;&gt; decimal_to_hexadecimal(15)\n    &#x27;0xf&#x27;\n    &gt;&gt;&gt; decimal_to_hexadecimal(37)\n    &#x27;0x25&#x27;\n    &gt;&gt;&gt; decimal_to_hexadecimal(255)\n    &#x27;0xff&#x27;\n    &gt;&gt;&gt; decimal_to_hexadecimal(4096)\n    &#x27;0x1000&#x27;\n    &gt;&gt;&gt; decimal_to_hexadecimal(999098)\n    &#x27;0xf3eba&#x27;\n    &gt;&gt;&gt; # negatives work too\n    &gt;&gt;&gt; decimal_to_hexadecimal(-256)\n    &#x27;-0x100&#x27;\n    &gt;&gt;&gt; # floats are acceptable if equivalent to an int\n    &gt;&gt;&gt; decimal_to_hexadecimal(17.0)\n    &#x27;0x11&#x27;\n    &gt;&gt;&gt; # other floats will error\n    &gt;&gt;&gt; decimal_to_hexadecimal(16.16) # doctest: +ELLIPSIS\n    Traceback (most recent call last):\n    ...\n    AssertionError\n    &gt;&gt;&gt; # strings will error as well\n    &gt;&gt;&gt; decimal_to_hexadecimal(&#x27;0xfffff&#x27;) # doctest: +ELLIPSIS\n    Traceback (most recent call last):\n    ...\n    AssertionError\n    &gt;&gt;&gt; # results are the same when compared to Python&#x27;s default hex function\n    &gt;&gt;&gt; decimal_to_hexadecimal(-256) == hex(-256)\n    True\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-built_in\">type</span>(decimal) <span class=\"hljs-keyword\">in</span> (<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">float</span>) <span class=\"hljs-keyword\">and</span> decimal == <span class=\"hljs-built_in\">int</span>(decimal)\n    decimal = <span class=\"hljs-built_in\">int</span>(decimal)\n    hexadecimal = <span class=\"hljs-string\">&quot;&quot;</span>\n    negative = <span class=\"hljs-literal\">False</span>\n    <span class=\"hljs-keyword\">if</span> decimal &lt; <span class=\"hljs-number\">0</span>:\n        negative = <span class=\"hljs-literal\">True</span>\n        decimal *= -<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">while</span> decimal &gt; <span class=\"hljs-number\">0</span>:\n        decimal, remainder = <span class=\"hljs-built_in\">divmod</span>(decimal, <span class=\"hljs-number\">16</span>)\n        hexadecimal = values[remainder] + hexadecimal\n    hexadecimal = <span class=\"hljs-string\">&quot;0x&quot;</span> + hexadecimal\n    <span class=\"hljs-keyword\">if</span> negative:\n        hexadecimal = <span class=\"hljs-string\">&quot;-&quot;</span> + hexadecimal\n    <span class=\"hljs-keyword\">return</span> hexadecimal\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "c-plus-plus": {
+      "dir": "others/decimal_to_hexadecimal.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/others/decimal_to_hexadecimal.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief Convert decimal number to hexadecimal representation\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n\n<span class=\"hljs-comment\">/**\n * Main program\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">void</span>)</span> </span>{\n    <span class=\"hljs-type\">int</span> valueToConvert = <span class=\"hljs-number\">0</span>;  <span class=\"hljs-comment\">// Holds user input</span>\n    <span class=\"hljs-type\">int</span> hexArray[<span class=\"hljs-number\">8</span>];         <span class=\"hljs-comment\">// Contains hex values backwards</span>\n    <span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>;               <span class=\"hljs-comment\">// counter</span>\n    <span class=\"hljs-type\">char</span> HexValues[] = <span class=\"hljs-string\">&quot;0123456789ABCDEF&quot;</span>;\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter a Decimal Value&quot;</span>\n              &lt;&lt; std::endl;  <span class=\"hljs-comment\">// Displays request to stdout</span>\n    std::cin &gt;&gt;\n        valueToConvert;  <span class=\"hljs-comment\">// Stores value into valueToConvert via user input</span>\n\n    <span class=\"hljs-keyword\">while</span> (valueToConvert &gt; <span class=\"hljs-number\">15</span>) {             <span class=\"hljs-comment\">// Dec to Hex Algorithm</span>\n        hexArray[i++] = valueToConvert % <span class=\"hljs-number\">16</span>;  <span class=\"hljs-comment\">// Gets remainder</span>\n        valueToConvert /= <span class=\"hljs-number\">16</span>;\n        <span class=\"hljs-comment\">// valueToConvert &gt;&gt;= 4;  // This will divide by 2^4=16 and is faster</span>\n    }\n    hexArray[i] = valueToConvert;  <span class=\"hljs-comment\">// Gets last value</span>\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Hex Value: &quot;</span>;\n    <span class=\"hljs-keyword\">while</span> (i &gt;= <span class=\"hljs-number\">0</span>) std::cout &lt;&lt; HexValues[hexArray[i--]];\n\n    std::cout &lt;&lt; std::endl;\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    },
+    "java": {
+      "dir": "Conversions/DecimalToHexaDecimal.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Conversions/DecimalToHexaDecimal.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Conversions;\n\n<span class=\"hljs-comment\">// hex = [0 - 9] -&gt; [A - F]</span>\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">DecimalToHexaDecimal</span> {\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">final</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">sizeOfIntInHalfBytes</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">8</span>;\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">final</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">numberOfBitsInAHalfByte</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">4</span>;\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">final</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">halfByte</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0x0F</span>;\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">final</span> <span class=\"hljs-type\">char</span>[] hexDigits = {\n    <span class=\"hljs-string\">&#x27;0&#x27;</span>, <span class=\"hljs-string\">&#x27;1&#x27;</span>, <span class=\"hljs-string\">&#x27;2&#x27;</span>, <span class=\"hljs-string\">&#x27;3&#x27;</span>, <span class=\"hljs-string\">&#x27;4&#x27;</span>, <span class=\"hljs-string\">&#x27;5&#x27;</span>, <span class=\"hljs-string\">&#x27;6&#x27;</span>, <span class=\"hljs-string\">&#x27;7&#x27;</span>, <span class=\"hljs-string\">&#x27;8&#x27;</span>, <span class=\"hljs-string\">&#x27;9&#x27;</span>, <span class=\"hljs-string\">&#x27;A&#x27;</span>, <span class=\"hljs-string\">&#x27;B&#x27;</span>, <span class=\"hljs-string\">&#x27;C&#x27;</span>, <span class=\"hljs-string\">&#x27;D&#x27;</span>, <span class=\"hljs-string\">&#x27;E&#x27;</span>, <span class=\"hljs-string\">&#x27;F&#x27;</span>\n  };\n\n  <span class=\"hljs-comment\">// Returns the hex value of the dec entered in the parameter.</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">decToHex</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> dec)</span> {\n    <span class=\"hljs-type\">StringBuilder</span> <span class=\"hljs-variable\">hexBuilder</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">StringBuilder</span>(sizeOfIntInHalfBytes);\n    hexBuilder.setLength(sizeOfIntInHalfBytes);\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> sizeOfIntInHalfBytes - <span class=\"hljs-number\">1</span>; i &gt;= <span class=\"hljs-number\">0</span>; --i) {\n      <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> dec &amp; halfByte;\n      hexBuilder.setCharAt(i, hexDigits[j]);\n      dec &gt;&gt;= numberOfBitsInAHalfByte;\n    }\n    <span class=\"hljs-keyword\">return</span> hexBuilder.toString().toLowerCase();\n  }\n\n  <span class=\"hljs-comment\">// Test above function.</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    System.out.println(<span class=\"hljs-string\">&quot;Test...&quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">dec</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">305445566</span>;\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">libraryDecToHex</span> <span class=\"hljs-operator\">=</span> Integer.toHexString(dec);\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">decToHex</span> <span class=\"hljs-operator\">=</span> decToHex(dec);\n    System.out.println(<span class=\"hljs-string\">&quot;Result from the library : &quot;</span> + libraryDecToHex);\n    System.out.println(<span class=\"hljs-string\">&quot;Result decToHex method : &quot;</span> + decToHex);\n  }\n}\n"
+    },
+    "dart": {
+      "dir": "conversions/Decimal_to_Hexadecimal.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/conversions/Decimal_to_Hexadecimal.dart",
+      "code": "<span class=\"hljs-built_in\">Map</span>&lt;<span class=\"hljs-built_in\">String</span>, <span class=\"hljs-built_in\">String</span>&gt; hex_table = {\n  <span class=\"hljs-string\">&quot;10&quot;</span>: <span class=\"hljs-string\">&quot;A&quot;</span>,\n  <span class=\"hljs-string\">&quot;11&quot;</span>: <span class=\"hljs-string\">&quot;B&quot;</span>,\n  <span class=\"hljs-string\">&quot;12&quot;</span>: <span class=\"hljs-string\">&quot;C&quot;</span>,\n  <span class=\"hljs-string\">&quot;13&quot;</span>: <span class=\"hljs-string\">&quot;D&quot;</span>,\n  <span class=\"hljs-string\">&quot;14&quot;</span>: <span class=\"hljs-string\">&quot;E&quot;</span>,\n  <span class=\"hljs-string\">&quot;15&quot;</span>: <span class=\"hljs-string\">&quot;F&quot;</span>,\n};\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-built_in\">print</span>(decimal_to_hexadecimal(<span class=\"hljs-number\">-123</span>));\n  <span class=\"hljs-built_in\">print</span>(decimal_to_hexadecimal(<span class=\"hljs-number\">0</span>));\n  <span class=\"hljs-built_in\">print</span>(decimal_to_hexadecimal(<span class=\"hljs-number\">404</span>));\n}\n\n<span class=\"hljs-built_in\">String</span> decimal_to_hexadecimal(<span class=\"hljs-built_in\">int</span> decimal_val) {\n  <span class=\"hljs-keyword\">if</span> (decimal_val == <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;0&quot;</span>;\n  }\n  <span class=\"hljs-built_in\">bool</span> negative = <span class=\"hljs-keyword\">false</span>;\n  <span class=\"hljs-keyword\">if</span> (decimal_val &lt; <span class=\"hljs-number\">0</span>) {\n    negative = <span class=\"hljs-keyword\">true</span>;\n    decimal_val *= <span class=\"hljs-number\">-1</span>;\n  }\n  <span class=\"hljs-built_in\">String</span> hex_string = <span class=\"hljs-string\">&quot;&quot;</span>;\n  <span class=\"hljs-keyword\">while</span> (decimal_val &gt; <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-built_in\">String</span> hex_val = <span class=\"hljs-string\">&quot;&quot;</span>;\n    <span class=\"hljs-built_in\">int</span> remainder = decimal_val % <span class=\"hljs-number\">16</span>;\n    decimal_val = decimal_val ~/ <span class=\"hljs-number\">16</span>;\n    <span class=\"hljs-keyword\">if</span> (hex_table.containsKey(remainder.toString())) {\n      hex_val = hex_table[remainder.toString()];\n    } <span class=\"hljs-keyword\">else</span> {\n      hex_val = remainder.toString();\n    }\n    hex_string = hex_val + hex_string;\n  }\n  <span class=\"hljs-keyword\">return</span> negative ? <span class=\"hljs-string\">&quot;-&quot;</span> + hex_string : hex_string;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arogon1",
+      "email": "40372809+Arogon1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrés Jozef Jiménez Leandro",
+      "email": "AndrewJey@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jasper",
+      "email": "46252815+jasper256@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

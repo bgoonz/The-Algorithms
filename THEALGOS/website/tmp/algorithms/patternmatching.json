@@ -1,0 +1,31 @@
+{
+  "slug": "patternmatching",
+  "name": "PatternMatching",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/PatternMatching.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/PatternMatching.js",
+      "code": "<span class=\"hljs-comment\">/*\nPattern matching is case insensitive as\nthe inputs are converted to lower case before the\nalgorithm is run.\n\nThe algorithm will run through the entire text and\nreturn the starting index if the given pattern is\navailable in the text\n*/</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">checkIfPatternExists</span> = (<span class=\"hljs-params\">text, pattern</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> text !== <span class=\"hljs-string\">&#x27;string&#x27;</span> || <span class=\"hljs-keyword\">typeof</span> pattern !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;Given input is not a string&#x27;</span>)\n  }\n  <span class=\"hljs-keyword\">const</span> textLength = text.<span class=\"hljs-property\">length</span> <span class=\"hljs-comment\">// Store the length of the text in a variable</span>\n  <span class=\"hljs-keyword\">const</span> patternLength = pattern.<span class=\"hljs-property\">length</span> <span class=\"hljs-comment\">// Store the length of the pattern in a variable</span>\n\n  <span class=\"hljs-comment\">// Iterate through the text until the textlength - patternlength index</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt;= textLength - patternLength; i++) {\n    <span class=\"hljs-comment\">// For each character in the text check if the subsequent character</span>\n    <span class=\"hljs-comment\">// are matching the given pattern; if not break from the condition</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> j = <span class=\"hljs-number\">0</span>; j &lt; textLength; j++) {\n      <span class=\"hljs-keyword\">if</span> (text[i + j] !== pattern[j]) <span class=\"hljs-keyword\">break</span>\n\n      <span class=\"hljs-comment\">// For each iteration of j check if the value of</span>\n      <span class=\"hljs-comment\">// j + 1 is equal to the length of the pattern</span>\n      <span class=\"hljs-keyword\">if</span> (j + <span class=\"hljs-number\">1</span> === patternLength) {\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">`Given pattern is found at index <span class=\"hljs-subst\">${i}</span>`</span>\n      }\n    }\n  }\n}\n\n<span class=\"hljs-keyword\">export</span> { checkIfPatternExists }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Thivagar",
+      "email": "51501788+thivagar-manickam@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Alexandre Xavier",
+      "email": "ale.bxsantos@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

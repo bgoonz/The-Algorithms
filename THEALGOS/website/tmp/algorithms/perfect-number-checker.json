@@ -1,0 +1,21 @@
+{
+  "slug": "perfect-number-checker",
+  "name": "Perfect Number Checker",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "c-sharp": {
+      "dir": "Algorithms/Numeric/PerfectNumberChecker.cs",
+      "url": "https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Numeric/PerfectNumberChecker.cs",
+      "code": "﻿<span class=\"hljs-keyword\">using</span> System;\n\n<span class=\"hljs-keyword\">namespace</span> <span class=\"hljs-title\">Algorithms.Numeric</span>\n{\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     In number theory, a perfect number is a positive integer that is equal to the sum of its positive</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     divisors, excluding the number itself.For instance, 6 has divisors 1, 2 and 3 (excluding</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     itself), and 1 + 2 + 3 = 6, so 6 is a perfect number.</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">PerfectNumberChecker</span>\n    {\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     Checks if a number is a perfect number or not.</span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;param name=&quot;number&quot;&gt;</span>Number to check.<span class=\"hljs-doctag\">&lt;/param&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;returns&gt;</span>True if is a perfect number; False otherwise.<span class=\"hljs-doctag\">&lt;/returns&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;exception cref=&quot;ArgumentException&quot;&gt;</span>Error number is not on interval (0.0; int.MaxValue).<span class=\"hljs-doctag\">&lt;/exception&gt;</span></span>\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-built_in\">bool</span> <span class=\"hljs-title\">IsPerfectNumber</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">int</span> number</span>)</span>\n        {\n            <span class=\"hljs-keyword\">if</span> (number &lt; <span class=\"hljs-number\">0</span>)\n            {\n                <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> ArgumentException(<span class=\"hljs-string\">$&quot;<span class=\"hljs-subst\">{<span class=\"hljs-keyword\">nameof</span>(number)}</span> cannot be negative&quot;</span>);\n            }\n\n            <span class=\"hljs-keyword\">var</span> sum = <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">/* sum of its positive divisors */</span>\n            <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">1</span>; i &lt; number; ++i)\n            {\n                <span class=\"hljs-keyword\">if</span> (number % i == <span class=\"hljs-number\">0</span>)\n                {\n                    sum += i;\n                }\n            }\n\n            <span class=\"hljs-keyword\">return</span> sum == number;\n        }\n    }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

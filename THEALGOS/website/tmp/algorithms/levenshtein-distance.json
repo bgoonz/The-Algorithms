@@ -1,0 +1,126 @@
+{
+  "slug": "levenshtein-distance",
+  "name": "Levenshtein Distance",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/levenshtein_distance.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/levenshtein_distance.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThis is a Python implementation of the levenshtein distance.\nLevenshtein distance is a string metric for measuring the\ndifference between two sequences.\n\nFor doctests run following command:\npython -m doctest -v levenshtein-distance.py\nor\npython3 -m doctest -v levenshtein-distance.py\n\nFor manual testing run:\npython levenshtein-distance.py\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">levenshtein_distance</span>(<span class=\"hljs-params\">first_word: <span class=\"hljs-built_in\">str</span>, second_word: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;Implementation of the levenshtein distance in Python.\n    :param first_word: the first word to measure the difference.\n    :param second_word: the second word to measure the difference.\n    :return: the levenshtein distance between the two words.\n    Examples:\n    &gt;&gt;&gt; levenshtein_distance(&quot;planet&quot;, &quot;planetary&quot;)\n    3\n    &gt;&gt;&gt; levenshtein_distance(&quot;&quot;, &quot;test&quot;)\n    4\n    &gt;&gt;&gt; levenshtein_distance(&quot;book&quot;, &quot;back&quot;)\n    2\n    &gt;&gt;&gt; levenshtein_distance(&quot;book&quot;, &quot;book&quot;)\n    0\n    &gt;&gt;&gt; levenshtein_distance(&quot;test&quot;, &quot;&quot;)\n    4\n    &gt;&gt;&gt; levenshtein_distance(&quot;&quot;, &quot;&quot;)\n    0\n    &gt;&gt;&gt; levenshtein_distance(&quot;orchestration&quot;, &quot;container&quot;)\n    10\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># The longer word should come first</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(first_word) &lt; <span class=\"hljs-built_in\">len</span>(second_word):\n        <span class=\"hljs-keyword\">return</span> levenshtein_distance(second_word, first_word)\n\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(second_word) == <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">len</span>(first_word)\n\n    previous_row = <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(second_word) + <span class=\"hljs-number\">1</span>)\n\n    <span class=\"hljs-keyword\">for</span> i, c1 <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(first_word):\n\n        current_row = [i + <span class=\"hljs-number\">1</span>]\n\n        <span class=\"hljs-keyword\">for</span> j, c2 <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(second_word):\n\n            <span class=\"hljs-comment\"># Calculate insertions, deletions and substitutions</span>\n            insertions = previous_row[j + <span class=\"hljs-number\">1</span>] + <span class=\"hljs-number\">1</span>\n            deletions = current_row[j] + <span class=\"hljs-number\">1</span>\n            substitutions = previous_row[j] + (c1 != c2)\n\n            <span class=\"hljs-comment\"># Get the minimum to append to the current row</span>\n            current_row.append(<span class=\"hljs-built_in\">min</span>(insertions, deletions, substitutions))\n\n        <span class=\"hljs-comment\"># Store the previous row</span>\n        previous_row = current_row\n\n    <span class=\"hljs-comment\"># Returns the last element (distance)</span>\n    <span class=\"hljs-keyword\">return</span> previous_row[-<span class=\"hljs-number\">1</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    first_word = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter the first word:\\n&quot;</span>).strip()\n    second_word = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter the second word:\\n&quot;</span>).strip()\n\n    result = levenshtein_distance(first_word, second_word)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Levenshtein distance between <span class=\"hljs-subst\">{first_word}</span> and <span class=\"hljs-subst\">{second_word}</span> is <span class=\"hljs-subst\">{result}</span>&quot;</span>)\n"
+    },
+    "javascript": {
+      "dir": "String/LevenshteinDistance.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/LevenshteinDistance.js",
+      "code": "<span class=\"hljs-comment\">/* The Levenshtein distance (a.k.a edit distance) is a\nmeasure of similarity between two strings. It is\ndefined as the minimum number of changes required to\nconvert string a into string b (this is done by\ninserting, deleting or replacing a character in\nstring a).\nThe smaller the Levenshtein distance,\nthe more similar the strings are. This is a very\ncommon problem in the application of Dynamic Programming.\n*/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">levenshteinDistance</span> = (<span class=\"hljs-params\">a, b</span>) =&gt; {\n  <span class=\"hljs-comment\">// Declaring array &#x27;D&#x27; with rows = len(a) + 1 and columns = len(b) + 1:</span>\n  <span class=\"hljs-keyword\">const</span> distanceMatrix = <span class=\"hljs-title class_\">Array</span>(b.<span class=\"hljs-property\">length</span> + <span class=\"hljs-number\">1</span>)\n    .<span class=\"hljs-title function_\">fill</span>(<span class=\"hljs-literal\">null</span>)\n    .<span class=\"hljs-title function_\">map</span>(<span class=\"hljs-function\">() =&gt;</span> <span class=\"hljs-title class_\">Array</span>(a.<span class=\"hljs-property\">length</span> + <span class=\"hljs-number\">1</span>).<span class=\"hljs-title function_\">fill</span>(<span class=\"hljs-literal\">null</span>))\n\n  <span class=\"hljs-comment\">// Initialising first column:</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt;= a.<span class=\"hljs-property\">length</span>; i += <span class=\"hljs-number\">1</span>) {\n    distanceMatrix[<span class=\"hljs-number\">0</span>][i] = i\n  }\n\n  <span class=\"hljs-comment\">// Initialising first row:</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> j = <span class=\"hljs-number\">0</span>; j &lt;= b.<span class=\"hljs-property\">length</span>; j += <span class=\"hljs-number\">1</span>) {\n    distanceMatrix[j][<span class=\"hljs-number\">0</span>] = j\n  }\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> j = <span class=\"hljs-number\">1</span>; j &lt;= b.<span class=\"hljs-property\">length</span>; j += <span class=\"hljs-number\">1</span>) {\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">1</span>; i &lt;= a.<span class=\"hljs-property\">length</span>; i += <span class=\"hljs-number\">1</span>) {\n      <span class=\"hljs-keyword\">const</span> indicator = a[i - <span class=\"hljs-number\">1</span>] === b[j - <span class=\"hljs-number\">1</span>] ? <span class=\"hljs-number\">0</span> : <span class=\"hljs-number\">1</span>\n      <span class=\"hljs-comment\">// choosing the minimum of all three, vis-a-vis:</span>\n      distanceMatrix[j][i] = <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">min</span>(\n        distanceMatrix[j][i - <span class=\"hljs-number\">1</span>] + <span class=\"hljs-number\">1</span>, <span class=\"hljs-comment\">// deletion</span>\n        distanceMatrix[j - <span class=\"hljs-number\">1</span>][i] + <span class=\"hljs-number\">1</span>, <span class=\"hljs-comment\">// insertion</span>\n        distanceMatrix[j - <span class=\"hljs-number\">1</span>][i - <span class=\"hljs-number\">1</span>] + indicator <span class=\"hljs-comment\">// substitution</span>\n      )\n    }\n  }\n\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(\n    <span class=\"hljs-string\">&#x27;Levenshtein Distance between &#x27;</span> +\n            a +\n            <span class=\"hljs-string\">&#x27; and &#x27;</span> +\n            b +\n            <span class=\"hljs-string\">&#x27; is = &#x27;</span> +\n            distanceMatrix[b.<span class=\"hljs-property\">length</span>][a.<span class=\"hljs-property\">length</span>]\n  )\n  <span class=\"hljs-keyword\">return</span> distanceMatrix[b.<span class=\"hljs-property\">length</span>][a.<span class=\"hljs-property\">length</span>]\n}\n\n<span class=\"hljs-keyword\">export</span> { levenshteinDistance }\n"
+    },
+    "java": {
+      "dir": "DynamicProgramming/LevenshteinDistance.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DynamicProgramming/LevenshteinDistance.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DynamicProgramming;\n\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@author</span> Kshitij VERMA (github.com/kv19971) LEVENSHTEIN DISTANCE dyamic programming implementation\n *     to show the difference between two strings\n *     (https://en.wikipedia.org/wiki/Levenshtein_distance)\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">LevenshteinDistance</span> {\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">minimum</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> b, <span class=\"hljs-type\">int</span> c)</span> {\n    <span class=\"hljs-keyword\">if</span> (a &lt; b &amp;&amp; a &lt; c) {\n      <span class=\"hljs-keyword\">return</span> a;\n    } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (b &lt; a &amp;&amp; b &lt; c) {\n      <span class=\"hljs-keyword\">return</span> b;\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-keyword\">return</span> c;\n    }\n  }\n\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">calculate_distance</span><span class=\"hljs-params\">(String a, String b)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">len_a</span> <span class=\"hljs-operator\">=</span> a.length() + <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">len_b</span> <span class=\"hljs-operator\">=</span> b.length() + <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-type\">int</span>[][] distance_mat = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">int</span>[len_a][len_b];\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; len_a; i++) {\n      distance_mat[i][<span class=\"hljs-number\">0</span>] = i;\n    }\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; j &lt; len_b; j++) {\n      distance_mat[<span class=\"hljs-number\">0</span>][j] = j;\n    }\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; len_a; i++) {\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; j &lt; len_b; j++) {\n        <span class=\"hljs-type\">int</span> cost;\n        <span class=\"hljs-keyword\">if</span> (a.charAt(i) == b.charAt(j)) {\n          cost = <span class=\"hljs-number\">0</span>;\n        } <span class=\"hljs-keyword\">else</span> {\n          cost = <span class=\"hljs-number\">1</span>;\n        }\n        distance_mat[i][j] =\n            minimum(distance_mat[i - <span class=\"hljs-number\">1</span>][j], distance_mat[i - <span class=\"hljs-number\">1</span>][j - <span class=\"hljs-number\">1</span>], distance_mat[i][j - <span class=\"hljs-number\">1</span>])\n                + cost;\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> distance_mat[len_a - <span class=\"hljs-number\">1</span>][len_b - <span class=\"hljs-number\">1</span>];\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">a</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&quot;&quot;</span>; <span class=\"hljs-comment\">// enter your string here</span>\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">b</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-string\">&quot;&quot;</span>; <span class=\"hljs-comment\">// enter your string here</span>\n\n    System.out.print(<span class=\"hljs-string\">&quot;Levenshtein distance between &quot;</span> + a + <span class=\"hljs-string\">&quot; and &quot;</span> + b + <span class=\"hljs-string\">&quot; is: &quot;</span>);\n    System.out.println(calculate_distance(a, b));\n  }\n}\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/LevenshteinDistance.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/LevenshteinDistance.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\n\n<span class=\"hljs-keyword\">module</span> LevenshteinDistance =\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\n    <span class=\"hljs-comment\">/// Implementation of the levenshtein distance in F#.</span>\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;firstWord&quot;&gt;The first word to measure the difference.&lt;/param&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;secondWord&quot;&gt;The second word to measure the difference.&lt;/param&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;returns&gt;&lt;/returns&gt;</span>\n    <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">rec</span> levenshteinDistance (firstWord: string, secondWord: string): int =\n        <span class=\"hljs-comment\">// The longer word should come first</span>\n\n        <span class=\"hljs-keyword\">match</span> secondWord.Length <span class=\"hljs-keyword\">with</span>\n        | s <span class=\"hljs-keyword\">when</span> s &gt; firstWord.Length -&gt; levenshteinDistance (secondWord, firstWord)\n        | <span class=\"hljs-number\">0</span> -&gt; firstWord.Length\n        | _ -&gt;\n            <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> previousRow = [ <span class=\"hljs-number\">0</span> .. secondWord.Length ]\n\n            firstWord\n            |&gt; Seq.iteri\n                (<span class=\"hljs-keyword\">fun</span> i c1 -&gt;\n                    <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> currentRow = [ i + <span class=\"hljs-number\">1</span> ]\n\n                    secondWord\n                    |&gt; Seq.iteri\n                        (<span class=\"hljs-keyword\">fun</span> j c2 -&gt;\n                            <span class=\"hljs-keyword\">let</span> insertions = previousRow.[j + <span class=\"hljs-number\">1</span>] + <span class=\"hljs-number\">1</span>\n                            <span class=\"hljs-keyword\">let</span> deletions = currentRow.[j] + <span class=\"hljs-number\">1</span>\n\n                            <span class=\"hljs-keyword\">let</span> substitutions =\n                                previousRow.[j] + (<span class=\"hljs-keyword\">if</span> c1 &lt;&gt; c2 <span class=\"hljs-keyword\">then</span> <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">else</span> <span class=\"hljs-number\">0</span>)\n\n                            <span class=\"hljs-comment\">// Get the minimum to append to the current row</span>\n                            currentRow &lt;-\n                                currentRow\n                                |&gt; List.append [ (min insertions (min deletions substitutions)) ])\n\n                    previousRow &lt;- currentRow |&gt; List.rev)\n\n            previousRow |&gt; List.rev |&gt; List.item <span class=\"hljs-number\">0</span>\n"
+    },
+    "go": {
+      "dir": "strings/levenshteindistance/levenshteinDistance.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/strings/levenshteindistance/levenshteinDistance.go",
+      "code": "<span class=\"hljs-comment\">/*\nThis algorithm calculates the distance between two strings.\nParameters: two strings to compare and weights of insertion, substitution and deletion.\nOutput: distance between both strings\n*/</span>\n\n<span class=\"hljs-keyword\">package</span> levenshteindistance\n\n<span class=\"hljs-comment\">// LevenshteinDistance Function that gives Levenshtein Distance</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">LevenshteinDistance</span><span class=\"hljs-params\">(str1, str2 <span class=\"hljs-keyword\">string</span>, icost, scost, dcost <span class=\"hljs-keyword\">int</span>)</span> <span class=\"hljs-title\">int</span></span> {\n\trow1 := <span class=\"hljs-built_in\">make</span>([]<span class=\"hljs-keyword\">int</span>, <span class=\"hljs-built_in\">len</span>(str2)+<span class=\"hljs-number\">1</span>)\n\trow2 := <span class=\"hljs-built_in\">make</span>([]<span class=\"hljs-keyword\">int</span>, <span class=\"hljs-built_in\">len</span>(str2)+<span class=\"hljs-number\">1</span>)\n\n\t<span class=\"hljs-keyword\">for</span> i := <span class=\"hljs-number\">1</span>; i &lt;= <span class=\"hljs-built_in\">len</span>(str2); i++ {\n\t\trow1[i] = i * icost\n\t}\n\n\t<span class=\"hljs-keyword\">for</span> i := <span class=\"hljs-number\">1</span>; i &lt;= <span class=\"hljs-built_in\">len</span>(str1); i++ {\n\t\trow2[<span class=\"hljs-number\">0</span>] = i * dcost\n\n\t\t<span class=\"hljs-keyword\">for</span> j := <span class=\"hljs-number\">1</span>; j &lt;= <span class=\"hljs-built_in\">len</span>(str2); j++ {\n\t\t\t<span class=\"hljs-keyword\">if</span> str1[i<span class=\"hljs-number\">-1</span>] == str2[j<span class=\"hljs-number\">-1</span>] {\n\t\t\t\trow2[j] = row1[j<span class=\"hljs-number\">-1</span>]\n\t\t\t} <span class=\"hljs-keyword\">else</span> {\n\t\t\t\tins := row2[j<span class=\"hljs-number\">-1</span>] + icost\n\t\t\t\tdel := row1[j] + dcost\n\t\t\t\tsub := row1[j<span class=\"hljs-number\">-1</span>] + scost\n\n\t\t\t\t<span class=\"hljs-keyword\">if</span> ins &lt; del &amp;&amp; ins &lt; sub {\n\t\t\t\t\trow2[j] = ins\n\t\t\t\t} <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> del &lt; sub {\n\t\t\t\t\trow2[j] = del\n\t\t\t\t} <span class=\"hljs-keyword\">else</span> {\n\t\t\t\t\trow2[j] = sub\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\trow1, row2 = row2, row1\n\t}\n\n\t<span class=\"hljs-keyword\">return</span> row1[<span class=\"hljs-built_in\">len</span>(row1)<span class=\"hljs-number\">-1</span>]\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "nttzamos",
+      "email": "36950737+nttzamos@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "bogdandv",
+      "email": "bogdandv_14@yahoo.com",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "sangjun2",
+      "email": "sj27294626@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Daniel Müller",
+      "email": "danielmueller@limebird.de",
+      "commits": 1
+    },
+    {
+      "name": "kv19971",
+      "email": "kshitijverma999@hotmail.com",
+      "commits": 1
+    },
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kelvin Salton do Prado",
+      "email": "kelvinpfw@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vaibhavrajsingh2001",
+      "email": "vaibhavrajsingh2001@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 3
+    },
+    {
+      "name": "Luiz Mai",
+      "email": "lffmai@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

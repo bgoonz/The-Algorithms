@@ -1,0 +1,16 @@
+{
+  "slug": "xgboost",
+  "name": "Xgboost",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Ron Lee",
+      "email": "857748998@qq.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

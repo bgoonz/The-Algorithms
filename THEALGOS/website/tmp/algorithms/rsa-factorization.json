@@ -1,0 +1,36 @@
+{
+  "slug": "rsa-factorization",
+  "name": "Rsa Factorization",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/rsa_factorization.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/rsa_factorization.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\r\nAn RSA prime factor algorithm.\r\n\r\nThe program can efficiently factor RSA prime number given the private key d and\r\npublic key e.\r\nSource: on page 3 of https://crypto.stanford.edu/~dabo/papers/RSA-survey.pdf\r\nMore readable source: https://www.di-mgt.com.au/rsa_factorize_n.html\r\nlarge number can take minutes to factor, therefore are not included in doctest.\r\n&quot;&quot;&quot;</span>\r\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\r\n\r\n<span class=\"hljs-keyword\">import</span> math\r\n<span class=\"hljs-keyword\">import</span> random\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">rsafactor</span>(<span class=\"hljs-params\">d: <span class=\"hljs-built_in\">int</span>, e: <span class=\"hljs-built_in\">int</span>, N: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    This function returns the factors of N, where p*q=N\r\n      Return: [p, q]\r\n\r\n    We call N the RSA modulus, e the encryption exponent, and d the decryption exponent.\r\n    The pair (N, e) is the public key. As its name suggests, it is public and is used to\r\n        encrypt messages.\r\n    The pair (N, d) is the secret key or private key and is known only to the recipient\r\n        of encrypted messages.\r\n\r\n    &gt;&gt;&gt; rsafactor(3, 16971, 25777)\r\n    [149, 173]\r\n    &gt;&gt;&gt; rsafactor(7331, 11, 27233)\r\n    [113, 241]\r\n    &gt;&gt;&gt; rsafactor(4021, 13, 17711)\r\n    [89, 199]\r\n    &quot;&quot;&quot;</span>\r\n    k = d * e - <span class=\"hljs-number\">1</span>\r\n    p = <span class=\"hljs-number\">0</span>\r\n    q = <span class=\"hljs-number\">0</span>\r\n    <span class=\"hljs-keyword\">while</span> p == <span class=\"hljs-number\">0</span>:\r\n        g = random.randint(<span class=\"hljs-number\">2</span>, N - <span class=\"hljs-number\">1</span>)\r\n        t = k\r\n        <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\r\n            <span class=\"hljs-keyword\">if</span> t % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\r\n                t = t // <span class=\"hljs-number\">2</span>\r\n                x = (g ** t) % N\r\n                y = math.gcd(x - <span class=\"hljs-number\">1</span>, N)\r\n                <span class=\"hljs-keyword\">if</span> x &gt; <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">and</span> y &gt; <span class=\"hljs-number\">1</span>:\r\n                    p = y\r\n                    q = N // y\r\n                    <span class=\"hljs-keyword\">break</span>  <span class=\"hljs-comment\"># find the correct factors</span>\r\n            <span class=\"hljs-keyword\">else</span>:\r\n                <span class=\"hljs-keyword\">break</span>  <span class=\"hljs-comment\"># t is not divisible by 2, break and choose another g</span>\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">sorted</span>([p, q])\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-keyword\">import</span> doctest\r\n\r\n    doctest.testmod()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Zizhou Zhang",
+      "email": "z1335447535@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

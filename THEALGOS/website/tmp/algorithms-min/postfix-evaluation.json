@@ -1,0 +1,32 @@
+{
+  "slug": "postfix-evaluation",
+  "name": "Postfix Evaluation",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Darshana Sarma",
+      "email": "69460657+Darshana-Sarma@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

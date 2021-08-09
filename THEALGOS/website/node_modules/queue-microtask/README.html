@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="queue-microtask-cici-imageci-url-npmnpm-imagenpm-url-downloadsdownloads-imagedownloads-url-javascript-style-guidestandard-imagestandard-url">queue-microtask <a href="https://github.com/feross/queue-microtask/actions"><img src="https://img.shields.io/github/workflow/status/feross/queue-microtask/ci/master" alt="ci" /></a> <a href="https://npmjs.org/package/queue-microtask"><img src="https://img.shields.io/npm/v/queue-microtask.svg" alt="npm" /></a> <a href="https://npmjs.org/package/queue-microtask"><img src="https://img.shields.io/npm/dm/queue-microtask.svg" alt="downloads" /></a> <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="javascript style guide" /></a></h1>
+<h3 id="fast-tiny-queuemicrotask-shim-for-modern-engines">fast, tiny <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask"><code>queueMicrotask</code></a> shim for modern engines</h3>
+<ul>
+<li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask"><code>queueMicrotask</code></a> in all modern JS engines.</li>
+<li>No dependencies. Less than 10 lines. No shims or complicated fallbacks.</li>
+<li>Optimal performance in all modern environments
+<ul>
+<li>Uses <code>queueMicrotask</code> in modern environments</li>
+<li>Fallback to <code>Promise.resolve().then(fn)</code> in Node.js 10 and earlier, and old browsers (same performance as <code>queueMicrotask</code>)</li>
+</ul></li>
+</ul>
+<h2 id="install">install</h2>
+<pre><code>npm install queue-microtask</code></pre>
+<h2 id="usage">usage</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> queueMicrotask <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;queue-microtask&#39;</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="at">queueMicrotask</span>(() <span class="kw">=&gt;</span> <span class="op">{</span> <span class="co">/* this will run soon */</span> <span class="op">}</span>)</a></code></pre></div>
+<h2 id="what-is-queuemicrotask-and-why-would-one-use-it">What is <code>queueMicrotask</code> and why would one use it?</h2>
+<p>The <code>queueMicrotask</code> function is a WHATWG standard. It queues a microtask to be executed prior to control returning to the event loop.</p>
+<p>A microtask is a short function which will run after the current task has completed its work and when there is no other code waiting to be run before control of the execution context is returned to the event loop.</p>
+<p>The code <code>queueMicrotask(fn)</code> is equivalent to the code <code>Promise.resolve().then(fn)</code>. It is also very similar to <a href="https://nodejs.org/api/process.html#process_process_nexttick_callback_args"><code>process.nextTick(fn)</code></a> in Node.</p>
+<p>Using microtasks lets code run without interfering with any other, potentially higher priority, code that is pending, but before the JS engine regains control over the execution context.</p>
+<p>See the <a href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#microtask-queuing">spec</a> or <a href="https://nodejs.org/api/globals.html#globals_queuemicrotask_callback">Node documentation</a> for more information.</p>
+<h2 id="who-is-this-package-for">Who is this package for?</h2>
+<p>This package allows you to use <code>queueMicrotask</code> safely in all modern JS engines. Use it if you prioritize small JS bundle size over support for old browsers.</p>
+<p>If you just need to support Node 12 and later, use <code>queueMicrotask</code> directly. If you need to support all versions of Node, use this package.</p>
+<h2 id="why-not-use-process.nexttick">Why not use <code>process.nextTick</code>?</h2>
+<p>In Node, <code>queueMicrotask</code> and <code>process.nextTick</code> are <a href="https://nodejs.org/api/globals.html#globals_queuemicrotask_callback">essentially equivalent</a>, though there are <a href="https://github.com/YuzuJS/setImmediate#macrotasks-and-microtasks">subtle differences</a> that don’t matter in most situations.</p>
+<p>You can think of <code>queueMicrotask</code> as a standardized version of <code>process.nextTick</code> that works in the browser. No need to rely on your browser bundler to shim <code>process</code> for the browser environment.</p>
+<h2 id="why-not-use-settimeoutfn-0">Why not use <code>setTimeout(fn, 0)</code>?</h2>
+<p>This approach is the most compatible, but it has problems. Modern browsers throttle timers severely, so <code>setTimeout(…, 0)</code> usually takes at least 4ms to run. Furthermore, the throttling gets even worse if the page is backgrounded. If you have many <code>setTimeout</code> calls, then this can severely limit the performance of your program.</p>
+<h2 id="why-not-use-a-microtask-library-like-immediate-or-asap">Why not use a microtask library like <a href="https://www.npmjs.com/package/immediate"><code>immediate</code></a> or <a href="https://www.npmjs.com/package/asap"><code>asap</code></a>?</h2>
+<p>These packages are great! However, if you prioritize small JS bundle size over optimal performance in old browsers then you may want to consider this package.</p>
+<p>This package (<code>queue-microtask</code>) is four times smaller than <code>immediate</code>, twice as small as <code>asap</code>, and twice as small as using <code>process.nextTick</code> and letting the browser bundler shim it automatically.</p>
+<p>Note: This package throws an exception in JS environments which lack <code>Promise</code> support – which are usually very old browsers and Node.js versions.</p>
+<p>Since the <code>queueMicrotask</code> API is supported in Node.js, Chrome, Firefox, Safari, Opera, and Edge, <strong>the vast majority of users will get optimal performance</strong>. Any JS environment with <code>Promise</code>, which is almost all of them, also get optimal performance. If you need support for JS environments which lack <code>Promise</code> support, use one of the alternative packages.</p>
+<h2 id="what-is-a-shim">What is a shim?</h2>
+<blockquote>
+<p>In computer programming, a shim is a library that transparently intercepts API calls and changes the arguments passed, handles the operation itself or redirects the operation elsewhere. – <a href="https://en.wikipedia.org/wiki/Shim_(computing)">Wikipedia</a></p>
+</blockquote>
+<p>This package could also be described as a “ponyfill”.</p>
+<blockquote>
+<p>A ponyfill is almost the same as a polyfill, but not quite. Instead of patching functionality for older browsers, a ponyfill provides that functionality as a standalone module you can use. – <a href="https://ponyfoo.com/articles/polyfills-or-ponyfills">PonyFoo</a></p>
+</blockquote>
+<h2 id="api">API</h2>
+<h3 id="queuemicrotaskfn"><code>queueMicrotask(fn)</code></h3>
+<p>The <code>queueMicrotask()</code> method queues a microtask.</p>
+<p>The <code>fn</code> argument is a function to be executed after all pending tasks have completed but before yielding control to the browser’s event loop.</p>
+<h2 id="license">license</h2>
+<p>MIT. Copyright (c) <a href="https://feross.org">Feross Aboukhadijeh</a>.</p>
+</body>
+</html>

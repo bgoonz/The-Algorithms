@@ -1,0 +1,31 @@
+{
+  "slug": "bubble-sort-2",
+  "name": "Bubble Sort 2",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "sorting/bubble_sort_2.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/sorting/bubble_sort_2.c",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief implementation of [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) algorithm\n * @details\n * worst-case: O(n^2)\n * best-case: O(n)\n * average-complexity: O(n^2)\n\n * @author Unknown author\n * @author [Gabriel Fioravante](https://github.com/northernSage)\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span>   <span class=\"hljs-comment\">/// for rand() calls</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;assert.h&gt;</span>   <span class=\"hljs-comment\">/// for assert(&lt;expr&gt;)</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdbool.h&gt;</span>  <span class=\"hljs-comment\">/// for boolean values: true, false  </span></span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">define</span> MAX 20</span>\n\n<span class=\"hljs-comment\">/**\n * @brief Bubble sort implementation\n * @param array_sort the array to be sorted\n * @returns void\n */</span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">bubble_sort</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>* array_sort)</span>\n{\n\t<span class=\"hljs-type\">bool</span> is_sorted = <span class=\"hljs-literal\">false</span>;\n\n    <span class=\"hljs-comment\">/* keep iterating over entire array\n     * and swaping elements out of order\n     * until it is sorted */</span>\n    <span class=\"hljs-keyword\">while</span> (!is_sorted)\n    {\n\t\tis_sorted = <span class=\"hljs-literal\">true</span>;\n\n        <span class=\"hljs-comment\">/* iterate over all elements */</span>\n        <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; MAX - <span class=\"hljs-number\">1</span>; i++)\n        {\n            <span class=\"hljs-comment\">/* check if adjacent elements are out of order */</span>\n            <span class=\"hljs-keyword\">if</span> (array_sort[i] &gt; array_sort[i + <span class=\"hljs-number\">1</span>])\n            {\n                <span class=\"hljs-comment\">/* swap elements */</span>\n                <span class=\"hljs-type\">int</span> change_place = array_sort[i];\n                array_sort[i] = array_sort[i + <span class=\"hljs-number\">1</span>];\n                array_sort[i + <span class=\"hljs-number\">1</span>] = change_place;\n                <span class=\"hljs-comment\">/* elements out of order were found\n                 * so we reset the flag to keep ordering\n                 * until no swap operations are executed */</span>\n                is_sorted = <span class=\"hljs-literal\">false</span>;\n            }\n        }\n    }\n}\n\n<span class=\"hljs-comment\">/**\n * @brief Test implementations\n * @returns void\n */</span>\n<span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">test</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-comment\">/* simple int array for testing */</span>\n\t<span class=\"hljs-type\">int</span> array_sort[MAX] = {<span class=\"hljs-number\">0</span>};\n\n    <span class=\"hljs-comment\">/* populate our test array with \n     * random integer numbers */</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; MAX; i++)\n    {\n        array_sort[i] = rand() % <span class=\"hljs-number\">101</span>;\n    }\n\n    <span class=\"hljs-comment\">/* sort array */</span>\n    bubble_sort(array_sort);\n\n    <span class=\"hljs-comment\">/* check if array ir correctly ordered */</span>\t\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; MAX - <span class=\"hljs-number\">1</span>; i++)\n    {\n        assert(array_sort[i] &lt;= array_sort[i+<span class=\"hljs-number\">1</span>]);\n    }\n}\n\n<span class=\"hljs-comment\">/**\n * @brief Main function\n * @returns 0 on exit\n */</span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    test();  <span class=\"hljs-comment\">// run self-test implementations</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "Gabriel Fioravante",
+      "email": "gfvante@gmail.com",
+      "commits": 10
+    }
+  ],
+  "explanationUrl": {}
+}

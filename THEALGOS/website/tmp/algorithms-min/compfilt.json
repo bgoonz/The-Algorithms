@@ -1,0 +1,21 @@
+{
+  "slug": "compfilt",
+  "name": "CompFilt",
+  "categories": ["robotics", "complementaryfilter"],
+  "implementations": {
+    "haskell": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Artur Parowicz",
+      "email": "arturparowicz@gmail,com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

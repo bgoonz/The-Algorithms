@@ -1,0 +1,21 @@
+{
+  "slug": "coordinate",
+  "name": "Coordinate",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/Coordinate.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/Coordinate.js",
+      "code": "<span class=\"hljs-comment\">/*\n Calculate the mathematical properties involving coordinates\n Calculate the Distance Between 2 Points on a 2 Dimensional Plane\n Example: coorDistance(2,2,14,11) will return 15\n Wikipedia reference: https://en.wikipedia.org/wiki/Geographical_distance#Flat-surface_formulae\n*/</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">distance2points</span> = (<span class=\"hljs-params\">longitude1, latitude1, longitude2, latitude2</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> width = longitude2 - longitude1\n  <span class=\"hljs-keyword\">const</span> height = latitude2 - latitude1\n  <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">sqrt</span>(width * width + height * height))\n}\n\n<span class=\"hljs-keyword\">export</span> { distance2points }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Enoch-Moke",
+      "email": "86700309+Enoch-Moke@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

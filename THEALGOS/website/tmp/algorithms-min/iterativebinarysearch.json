@@ -1,0 +1,36 @@
+{
+  "slug": "iterativebinarysearch",
+  "name": "IterativeBinarySearch",
+  "categories": ["searches"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Salvatore Gabriele La Greca",
+      "email": "35406071+thegabriele97@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "thegabriele97",
+      "email": "gabriele.lagreca@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

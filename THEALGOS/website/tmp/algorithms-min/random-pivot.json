@@ -1,0 +1,10 @@
+{
+  "slug": "random-pivot",
+  "name": "Random pivot",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

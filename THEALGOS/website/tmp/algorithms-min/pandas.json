@@ -1,0 +1,10 @@
+{
+  "slug": "pandas",
+  "name": "Pandas",
+  "categories": ["machinelearning", "pandas"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

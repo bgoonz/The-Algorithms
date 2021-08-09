@@ -1,0 +1,27 @@
+{
+  "slug": "horspool",
+  "name": "Horspool",
+  "categories": ["strings"],
+  "implementations": {
+    "c-plus-plus": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "halafi",
+      "email": "filiphalas74@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ckontakis",
+      "email": "36933662+ckontakis@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "gradient-descent",
+  "name": "Gradient Descent",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "aneshkaul@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "=",
+      "email": "201551009@iiitvadodara.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Anesh Kaul",
+      "email": "koulanish787@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

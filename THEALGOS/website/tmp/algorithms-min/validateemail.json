@@ -1,0 +1,26 @@
+{
+  "slug": "validateemail",
+  "name": "ValidateEmail",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Cristian Baciu",
+      "email": "icristianbaciu@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cristian Lupu",
+      "email": "khez@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mahfoudh Arous",
+      "email": "mahfoudh.arous@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

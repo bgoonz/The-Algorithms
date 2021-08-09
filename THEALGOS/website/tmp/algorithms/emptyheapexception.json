@@ -1,0 +1,31 @@
+{
+  "slug": "emptyheapexception",
+  "name": "EmptyHeapException",
+  "categories": ["datastructures", "heaps"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Heaps/EmptyHeapException.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Heaps/EmptyHeapException.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Heaps;\n\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@author</span> Nicolas Renard Exception to be thrown if the getElement method is used on an empty heap.\n */</span>\n<span class=\"hljs-meta\">@SuppressWarnings(&quot;serial&quot;)</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">EmptyHeapException</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title class_\">Exception</span> {\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">EmptyHeapException</span><span class=\"hljs-params\">(String message)</span> {\n    <span class=\"hljs-built_in\">super</span>(message);\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "Nicolas Renard",
+      "email": "nicolas.renard.76@outlook.fr",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

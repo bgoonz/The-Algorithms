@@ -1,0 +1,26 @@
+{
+  "slug": "canny",
+  "name": "Canny",
+  "categories": ["digitalimageprocessing", "edgedetection"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shoujue Xu",
+      "email": "lightxusj@126.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

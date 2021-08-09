@@ -1,0 +1,181 @@
+{
+  "slug": "shell-sort",
+  "name": "Shell Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "haskell": "",
+    "go": "",
+    "rust": "",
+    "aarch64_assembly": "",
+    "dart": "",
+    "ruby": "",
+    "matlab-octave": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Siddharth Naithani",
+      "email": "42946112+sn99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek Mehra",
+      "email": "52788025+Triaro@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "mattan",
+      "email": "mattany@gmali.com",
+      "commits": 1
+    },
+    {
+      "name": "James Mc Dermott",
+      "email": "james.mcdermott89@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "KuLi",
+      "email": "KuLi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "zeroway",
+      "email": "M_O_Bz@163.com",
+      "commits": 1
+    },
+    {
+      "name": "littleFoot1",
+      "email": "52392154+littleFoot1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "LittleFoot",
+      "email": "2059416370@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KyleScharnhorst",
+      "email": "scharkr1@uw.edu",
+      "commits": 1
+    },
+    {
+      "name": "Dusan Punosevac",
+      "email": "dusan.punosevac@sbgenomics.com",
+      "commits": 1
+    },
+    {
+      "name": "KDH",
+      "email": "ehdgua01@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Sharma",
+      "email": "akshay.sharma09695@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "JakeBonek",
+      "email": "jake.bonek@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Sam Jones",
+      "email": "sam.jones240699@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Connor Bottum",
+      "email": "cbb692@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 4
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Algoritmos de Ordenamiento/Ordenamiento Shell.md",
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Sorting Algorithms/Shell Sort.md"
+  }
+}

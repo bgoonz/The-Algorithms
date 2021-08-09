@@ -1,0 +1,21 @@
+{
+  "slug": "djb2",
+  "name": "Djb2",
+  "categories": ["hashing"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "hashes/djb2.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/hashes/djb2.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThis algorithm (k=33) was first reported by Dan Bernstein many years ago in comp.lang.c\nAnother version of this algorithm (now favored by Bernstein) uses xor:\n    hash(i) = hash(i - 1) * 33 ^ str[i];\n\n    First Magic constant 33:\n    It has never been adequately explained.\n    It&#x27;s magic because it works better than many other constants, prime or not.\n\n    Second Magic Constant 5381:\n\n    1. odd number\n    2. prime number\n    3. deficient number\n    4. 001/010/100/000/101 b\n\n    source: http://www.cse.yorku.ca/~oz/hash.html\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">djb2</span>(<span class=\"hljs-params\">s: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Implementation of djb2 hash algorithm that\n    is popular because of it&#x27;s magic constants.\n\n    &gt;&gt;&gt; djb2(&#x27;Algorithms&#x27;)\n    3782405311\n\n    &gt;&gt;&gt; djb2(&#x27;scramble bits&#x27;)\n    1609059040\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-built_in\">hash</span> = <span class=\"hljs-number\">5381</span>\n    <span class=\"hljs-keyword\">for</span> x <span class=\"hljs-keyword\">in</span> s:\n        <span class=\"hljs-built_in\">hash</span> = ((<span class=\"hljs-built_in\">hash</span> &lt;&lt; <span class=\"hljs-number\">5</span>) + <span class=\"hljs-built_in\">hash</span>) + <span class=\"hljs-built_in\">ord</span>(x)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">hash</span> &amp; <span class=\"hljs-number\">0xFFFFFFFF</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "bnMikheili",
+      "email": "39998190+bnMikheili@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

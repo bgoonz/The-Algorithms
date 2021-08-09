@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>readme</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 align="center">
+<br> <br> <img width="320" src="media/logo.svg" alt="Chalk"> <br> <br> <br>
+</h1>
+<blockquote>
+<p>Terminal string styling done right</p>
+</blockquote>
+<p><a href="https://travis-ci.org/chalk/chalk"><img src="https://travis-ci.org/chalk/chalk.svg?branch=master" alt="Build Status" /></a> <a href="https://coveralls.io/github/chalk/chalk?branch=master"><img src="https://coveralls.io/repos/github/chalk/chalk/badge.svg?branch=master" alt="Coverage Status" /></a> <a href="https://www.youtube.com/watch?v=9auOCbH5Ns4"><img src="https://img.shields.io/badge/unicorn-approved-ff69b4.svg" /></a> <a href="https://github.com/xojs/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="XO code style" /></a> <a href="https://github.com/sindresorhus/awesome-nodejs"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Node.js" /></a></p>
+<h3 id="see-whats-new-in-chalk-2"><a href="https://github.com/chalk/chalk/releases/tag/v2.0.0">See what’s new in Chalk 2</a></h3>
+<p><img src="https://cdn.rawgit.com/chalk/ansi-styles/8261697c95bf34b6c7767e2cbe9941a851d59385/screenshot.svg" alt="" width="900"></p>
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li>Expressive API</li>
+<li>Highly performant</li>
+<li>Ability to nest styles</li>
+<li><a href="#256-and-truecolor-color-support">256/Truecolor color support</a></li>
+<li>Auto-detects color support</li>
+<li>Doesn’t extend <code>String.prototype</code></li>
+<li>Clean and focused</li>
+<li>Actively maintained</li>
+<li><a href="https://www.npmjs.com/browse/depended/chalk">Used by ~23,000 packages</a> as of December 31, 2017</li>
+</ul>
+<h2 id="install">Install</h2>
+<pre class="console"><code>$ npm install chalk</code></pre>
+<p><a href="https://www.patreon.com/sindresorhus"> <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"> </a></p>
+<h2 id="usage">Usage</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> chalk <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chalk&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="va">console</span>.<span class="at">log</span>(<span class="va">chalk</span>.<span class="at">blue</span>(<span class="st">&#39;Hello world!&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<p>Chalk comes with an easy to use composable API where you just chain and nest the styles you want.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> chalk <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chalk&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> log <span class="op">=</span> <span class="va">console</span>.<span class="at">log</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">// Combine styled and normal strings</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">blue</span>(<span class="st">&#39;Hello&#39;</span>) <span class="op">+</span> <span class="st">&#39; World&#39;</span> <span class="op">+</span> <span class="va">chalk</span>.<span class="at">red</span>(<span class="st">&#39;!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">// Compose multiple styles using the chainable API</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="at">log</span>(<span class="va">chalk</span>.<span class="va">blue</span>.<span class="va">bgRed</span>.<span class="at">bold</span>(<span class="st">&#39;Hello world!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-9" title="9"></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">// Pass in multiple arguments</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">blue</span>(<span class="st">&#39;Hello&#39;</span><span class="op">,</span> <span class="st">&#39;World!&#39;</span><span class="op">,</span> <span class="st">&#39;Foo&#39;</span><span class="op">,</span> <span class="st">&#39;bar&#39;</span><span class="op">,</span> <span class="st">&#39;biz&#39;</span><span class="op">,</span> <span class="st">&#39;baz&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-12" title="12"></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">// Nest styles</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">red</span>(<span class="st">&#39;Hello&#39;</span><span class="op">,</span> <span class="va">chalk</span>.<span class="va">underline</span>.<span class="at">bgBlue</span>(<span class="st">&#39;world&#39;</span>) <span class="op">+</span> <span class="st">&#39;!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-15" title="15"></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">// Nest styles of the same type even (color, underline, background)</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">green</span>(</a>
+<a class="sourceLine" id="cb3-18" title="18">    <span class="st">&#39;I am a green line &#39;</span> <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-19" title="19">    <span class="va">chalk</span>.<span class="va">blue</span>.<span class="va">underline</span>.<span class="at">bold</span>(<span class="st">&#39;with a blue substring&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-20" title="20">    <span class="st">&#39; that becomes green again!&#39;</span></a>
+<a class="sourceLine" id="cb3-21" title="21">))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-22" title="22"></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">// ES2015 template literal</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="at">log</span>(<span class="vs">`</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="vs">CPU: </span><span class="sc">${</span><span class="va">chalk</span>.<span class="at">red</span>(<span class="st">&#39;90%&#39;</span>)<span class="sc">}</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="vs">RAM: </span><span class="sc">${</span><span class="va">chalk</span>.<span class="at">green</span>(<span class="st">&#39;40%&#39;</span>)<span class="sc">}</span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="vs">DISK: </span><span class="sc">${</span><span class="va">chalk</span>.<span class="at">yellow</span>(<span class="st">&#39;70%&#39;</span>)<span class="sc">}</span></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="vs">`</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-29" title="29"></a>
+<a class="sourceLine" id="cb3-30" title="30"><span class="co">// ES2015 tagged template literal</span></a>
+<a class="sourceLine" id="cb3-31" title="31"><span class="at">log</span>(chalk<span class="vs">`</span></a>
+<a class="sourceLine" id="cb3-32" title="32"><span class="vs">CPU: {red </span><span class="sc">${</span><span class="va">cpu</span>.<span class="at">totalPercent</span><span class="sc">}</span><span class="vs">%}</span></a>
+<a class="sourceLine" id="cb3-33" title="33"><span class="vs">RAM: {green </span><span class="sc">${</span><span class="va">ram</span>.<span class="at">used</span> / <span class="va">ram</span>.<span class="at">total</span> <span class="op">*</span> <span class="dv">100</span><span class="sc">}</span><span class="vs">%}</span></a>
+<a class="sourceLine" id="cb3-34" title="34"><span class="vs">DISK: {rgb(255,131,0) </span><span class="sc">${</span><span class="va">disk</span>.<span class="at">used</span> / <span class="va">disk</span>.<span class="at">total</span> <span class="op">*</span> <span class="dv">100</span><span class="sc">}</span><span class="vs">%}</span></a>
+<a class="sourceLine" id="cb3-35" title="35"><span class="vs">`</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-36" title="36"></a>
+<a class="sourceLine" id="cb3-37" title="37"><span class="co">// Use RGB colors in terminal emulators that support it.</span></a>
+<a class="sourceLine" id="cb3-38" title="38"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">keyword</span>(<span class="st">&#39;orange&#39;</span>)(<span class="st">&#39;Yay for orange colored text!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-39" title="39"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">rgb</span>(<span class="dv">123</span><span class="op">,</span> <span class="dv">45</span><span class="op">,</span> <span class="dv">67</span>).<span class="at">underline</span>(<span class="st">&#39;Underlined reddish color&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-40" title="40"><span class="at">log</span>(<span class="va">chalk</span>.<span class="at">hex</span>(<span class="st">&#39;#DEADED&#39;</span>).<span class="at">bold</span>(<span class="st">&#39;Bold gray!&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<p>Easily define your own themes:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">const</span> chalk <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chalk&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> error <span class="op">=</span> <span class="va">chalk</span>.<span class="va">bold</span>.<span class="at">red</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">const</span> warning <span class="op">=</span> <span class="va">chalk</span>.<span class="at">keyword</span>(<span class="st">&#39;orange&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="at">error</span>(<span class="st">&#39;Error!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="at">warning</span>(<span class="st">&#39;Warning!&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<p>Take advantage of console.log <a href="https://nodejs.org/docs/latest/api/console.html#console_console_log_data_args">string substitution</a>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> name <span class="op">=</span> <span class="st">&#39;Sindre&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="va">chalk</span>.<span class="at">green</span>(<span class="st">&#39;Hello %s&#39;</span>)<span class="op">,</span> name)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">//=&gt; &#39;Hello Sindre&#39;</span></a></code></pre></div>
+<h2 id="api">API</h2>
+<h3 id="chalk.style.style...string-string...">chalk.<code>&lt;style&gt;[.&lt;style&gt;...](string, [string...])</code></h3>
+<p>Example: <code>chalk.red.bold.underline('Hello', 'world');</code></p>
+<p>Chain <a href="#styles">styles</a> and call the last one as a method with a string argument. Order doesn’t matter, and later styles take precedent in case of a conflict. This simply means that <code>chalk.red.yellow.green</code> is equivalent to <code>chalk.green</code>.</p>
+<p>Multiple arguments will be separated by space.</p>
+<h3 id="chalk.enabled">chalk.enabled</h3>
+<p>Color support is automatically detected, as is the level (see <code>chalk.level</code>). However, if you’d like to simply enable/disable Chalk, you can do so via the <code>.enabled</code> property.</p>
+<p>Chalk is enabled by default unless explicitly disabled via the constructor or <code>chalk.level</code> is <code>0</code>.</p>
+<p>If you need to change this in a reusable module, create a new instance:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> ctx <span class="op">=</span> <span class="kw">new</span> <span class="va">chalk</span>.<span class="at">constructor</span>(<span class="op">{</span><span class="dt">enabled</span><span class="op">:</span> <span class="kw">false</span><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<h3 id="chalk.level">chalk.level</h3>
+<p>Color support is automatically detected, but you can override it by setting the <code>level</code> property. You should however only do this in your own code as it applies globally to all Chalk consumers.</p>
+<p>If you need to change this in a reusable module, create a new instance:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> ctx <span class="op">=</span> <span class="kw">new</span> <span class="va">chalk</span>.<span class="at">constructor</span>(<span class="op">{</span><span class="dt">level</span><span class="op">:</span> <span class="dv">0</span><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<p>Levels are as follows:</p>
+<ol start="0" type="1">
+<li>All colors disabled</li>
+<li>Basic color support (16 colors)</li>
+<li>256 color support</li>
+<li>Truecolor support (16 million colors)</li>
+</ol>
+<h3 id="chalk.supportscolor">chalk.supportsColor</h3>
+<p>Detect whether the terminal <a href="https://github.com/chalk/supports-color">supports color</a>. Used internally and handled for you, but exposed for convenience.</p>
+<p>Can be overridden by the user with the flags <code>--color</code> and <code>--no-color</code>. For situations where using <code>--color</code> is not possible, add the environment variable <code>FORCE_COLOR=1</code> to forcefully enable color or <code>FORCE_COLOR=0</code> to forcefully disable. The use of <code>FORCE_COLOR</code> overrides all other color support checks.</p>
+<p>Explicit 256/Truecolor mode can be enabled using the <code>--color=256</code> and <code>--color=16m</code> flags, respectively.</p>
+<h2 id="styles">Styles</h2>
+<h3 id="modifiers">Modifiers</h3>
+<ul>
+<li><code>reset</code></li>
+<li><code>bold</code></li>
+<li><code>dim</code></li>
+<li><code>italic</code> <em>(Not widely supported)</em></li>
+<li><code>underline</code></li>
+<li><code>inverse</code></li>
+<li><code>hidden</code></li>
+<li><code>strikethrough</code> <em>(Not widely supported)</em></li>
+<li><code>visible</code> (Text is emitted only if enabled)</li>
+</ul>
+<h3 id="colors">Colors</h3>
+<ul>
+<li><code>black</code></li>
+<li><code>red</code></li>
+<li><code>green</code></li>
+<li><code>yellow</code></li>
+<li><code>blue</code> <em>(On Windows the bright version is used since normal blue is illegible)</em></li>
+<li><code>magenta</code></li>
+<li><code>cyan</code></li>
+<li><code>white</code></li>
+<li><code>gray</code> (“bright black”)</li>
+<li><code>redBright</code></li>
+<li><code>greenBright</code></li>
+<li><code>yellowBright</code></li>
+<li><code>blueBright</code></li>
+<li><code>magentaBright</code></li>
+<li><code>cyanBright</code></li>
+<li><code>whiteBright</code></li>
+</ul>
+<h3 id="background-colors">Background colors</h3>
+<ul>
+<li><code>bgBlack</code></li>
+<li><code>bgRed</code></li>
+<li><code>bgGreen</code></li>
+<li><code>bgYellow</code></li>
+<li><code>bgBlue</code></li>
+<li><code>bgMagenta</code></li>
+<li><code>bgCyan</code></li>
+<li><code>bgWhite</code></li>
+<li><code>bgBlackBright</code></li>
+<li><code>bgRedBright</code></li>
+<li><code>bgGreenBright</code></li>
+<li><code>bgYellowBright</code></li>
+<li><code>bgBlueBright</code></li>
+<li><code>bgMagentaBright</code></li>
+<li><code>bgCyanBright</code></li>
+<li><code>bgWhiteBright</code></li>
+</ul>
+<h2 id="tagged-template-literal">Tagged template literal</h2>
+<p>Chalk can be used as a <a href="http://exploringjs.com/es6/ch_template-literals.html#_tagged-template-literals">tagged template literal</a>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> chalk <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chalk&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">const</span> miles <span class="op">=</span> <span class="dv">18</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">const</span> calculateFeet <span class="op">=</span> miles <span class="kw">=&gt;</span> miles <span class="op">*</span> <span class="dv">5280</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="va">console</span>.<span class="at">log</span>(chalk<span class="vs">`</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="vs">  There are {bold 5280 feet} in a mile.</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="vs">  In {bold </span><span class="sc">${</span>miles<span class="sc">}</span><span class="vs"> miles}, there are {green.bold </span><span class="sc">${</span><span class="at">calculateFeet</span>(miles)<span class="sc">}</span><span class="vs"> feet}.</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="vs">`</span>)<span class="op">;</span></a></code></pre></div>
+<p>Blocks are delimited by an opening curly brace (<code>{</code>), a style, some content, and a closing curly brace (<code>}</code>).</p>
+<p>Template styles are chained exactly like normal Chalk styles. The following two statements are equivalent:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">chalk</span>.<span class="va">bold</span>.<span class="at">rgb</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">200</span>)(<span class="st">&#39;Hello!&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="va">console</span>.<span class="at">log</span>(chalk<span class="vs">`{bold.rgb(10,100,200) Hello!}`</span>)<span class="op">;</span></a></code></pre></div>
+<p>Note that function styles (<code>rgb()</code>, <code>hsl()</code>, <code>keyword()</code>, etc.) may not contain spaces between parameters.</p>
+<p>All interpolated values (<code>chalk`${foo}`</code>) are converted to strings via the <code>.toString()</code> method. All curly braces (<code>{</code> and <code>}</code>) in interpolated value strings are escaped.</p>
+<h2 id="and-truecolor-color-support">256 and Truecolor color support</h2>
+<p>Chalk supports 256 colors and <a href="https://gist.github.com/XVilka/8346728">Truecolor</a> (16 million colors) on supported terminal apps.</p>
+<p>Colors are downsampled from 16 million RGB values to an ANSI color format that is supported by the terminal emulator (or by specifying <code>{level: n}</code> as a Chalk option). For example, Chalk configured to run at level 1 (basic color support) will downsample an RGB value of #FF0000 (red) to 31 (ANSI escape for red).</p>
+<p>Examples:</p>
+<ul>
+<li><code>chalk.hex('#DEADED').underline('Hello, world!')</code></li>
+<li><code>chalk.keyword('orange')('Some orange text')</code></li>
+<li><code>chalk.rgb(15, 100, 204).inverse('Hello!')</code></li>
+</ul>
+<p>Background versions of these models are prefixed with <code>bg</code> and the first level of the module capitalized (e.g. <code>keyword</code> for foreground colors and <code>bgKeyword</code> for background colors).</p>
+<ul>
+<li><code>chalk.bgHex('#DEADED').underline('Hello, world!')</code></li>
+<li><code>chalk.bgKeyword('orange')('Some orange text')</code></li>
+<li><code>chalk.bgRgb(15, 100, 204).inverse('Hello!')</code></li>
+</ul>
+<p>The following color models can be used:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/RGB_color_model"><code>rgb</code></a> - Example: <code>chalk.rgb(255, 136, 0).bold('Orange!')</code></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"><code>hex</code></a> - Example: <code>chalk.hex('#FF8800').bold('Orange!')</code></li>
+<li><a href="https://www.w3.org/wiki/CSS/Properties/color/keywords"><code>keyword</code></a> (CSS keywords) - Example: <code>chalk.keyword('orange').bold('Orange!')</code></li>
+<li><a href="https://en.wikipedia.org/wiki/HSL_and_HSV"><code>hsl</code></a> - Example: <code>chalk.hsl(32, 100, 50).bold('Orange!')</code></li>
+<li><a href="https://en.wikipedia.org/wiki/HSL_and_HSV"><code>hsv</code></a> - Example: <code>chalk.hsv(32, 100, 100).bold('Orange!')</code></li>
+<li><a href="https://en.wikipedia.org/wiki/HWB_color_model"><code>hwb</code></a> - Example: <code>chalk.hwb(32, 0, 50).bold('Orange!')</code></li>
+<li><code>ansi16</code></li>
+<li><code>ansi256</code></li>
+</ul>
+<h2 id="windows">Windows</h2>
+<p>If you’re on Windows, do yourself a favor and use <a href="http://cmder.net/"><code>cmder</code></a> instead of <code>cmd.exe</code>.</p>
+<h2 id="origin-story">Origin story</h2>
+<p><a href="https://github.com/Marak/colors.js">colors.js</a> used to be the most popular string styling module, but it has serious deficiencies like extending <code>String.prototype</code> which causes all kinds of <a href="https://github.com/yeoman/yo/issues/68">problems</a> and the package is unmaintained. Although there are other packages, they either do too much or not enough. Chalk is a clean and focused alternative.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="https://github.com/chalk/chalk-cli">chalk-cli</a> - CLI for this module</li>
+<li><a href="https://github.com/chalk/ansi-styles">ansi-styles</a> - ANSI escape codes for styling strings in the terminal</li>
+<li><a href="https://github.com/chalk/supports-color">supports-color</a> - Detect whether a terminal supports color</li>
+<li><a href="https://github.com/chalk/strip-ansi">strip-ansi</a> - Strip ANSI escape codes</li>
+<li><a href="https://github.com/chalk/strip-ansi-stream">strip-ansi-stream</a> - Strip ANSI escape codes from a stream</li>
+<li><a href="https://github.com/chalk/has-ansi">has-ansi</a> - Check if a string has ANSI escape codes</li>
+<li><a href="https://github.com/chalk/ansi-regex">ansi-regex</a> - Regular expression for matching ANSI escape codes</li>
+<li><a href="https://github.com/chalk/wrap-ansi">wrap-ansi</a> - Wordwrap a string with ANSI escape codes</li>
+<li><a href="https://github.com/chalk/slice-ansi">slice-ansi</a> - Slice a string with ANSI escape codes</li>
+<li><a href="https://github.com/qix-/color-convert">color-convert</a> - Converts colors between different models</li>
+<li><a href="https://github.com/bokub/chalk-animation">chalk-animation</a> - Animate strings in the terminal</li>
+<li><a href="https://github.com/bokub/gradient-string">gradient-string</a> - Apply color gradients to strings</li>
+<li><a href="https://github.com/LitoMore/chalk-pipe">chalk-pipe</a> - Create chalk style schemes with simpler style strings</li>
+<li><a href="https://github.com/sindresorhus/terminal-link">terminal-link</a> - Create clickable links in the terminal</li>
+</ul>
+<h2 id="maintainers">Maintainers</h2>
+<ul>
+<li><a href="https://github.com/sindresorhus">Sindre Sorhus</a></li>
+<li><a href="https://github.com/qix-">Josh Junon</a></li>
+</ul>
+<h2 id="license">License</h2>
+<p>MIT</p>
+</body>
+</html>

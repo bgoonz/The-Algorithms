@@ -1,0 +1,10 @@
+{
+  "slug": "recursive-binary-search",
+  "name": "Recursive Binary Search",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "average-mean",
+  "name": "Average Mean",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "ruby": "",
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sahil Afrid Farookhi",
+      "email": "msafarookhi@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "UdhavKumar",
+      "email": "61343874+UdhavKumar@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Grigoriy Hanin",
+      "email": "43445998+haningrisha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "moita69",
+      "email": "fmj1988@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Maram Sumanth",
+      "email": "maram.sumanth@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 2
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {
+    "en": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/en/Basic Math/Average_Mean.md",
+    "es": "https://github.com/TheAlgorithms/Algorithms-Explanation/tree/master/es/Matematicas Básico/Promedio.md"
+  }
+}

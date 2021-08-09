@@ -1,0 +1,33 @@
+{
+  "slug": "softmax",
+  "name": "Softmax",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaushik Amar Das",
+      "email": "cozek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Fergus McDonald",
+      "email": "fergus@procurify.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

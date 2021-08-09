@@ -1,0 +1,21 @@
+{
+  "slug": "co2-emission",
+  "name": "Co2 Emission",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/co2_emission.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/co2_emission.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nGet CO2 emission data from the UK CarbonIntensity API\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> datetime <span class=\"hljs-keyword\">import</span> date\n\n<span class=\"hljs-keyword\">import</span> requests\n\nBASE_URL = <span class=\"hljs-string\">&quot;https://api.carbonintensity.org.uk/intensity&quot;</span>\n\n\n<span class=\"hljs-comment\"># Emission in the last half hour</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fetch_last_half_hour</span>() -&gt; <span class=\"hljs-built_in\">str</span>:\n    last_half_hour = requests.get(BASE_URL).json()[<span class=\"hljs-string\">&quot;data&quot;</span>][<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">return</span> last_half_hour[<span class=\"hljs-string\">&quot;intensity&quot;</span>][<span class=\"hljs-string\">&quot;actual&quot;</span>]\n\n\n<span class=\"hljs-comment\"># Emissions in a specific date range</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fetch_from_to</span>(<span class=\"hljs-params\">start, end</span>) -&gt; <span class=\"hljs-built_in\">list</span>:\n    <span class=\"hljs-keyword\">return</span> requests.get(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{BASE_URL}</span>/<span class=\"hljs-subst\">{start}</span>/<span class=\"hljs-subst\">{end}</span>&quot;</span>).json()[<span class=\"hljs-string\">&quot;data&quot;</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">for</span> entry <span class=\"hljs-keyword\">in</span> fetch_from_to(start=date(<span class=\"hljs-number\">2020</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">1</span>), end=date(<span class=\"hljs-number\">2020</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">3</span>)):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;from {from} to {to}: {intensity[actual]}&quot;</span>.<span class=\"hljs-built_in\">format</span>(**entry))\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{fetch_last_half_hour() = }</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jr Miranda",
+      "email": "sjrmiranda@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

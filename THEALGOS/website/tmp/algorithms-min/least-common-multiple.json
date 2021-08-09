@@ -1,0 +1,22 @@
+{
+  "slug": "least-common-multiple",
+  "name": "Least Common Multiple",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Yurii",
+      "email": "33547678+yuriimchg@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

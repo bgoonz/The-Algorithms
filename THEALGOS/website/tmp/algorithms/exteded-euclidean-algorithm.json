@@ -1,0 +1,26 @@
+{
+  "slug": "exteded-euclidean-algorithm",
+  "name": "Exteded Euclidean Algorithm",
+  "categories": ["discretemathematics"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "discrete_mathematics/exteded_euclidean_algorithm.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/discrete_mathematics/exteded_euclidean_algorithm.rb",
+      "code": "<span class=\"hljs-comment\"># https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">extended_euclidean_gcd</span><span class=\"hljs-params\">(a, b)</span></span>\n  x0 = a\n  x1 = b\n  s = <span class=\"hljs-number\">1</span>\n  t = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">until</span> x1.zero?\n    q, x2 = x0.divmod(x1)\n    x0 = x1\n    x1 = x2\n    s, t = t, s - q * t\n  <span class=\"hljs-keyword\">end</span>\n  x0\n<span class=\"hljs-keyword\">end</span>\n\nputs <span class=\"hljs-string\">&#x27;GCD(3, 5) = &#x27;</span> + extended_euclidean_gcd(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>).to_s\n<span class=\"hljs-comment\"># GCD(3, 5) = 1</span>\nputs <span class=\"hljs-string\">&#x27;GCD(3, 6) = &#x27;</span> + extended_euclidean_gcd(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">6</span>).to_s\n<span class=\"hljs-comment\"># GCD(3, 6) = 3</span>\nputs <span class=\"hljs-string\">&#x27;GCD(6, 3) = &#x27;</span> + extended_euclidean_gcd(<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">3</span>).to_s\n<span class=\"hljs-comment\"># GCD(6, 3) = 3</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Dynamic driver code:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># a = gets.to_i</span>\n<span class=\"hljs-comment\"># b = gets.to_i</span>\n<span class=\"hljs-comment\"># puts &quot;GCD (#{a}, #{b} ) = #{extended_euclidean_gcd(a, b)}&quot;</span>\n<span class=\"hljs-comment\">#</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhinav Anand",
+      "email": "manasgmishra@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

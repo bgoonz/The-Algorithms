@@ -1,0 +1,10 @@
+{
+  "slug": "primes-up-to-billion",
+  "name": "Primes up to Billion",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

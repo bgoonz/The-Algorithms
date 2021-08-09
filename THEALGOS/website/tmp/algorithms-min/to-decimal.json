@@ -1,0 +1,51 @@
+{
+  "slug": "to-decimal",
+  "name": "To Decimal",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "mylnext@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Manoj7117",
+      "email": "31440916+Manoj7117@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Nathan Fei",
+      "email": "nathanfei123@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KylerSmith",
+      "email": "Kyler@macBookAir.local",
+      "commits": 1
+    },
+    {
+      "name": "Saumay-Agrawal",
+      "email": "saumay.agrawal@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Singhal",
+      "email": "shivamsinghal0610@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Chetanya Chopra",
+      "email": "chetanya221997chopra@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "zacharyjones123",
+      "email": "zrjones@ncsu.edu",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

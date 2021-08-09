@@ -1,0 +1,21 @@
+{
+  "slug": "food-wastage-analysis-from-1961-2013-fao",
+  "name": "Food Wastage Analysis From 1961-2013 Fao",
+  "categories": ["others"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Rakshit Parashar",
+      "email": "34675136+rishu2403@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

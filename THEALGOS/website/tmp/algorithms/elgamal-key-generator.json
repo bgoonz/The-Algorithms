@@ -1,0 +1,41 @@
+{
+  "slug": "elgamal-key-generator",
+  "name": "Elgamal Key Generator",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/elgamal_key_generator.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/elgamal_key_generator.py",
+      "code": "<span class=\"hljs-keyword\">import</span> os\n<span class=\"hljs-keyword\">import</span> random\n<span class=\"hljs-keyword\">import</span> sys\n\n<span class=\"hljs-keyword\">from</span> . <span class=\"hljs-keyword\">import</span> cryptomath_module <span class=\"hljs-keyword\">as</span> cryptomath\n<span class=\"hljs-keyword\">from</span> . <span class=\"hljs-keyword\">import</span> rabin_miller\n\nmin_primitive_root = <span class=\"hljs-number\">3</span>\n\n\n<span class=\"hljs-comment\"># I have written my code naively same as definition of primitive root</span>\n<span class=\"hljs-comment\"># however every time I run this program, memory exceeded...</span>\n<span class=\"hljs-comment\"># so I used 4.80 Algorithm in</span>\n<span class=\"hljs-comment\"># Handbook of Applied Cryptography(CRC Press, ISBN : 0-8493-8523-7, October 1996)</span>\n<span class=\"hljs-comment\"># and it seems to run nicely!</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">primitive_root</span>(<span class=\"hljs-params\">p_val: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Generating primitive root of p&quot;</span>)\n    <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\n        g = random.randrange(<span class=\"hljs-number\">3</span>, p_val)\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">pow</span>(g, <span class=\"hljs-number\">2</span>, p_val) == <span class=\"hljs-number\">1</span>:\n            <span class=\"hljs-keyword\">continue</span>\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">pow</span>(g, p_val, p_val) == <span class=\"hljs-number\">1</span>:\n            <span class=\"hljs-keyword\">continue</span>\n        <span class=\"hljs-keyword\">return</span> g\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">generate_key</span>(<span class=\"hljs-params\">key_size: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>], <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>]]:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Generating prime p...&quot;</span>)\n    p = rabin_miller.generateLargePrime(key_size)  <span class=\"hljs-comment\"># select large prime number.</span>\n    e_1 = primitive_root(p)  <span class=\"hljs-comment\"># one primitive root on modulo p.</span>\n    d = random.randrange(<span class=\"hljs-number\">3</span>, p)  <span class=\"hljs-comment\"># private_key -&gt; have to be greater than 2 for safety.</span>\n    e_2 = cryptomath.find_mod_inverse(<span class=\"hljs-built_in\">pow</span>(e_1, d, p), p)\n\n    public_key = (key_size, e_1, e_2, p)\n    private_key = (key_size, d)\n\n    <span class=\"hljs-keyword\">return</span> public_key, private_key\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">make_key_files</span>(<span class=\"hljs-params\">name: <span class=\"hljs-built_in\">str</span>, keySize: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-keyword\">if</span> os.path.exists(<span class=\"hljs-string\">&quot;%s_pubkey.txt&quot;</span> % name) <span class=\"hljs-keyword\">or</span> os.path.exists(\n        <span class=\"hljs-string\">&quot;%s_privkey.txt&quot;</span> % name\n    ):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nWARNING:&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>(\n            <span class=\"hljs-string\">&#x27;&quot;%s_pubkey.txt&quot; or &quot;%s_privkey.txt&quot; already exists. \\n&#x27;</span>\n            <span class=\"hljs-string\">&quot;Use a different name or delete these files and re-run this program.&quot;</span>\n            % (name, name)\n        )\n        sys.exit()\n\n    publicKey, privateKey = generate_key(keySize)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nWriting public key to file %s_pubkey.txt...&quot;</span> % name)\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;%s_pubkey.txt&quot;</span> % name, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> fo:\n        fo.write(\n            <span class=\"hljs-string\">&quot;%d,%d,%d,%d&quot;</span> % (publicKey[<span class=\"hljs-number\">0</span>], publicKey[<span class=\"hljs-number\">1</span>], publicKey[<span class=\"hljs-number\">2</span>], publicKey[<span class=\"hljs-number\">3</span>])\n        )\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Writing private key to file %s_privkey.txt...&quot;</span> % name)\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;%s_privkey.txt&quot;</span> % name, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> fo:\n        fo.write(<span class=\"hljs-string\">&quot;%d,%d&quot;</span> % (privateKey[<span class=\"hljs-number\">0</span>], privateKey[<span class=\"hljs-number\">1</span>]))\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Making key files...&quot;</span>)\n    make_key_files(<span class=\"hljs-string\">&quot;elgamal&quot;</span>, <span class=\"hljs-number\">2048</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Key files generation successful&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "psyas",
+      "email": "psy050505@naver.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "merkle-hellman-cryptosystem",
+  "name": "Merkle Hellman Cryptosystem",
+  "categories": ["ciphers"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Doppon",
+      "email": "zaxpkuraudo7777@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Niboucha Redouane",
+      "email": "rniboucha@yahoo.fr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

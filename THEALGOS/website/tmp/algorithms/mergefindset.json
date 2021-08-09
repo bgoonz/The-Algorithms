@@ -1,0 +1,21 @@
+{
+  "slug": "mergefindset",
+  "name": "MergeFindSet",
+  "categories": ["specializedstructure"],
+  "body": {},
+  "implementations": {
+    "haskell": {
+      "dir": "src/SpecializedStructure/MergeFindSet.hs",
+      "url": "https://github.com/TheAlgorithms/haskell/tree/master/src/SpecializedStructure/MergeFindSet.hs",
+      "code": "<span class=\"hljs-keyword\">module</span> SpecializedStructure.MergeFindSet <span class=\"hljs-keyword\">where</span>\n\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-keyword\">qualified</span> Data.Map <span class=\"hljs-keyword\">as</span> Map\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-keyword\">qualified</span> Data.Set <span class=\"hljs-keyword\">as</span> Set\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">type</span> <span class=\"hljs-type\">Mfset</span> a = (<span class=\"hljs-type\">Map</span>.<span class=\"hljs-type\">Map</span> <span class=\"hljs-title\">a</span> <span class=\"hljs-title\">a</span>, <span class=\"hljs-type\">Map</span>.<span class=\"hljs-type\">Map</span> <span class=\"hljs-title\">a</span> <span class=\"hljs-type\">Int</span>)</span>\n\n<span class=\"hljs-title\">fromSet</span> :: <span class=\"hljs-type\">Ord</span> a =&gt; <span class=\"hljs-type\">Set</span>.<span class=\"hljs-type\">Set</span> a -&gt; <span class=\"hljs-type\">Mfset</span> a\n<span class=\"hljs-title\">fromSet</span> ns = (fathers, ranks)\n    <span class=\"hljs-keyword\">where</span>\n        fathers = <span class=\"hljs-type\">Map</span>.fromList [(i, i) | i &lt;- <span class=\"hljs-type\">Set</span>.toList ns]\n        ranks   = <span class=\"hljs-type\">Map</span>.fromList [(i, <span class=\"hljs-number\">0</span>) | i &lt;- <span class=\"hljs-type\">Set</span>.toList ns]\n\n<span class=\"hljs-title\">find</span> :: <span class=\"hljs-type\">Ord</span> a =&gt; a -&gt; <span class=\"hljs-type\">Mfset</span> a -&gt; a\n<span class=\"hljs-title\">find</span> x mfset = <span class=\"hljs-keyword\">let</span> father = fst mfset <span class=\"hljs-type\">Map</span>.! x\n               <span class=\"hljs-keyword\">in</span> <span class=\"hljs-keyword\">if</span> father == x <span class=\"hljs-keyword\">then</span> x <span class=\"hljs-keyword\">else</span> find father mfset\n\n<span class=\"hljs-title\">merge</span> :: <span class=\"hljs-type\">Ord</span> a =&gt; a -&gt; a -&gt; <span class=\"hljs-type\">Mfset</span> a -&gt; <span class=\"hljs-type\">Mfset</span> a\n<span class=\"hljs-title\">merge</span> x y mfset\n    | x&#x27; == y&#x27;  = mfset\n    | rx == ry  = (x&#x27; `connectTo` y&#x27;, <span class=\"hljs-type\">Map</span>.adjust (+<span class=\"hljs-number\">1</span>) y&#x27; ranks)\n    | rx &lt; ry   = (x&#x27; `connectTo` y&#x27;, ranks)\n    | otherwise = (y&#x27; `connectTo` x&#x27;, ranks)\n    <span class=\"hljs-keyword\">where</span>\n        (fathers, ranks) = mfset\n        connectTo a b = <span class=\"hljs-type\">Map</span>.adjust (const b) a fathers\n        findWithRank a = (\\f -&gt; (f, ranks <span class=\"hljs-type\">Map</span>.! f)) $ find a mfset\n        (x&#x27;, rx) = findWithRank x\n        (y&#x27;, ry) = findWithRank y\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Niccolò Marcon",
+      "email": "marcon.niccolo@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

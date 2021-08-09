@@ -1,0 +1,16 @@
+{
+  "slug": "count-of-set-bits",
+  "name": "Count of Set Bits",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Swastika Gupta",
+      "email": "64654203+Swastyy@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

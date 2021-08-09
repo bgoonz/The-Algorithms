@@ -1,0 +1,42 @@
+{
+  "slug": "binaryheap",
+  "name": "Binaryheap",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Walt",
+      "email": "32001362+Walt280@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ojas1234",
+      "email": "ojasbansal.041@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Ayaan Khan",
+      "email": "ayaankhan98@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

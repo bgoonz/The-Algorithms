@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="fast-glob">fast-glob</h1>
+<blockquote>
+<p>It’s a very fast and efficient <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob</a> library for <a href="https://nodejs.org/en">Node.js</a>.</p>
+</blockquote>
+<p>This package provides methods for traversing the file system and returning pathnames that matched a defined set of a specified pattern according to the rules used by the Unix Bash shell with some simplifications, meanwhile results are returned in <strong>arbitrary order</strong>. Quick, simple, effective.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<details>
+<p><summary><strong>Details</strong></summary></p>
+<ul>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#donation">Donation</a></li>
+<li><a href="#old-and-modern-mode">Old and modern mode</a></li>
+<li><a href="#pattern-syntax">Pattern syntax</a>
+<ul>
+<li><a href="#basic-syntax">Basic syntax</a></li>
+<li><a href="#advanced-syntax">Advanced syntax</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#api">API</a>
+<ul>
+<li><a href="#asynchronous">Asynchronous</a></li>
+<li><a href="#synchronous">Synchronous</a></li>
+<li><a href="#stream">Stream</a>
+<ul>
+<li><a href="#patterns">patterns</a></li>
+<li><a href="#options">[options]</a></li>
+</ul></li>
+<li><a href="#helpers">Helpers</a>
+<ul>
+<li><a href="#generatetaskspatterns-options">generateTasks</a></li>
+<li><a href="#isdynamicpatternpattern-options">isDynamicPattern</a></li>
+<li><a href="#escapepathpattern">escapePath</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#options-3">Options</a>
+<ul>
+<li><a href="#common">Common</a>
+<ul>
+<li><a href="#concurrency">concurrency</a></li>
+<li><a href="#cwd">cwd</a></li>
+<li><a href="#deep">deep</a></li>
+<li><a href="#followsymboliclinks">followSymbolicLinks</a></li>
+<li><a href="#fs">fs</a></li>
+<li><a href="#ignore">ignore</a></li>
+<li><a href="#suppresserrors">suppressErrors</a></li>
+<li><a href="#throwerroronbrokensymboliclink">throwErrorOnBrokenSymbolicLink</a></li>
+</ul></li>
+<li><a href="#output-control">Output control</a>
+<ul>
+<li><a href="#absolute">absolute</a></li>
+<li><a href="#markdirectories">markDirectories</a></li>
+<li><a href="#objectmode">objectMode</a></li>
+<li><a href="#onlydirectories">onlyDirectories</a></li>
+<li><a href="#onlyfiles">onlyFiles</a></li>
+<li><a href="#stats">stats</a></li>
+<li><a href="#unique">unique</a></li>
+</ul></li>
+<li><a href="#matching-control">Matching control</a>
+<ul>
+<li><a href="#braceexpansion">braceExpansion</a></li>
+<li><a href="#casesensitivematch">caseSensitiveMatch</a></li>
+<li><a href="#dot">dot</a></li>
+<li><a href="#extglob">extglob</a></li>
+<li><a href="#globstar">globstar</a></li>
+<li><a href="#basenamematch">baseNameMatch</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#faq">FAQ</a>
+<ul>
+<li><a href="#what-is-a-static-or-dynamic-pattern">What is a static or dynamic pattern?</a></li>
+<li><a href="#how-to-write-patterns-on-windows">How to write patterns on Windows?</a></li>
+<li><a href="#why-are-parentheses-match-wrong">Why are parentheses match wrong?</a></li>
+<li><a href="#how-to-exclude-directory-from-reading">How to exclude directory from reading?</a></li>
+<li><a href="#how-to-use-unc-path">How to use UNC path?</a></li>
+<li><a href="#compatible-with-node-glob">Compatible with <code>node-glob</code>?</a></li>
+</ul></li>
+<li><a href="#benchmarks">Benchmarks</a>
+<ul>
+<li><a href="#server">Server</a></li>
+<li><a href="#nettop">Nettop</a></li>
+</ul></li>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</details>
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li>Fast. Probably the fastest.</li>
+<li>Supports multiple and negative patterns.</li>
+<li>Synchronous, Promise and Stream API.</li>
+<li>Object mode. Can return more than just strings.</li>
+<li>Error-tolerant.</li>
+</ul>
+<h2 id="donation">Donation</h2>
+<p>Do you like this project? Support it by donating, creating an issue or pull request.</p>
+<p><a href="https://paypal.me/mrmlnc"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="Donate" /></a></p>
+<h2 id="old-and-modern-mode">Old and modern mode</h2>
+<p>This package works in two modes, depending on the environment in which it is used.</p>
+<ul>
+<li><strong>Old mode</strong>. Node.js below 10.10 or when the <a href="#stats"><code>stats</code></a> option is <em>enabled</em>.</li>
+<li><strong>Modern mode</strong>. Node.js 10.10+ and the <a href="#stats"><code>stats</code></a> option is <em>disabled</em>.</li>
+</ul>
+<p>The modern mode is faster. Learn more about the <a href="https://github.com/nodelib/nodelib/blob/master/packages/fs/fs.scandir/README.md#old-and-modern-mode">internal mechanism</a>.</p>
+<h2 id="pattern-syntax">Pattern syntax</h2>
+<blockquote>
+<p>:warning: Always use forward-slashes in glob expressions (patterns and <a href="#ignore"><code>ignore</code></a> option). Use backslashes for escaping characters.</p>
+</blockquote>
+<p>There is more than one form of syntax: basic and advanced. Below is a brief overview of the supported features. Also pay attention to our <a href="#faq">FAQ</a>.</p>
+<blockquote>
+<p>:book: This package uses a <a href="https://github.com/micromatch/micromatch"><code>micromatch</code></a> as a library for pattern matching.</p>
+</blockquote>
+<h3 id="basic-syntax">Basic syntax</h3>
+<ul>
+<li>An asterisk (<code>*</code>) — matches everything except slashes (path separators), hidden files (names starting with <code>.</code>).</li>
+<li>A double star or globstar (<code>**</code>) — matches zero or more directories.</li>
+<li>Question mark (<code>?</code>) – matches any single character except slashes (path separators).</li>
+<li>Sequence (<code>[seq]</code>) — matches any character in sequence.</li>
+</ul>
+<blockquote>
+<p>:book: A few additional words about the <a href="https://github.com/micromatch/picomatch#matching-behavior-vs-bash">basic matching behavior</a>.</p>
+</blockquote>
+<p>Some examples:</p>
+<ul>
+<li><code>src/**/*.js</code> — matches all files in the <code>src</code> directory (any level of nesting) that have the <code>.js</code> extension.</li>
+<li><code>src/*.??</code> — matches all files in the <code>src</code> directory (only first level of nesting) that have a two-character extension.</li>
+<li><code>file-[01].js</code> — matches files: <code>file-0.js</code>, <code>file-1.js</code>.</li>
+</ul>
+<h3 id="advanced-syntax">Advanced syntax</h3>
+<ul>
+<li><a href="https://github.com/micromatch/micromatch#backslashes">Escapes characters</a> (<code>\\</code>) — matching special characters (<code>$^*+?()[]</code>) as literals.</li>
+<li><a href="https://github.com/micromatch/picomatch#posix-brackets">POSIX character classes</a> (<code>[[:digit:]]</code>).</li>
+<li><a href="https://github.com/micromatch/micromatch#extglobs">Extended globs</a> (<code>?(pattern-list)</code>).</li>
+<li><a href="https://github.com/micromatch/braces">Bash style brace expansions</a> (<code>{}</code>).</li>
+<li><a href="https://github.com/micromatch/micromatch#regex-character-classes">Regexp character classes</a> (<code>[1-5]</code>).</li>
+<li><a href="https://www.regular-expressions.info/brackets.html">Regex groups</a> (<code>(a|b)</code>).</li>
+</ul>
+<blockquote>
+<p>:book: A few additional words about the <a href="https://github.com/micromatch/micromatch#extended-globbing">advanced matching behavior</a>.</p>
+</blockquote>
+<p>Some examples:</p>
+<ul>
+<li><code>src/**/*.{css,scss}</code> — matches all files in the <code>src</code> directory (any level of nesting) that have the <code>.css</code> or <code>.scss</code> extension.</li>
+<li><code>file-[[:digit:]].js</code> — matches files: <code>file-0.js</code>, <code>file-1.js</code>, …, <code>file-9.js</code>.</li>
+<li><code>file-{1..3}.js</code> — matches files: <code>file-1.js</code>, <code>file-2.js</code>, <code>file-3.js</code>.</li>
+<li><code>file-(1|2)</code> — matches files: <code>file-1.js</code>, <code>file-2.js</code>.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre class="console"><code>npm install fast-glob</code></pre>
+<h2 id="api">API</h2>
+<h3 id="asynchronous">Asynchronous</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="at">fg</span>(patterns<span class="op">,</span> [options])</a></code></pre></div>
+<p>Returns a <code>Promise</code> with an array of matching entries.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> fg <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fast-glob&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">const</span> entries <span class="op">=</span> <span class="cf">await</span> <span class="at">fg</span>([<span class="st">&#39;.editorconfig&#39;</span><span class="op">,</span> <span class="st">&#39;**/index.js&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">dot</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">// [&#39;.editorconfig&#39;, &#39;services/index.js&#39;]</span></a></code></pre></div>
+<h3 id="synchronous">Synchronous</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(patterns<span class="op">,</span> [options])</a></code></pre></div>
+<p>Returns an array of matching entries.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> fg <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fast-glob&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">const</span> entries <span class="op">=</span> <span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;.editorconfig&#39;</span><span class="op">,</span> <span class="st">&#39;**/index.js&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">dot</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">// [&#39;.editorconfig&#39;, &#39;services/index.js&#39;]</span></a></code></pre></div>
+<h3 id="stream">Stream</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="va">fg</span>.<span class="at">stream</span>(patterns<span class="op">,</span> [options])</a></code></pre></div>
+<p>Returns a <a href="https://nodejs.org/api/stream.html#stream_readable_streams"><code>ReadableStream</code></a> when the <code>data</code> event will be emitted with matching entry.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> fg <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fast-glob&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw">const</span> stream <span class="op">=</span> <span class="va">fg</span>.<span class="at">stream</span>([<span class="st">&#39;.editorconfig&#39;</span><span class="op">,</span> <span class="st">&#39;**/index.js&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">dot</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="cf">for</span> <span class="cf">await</span> (<span class="kw">const</span> entry <span class="kw">of</span> stream) <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="co">// .editorconfig</span></a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="co">// services/index.js</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="op">}</span></a></code></pre></div>
+<h4 id="patterns">patterns</h4>
+<ul>
+<li>Required: <code>true</code></li>
+<li>Type: <code>string | string[]</code></li>
+</ul>
+<p>Any correct pattern(s).</p>
+<blockquote>
+<p>:1234: <a href="#pattern-syntax">Pattern syntax</a></p>
+<p>:warning: This package does not respect the order of patterns. First, all the negative patterns are applied, and only then the positive patterns. If you want to get a certain order of records, use sorting or split calls.</p>
+</blockquote>
+<h4 id="options"><a href="#options-3">options</a></h4>
+<ul>
+<li>Required: <code>false</code></li>
+<li>Type: <a href="#options-3"><code>Options</code></a></li>
+</ul>
+<p>See <a href="#options-3">Options</a> section.</p>
+<h3 id="helpers">Helpers</h3>
+<h4 id="generatetaskspatterns-options"><code>generateTasks(patterns, [options])</code></h4>
+<p>Returns the internal representation of patterns (<a href="./src/managers/tasks.ts"><code>Task</code></a> is a combining patterns by base directory).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="va">fg</span>.<span class="at">generateTasks</span>(<span class="st">&#39;*&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3">[<span class="op">{</span></a>
+<a class="sourceLine" id="cb8-4" title="4">    <span class="dt">base</span><span class="op">:</span> <span class="st">&#39;.&#39;</span><span class="op">,</span> <span class="co">// Parent directory for all patterns inside this task</span></a>
+<a class="sourceLine" id="cb8-5" title="5">    <span class="dt">dynamic</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="co">// Dynamic or static patterns are in this task</span></a>
+<a class="sourceLine" id="cb8-6" title="6">    <span class="dt">patterns</span><span class="op">:</span> [<span class="st">&#39;*&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="dt">positive</span><span class="op">:</span> [<span class="st">&#39;*&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb8-8" title="8">    <span class="dt">negative</span><span class="op">:</span> []</a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="op">}</span>]</a></code></pre></div>
+<h5 id="patterns-1">patterns</h5>
+<ul>
+<li>Required: <code>true</code></li>
+<li>Type: <code>string | string[]</code></li>
+</ul>
+<p>Any correct pattern(s).</p>
+<h5 id="options-1"><a href="#options-3">options</a></h5>
+<ul>
+<li>Required: <code>false</code></li>
+<li>Type: <a href="#options-3"><code>Options</code></a></li>
+</ul>
+<p>See <a href="#options-3">Options</a> section.</p>
+<h4 id="isdynamicpatternpattern-options"><code>isDynamicPattern(pattern, [options])</code></h4>
+<p>Returns <code>true</code> if the passed pattern is a dynamic pattern.</p>
+<blockquote>
+<p>:1234: <a href="#what-is-a-static-or-dynamic-pattern">What is a static or dynamic pattern?</a></p>
+</blockquote>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="va">fg</span>.<span class="at">isDynamicPattern</span>(<span class="st">&#39;*&#39;</span>)<span class="op">;</span> <span class="co">// true</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="va">fg</span>.<span class="at">isDynamicPattern</span>(<span class="st">&#39;abc&#39;</span>)<span class="op">;</span> <span class="co">// false</span></a></code></pre></div>
+<h5 id="pattern">pattern</h5>
+<ul>
+<li>Required: <code>true</code></li>
+<li>Type: <code>string</code></li>
+</ul>
+<p>Any correct pattern.</p>
+<h5 id="options-2"><a href="#options-3">options</a></h5>
+<ul>
+<li>Required: <code>false</code></li>
+<li>Type: <a href="#options-3"><code>Options</code></a></li>
+</ul>
+<p>See <a href="#options-3">Options</a> section.</p>
+<h4 id="escapepathpattern"><code>escapePath(pattern)</code></h4>
+<p>Returns a path with escaped special characters (<code>*?|(){}[]</code>, <code>!</code> at the beginning of line, <code>@+!</code> before the opening parenthesis).</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="va">fg</span>.<span class="at">escapePath</span>(<span class="st">&#39;!abc&#39;</span>)<span class="op">;</span> <span class="co">// \\!abc</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="va">fg</span>.<span class="at">escapePath</span>(<span class="st">&#39;C:/Program Files (x86)&#39;</span>)<span class="op">;</span> <span class="co">// C:/Program Files \\(x86\\)</span></a></code></pre></div>
+<h5 id="pattern-1">pattern</h5>
+<ul>
+<li>Required: <code>true</code></li>
+<li>Type: <code>string</code></li>
+</ul>
+<p>Any string, for example, a path to a file.</p>
+<h2 id="options-3">Options</h2>
+<h3 id="common-options">Common options</h3>
+<h4 id="concurrency">concurrency</h4>
+<ul>
+<li>Type: <code>number</code></li>
+<li>Default: <code>os.cpus().length</code></li>
+</ul>
+<p>Specifies the maximum number of concurrent requests from a reader to read directories.</p>
+<blockquote>
+<p>:book: The higher the number, the higher the performance and load on the file system. If you want to read in quiet mode, set the value to a comfortable number or <code>1</code>.</p>
+</blockquote>
+<h4 id="cwd">cwd</h4>
+<ul>
+<li>Type: <code>string</code></li>
+<li>Default: <code>process.cwd()</code></li>
+</ul>
+<p>The current working directory in which to search.</p>
+<h4 id="deep">deep</h4>
+<ul>
+<li>Type: <code>number</code></li>
+<li>Default: <code>Infinity</code></li>
+</ul>
+<p>Specifies the maximum depth of a read directory relative to the start directory.</p>
+<p>For example, you have the following tree:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1">dir/</a>
+<a class="sourceLine" id="cb11-2" title="2">└── one/            <span class="co">// 1</span></a>
+<a class="sourceLine" id="cb11-3" title="3">    └── two/        <span class="co">// 2</span></a>
+<a class="sourceLine" id="cb11-4" title="4">        └── <span class="va">file</span>.<span class="at">js</span> <span class="co">// 3</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="co">// With base directory</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;dir/**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">deep</span><span class="op">:</span> <span class="dv">1</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;dir/one&#39;]</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;dir/**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">deep</span><span class="op">:</span> <span class="dv">2</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;dir/one&#39;, &#39;dir/one/two&#39;]</span></a>
+<a class="sourceLine" id="cb12-4" title="4"></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="co">// With cwd option</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">cwd</span><span class="op">:</span> <span class="st">&#39;dir&#39;</span><span class="op">,</span> <span class="dt">deep</span><span class="op">:</span> <span class="dv">1</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;one&#39;]</span></a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">cwd</span><span class="op">:</span> <span class="st">&#39;dir&#39;</span><span class="op">,</span> <span class="dt">deep</span><span class="op">:</span> <span class="dv">2</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;one&#39;, &#39;one/two&#39;]</span></a></code></pre></div>
+<blockquote>
+<p>:book: If you specify a pattern with some base directory, this directory will not participate in the calculation of the depth of the found directories. Think of it as a <a href="#cwd"><code>cwd</code></a> option.</p>
+</blockquote>
+<h4 id="followsymboliclinks">followSymbolicLinks</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Indicates whether to traverse descendants of symbolic link directories.</p>
+<blockquote>
+<p>:book: If the <a href="#stats"><code>stats</code></a> option is specified, the information about the symbolic link (<code>fs.lstat</code>) will be replaced with information about the entry (<code>fs.stat</code>) behind it.</p>
+</blockquote>
+<h4 id="fs">fs</h4>
+<ul>
+<li>Type: <code>FileSystemAdapter</code></li>
+<li>Default: <code>fs.*</code></li>
+</ul>
+<p>Custom implementation of methods for working with the file system.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb13-1" title="1"><span class="im">export</span> <span class="kw">interface</span> FileSystemAdapter <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-2" title="2">    lstat<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">lstat</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-3" title="3">    stat<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">stat</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">    lstatSync<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">lstatSync</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-5" title="5">    statSync<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">statSync</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-6" title="6">    readdir<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">readdir</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-7" title="7">    readdirSync<span class="op">?:</span> <span class="kw">typeof</span> <span class="va">fs</span><span class="op">.</span><span class="at">readdirSync</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="op">}</span></a></code></pre></div>
+<h4 id="ignore">ignore</h4>
+<ul>
+<li>Type: <code>string[]</code></li>
+<li>Default: <code>[]</code></li>
+</ul>
+<p>An array of glob patterns to exclude matches. This is an alternative way to use negative patterns.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1">dir/</a>
+<a class="sourceLine" id="cb14-2" title="2">├── <span class="im">package</span><span class="op">-</span><span class="va">lock</span>.<span class="at">json</span></a>
+<a class="sourceLine" id="cb14-3" title="3">└── <span class="im">package</span>.<span class="at">json</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;*.json&#39;</span><span class="op">,</span> <span class="st">&#39;!package-lock.json&#39;</span>])<span class="op">;</span>            <span class="co">// [&#39;package.json&#39;]</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.json&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">ignore</span><span class="op">:</span> [<span class="st">&#39;package-lock.json&#39;</span>] <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;package.json&#39;]</span></a></code></pre></div>
+<h4 id="suppresserrors">suppressErrors</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>By default this package suppress only <code>ENOENT</code> errors. Set to <code>true</code> to suppress any error.</p>
+<blockquote>
+<p>:book: Can be useful when the directory has entries with a special level of access.</p>
+</blockquote>
+<h4 id="throwerroronbrokensymboliclink">throwErrorOnBrokenSymbolicLink</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Throw an error when symbolic link is broken if <code>true</code> or safely return <code>lstat</code> call if <code>false</code>.</p>
+<blockquote>
+<p>:book: This option has no effect on errors when reading the symbolic link directory.</p>
+</blockquote>
+<h3 id="output-control">Output control</h3>
+<h4 id="absolute">absolute</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Return the absolute path for entries.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">absolute</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;index.js&#39;]</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">absolute</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;/home/user/index.js&#39;]</span></a></code></pre></div>
+<blockquote>
+<p>:book: This option is required if you want to use negative patterns with absolute path, for example, <code>!${__dirname}/*.js</code>.</p>
+</blockquote>
+<h4 id="markdirectories">markDirectories</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Mark the directory path with the final slash.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">markDirectories</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;index.js&#39;, &#39;controllers&#39;]</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">markDirectories</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;index.js&#39;, &#39;controllers/&#39;]</span></a></code></pre></div>
+<h4 id="objectmode">objectMode</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Returns objects (instead of strings) describing entries.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">objectMode</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;src/index.js&#39;]</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">objectMode</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [{ name: &#39;index.js&#39;, path: &#39;src/index.js&#39;, dirent: &lt;fs.Dirent&gt; }]</span></a></code></pre></div>
+<p>The object has the following fields:</p>
+<ul>
+<li>name (<code>string</code>) — the last part of the path (basename)</li>
+<li>path (<code>string</code>) — full path relative to the pattern base directory</li>
+<li>dirent (<a href="https://nodejs.org/api/fs.html#fs_class_fs_dirent"><code>fs.Dirent</code></a>) — instance of <code>fs.Direct</code></li>
+</ul>
+<blockquote>
+<p>:book: An object is an internal representation of entry, so getting it does not affect performance.</p>
+</blockquote>
+<h4 id="onlydirectories">onlyDirectories</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Return only directories.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyDirectories</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;index.js&#39;, &#39;src&#39;]</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyDirectories</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;src&#39;]</span></a></code></pre></div>
+<blockquote>
+<p>:book: If <code>true</code>, the <a href="#onlyfiles"><code>onlyFiles</code></a> option is automatically <code>false</code>.</p>
+</blockquote>
+<h4 id="onlyfiles">onlyFiles</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Return only files.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;index.js&#39;, &#39;src&#39;]</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;index.js&#39;]</span></a></code></pre></div>
+<h4 id="stats">stats</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Enables an <a href="#objectmode">object mode</a> with an additional field:</p>
+<ul>
+<li>stats (<a href="https://nodejs.org/api/fs.html#fs_class_fs_stats"><code>fs.Stats</code></a>) — instance of <code>fs.Stats</code></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">stats</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;src/index.js&#39;]</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">stats</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [{ name: &#39;index.js&#39;, path: &#39;src/index.js&#39;, dirent: &lt;fs.Dirent&gt;, stats: &lt;fs.Stats&gt; }]</span></a></code></pre></div>
+<blockquote>
+<p>:book: Returns <code>fs.stat</code> instead of <code>fs.lstat</code> for symbolic links when the <a href="#followsymboliclinks"><code>followSymbolicLinks</code></a> option is specified.</p>
+<p>:warning: Unlike <a href="#objectmode">object mode</a> this mode requires additional calls to the file system. On average, this mode is slower at least twice. See <a href="#old-and-modern-mode">old and modern mode</a> for more details.</p>
+</blockquote>
+<h4 id="unique">unique</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Ensures that the returned entries are unique.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb22-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;*.json&#39;</span><span class="op">,</span> <span class="st">&#39;package.json&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">unique</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;package.json&#39;, &#39;package.json&#39;]</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;*.json&#39;</span><span class="op">,</span> <span class="st">&#39;package.json&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">unique</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;package.json&#39;]</span></a></code></pre></div>
+<p>If <code>true</code> and similar entries are found, the result is the first found.</p>
+<h3 id="matching-control">Matching control</h3>
+<h4 id="braceexpansion">braceExpansion</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enables Bash-like brace expansion.</p>
+<blockquote>
+<p>:1234: <a href="https://wiki.bash-hackers.org/syntax/expansion/brace">Syntax description</a> or more <a href="https://github.com/micromatch/braces">detailed description</a>.</p>
+</blockquote>
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1">dir/</a>
+<a class="sourceLine" id="cb23-2" title="2">├── abd</a>
+<a class="sourceLine" id="cb23-3" title="3">├── acd</a>
+<a class="sourceLine" id="cb23-4" title="4">└── a<span class="op">{</span>b<span class="op">,</span>c<span class="op">}</span>d</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb24-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;a{b,c}d&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">braceExpansion</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;a{b,c}d&#39;]</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;a{b,c}d&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">braceExpansion</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;abd&#39;, &#39;acd&#39;]</span></a></code></pre></div>
+<h4 id="casesensitivematch">caseSensitiveMatch</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enables a <a href="https://en.wikipedia.org/wiki/Case_sensitivity">case-sensitive</a> mode for matching files.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1">dir/</a>
+<a class="sourceLine" id="cb25-2" title="2">├── <span class="va">file</span>.<span class="at">txt</span></a>
+<a class="sourceLine" id="cb25-3" title="3">└── <span class="va">File</span>.<span class="at">txt</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb26-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;file.txt&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">caseSensitiveMatch</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;file.txt&#39;, &#39;File.txt&#39;]</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;file.txt&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">caseSensitiveMatch</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;file.txt&#39;]</span></a></code></pre></div>
+<h4 id="dot">dot</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Allow patterns to match entries that begin with a period (<code>.</code>).</p>
+<blockquote>
+<p>:book: Note that an explicit dot in a portion of the pattern will always match dot files.</p>
+</blockquote>
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1">dir/</a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="va">├──</span> .<span class="at">editorconfig</span></a>
+<a class="sourceLine" id="cb27-3" title="3">└── <span class="im">package</span>.<span class="at">json</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">dot</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;package.json&#39;]</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">dot</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;.editorconfig&#39;, &#39;package.json&#39;]</span></a></code></pre></div>
+<h4 id="extglob">extglob</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enables Bash-like <code>extglob</code> functionality.</p>
+<blockquote>
+<p>:1234: <a href="https://github.com/micromatch/micromatch#extglobs">Syntax description</a>.</p>
+</blockquote>
+<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb29-1" title="1">dir/</a>
+<a class="sourceLine" id="cb29-2" title="2">├── <span class="va">README</span>.<span class="at">md</span></a>
+<a class="sourceLine" id="cb29-3" title="3">└── <span class="im">package</span>.<span class="at">json</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.+(json|md)&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">extglob</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// []</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.+(json|md)&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">extglob</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;README.md&#39;, &#39;package.json&#39;]</span></a></code></pre></div>
+<h4 id="globstar">globstar</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enables recursively repeats a pattern containing <code>**</code>. If <code>false</code>, <code>**</code> behaves exactly like <code>*</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1">dir/</a>
+<a class="sourceLine" id="cb31-2" title="2">└── a</a>
+<a class="sourceLine" id="cb31-3" title="3">    └── b</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">globstar</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;a&#39;]</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;**&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">onlyFiles</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">globstar</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;a&#39;, &#39;a/b&#39;]</span></a></code></pre></div>
+<h4 id="basenamematch">baseNameMatch</h4>
+<ul>
+<li>Type: <code>boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>If set to <code>true</code>, then patterns without slashes will be matched against the basename of the path if it contains slashes.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb33-1" title="1">dir/</a>
+<a class="sourceLine" id="cb33-2" title="2">└── one/</a>
+<a class="sourceLine" id="cb33-3" title="3">    └── <span class="va">file</span>.<span class="at">md</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb34-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.md&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">baseNameMatch</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span> <span class="co">// []</span></a>
+<a class="sourceLine" id="cb34-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>(<span class="st">&#39;*.md&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">baseNameMatch</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span>  <span class="co">// [&#39;one/file.md&#39;]</span></a></code></pre></div>
+<h2 id="faq">FAQ</h2>
+<h2 id="what-is-a-static-or-dynamic-pattern">What is a static or dynamic pattern?</h2>
+<p>All patterns can be divided into two types:</p>
+<ul>
+<li><strong>static</strong>. A pattern is considered static if it can be used to get an entry on the file system without using matching mechanisms. For example, the <code>file.js</code> pattern is a static pattern because we can just verify that it exists on the file system.</li>
+<li><strong>dynamic</strong>. A pattern is considered dynamic if it cannot be used directly to find occurrences without using a matching mechanisms. For example, the <code>*</code> pattern is a dynamic pattern because we cannot use this pattern directly.</li>
+</ul>
+<p>A pattern is considered dynamic if it contains the following characters (<code>…</code> — any characters or their absence) or options:</p>
+<ul>
+<li>The <a href="#casesensitivematch"><code>caseSensitiveMatch</code></a> option is disabled</li>
+<li><code>\\</code> (the escape character)</li>
+<li><code>*</code>, <code>?</code>, <code>!</code> (at the beginning of line)</li>
+<li><code>[…]</code></li>
+<li><code>(…|…)</code></li>
+<li><code>@(…)</code>, <code>!(…)</code>, <code>*(…)</code>, <code>?(…)</code>, <code>+(…)</code> (respects the <a href="#extglob"><code>extglob</code></a> option)</li>
+<li><code>{…,…}</code>, <code>{…..…}</code> (respects the <a href="#braceexpansion"><code>braceExpansion</code></a> option)</li>
+</ul>
+<h2 id="how-to-write-patterns-on-windows">How to write patterns on Windows?</h2>
+<p>Always use forward-slashes in glob expressions (patterns and <a href="#ignore"><code>ignore</code></a> option). Use backslashes for escaping characters. With the <a href="#cwd"><code>cwd</code></a> option use a convenient format.</p>
+<p><strong>Bad</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb35-1" title="1"><span class="op">[</span></a>
+<a class="sourceLine" id="cb35-2" title="2">    <span class="st">&#39;directory</span><span class="sc">\\</span><span class="st">*&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb35-3" title="3">    <span class="va">path</span><span class="op">.</span><span class="fu">join</span>(<span class="bu">process</span><span class="op">.</span><span class="fu">cwd</span>()<span class="op">,</span> <span class="st">&#39;**&#39;</span>)</a>
+<a class="sourceLine" id="cb35-4" title="4"><span class="op">]</span></a></code></pre></div>
+<p><strong>Good</strong></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb36-1" title="1"><span class="op">[</span></a>
+<a class="sourceLine" id="cb36-2" title="2">    <span class="st">&#39;directory/*&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb36-3" title="3">    <span class="va">path</span><span class="op">.</span><span class="fu">join</span>(<span class="bu">process</span><span class="op">.</span><span class="fu">cwd</span>()<span class="op">,</span> <span class="st">&#39;**&#39;</span>).<span class="fu">replace</span>(<span class="ss">/</span><span class="sc">\\</span><span class="ss">/g</span><span class="op">,</span> <span class="st">&#39;/&#39;</span>)</a>
+<a class="sourceLine" id="cb36-4" title="4"><span class="op">]</span></a></code></pre></div>
+<blockquote>
+<p>:book: Use the <a href="https://www.npmjs.com/package/normalize-path"><code>normalize-path</code></a> or the <a href="https://www.npmjs.com/package/unixify"><code>unixify</code></a> package to convert Windows-style path to a Unix-style path.</p>
+</blockquote>
+<p>Read more about <a href="https://github.com/micromatch/micromatch#backslashes">matching with backslashes</a>.</p>
+<h2 id="why-are-parentheses-match-wrong">Why are parentheses match wrong?</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb37-1" title="1">dir/</a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="at">└──</span> (special<span class="op">-*</span>file).<span class="at">txt</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;(special-*file).txt&#39;</span>]) <span class="co">// []</span></a></code></pre></div>
+<p>Refers to Bash. You need to escape special characters:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb39-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;</span><span class="sc">\\</span><span class="st">(special-*file</span><span class="sc">\\</span><span class="st">).txt&#39;</span>]) <span class="co">// [&#39;(special-*file).txt&#39;]</span></a></code></pre></div>
+<p>Read more about <a href="https://github.com/micromatch/picomatch#matching-special-characters-as-literals">matching special characters as literals</a>.</p>
+<h2 id="how-to-exclude-directory-from-reading">How to exclude directory from reading?</h2>
+<p>You can use a negative pattern like this: <code>!**/node_modules</code> or <code>!**/node_modules/**</code>. Also you can use <a href="#ignore"><code>ignore</code></a> option. Just look at the example below.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" title="1">first/</a>
+<a class="sourceLine" id="cb40-2" title="2">├── <span class="va">file</span>.<span class="at">md</span></a>
+<a class="sourceLine" id="cb40-3" title="3">└── second/</a>
+<a class="sourceLine" id="cb40-4" title="4">    └── <span class="va">file</span>.<span class="at">txt</span></a></code></pre></div>
+<p>If you don’t want to read the <code>second</code> directory, you must write the following pattern: <code>!**/second</code> or <code>!**/second/**</code>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb41-1" title="1"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;**/*.md&#39;</span><span class="op">,</span> <span class="st">&#39;!**/second&#39;</span>])<span class="op">;</span>                 <span class="co">// [&#39;first/file.md&#39;]</span></a>
+<a class="sourceLine" id="cb41-2" title="2"><span class="va">fg</span>.<span class="at">sync</span>([<span class="st">&#39;**/*.md&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">ignore</span><span class="op">:</span> [<span class="st">&#39;**/second/**&#39;</span>] <span class="op">}</span>)<span class="op">;</span> <span class="co">// [&#39;first/file.md&#39;]</span></a></code></pre></div>
+<blockquote>
+<p>:warning: When you write <code>!**/second/**/*</code> it means that the directory will be <strong>read</strong>, but all the entries will not be included in the results.</p>
+</blockquote>
+<p>You have to understand that if you write the pattern to exclude directories, then the directory will not be read under any circumstances.</p>
+<h2 id="how-to-use-unc-path">How to use UNC path?</h2>
+<p>You cannot use <a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/62e862f4-2a51-452e-8eeb-dc4ff5ee33cc">Uniform Naming Convention (UNC)</a> paths as patterns (due to syntax), but you can use them as <a href="#cwd"><code>cwd</code></a> directory.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb42-1" title="1"><span class="va">fg</span><span class="op">.</span><span class="fu">sync</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> cwd<span class="op">:</span> <span class="st">&#39;</span><span class="sc">\\\\</span><span class="st">?</span><span class="sc">\\</span><span class="st">C:</span><span class="sc">\\</span><span class="st">Python27&#39;</span> <span class="co">/* or //?/C:/Python27 */</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="va">fg</span><span class="op">.</span><span class="fu">sync</span>(<span class="st">&#39;Python27/*&#39;</span><span class="op">,</span> <span class="op">{</span> cwd<span class="op">:</span> <span class="st">&#39;</span><span class="sc">\\\\</span><span class="st">?</span><span class="sc">\\</span><span class="st">C:</span><span class="sc">\\</span><span class="st">&#39;</span> <span class="co">/* or //?/C:/ */</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<h2 id="compatible-with-node-glob">Compatible with <code>node-glob</code>?</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">node-glob</th>
+<th style="text-align: center;">fast-glob</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>cwd</code></td>
+<td style="text-align: center;"><a href="#cwd"><code>cwd</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>root</code></td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>dot</code></td>
+<td style="text-align: center;"><a href="#dot"><code>dot</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>nomount</code></td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>mark</code></td>
+<td style="text-align: center;"><a href="#markdirectories"><code>markDirectories</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>nosort</code></td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>nounique</code></td>
+<td style="text-align: center;"><a href="#unique"><code>unique</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>nobrace</code></td>
+<td style="text-align: center;"><a href="#braceexpansion"><code>braceExpansion</code></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>noglobstar</code></td>
+<td style="text-align: center;"><a href="#globstar"><code>globstar</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>noext</code></td>
+<td style="text-align: center;"><a href="#extglob"><code>extglob</code></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>nocase</code></td>
+<td style="text-align: center;"><a href="#casesensitivematch"><code>caseSensitiveMatch</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>matchBase</code></td>
+<td style="text-align: center;"><a href="#basenamematch"><code>baseNameMatch</code></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>nodir</code></td>
+<td style="text-align: center;"><a href="#onlyfiles"><code>onlyFiles</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>ignore</code></td>
+<td style="text-align: center;"><a href="#ignore"><code>ignore</code></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>follow</code></td>
+<td style="text-align: center;"><a href="#followsymboliclinks"><code>followSymbolicLinks</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>realpath</code></td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>absolute</code></td>
+<td style="text-align: center;"><a href="#absolute"><code>absolute</code></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="benchmarks">Benchmarks</h2>
+<h3 id="server">Server</h3>
+<p>Link: <a href="https://www.vultr.com/pricing/baremetal">Vultr Bare Metal</a></p>
+<ul>
+<li>Processor: E3-1270v6 (8 CPU)</li>
+<li>RAM: 32GB</li>
+<li>Disk: SSD (<a href="https://ark.intel.com/content/www/us/en/ark/products/93012/intel-ssd-dc-s3520-series-240gb-2-5in-sata-6gb-s-3d1-mlc.html">Intel DC S3520 SSDSC2BB240G7</a>)</li>
+</ul>
+<p>You can see results <a href="https://gist.github.com/mrmlnc/f06246b197f53c356895fa35355a367c#file-fg-benchmark-server-product-txt">here</a> for latest release.</p>
+<h3 id="nettop">Nettop</h3>
+<p>Link: <a href="https://www.zotac.com/ee/product/mini_pcs/zbox-bi323">Zotac bi323</a></p>
+<ul>
+<li>Processor: Intel N3150 (4 CPU)</li>
+<li>RAM: 8GB</li>
+<li>Disk: SSD (<a href="https://www.silicon-power.com/web/product-1">Silicon Power SP060GBSS3S55S25</a>)</li>
+</ul>
+<p>You can see results <a href="https://gist.github.com/mrmlnc/f06246b197f53c356895fa35355a367c#file-fg-benchmark-nettop-product-txt">here</a> for latest release.</p>
+<h2 id="changelog">Changelog</h2>
+<p>See the <a href="https://github.com/mrmlnc/fast-glob/releases">Releases section of our GitHub project</a> for changelog for each release version.</p>
+<h2 id="license">License</h2>
+<p>This software is released under the terms of the MIT license.</p>
+</body>
+</html>

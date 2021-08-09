@@ -1,0 +1,68 @@
+{
+  "slug": "wiggle-sort",
+  "name": "Wiggle Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akarsh",
+      "email": "akarsh.satija@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mehdi ALAOUI",
+      "email": "alaoui.mehdi.1995@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Roshan Kanwar",
+      "email": "roshan.18je0696@am.iitism.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Guillaume Rochedix",
+      "email": "33205665+BriseBalloches@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ishani",
+      "email": "ishanigarkoti08@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

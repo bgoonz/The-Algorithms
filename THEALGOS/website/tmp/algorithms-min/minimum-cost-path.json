@@ -1,0 +1,37 @@
+{
+  "slug": "minimum-cost-path",
+  "name": "Minimum Cost Path",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "DhruvGheewala",
+      "email": "dhruvgheewala.4g@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Suhail Malik",
+      "email": "devmsuhail@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

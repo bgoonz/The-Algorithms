@@ -1,0 +1,10 @@
+{
+  "slug": "python-basics",
+  "name": "Python Basics",
+  "categories": ["machinelearning", "fundamentalsofpython"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

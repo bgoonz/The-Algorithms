@@ -1,0 +1,21 @@
+{
+  "slug": "isodd",
+  "name": "isOdd",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jake Gerber",
+      "email": "jake.j.gerber@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

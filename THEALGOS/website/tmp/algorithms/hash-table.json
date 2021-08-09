@@ -1,0 +1,46 @@
+{
+  "slug": "hash-table",
+  "name": "Hash Table",
+  "categories": ["datastructures", "hashing"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/hashing/hash_table.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/hashing/hash_table.py",
+      "code": "<span class=\"hljs-comment\">#!/usr/bin/env python3</span>\n<span class=\"hljs-keyword\">from</span> .number_theory.prime_numbers <span class=\"hljs-keyword\">import</span> next_prime\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">HashTable</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Basic Hash Table example with open addressing and linear probing\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, size_table, charge_factor=<span class=\"hljs-literal\">None</span>, lim_charge=<span class=\"hljs-literal\">None</span></span>):\n        self.size_table = size_table\n        self.values = [<span class=\"hljs-literal\">None</span>] * self.size_table\n        self.lim_charge = <span class=\"hljs-number\">0.75</span> <span class=\"hljs-keyword\">if</span> lim_charge <span class=\"hljs-keyword\">is</span> <span class=\"hljs-literal\">None</span> <span class=\"hljs-keyword\">else</span> lim_charge\n        self.charge_factor = <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">if</span> charge_factor <span class=\"hljs-keyword\">is</span> <span class=\"hljs-literal\">None</span> <span class=\"hljs-keyword\">else</span> charge_factor\n        self.__aux_list = []\n        self._keys = {}\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">keys</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> self._keys\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">balanced_factor</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">sum</span>([<span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">for</span> slot <span class=\"hljs-keyword\">in</span> self.values <span class=\"hljs-keyword\">if</span> slot <span class=\"hljs-keyword\">is</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-literal\">None</span>]) / (\n            self.size_table * self.charge_factor\n        )\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">hash_function</span>(<span class=\"hljs-params\">self, key</span>):\n        <span class=\"hljs-keyword\">return</span> key % self.size_table\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_step_by_step</span>(<span class=\"hljs-params\">self, step_ord</span>):\n\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;step <span class=\"hljs-subst\">{step_ord}</span>&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>([i <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(self.values))])\n        <span class=\"hljs-built_in\">print</span>(self.values)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">bulk_insert</span>(<span class=\"hljs-params\">self, values</span>):\n        i = <span class=\"hljs-number\">1</span>\n        self.__aux_list = values\n        <span class=\"hljs-keyword\">for</span> value <span class=\"hljs-keyword\">in</span> values:\n            self.insert_data(value)\n            self._step_by_step(i)\n            i += <span class=\"hljs-number\">1</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_set_value</span>(<span class=\"hljs-params\">self, key, data</span>):\n        self.values[key] = data\n        self._keys[key] = data\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_collision_resolution</span>(<span class=\"hljs-params\">self, key, data=<span class=\"hljs-literal\">None</span></span>):\n        new_key = self.hash_function(key + <span class=\"hljs-number\">1</span>)\n\n        <span class=\"hljs-keyword\">while</span> self.values[new_key] <span class=\"hljs-keyword\">is</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-literal\">None</span> <span class=\"hljs-keyword\">and</span> self.values[new_key] != key:\n\n            <span class=\"hljs-keyword\">if</span> self.values.count(<span class=\"hljs-literal\">None</span>) &gt; <span class=\"hljs-number\">0</span>:\n                new_key = self.hash_function(new_key + <span class=\"hljs-number\">1</span>)\n            <span class=\"hljs-keyword\">else</span>:\n                new_key = <span class=\"hljs-literal\">None</span>\n                <span class=\"hljs-keyword\">break</span>\n\n        <span class=\"hljs-keyword\">return</span> new_key\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">rehashing</span>(<span class=\"hljs-params\">self</span>):\n        survivor_values = [value <span class=\"hljs-keyword\">for</span> value <span class=\"hljs-keyword\">in</span> self.values <span class=\"hljs-keyword\">if</span> value <span class=\"hljs-keyword\">is</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-literal\">None</span>]\n        self.size_table = next_prime(self.size_table, factor=<span class=\"hljs-number\">2</span>)\n        self._keys.clear()\n        self.values = [<span class=\"hljs-literal\">None</span>] * self.size_table  <span class=\"hljs-comment\"># hell&#x27;s pointers D: don&#x27;t DRY ;/</span>\n        <span class=\"hljs-keyword\">for</span> value <span class=\"hljs-keyword\">in</span> survivor_values:\n            self.insert_data(value)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">insert_data</span>(<span class=\"hljs-params\">self, data</span>):\n        key = self.hash_function(data)\n\n        <span class=\"hljs-keyword\">if</span> self.values[key] <span class=\"hljs-keyword\">is</span> <span class=\"hljs-literal\">None</span>:\n            self._set_value(key, data)\n\n        <span class=\"hljs-keyword\">elif</span> self.values[key] == data:\n            <span class=\"hljs-keyword\">pass</span>\n\n        <span class=\"hljs-keyword\">else</span>:\n            collision_resolution = self._collision_resolution(key, data)\n            <span class=\"hljs-keyword\">if</span> collision_resolution <span class=\"hljs-keyword\">is</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-literal\">None</span>:\n                self._set_value(collision_resolution, data)\n            <span class=\"hljs-keyword\">else</span>:\n                self.rehashing()\n                self.insert_data(data)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "gabriel",
+      "email": "gabriel.goncalves@trilogo.com.br",
+      "commits": 1
+    },
+    {
+      "name": "KDH",
+      "email": "ehdgua01@naver.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

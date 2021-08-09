@@ -1,0 +1,16 @@
+{
+  "slug": "amicablenumber",
+  "name": "AmicableNumber",
+  "categories": ["math"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "ben",
+      "email": "ben.riegel@mni.thm.de",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

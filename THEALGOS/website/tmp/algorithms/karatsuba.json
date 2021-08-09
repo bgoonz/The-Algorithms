@@ -1,0 +1,26 @@
+{
+  "slug": "karatsuba",
+  "name": "Karatsuba",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/karatsuba.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/karatsuba.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot; Multiply two numbers using Karatsuba algorithm &quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">karatsuba</span>(<span class=\"hljs-params\">a, b</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; karatsuba(15463, 23489) == 15463 * 23489\n    True\n    &gt;&gt;&gt; karatsuba(3, 9) == 3 * 9\n    True\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">str</span>(a)) == <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">or</span> <span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">str</span>(b)) == <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> a * b\n    <span class=\"hljs-keyword\">else</span>:\n        m1 = <span class=\"hljs-built_in\">max</span>(<span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">str</span>(a)), <span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">str</span>(b)))\n        m2 = m1 // <span class=\"hljs-number\">2</span>\n\n        a1, a2 = <span class=\"hljs-built_in\">divmod</span>(a, <span class=\"hljs-number\">10</span> ** m2)\n        b1, b2 = <span class=\"hljs-built_in\">divmod</span>(b, <span class=\"hljs-number\">10</span> ** m2)\n\n        x = karatsuba(a2, b2)\n        y = karatsuba((a1 + a2), (b1 + b2))\n        z = karatsuba(a1, b1)\n\n        <span class=\"hljs-keyword\">return</span> (z * <span class=\"hljs-number\">10</span> ** (<span class=\"hljs-number\">2</span> * m2)) + ((y - z - x) * <span class=\"hljs-number\">10</span> ** (m2)) + (x)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-built_in\">print</span>(karatsuba(<span class=\"hljs-number\">15463</span>, <span class=\"hljs-number\">23489</span>))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rishabh Kumar",
+      "email": "rishabh0098@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

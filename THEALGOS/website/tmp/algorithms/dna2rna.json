@@ -1,0 +1,26 @@
+{
+  "slug": "dna2rna",
+  "name": "Dna2rna",
+  "categories": ["projectrosalind"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/project-rosalind/dna2rna.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/project-rosalind/dna2rna.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    dna2rna(s::AbstractString)\nGiven: A DNA string t\n\nhaving length at most 1000 nt.\n\nReturn: The transcribed RNA string of t\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> dna2rna(s::<span class=\"hljs-built_in\">AbstractString</span>)\n\t<span class=\"hljs-keyword\">return</span> replace(s, <span class=\"hljs-string\">&#x27;T&#x27;</span> =&gt; <span class=\"hljs-string\">&#x27;U&#x27;</span>)\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

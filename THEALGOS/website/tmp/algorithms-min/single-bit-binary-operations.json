@@ -1,0 +1,16 @@
+{
+  "slug": "single-bit-binary-operations",
+  "name": "Single Bit Binary Operations",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vijay Siva",
+      "email": "vijay.sivasubramaniam@instacart.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "trie-multiple-search",
+  "name": "Trie Multiple Search",
+  "categories": ["operationsondatastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "g-s-k-zoro",
+      "email": "42112703+g-s-k-zoro@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

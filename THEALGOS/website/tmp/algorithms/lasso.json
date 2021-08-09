@@ -1,0 +1,26 @@
+{
+  "slug": "lasso",
+  "name": "Lasso",
+  "categories": ["classificationalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Data-Preprocessing/lasso.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Data-Preprocessing/lasso.R",
+      "code": "data<span class=\"hljs-punctuation\">(</span>ggplot2<span class=\"hljs-operator\">::</span>diamonds<span class=\"hljs-punctuation\">)</span>\nlibrary<span class=\"hljs-punctuation\">(</span>caret<span class=\"hljs-punctuation\">)</span>\nlibrary<span class=\"hljs-punctuation\">(</span>dplyr<span class=\"hljs-punctuation\">)</span>\ndia.trans<span class=\"hljs-operator\">&lt;-</span>bind_cols<span class=\"hljs-punctuation\">(</span>diamonds <span class=\"hljs-operator\">%&gt;%</span> select_if<span class=\"hljs-punctuation\">(</span><span class=\"hljs-built_in\">is.numeric</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">,</span>\n                     model.matrix<span class=\"hljs-punctuation\">(</span><span class=\"hljs-operator\">~</span>cut<span class=\"hljs-operator\">-</span><span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">,</span>diamonds<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">%&gt;%</span> as_tibble<span class=\"hljs-punctuation\">(</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">,</span>\n                     model.matrix<span class=\"hljs-punctuation\">(</span><span class=\"hljs-operator\">~</span>color<span class=\"hljs-operator\">-</span><span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">,</span>diamonds<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">%&gt;%</span> as_tibble<span class=\"hljs-punctuation\">(</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">,</span>\n                     model.matrix<span class=\"hljs-punctuation\">(</span><span class=\"hljs-operator\">~</span>clarity<span class=\"hljs-operator\">-</span><span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">,</span>diamonds<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">%&gt;%</span> as_tibble<span class=\"hljs-punctuation\">(</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span>\n\n<span class=\"hljs-comment\">#setting parameters alpha and lambda</span>\nlasso_expand<span class=\"hljs-operator\">&lt;-</span>expand.grid<span class=\"hljs-punctuation\">(</span>alpha <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">,</span> lambda <span class=\"hljs-operator\">=</span> seq<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">0.001</span><span class=\"hljs-punctuation\">,</span><span class=\"hljs-number\">0.1</span><span class=\"hljs-punctuation\">,</span>by <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0.0005</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span>\nlasso_mod <span class=\"hljs-operator\">&lt;-</span> train<span class=\"hljs-punctuation\">(</span>x<span class=\"hljs-operator\">=</span>dia.trans <span class=\"hljs-operator\">%&gt;%</span> select<span class=\"hljs-punctuation\">(</span><span class=\"hljs-operator\">-</span>price<span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">,</span> y<span class=\"hljs-operator\">=</span>dia.trans<span class=\"hljs-operator\">$</span>price<span class=\"hljs-punctuation\">,</span> method<span class=\"hljs-operator\">=</span><span class=\"hljs-string\">&#x27;glmnet&#x27;</span><span class=\"hljs-punctuation\">,</span> \n                   tuneGrid<span class=\"hljs-operator\">=</span>lasso_expand<span class=\"hljs-punctuation\">)</span>\n\n<span class=\"hljs-comment\">#best tune</span>\nlasso_mod<span class=\"hljs-operator\">$</span>bestTune\nlasso_mod<span class=\"hljs-operator\">$</span>results<span class=\"hljs-operator\">$</span>RMSE\n\nlasso_imp<span class=\"hljs-operator\">&lt;-</span>varImp<span class=\"hljs-punctuation\">(</span>lasso_mod<span class=\"hljs-punctuation\">)</span>\n<span class=\"hljs-comment\">#get the importance of each feature and eliminate some of them</span>\nlasso_imp<span class=\"hljs-operator\">$</span>importance\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ronlee12355",
+      "email": "Ronlee12355@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Ron Lee",
+      "email": "ronlee12355@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "sparse-table",
+  "name": "Sparse Table",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Mann Patel",
+      "email": "46739555+manncodes@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arpan Mukherjee",
+      "email": "player.arpan@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

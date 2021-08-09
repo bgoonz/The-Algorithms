@@ -1,0 +1,31 @@
+{
+  "slug": "merge-k-sortedlinkedlist",
+  "name": "Merge K SortedLinkedlist",
+  "categories": ["datastructures", "list"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Lists/Merge_K_SortedLinkedlist.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Lists/Merge_K_SortedLinkedlist.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Lists;\n\n<span class=\"hljs-keyword\">import</span> java.util.Arrays;\n<span class=\"hljs-keyword\">import</span> java.util.Comparator;\n<span class=\"hljs-keyword\">import</span> java.util.PriorityQueue;\n\n<span class=\"hljs-comment\">/** <span class=\"hljs-doctag\">@author</span> Arun Pandey (https://github.com/pandeyarun709) */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Merge_K_SortedLinkedlist</span> {\n\n  <span class=\"hljs-comment\">/**\n   * This function merge K sorted LinkedList\n   *\n   * <span class=\"hljs-doctag\">@param</span> a array of LinkedList\n   * <span class=\"hljs-doctag\">@param</span> N size of array\n   * <span class=\"hljs-doctag\">@return</span> node\n   */</span>\n  Node <span class=\"hljs-title function_\">mergeKList</span><span class=\"hljs-params\">(Node[] a, <span class=\"hljs-type\">int</span> N)</span> {\n    <span class=\"hljs-comment\">// Min Heap</span>\n    PriorityQueue&lt;Node&gt; min = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">PriorityQueue</span>&lt;&gt;(Comparator.comparingInt(x -&gt; x.data));\n\n    <span class=\"hljs-comment\">// adding head of all linkedList in min heap</span>\n    min.addAll(Arrays.asList(a).subList(<span class=\"hljs-number\">0</span>, N));\n\n    <span class=\"hljs-comment\">// Make new head among smallest heads in K linkedList</span>\n    <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">head</span> <span class=\"hljs-operator\">=</span> min.poll();\n    min.add(head.next);\n    <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">curr</span> <span class=\"hljs-operator\">=</span> head;\n\n    <span class=\"hljs-comment\">// merging LinkedList</span>\n    <span class=\"hljs-keyword\">while</span> (!min.isEmpty()) {\n\n      <span class=\"hljs-type\">Node</span> <span class=\"hljs-variable\">temp</span> <span class=\"hljs-operator\">=</span> min.poll();\n      curr.next = temp;\n      curr = temp;\n\n      <span class=\"hljs-comment\">// Add Node in min Heap only if temp.next is not null</span>\n      <span class=\"hljs-keyword\">if</span> (temp.next != <span class=\"hljs-literal\">null</span>) {\n        min.add(temp.next);\n      }\n    }\n\n    <span class=\"hljs-keyword\">return</span> head;\n  }\n\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span> {\n    <span class=\"hljs-keyword\">private</span> <span class=\"hljs-type\">int</span> data;\n    <span class=\"hljs-keyword\">private</span> Node next;\n\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">Node</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> d)</span> {\n      <span class=\"hljs-built_in\">this</span>.data = d;\n      next = <span class=\"hljs-literal\">null</span>;\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Yang Libin",
+      "email": "contact@yanglibin.info",
+      "commits": 1
+    },
+    {
+      "name": "pandeyarun709",
+      "email": "pandeyarun709@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

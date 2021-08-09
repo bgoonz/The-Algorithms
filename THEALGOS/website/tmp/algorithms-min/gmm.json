@@ -1,0 +1,16 @@
+{
+  "slug": "gmm",
+  "name": "Gmm",
+  "categories": ["clusteringalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "AndyC_WC",
+      "email": "45092498+andyc1997@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

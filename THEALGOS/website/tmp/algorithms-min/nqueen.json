@@ -1,0 +1,21 @@
+{
+  "slug": "nqueen",
+  "name": "NQueen",
+  "categories": ["backtracking"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "hasan",
+      "email": "hasanuli10@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

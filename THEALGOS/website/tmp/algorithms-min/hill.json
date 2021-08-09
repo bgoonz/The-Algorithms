@@ -1,0 +1,10 @@
+{
+  "slug": "hill",
+  "name": "Hill",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

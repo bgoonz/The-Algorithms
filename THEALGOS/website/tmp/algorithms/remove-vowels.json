@@ -1,0 +1,26 @@
+{
+  "slug": "remove-vowels",
+  "name": "Remove Vowels",
+  "categories": ["datastructures", "array", "strings"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/arrays/strings/remove_vowels.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/arrays/strings/remove_vowels.rb",
+      "code": "<span class=\"hljs-comment\"># Challenge name: Remove vowels from a string</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Given a string s, remove the vowels &#x27;a&#x27;, &#x27;e&#x27;, &#x27;i&#x27;, &#x27;o&#x27;, and &#x27;u&#x27;</span>\n<span class=\"hljs-comment\"># from it, and return the new string.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 1:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;leetcodeisacommunityforcoders&quot;</span>\n<span class=\"hljs-comment\"># Output: &quot;ltcdscmmntyfrcdrs&quot;</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 2:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;aeiou&quot;</span>\n<span class=\"hljs-comment\"># Output: &quot;&quot;</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># <span class=\"hljs-doctag\">@param</span> {String} s</span>\n<span class=\"hljs-comment\"># <span class=\"hljs-doctag\">@return</span> {String}</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 1: Brute Force</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexity: O(n)</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">remove_vowels</span><span class=\"hljs-params\">(s)</span></span>\n  result_array = []\n  s.downcase!\n  start_array = s.split(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n\n  start_array.each <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|letter|</span>\n    <span class=\"hljs-keyword\">if</span> letter != <span class=\"hljs-string\">&#x27;a&#x27;</span> &amp;&amp; letter != <span class=\"hljs-string\">&#x27;e&#x27;</span> &amp;&amp; letter != <span class=\"hljs-string\">&#x27;i&#x27;</span> &amp;&amp; letter != <span class=\"hljs-string\">&#x27;o&#x27;</span> &amp;&amp; letter != <span class=\"hljs-string\">&#x27;u&#x27;</span>\n      result_array.push(letter)\n    <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  result_array.join(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n<span class=\"hljs-keyword\">end</span>\n\ns = <span class=\"hljs-string\">&#x27;leetcodeisacommunityforcoders&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;ltcdscmmntyfrcdrs&quot;</span>\ns = <span class=\"hljs-string\">&#x27;aeiou&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;&quot;</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 2: Regex</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexity: O(n)</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">remove_vowels</span><span class=\"hljs-params\">(s)</span></span>\n  vowels = <span class=\"hljs-regexp\">/[aeiou]/i</span>\n  s.gsub!(vowels, <span class=\"hljs-string\">&#x27;&#x27;</span>)\n  s\n<span class=\"hljs-keyword\">end</span>\n\ns = <span class=\"hljs-string\">&#x27;leetcodeisacommunityforcoders&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;ltcdscmmntyfrcdrs&quot;</span>\ns = <span class=\"hljs-string\">&#x27;aeiou&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;&quot;</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 3: Using Ruby .delete() method</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexity: O(n)</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">remove_vowels</span><span class=\"hljs-params\">(s)</span></span>\n  s.downcase.delete(<span class=\"hljs-string\">&#x27;aeiou&#x27;</span>)\n<span class=\"hljs-keyword\">end</span>\n\ns = <span class=\"hljs-string\">&#x27;leetcodeisacommunityforcoders&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;ltcdscmmntyfrcdrs&quot;</span>\ns = <span class=\"hljs-string\">&#x27;aeiou&#x27;</span>\nputs(remove_vowels(s))\n<span class=\"hljs-comment\"># =&gt; &quot;&quot;</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

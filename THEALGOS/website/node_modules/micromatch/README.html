@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="micromatch-npm-version-npm-monthly-downloads-npm-total-downloads-linux-build-status">micromatch <a href="https://www.npmjs.com/package/micromatch"><img src="https://img.shields.io/npm/v/micromatch.svg?style=flat" alt="NPM version" /></a> <a href="https://npmjs.org/package/micromatch"><img src="https://img.shields.io/npm/dm/micromatch.svg?style=flat" alt="NPM monthly downloads" /></a> <a href="https://npmjs.org/package/micromatch"><img src="https://img.shields.io/npm/dt/micromatch.svg?style=flat" alt="NPM total downloads" /></a> <a href="https://travis-ci.org/micromatch/micromatch"><img src="https://img.shields.io/travis/micromatch/micromatch.svg?style=flat&amp;label=Travis" alt="Linux Build Status" /></a></h1>
+<blockquote>
+<p>Glob matching for javascript/node.js. A replacement and faster alternative to minimatch and multimatch.</p>
+</blockquote>
+<p>Please consider following this project’s author, <a href="https://github.com/jonschlinkert">Jon Schlinkert</a>, and consider starring the project to show your :heart: and support.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<details>
+<p><summary><strong>Details</strong></summary></p>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#quickstart">Quickstart</a></li>
+<li><a href="#why-use-micromatch">Why use micromatch?</a>
+<ul>
+<li><a href="#matching-features">Matching features</a></li>
+</ul></li>
+<li><a href="#switching-to-micromatch">Switching to micromatch</a>
+<ul>
+<li><a href="#from-minimatch">From minimatch</a></li>
+<li><a href="#from-multimatch">From multimatch</a></li>
+</ul></li>
+<li><a href="#api">API</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#options-examples">Options Examples</a>
+<ul>
+<li><a href="#optionsbasename">options.basename</a></li>
+<li><a href="#optionsbash">options.bash</a></li>
+<li><a href="#optionsexpandrange">options.expandRange</a></li>
+<li><a href="#optionsformat">options.format</a></li>
+<li><a href="#optionsignore">options.ignore</a></li>
+<li><a href="#optionsmatchbase">options.matchBase</a></li>
+<li><a href="#optionsnoextglob">options.noextglob</a></li>
+<li><a href="#optionsnonegate">options.nonegate</a></li>
+<li><a href="#optionsnoglobstar">options.noglobstar</a></li>
+<li><a href="#optionsnonull">options.nonull</a></li>
+<li><a href="#optionsnullglob">options.nullglob</a></li>
+<li><a href="#optionsonignore">options.onIgnore</a></li>
+<li><a href="#optionsonmatch">options.onMatch</a></li>
+<li><a href="#optionsonresult">options.onResult</a></li>
+<li><a href="#optionsposixslashes">options.posixSlashes</a></li>
+<li><a href="#optionsunescape">options.unescape</a></li>
+</ul></li>
+<li><a href="#extended-globbing">Extended globbing</a>
+<ul>
+<li><a href="#extglobs">Extglobs</a></li>
+<li><a href="#braces">Braces</a></li>
+<li><a href="#regex-character-classes">Regex character classes</a></li>
+<li><a href="#regex-groups">Regex groups</a></li>
+<li><a href="#posix-bracket-expressions">POSIX bracket expressions</a></li>
+</ul></li>
+<li><a href="#notes">Notes</a>
+<ul>
+<li><a href="#bash-43-parity">Bash 4.3 parity</a></li>
+<li><a href="#backslashes">Backslashes</a></li>
+</ul></li>
+<li><a href="#benchmarks">Benchmarks</a>
+<ul>
+<li><a href="#running-benchmarks">Running benchmarks</a></li>
+<li><a href="#latest-results">Latest results</a></li>
+</ul></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+</details>
+<h2 id="install">Install</h2>
+<p>Install with <a href="https://www.npmjs.com/">npm</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="ex">npm</span> install --save micromatch</a></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> micromatch <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">// micromatch(list, patterns[, options]);</span></a></code></pre></div>
+<p>The <a href="#micromatch">main export</a> takes a list of strings and one or more glob patterns:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>([<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;bar&#39;</span><span class="op">,</span> <span class="st">&#39;baz&#39;</span><span class="op">,</span> <span class="st">&#39;qux&#39;</span>]<span class="op">,</span> [<span class="st">&#39;f*&#39;</span><span class="op">,</span> <span class="st">&#39;b*&#39;</span>])) <span class="co">//=&gt; [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>([<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;bar&#39;</span><span class="op">,</span> <span class="st">&#39;baz&#39;</span><span class="op">,</span> <span class="st">&#39;qux&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="st">&#39;!b*&#39;</span>])) <span class="co">//=&gt; [&#39;foo&#39;, &#39;qux&#39;]</span></a></code></pre></div>
+<p>Use <a href="#ismatch">.isMatch()</a> to for boolean matching:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;f*&#39;</span>)) <span class="co">//=&gt; true</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span><span class="op">,</span> [<span class="st">&#39;b*&#39;</span><span class="op">,</span> <span class="st">&#39;f*&#39;</span>])) <span class="co">//=&gt; true</span></a></code></pre></div>
+<p><a href="#switching-to-micromatch">Switching</a> from minimatch and multimatch is easy!</p>
+<p><br></p>
+<h2 id="why-use-micromatch">Why use micromatch?</h2>
+<blockquote>
+<p>micromatch is a <a href="#switching-to-micromatch">replacement</a> for minimatch and multimatch</p>
+</blockquote>
+<ul>
+<li>Supports all of the same matching features as <a href="https://github.com/isaacs/minimatch">minimatch</a> and <a href="https://github.com/sindresorhus/multimatch">multimatch</a></li>
+<li>More complete support for the Bash 4.3 specification than minimatch and multimatch. Micromatch passes <em>all of the spec tests</em> from bash, including some that bash still fails.</li>
+<li><strong>Fast &amp; Performant</strong> - Loads in about 5ms and performs <a href="#benchmarks">fast matches</a>.</li>
+<li><strong>Glob matching</strong> - Using wildcards (<code>*</code> and <code>?</code>), globstars (<code>**</code>) for nested directories</li>
+<li><strong><a href="#extended-globbing">Advanced globbing</a></strong> - Supports <a href="#extglobs">extglobs</a>, <a href="#braces-1">braces</a>, and <a href="#posix-bracket-expressions">POSIX brackets</a>, and support for escaping special characters with <code>\</code> or quotes.</li>
+<li><strong>Accurate</strong> - Covers more scenarios <a href="https://github.com/yarnpkg/yarn/pull/3339">than minimatch</a></li>
+<li><strong>Well tested</strong> - More than 5,000 <a href="./test">test assertions</a></li>
+<li><strong>Windows support</strong> - More reliable windows support than minimatch and multimatch.</li>
+<li><strong><a href="https://github.com/micromatch/braces#braces-is-safe">Safe</a></strong> - Micromatch is not subject to DoS with brace patterns like minimatch and multimatch.</li>
+</ul>
+<h3 id="matching-features">Matching features</h3>
+<ul>
+<li>Support for multiple glob patterns (no need for wrappers like multimatch)</li>
+<li>Wildcards (<code>**</code>, <code>*.js</code>)</li>
+<li>Negation (<code>'!a/*.js'</code>, <code>'*!(b).js']</code>)</li>
+<li><a href="#extglobs">extglobs</a> (<code>+(x|y)</code>, <code>!(a|b)</code>)</li>
+<li><a href="#posix-bracket-expressions">POSIX character classes</a> (<code>[[:alpha:][:digit:]]</code>)</li>
+<li><a href="https://github.com/micromatch/braces">brace expansion</a> (<code>foo/{1..5}.md</code>, <code>bar/{a,b,c}.js</code>)</li>
+<li>regex character classes (<code>foo-[1-5].js</code>)</li>
+<li>regex logical “or” (<code>foo/(abc|xyz).js</code>)</li>
+</ul>
+<p>You can mix and match these features to create whatever patterns you need!</p>
+<h2 id="switching-to-micromatch">Switching to micromatch</h2>
+<p><em>(There is one notable difference between micromatch and minimatch in regards to how backslashes are handled. See <a href="#backslashes">the notes about backslashes</a> for more information.)</em></p>
+<h3 id="from-minimatch">From minimatch</h3>
+<p>Use <a href="#ismatch">micromatch.isMatch()</a> instead of <code>minimatch()</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;b*&#39;</span>))<span class="op">;</span> <span class="co">//=&gt; false</span></a></code></pre></div>
+<p>Use <a href="#match">micromatch.match()</a> instead of <code>minimatch.match()</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">match</span>([<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;bar&#39;</span>]<span class="op">,</span> <span class="st">&#39;b*&#39;</span>))<span class="op">;</span> <span class="co">//=&gt; &#39;bar&#39;</span></a></code></pre></div>
+<h3 id="from-multimatch">From multimatch</h3>
+<p>Same signature:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>([<span class="st">&#39;foo&#39;</span><span class="op">,</span> <span class="st">&#39;bar&#39;</span><span class="op">,</span> <span class="st">&#39;baz&#39;</span>]<span class="op">,</span> [<span class="st">&#39;f*&#39;</span><span class="op">,</span> <span class="st">&#39;*z&#39;</span>]))<span class="op">;</span> <span class="co">//=&gt; [&#39;foo&#39;, &#39;baz&#39;]</span></a></code></pre></div>
+<h2 id="api">API</h2>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>list</code> <strong>{String|Array<string>}</strong>: List of strings to match.</li>
+<li><code>patterns</code> <strong>{String|Array<string>}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a></li>
+<li><code>returns</code> <strong>{Array}</strong>: Returns an array of matches</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">// mm(list, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="at">mm</span>([<span class="st">&#39;a.js&#39;</span><span class="op">,</span> <span class="st">&#39;a.txt&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="co">//=&gt; [ &#39;a.js&#39; ]</span></a></code></pre></div>
+<h3 id="matcher"><a href="index.js#L104">.matcher</a></h3>
+<p>Returns a matcher function from the given glob <code>pattern</code> and <code>options</code>. The returned function takes a string to match as its only argument and returns true if the string is a match.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>pattern</code> <strong>{String}</strong>: Glob pattern</li>
+<li><code>options</code> <strong>{Object}</strong></li>
+<li><code>returns</code> <strong>{Function}</strong>: Returns a matcher function.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co">// mm.matcher(pattern[, options]);</span></a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="va">mm</span>.<span class="at">matcher</span>(<span class="st">&#39;*.!(*a)&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;a.a&#39;</span>))<span class="op">;</span> <span class="co">//=&gt; false</span></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;a.b&#39;</span>))<span class="op">;</span> <span class="co">//=&gt; true</span></a></code></pre></div>
+<h3 id="ismatch"><a href="index.js#L123">.isMatch</a></h3>
+<p>Returns true if <strong>any</strong> of the given glob <code>patterns</code> match the specified <code>string</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>str</code> <strong>{String}</strong>: The string to test.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>[options]</code> <strong>{Object}</strong>: See available <a href="#options">options</a>.</li>
+<li><code>returns</code> <strong>{Boolean}</strong>: Returns true if any patterns match <code>str</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co">// mm.isMatch(string, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">isMatch</span>(<span class="st">&#39;a.a&#39;</span><span class="op">,</span> [<span class="st">&#39;b.*&#39;</span><span class="op">,</span> <span class="st">&#39;*.a&#39;</span>]))<span class="op">;</span> <span class="co">//=&gt; true</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">isMatch</span>(<span class="st">&#39;a.a&#39;</span><span class="op">,</span> <span class="st">&#39;b.*&#39;</span>))<span class="op">;</span> <span class="co">//=&gt; false</span></a></code></pre></div>
+<h3 id="not"><a href="index.js#L148">.not</a></h3>
+<p>Returns a list of strings that <em><strong>do not match any</strong></em> of the given <code>patterns</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>list</code> <strong>{Array}</strong>: Array of strings to match.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob pattern to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Array}</strong>: Returns an array of strings that <strong>do not match</strong> the given patterns.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co">// mm.not(list, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb11-3" title="3"></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">not</span>([<span class="st">&#39;a.a&#39;</span><span class="op">,</span> <span class="st">&#39;b.b&#39;</span><span class="op">,</span> <span class="st">&#39;c.c&#39;</span>]<span class="op">,</span> <span class="st">&#39;*.a&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="co">//=&gt; [&#39;b.b&#39;, &#39;c.c&#39;]</span></a></code></pre></div>
+<h3 id="contains"><a href="index.js#L188">.contains</a></h3>
+<p>Returns true if the given <code>string</code> contains the given pattern. Similar to <a href="#isMatch">.isMatch</a> but the pattern can match any part of the string.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>str</code> <strong>{String}</strong>: The string to match.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: Glob pattern to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Boolean}</strong>: Returns true if any of the patterns matches any part of <code>str</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">var</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="co">// mm.contains(string, pattern[, options]);</span></a>
+<a class="sourceLine" id="cb12-3" title="3"></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">contains</span>(<span class="st">&#39;aa/bb/cc&#39;</span><span class="op">,</span> <span class="st">&#39;*b&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="co">//=&gt; true</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">contains</span>(<span class="st">&#39;aa/bb/cc&#39;</span><span class="op">,</span> <span class="st">&#39;*d&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="co">//=&gt; false</span></a></code></pre></div>
+<h3 id="matchkeys"><a href="index.js#L230">.matchKeys</a></h3>
+<p>Filter the keys of the given object with the given <code>glob</code> pattern and <code>options</code>. Does not attempt to match nested keys. If you need this feature, use <a href="https://github.com/jonschlinkert/glob-object">glob-object</a> instead.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>object</code> <strong>{Object}</strong>: The object with keys to filter.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Object}</strong>: Returns an object with only keys that match the given patterns.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="co">// mm.matchKeys(object, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb13-3" title="3"></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="kw">const</span> obj <span class="op">=</span> <span class="op">{</span> <span class="dt">aa</span><span class="op">:</span> <span class="st">&#39;a&#39;</span><span class="op">,</span> <span class="dt">ab</span><span class="op">:</span> <span class="st">&#39;b&#39;</span><span class="op">,</span> <span class="dt">ac</span><span class="op">:</span> <span class="st">&#39;c&#39;</span> <span class="op">};</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">matchKeys</span>(obj<span class="op">,</span> <span class="st">&#39;*b&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="co">//=&gt; { ab: &#39;b&#39; }</span></a></code></pre></div>
+<h3 id="some"><a href="index.js#L259">.some</a></h3>
+<p>Returns true if some of the strings in the given <code>list</code> match any of the given glob <code>patterns</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>list</code> <strong>{String|Array}</strong>: The string or array of strings to test. Returns as soon as the first match is found.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Boolean}</strong>: Returns true if any <code>patterns</code> matches any of the strings in <code>list</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="co">// mm.some(list, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb14-3" title="3"></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">some</span>([<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> <span class="st">&#39;bar.js&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;!foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="co">// true</span></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">some</span>([<span class="st">&#39;foo.js&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;!foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="co">// false</span></a></code></pre></div>
+<h3 id="every"><a href="index.js#L295">.every</a></h3>
+<p>Returns true if every string in the given <code>list</code> matches any of the given glob <code>patterns</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>list</code> <strong>{String|Array}</strong>: The string or array of strings to test.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Boolean}</strong>: Returns true if all <code>patterns</code> matches all of the strings in <code>list</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="co">// mm.every(list, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb15-3" title="3"></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">every</span>(<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> [<span class="st">&#39;foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="co">// true</span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">every</span>([<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> <span class="st">&#39;bar.js&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="co">// true</span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">every</span>([<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> <span class="st">&#39;bar.js&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;!foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="co">// false</span></a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">every</span>([<span class="st">&#39;foo.js&#39;</span>]<span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;!foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="co">// false</span></a></code></pre></div>
+<h3 id="all"><a href="index.js#L334">.all</a></h3>
+<p>Returns true if <strong>all</strong> of the given <code>patterns</code> match the specified string.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>str</code> <strong>{String|Array}</strong>: The string to test.</li>
+<li><code>patterns</code> <strong>{String|Array}</strong>: One or more glob patterns to use for matching.</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Boolean}</strong>: Returns true if any patterns match <code>str</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="co">// mm.all(string, patterns[, options]);</span></a>
+<a class="sourceLine" id="cb16-3" title="3"></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">all</span>(<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> [<span class="st">&#39;foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co">// true</span></a>
+<a class="sourceLine" id="cb16-6" title="6"></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">all</span>(<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;!foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-8" title="8"><span class="co">// false</span></a>
+<a class="sourceLine" id="cb16-9" title="9"></a>
+<a class="sourceLine" id="cb16-10" title="10"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">all</span>(<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;foo.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-11" title="11"><span class="co">// true</span></a>
+<a class="sourceLine" id="cb16-12" title="12"></a>
+<a class="sourceLine" id="cb16-13" title="13"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">all</span>(<span class="st">&#39;foo.js&#39;</span><span class="op">,</span> [<span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="st">&#39;f*&#39;</span><span class="op">,</span> <span class="st">&#39;*o*&#39;</span><span class="op">,</span> <span class="st">&#39;*o.js&#39;</span>]))<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-14" title="14"><span class="co">// true</span></a></code></pre></div>
+<h3 id="capture"><a href="index.js#L361">.capture</a></h3>
+<p>Returns an array of matches captured by <code>pattern</code> in <code>string, or</code>null` if the pattern did not match.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>glob</code> <strong>{String}</strong>: Glob pattern to use for matching.</li>
+<li><code>input</code> <strong>{String}</strong>: String to match</li>
+<li><code>options</code> <strong>{Object}</strong>: See available <a href="#options">options</a> for changing how matches are performed</li>
+<li><code>returns</code> <strong>{Array|null}</strong>: Returns an array of captures if the input matches the glob pattern, otherwise <code>null</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="co">// mm.capture(pattern, string[, options]);</span></a>
+<a class="sourceLine" id="cb17-3" title="3"></a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">capture</span>(<span class="st">&#39;test/*.js&#39;</span><span class="op">,</span> <span class="st">&#39;test/foo.js&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="co">//=&gt; [&#39;foo&#39;]</span></a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">capture</span>(<span class="st">&#39;test/*.js&#39;</span><span class="op">,</span> <span class="st">&#39;foo/bar.css&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="co">//=&gt; null</span></a></code></pre></div>
+<h3 id="makere"><a href="index.js#L387">.makeRe</a></h3>
+<p>Create a regular expression from the given glob <code>pattern</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>pattern</code> <strong>{String}</strong>: A glob pattern to convert to regex.</li>
+<li><code>options</code> <strong>{Object}</strong></li>
+<li><code>returns</code> <strong>{RegExp}</strong>: Returns a regex created from the given pattern.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="co">// mm.makeRe(pattern[, options]);</span></a>
+<a class="sourceLine" id="cb18-3" title="3"></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">mm</span>.<span class="at">makeRe</span>(<span class="st">&#39;*.js&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="co">//=&gt; /^(?:(\.[\\\/])?(?!\.)(?=.)[^\/]*?\.js)$/</span></a></code></pre></div>
+<h3 id="scan"><a href="index.js#L403">.scan</a></h3>
+<p>Scan a glob pattern to separate the pattern into segments. Used by the <a href="#split">split</a> method.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>pattern</code> <strong>{String}</strong></li>
+<li><code>options</code> <strong>{Object}</strong></li>
+<li><code>returns</code> <strong>{Object}</strong>: Returns an object with</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="kw">const</span> state <span class="op">=</span> <span class="va">mm</span>.<span class="at">scan</span>(pattern[<span class="op">,</span> options])<span class="op">;</span></a></code></pre></div>
+<h3 id="parse"><a href="index.js#L419">.parse</a></h3>
+<p>Parse a glob pattern to create the source string for a regular expression.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>glob</code> <strong>{String}</strong></li>
+<li><code>options</code> <strong>{Object}</strong></li>
+<li><code>returns</code> <strong>{Object}</strong>: Returns an object with useful properties and output to be used as regex source string.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">const</span> mm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">const</span> state <span class="op">=</span> <span class="at">mm</span>(pattern[<span class="op">,</span> options])<span class="op">;</span></a></code></pre></div>
+<h3 id="braces"><a href="index.js#L446">.braces</a></h3>
+<p>Process the given brace <code>pattern</code>.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><code>pattern</code> <strong>{String}</strong>: String with brace pattern to process.</li>
+<li><code>options</code> <strong>{Object}</strong>: Any <a href="#options">options</a> to change how expansion is performed. See the <a href="https://github.com/micromatch/braces">braces</a> library for all available options.</li>
+<li><code>returns</code> <strong>{Array}</strong></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">const</span> <span class="op">{</span> braces <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;micromatch&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="at">braces</span>(<span class="st">&#39;foo/{a,b,c}/bar&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="co">//=&gt; [ &#39;foo/(a|b|c)/bar&#39; ]</span></a>
+<a class="sourceLine" id="cb21-4" title="4"></a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="at">braces</span>(<span class="st">&#39;foo/{a,b,c}/bar&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">expand</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-6" title="6"><span class="co">//=&gt; [ &#39;foo/a/bar&#39;, &#39;foo/b/bar&#39;, &#39;foo/c/bar&#39; ]</span></a></code></pre></div>
+<h2 id="options">Options</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Option</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Default value</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>basename</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>If set, then patterns without slashes will be matched against the basename of the path if it contains slashes. For example, <code>a?b</code> would match the path <code>/xyz/123/acb</code>, but not <code>/xyz/acb/123</code>.</td>
+</tr>
+<tr class="even">
+<td><code>bash</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Follow bash matching rules more strictly - disallows backslashes as escape characters, and treats single stars as globstars (<code>**</code>).</td>
+</tr>
+<tr class="odd">
+<td><code>capture</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Return regex matches in supporting methods.</td>
+</tr>
+<tr class="even">
+<td><code>contains</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Allows glob to match any part of the given string(s).</td>
+</tr>
+<tr class="odd">
+<td><code>cwd</code></td>
+<td><code>string</code></td>
+<td><code>process.cwd()</code></td>
+<td>Current working directory. Used by <code>picomatch.split()</code></td>
+</tr>
+<tr class="even">
+<td><code>debug</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Debug regular expressions when an error is thrown.</td>
+</tr>
+<tr class="odd">
+<td><code>dot</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Match dotfiles. Otherwise dotfiles are ignored unless a <code>.</code> is explicitly defined in the pattern.</td>
+</tr>
+<tr class="even">
+<td><code>expandRange</code></td>
+<td><code>function</code></td>
+<td><code>undefined</code></td>
+<td>Custom function for expanding ranges in brace patterns, such as <code>{a..z}</code>. The function receives the range values as two arguments, and it must return a string to be used in the generated regex. It’s recommended that returned strings be wrapped in parentheses. This option is overridden by the <code>expandBrace</code> option.</td>
+</tr>
+<tr class="odd">
+<td><code>failglob</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Similar to the <code>failglob</code> behavior in Bash, throws an error when no matches are found. Based on the bash option of the same name.</td>
+</tr>
+<tr class="even">
+<td><code>fastpaths</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>To speed up processing, full parsing is skipped for a handful common glob patterns. Disable this behavior by setting this option to <code>false</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>flags</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Regex flags to use in the generated regex. If defined, the <code>nocase</code> option will be overridden.</td>
+</tr>
+<tr class="even">
+<td><a href="#optionsformat">format</a></td>
+<td><code>function</code></td>
+<td><code>undefined</code></td>
+<td>Custom function for formatting the returned string. This is useful for removing leading slashes, converting Windows paths to Posix paths, etc.</td>
+</tr>
+<tr class="odd">
+<td><code>ignore</code></td>
+<td><code>array\|string</code></td>
+<td><code>undefined</code></td>
+<td>One or more glob patterns for excluding strings that should not be matched from the result.</td>
+</tr>
+<tr class="even">
+<td><code>keepQuotes</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Retain quotes in the generated regex, since quotes may also be used as an alternative to backslashes.</td>
+</tr>
+<tr class="odd">
+<td><code>literalBrackets</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>When <code>true</code>, brackets in the glob pattern will be escaped so that only literal brackets will be matched.</td>
+</tr>
+<tr class="even">
+<td><code>lookbehinds</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Support regex positive and negative lookbehinds. Note that you must be using Node 8.1.10 or higher to enable regex lookbehinds.</td>
+</tr>
+<tr class="odd">
+<td><code>matchBase</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Alias for <code>basename</code></td>
+</tr>
+<tr class="even">
+<td><code>maxLength</code></td>
+<td><code>boolean</code></td>
+<td><code>65536</code></td>
+<td>Limit the max length of the input string. An error is thrown if the input string is longer than this value.</td>
+</tr>
+<tr class="odd">
+<td><code>nobrace</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable brace matching, so that <code>{a,b}</code> and <code>{1..3}</code> would be treated as literal characters.</td>
+</tr>
+<tr class="even">
+<td><code>nobracket</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Disable matching with regex brackets.</td>
+</tr>
+<tr class="odd">
+<td><code>nocase</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Perform case-insensitive matching. Equivalent to the regex <code>i</code> flag. Note that this option is ignored when the <code>flags</code> option is defined.</td>
+</tr>
+<tr class="even">
+<td><code>nodupes</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Deprecated, use <code>nounique</code> instead. This option will be removed in a future major release. By default duplicates are removed. Disable uniquification by setting this option to false.</td>
+</tr>
+<tr class="odd">
+<td><code>noext</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Alias for <code>noextglob</code></td>
+</tr>
+<tr class="even">
+<td><code>noextglob</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable support for matching with <a href="#extglobs">extglobs</a> (like <code>+(a\|b)</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>noglobstar</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable support for matching nested directories with globstars (<code>**</code>)</td>
+</tr>
+<tr class="even">
+<td><code>nonegate</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable support for negating with leading <code>!</code></td>
+</tr>
+<tr class="odd">
+<td><code>noquantifiers</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable support for regex quantifiers (like <code>a{1,2}</code>) and treat them as brace patterns to be expanded.</td>
+</tr>
+<tr class="even">
+<td><a href="#optionsonIgnore">onIgnore</a></td>
+<td><code>function</code></td>
+<td><code>undefined</code></td>
+<td>Function to be called on ignored items.</td>
+</tr>
+<tr class="odd">
+<td><a href="#optionsonMatch">onMatch</a></td>
+<td><code>function</code></td>
+<td><code>undefined</code></td>
+<td>Function to be called on matched items.</td>
+</tr>
+<tr class="even">
+<td><a href="#optionsonResult">onResult</a></td>
+<td><code>function</code></td>
+<td><code>undefined</code></td>
+<td>Function to be called on all items, regardless of whether or not they are matched or ignored.</td>
+</tr>
+<tr class="odd">
+<td><code>posix</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Support <a href="#posix-bracket-expressions">POSIX character classes</a> (“posix brackets”).</td>
+</tr>
+<tr class="even">
+<td><code>posixSlashes</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Convert all slashes in file paths to forward slashes. This does not convert slashes in the glob pattern itself</td>
+</tr>
+<tr class="odd">
+<td><code>prepend</code></td>
+<td><code>string</code></td>
+<td><code>undefined</code></td>
+<td>String to prepend to the generated regex used for matching.</td>
+</tr>
+<tr class="even">
+<td><code>regex</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Use regular expression rules for <code>+</code> (instead of matching literal <code>+</code>), and for stars that follow closing parentheses or brackets (as in <code>)*</code> and <code>]*</code>).</td>
+</tr>
+<tr class="odd">
+<td><code>strictBrackets</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Throw an error if brackets, braces, or parens are imbalanced.</td>
+</tr>
+<tr class="even">
+<td><code>strictSlashes</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>When true, picomatch won’t match trailing slashes with single stars.</td>
+</tr>
+<tr class="odd">
+<td><code>unescape</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Remove preceding backslashes from escaped glob characters before creating the regular expression to perform matches.</td>
+</tr>
+<tr class="even">
+<td><code>unixify</code></td>
+<td><code>boolean</code></td>
+<td><code>undefined</code></td>
+<td>Alias for <code>posixSlashes</code>, for backwards compatitibility.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="options-examples">Options Examples</h2>
+<h3 id="options.basename">options.basename</h3>
+<p>Allow glob patterns without slashes to match a file path based on its basename. Same behavior as <a href="https://github.com/isaacs/minimatch">minimatch</a> option <code>matchBase</code>.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>false</code></p>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb22-1" title="1"><span class="at">micromatch</span>([<span class="st">&#39;a/b.js&#39;</span><span class="op">,</span> <span class="st">&#39;a/c.md&#39;</span>]<span class="op">,</span> <span class="st">&#39;*.js&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="co">//=&gt; []</span></a>
+<a class="sourceLine" id="cb22-3" title="3"></a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="at">micromatch</span>([<span class="st">&#39;a/b.js&#39;</span><span class="op">,</span> <span class="st">&#39;a/c.md&#39;</span>]<span class="op">,</span> <span class="st">&#39;*.js&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">basename</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb22-5" title="5"><span class="co">//=&gt; [&#39;a/b.js&#39;]</span></a></code></pre></div>
+<h3 id="options.bash">options.bash</h3>
+<p>Enabled by default, this option enforces bash-like behavior with stars immediately following a bracket expression. Bash bracket expressions are similar to regex character classes, but unlike regex, a star following a bracket expression <strong>does not repeat the bracketed characters</strong>. Instead, the star is treated the same as any other star.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>true</code></p>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">const</span> files <span class="op">=</span> [<span class="st">&#39;abc&#39;</span><span class="op">,</span> <span class="st">&#39;ajz&#39;</span>]<span class="op">;</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>(files<span class="op">,</span> <span class="st">&#39;[a-c]*&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb23-3" title="3"><span class="co">//=&gt; [&#39;abc&#39;, &#39;ajz&#39;]</span></a>
+<a class="sourceLine" id="cb23-4" title="4"></a>
+<a class="sourceLine" id="cb23-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>(files<span class="op">,</span> <span class="st">&#39;[a-c]*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">bash</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
+<h3 id="options.expandrange">options.expandRange</h3>
+<p><strong>Type</strong>: <code>function</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<p>Custom function for expanding ranges in brace patterns. The <a href="https://github.com/jonschlinkert/fill-range">fill-range</a> library is ideal for this purpose, or you can use custom code to do whatever you need.</p>
+<p><strong>Example</strong></p>
+<p>The following example shows how to create a glob that matches a numeric folder name between <code>01</code> and <code>25</code>, with leading zeros.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">const</span> fill <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fill-range&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="kw">const</span> regex <span class="op">=</span> <span class="va">micromatch</span>.<span class="at">makeRe</span>(<span class="st">&#39;foo/{01..25}/bar&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb24-3" title="3">  <span class="at">expandRange</span>(a<span class="op">,</span> b) <span class="op">{</span></a>
+<a class="sourceLine" id="cb24-4" title="4">    <span class="cf">return</span> <span class="vs">`(</span><span class="sc">${</span><span class="at">fill</span>(a<span class="op">,</span> b<span class="op">,</span> <span class="op">{</span> <span class="dt">toRegex</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="sc">}</span><span class="vs">)`</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-5" title="5">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-7" title="7"></a>
+<a class="sourceLine" id="cb24-8" title="8"><span class="va">console</span>.<span class="at">log</span>(regex)</a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="co">//=&gt; /^(?:foo\/((?:0[1-9]|1[0-9]|2[0-5]))\/bar)$/</span></a>
+<a class="sourceLine" id="cb24-10" title="10"></a>
+<a class="sourceLine" id="cb24-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/00/bar&#39;</span>)) <span class="co">// false</span></a>
+<a class="sourceLine" id="cb24-12" title="12"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/01/bar&#39;</span>)) <span class="co">// true</span></a>
+<a class="sourceLine" id="cb24-13" title="13"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/10/bar&#39;</span>)) <span class="co">// true</span></a>
+<a class="sourceLine" id="cb24-14" title="14"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/22/bar&#39;</span>)) <span class="co">// true</span></a>
+<a class="sourceLine" id="cb24-15" title="15"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/25/bar&#39;</span>)) <span class="co">// true</span></a>
+<a class="sourceLine" id="cb24-16" title="16"><span class="va">console</span>.<span class="at">log</span>(<span class="va">regex</span>.<span class="at">test</span>(<span class="st">&#39;foo/26/bar&#39;</span>)) <span class="co">// false</span></a></code></pre></div>
+<h3 id="options.format">options.format</h3>
+<p><strong>Type</strong>: <code>function</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<p>Custom function for formatting strings before they’re matched.</p>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1"><span class="co">// strip leading &#39;./&#39; from strings</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="kw">const</span> format <span class="op">=</span> str <span class="kw">=&gt;</span> <span class="va">str</span>.<span class="at">replace</span>(<span class="ss">/</span><span class="sc">^\.\/</span><span class="ss">/</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb25-3" title="3"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="at">picomatch</span>(<span class="st">&#39;foo/*.js&#39;</span><span class="op">,</span> <span class="op">{</span> format <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;./foo/bar.js&#39;</span>)) <span class="co">//=&gt; true</span></a></code></pre></div>
+<h3 id="options.ignore">options.ignore</h3>
+<p>String or array of glob patterns to match files to ignore.</p>
+<p><strong>Type</strong>: <code>String|Array</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="va">micromatch</span>.<span class="at">matcher</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">ignore</span><span class="op">:</span> <span class="st">&#39;f*&#39;</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span>)) <span class="co">//=&gt; false</span></a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;bar&#39;</span>)) <span class="co">//=&gt; true</span></a>
+<a class="sourceLine" id="cb26-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isMatch</span>(<span class="st">&#39;baz&#39;</span>)) <span class="co">//=&gt; true</span></a></code></pre></div>
+<h3 id="options.matchbase">options.matchBase</h3>
+<p>Alias for <a href="#options-basename">options.basename</a>.</p>
+<h3 id="options.noextglob">options.noextglob</h3>
+<p>Disable extglob support, so that <a href="#extglobs">extglobs</a> are regarded as literal characters.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<p><strong>Examples</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>([<span class="st">&#39;a/z&#39;</span><span class="op">,</span> <span class="st">&#39;a/b&#39;</span><span class="op">,</span> <span class="st">&#39;a/!(z)&#39;</span>]<span class="op">,</span> <span class="st">&#39;a/!(z)&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="co">//=&gt; [&#39;a/b&#39;, &#39;a/!(z)&#39;]</span></a>
+<a class="sourceLine" id="cb27-3" title="3"></a>
+<a class="sourceLine" id="cb27-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="at">micromatch</span>([<span class="st">&#39;a/z&#39;</span><span class="op">,</span> <span class="st">&#39;a/b&#39;</span><span class="op">,</span> <span class="st">&#39;a/!(z)&#39;</span>]<span class="op">,</span> <span class="st">&#39;a/!(z)&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">noextglob</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb27-5" title="5"><span class="co">//=&gt; [&#39;a/!(z)&#39;] (matches only as literal characters)</span></a></code></pre></div>
+<h3 id="options.nonegate">options.nonegate</h3>
+<p>Disallow negation (<code>!</code>) patterns, and treat leading <code>!</code> as a literal character to match.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<h3 id="options.noglobstar">options.noglobstar</h3>
+<p>Disable matching with globstars (<code>**</code>).</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="at">micromatch</span>([<span class="st">&#39;a/b&#39;</span><span class="op">,</span> <span class="st">&#39;a/b/c&#39;</span><span class="op">,</span> <span class="st">&#39;a/b/c/d&#39;</span>]<span class="op">,</span> <span class="st">&#39;a/**&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="co">//=&gt; [&#39;a/b&#39;, &#39;a/b/c&#39;, &#39;a/b/c/d&#39;]</span></a>
+<a class="sourceLine" id="cb28-3" title="3"></a>
+<a class="sourceLine" id="cb28-4" title="4"><span class="at">micromatch</span>([<span class="st">&#39;a/b&#39;</span><span class="op">,</span> <span class="st">&#39;a/b/c&#39;</span><span class="op">,</span> <span class="st">&#39;a/b/c/d&#39;</span>]<span class="op">,</span> <span class="st">&#39;a/**&#39;</span><span class="op">,</span> <span class="op">{</span><span class="dt">noglobstar</span><span class="op">:</span> <span class="kw">true</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb28-5" title="5"><span class="co">//=&gt; [&#39;a/b&#39;]</span></a></code></pre></div>
+<h3 id="options.nonull">options.nonull</h3>
+<p>Alias for <a href="#options-nullglob">options.nullglob</a>.</p>
+<h3 id="options.nullglob">options.nullglob</h3>
+<p>If <code>true</code>, when no matches are found the actual (arrayified) glob pattern is returned instead of an empty array. Same behavior as <a href="https://github.com/isaacs/minimatch">minimatch</a> option <code>nonull</code>.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<h3 id="options.onignore">options.onIgnore</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">const</span> onIgnore <span class="op">=</span> (<span class="op">{</span> glob<span class="op">,</span> regex<span class="op">,</span> input<span class="op">,</span> output <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb29-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="op">{</span> glob<span class="op">,</span> regex<span class="op">,</span> input<span class="op">,</span> output <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb29-3" title="3">  <span class="co">// { glob: &#39;*&#39;, regex: /^(?:(?!\.)(?=.)[^\/]*?\/?)$/, input: &#39;foo&#39;, output: &#39;foo&#39; }</span></a>
+<a class="sourceLine" id="cb29-4" title="4"><span class="op">};</span></a>
+<a class="sourceLine" id="cb29-5" title="5"></a>
+<a class="sourceLine" id="cb29-6" title="6"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="va">micromatch</span>.<span class="at">matcher</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> onIgnore<span class="op">,</span> <span class="dt">ignore</span><span class="op">:</span> <span class="st">&#39;f*&#39;</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb29-7" title="7"><span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb29-8" title="8"><span class="at">isMatch</span>(<span class="st">&#39;bar&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb29-9" title="9"><span class="at">isMatch</span>(<span class="st">&#39;baz&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<h3 id="options.onmatch">options.onMatch</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">const</span> onMatch <span class="op">=</span> (<span class="op">{</span> glob<span class="op">,</span> regex<span class="op">,</span> input<span class="op">,</span> output <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb30-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="op">{</span> input<span class="op">,</span> output <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb30-3" title="3">  <span class="co">// { input: &#39;some\\path&#39;, output: &#39;some/path&#39; }</span></a>
+<a class="sourceLine" id="cb30-4" title="4">  <span class="co">// { input: &#39;some\\path&#39;, output: &#39;some/path&#39; }</span></a>
+<a class="sourceLine" id="cb30-5" title="5">  <span class="co">// { input: &#39;some\\path&#39;, output: &#39;some/path&#39; }</span></a>
+<a class="sourceLine" id="cb30-6" title="6"><span class="op">};</span></a>
+<a class="sourceLine" id="cb30-7" title="7"></a>
+<a class="sourceLine" id="cb30-8" title="8"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="va">micromatch</span>.<span class="at">matcher</span>(<span class="st">&#39;**&#39;</span><span class="op">,</span> <span class="op">{</span> onMatch<span class="op">,</span> <span class="dt">posixSlashes</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb30-9" title="9"><span class="at">isMatch</span>(<span class="st">&#39;some</span><span class="sc">\\</span><span class="st">path&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb30-10" title="10"><span class="at">isMatch</span>(<span class="st">&#39;some</span><span class="sc">\\</span><span class="st">path&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb30-11" title="11"><span class="at">isMatch</span>(<span class="st">&#39;some</span><span class="sc">\\</span><span class="st">path&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<h3 id="options.onresult">options.onResult</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">const</span> onResult <span class="op">=</span> (<span class="op">{</span> glob<span class="op">,</span> regex<span class="op">,</span> input<span class="op">,</span> output <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb31-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="op">{</span> glob<span class="op">,</span> regex<span class="op">,</span> input<span class="op">,</span> output <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="op">};</span></a>
+<a class="sourceLine" id="cb31-4" title="4"></a>
+<a class="sourceLine" id="cb31-5" title="5"><span class="kw">const</span> isMatch <span class="op">=</span> <span class="at">micromatch</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> <span class="op">{</span> onResult<span class="op">,</span> <span class="dt">ignore</span><span class="op">:</span> <span class="st">&#39;f*&#39;</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb31-6" title="6"><span class="at">isMatch</span>(<span class="st">&#39;foo&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb31-7" title="7"><span class="at">isMatch</span>(<span class="st">&#39;bar&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb31-8" title="8"><span class="at">isMatch</span>(<span class="st">&#39;baz&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<h3 id="options.posixslashes">options.posixSlashes</h3>
+<p>Convert path separators on returned files to posix/unix-style forward slashes. Aliased as <code>unixify</code> for backwards compatibility.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>true</code> on windows, <code>false</code> everywhere else.</p>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">match</span>([<span class="st">&#39;a</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">c&#39;</span>]<span class="op">,</span> <span class="st">&#39;a/**&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="co">//=&gt; [&#39;a/b/c&#39;]</span></a>
+<a class="sourceLine" id="cb32-3" title="3"></a>
+<a class="sourceLine" id="cb32-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">match</span>([<span class="st">&#39;a</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">c&#39;</span>]<span class="op">,</span> <span class="op">{</span> <span class="dt">posixSlashes</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb32-5" title="5"><span class="co">//=&gt; [&#39;a\\b\\c&#39;]</span></a></code></pre></div>
+<h3 id="options.unescape">options.unescape</h3>
+<p>Remove backslashes from escaped glob characters before creating the regular expression to perform matches.</p>
+<p><strong>Type</strong>: <code>Boolean</code></p>
+<p><strong>Default</strong>: <code>undefined</code></p>
+<p><strong>Example</strong></p>
+<p>In this example we want to match a literal <code>*</code>:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb33-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">match</span>([<span class="st">&#39;abc&#39;</span><span class="op">,</span> <span class="st">&#39;a</span><span class="sc">\\</span><span class="st">*c&#39;</span>]<span class="op">,</span> <span class="st">&#39;a</span><span class="sc">\\</span><span class="st">*c&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="co">//=&gt; [&#39;a\\*c&#39;]</span></a>
+<a class="sourceLine" id="cb33-3" title="3"></a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">match</span>([<span class="st">&#39;abc&#39;</span><span class="op">,</span> <span class="st">&#39;a</span><span class="sc">\\</span><span class="st">*c&#39;</span>]<span class="op">,</span> <span class="st">&#39;a</span><span class="sc">\\</span><span class="st">*c&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">unescape</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb33-5" title="5"><span class="co">//=&gt; [&#39;a*c&#39;]</span></a></code></pre></div>
+<p><br> <br></p>
+<h2 id="extended-globbing">Extended globbing</h2>
+<p>Micromatch supports the following extended globbing features.</p>
+<h3 id="extglobs">Extglobs</h3>
+<p>Extended globbing, as described by the bash man page:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>pattern</strong></th>
+<th><strong>regex equivalent</strong></th>
+<th><strong>description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>?(pattern)</code></td>
+<td><code>(pattern)?</code></td>
+<td>Matches zero or one occurrence of the given patterns</td>
+</tr>
+<tr class="even">
+<td><code>*(pattern)</code></td>
+<td><code>(pattern)*</code></td>
+<td>Matches zero or more occurrences of the given patterns</td>
+</tr>
+<tr class="odd">
+<td><code>+(pattern)</code></td>
+<td><code>(pattern)+</code></td>
+<td>Matches one or more occurrences of the given patterns</td>
+</tr>
+<tr class="even">
+<td><code>@(pattern)</code></td>
+<td><code>(pattern)</code> <sup>*</sup></td>
+<td>Matches one of the given patterns</td>
+</tr>
+<tr class="odd">
+<td><code>!(pattern)</code></td>
+<td>N/A (equivalent regex is much more complicated)</td>
+<td>Matches anything except one of the given patterns</td>
+</tr>
+</tbody>
+</table>
+<p><sup><strong>*</strong></sup> Note that <code>@</code> isn’t a regex character.</p>
+<h3 id="braces-1">Braces</h3>
+<p>Brace patterns can be used to match specific ranges or sets of characters.</p>
+<p><strong>Example</strong></p>
+<p>The pattern <code>{f,b}*/{1..3}/{b,q}*</code> would match any of following strings:</p>
+<pre><code>foo/1/bar
+foo/2/bar
+foo/3/bar
+baz/1/qux
+baz/2/qux
+baz/3/qux</code></pre>
+<p>Visit <a href="https://github.com/micromatch/braces">braces</a> to see the full range of features and options related to brace expansion, or to create brace matching or expansion related issues.</p>
+<h3 id="regex-character-classes">Regex character classes</h3>
+<p>Given the list: <code>['a.js', 'b.js', 'c.js', 'd.js', 'E.js']</code>:</p>
+<ul>
+<li><code>[ac].js</code>: matches both <code>a</code> and <code>c</code>, returning <code>['a.js', 'c.js']</code></li>
+<li><code>[b-d].js</code>: matches from <code>b</code> to <code>d</code>, returning <code>['b.js', 'c.js', 'd.js']</code></li>
+<li><code>a/[A-Z].js</code>: matches and uppercase letter, returning <code>['a/E.md']</code></li>
+</ul>
+<p>Learn about <a href="http://www.regular-expressions.info/charclass.html">regex character classes</a>.</p>
+<h3 id="regex-groups">Regex groups</h3>
+<p>Given <code>['a.js', 'b.js', 'c.js', 'd.js', 'E.js']</code>:</p>
+<ul>
+<li><code>(a|c).js</code>: would match either <code>a</code> or <code>c</code>, returning <code>['a.js', 'c.js']</code></li>
+<li><code>(b|d).js</code>: would match either <code>b</code> or <code>d</code>, returning <code>['b.js', 'd.js']</code></li>
+<li><code>(b|[A-Z]).js</code>: would match either <code>b</code> or an uppercase letter, returning <code>['b.js', 'E.js']</code></li>
+</ul>
+<p>As with regex, parens can be nested, so patterns like <code>((a|b)|c)/b</code> will work. Although brace expansion might be friendlier to use, depending on preference.</p>
+<h3 id="posix-bracket-expressions">POSIX bracket expressions</h3>
+<p>POSIX brackets are intended to be more user-friendly than regex character classes. This of course is in the eye of the beholder.</p>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb35-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">isMatch</span>(<span class="st">&#39;a1&#39;</span><span class="op">,</span> <span class="st">&#39;[[:alpha:][:digit:]]&#39;</span>)) <span class="co">//=&gt; true</span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="va">micromatch</span>.<span class="at">isMatch</span>(<span class="st">&#39;a1&#39;</span><span class="op">,</span> <span class="st">&#39;[[:alpha:][:alpha:]]&#39;</span>)) <span class="co">//=&gt; false</span></a></code></pre></div>
+<hr />
+<h2 id="notes">Notes</h2>
+<h3 id="bash-4.3-parity">Bash 4.3 parity</h3>
+<p>Whenever possible matching behavior is based on behavior Bash 4.3, which is mostly consistent with minimatch.</p>
+<p>However, it’s suprising how many edge cases and rabbit holes there are with glob matching, and since there is no real glob specification, and micromatch is more accurate than both Bash and minimatch, there are cases where best-guesses were made for behavior. In a few cases where Bash had no answers, we used wildmatch (used by git) as a fallback.</p>
+<h3 id="backslashes">Backslashes</h3>
+<p>There is an important, notable difference between minimatch and micromatch <em>in regards to how backslashes are handled</em> in glob patterns.</p>
+<ul>
+<li>Micromatch exclusively and explicitly reserves backslashes for escaping characters in a glob pattern, even on windows, which is consistent with bash behavior. <em>More importantly, unescaping globs can result in unsafe regular expressions</em>.</li>
+<li>Minimatch converts all backslashes to forward slashes, which means you can’t use backslashes to escape any characters in your glob patterns.</li>
+</ul>
+<p>We made this decision for micromatch for a couple of reasons:</p>
+<ul>
+<li>Consistency with bash conventions.</li>
+<li>Glob patterns are not filepaths. They are a type of <a href="https://en.wikipedia.org/wiki/Regular_language">regular language</a> that is converted to a JavaScript regular expression. Thus, when forward slashes are defined in a glob pattern, the resulting regular expression will match windows or POSIX path separators just fine.</li>
+</ul>
+<p><strong>A note about joining paths to globs</strong></p>
+<p>Note that when you pass something like <code>path.join('foo', '*')</code> to micromatch, you are creating a filepath and expecting it to still work as a glob pattern. This causes problems on windows, since the <code>path.sep</code> is <code>\\</code>.</p>
+<p>In other words, since <code>\\</code> is reserved as an escape character in globs, on windows <code>path.join('foo', '*')</code> would result in <code>foo\\*</code>, which tells micromatch to match <code>*</code> as a literal character. This is the same behavior as bash.</p>
+<p>To solve this, you might be inspired to do something like <code>'foo\\*'.replace(/\\/g, '/')</code>, but this causes another, potentially much more serious, problem.</p>
+<h2 id="benchmarks">Benchmarks</h2>
+<h3 id="running-benchmarks">Running benchmarks</h3>
+<p>Install dependencies for running benchmarks:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" title="1">$ <span class="bu">cd</span> bench <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> install</a></code></pre></div>
+<p>Run the benchmarks:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" title="1">$ <span class="ex">npm</span> run bench</a></code></pre></div>
+<h3 id="latest-results">Latest results</h3>
+<p>As of April 10, 2021 (longer bars are better):</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" title="1"><span class="co"># .makeRe star</span></a>
+<a class="sourceLine" id="cb38-2" title="2">  <span class="ex">micromatch</span> x 2,232,802 ops/sec ±2.34% (89 runs sampled))</a>
+<a class="sourceLine" id="cb38-3" title="3">  <span class="ex">minimatch</span> x 781,018 ops/sec ±6.74% (92 runs sampled))</a>
+<a class="sourceLine" id="cb38-4" title="4"></a>
+<a class="sourceLine" id="cb38-5" title="5"><span class="co"># .makeRe star; dot=true</span></a>
+<a class="sourceLine" id="cb38-6" title="6">  <span class="ex">micromatch</span> x 1,863,453 ops/sec ±0.74% (93 runs sampled)</a>
+<a class="sourceLine" id="cb38-7" title="7">  <span class="ex">minimatch</span> x 723,105 ops/sec ±0.75% (93 runs sampled)</a>
+<a class="sourceLine" id="cb38-8" title="8"></a>
+<a class="sourceLine" id="cb38-9" title="9"><span class="co"># .makeRe globstar</span></a>
+<a class="sourceLine" id="cb38-10" title="10">  <span class="ex">micromatch</span> x 1,624,179 ops/sec ±2.22% (91 runs sampled)</a>
+<a class="sourceLine" id="cb38-11" title="11">  <span class="ex">minimatch</span> x 1,117,230 ops/sec ±2.78% (86 runs sampled))</a>
+<a class="sourceLine" id="cb38-12" title="12"></a>
+<a class="sourceLine" id="cb38-13" title="13"><span class="co"># .makeRe globstars</span></a>
+<a class="sourceLine" id="cb38-14" title="14">  <span class="ex">micromatch</span> x 1,658,642 ops/sec ±0.86% (92 runs sampled)</a>
+<a class="sourceLine" id="cb38-15" title="15">  <span class="ex">minimatch</span> x 741,224 ops/sec ±1.24% (89 runs sampled))</a>
+<a class="sourceLine" id="cb38-16" title="16"></a>
+<a class="sourceLine" id="cb38-17" title="17"><span class="co"># .makeRe with leading star</span></a>
+<a class="sourceLine" id="cb38-18" title="18">  <span class="ex">micromatch</span> x 1,525,014 ops/sec ±1.63% (90 runs sampled)</a>
+<a class="sourceLine" id="cb38-19" title="19">  <span class="ex">minimatch</span> x 561,074 ops/sec ±3.07% (89 runs sampled)</a>
+<a class="sourceLine" id="cb38-20" title="20"></a>
+<a class="sourceLine" id="cb38-21" title="21"><span class="co"># .makeRe - braces</span></a>
+<a class="sourceLine" id="cb38-22" title="22">  <span class="ex">micromatch</span> x 172,478 ops/sec ±2.37% (78 runs sampled)</a>
+<a class="sourceLine" id="cb38-23" title="23">  <span class="ex">minimatch</span> x 96,087 ops/sec ±2.34% (88 runs sampled)))</a>
+<a class="sourceLine" id="cb38-24" title="24"></a>
+<a class="sourceLine" id="cb38-25" title="25"><span class="co"># .makeRe braces - range (expanded)</span></a>
+<a class="sourceLine" id="cb38-26" title="26">  <span class="ex">micromatch</span> x 26,973 ops/sec ±0.84% (89 runs sampled)</a>
+<a class="sourceLine" id="cb38-27" title="27">  <span class="ex">minimatch</span> x 3,023 ops/sec ±0.99% (90 runs sampled))</a>
+<a class="sourceLine" id="cb38-28" title="28"></a>
+<a class="sourceLine" id="cb38-29" title="29"><span class="co"># .makeRe braces - range (compiled)</span></a>
+<a class="sourceLine" id="cb38-30" title="30">  <span class="ex">micromatch</span> x 152,892 ops/sec ±1.67% (83 runs sampled)</a>
+<a class="sourceLine" id="cb38-31" title="31">  <span class="ex">minimatch</span> x 992 ops/sec ±3.50% (89 runs sampled)<span class="ex">d</span>))</a>
+<a class="sourceLine" id="cb38-32" title="32"></a>
+<a class="sourceLine" id="cb38-33" title="33"><span class="co"># .makeRe braces - nested ranges (expanded)</span></a>
+<a class="sourceLine" id="cb38-34" title="34">  <span class="ex">micromatch</span> x 15,816 ops/sec ±13.05% (80 runs sampled)</a>
+<a class="sourceLine" id="cb38-35" title="35">  <span class="ex">minimatch</span> x 2,953 ops/sec ±1.64% (91 runs sampled)</a>
+<a class="sourceLine" id="cb38-36" title="36"></a>
+<a class="sourceLine" id="cb38-37" title="37"><span class="co"># .makeRe braces - nested ranges (compiled)</span></a>
+<a class="sourceLine" id="cb38-38" title="38">  <span class="ex">micromatch</span> x 110,881 ops/sec ±1.85% (82 runs sampled)</a>
+<a class="sourceLine" id="cb38-39" title="39">  <span class="ex">minimatch</span> x 1,008 ops/sec ±1.51% (91 runs sampled)</a>
+<a class="sourceLine" id="cb38-40" title="40"></a>
+<a class="sourceLine" id="cb38-41" title="41"><span class="co"># .makeRe braces - set (compiled)</span></a>
+<a class="sourceLine" id="cb38-42" title="42">  <span class="ex">micromatch</span> x 134,930 ops/sec ±3.54% (63 runs sampled))</a>
+<a class="sourceLine" id="cb38-43" title="43">  <span class="ex">minimatch</span> x 43,242 ops/sec ±0.60% (93 runs sampled)</a>
+<a class="sourceLine" id="cb38-44" title="44"></a>
+<a class="sourceLine" id="cb38-45" title="45"><span class="co"># .makeRe braces - nested sets (compiled)</span></a>
+<a class="sourceLine" id="cb38-46" title="46">  <span class="ex">micromatch</span> x 94,455 ops/sec ±1.74% (69 runs sampled))</a>
+<a class="sourceLine" id="cb38-47" title="47">  <span class="ex">minimatch</span> x 27,720 ops/sec ±1.84% (93 runs sampled))</a></code></pre></div>
+<h2 id="contributing">Contributing</h2>
+<p>All contributions are welcome! Please read <a href=".github/contributing.md">the contributing guide</a> to get started.</p>
+<p><strong>Bug reports</strong></p>
+<p>Please create an issue if you encounter a bug or matching behavior that doesn’t seem correct. If you find a matching-related issue, please:</p>
+<ul>
+<li><a href="../../issues">research existing issues first</a> (open and closed)</li>
+<li>visit the <a href="https://www.gnu.org/software/bash/manual/">GNU Bash documentation</a> to see how Bash deals with the pattern</li>
+<li>visit the <a href="https://github.com/isaacs/minimatch">minimatch</a> documentation to cross-check expected behavior in node.js</li>
+<li>if all else fails, since there is no real specification for globs we will probably need to discuss expected behavior and decide how to resolve it. which means any detail you can provide to help with this discussion would be greatly appreciated.</li>
+</ul>
+<p><strong>Platform issues</strong></p>
+<p>It’s important to us that micromatch work consistently on all platforms. If you encounter any platform-specific matching or path related issues, please let us know (pull requests are also greatly appreciated).</p>
+<h2 id="about">About</h2>
+<details>
+<p><summary><strong>Contributing</strong></summary></p>
+<p>Pull requests and stars are always welcome. For bugs and feature requests, <a href="../../issues/new">please create an issue</a>.</p>
+<p>Please read the <a href=".github/contributing.md">contributing guide</a> for advice on opening issues, pull requests, and coding standards.</p>
+</details>
+<details>
+<p><summary><strong>Running Tests</strong></summary></p>
+<p>Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" title="1">$ <span class="ex">npm</span> install <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> test</a></code></pre></div>
+</details>
+<details>
+<p><summary><strong>Building docs</strong></summary></p>
+<p><em>(This project’s readme.md is generated by <a href="https://github.com/verbose/verb-generate-readme">verb</a>, please don’t edit the readme directly. Any changes to the readme must be made in the <a href=".verb.md">.verb.md</a> readme template.)</em></p>
+<p>To generate the readme, run the following command:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" title="1">$ <span class="ex">npm</span> install -g verbose/verb#dev verb-generate-readme <span class="kw">&amp;&amp;</span> <span class="ex">verb</span></a></code></pre></div>
+</details>
+<h3 id="related-projects">Related projects</h3>
+<p>You might also be interested in these projects:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/braces">braces</a>: Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support… <a href="https://github.com/micromatch/braces">more</a> | <a href="https://github.com/micromatch/braces" title="Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.">homepage</a></li>
+<li><a href="https://www.npmjs.com/package/expand-brackets">expand-brackets</a>: Expand POSIX bracket expressions (character classes) in glob patterns. | <a href="https://github.com/micromatch/expand-brackets" title="Expand POSIX bracket expressions (character classes) in glob patterns.">homepage</a></li>
+<li><a href="https://www.npmjs.com/package/extglob">extglob</a>: Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob… <a href="https://github.com/micromatch/extglob">more</a> | <a href="https://github.com/micromatch/extglob" title="Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.">homepage</a></li>
+<li><a href="https://www.npmjs.com/package/fill-range">fill-range</a>: Fill in a range of numbers or letters, optionally passing an increment or <code>step</code> to… <a href="https://github.com/jonschlinkert/fill-range">more</a> | <a href="https://github.com/jonschlinkert/fill-range" title="Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`">homepage</a></li>
+<li><a href="https://www.npmjs.com/package/nanomatch">nanomatch</a>: Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash… <a href="https://github.com/micromatch/nanomatch">more</a> | <a href="https://github.com/micromatch/nanomatch" title="Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)">homepage</a></li>
+</ul>
+<h3 id="contributors">Contributors</h3>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Commits</strong></th>
+<th><strong>Contributor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>508</td>
+<td><a href="https://github.com/jonschlinkert">jonschlinkert</a></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="https://github.com/es128">es128</a></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><a href="https://github.com/doowb">doowb</a></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="https://github.com/paulmillr">paulmillr</a></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="https://github.com/mrmlnc">mrmlnc</a></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="https://github.com/danez">danez</a></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="https://github.com/DrPizza">DrPizza</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="https://github.com/TrySound">TrySound</a></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><a href="https://github.com/mceIdo">mceIdo</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="https://github.com/Glazy">Glazy</a></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><a href="https://github.com/MartinKolarik">MartinKolarik</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="https://github.com/Tvrqvoise">Tvrqvoise</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/amilajack">amilajack</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/Cslove">Cslove</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/devongovett">devongovett</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/DianeLooney">DianeLooney</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/UltCombo">UltCombo</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/frangio">frangio</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/juszczykjakub">juszczykjakub</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/muescha">muescha</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/sebdeckers">sebdeckers</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/tomByrer">tomByrer</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/fidian">fidian</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/simlu">simlu</a></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://github.com/wtgtybhertgeghgtwtg">wtgtybhertgeghgtwtg</a></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><a href="https://github.com/yvele">yvele</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="author">Author</h3>
+<p><strong>Jon Schlinkert</strong></p>
+<ul>
+<li><a href="https://github.com/jonschlinkert">GitHub Profile</a></li>
+<li><a href="https://twitter.com/jonschlinkert">Twitter Profile</a></li>
+<li><a href="https://linkedin.com/in/jonschlinkert">LinkedIn Profile</a></li>
+</ul>
+<h3 id="license">License</h3>
+<p>Copyright © 2021, <a href="https://github.com/jonschlinkert">Jon Schlinkert</a>. Released under the <a href="LICENSE">MIT License</a>.</p>
+<hr />
+<p><em>This file was generated by <a href="https://github.com/verbose/verb-generate-readme">verb-generate-readme</a>, v0.8.0, on April 10, 2021.</em></p>
+</body>
+</html>

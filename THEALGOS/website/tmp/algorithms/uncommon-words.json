@@ -1,0 +1,26 @@
+{
+  "slug": "uncommon-words",
+  "name": "Uncommon Words",
+  "categories": ["datastructures", "hashtable"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/hash_table/uncommon_words.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/hash_table/uncommon_words.rb",
+      "code": "<span class=\"hljs-comment\"># Challenge name: Uncommon words from two sentences</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># We are given two sentences A and B.</span>\n<span class=\"hljs-comment\"># (A sentence is a string of space separated words.</span>\n<span class=\"hljs-comment\"># Each word consists only of lowercase letters.)</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># A word is uncommon if it appears exactly once in one of the sentences,</span>\n<span class=\"hljs-comment\"># and does not appear in the other sentence.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Return a list of all uncommon words.</span>\n<span class=\"hljs-comment\"># You may return the list in any order.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 1:</span>\n<span class=\"hljs-comment\"># Input: A = &quot;this apple is sweet&quot;, B = &quot;this apple is sour&quot;</span>\n<span class=\"hljs-comment\"># Output: [&quot;sweet&quot;,&quot;sour&quot;]</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 2:</span>\n<span class=\"hljs-comment\"># Input: A = &quot;apple apple&quot;, B = &quot;banana&quot;</span>\n<span class=\"hljs-comment\"># Output: [&quot;banana&quot;]</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 1: Hash</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexitiy: O(n)</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">find_uncommon_words</span><span class=\"hljs-params\">(strA, strB)</span></span>\n  array = strA.concat(<span class=\"hljs-string\">&quot; &quot;</span>, strB).split(<span class=\"hljs-string\">&quot; &quot;</span>)\n  hash = Hash.new(<span class=\"hljs-number\">0</span>)\n  result = []\n\n  array.each <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|word|</span>\n    hash[word] += <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  hash.each <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|k, v|</span>\n    <span class=\"hljs-keyword\">if</span> v &lt; <span class=\"hljs-number\">2</span>\n      result.push(k)\n    <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  result\n<span class=\"hljs-keyword\">end</span>\n\nputs find_uncommon_words(<span class=\"hljs-string\">&quot;this apple is sweet&quot;</span>, <span class=\"hljs-string\">&quot;this apple is sour&quot;</span>)\n<span class=\"hljs-comment\"># =&gt; [&quot;sweet&quot;, &quot;sour&quot;]</span>\n\nputs find_uncommon_words(<span class=\"hljs-string\">&quot;apple apple&quot;</span>, <span class=\"hljs-string\">&quot;banana&quot;</span>)\n<span class=\"hljs-comment\"># =&gt; [&quot;banana&quot;]</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

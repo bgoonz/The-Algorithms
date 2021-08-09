@@ -1,0 +1,16 @@
+{
+  "slug": "hamiltonian",
+  "name": "Hamiltonian",
+  "categories": ["datastructures", "graphs"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "ttuanho",
+      "email": "hhoanhtuann@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

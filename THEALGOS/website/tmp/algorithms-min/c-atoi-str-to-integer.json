@@ -1,0 +1,31 @@
+{
+  "slug": "c-atoi-str-to-integer",
+  "name": "C Atoi Str to Integer",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "BillKek",
+      "email": "51540758+BillKek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohammed YMIK",
+      "email": "35063009+medymik@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Mohammed YMIK",
+      "email": "Mohammed.ymik@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

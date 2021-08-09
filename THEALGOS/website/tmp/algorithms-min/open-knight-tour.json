@@ -1,0 +1,16 @@
+{
+  "slug": "open-knight-tour",
+  "name": "Open Knight Tour",
+  "categories": ["backtracking"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Tapajyoti Bose",
+      "email": "ruppysuppy@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

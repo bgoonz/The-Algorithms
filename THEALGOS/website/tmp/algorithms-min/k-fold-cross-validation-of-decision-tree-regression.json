@@ -1,0 +1,19 @@
+{
+  "slug": "k-fold-cross-validation-of-decision-tree-regression",
+  "name": "K-Fold Cross-Validation of Decision Tree Regression",
+  "categories": [
+    "machinelearning",
+    "decisiontreeregressionwithkfoldcrossvalidation"
+  ],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "yenyarng",
+      "email": "yenyarngbubu@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

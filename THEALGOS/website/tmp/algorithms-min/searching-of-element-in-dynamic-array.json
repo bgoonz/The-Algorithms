@@ -1,0 +1,21 @@
+{
+  "slug": "searching-of-element-in-dynamic-array",
+  "name": "Searching of Element in Dynamic Array",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Faizan Ahamed",
+      "email": "faizanahamed1414@gmail.com",
+      "commits": 13
+    }
+  ],
+  "explanationUrl": {}
+}

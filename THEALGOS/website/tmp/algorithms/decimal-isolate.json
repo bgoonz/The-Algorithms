@@ -1,0 +1,31 @@
+{
+  "slug": "decimal-isolate",
+  "name": "Decimal Isolate",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/decimal_isolate.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/decimal_isolate.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nIsolate the Decimal part of a Number\nhttps://stackoverflow.com/questions/3886402/how-to-get-numbers-after-decimal-point\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decimal_isolate</span>(<span class=\"hljs-params\">number, digitAmount</span>):\n\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Isolates the decimal part of a number.\n    If digitAmount &gt; 0 round to that decimal place, else print the entire decimal.\n    &gt;&gt;&gt; decimal_isolate(1.53, 0)\n    0.53\n    &gt;&gt;&gt; decimal_isolate(35.345, 1)\n    0.3\n    &gt;&gt;&gt; decimal_isolate(35.345, 2)\n    0.34\n    &gt;&gt;&gt; decimal_isolate(35.345, 3)\n    0.345\n    &gt;&gt;&gt; decimal_isolate(-14.789, 3)\n    -0.789\n    &gt;&gt;&gt; decimal_isolate(0, 2)\n    0\n    &gt;&gt;&gt; decimal_isolate(-14.123, 1)\n    -0.1\n    &gt;&gt;&gt; decimal_isolate(-14.123, 2)\n    -0.12\n    &gt;&gt;&gt; decimal_isolate(-14.123, 3)\n    -0.123\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> digitAmount &gt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">round</span>(number - <span class=\"hljs-built_in\">int</span>(number), digitAmount)\n    <span class=\"hljs-keyword\">return</span> number - <span class=\"hljs-built_in\">int</span>(number)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(<span class=\"hljs-number\">1.53</span>, <span class=\"hljs-number\">0</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(<span class=\"hljs-number\">35.345</span>, <span class=\"hljs-number\">1</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(<span class=\"hljs-number\">35.345</span>, <span class=\"hljs-number\">2</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(<span class=\"hljs-number\">35.345</span>, <span class=\"hljs-number\">3</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(-<span class=\"hljs-number\">14.789</span>, <span class=\"hljs-number\">3</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(-<span class=\"hljs-number\">14.123</span>, <span class=\"hljs-number\">1</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(-<span class=\"hljs-number\">14.123</span>, <span class=\"hljs-number\">2</span>))\n    <span class=\"hljs-built_in\">print</span>(decimal_isolate(-<span class=\"hljs-number\">14.123</span>, <span class=\"hljs-number\">3</span>))\n"
+    },
+    "javascript": {
+      "dir": "Maths/decimalIsolate.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/decimalIsolate.js",
+      "code": "<span class=\"hljs-comment\">/*\n * function isolates the decimal part of a number.\n * Take the number and subtract it from the floored number.\n * Return the result.\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">decimalIsolate</span> = (<span class=\"hljs-params\">number</span>) =&gt; {\n  <span class=\"hljs-keyword\">const</span> ans = <span class=\"hljs-built_in\">parseFloat</span>((number + <span class=\"hljs-string\">&#x27;&#x27;</span>).<span class=\"hljs-title function_\">replace</span>(<span class=\"hljs-regexp\">/^[-\\d]+./</span>, <span class=\"hljs-string\">&#x27;.&#x27;</span>))\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">isNaN</span>(ans) === <span class=\"hljs-literal\">true</span> ? <span class=\"hljs-number\">0</span> : ans\n}\n\n<span class=\"hljs-comment\">// testing</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">decimalIsolate</span>(<span class=\"hljs-number\">35.345</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">decimalIsolate</span>(<span class=\"hljs-number\">56.879</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">decimalIsolate</span>(<span class=\"hljs-number\">89.5643</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">decimalIsolate</span>(<span class=\"hljs-number\">38.00</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">decimalIsolate</span>(<span class=\"hljs-number\">33</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Omkarnath Parida",
+      "email": "pomkarnath98@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jake Gerber",
+      "email": "jake.j.gerber@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

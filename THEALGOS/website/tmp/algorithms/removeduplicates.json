@@ -1,0 +1,31 @@
+{
+  "slug": "removeduplicates",
+  "name": "RemoveDuplicates",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "f-sharp": {
+      "dir": "Algorithms/Strings/RemoveDuplicates.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/RemoveDuplicates.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\r\n\r\n<span class=\"hljs-keyword\">module</span> RemoveDuplicates =\r\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\r\n    <span class=\"hljs-comment\">/// Remove duplicates from sentence</span>\r\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\r\n    <span class=\"hljs-keyword\">let</span> removeDuplicates (str: string) =\r\n        str.Split() |&gt; Array.distinct |&gt; String.concat <span class=\"hljs-string\">&quot; &quot;</span>\r\n"
+    },
+    "dart": {
+      "dir": "strings/remove duplicates.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/strings/remove duplicates.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;package:test/test.dart&#x27;</span>;\n\n<span class=\"hljs-comment\">// function to remove duplicate in string</span>\n<span class=\"hljs-built_in\">String</span> removeDups(<span class=\"hljs-built_in\">String</span> s) {\n  <span class=\"hljs-keyword\">var</span> arr = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">List</span>.filled(<span class=\"hljs-number\">256</span>, <span class=\"hljs-number\">0</span>);\n  <span class=\"hljs-built_in\">String</span> l = <span class=\"hljs-string\">&#x27;&#x27;</span>;\n  <span class=\"hljs-built_in\">int</span> i = <span class=\"hljs-number\">0</span>;\n  <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; s.length; i++) {\n    <span class=\"hljs-keyword\">if</span> (arr[s.codeUnitAt(i)] == <span class=\"hljs-number\">0</span>) {\n      l += s[i];\n      arr[s.codeUnitAt(i)]++;\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> l;\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  test(<span class=\"hljs-string\">&quot;removeDups from string without duplicates returns same string&quot;</span>, () {\n    expect(removeDups(<span class=\"hljs-string\">&quot;1234&quot;</span>), equals(<span class=\"hljs-string\">&quot;1234&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;removeDups from empty list returns empty list&quot;</span>, () {\n    expect(removeDups(<span class=\"hljs-string\">&quot;&quot;</span>), equals(<span class=\"hljs-string\">&quot;&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;removeDups from 12341234 returns 1234&quot;</span>, () {\n    expect(removeDups(<span class=\"hljs-string\">&quot;12341234&quot;</span>), equals(<span class=\"hljs-string\">&quot;1234&quot;</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;removeDups from aaaab returns ab&quot;</span>, () {\n    expect(removeDups(<span class=\"hljs-string\">&quot;aaaab&quot;</span>), equals(<span class=\"hljs-string\">&quot;ab&quot;</span>));\n  });\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ganesh Agarwal",
+      "email": "69008792+Ganesh-Agarwal-25@users.noreply.github.com",
+      "commits": 4
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

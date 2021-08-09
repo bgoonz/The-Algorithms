@@ -1,0 +1,53 @@
+{
+  "slug": "euclidean-gcd",
+  "name": "Euclidean Gcd",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "ruby": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Doppon",
+      "email": "zaxpkuraudo7777@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "mateuszz0000",
+      "email": "mtszzwdzk@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Juan Antonio",
+      "email": "juant.aldea@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

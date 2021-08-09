@@ -1,0 +1,26 @@
+{
+  "slug": "fibton",
+  "name": "FibToN",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "rmakynen",
+      "email": "rmakynen@ts137-pc17.student.yo.oulu.fi",
+      "commits": 1
+    },
+    {
+      "name": "JeonSeongBae",
+      "email": "tjdqo6042@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

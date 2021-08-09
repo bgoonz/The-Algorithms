@@ -1,0 +1,21 @@
+{
+  "slug": "pythagoreantriple",
+  "name": "PythagoreanTriple",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Maths/PythagoreanTriple.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/PythagoreanTriple.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/** https://en.wikipedia.org/wiki/Pythagorean_triple */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PythagoreanTriple</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPythagTriple</span><span class=\"hljs-params\">(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPythagTriple</span><span class=\"hljs-params\">(<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">12</span>, <span class=\"hljs-number\">13</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">isPythagTriple</span><span class=\"hljs-params\">(<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">10</span>)</span>;\n    <span class=\"hljs-keyword\">assert</span> !isPythagTriple(<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">20</span>, <span class=\"hljs-number\">30</span>);\n    <span class=\"hljs-keyword\">assert</span> !isPythagTriple(<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">100</span>);\n    <span class=\"hljs-keyword\">assert</span> !isPythagTriple(-<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Check if a,b,c are a Pythagorean Triple\n   *\n   * <span class=\"hljs-doctag\">@param</span> a x/y component length of a right triangle\n   * <span class=\"hljs-doctag\">@param</span> b y/x component length of a right triangle\n   * <span class=\"hljs-doctag\">@param</span> c hypotenuse length of a right triangle\n   * <span class=\"hljs-doctag\">@return</span> boolean &lt;tt&gt;true&lt;/tt&gt; if a, b, c satisfy the Pythagorean theorem, otherwise\n   *     &lt;tt&gt;false&lt;/tt&gt;\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isPythagTriple</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> a, <span class=\"hljs-type\">int</span> b, <span class=\"hljs-type\">int</span> c)</span> {\n    <span class=\"hljs-keyword\">if</span> (a &lt;= <span class=\"hljs-number\">0</span> || b &lt;= <span class=\"hljs-number\">0</span> || c &lt;= <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-keyword\">return</span> (a * a) + (b * b) == (c * c);\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

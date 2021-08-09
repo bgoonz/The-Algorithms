@@ -1,0 +1,21 @@
+{
+  "slug": "ripple-adder-classic",
+  "name": "Ripple Adder Classic",
+  "categories": ["quantum"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rupansh",
+      "email": "rupanshsekar@hotmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

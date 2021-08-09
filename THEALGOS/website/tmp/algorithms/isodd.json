@@ -1,0 +1,26 @@
+{
+  "slug": "isodd",
+  "name": "isOdd",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/isOdd.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/isOdd.js",
+      "code": "<span class=\"hljs-comment\">/*\n * function to check if number is odd\n * return true if number is odd\n * else false\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">isOdd</span> = (<span class=\"hljs-params\">value</span>) =&gt; {\n  <span class=\"hljs-keyword\">return</span> !!((value &amp; <span class=\"hljs-number\">1</span>))\n}\n\n<span class=\"hljs-comment\">// testing</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">isOdd</span>(<span class=\"hljs-number\">2</span>))\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">isOdd</span>(<span class=\"hljs-number\">3</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jake Gerber",
+      "email": "jake.j.gerber@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

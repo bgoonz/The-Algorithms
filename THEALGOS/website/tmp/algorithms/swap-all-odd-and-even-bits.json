@@ -1,0 +1,26 @@
+{
+  "slug": "swap-all-odd-and-even-bits",
+  "name": "Swap All Odd and Even Bits",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "other/swap_all_odd_and_even_bits.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/other/swap_all_odd_and_even_bits.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;package:test/test.dart&#x27;</span>;\n\n<span class=\"hljs-comment\">//we are given an integer,the tast is to get its binary representation,swap all odd and even bits and print the new number</span>\n<span class=\"hljs-built_in\">int</span> swapbits(<span class=\"hljs-built_in\">int</span> n) {\n  <span class=\"hljs-keyword\">return</span> (((n &amp; <span class=\"hljs-number\">0xaaaaaaaa</span>) &gt;&gt; <span class=\"hljs-number\">1</span>) | ((n &amp; <span class=\"hljs-number\">0x55555555</span>) &lt;&lt; <span class=\"hljs-number\">1</span>));\n}\n\n<span class=\"hljs-keyword\">void</span> main() {\n  test(<span class=\"hljs-string\">&quot;swapbits returns 1 for 2&quot;</span>, () {\n    expect(swapbits(<span class=\"hljs-number\">2</span>), equals(<span class=\"hljs-number\">1</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;swapbits returns 23 for 43&quot;</span>, () {\n    expect(swapbits(<span class=\"hljs-number\">43</span>), equals(<span class=\"hljs-number\">23</span>));\n  });\n\n  test(<span class=\"hljs-string\">&quot;swapbits returns 43 for 23&quot;</span>, () {\n    expect(swapbits(<span class=\"hljs-number\">23</span>), equals(<span class=\"hljs-number\">43</span>));\n  });\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ganesh Agarwal",
+      "email": "69008792+Ganesh-Agarwal-25@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

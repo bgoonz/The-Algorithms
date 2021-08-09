@@ -1,0 +1,10 @@
+{
+  "slug": "rangeinsortedarray",
+  "name": "RangeInSortedArray",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

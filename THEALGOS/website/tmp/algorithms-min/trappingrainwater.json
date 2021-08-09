@@ -1,0 +1,16 @@
+{
+  "slug": "trappingrainwater",
+  "name": "TrappingRainWater",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Kayla",
+      "email": "golderkayla@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

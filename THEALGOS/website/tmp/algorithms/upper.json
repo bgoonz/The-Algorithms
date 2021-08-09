@@ -1,0 +1,51 @@
+{
+  "slug": "upper",
+  "name": "Upper",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/upper.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/upper.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">upper</span>(<span class=\"hljs-params\">word: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Will convert the entire string to uppercase letters\n\n    &gt;&gt;&gt; upper(&quot;wow&quot;)\n    &#x27;WOW&#x27;\n    &gt;&gt;&gt; upper(&quot;Hello&quot;)\n    &#x27;HELLO&#x27;\n    &gt;&gt;&gt; upper(&quot;WHAT&quot;)\n    &#x27;WHAT&#x27;\n    &gt;&gt;&gt; upper(&quot;wh[]32&quot;)\n    &#x27;WH[]32&#x27;\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-comment\"># Converting to ascii value int value and checking to see if char is a lower letter</span>\n    <span class=\"hljs-comment\"># if it is a lowercase letter it is getting shift by 32 which makes it an uppercase</span>\n    <span class=\"hljs-comment\"># case letter</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;&quot;</span>.join(<span class=\"hljs-built_in\">chr</span>(<span class=\"hljs-built_in\">ord</span>(char) - <span class=\"hljs-number\">32</span>) <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">&quot;a&quot;</span> &lt;= char &lt;= <span class=\"hljs-string\">&quot;z&quot;</span> <span class=\"hljs-keyword\">else</span> char <span class=\"hljs-keyword\">for</span> char <span class=\"hljs-keyword\">in</span> word)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">from</span> doctest <span class=\"hljs-keyword\">import</span> testmod\n\n    testmod()\n"
+    },
+    "java": {
+      "dir": "strings/Upper.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/strings/Upper.java",
+      "code": "<span class=\"hljs-keyword\">package</span> strings;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Upper</span> {\n\n  <span class=\"hljs-comment\">/** Driver Code */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    String[] strings = {<span class=\"hljs-string\">&quot;ABC&quot;</span>, <span class=\"hljs-string\">&quot;ABC123&quot;</span>, <span class=\"hljs-string\">&quot;abcABC&quot;</span>, <span class=\"hljs-string\">&quot;abc123ABC&quot;</span>};\n    <span class=\"hljs-keyword\">for</span> (String s : strings) {\n      <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">toUpperCase</span><span class=\"hljs-params\">(s)</span>.equals(s.toUpperCase());\n    }\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Converts all of the characters in this {<span class=\"hljs-doctag\">@code</span> String} to upper case\n   *\n   * <span class=\"hljs-doctag\">@param</span> s the string to convert\n   * <span class=\"hljs-doctag\">@return</span> the {<span class=\"hljs-doctag\">@code</span> String}, converted to uppercase.\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> String <span class=\"hljs-title function_\">toUpperCase</span><span class=\"hljs-params\">(String s)</span> {\n    <span class=\"hljs-type\">char</span>[] values = s.toCharArray();\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; values.length; ++i) {\n      <span class=\"hljs-keyword\">if</span> (Character.isLetter(values[i]) &amp;&amp; Character.isLowerCase(values[i])) {\n        values[i] = Character.toUpperCase(values[i]);\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">String</span>(values);\n  }\n}\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/Upper.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/Upper.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\n\n<span class=\"hljs-keyword\">module</span> Upper =\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\n    <span class=\"hljs-comment\">/// Will convert the entire string to uppercase letters</span>\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;input&quot;&gt;String to change to uppercase.&lt;/param&gt;</span>\n    <span class=\"hljs-comment\">/// &lt;returns&gt;Uppercased string&lt;/returns&gt;</span>\n    <span class=\"hljs-keyword\">let</span> upper (input: string) =\n        input.Split()\n        |&gt; Array.map\n            (<span class=\"hljs-keyword\">fun</span> word -&gt;\n                word.ToCharArray()\n                |&gt; Array.map\n                    (<span class=\"hljs-keyword\">fun</span> character -&gt;\n                        <span class=\"hljs-keyword\">if</span> character &gt;= <span class=\"hljs-symbol\">&#x27;a</span>&#x27; &amp;&amp; character &lt;= <span class=\"hljs-symbol\">&#x27;z</span>&#x27; <span class=\"hljs-keyword\">then</span>\n                            char (int character - <span class=\"hljs-number\">32</span>)\n                        <span class=\"hljs-keyword\">else</span>\n                            character)\n                |&gt; (<span class=\"hljs-keyword\">fun</span> characters -&gt; System.String.Concat(characters)))\n        |&gt; String.concat <span class=\"hljs-string\">&quot; &quot;</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Sethu",
+      "email": "rssankar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

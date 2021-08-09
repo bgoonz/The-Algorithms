@@ -1,0 +1,36 @@
+{
+  "slug": "mo",
+  "name": "Mo",
+  "categories": ["rangequeries"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "range_queries/mo.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/range_queries/mo.cpp",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n<span class=\"hljs-keyword\">using</span> <span class=\"hljs-keyword\">namespace</span> std;\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-type\">int</span> N = <span class=\"hljs-number\">1e6</span> + <span class=\"hljs-number\">5</span>;\n<span class=\"hljs-type\">int</span> a[N], bucket[N], cnt[N];\n<span class=\"hljs-type\">int</span> bucket_size;\n<span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title class_\">query</span> {\n    <span class=\"hljs-type\">int</span> l, r, i;\n} q[N];\n<span class=\"hljs-type\">int</span> ans = <span class=\"hljs-number\">0</span>;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">add</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> index)</span> </span>{\n    cnt[a[index]]++;\n    <span class=\"hljs-keyword\">if</span> (cnt[a[index]] == <span class=\"hljs-number\">1</span>)\n        ans++;\n}\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">remove</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> index)</span> </span>{\n    cnt[a[index]]--;\n    <span class=\"hljs-keyword\">if</span> (cnt[a[index]] == <span class=\"hljs-number\">0</span>)\n        ans--;\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">bool</span> <span class=\"hljs-title\">mycmp</span><span class=\"hljs-params\">(query x, query y)</span> </span>{\n    <span class=\"hljs-keyword\">if</span> (x.l / bucket_size != y.l / bucket_size)\n        <span class=\"hljs-keyword\">return</span> x.l / bucket_size &lt; y.l / bucket_size;\n    <span class=\"hljs-keyword\">return</span> x.r &lt; y.r;\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> n, t, i, j, k = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;n);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++) <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;a[i]);\n    bucket_size = <span class=\"hljs-built_in\">ceil</span>(<span class=\"hljs-built_in\">sqrt</span>(n));\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;t);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; t; i++) {\n        <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d %d&quot;</span>, &amp;q[i].l, &amp;q[i].r);\n        q[i].l--;\n        q[i].r--;\n        q[i].i = i;\n    }\n    <span class=\"hljs-built_in\">sort</span>(q, q + t, mycmp);\n    <span class=\"hljs-type\">int</span> left = <span class=\"hljs-number\">0</span>, right = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; t; i++) {\n        <span class=\"hljs-type\">int</span> L = q[i].l, R = q[i].r;\n        <span class=\"hljs-keyword\">while</span> (left &lt; L) {\n            <span class=\"hljs-built_in\">remove</span>(left);\n            left++;\n        }\n        <span class=\"hljs-keyword\">while</span> (left &gt; L) {\n            <span class=\"hljs-built_in\">add</span>(left - <span class=\"hljs-number\">1</span>);\n            left--;\n        }\n        <span class=\"hljs-keyword\">while</span> (right &lt;= R) {\n            <span class=\"hljs-built_in\">add</span>(right);\n            right++;\n        }\n        <span class=\"hljs-keyword\">while</span> (right &gt; R + <span class=\"hljs-number\">1</span>) {\n            <span class=\"hljs-built_in\">remove</span>(right - <span class=\"hljs-number\">1</span>);\n            right--;\n        }\n        bucket[q[i].i] = ans;\n    }\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; t; i++) <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%d\\n&quot;</span>, bucket[i]);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Madhav",
+      "email": "madhavgaba2@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

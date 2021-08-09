@@ -1,0 +1,22 @@
+{
+  "slug": "naive-bayes",
+  "name": "Naive Bayes",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": "",
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Himani Negi",
+      "email": "36325656+Himani2000@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

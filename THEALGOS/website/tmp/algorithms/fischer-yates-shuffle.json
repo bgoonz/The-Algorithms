@@ -1,0 +1,41 @@
+{
+  "slug": "fischer-yates-shuffle",
+  "name": "Fischer Yates Shuffle",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "other/fischer_yates_shuffle.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/other/fischer_yates_shuffle.py",
+      "code": "<span class=\"hljs-comment\">#!/usr/bin/python</span>\n<span class=\"hljs-string\">&quot;&quot;&quot;\nThe Fisher–Yates shuffle is an algorithm for generating a random permutation of a\nfinite sequence.\nFor more details visit\nwikipedia/Fischer-Yates-Shuffle.\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">import</span> random\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">FYshuffle</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">list</span></span>):\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">list</span>)):\n        a = random.randint(<span class=\"hljs-number\">0</span>, <span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">list</span>) - <span class=\"hljs-number\">1</span>)\n        b = random.randint(<span class=\"hljs-number\">0</span>, <span class=\"hljs-built_in\">len</span>(<span class=\"hljs-built_in\">list</span>) - <span class=\"hljs-number\">1</span>)\n        <span class=\"hljs-built_in\">list</span>[a], <span class=\"hljs-built_in\">list</span>[b] = <span class=\"hljs-built_in\">list</span>[b], <span class=\"hljs-built_in\">list</span>[a]\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">list</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    integers = [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">7</span>]\n    strings = [<span class=\"hljs-string\">&quot;python&quot;</span>, <span class=\"hljs-string\">&quot;says&quot;</span>, <span class=\"hljs-string\">&quot;hello&quot;</span>, <span class=\"hljs-string\">&quot;!&quot;</span>]\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Fisher-Yates Shuffle:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;List&quot;</span>, integers, strings)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;FY Shuffle&quot;</span>, FYshuffle(integers), FYshuffle(strings))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Syed Haseeb Shah",
+      "email": "yesiamhasi@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

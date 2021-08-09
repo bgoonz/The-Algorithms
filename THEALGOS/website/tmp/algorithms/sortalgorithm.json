@@ -1,0 +1,26 @@
+{
+  "slug": "sortalgorithm",
+  "name": "SortAlgorithm",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Sorts/SortAlgorithm.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Sorts/SortAlgorithm.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Sorts;\n\n<span class=\"hljs-keyword\">import</span> java.util.Arrays;\n<span class=\"hljs-keyword\">import</span> java.util.List;\n\n<span class=\"hljs-comment\">/**\n * The common interface of most sorting algorithms\n *\n * <span class=\"hljs-doctag\">@author</span> Podshivalov Nikita (https://github.com/nikitap492)\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">interface</span> <span class=\"hljs-title class_\">SortAlgorithm</span> {\n\n  <span class=\"hljs-comment\">/**\n   * Main method arrays sorting algorithms\n   *\n   * <span class=\"hljs-doctag\">@param</span> unsorted - an array should be sorted\n   * <span class=\"hljs-doctag\">@return</span> a sorted array\n   */</span>\n  &lt;T <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title class_\">Comparable</span>&lt;T&gt;&gt; T[] sort(T[] unsorted);\n\n  <span class=\"hljs-comment\">/**\n   * Auxiliary method for algorithms what wanted to work with lists from JCF\n   *\n   * <span class=\"hljs-doctag\">@param</span> unsorted - a list should be sorted\n   * <span class=\"hljs-doctag\">@return</span> a sorted list\n   */</span>\n  <span class=\"hljs-meta\">@SuppressWarnings(&quot;unchecked&quot;)</span>\n  <span class=\"hljs-keyword\">default</span> &lt;T <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title class_\">Comparable</span>&lt;T&gt;&gt; List&lt;T&gt; <span class=\"hljs-title function_\">sort</span><span class=\"hljs-params\">(List&lt;T&gt; unsorted)</span> {\n    <span class=\"hljs-keyword\">return</span> Arrays.asList(sort(unsorted.toArray((T[]) <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Comparable</span>[unsorted.size()])));\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

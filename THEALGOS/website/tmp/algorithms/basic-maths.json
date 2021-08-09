@@ -1,0 +1,61 @@
+{
+  "slug": "basic-maths",
+  "name": "Basic Maths",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/basic_maths.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/basic_maths.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;Implementation of Basic Math in Python.&quot;&quot;&quot;</span>\r\n<span class=\"hljs-keyword\">import</span> math\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">prime_factors</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Find Prime Factors.\r\n    &gt;&gt;&gt; prime_factors(100)\r\n    [2, 2, 5, 5]\r\n    &gt;&gt;&gt; prime_factors(0)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive integers have prime factors\r\n    &gt;&gt;&gt; prime_factors(-10)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive integers have prime factors\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">0</span>:\r\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Only positive integers have prime factors&quot;</span>)\r\n    pf = []\r\n    <span class=\"hljs-keyword\">while</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\r\n        pf.append(<span class=\"hljs-number\">2</span>)\r\n        n = <span class=\"hljs-built_in\">int</span>(n / <span class=\"hljs-number\">2</span>)\r\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-built_in\">int</span>(math.sqrt(n)) + <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>):\r\n        <span class=\"hljs-keyword\">while</span> n % i == <span class=\"hljs-number\">0</span>:\r\n            pf.append(i)\r\n            n = <span class=\"hljs-built_in\">int</span>(n / i)\r\n    <span class=\"hljs-keyword\">if</span> n &gt; <span class=\"hljs-number\">2</span>:\r\n        pf.append(n)\r\n    <span class=\"hljs-keyword\">return</span> pf\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">number_of_divisors</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Calculate Number of Divisors of an Integer.\r\n    &gt;&gt;&gt; number_of_divisors(100)\r\n    9\r\n    &gt;&gt;&gt; number_of_divisors(0)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive numbers are accepted\r\n    &gt;&gt;&gt; number_of_divisors(-10)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive numbers are accepted\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">0</span>:\r\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Only positive numbers are accepted&quot;</span>)\r\n    div = <span class=\"hljs-number\">1</span>\r\n    temp = <span class=\"hljs-number\">1</span>\r\n    <span class=\"hljs-keyword\">while</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\r\n        temp += <span class=\"hljs-number\">1</span>\r\n        n = <span class=\"hljs-built_in\">int</span>(n / <span class=\"hljs-number\">2</span>)\r\n    div *= temp\r\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-built_in\">int</span>(math.sqrt(n)) + <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>):\r\n        temp = <span class=\"hljs-number\">1</span>\r\n        <span class=\"hljs-keyword\">while</span> n % i == <span class=\"hljs-number\">0</span>:\r\n            temp += <span class=\"hljs-number\">1</span>\r\n            n = <span class=\"hljs-built_in\">int</span>(n / i)\r\n        div *= temp\r\n    <span class=\"hljs-keyword\">return</span> div\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">sum_of_divisors</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Calculate Sum of Divisors.\r\n    &gt;&gt;&gt; sum_of_divisors(100)\r\n    217\r\n    &gt;&gt;&gt; sum_of_divisors(0)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive numbers are accepted\r\n    &gt;&gt;&gt; sum_of_divisors(-10)\r\n    Traceback (most recent call last):\r\n        ...\r\n    ValueError: Only positive numbers are accepted\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">0</span>:\r\n        <span class=\"hljs-keyword\">raise</span> ValueError(<span class=\"hljs-string\">&quot;Only positive numbers are accepted&quot;</span>)\r\n    s = <span class=\"hljs-number\">1</span>\r\n    temp = <span class=\"hljs-number\">1</span>\r\n    <span class=\"hljs-keyword\">while</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>:\r\n        temp += <span class=\"hljs-number\">1</span>\r\n        n = <span class=\"hljs-built_in\">int</span>(n / <span class=\"hljs-number\">2</span>)\r\n    <span class=\"hljs-keyword\">if</span> temp &gt; <span class=\"hljs-number\">1</span>:\r\n        s *= (<span class=\"hljs-number\">2</span> ** temp - <span class=\"hljs-number\">1</span>) / (<span class=\"hljs-number\">2</span> - <span class=\"hljs-number\">1</span>)\r\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-built_in\">int</span>(math.sqrt(n)) + <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>):\r\n        temp = <span class=\"hljs-number\">1</span>\r\n        <span class=\"hljs-keyword\">while</span> n % i == <span class=\"hljs-number\">0</span>:\r\n            temp += <span class=\"hljs-number\">1</span>\r\n            n = <span class=\"hljs-built_in\">int</span>(n / i)\r\n        <span class=\"hljs-keyword\">if</span> temp &gt; <span class=\"hljs-number\">1</span>:\r\n            s *= (i ** temp - <span class=\"hljs-number\">1</span>) / (i - <span class=\"hljs-number\">1</span>)\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">int</span>(s)\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">euler_phi</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Calculate Euler&#x27;s Phi Function.\r\n    &gt;&gt;&gt; euler_phi(100)\r\n    40\r\n    &quot;&quot;&quot;</span>\r\n    s = n\r\n    <span class=\"hljs-keyword\">for</span> x <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">set</span>(prime_factors(n)):\r\n        s *= (x - <span class=\"hljs-number\">1</span>) / x\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">int</span>(s)\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-keyword\">import</span> doctest\r\n\r\n    doctest.testmod()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Grigoriy Hanin",
+      "email": "43445998+haningrisha@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "percy07",
+      "email": "56677891+percy07@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "himanshujain171",
+      "email": "43314193+himanshujain171@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Amit Pradhan",
+      "email": "amitpradhanorissa@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Farhan",
+      "email": "farhankasmani956@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

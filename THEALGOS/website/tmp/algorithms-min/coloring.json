@@ -1,0 +1,26 @@
+{
+  "slug": "coloring",
+  "name": "Coloring",
+  "categories": ["backtracking"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Saba Pochkhua",
+      "email": "saba.pochkhua@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "durand-kerner-roots",
+  "name": "Durand Kerner Roots",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 12
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 23
+    }
+  ],
+  "explanationUrl": {}
+}

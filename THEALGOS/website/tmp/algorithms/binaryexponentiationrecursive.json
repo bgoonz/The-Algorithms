@@ -1,0 +1,21 @@
+{
+  "slug": "binaryexponentiationrecursive",
+  "name": "BinaryExponentiationRecursive",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/BinaryExponentiationRecursive.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/BinaryExponentiationRecursive.js",
+      "code": "<span class=\"hljs-comment\">/*\r\n  Modified from:\r\n    https://github.com/TheAlgorithms/Python/blob/master/maths/binary_exponentiation.py\r\n\r\n  Explaination:\r\n    https://en.wikipedia.org/wiki/Exponentiation_by_squaring\r\n*/</span>\r\n\r\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">binaryExponentiation</span> = (<span class=\"hljs-params\">a, n</span>) =&gt; {\r\n  <span class=\"hljs-comment\">// input: a: int, n: int</span>\r\n  <span class=\"hljs-comment\">// returns: a^n: int</span>\r\n  <span class=\"hljs-keyword\">if</span> (n === <span class=\"hljs-number\">0</span>) {\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span>\r\n  } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (n % <span class=\"hljs-number\">2</span> === <span class=\"hljs-number\">1</span>) {\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title function_\">binaryExponentiation</span>(a, n - <span class=\"hljs-number\">1</span>) * a\r\n  } <span class=\"hljs-keyword\">else</span> {\r\n    <span class=\"hljs-keyword\">const</span> b = <span class=\"hljs-title function_\">binaryExponentiation</span>(a, n / <span class=\"hljs-number\">2</span>)\r\n    <span class=\"hljs-keyword\">return</span> b * b\r\n  }\r\n}\r\n\r\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">main</span> = (<span class=\"hljs-params\"></span>) =&gt; {\r\n  <span class=\"hljs-comment\">// binary_exponentiation(2, 10)</span>\r\n  <span class=\"hljs-comment\">// &gt; 1024</span>\r\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">binaryExponentiation</span>(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">10</span>))\r\n  <span class=\"hljs-comment\">// binary_exponentiation(3, 9)</span>\r\n  <span class=\"hljs-comment\">// &gt; 19683</span>\r\n  <span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">binaryExponentiation</span>(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">9</span>))\r\n}\r\n\r\n<span class=\"hljs-title function_\">main</span>()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "utkarsh",
+      "email": "ucponia@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

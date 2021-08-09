@@ -1,0 +1,21 @@
+{
+  "slug": "haversine-distance",
+  "name": "Haversine Distance",
+  "categories": ["geodesy"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "geodesy/haversine_distance.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/geodesy/haversine_distance.py",
+      "code": "<span class=\"hljs-keyword\">from</span> math <span class=\"hljs-keyword\">import</span> asin, atan, cos, radians, sin, sqrt, tan\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">haversine_distance</span>(<span class=\"hljs-params\">lat1: <span class=\"hljs-built_in\">float</span>, lon1: <span class=\"hljs-built_in\">float</span>, lat2: <span class=\"hljs-built_in\">float</span>, lon2: <span class=\"hljs-built_in\">float</span></span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Calculate great circle distance between two points in a sphere,\n    given longitudes and latitudes https://en.wikipedia.org/wiki/Haversine_formula\n\n    We know that the globe is &quot;sort of&quot; spherical, so a path between two points\n    isn&#x27;t exactly a straight line. We need to account for the Earth&#x27;s curvature\n    when calculating distance from point A to B. This effect is negligible for\n    small distances but adds up as distance increases. The Haversine method treats\n    the earth as a sphere which allows us to &quot;project&quot; the two points A and B\n    onto the surface of that sphere and approximate the spherical distance between\n    them. Since the Earth is not a perfect sphere, other methods which model the\n    Earth&#x27;s ellipsoidal nature are more accurate but a quick and modifiable\n    computation like Haversine can be handy for shorter range distances.\n\n    Args:\n        lat1, lon1: latitude and longitude of coordinate 1\n        lat2, lon2: latitude and longitude of coordinate 2\n    Returns:\n        geographical distance between two points in metres\n    &gt;&gt;&gt; from collections import namedtuple\n    &gt;&gt;&gt; point_2d = namedtuple(&quot;point_2d&quot;, &quot;lat lon&quot;)\n    &gt;&gt;&gt; SAN_FRANCISCO = point_2d(37.774856, -122.424227)\n    &gt;&gt;&gt; YOSEMITE = point_2d(37.864742, -119.537521)\n    &gt;&gt;&gt; f&quot;{haversine_distance(*SAN_FRANCISCO, *YOSEMITE):0,.0f} meters&quot;\n    &#x27;254,352 meters&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># CONSTANTS per WGS84 https://en.wikipedia.org/wiki/World_Geodetic_System</span>\n    <span class=\"hljs-comment\"># Distance in metres(m)</span>\n    AXIS_A = <span class=\"hljs-number\">6378137.0</span>\n    AXIS_B = <span class=\"hljs-number\">6356752.314245</span>\n    RADIUS = <span class=\"hljs-number\">6378137</span>\n    <span class=\"hljs-comment\"># Equation parameters</span>\n    <span class=\"hljs-comment\"># Equation https://en.wikipedia.org/wiki/Haversine_formula#Formulation</span>\n    flattening = (AXIS_A - AXIS_B) / AXIS_A\n    phi_1 = atan((<span class=\"hljs-number\">1</span> - flattening) * tan(radians(lat1)))\n    phi_2 = atan((<span class=\"hljs-number\">1</span> - flattening) * tan(radians(lat2)))\n    lambda_1 = radians(lon1)\n    lambda_2 = radians(lon2)\n    <span class=\"hljs-comment\"># Equation</span>\n    sin_sq_phi = sin((phi_2 - phi_1) / <span class=\"hljs-number\">2</span>)\n    sin_sq_lambda = sin((lambda_2 - lambda_1) / <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-comment\"># Square both values</span>\n    sin_sq_phi *= sin_sq_phi\n    sin_sq_lambda *= sin_sq_lambda\n    h_value = sqrt(sin_sq_phi + (cos(phi_1) * cos(phi_2) * sin_sq_lambda))\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">2</span> * RADIUS * asin(h_value)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "eightysixth",
+      "email": "25541207+eightysixth@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

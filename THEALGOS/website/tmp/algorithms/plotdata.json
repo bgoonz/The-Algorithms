@@ -1,0 +1,21 @@
+{
+  "slug": "plotdata",
+  "name": "Plotdata",
+  "categories": ["machinelearning", "linearregression"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Logistic-Regression/plotdata.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Logistic-Regression/plotdata.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">plotdata</span><span class=\"hljs-params\">(x, Y)</span></span>\n\n<span class=\"hljs-built_in\">figure</span>;\n\n<span class=\"hljs-built_in\">hold</span> on;\n\nPos = <span class=\"hljs-built_in\">find</span>(Y == <span class=\"hljs-number\">1</span>);\n\nNeg = <span class=\"hljs-built_in\">find</span>(Y == <span class=\"hljs-number\">0</span>);\n\n<span class=\"hljs-built_in\">plot</span>(x(Pos, <span class=\"hljs-number\">1</span>), x(Pos, <span class=\"hljs-number\">2</span>), <span class=\"hljs-string\">&#x27;k+&#x27;</span>,<span class=\"hljs-string\">&#x27;LineWidth&#x27;</span>, <span class=\"hljs-number\">2</span>, ...\n    <span class=\"hljs-string\">&#x27;MarkerSize&#x27;</span>, <span class=\"hljs-number\">7</span>);\n\n<span class=\"hljs-built_in\">plot</span>(x(Neg, <span class=\"hljs-number\">1</span>), x(Neg, <span class=\"hljs-number\">2</span>), <span class=\"hljs-string\">&#x27;ko&#x27;</span>, <span class=\"hljs-string\">&#x27;MarkerFaceColor&#x27;</span>, <span class=\"hljs-string\">&#x27;y&#x27;</span>, ...\n    <span class=\"hljs-string\">&#x27;MarkerSize&#x27;</span>, <span class=\"hljs-number\">7</span>);\n\n<span class=\"hljs-built_in\">hold</span> off;\n\n<span class=\"hljs-keyword\">end</span>"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "aneshkaul@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

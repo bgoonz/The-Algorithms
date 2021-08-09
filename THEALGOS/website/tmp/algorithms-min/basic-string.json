@@ -1,0 +1,21 @@
+{
+  "slug": "basic-string",
+  "name": "Basic String",
+  "categories": ["geneticalgorithm"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "D4rkia",
+      "email": "49065066+D4rkia@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

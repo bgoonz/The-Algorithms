@@ -1,0 +1,10 @@
+{
+  "slug": "merge-sort-nr",
+  "name": "Merge Sort Nr",
+  "categories": ["sorts"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

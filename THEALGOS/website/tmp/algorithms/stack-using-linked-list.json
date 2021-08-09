@@ -1,0 +1,36 @@
+{
+  "slug": "stack-using-linked-list",
+  "name": "Stack Using Linked List",
+  "categories": ["datastructures"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "data_structures/stack_using_linked_list.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/data_structures/stack_using_linked_list.cpp",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n\n<span class=\"hljs-keyword\">struct</span> <span class=\"hljs-title class_\">node</span> {\n    <span class=\"hljs-type\">int</span> val;\n    node *next;\n};\n\nnode *top_var;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">push</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> x)</span> </span>{\n    node *n = <span class=\"hljs-keyword\">new</span> node;\n    n-&gt;val = x;\n    n-&gt;next = top_var;\n    top_var = n;\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">pop</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-keyword\">if</span> (top_var == <span class=\"hljs-literal\">NULL</span>) {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nUnderflow&quot;</span>;\n    } <span class=\"hljs-keyword\">else</span> {\n        node *t = top_var;\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span> &lt;&lt; t-&gt;val &lt;&lt; <span class=\"hljs-string\">&quot; deleted&quot;</span>;\n        top_var = top_var-&gt;next;\n        <span class=\"hljs-keyword\">delete</span> t;\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">show</span><span class=\"hljs-params\">()</span> </span>{\n    node *t = top_var;\n    <span class=\"hljs-keyword\">while</span> (t != <span class=\"hljs-literal\">NULL</span>) {\n        std::cout &lt;&lt; t-&gt;val &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span>;\n        t = t-&gt;next;\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> ch, x;\n    <span class=\"hljs-keyword\">do</span> {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n1. Push&quot;</span>;\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n2. Pop&quot;</span>;\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n3. Print&quot;</span>;\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nEnter Your Choice : &quot;</span>;\n        std::cin &gt;&gt; ch;\n        <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">1</span>) {\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nInsert : &quot;</span>;\n            std::cin &gt;&gt; x;\n            <span class=\"hljs-built_in\">push</span>(x);\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">2</span>) {\n            <span class=\"hljs-built_in\">pop</span>();\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">3</span>) {\n            <span class=\"hljs-built_in\">show</span>();\n        }\n    } <span class=\"hljs-keyword\">while</span> (ch != <span class=\"hljs-number\">0</span>);\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

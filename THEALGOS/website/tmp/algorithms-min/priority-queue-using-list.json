@@ -1,0 +1,21 @@
+{
+  "slug": "priority-queue-using-list",
+  "name": "Priority Queue Using List",
+  "categories": ["datastructures", "queue"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashley Jeji George",
+      "email": "40469421+Ashley-J-George@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,19 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+  line-break: anywhere;
+}
+
+.subtitle {
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+  font-size: 15px !important;
+}

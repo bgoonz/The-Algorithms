@@ -1,0 +1,21 @@
+{
+  "slug": "rotation-matrix",
+  "name": "Rotation-Matrix",
+  "categories": ["matrix"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/matrix/rotation-matrix.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/matrix/rotation-matrix.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nA 2D Rotation matrix is a mtrix that rotates a vector in a 2D real space by an angle theta.\nFor more info: https://en.wikipedia.org/wiki/Rotation_matrix\n\nThis function takes the angle `theta` in radians as input and returns a 2D Matrix which will rotate the the vector by angle `theta`.\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> rotation_matrix(θ)\n\trot_mat = <span class=\"hljs-built_in\">Matrix</span>{<span class=\"hljs-built_in\">Float64</span>}(<span class=\"hljs-literal\">undef</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">2</span>)\n\trot_mat[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">1</span>]  = cos(θ)\n\trot_mat[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>] = -sin(θ)\n\trot_mat[<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">1</span>] = sin(θ)\n\trot_mat[<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">2</span>] = cos(θ)\n\n\t<span class=\"hljs-keyword\">return</span> rot_mat\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

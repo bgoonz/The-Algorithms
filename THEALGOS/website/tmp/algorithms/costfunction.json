@@ -1,0 +1,21 @@
+{
+  "slug": "costfunction",
+  "name": "Costfunction",
+  "categories": ["machinelearning", "logisticregression"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Logistic-Regression/costfunction.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Logistic-Regression/costfunction.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-params\">[j, Grad]</span> = <span class=\"hljs-title\">costfunction</span><span class=\"hljs-params\">(Theta, X, Y)</span></span>\n\nn = <span class=\"hljs-built_in\">length</span>(Y); \n\n<span class=\"hljs-built_in\">j</span> = <span class=\"hljs-number\">0</span>;\n\n<span class=\"hljs-built_in\">j</span> = (<span class=\"hljs-number\">1</span>/n)*(-Y&#x27;* <span class=\"hljs-built_in\">log</span>(Sigmoid(X * Theta)) - (<span class=\"hljs-number\">1</span> - Y)&#x27;* <span class=\"hljs-built_in\">log</span>(<span class=\"hljs-number\">1</span> - Sigmoid(X * Theta))); <span class=\"hljs-comment\">% See the sigmoid function. </span>\n\nGrad = <span class=\"hljs-built_in\">zeros</span>(<span class=\"hljs-built_in\">size</span>(Theta));\n\nGrad_ = (<span class=\"hljs-number\">1</span> / n) * ((Sigmoid(X * Theta) - Y)&#x27; * X);\n\nGrad = Grad_&#x27;;\n\n<span class=\"hljs-keyword\">end</span>"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "aneshkaul@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

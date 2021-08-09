@@ -1,0 +1,31 @@
+{
+  "slug": "rat-maze",
+  "name": "Rat Maze",
+  "categories": ["backtracking"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vaibhav Thakkar",
+      "email": "vaibhav.thakkar.22.12.99@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

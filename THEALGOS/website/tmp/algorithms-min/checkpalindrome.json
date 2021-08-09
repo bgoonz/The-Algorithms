@@ -1,0 +1,32 @@
+{
+  "slug": "checkpalindrome",
+  "name": "CheckPalindrome",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": "",
+    "php": ""
+  },
+  "contributors": [
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lokesh Patil",
+      "email": "43759648+IamLokesh@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Swapnil-2001",
+      "email": "53232360+Swapnil-2001@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Alexandre Xavier",
+      "email": "ale.bxsantos@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

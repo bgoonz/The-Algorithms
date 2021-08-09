@@ -1,0 +1,26 @@
+{
+  "slug": "linearregressionrawr",
+  "name": "linearRegressionRawR",
+  "categories": ["regressionalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Regression-Algorithms/linearRegressionRawR.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Regression-Algorithms/linearRegressionRawR.R",
+      "code": "ols<span class=\"hljs-operator\">&lt;-</span><span class=\"hljs-keyword\">function</span><span class=\"hljs-punctuation\">(</span>y<span class=\"hljs-punctuation\">,</span>x<span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">{</span>\n    data<span class=\"hljs-operator\">&lt;-</span>model.matrix<span class=\"hljs-punctuation\">(</span>y <span class=\"hljs-operator\">~</span> .<span class=\"hljs-punctuation\">,</span> data <span class=\"hljs-operator\">=</span> x<span class=\"hljs-punctuation\">)</span>\n    decomp <span class=\"hljs-operator\">&lt;-</span> svd<span class=\"hljs-punctuation\">(</span>data<span class=\"hljs-punctuation\">)</span>\n    <span class=\"hljs-built_in\">return</span><span class=\"hljs-punctuation\">(</span>decomp<span class=\"hljs-operator\">$</span>v <span class=\"hljs-operator\">%*%</span> diag<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1</span> <span class=\"hljs-operator\">/</span> decomp<span class=\"hljs-operator\">$</span>d<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">%*%</span> t<span class=\"hljs-punctuation\">(</span>decomp<span class=\"hljs-operator\">$</span>u<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-operator\">%*%</span> y<span class=\"hljs-punctuation\">)</span>\n  <span class=\"hljs-punctuation\">}</span>\n\nset.seed<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">)</span>\nx <span class=\"hljs-operator\">&lt;-</span> rnorm<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1000</span><span class=\"hljs-punctuation\">)</span>\ny <span class=\"hljs-operator\">&lt;-</span> 4 <span class=\"hljs-operator\">*</span> x <span class=\"hljs-operator\">+</span> rnorm<span class=\"hljs-punctuation\">(</span><span class=\"hljs-number\">1000</span><span class=\"hljs-punctuation\">,</span> sd <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">.5</span><span class=\"hljs-punctuation\">)</span>\nols<span class=\"hljs-punctuation\">(</span>y<span class=\"hljs-operator\">=</span>y<span class=\"hljs-punctuation\">,</span>x<span class=\"hljs-operator\">=</span>matrix<span class=\"hljs-punctuation\">(</span>x<span class=\"hljs-punctuation\">,</span> ncol <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ron Lee",
+      "email": "857748998@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "Alex Garland",
+      "email": "alex@numinar.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

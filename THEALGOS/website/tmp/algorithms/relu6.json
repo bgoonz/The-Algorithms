@@ -1,0 +1,21 @@
+{
+  "slug": "relu6",
+  "name": "ReLU6",
+  "categories": ["machinelearning", "activationfunctions"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Activation Functions/ReLU6.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Activation Functions/ReLU6.m",
+      "code": "<span class=\"hljs-comment\">%ReLU6 function</span>\nx = <span class=\"hljs-number\">-10</span>:<span class=\"hljs-number\">0.01</span>:<span class=\"hljs-number\">10</span>;\ny = x;\ny(x&lt;<span class=\"hljs-number\">0</span>) = <span class=\"hljs-number\">0</span>;\ny(x&gt;=<span class=\"hljs-number\">6</span>) = <span class=\"hljs-number\">6</span>;\n<span class=\"hljs-built_in\">plot</span>(x,y);\nxlabel(<span class=\"hljs-string\">&#x27;x&#x27;</span>);\nylabel(<span class=\"hljs-string\">&#x27;y&#x27;</span>);\ngrid on\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

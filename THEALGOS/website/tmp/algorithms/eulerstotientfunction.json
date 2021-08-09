@@ -1,0 +1,31 @@
+{
+  "slug": "eulerstotientfunction",
+  "name": "EulersTotientFunction",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/EulersTotientFunction.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/EulersTotientFunction.js",
+      "code": "<span class=\"hljs-comment\">/*\n    author sandyboypraper\n\n    Here is the EulerTotientFunction.\n    it is also represented by phi\n\n    so EulersTotientFunction(n) (or phi(n)) is the count of numbers in {1,2,3,....,n} that are relatively\n    prime to n, i.e., the numbers whose GCD (Greatest Common Divisor) with n is 1.\n*/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">gcdOfTwoNumbers</span> = (<span class=\"hljs-params\">x, y</span>) =&gt; {\n  <span class=\"hljs-comment\">// x is smaller than y</span>\n  <span class=\"hljs-comment\">// let gcd of x and y is gcdXY</span>\n  <span class=\"hljs-comment\">// so it divides x and y completely</span>\n  <span class=\"hljs-comment\">// so gcdXY should also divide y%x (y = gcdXY*a and x = gcdXY*b and y%x = y - x*k so y%x = gcdXY(a - b*k))</span>\n  <span class=\"hljs-comment\">// and gcd(x,y) is equal to gcd(y%x , x)</span>\n  <span class=\"hljs-keyword\">return</span> x === <span class=\"hljs-number\">0</span> ? y : <span class=\"hljs-title function_\">gcdOfTwoNumbers</span>(y % x, x)\n}\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">eulersTotientFunction</span> = (<span class=\"hljs-params\">n</span>) =&gt; {\n  <span class=\"hljs-keyword\">let</span> countOfRelativelyPrimeNumbers = <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> iterator = <span class=\"hljs-number\">2</span>; iterator &lt;= n; iterator++) {\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-title function_\">gcdOfTwoNumbers</span>(iterator, n) === <span class=\"hljs-number\">1</span>) countOfRelativelyPrimeNumbers++\n  }\n  <span class=\"hljs-keyword\">return</span> countOfRelativelyPrimeNumbers\n}\n\n<span class=\"hljs-keyword\">export</span> { eulersTotientFunction }\n"
+    },
+    "c-plus-plus": {
+      "dir": "math/eulers_totient_function.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/math/eulers_totient_function.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * @file\n * @brief C++ Program to find\n * [Euler&#x27;s Totient](https://en.wikipedia.org/wiki/Euler%27s_totient_function)\n * function\n *\n * Euler Totient Function is also known as phi function.\n * \\f[\\phi(n) =\n * \\phi\\left({p_1}^{a_1}\\right)\\cdot\\phi\\left({p_2}^{a_2}\\right)\\ldots\\f] where\n * \\f$p_1\\f$, \\f$p_2\\f$, \\f$\\ldots\\f$ are prime factors of n.\n * &lt;br/&gt;3 Euler&#x27;s properties:\n * 1. \\f$\\phi(n) = n-1\\f$\n * 2. \\f$\\phi(n^k) = n^k - n^{k-1}\\f$\n * 3. \\f$\\phi(a,b) = \\phi(a)\\cdot\\phi(b)\\f$ where a and b are relative primes.\n *\n * Applying this 3 properties on the first equation.\n * \\f[\\phi(n) =\n * n\\cdot\\left(1-\\frac{1}{p_1}\\right)\\cdot\\left(1-\\frac{1}{p_2}\\right)\\cdots\\f]\n * where \\f$p_1\\f$,\\f$p_2\\f$... are prime factors.\n * Hence Implementation in \\f$O\\left(\\sqrt{n}\\right)\\f$.\n * &lt;br/&gt;Some known values are:\n * * \\f$\\phi(100) = 40\\f$\n * * \\f$\\phi(1) = 1\\f$\n * * \\f$\\phi(17501) = 15120\\f$\n * * \\f$\\phi(1420) = 560\\f$\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cstdlib&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n\n<span class=\"hljs-comment\">/** Function to caculate Euler&#x27;s totient phi\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">uint64_t</span> <span class=\"hljs-title\">phiFunction</span><span class=\"hljs-params\">(<span class=\"hljs-type\">uint64_t</span> n)</span> </span>{\n    <span class=\"hljs-type\">uint64_t</span> result = n;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">uint64_t</span> i = <span class=\"hljs-number\">2</span>; i * i &lt;= n; i++) {\n        <span class=\"hljs-keyword\">if</span> (n % i == <span class=\"hljs-number\">0</span>) {\n            <span class=\"hljs-keyword\">while</span> (n % i == <span class=\"hljs-number\">0</span>) {\n                n /= i;\n            }\n            result -= result / i;\n        }\n    }\n    <span class=\"hljs-keyword\">if</span> (n &gt; <span class=\"hljs-number\">1</span>)\n        result -= result / n;\n    <span class=\"hljs-keyword\">return</span> result;\n}\n\n<span class=\"hljs-comment\">/// Main function</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> argc, <span class=\"hljs-type\">char</span> *argv[])</span> </span>{\n    <span class=\"hljs-type\">uint64_t</span> n;\n    <span class=\"hljs-keyword\">if</span> (argc &lt; <span class=\"hljs-number\">2</span>) {\n        std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Enter the number: &quot;</span>;\n    } <span class=\"hljs-keyword\">else</span> {\n        n = <span class=\"hljs-built_in\">strtoull</span>(argv[<span class=\"hljs-number\">1</span>], <span class=\"hljs-literal\">nullptr</span>, <span class=\"hljs-number\">10</span>);\n    }\n    std::cin &gt;&gt; n;\n    std::cout &lt;&lt; <span class=\"hljs-built_in\">phiFunction</span>(n);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "EliteDaMyth",
+      "email": "elitemythyt@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "sandyboypraper",
+      "email": "sandyboyraper@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "gridget",
+  "name": "GridGet",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/GridGet.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/GridGet.js",
+      "code": "<span class=\"hljs-comment\">/*\n    author: TangibleDream\n    license: GPL-3.0 or later\n\n    These methods will find x or y given the element and columns for a 2 dimensional array.\n\n    If your array is a perfect square, you can find columns by getting the square\n    root of the length of the array.\n\n    Let&#x27;s say for instance you had an array of 10 by 10 or 100, elements and you wanted to\n    find the shortest distance between element 3, and element 49. In this case coding out\n    a function to return the distance without finding x and y for both elements I found to\n    be painful. If you first find x and y, where 3 becomes 4,1 and 49 becomes 10,5, you can\n    find distance by first subtracting x from x and y from y this returns 6,4 or -6,-4.\n    Next apply absolute value to assure the results are positive,\n    last choose the maximum value of the set, or 6.\n\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  | 3|  |  |  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  |  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  |  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  |  |  |  |49|\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  |  |  |  |  |\n\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  | 3|  |  |  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  | 1|  |  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  | 2|  |  |  |  |\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  | 3| 4| 5|6!|\n    +--+--+--+--+--+--+--+--+--+--+\n    |  |  |  |  |  |  |  |  |  |  |\n\n*/</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">gridGetX</span> = (<span class=\"hljs-params\">columns, index</span>) =&gt; {\n  <span class=\"hljs-keyword\">while</span> (index + <span class=\"hljs-number\">1</span> &gt; columns) {\n    index = index - columns\n  }\n  <span class=\"hljs-keyword\">return</span> index + <span class=\"hljs-number\">1</span>\n}\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">gridGetY</span> = (<span class=\"hljs-params\">columns, index</span>) =&gt; {\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">floor</span>(index / columns) + <span class=\"hljs-number\">1</span>\n}\n\n<span class=\"hljs-keyword\">export</span> { gridGetX, gridGetY }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rob Hicks",
+      "email": "darclan28@yahoo.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "number-of-possible-binary-trees",
+  "name": "Number of Possible Binary Trees",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "MadhavCode",
+      "email": "madhav0404dixit@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

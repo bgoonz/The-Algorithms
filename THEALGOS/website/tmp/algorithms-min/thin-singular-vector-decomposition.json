@@ -1,0 +1,10 @@
+{
+  "slug": "thin-singular-vector-decomposition",
+  "name": "Thin Singular Vector Decomposition",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

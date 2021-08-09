@@ -1,0 +1,16 @@
+{
+  "slug": "rodcuttingproblem",
+  "name": "RodCuttingProblem",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "kotlin": ""
+  },
+  "contributors": [
+    {
+      "name": "Abhishek",
+      "email": "raabhishek2@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "binaryexponentiationrecursive",
+  "name": "BinaryExponentiationRecursive",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "utkarsh",
+      "email": "ucponia@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

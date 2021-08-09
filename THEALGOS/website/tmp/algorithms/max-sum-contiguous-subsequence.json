@@ -1,0 +1,21 @@
+{
+  "slug": "max-sum-contiguous-subsequence",
+  "name": "Max Sum Contiguous Subsequence",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/max_sum_contiguous_subsequence.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/max_sum_contiguous_subsequence.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">max_subarray_sum</span>(<span class=\"hljs-params\">nums: <span class=\"hljs-built_in\">list</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; max_subarray_sum([6 , 9, -1, 3, -7, -5, 10])\n    17\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> nums:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n    n = <span class=\"hljs-built_in\">len</span>(nums)\n\n    res, s, s_pre = nums[<span class=\"hljs-number\">0</span>], nums[<span class=\"hljs-number\">0</span>], nums[<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, n):\n        s = <span class=\"hljs-built_in\">max</span>(nums[i], s_pre + nums[i])\n        s_pre = s\n        res = <span class=\"hljs-built_in\">max</span>(res, s)\n    <span class=\"hljs-keyword\">return</span> res\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    nums = [<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">9</span>, -<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>, -<span class=\"hljs-number\">7</span>, -<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">10</span>]\n    <span class=\"hljs-built_in\">print</span>(max_subarray_sum(nums))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

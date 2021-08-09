@@ -1,0 +1,26 @@
+{
+  "slug": "linkedlist-implentation-usingarray",
+  "name": "Linkedlist Implentation Usingarray",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Pradeep Singh",
+      "email": "pswaldia1@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

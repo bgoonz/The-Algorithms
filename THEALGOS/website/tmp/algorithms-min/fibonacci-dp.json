@@ -1,0 +1,10 @@
+{
+  "slug": "fibonacci-dp",
+  "name": "Fibonacci Dp",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

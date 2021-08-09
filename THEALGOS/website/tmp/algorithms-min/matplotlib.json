@@ -1,0 +1,10 @@
+{
+  "slug": "matplotlib",
+  "name": "Matplotlib",
+  "categories": ["machinelearning", "matplotlib"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

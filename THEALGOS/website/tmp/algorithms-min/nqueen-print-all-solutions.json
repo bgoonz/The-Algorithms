@@ -1,0 +1,21 @@
+{
+  "slug": "nqueen-print-all-solutions",
+  "name": "Nqueen Print All Solutions",
+  "categories": ["backtracking"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Himani Negi",
+      "email": "negi.himani11@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

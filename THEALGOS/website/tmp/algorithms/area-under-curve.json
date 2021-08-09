@@ -1,0 +1,31 @@
+{
+  "slug": "area-under-curve",
+  "name": "Area Under Curve",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/area_under_curve.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/area_under_curve.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nApproximates the area under the curve using the trapezoidal rule\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Callable</span>, <span class=\"hljs-type\">Union</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">trapezoidal_area</span>(<span class=\"hljs-params\">\n    fnc: <span class=\"hljs-type\">Callable</span>[[<span class=\"hljs-type\">Union</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">float</span>]], <span class=\"hljs-type\">Union</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">float</span>]],\n    x_start: <span class=\"hljs-type\">Union</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">float</span>],\n    x_end: <span class=\"hljs-type\">Union</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">float</span>],\n    steps: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">100</span>,\n</span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Treats curve as a collection of linear lines and sums the area of the\n    trapezium shape they form\n    :param fnc: a function which defines a curve\n    :param x_start: left end point to indicate the start of line segment\n    :param x_end: right end point to indicate end of line segment\n    :param steps: an accuracy gauge; more steps increases the accuracy\n    :return: a float representing the length of the curve\n\n    &gt;&gt;&gt; def f(x):\n    ...    return 5\n    &gt;&gt;&gt; f&quot;{trapezoidal_area(f, 12.0, 14.0, 1000):.3f}&quot;\n    &#x27;10.000&#x27;\n    &gt;&gt;&gt; def f(x):\n    ...    return 9*x**2\n    &gt;&gt;&gt; f&quot;{trapezoidal_area(f, -4.0, 0, 10000):.4f}&quot;\n    &#x27;192.0000&#x27;\n    &gt;&gt;&gt; f&quot;{trapezoidal_area(f, -4.0, 4.0, 10000):.4f}&quot;\n    &#x27;384.0000&#x27;\n    &quot;&quot;&quot;</span>\n    x1 = x_start\n    fx1 = fnc(x_start)\n    area = <span class=\"hljs-number\">0.0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(steps):\n        <span class=\"hljs-comment\"># Approximates small segments of curve as linear and solve</span>\n        <span class=\"hljs-comment\"># for trapezoidal area</span>\n        x2 = (x_end - x_start) / steps + x1\n        fx2 = fnc(x2)\n        area += <span class=\"hljs-built_in\">abs</span>(fx2 + fx1) * (x2 - x1) / <span class=\"hljs-number\">2</span>\n        <span class=\"hljs-comment\"># Increment step</span>\n        x1 = x2\n        fx1 = fx2\n    <span class=\"hljs-keyword\">return</span> area\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">f</span>(<span class=\"hljs-params\">x</span>):\n        <span class=\"hljs-keyword\">return</span> x ** <span class=\"hljs-number\">3</span> + x ** <span class=\"hljs-number\">2</span>\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;f(x) = x^3 + x^2&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The area between the curve, x = -5, x = 5 and the x axis is:&quot;</span>)\n    i = <span class=\"hljs-number\">10</span>\n    <span class=\"hljs-keyword\">while</span> i &lt;= <span class=\"hljs-number\">100000</span>:\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;with <span class=\"hljs-subst\">{i}</span> steps: <span class=\"hljs-subst\">{trapezoidal_area(f, -<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">5</span>, i)}</span>&quot;</span>)\n        i *= <span class=\"hljs-number\">10</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Sharan Krishnan",
+      "email": "58838321+shrabian@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "returnsubsequence",
+  "name": "ReturnSubsequence",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/ReturnSubsequence.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/ReturnSubsequence.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">ReturnSubsequence</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    System.out.println(<span class=\"hljs-string\">&quot;Enter String: &quot;</span>);\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">s</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">givenString</span> <span class=\"hljs-operator\">=</span> s.next(); <span class=\"hljs-comment\">// given string</span>\n    String[] subsequence = returnSubsequence(givenString); <span class=\"hljs-comment\">// calling returnSubsequence() function</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Subsequences : &quot;</span>);\n    <span class=\"hljs-comment\">// print the given array of subsequences</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt; subsequence.length; i++) {\n      System.out.println(subsequence[i]);\n    }\n    s.close();\n  }\n\n  <span class=\"hljs-comment\">/**\n   * <span class=\"hljs-doctag\">@param</span> givenString\n   * <span class=\"hljs-doctag\">@return</span> subsequence\n   */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> String[] returnSubsequence(String givenString) {\n    <span class=\"hljs-keyword\">if</span> (givenString.length()\n        == <span class=\"hljs-number\">0</span>) <span class=\"hljs-comment\">// If string is empty we will create an array of size=1 and insert &quot;&quot; (Empty string)</span>\n    <span class=\"hljs-comment\">// in it</span>\n    {\n      String[] ans = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">String</span>[<span class=\"hljs-number\">1</span>];\n      ans[<span class=\"hljs-number\">0</span>] = <span class=\"hljs-string\">&quot;&quot;</span>;\n      <span class=\"hljs-keyword\">return</span> ans;\n    }\n    String[] SmallAns =\n        returnSubsequence(\n            givenString.substring(\n                <span class=\"hljs-number\">1</span>)); <span class=\"hljs-comment\">// recursive call to get subsequences of substring starting from index</span>\n    <span class=\"hljs-comment\">// position=1</span>\n\n    String[] ans =\n        <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">String</span>\n            [<span class=\"hljs-number\">2</span> * SmallAns.length]; <span class=\"hljs-comment\">// Our answer will be an array off string of size=2*SmallAns</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">for</span> (; i &lt; SmallAns.length; i++) {\n      ans[i] = SmallAns[i]; <span class=\"hljs-comment\">// Copying all the strings present in SmallAns to ans string array</span>\n    }\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">k</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; k &lt; SmallAns.length; k++) {\n      ans[k + SmallAns.length] =\n          givenString.charAt(<span class=\"hljs-number\">0</span>)\n              + SmallAns[\n                  k]; <span class=\"hljs-comment\">// Insert character at index=0 of the given substring in front of every string</span>\n      <span class=\"hljs-comment\">// in SmallAns</span>\n    }\n    <span class=\"hljs-keyword\">return</span> ans;\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

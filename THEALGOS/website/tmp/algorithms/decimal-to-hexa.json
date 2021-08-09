@@ -1,0 +1,15 @@
+{
+  "slug": "decimal-to-hexa",
+  "name": "Decimal to Hexa",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "conversions/decimal_to_hexa.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/conversions/decimal_to_hexa.c",
+      "code": "<span class=\"hljs-comment\">/*****Decimal to Hexadecimal conversion*******************/</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">decimal2Hexadecimal</span><span class=\"hljs-params\">(<span class=\"hljs-type\">long</span> num)</span>;\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">long</span> decimalnum;\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter decimal number: &quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%ld&quot;</span>, &amp;decimalnum);\n\n    decimal2Hexadecimal(decimalnum);\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n\n<span class=\"hljs-comment\">/********function for convert decimal number to hexadecimal\n * number****************/</span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">decimal2Hexadecimal</span><span class=\"hljs-params\">(<span class=\"hljs-type\">long</span> num)</span>\n{\n    <span class=\"hljs-type\">long</span> decimalnum = num;\n    <span class=\"hljs-type\">long</span> quotient, remainder;\n    <span class=\"hljs-type\">int</span> i, j = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-type\">char</span> hexadecimalnum[<span class=\"hljs-number\">100</span>];\n\n    quotient = decimalnum;\n\n    <span class=\"hljs-keyword\">while</span> (quotient != <span class=\"hljs-number\">0</span>)\n    {\n        remainder = quotient % <span class=\"hljs-number\">16</span>;\n        <span class=\"hljs-keyword\">if</span> (remainder &lt; <span class=\"hljs-number\">10</span>)\n            hexadecimalnum[j++] = <span class=\"hljs-number\">48</span> + remainder;\n\n        <span class=\"hljs-keyword\">else</span>\n            hexadecimalnum[j++] = <span class=\"hljs-number\">55</span> + remainder;\n\n        quotient = quotient / <span class=\"hljs-number\">16</span>;\n    }\n\n    <span class=\"hljs-comment\">// print the hexadecimal number</span>\n\n    <span class=\"hljs-keyword\">for</span> (i = j; i &gt;= <span class=\"hljs-number\">0</span>; i--)\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%c&quot;</span>, hexadecimalnum[i]);\n    }\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\n&quot;</span>);\n}\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

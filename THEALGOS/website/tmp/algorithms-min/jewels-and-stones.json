@@ -1,0 +1,16 @@
+{
+  "slug": "jewels-and-stones",
+  "name": "Jewels and Stones",
+  "categories": ["datastructures", "array", "strings"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

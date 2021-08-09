@@ -1,0 +1,41 @@
+{
+  "slug": "tree-sort",
+  "name": "Tree Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mehdi ALAOUI",
+      "email": "alaoui.mehdi.1995@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Erwin Lejeune",
+      "email": "erwin.lejeune15@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sichen Liu",
+      "email": "sl2947@cornell.edu",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

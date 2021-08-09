@@ -1,0 +1,21 @@
+{
+  "slug": "towersofhanoi",
+  "name": "TowersOfHanoi",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "haskell": {
+      "dir": "src/Misc/TowersOfHanoi.hs",
+      "url": "https://github.com/TheAlgorithms/haskell/tree/master/src/Misc/TowersOfHanoi.hs",
+      "code": "<span class=\"hljs-keyword\">module</span> Misc.TowersOfHanoi <span class=\"hljs-keyword\">where</span>\n\n<span class=\"hljs-title\">hanoi</span> :: (<span class=\"hljs-type\">Eq</span> a, <span class=\"hljs-type\">Num</span> a) =&gt; a -&gt; [<span class=\"hljs-type\">Char</span>] -&gt; [<span class=\"hljs-type\">Char</span>] -&gt; [<span class=\"hljs-type\">Char</span>] -&gt; <span class=\"hljs-type\">IO</span> ()\n<span class=\"hljs-title\">hanoi</span> <span class=\"hljs-number\">0</span> _ _ _ = return ()\n<span class=\"hljs-title\">hanoi</span> n startPole intermediatePole endPole = <span class=\"hljs-keyword\">do</span>\n    hanoi (n - <span class=\"hljs-number\">1</span>) startPole endPole intermediatePole\n    putStrLn (<span class=\"hljs-string\">&quot;Move from &quot;</span> ++ startPole ++ <span class=\"hljs-string\">&quot; to &quot;</span> ++ endPole)\n    hanoi (n - <span class=\"hljs-number\">1</span>) intermediatePole startPole endPole\n\n<span class=\"hljs-title\">main</span> :: <span class=\"hljs-type\">IO</span> ()\n<span class=\"hljs-title\">main</span> = <span class=\"hljs-keyword\">do</span>\n    hanoi <span class=\"hljs-number\">3</span> <span class=\"hljs-string\">&quot;startPole&quot;</span> <span class=\"hljs-string\">&quot;intermediatePole&quot;</span> <span class=\"hljs-string\">&quot;endPole&quot;</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian James Welly",
+      "email": "chrisjwelly@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

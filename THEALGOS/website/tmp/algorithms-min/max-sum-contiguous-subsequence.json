@@ -1,0 +1,16 @@
+{
+  "slug": "max-sum-contiguous-subsequence",
+  "name": "Max Sum Contiguous Subsequence",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

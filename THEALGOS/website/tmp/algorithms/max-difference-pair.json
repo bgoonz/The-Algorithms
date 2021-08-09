@@ -1,0 +1,26 @@
+{
+  "slug": "max-difference-pair",
+  "name": "Max Difference Pair",
+  "categories": ["divideandconquer"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "divide_and_conquer/max_difference_pair.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/divide_and_conquer/max_difference_pair.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">max_difference</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    We are given an array A[1..n] of integers, n &gt;= 1. We want to\n    find a pair of indices (i, j) such that\n    1 &lt;= i &lt;= j &lt;= n and A[j] - A[i] is as large as possible.\n\n    Explanation:\n    https://www.geeksforgeeks.org/maximum-difference-between-two-elements/\n\n    &gt;&gt;&gt; max_difference([5, 11, 2, 1, 7, 9, 0, 7])\n    (1, 9)\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># base case</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(a) == <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> a[<span class=\"hljs-number\">0</span>], a[<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-comment\"># split A into half.</span>\n        first = a[: <span class=\"hljs-built_in\">len</span>(a) // <span class=\"hljs-number\">2</span>]\n        second = a[<span class=\"hljs-built_in\">len</span>(a) // <span class=\"hljs-number\">2</span> :]\n\n        <span class=\"hljs-comment\"># 2 sub problems, 1/2 of original size.</span>\n        small1, big1 = max_difference(first)\n        small2, big2 = max_difference(second)\n\n        <span class=\"hljs-comment\"># get min of first and max of second</span>\n        <span class=\"hljs-comment\"># linear time</span>\n        min_first = <span class=\"hljs-built_in\">min</span>(first)\n        max_second = <span class=\"hljs-built_in\">max</span>(second)\n\n        <span class=\"hljs-comment\"># 3 cases, either (small1, big1),</span>\n        <span class=\"hljs-comment\"># (min_first, max_second), (small2, big2)</span>\n        <span class=\"hljs-comment\"># constant comparisons</span>\n        <span class=\"hljs-keyword\">if</span> big2 - small2 &gt; max_second - min_first <span class=\"hljs-keyword\">and</span> big2 - small2 &gt; big1 - small1:\n            <span class=\"hljs-keyword\">return</span> small2, big2\n        <span class=\"hljs-keyword\">elif</span> big1 - small1 &gt; max_second - min_first:\n            <span class=\"hljs-keyword\">return</span> small1, big1\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-keyword\">return</span> min_first, max_second\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Cho Yin Yong",
+      "email": "choyiny@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

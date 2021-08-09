@@ -1,0 +1,10 @@
+{
+  "slug": "fibonacci-matrix-exponentiation",
+  "name": "Fibonacci Matrix Exponentiation",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

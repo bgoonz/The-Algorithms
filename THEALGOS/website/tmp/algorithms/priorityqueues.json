@@ -1,0 +1,46 @@
+{
+  "slug": "priorityqueues",
+  "name": "PriorityQueues",
+  "categories": ["datastructures", "queues"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Queues/PriorityQueues.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Queues/PriorityQueues.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Queues;\n\n<span class=\"hljs-comment\">/**\n * This class implements a PriorityQueue.\n *\n * &lt;p&gt;A priority queue adds elements into positions based on their priority. So the most important\n * elements are placed at the front/on the top. In this example I give numbers that are bigger, a\n * higher priority. Queues in theory have no fixed size but when using an array implementation it\n * does.\n */</span>\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PriorityQueue</span> {\n  <span class=\"hljs-comment\">/** The max size of the queue */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-type\">int</span> maxSize;\n  <span class=\"hljs-comment\">/** The array for the queue */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-type\">int</span>[] queueArray;\n  <span class=\"hljs-comment\">/** How many items are in the queue */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-type\">int</span> nItems;\n\n  <span class=\"hljs-comment\">/**\n   * Constructor\n   *\n   * <span class=\"hljs-doctag\">@param</span> size Size of the queue\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">PriorityQueue</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> size)</span> {\n    maxSize = size;\n    queueArray = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">int</span>[size];\n    nItems = <span class=\"hljs-number\">0</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Inserts an element in it&#x27;s appropriate place\n   *\n   * <span class=\"hljs-doctag\">@param</span> value Value to be inserted\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">insert</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> value)</span> {\n    <span class=\"hljs-keyword\">if</span> (isFull()) {\n      <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">RuntimeException</span>(<span class=\"hljs-string\">&quot;Queue is full&quot;</span>);\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> nItems - <span class=\"hljs-number\">1</span>; <span class=\"hljs-comment\">// index of last element</span>\n      <span class=\"hljs-keyword\">while</span> (j &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; queueArray[j] &gt; value) {\n        queueArray[j + <span class=\"hljs-number\">1</span>] = queueArray[j]; <span class=\"hljs-comment\">// Shifts every element up to make room for insertion</span>\n        j--;\n      }\n      queueArray[j + <span class=\"hljs-number\">1</span>] = value; <span class=\"hljs-comment\">// Once the correct position is found the value is inserted</span>\n      nItems++;\n    }\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Remove the element from the front of the queue\n   *\n   * <span class=\"hljs-doctag\">@return</span> The element removed\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">remove</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> queueArray[--nItems];\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Checks what&#x27;s at the front of the queue\n   *\n   * <span class=\"hljs-doctag\">@return</span> element at the front of the queue\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">peek</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> queueArray[nItems - <span class=\"hljs-number\">1</span>];\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Returns true if the queue is empty\n   *\n   * <span class=\"hljs-doctag\">@return</span> true if the queue is empty\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isEmpty</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> (nItems == <span class=\"hljs-number\">0</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Returns true if the queue is full\n   *\n   * <span class=\"hljs-doctag\">@return</span> true if the queue is full\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isFull</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> (nItems == maxSize);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Returns the number of elements in the queue\n   *\n   * <span class=\"hljs-doctag\">@return</span> number of elements in the queue\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">getSize</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> nItems;\n  }\n}\n\n<span class=\"hljs-comment\">/**\n * This class implements the PriorityQueue class above.\n *\n * <span class=\"hljs-doctag\">@author</span> Unknown\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">PriorityQueues</span> {\n  <span class=\"hljs-comment\">/**\n   * Main method\n   *\n   * <span class=\"hljs-doctag\">@param</span> args Command Line Arguments\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">PriorityQueue</span> <span class=\"hljs-variable\">myQueue</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">PriorityQueue</span>(<span class=\"hljs-number\">4</span>);\n    myQueue.insert(<span class=\"hljs-number\">10</span>);\n    myQueue.insert(<span class=\"hljs-number\">2</span>);\n    myQueue.insert(<span class=\"hljs-number\">5</span>);\n    myQueue.insert(<span class=\"hljs-number\">3</span>);\n    <span class=\"hljs-comment\">// [2, 3, 5, 10] Here higher numbers have higher priority, so they are on the top</span>\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">3</span>; i &gt;= <span class=\"hljs-number\">0</span>; i--)\n      System.out.print(\n          myQueue.remove() + <span class=\"hljs-string\">&quot; &quot;</span>); <span class=\"hljs-comment\">// will print the queue in reverse order [10, 5, 3, 2]</span>\n\n    <span class=\"hljs-comment\">// As you can see, a Priority Queue can be used as a sorting algotithm</span>\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akhil",
+      "email": "31859863+hailK11@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "zacharyjones123",
+      "email": "zrjones@ncsu.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Rian Gallagher",
+      "email": "rianogallagher@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

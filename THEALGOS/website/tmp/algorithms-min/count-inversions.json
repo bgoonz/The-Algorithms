@@ -1,0 +1,16 @@
+{
+  "slug": "count-inversions",
+  "name": "Count Inversions",
+  "categories": ["sorts"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Rakshit Raj",
+      "email": "rraj.rakshit@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

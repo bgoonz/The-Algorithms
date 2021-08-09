@@ -1,0 +1,21 @@
+{
+  "slug": "hextodecimal",
+  "name": "HexToDecimal",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Conversions/HexToDecimal.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Conversions/HexToDecimal.js",
+      "code": "<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">hexToInt</span> (hexNum) {\n  <span class=\"hljs-keyword\">const</span> numArr = hexNum.<span class=\"hljs-title function_\">split</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>) <span class=\"hljs-comment\">// converts number to array</span>\n  numArr.<span class=\"hljs-title function_\">map</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">item, index</span>) =&gt;</span> {\n    <span class=\"hljs-keyword\">if</span> (!(item &gt; <span class=\"hljs-number\">0</span>)) {\n      <span class=\"hljs-keyword\">switch</span> (item) {\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;A&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">10</span>)\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;B&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">11</span>)\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;C&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">12</span>)\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;D&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">13</span>)\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;E&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">14</span>)\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">&#x27;F&#x27;</span>: <span class=\"hljs-keyword\">return</span> (numArr[index] = <span class=\"hljs-number\">15</span>)\n      }\n    } <span class=\"hljs-keyword\">else</span> numArr[index] = <span class=\"hljs-built_in\">parseInt</span>(item)\n  })\n  <span class=\"hljs-keyword\">return</span> numArr <span class=\"hljs-comment\">// returns an array only with integer numbers</span>\n}\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">hexToDecimal</span> (hexNum) {\n  <span class=\"hljs-keyword\">const</span> intItemsArr = <span class=\"hljs-title function_\">hexToInt</span>(hexNum)\n  <span class=\"hljs-keyword\">return</span> intItemsArr.<span class=\"hljs-title function_\">reduce</span>(<span class=\"hljs-function\">(<span class=\"hljs-params\">accumulator, current, index</span>) =&gt;</span> {\n    <span class=\"hljs-keyword\">return</span> accumulator + (current * <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">pow</span>(<span class=\"hljs-number\">16</span>, (intItemsArr.<span class=\"hljs-property\">length</span> - (<span class=\"hljs-number\">1</span> + index))))\n  }, <span class=\"hljs-number\">0</span>)\n}\n\n<span class=\"hljs-comment\">// test cases</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">hexToDecimal</span>(<span class=\"hljs-string\">&#x27;5DE9A&#x27;</span>)) <span class=\"hljs-comment\">// 384666</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">hexToDecimal</span>(<span class=\"hljs-string\">&#x27;3D&#x27;</span>)) <span class=\"hljs-comment\">// 61</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Higor Castilho",
+      "email": "castilhohf@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

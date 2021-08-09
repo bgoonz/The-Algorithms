@@ -1,0 +1,43 @@
+{
+  "slug": "octaltohexadecimal",
+  "name": "OctalToHexadecimal",
+  "categories": ["conversions"],
+  "implementations": {
+    "java": "",
+    "c": "",
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vishnu",
+      "email": "vishnupothan2@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "The-TJ",
+      "email": "32796932+The-TJ@users.noreply.github.com",
+      "commits": 3
+    },
+    {
+      "name": "Rachit Bhalla",
+      "email": "rachitbhalla1998@gmail.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "multiple-linear-regression",
+  "name": "Multiple Linear Regression",
+  "categories": ["regressionalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Regression-Algorithms/multiple_linear_regression.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Regression-Algorithms/multiple_linear_regression.R",
+      "code": "<span class=\"hljs-comment\"># Introduction to multiple linear regression</span>\n\n<span class=\"hljs-comment\"># lm stands for Linear Model</span>\n<span class=\"hljs-comment\"># y_data are modeled as a.x1 + b.x2 + c.x3 + d.x4 + e</span>\nmod3 <span class=\"hljs-operator\">&lt;-</span> lm<span class=\"hljs-punctuation\">(</span>y_data<span class=\"hljs-operator\">~</span>x1_data<span class=\"hljs-operator\">+</span>x2_data<span class=\"hljs-operator\">+</span>x3_data<span class=\"hljs-operator\">+</span>x4_data<span class=\"hljs-punctuation\">,</span> data<span class=\"hljs-operator\">=</span>name_of_the_dataframe<span class=\"hljs-punctuation\">)</span>\n\n<span class=\"hljs-comment\"># displays the output of the model computed by the previous line</span>\nsummary<span class=\"hljs-punctuation\">(</span>mod3<span class=\"hljs-punctuation\">)</span>\n\n<span class=\"hljs-comment\"># modeled data : it predicts the output for x_test_data as input information for the model</span>\npredicted <span class=\"hljs-operator\">&lt;-</span> predict<span class=\"hljs-punctuation\">(</span>mod3<span class=\"hljs-punctuation\">,</span> x1_test_data<span class=\"hljs-punctuation\">,</span> x2_test_data<span class=\"hljs-punctuation\">,</span> x3_test_data<span class=\"hljs-punctuation\">,</span> x4_test_data<span class=\"hljs-punctuation\">)</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "RAFAELDEV2016",
+      "email": "rafael.dev2016@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

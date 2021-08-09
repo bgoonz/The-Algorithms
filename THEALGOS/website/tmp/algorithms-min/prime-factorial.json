@@ -1,0 +1,10 @@
+{
+  "slug": "prime-factorial",
+  "name": "Prime Factorial",
+  "categories": ["math"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

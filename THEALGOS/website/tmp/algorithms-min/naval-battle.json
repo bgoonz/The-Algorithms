@@ -1,0 +1,16 @@
+{
+  "slug": "naval-battle",
+  "name": "Naval Battle",
+  "categories": ["games"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Carlos",
+      "email": "carlosoftwar@gmail.com",
+      "commits": 14
+    }
+  ],
+  "explanationUrl": {}
+}

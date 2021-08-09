@@ -1,0 +1,26 @@
+{
+  "slug": "almost-palindrome-checker",
+  "name": "Almost Palindrome Checker",
+  "categories": ["datastructures", "array", "strings"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/arrays/strings/almost_palindrome_checker.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/arrays/strings/almost_palindrome_checker.rb",
+      "code": "<span class=\"hljs-comment\"># Challenge name: Almost Palindrome</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Given a string s, return true if the s can be palindrome after deleting at most one character from it.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 1:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;aba&quot;</span>\n<span class=\"hljs-comment\"># Output: true</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 2:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;abca&quot;</span>\n<span class=\"hljs-comment\"># Output: true</span>\n<span class=\"hljs-comment\"># Explanation: You could delete the character &#x27;c&#x27;.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 3:</span>\n<span class=\"hljs-comment\"># Input: s = &quot;abc&quot;</span>\n<span class=\"hljs-comment\"># Output: false</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Constraints:</span>\n<span class=\"hljs-comment\"># 1 &lt;= s.length &lt;= 105</span>\n<span class=\"hljs-comment\"># s consists of lowercase English letters.</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 1: Two Pointers</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-comment\"># Complexity Analysis:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time Complexity: O(n)</span>\n<span class=\"hljs-comment\"># Space Complexity: O(1)</span>\n\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">almost_palindrome_checker</span><span class=\"hljs-params\">(string)</span></span>\n  p1 = <span class=\"hljs-number\">0</span>\n  p2 = string.length - <span class=\"hljs-number\">1</span>\n  array = string.split(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n\n  <span class=\"hljs-keyword\">while</span> p1 &lt; p2\n    <span class=\"hljs-keyword\">if</span> array[p1] != array[p2]\n      <span class=\"hljs-keyword\">return</span> palindrome_checker(array, p1, p2 - <span class=\"hljs-number\">1</span>) <span class=\"hljs-params\">||</span> palindrome_checker(array, p1 + <span class=\"hljs-number\">1</span>, p2)\n    <span class=\"hljs-keyword\">end</span>\n    p1 += <span class=\"hljs-number\">1</span>\n    p2 -= <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  <span class=\"hljs-literal\">true</span>\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">palindrome_checker</span><span class=\"hljs-params\">(array, p1, p2)</span></span>\n  <span class=\"hljs-keyword\">while</span> p1 &lt; p2\n    <span class=\"hljs-keyword\">if</span> array[p1] != array[p2]\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n    <span class=\"hljs-keyword\">end</span>\n    p1 += <span class=\"hljs-number\">1</span>\n    p2 -= <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">end</span>\n\n  <span class=\"hljs-literal\">true</span>\n<span class=\"hljs-keyword\">end</span>\n\nputs almost_palindrome_checker(<span class=\"hljs-string\">&#x27;aba&#x27;</span>)\n<span class=\"hljs-comment\"># =&gt; true</span>\n\nputs almost_palindrome_checker(<span class=\"hljs-string\">&#x27;abca&#x27;</span>)\n<span class=\"hljs-comment\"># =&gt; true</span>\n\nputs almost_palindrome_checker(<span class=\"hljs-string\">&#x27;abc&#x27;</span>)\n<span class=\"hljs-comment\"># =&gt; false</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

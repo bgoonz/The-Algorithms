@@ -1,0 +1,46 @@
+{
+  "slug": "word-patterns",
+  "name": "Word Patterns",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/word_patterns.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/word_patterns.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get_word_pattern</span>(<span class=\"hljs-params\">word: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; get_word_pattern(&quot;pattern&quot;)\n    &#x27;0.1.2.2.3.4.5&#x27;\n    &gt;&gt;&gt; get_word_pattern(&quot;word pattern&quot;)\n    &#x27;0.1.2.3.4.5.6.7.7.8.2.9&#x27;\n    &gt;&gt;&gt; get_word_pattern(&quot;get word pattern&quot;)\n    &#x27;0.1.2.3.4.5.6.7.3.8.9.2.2.1.6.10&#x27;\n    &quot;&quot;&quot;</span>\n    word = word.upper()\n    next_num = <span class=\"hljs-number\">0</span>\n    letter_nums = {}\n    word_pattern = []\n\n    <span class=\"hljs-keyword\">for</span> letter <span class=\"hljs-keyword\">in</span> word:\n        <span class=\"hljs-keyword\">if</span> letter <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> letter_nums:\n            letter_nums[letter] = <span class=\"hljs-built_in\">str</span>(next_num)\n            next_num += <span class=\"hljs-number\">1</span>\n        word_pattern.append(letter_nums[letter])\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;.&quot;</span>.join(word_pattern)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> pprint\n    <span class=\"hljs-keyword\">import</span> time\n\n    start_time = time.time()\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;dictionary.txt&quot;</span>) <span class=\"hljs-keyword\">as</span> in_file:\n        wordList = in_file.read().splitlines()\n\n    all_patterns = {}\n    <span class=\"hljs-keyword\">for</span> word <span class=\"hljs-keyword\">in</span> wordList:\n        pattern = get_word_pattern(word)\n        <span class=\"hljs-keyword\">if</span> pattern <span class=\"hljs-keyword\">in</span> all_patterns:\n            all_patterns[pattern].append(word)\n        <span class=\"hljs-keyword\">else</span>:\n            all_patterns[pattern] = [word]\n\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;word_patterns.txt&quot;</span>, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> out_file:\n        out_file.write(pprint.pformat(all_patterns))\n\n    totalTime = <span class=\"hljs-built_in\">round</span>(time.time() - start_time, <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Done!  <span class=\"hljs-subst\">{<span class=\"hljs-built_in\">len</span>(all_patterns):,}</span> word patterns found in <span class=\"hljs-subst\">{totalTime}</span> seconds.&quot;</span>)\n    <span class=\"hljs-comment\"># Done!  9,581 word patterns found in 0.58 seconds.</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "edawine",
+      "email": "sutanto.maxedwin@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

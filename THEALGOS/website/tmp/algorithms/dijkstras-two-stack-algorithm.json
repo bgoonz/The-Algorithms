@@ -1,0 +1,26 @@
+{
+  "slug": "dijkstras-two-stack-algorithm",
+  "name": "Dijkstras Two Stack Algorithm",
+  "categories": ["datastructures", "stacks"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/stacks/dijkstras_two_stack_algorithm.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/stacks/dijkstras_two_stack_algorithm.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nAuthor: Alexander Joslin\nGitHub: github.com/echoaj\n\nExplanation:  https://medium.com/@haleesammar/implemented-in-js-dijkstras-2-stack-\n              algorithm-for-evaluating-mathematical-expressions-fc0837dae1ea\n\nWe can use Dijkstra&#x27;s two stack algorithm to solve an equation\nsuch as: (5 + ((4 * 2) * (2 + 3)))\n\nTHESE ARE THE ALGORITHM&#x27;S RULES:\nRULE 1: Scan the expression from left to right. When an operand is encountered,\n        push it onto the the operand stack.\n\nRULE 2: When an operator is encountered in the expression,\n        push it onto the operator stack.\n\nRULE 3: When a left parenthesis is encountered in the expression, ignore it.\n\nRULE 4: When a right parenthesis is encountered in the expression,\n        pop an operator off the operator stack.  The two operands it must\n        operate on must be the last two operands pushed onto the operand stack.\n        We therefore pop the operand stack twice, perform the operation,\n        and push the result back onto the operand stack so it will be available\n        for use as an operand of the next operator popped off the operator stack.\n\nRULE 5: When the entire infix expression has been scanned, the value left on\n        the operand stack represents the value of the expression.\n\nNOTE:   It only works with whole numbers.\n&quot;&quot;&quot;</span>\n__author__ = <span class=\"hljs-string\">&quot;Alexander Joslin&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> operator <span class=\"hljs-keyword\">as</span> op\n\n<span class=\"hljs-keyword\">from</span> .stack <span class=\"hljs-keyword\">import</span> Stack\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">dijkstras_two_stack_algorithm</span>(<span class=\"hljs-params\">equation: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    DocTests\n    &gt;&gt;&gt; dijkstras_two_stack_algorithm(&quot;(5 + 3)&quot;)\n    8\n    &gt;&gt;&gt; dijkstras_two_stack_algorithm(&quot;((9 - (2 + 9)) + (8 - 1))&quot;)\n    5\n    &gt;&gt;&gt; dijkstras_two_stack_algorithm(&quot;((((3 - 2) - (2 + 3)) + (2 - 4)) + 3)&quot;)\n    -3\n\n    :param equation: a string\n    :return: result: an integer\n    &quot;&quot;&quot;</span>\n    operators = {<span class=\"hljs-string\">&quot;*&quot;</span>: op.mul, <span class=\"hljs-string\">&quot;/&quot;</span>: op.truediv, <span class=\"hljs-string\">&quot;+&quot;</span>: op.add, <span class=\"hljs-string\">&quot;-&quot;</span>: op.sub}\n\n    operand_stack = Stack()\n    operator_stack = Stack()\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> equation:\n        <span class=\"hljs-keyword\">if</span> i.isdigit():\n            <span class=\"hljs-comment\"># RULE 1</span>\n            operand_stack.push(<span class=\"hljs-built_in\">int</span>(i))\n        <span class=\"hljs-keyword\">elif</span> i <span class=\"hljs-keyword\">in</span> operators:\n            <span class=\"hljs-comment\"># RULE 2</span>\n            operator_stack.push(i)\n        <span class=\"hljs-keyword\">elif</span> i == <span class=\"hljs-string\">&quot;)&quot;</span>:\n            <span class=\"hljs-comment\"># RULE 4</span>\n            opr = operator_stack.peek()\n            operator_stack.pop()\n            num1 = operand_stack.peek()\n            operand_stack.pop()\n            num2 = operand_stack.peek()\n            operand_stack.pop()\n\n            total = operators[opr](num2, num1)\n            operand_stack.push(total)\n\n    <span class=\"hljs-comment\"># RULE 5</span>\n    <span class=\"hljs-keyword\">return</span> operand_stack.peek()\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    equation = <span class=\"hljs-string\">&quot;(5 + ((4 * 2) * (2 + 3)))&quot;</span>\n    <span class=\"hljs-comment\"># answer = 45</span>\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{equation}</span> = <span class=\"hljs-subst\">{dijkstras_two_stack_algorithm(equation)}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Alex Joslin",
+      "email": "aljoslin13@yahoo.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

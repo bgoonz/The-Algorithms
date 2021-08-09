@@ -1,0 +1,16 @@
+{
+  "slug": "quick-sort-3",
+  "name": "Quick Sort 3",
+  "categories": ["sorts"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

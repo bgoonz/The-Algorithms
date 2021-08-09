@@ -1,0 +1,10 @@
+{
+  "slug": "hash-sdbm",
+  "name": "Hash Sdbm",
+  "categories": ["hashing"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "receive-file",
+  "name": "Receive File",
+  "categories": ["filetransfer"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

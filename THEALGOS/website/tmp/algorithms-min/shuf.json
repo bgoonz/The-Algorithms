@@ -1,0 +1,16 @@
+{
+  "slug": "shuf",
+  "name": "Shuf",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "MarkSFrancis",
+      "email": "mrkfrancis8@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

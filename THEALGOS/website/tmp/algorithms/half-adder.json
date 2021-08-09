@@ -1,0 +1,26 @@
+{
+  "slug": "half-adder",
+  "name": "Half Adder",
+  "categories": ["quantum"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "quantum/half_adder.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/quantum/half_adder.py",
+      "code": "<span class=\"hljs-comment\">#!/usr/bin/env python3</span>\n<span class=\"hljs-string\">&quot;&quot;&quot;\nBuild a half-adder quantum circuit that takes two bits as input,\nencodes them into qubits, then runs the half-adder circuit calculating\nthe sum and carry qubits, observed over 1000 runs of the experiment\n.\n\nReferences:\nhttps://en.wikipedia.org/wiki/Adder_(electronics)\nhttps://qiskit.org/textbook/ch-states/atoms-computation.html#4.2-Remembering-how-to-add-\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> qiskit <span class=\"hljs-keyword\">as</span> q\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">half_adder</span>(<span class=\"hljs-params\">bit0: <span class=\"hljs-built_in\">int</span>, bit1: <span class=\"hljs-built_in\">int</span></span>) -&gt; q.result.counts.Counts:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; half_adder(0, 0)\n    {&#x27;00&#x27;: 1000}\n    &gt;&gt;&gt; half_adder(0, 1)\n    {&#x27;01&#x27;: 1000}\n    &gt;&gt;&gt; half_adder(1, 0)\n    {&#x27;01&#x27;: 1000}\n    &gt;&gt;&gt; half_adder(1, 1)\n    {&#x27;10&#x27;: 1000}\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># Use Aer&#x27;s qasm_simulator</span>\n    simulator = q.Aer.get_backend(<span class=\"hljs-string\">&quot;qasm_simulator&quot;</span>)\n\n    qc_ha = q.QuantumCircuit(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-comment\"># encode inputs in qubits 0 and 1</span>\n    <span class=\"hljs-keyword\">if</span> bit0 == <span class=\"hljs-number\">1</span>:\n        qc_ha.x(<span class=\"hljs-number\">0</span>)\n    <span class=\"hljs-keyword\">if</span> bit1 == <span class=\"hljs-number\">1</span>:\n        qc_ha.x(<span class=\"hljs-number\">1</span>)\n    qc_ha.barrier()\n\n    <span class=\"hljs-comment\"># use cnots to write XOR of the inputs on qubit2</span>\n    qc_ha.cx(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>)\n    qc_ha.cx(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>)\n\n    <span class=\"hljs-comment\"># use ccx / toffoli gate to write AND of the inputs on qubit3</span>\n    qc_ha.ccx(<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>)\n    qc_ha.barrier()\n\n    <span class=\"hljs-comment\"># extract outputs</span>\n    qc_ha.measure(<span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">0</span>)  <span class=\"hljs-comment\"># extract XOR value</span>\n    qc_ha.measure(<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">1</span>)  <span class=\"hljs-comment\"># extract AND value</span>\n\n    <span class=\"hljs-comment\"># Execute the circuit on the qasm simulator</span>\n    job = q.execute(qc_ha, simulator, shots=<span class=\"hljs-number\">1000</span>)\n\n    <span class=\"hljs-comment\"># Return the histogram data of the results of the experiment.</span>\n    <span class=\"hljs-keyword\">return</span> job.result().get_counts(qc_ha)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    counts = half_adder(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Half Adder Output Qubit Counts: <span class=\"hljs-subst\">{counts}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhishek Jaisingh",
+      "email": "abhi2254015@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

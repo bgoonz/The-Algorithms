@@ -1,0 +1,26 @@
+{
+  "slug": "carray",
+  "name": "Carray",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Ravi Shankar Reddy B",
+      "email": "ravishankarbommana@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "A Silent Cat",
+      "email": "silentcat@protonmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Leonardo",
+      "email": "lvenk26@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

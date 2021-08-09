@@ -1,0 +1,16 @@
+{
+  "slug": "get-size-of-linked-list",
+  "name": "Get Size of Linked List",
+  "categories": ["operationsondatastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "floan",
+      "email": "floan@usc.edu",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

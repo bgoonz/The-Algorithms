@@ -1,0 +1,56 @@
+{
+  "slug": "max-sub-array",
+  "name": "Max Sub Array",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/max_sub_array.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/max_sub_array.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nauthor : Mayank Kumar Jha (mk9440)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">find_max_sub_array</span>(<span class=\"hljs-params\">A, low, high</span>):\n    <span class=\"hljs-keyword\">if</span> low == high:\n        <span class=\"hljs-keyword\">return</span> low, high, A[low]\n    <span class=\"hljs-keyword\">else</span>:\n        mid = (low + high) // <span class=\"hljs-number\">2</span>\n        left_low, left_high, left_sum = find_max_sub_array(A, low, mid)\n        right_low, right_high, right_sum = find_max_sub_array(A, mid + <span class=\"hljs-number\">1</span>, high)\n        cross_left, cross_right, cross_sum = find_max_cross_sum(A, low, mid, high)\n        <span class=\"hljs-keyword\">if</span> left_sum &gt;= right_sum <span class=\"hljs-keyword\">and</span> left_sum &gt;= cross_sum:\n            <span class=\"hljs-keyword\">return</span> left_low, left_high, left_sum\n        <span class=\"hljs-keyword\">elif</span> right_sum &gt;= left_sum <span class=\"hljs-keyword\">and</span> right_sum &gt;= cross_sum:\n            <span class=\"hljs-keyword\">return</span> right_low, right_high, right_sum\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-keyword\">return</span> cross_left, cross_right, cross_sum\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">find_max_cross_sum</span>(<span class=\"hljs-params\">A, low, mid, high</span>):\n    left_sum, max_left = -<span class=\"hljs-number\">999999999</span>, -<span class=\"hljs-number\">1</span>\n    right_sum, max_right = -<span class=\"hljs-number\">999999999</span>, -<span class=\"hljs-number\">1</span>\n    summ = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(mid, low - <span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">1</span>):\n        summ += A[i]\n        <span class=\"hljs-keyword\">if</span> summ &gt; left_sum:\n            left_sum = summ\n            max_left = i\n    summ = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(mid + <span class=\"hljs-number\">1</span>, high + <span class=\"hljs-number\">1</span>):\n        summ += A[i]\n        <span class=\"hljs-keyword\">if</span> summ &gt; right_sum:\n            right_sum = summ\n            max_right = i\n    <span class=\"hljs-keyword\">return</span> max_left, max_right, (left_sum + right_sum)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">max_sub_array</span>(<span class=\"hljs-params\">nums: <span class=\"hljs-built_in\">list</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Finds the contiguous subarray which has the largest sum and return its sum.\n\n    &gt;&gt;&gt; max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4])\n    6\n\n    An empty (sub)array has sum 0.\n    &gt;&gt;&gt; max_sub_array([])\n    0\n\n    If all elements are negative, the largest subarray would be the empty array,\n    having the sum 0.\n    &gt;&gt;&gt; max_sub_array([-1, -2, -3])\n    0\n    &gt;&gt;&gt; max_sub_array([5, -2, -3])\n    5\n    &gt;&gt;&gt; max_sub_array([31, -41, 59, 26, -53, 58, 97, -93, -23, 84])\n    187\n    &quot;&quot;&quot;</span>\n    best = <span class=\"hljs-number\">0</span>\n    current = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> nums:\n        current += i\n        <span class=\"hljs-keyword\">if</span> current &lt; <span class=\"hljs-number\">0</span>:\n            current = <span class=\"hljs-number\">0</span>\n        best = <span class=\"hljs-built_in\">max</span>(best, current)\n    <span class=\"hljs-keyword\">return</span> best\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    A random simulation of this algorithm.\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">import</span> time\n    <span class=\"hljs-keyword\">from</span> random <span class=\"hljs-keyword\">import</span> randint\n\n    <span class=\"hljs-keyword\">from</span> matplotlib <span class=\"hljs-keyword\">import</span> pyplot <span class=\"hljs-keyword\">as</span> plt\n\n    inputs = [<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">100</span>, <span class=\"hljs-number\">1000</span>, <span class=\"hljs-number\">10000</span>, <span class=\"hljs-number\">50000</span>, <span class=\"hljs-number\">100000</span>, <span class=\"hljs-number\">200000</span>, <span class=\"hljs-number\">300000</span>, <span class=\"hljs-number\">400000</span>, <span class=\"hljs-number\">500000</span>]\n    tim = []\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> inputs:\n        li = [randint(<span class=\"hljs-number\">1</span>, i) <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(i)]\n        strt = time.time()\n        (find_max_sub_array(li, <span class=\"hljs-number\">0</span>, <span class=\"hljs-built_in\">len</span>(li) - <span class=\"hljs-number\">1</span>))\n        end = time.time()\n        tim.append(end - strt)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;No of Inputs       Time Taken&quot;</span>)\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(inputs)):\n        <span class=\"hljs-built_in\">print</span>(inputs[i], <span class=\"hljs-string\">&quot;\\t\\t&quot;</span>, tim[i])\n    plt.plot(inputs, tim)\n    plt.xlabel(<span class=\"hljs-string\">&quot;Number of Inputs&quot;</span>)\n    plt.ylabel(<span class=\"hljs-string\">&quot;Time taken in seconds &quot;</span>)\n    plt.show()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ashwek Swamy",
+      "email": "39827514+ashwek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mayank Kumar Jha",
+      "email": "mk9440@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sanders Lin",
+      "email": "45224617+SandersLin@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

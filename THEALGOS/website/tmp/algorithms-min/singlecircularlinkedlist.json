@@ -1,0 +1,16 @@
+{
+  "slug": "singlecircularlinkedlist",
+  "name": "SingleCircularLinkedList",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "parhan",
+      "email": "57286339+apriliandi246@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

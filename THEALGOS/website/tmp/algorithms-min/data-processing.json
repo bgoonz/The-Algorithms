@@ -1,0 +1,10 @@
+{
+  "slug": "data-processing",
+  "name": "Data Processing",
+  "categories": ["datapreprocessing"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

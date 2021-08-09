@@ -1,0 +1,16 @@
+{
+  "slug": "permutationandcombination",
+  "name": "PermutationAndCombination",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Shreyas Sable",
+      "email": "72278840+Shreyas-OwO@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

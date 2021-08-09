@@ -1,0 +1,10 @@
+{
+  "slug": "lcm-sum",
+  "name": "Lcm Sum",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

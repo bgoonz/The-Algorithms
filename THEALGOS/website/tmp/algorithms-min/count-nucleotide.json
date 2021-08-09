@@ -1,0 +1,21 @@
+{
+  "slug": "count-nucleotide",
+  "name": "Count Nucleotide",
+  "categories": ["projectrosalind"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

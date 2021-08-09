@@ -1,0 +1,16 @@
+{
+  "slug": "recursive-traversals",
+  "name": "Recursive Traversals",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Naman Bhalla",
+      "email": "namanbhalla1998@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

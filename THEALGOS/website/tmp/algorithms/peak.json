@@ -1,0 +1,21 @@
+{
+  "slug": "peak",
+  "name": "Peak",
+  "categories": ["divideandconquer"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "divide_and_conquer/peak.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/divide_and_conquer/peak.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nFinding the peak of a unimodal list using divide and conquer.\nA unimodal array is defined as follows: array is increasing up to index p,\nthen decreasing afterwards. (for p &gt;= 1)\nAn obvious solution can be performed in O(n),\nto find the maximum of the array.\n(From Kleinberg and Tardos. Algorithm Design.\nAddison Wesley 2006: Chapter 5 Solved Exercise 1)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">peak</span>(<span class=\"hljs-params\">lst: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>]</span>) -&gt; <span class=\"hljs-built_in\">int</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Return the peak value of `lst`.\n    &gt;&gt;&gt; peak([1, 2, 3, 4, 5, 4, 3, 2, 1])\n    5\n    &gt;&gt;&gt; peak([1, 10, 9, 8, 7, 6, 5, 4])\n    10\n    &gt;&gt;&gt; peak([1, 9, 8, 7])\n    9\n    &gt;&gt;&gt; peak([1, 2, 3, 4, 5, 6, 7, 0])\n    7\n    &gt;&gt;&gt; peak([1, 2, 3, 4, 3, 2, 1, 0, -1, -2])\n    4\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># middle index</span>\n    m = <span class=\"hljs-built_in\">len</span>(lst) // <span class=\"hljs-number\">2</span>\n\n    <span class=\"hljs-comment\"># choose the middle 3 elements</span>\n    three = lst[m - <span class=\"hljs-number\">1</span> : m + <span class=\"hljs-number\">2</span>]\n\n    <span class=\"hljs-comment\"># if middle element is peak</span>\n    <span class=\"hljs-keyword\">if</span> three[<span class=\"hljs-number\">1</span>] &gt; three[<span class=\"hljs-number\">0</span>] <span class=\"hljs-keyword\">and</span> three[<span class=\"hljs-number\">1</span>] &gt; three[<span class=\"hljs-number\">2</span>]:\n        <span class=\"hljs-keyword\">return</span> three[<span class=\"hljs-number\">1</span>]\n\n    <span class=\"hljs-comment\"># if increasing, recurse on right</span>\n    <span class=\"hljs-keyword\">elif</span> three[<span class=\"hljs-number\">0</span>] &lt; three[<span class=\"hljs-number\">2</span>]:\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(lst[:m]) == <span class=\"hljs-number\">2</span>:\n            m -= <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">return</span> peak(lst[m:])\n\n    <span class=\"hljs-comment\"># decreasing</span>\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(lst[:m]) == <span class=\"hljs-number\">2</span>:\n            m += <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">return</span> peak(lst[:m])\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Cho Yin Yong",
+      "email": "choyiny@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "k-means-clust",
+  "name": "K Means Clust",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "BAKEZQ",
+      "email": "zhongquan789@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "beqakd",
+      "email": "39763019+beqakd@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "Anurag Kumar",
+      "email": "anuragkumarak95@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 6
+    }
+  ],
+  "explanationUrl": {}
+}

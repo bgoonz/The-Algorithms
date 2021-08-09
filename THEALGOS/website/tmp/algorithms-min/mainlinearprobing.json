@@ -1,0 +1,16 @@
+{
+  "slug": "mainlinearprobing",
+  "name": "MainLinearProbing",
+  "categories": ["datastructures", "hashmap", "hashing"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

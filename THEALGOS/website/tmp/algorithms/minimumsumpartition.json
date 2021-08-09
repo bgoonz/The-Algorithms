@@ -1,0 +1,41 @@
+{
+  "slug": "minimumsumpartition",
+  "name": "MinimumSumPartition",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DynamicProgramming/MinimumSumPartition.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DynamicProgramming/MinimumSumPartition.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DynamicProgramming;\n<span class=\"hljs-comment\">// Partition a set into two subsets such that the difference of subset sums is minimum</span>\n\n<span class=\"hljs-comment\">/*\nInput:  arr[] = {1, 6, 11, 5}\nOutput: 1\nExplanation:\nSubset1 = {1, 5, 6}, sum of Subset1 = 12\nSubset2 = {11}, sum of Subset2 = 11\n\nInput:  arr[] = {36, 7, 46, 40}\nOutput: 23\nExplanation:\nSubset1 = {7, 46} ;  sum of Subset1 = 53\nSubset2 = {36, 40} ; sum of Subset2  = 76\n */</span>\n\n<span class=\"hljs-keyword\">import</span> java.io.*;\n<span class=\"hljs-keyword\">import</span> java.util.*;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">MinimumSumPartition</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">subSet</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>[] arr)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">n</span> <span class=\"hljs-operator\">=</span> arr.length;\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">sum</span> <span class=\"hljs-operator\">=</span> getSum(arr);\n    <span class=\"hljs-type\">boolean</span>[][] dp = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">boolean</span>[n + <span class=\"hljs-number\">1</span>][sum + <span class=\"hljs-number\">1</span>];\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt;= n; i++) {\n      dp[i][<span class=\"hljs-number\">0</span>] = <span class=\"hljs-literal\">true</span>;\n    }\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; j &lt;= sum; j++) {\n      dp[<span class=\"hljs-number\">0</span>][j] = <span class=\"hljs-literal\">false</span>;\n    }\n\n    <span class=\"hljs-comment\">// fill dp array</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; i &lt;= n; i++) {\n      <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; j &lt;= sum; j++) {\n        <span class=\"hljs-keyword\">if</span> (arr[i - <span class=\"hljs-number\">1</span>] &lt; j) {\n          dp[i][j] = dp[i - <span class=\"hljs-number\">1</span>][j - arr[i - <span class=\"hljs-number\">1</span>]] || dp[i - <span class=\"hljs-number\">1</span>][j];\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (arr[i - <span class=\"hljs-number\">1</span>] == j) {\n          dp[i][j] = <span class=\"hljs-literal\">true</span>;\n        } <span class=\"hljs-keyword\">else</span> {\n          dp[i][j] = dp[i - <span class=\"hljs-number\">1</span>][j];\n        }\n      }\n    }\n\n    <span class=\"hljs-comment\">// fill the index array</span>\n    <span class=\"hljs-type\">int</span>[] index = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">int</span>[sum];\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">p</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; i &lt;= sum / <span class=\"hljs-number\">2</span>; i++) {\n      <span class=\"hljs-keyword\">if</span> (dp[n][i]) {\n        index[p++] = i;\n      }\n    }\n\n    <span class=\"hljs-keyword\">return</span> getMin(index, sum);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Calculate sum of array elements\n   *\n   * <span class=\"hljs-doctag\">@param</span> arr the array\n   * <span class=\"hljs-doctag\">@return</span> sum of given array\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">getSum</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>[] arr)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">sum</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> temp : arr) {\n      sum += temp;\n    }\n    <span class=\"hljs-keyword\">return</span> sum;\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">getMin</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>[] arr, <span class=\"hljs-type\">int</span> sum)</span> {\n    <span class=\"hljs-keyword\">if</span> (arr.length == <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n    }\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">min</span> <span class=\"hljs-operator\">=</span> Integer.MAX_VALUE;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> temp : arr) {\n      min = Math.min(min, sum - <span class=\"hljs-number\">2</span> * temp);\n    }\n    <span class=\"hljs-keyword\">return</span> min;\n  }\n\n  <span class=\"hljs-comment\">/** Driver Code */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">subSet</span><span class=\"hljs-params\">(new <span class=\"hljs-type\">int</span>[] {<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">11</span>, <span class=\"hljs-number\">5</span>})</span> == <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">subSet</span><span class=\"hljs-params\">(new <span class=\"hljs-type\">int</span>[] {<span class=\"hljs-number\">36</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">46</span>, <span class=\"hljs-number\">40</span>})</span> == <span class=\"hljs-number\">23</span>;\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">subSet</span><span class=\"hljs-params\">(new <span class=\"hljs-type\">int</span>[] {<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">9</span>})</span> == <span class=\"hljs-number\">3</span>;\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "NorthernBrain",
+      "email": "ofmyhub@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hrishikesh Padhye",
+      "email": "hrishikesh.padhye@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Swati Prajapati",
+      "email": "42577922+swatiprajapati08@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "tribbleofjim",
+      "email": "44364697+tribbleofjim@users.noreply.github.com",
+      "commits": 11
+    }
+  ],
+  "explanationUrl": {}
+}

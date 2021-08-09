@@ -1,0 +1,26 @@
+{
+  "slug": "singly-link-list-deletion",
+  "name": "Singly Link List Deletion",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Suraj Patil",
+      "email": "srpatil@uci.edu",
+      "commits": 1
+    },
+    {
+      "name": "Rupeshiya",
+      "email": "31209617+Rupeshiya@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "“prakamya-mishra”",
+      "email": "“prakamya0608@gmail.com”",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

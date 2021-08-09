@@ -1,0 +1,16 @@
+{
+  "slug": "breadthfirsttreetraversal",
+  "name": "BreadthFirstTreeTraversal",
+  "categories": ["tree"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Gerardo A. Abantao Jr",
+      "email": "gaabantao1@up.edu.ph",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

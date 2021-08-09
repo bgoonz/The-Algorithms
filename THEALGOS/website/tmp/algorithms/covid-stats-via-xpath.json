@@ -1,0 +1,26 @@
+{
+  "slug": "covid-stats-via-xpath",
+  "name": "Covid Stats via Xpath",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/covid_stats_via_xpath.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/covid_stats_via_xpath.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nThis is to show simple COVID19 info fetching from worldometers site using lxml\n* The main motivation to use lxml in place of bs4 is that it is faster and therefore\nmore convenient to use in Python web projects (e.g. Django or Flask-based)\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> namedtuple\n\n<span class=\"hljs-keyword\">import</span> requests\n<span class=\"hljs-keyword\">from</span> lxml <span class=\"hljs-keyword\">import</span> html  <span class=\"hljs-comment\"># type: ignore</span>\n\ncovid_data = namedtuple(<span class=\"hljs-string\">&quot;covid_data&quot;</span>, <span class=\"hljs-string\">&quot;cases deaths recovered&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">covid_stats</span>(<span class=\"hljs-params\">url: <span class=\"hljs-built_in\">str</span> = <span class=\"hljs-string\">&quot;https://www.worldometers.info/coronavirus/&quot;</span></span>) -&gt; covid_data:\n    xpath_str = <span class=\"hljs-string\">&#x27;//div[@class = &quot;maincounter-number&quot;]/span/text()&#x27;</span>\n    <span class=\"hljs-keyword\">return</span> covid_data(*html.fromstring(requests.get(url).content).xpath(xpath_str))\n\n\nfmt = <span class=\"hljs-string\">&quot;&quot;&quot;Total COVID-19 cases in the world: {}\nTotal deaths due to COVID-19 in the world: {}\nTotal COVID-19 patients recovered in the world: {}&quot;&quot;&quot;</span>\n<span class=\"hljs-built_in\">print</span>(fmt.<span class=\"hljs-built_in\">format</span>(*covid_stats()))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Santosh Mohan Rajkumar",
+      "email": "rajkumar.nits@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

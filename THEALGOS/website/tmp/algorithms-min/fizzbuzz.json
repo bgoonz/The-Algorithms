@@ -1,0 +1,27 @@
+{
+  "slug": "fizzbuzz",
+  "name": "FizzBuzz",
+  "categories": ["others"],
+  "implementations": {
+    "dart": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Verma",
+      "email": "50954641+sarcastic-verma@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

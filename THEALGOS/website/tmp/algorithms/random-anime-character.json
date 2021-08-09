@@ -1,0 +1,21 @@
+{
+  "slug": "random-anime-character",
+  "name": "Random Anime Character",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/random_anime_character.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/random_anime_character.py",
+      "code": "<span class=\"hljs-keyword\">import</span> os\n\n<span class=\"hljs-keyword\">import</span> requests\n<span class=\"hljs-keyword\">from</span> bs4 <span class=\"hljs-keyword\">import</span> BeautifulSoup\n<span class=\"hljs-keyword\">from</span> fake_useragent <span class=\"hljs-keyword\">import</span> UserAgent\n\nheaders = {<span class=\"hljs-string\">&quot;UserAgent&quot;</span>: UserAgent().random}\nURL = <span class=\"hljs-string\">&quot;https://www.mywaifulist.moe/random&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">save_image</span>(<span class=\"hljs-params\">image_url: <span class=\"hljs-built_in\">str</span>, image_title: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Saves the image of anime character\n    &quot;&quot;&quot;</span>\n    image = requests.get(image_url, headers=headers)\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(image_title, <span class=\"hljs-string\">&quot;wb&quot;</span>) <span class=\"hljs-keyword\">as</span> file:\n        file.write(image.content)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">random_anime_character</span>() -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">str</span>, <span class=\"hljs-built_in\">str</span>, <span class=\"hljs-built_in\">str</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Returns the Title, Description, and Image Title of a random anime character .\n    &quot;&quot;&quot;</span>\n    soup = BeautifulSoup(requests.get(URL, headers=headers).text, <span class=\"hljs-string\">&quot;html.parser&quot;</span>)\n    title = soup.find(<span class=\"hljs-string\">&quot;meta&quot;</span>, attrs={<span class=\"hljs-string\">&quot;property&quot;</span>: <span class=\"hljs-string\">&quot;og:title&quot;</span>}).attrs[<span class=\"hljs-string\">&quot;content&quot;</span>]\n    image_url = soup.find(<span class=\"hljs-string\">&quot;meta&quot;</span>, attrs={<span class=\"hljs-string\">&quot;property&quot;</span>: <span class=\"hljs-string\">&quot;og:image&quot;</span>}).attrs[<span class=\"hljs-string\">&quot;content&quot;</span>]\n    description = soup.find(<span class=\"hljs-string\">&quot;p&quot;</span>, <span class=\"hljs-built_in\">id</span>=<span class=\"hljs-string\">&quot;description&quot;</span>).get_text()\n    _, image_extension = os.path.splitext(os.path.basename(image_url))\n    image_title = title.strip().replace(<span class=\"hljs-string\">&quot; &quot;</span>, <span class=\"hljs-string\">&quot;_&quot;</span>)\n    image_title = <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{image_title}</span><span class=\"hljs-subst\">{image_extension}</span>&quot;</span>\n    save_image(image_url, image_title)\n    <span class=\"hljs-keyword\">return</span> (title, description, image_title)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    title, desc, image_title = random_anime_character()\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{title}</span>\\n\\n<span class=\"hljs-subst\">{desc}</span>\\n\\nImage saved : <span class=\"hljs-subst\">{image_title}</span>&quot;</span>)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Lucifer",
+      "email": "63491234+ashish-patwal@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

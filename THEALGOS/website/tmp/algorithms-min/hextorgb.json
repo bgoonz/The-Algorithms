@@ -1,0 +1,36 @@
+{
+  "slug": "hextorgb",
+  "name": "HexToRGB",
+  "categories": ["conversions"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Anup Kumar Panwar",
+      "email": "1anuppanwar@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "abney317",
+      "email": "abney317@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ChaymaJaziri",
+      "email": "41198550+ChaymaJaziri@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "euclidean-distance",
+  "name": "Euclidean Distance",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "r": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Hadimius",
+      "email": "j.eppli@web.de",
+      "commits": 1
+    },
+    {
+      "name": "Alex Garland",
+      "email": "alex@numinar.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrew",
+      "email": "54547089+ac-tam@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

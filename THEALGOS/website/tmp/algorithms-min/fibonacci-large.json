@@ -1,0 +1,10 @@
+{
+  "slug": "fibonacci-large",
+  "name": "Fibonacci Large",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

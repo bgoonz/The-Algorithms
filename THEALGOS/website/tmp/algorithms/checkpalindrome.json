@@ -1,0 +1,41 @@
+{
+  "slug": "checkpalindrome",
+  "name": "CheckPalindrome",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/CheckPalindrome.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/CheckPalindrome.js",
+      "code": "<span class=\"hljs-comment\">// Palindrome check is case sensitive; i.e. Aba is not a palindrome</span>\n<span class=\"hljs-comment\">// input is a string</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">checkPalindrome</span> = (<span class=\"hljs-params\">str</span>) =&gt; {\n  <span class=\"hljs-comment\">// check that input is a string</span>\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> str !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;Not a string&#x27;</span>\n  }\n  <span class=\"hljs-keyword\">if</span> (str.<span class=\"hljs-property\">length</span> === <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;Empty string&#x27;</span>\n  }\n  <span class=\"hljs-comment\">// Reverse only works with array, thus conevert the string to array, reverse it and convert back to string</span>\n  <span class=\"hljs-comment\">// return as palindrome if the reversed string is equal to the input string</span>\n  <span class=\"hljs-keyword\">const</span> reversed = [...str].<span class=\"hljs-title function_\">reverse</span>().<span class=\"hljs-title function_\">join</span>(<span class=\"hljs-string\">&#x27;&#x27;</span>)\n  <span class=\"hljs-keyword\">return</span> str === reversed ? <span class=\"hljs-string\">&#x27;Palindrome&#x27;</span> : <span class=\"hljs-string\">&#x27;Not a Palindrome&#x27;</span>\n}\n\n<span class=\"hljs-keyword\">export</span> { checkPalindrome }\n"
+    },
+    "php": {
+      "dir": "String/CheckPalindrome.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/String/CheckPalindrome.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">is_palindrome</span>(<span class=\"hljs-params\"><span class=\"hljs-keyword\">string</span> <span class=\"hljs-variable\">$string</span>, <span class=\"hljs-keyword\">bool</span> <span class=\"hljs-variable\">$caseInsensitive</span> = <span class=\"hljs-literal\">true</span></span>)\n</span>{\n    <span class=\"hljs-variable\">$string</span> = trim(<span class=\"hljs-variable\">$string</span>); <span class=\"hljs-comment\">// Removing leading and trailing spaces</span>\n\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">empty</span>(<span class=\"hljs-variable\">$string</span>)) {\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>; <span class=\"hljs-comment\">// Returning false for an Empty String</span>\n    }\n\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-variable\">$caseInsensitive</span>) {\n        <span class=\"hljs-variable\">$string</span> = strtolower(<span class=\"hljs-variable\">$string</span>); <span class=\"hljs-comment\">// Converting string to lowercase for case-insensitive check</span>\n    }\n\n    <span class=\"hljs-variable\">$characters</span> = str_split(<span class=\"hljs-variable\">$string</span>);\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-variable\">$i</span> = <span class=\"hljs-number\">0</span>; <span class=\"hljs-variable\">$i</span> &lt; count(<span class=\"hljs-variable\">$characters</span>); <span class=\"hljs-variable\">$i</span>++) {\n        <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-variable\">$characters</span>[<span class=\"hljs-variable\">$i</span>] !== <span class=\"hljs-variable\">$characters</span>[count(<span class=\"hljs-variable\">$characters</span>) - (<span class=\"hljs-variable\">$i</span> + <span class=\"hljs-number\">1</span>)]) {\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>;\n        }\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lokesh Patil",
+      "email": "43759648+IamLokesh@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Swapnil-2001",
+      "email": "53232360+Swapnil-2001@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Alexandre Xavier",
+      "email": "ale.bxsantos@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

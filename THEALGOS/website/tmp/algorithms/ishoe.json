@@ -1,0 +1,21 @@
+{
+  "slug": "ishoe",
+  "name": "Ishoe",
+  "categories": ["designpatterns", "abstractfactory"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "designpatterns/abstractfactory/ishoe.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/designpatterns/abstractfactory/ishoe.go",
+      "code": "<span class=\"hljs-keyword\">package</span> abstractfactorry\n\n<span class=\"hljs-comment\">// Abstract product</span>\n<span class=\"hljs-keyword\">type</span> iShoe <span class=\"hljs-keyword\">interface</span> {\n\tsetLogo(logo <span class=\"hljs-keyword\">string</span>)\n\tsetSize(size <span class=\"hljs-keyword\">int</span>)\n\tgetLogo() <span class=\"hljs-keyword\">string</span>\n\tgetSize() <span class=\"hljs-keyword\">int</span>\n}\n\n<span class=\"hljs-keyword\">type</span> shoe <span class=\"hljs-keyword\">struct</span> {\n\tlogo <span class=\"hljs-keyword\">string</span>\n\tsize <span class=\"hljs-keyword\">int</span>\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(s *shoe)</span> <span class=\"hljs-title\">setLogo</span><span class=\"hljs-params\">(logo <span class=\"hljs-keyword\">string</span>)</span></span> {\n\ts.logo = logo\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(s *shoe)</span> <span class=\"hljs-title\">getLogo</span><span class=\"hljs-params\">()</span> <span class=\"hljs-title\">string</span></span> {\n\t<span class=\"hljs-keyword\">return</span> s.logo\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(s *shoe)</span> <span class=\"hljs-title\">setSize</span><span class=\"hljs-params\">(size <span class=\"hljs-keyword\">int</span>)</span></span> {\n\ts.size = size\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-params\">(s *shoe)</span> <span class=\"hljs-title\">getSize</span><span class=\"hljs-params\">()</span> <span class=\"hljs-title\">int</span></span> {\n\t<span class=\"hljs-keyword\">return</span> s.size\n}"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mohamed",
+      "email": "m.abdelrhman@baianat.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "ordinary-least-squares",
+  "name": "Ordinary Least Squares",
+  "categories": ["statistics"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/statistics/ordinary_least_squares.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/statistics/ordinary_least_squares.jl",
+      "code": "<span class=\"hljs-comment\"># TODO: doc is missing</span>\n\nOLSbeta(y,x) = inv(x&#x27; * x) * (x&#x27; * y)\n\n<span class=\"hljs-comment\"># TODO: make it a doctest string</span>\n<span class=\"hljs-comment\"># a = [10, 14,17,21,20, 18, 42, 51, 77, 11, 91]</span>\n<span class=\"hljs-comment\"># b = [0.11,0.7,0.2,0.19,0.09,0.8, 0.71,0.1, 0.6,0.3,0.81]</span>\n<span class=\"hljs-comment\"># OLSbeta(a,b)</span>\n\n<span class=\"hljs-comment\"># df = DataFrame(a=a, b=b)</span>\n<span class=\"hljs-comment\"># ols = GLM.lm(@formula(a~b), df)</span>\n<span class=\"hljs-comment\"># coef(ols) # print coefficients</span>\n\n<span class=\"hljs-comment\"># # Predict</span>\n<span class=\"hljs-comment\"># predict(ols) # predict the model</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Aru Bhardwaj",
+      "email": "aru.bhardwaj01@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

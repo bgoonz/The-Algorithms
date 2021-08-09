@@ -1,0 +1,16 @@
+{
+  "slug": "power-using-recursion",
+  "name": "Power Using Recursion",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Utsav1999",
+      "email": "utsavakash123@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

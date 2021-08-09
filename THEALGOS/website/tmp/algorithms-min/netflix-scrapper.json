@@ -1,0 +1,16 @@
+{
+  "slug": "netflix-scrapper",
+  "name": "Netflix Scrapper",
+  "categories": ["automaton"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Gaurav-ECE-SVNIT",
+      "email": "gk74533@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

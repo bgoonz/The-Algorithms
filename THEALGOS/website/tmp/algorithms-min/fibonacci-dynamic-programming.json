@@ -1,0 +1,21 @@
+{
+  "slug": "fibonacci-dynamic-programming",
+  "name": "Fibonacci Dynamic Programming",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "richikchanda1999",
+      "email": "richikchanda1999@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

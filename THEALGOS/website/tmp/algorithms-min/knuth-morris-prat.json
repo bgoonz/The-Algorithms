@@ -1,0 +1,16 @@
+{
+  "slug": "knuth-morris-prat",
+  "name": "Knuth Morris Prat",
+  "categories": ["strings"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Akash G Krishnan",
+      "email": "krishnanag1996@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

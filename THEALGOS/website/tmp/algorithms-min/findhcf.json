@@ -1,0 +1,26 @@
+{
+  "slug": "findhcf",
+  "name": "FindHcf",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Novojit Saha",
+      "email": "55886194+redfly1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Arora",
+      "email": "shivam.arora@inficold.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

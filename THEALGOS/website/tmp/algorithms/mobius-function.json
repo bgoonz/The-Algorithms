@@ -1,0 +1,26 @@
+{
+  "slug": "mobius-function",
+  "name": "Mobius Function",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/mobius_function.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/mobius_function.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\r\nReferences: https://en.wikipedia.org/wiki/M%C3%B6bius_function\r\nReferences: wikipedia:square free number\r\npython/black : True\r\nflake8 : True\r\n&quot;&quot;&quot;</span>\r\n\r\n<span class=\"hljs-keyword\">from</span> maths.is_square_free <span class=\"hljs-keyword\">import</span> is_square_free\r\n<span class=\"hljs-keyword\">from</span> maths.prime_factors <span class=\"hljs-keyword\">import</span> prime_factors\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">mobius</span>(<span class=\"hljs-params\">n: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">int</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Mobius function\r\n    &gt;&gt;&gt; mobius(24)\r\n    0\r\n    &gt;&gt;&gt; mobius(-1)\r\n    1\r\n    &gt;&gt;&gt; mobius(&#x27;asd&#x27;)\r\n    Traceback (most recent call last):\r\n        ...\r\n    TypeError: &#x27;&lt;=&#x27; not supported between instances of &#x27;int&#x27; and &#x27;str&#x27;\r\n    &gt;&gt;&gt; mobius(10**400)\r\n    0\r\n    &gt;&gt;&gt; mobius(10**-400)\r\n    1\r\n    &gt;&gt;&gt; mobius(-1424)\r\n    1\r\n    &gt;&gt;&gt; mobius([1, &#x27;2&#x27;, 2.0])\r\n    Traceback (most recent call last):\r\n        ...\r\n    TypeError: &#x27;&lt;=&#x27; not supported between instances of &#x27;int&#x27; and &#x27;list&#x27;\r\n    &quot;&quot;&quot;</span>\r\n    factors = prime_factors(n)\r\n    <span class=\"hljs-keyword\">if</span> is_square_free(factors):\r\n        <span class=\"hljs-keyword\">return</span> -<span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(factors) % <span class=\"hljs-number\">2</span> <span class=\"hljs-keyword\">else</span> <span class=\"hljs-number\">1</span>\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-keyword\">import</span> doctest\r\n\r\n    doctest.testmod()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "QuantumNovice",
+      "email": "43876848+QuantumNovice@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

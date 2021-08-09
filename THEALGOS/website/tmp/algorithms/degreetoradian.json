@@ -1,0 +1,21 @@
+{
+  "slug": "degreetoradian",
+  "name": "DegreeToRadian",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/DegreeToRadian.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/DegreeToRadian.js",
+      "code": "<span class=\"hljs-comment\">/*\n * Radian : https://en.wikipedia.org/wiki/Radian\n * Degree : https://en.wikipedia.org/wiki/Degree_(angle)\n *\n * Angle in Radian = ( Angle in Degree ) x ( pi / 180 )\n *\n * Example :\n * Question : Convert 90 degree to radian\n * So, Angle in Degree = 90\n *\n * Solution :\n * Angle in Radian = ( 90 ) x ( pi / 180 ) = pi / 2\n *\n * So, 90 degree is equal to pi / 2 radian\n */</span>\n\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param</span> {<span class=\"hljs-type\">number</span>} <span class=\"hljs-variable\">degree</span>\n * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-type\">number</span>}\n */</span>\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">degreeToRadian</span> = (<span class=\"hljs-params\">degree</span>) =&gt; {\n  <span class=\"hljs-keyword\">return</span> degree * (<span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-property\">PI</span> / <span class=\"hljs-number\">180</span>)\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AbhinavXT",
+      "email": "abhinavpathaka17@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

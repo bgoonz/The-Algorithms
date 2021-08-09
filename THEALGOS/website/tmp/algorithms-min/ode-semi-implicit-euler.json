@@ -1,0 +1,17 @@
+{
+  "slug": "ode-semi-implicit-euler",
+  "name": "Ode Semi Implicit Euler",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c-plus-plus": "",
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 8
+    }
+  ],
+  "explanationUrl": {}
+}

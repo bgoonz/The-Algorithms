@@ -1,0 +1,31 @@
+{
+  "slug": "reverse-letters",
+  "name": "Reverse Letters",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/reverse_letters.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/reverse_letters.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">reverse_letters</span>(<span class=\"hljs-params\">input_str: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Reverses letters in a given string without adjusting the position of the words\n    &gt;&gt;&gt; reverse_letters(&#x27;The cat in the hat&#x27;)\n    &#x27;ehT tac ni eht tah&#x27;\n    &gt;&gt;&gt; reverse_letters(&#x27;The quick brown fox jumped over the lazy dog.&#x27;)\n    &#x27;ehT kciuq nworb xof depmuj revo eht yzal .god&#x27;\n    &gt;&gt;&gt; reverse_letters(&#x27;Is this true?&#x27;)\n    &#x27;sI siht ?eurt&#x27;\n    &gt;&gt;&gt; reverse_letters(&quot;I   love       Python&quot;)\n    &#x27;I evol nohtyP&#x27;\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot; &quot;</span>.join([word[::-<span class=\"hljs-number\">1</span>] <span class=\"hljs-keyword\">for</span> word <span class=\"hljs-keyword\">in</span> input_str.split()])\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/ReverseLetters.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/ReverseLetters.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\r\n\r\n<span class=\"hljs-keyword\">module</span> ReverseLetters =\r\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\r\n    <span class=\"hljs-comment\">/// Reverses letters in a given string without adjusting the position of the words</span>\r\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\r\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;input&quot;&gt;String to reverse.&lt;/param&gt;</span>\r\n    <span class=\"hljs-comment\">/// &lt;returns&gt;Reversed string&lt;/returns&gt;</span>\r\n    <span class=\"hljs-keyword\">let</span> reverseLetters (input: string) =\r\n        input.Split()\r\n        |&gt; Array.map\r\n            (<span class=\"hljs-keyword\">fun</span> x -&gt;\r\n                x.ToCharArray()\r\n                |&gt; Array.rev\r\n                |&gt; (<span class=\"hljs-keyword\">fun</span> c -&gt; System.String.Concat(c)))\r\n        |&gt; String.concat <span class=\"hljs-string\">&quot; &quot;</span>\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Snimerjot Singh",
+      "email": "snimersingh1729@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "k-folds",
+  "name": "K Folds",
+  "categories": ["datapreprocessing"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [
+    {
+      "name": "Ron Lee",
+      "email": "ronlee12355@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "collatz",
+  "name": "Collatz",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "misc/collatz.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/misc/collatz.c",
+      "code": "<span class=\"hljs-comment\">/**\n * \\file\n *\n * \\brief Implementation of [Collatz&#x27;\n * conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture)\n *\n * Collatz conjecture: a series for a number \\f$n\\f$ in which if \\f$n\\f$ even\n * then the next number is \\f$\\frac{n}{2}\\f$ ,but if n is odd then the next\n * number is \\f$3n+1\\f$. This series continues till \\f$n\\f$ reaches 1\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-comment\">/** Main function */</span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> argc, <span class=\"hljs-type\">char</span> *argv[])</span>\n{\n    <span class=\"hljs-type\">unsigned</span> <span class=\"hljs-type\">long</span> <span class=\"hljs-type\">long</span> n, curr_no, num_steps = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">if</span> (argc == <span class=\"hljs-number\">2</span>)\n        n = strtoull(argv[<span class=\"hljs-number\">1</span>], <span class=\"hljs-literal\">NULL</span>, <span class=\"hljs-number\">10</span>);\n    <span class=\"hljs-keyword\">else</span>\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter starting number: &quot;</span>);\n        <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%lu&quot;</span>, &amp;n);  <span class=\"hljs-comment\">// input number</span>\n    }\n\n    curr_no = n;          <span class=\"hljs-comment\">// curr_no stores input number n</span>\n    <span class=\"hljs-keyword\">while</span> (curr_no != <span class=\"hljs-number\">1</span>)  <span class=\"hljs-comment\">// loop till series reaches 1</span>\n    {\n        num_steps++;\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%llu-&gt;&quot;</span>, curr_no);\n        <span class=\"hljs-keyword\">if</span> (curr_no % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>)  <span class=\"hljs-comment\">// condition   for even number</span>\n            curr_no = curr_no / <span class=\"hljs-number\">2</span>;\n        <span class=\"hljs-keyword\">else</span>\n            curr_no = (curr_no * <span class=\"hljs-number\">3</span>) + <span class=\"hljs-number\">1</span>;  <span class=\"hljs-comment\">// condition for odd number</span>\n    }\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;1\\nNumber of steps: %llu\\n&quot;</span>, num_steps);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    },
+    "dart": {
+      "dir": "other/collatz.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/other/collatz.dart",
+      "code": "<span class=\"hljs-comment\">//collatz conjecture:</span>\n<span class=\"hljs-comment\">//A series for a number n in which if n</span>\n<span class=\"hljs-comment\">//even then the next number is n/2,</span>\n<span class=\"hljs-comment\">//but if n is odd then the next number is 3n + 1.</span>\n<span class=\"hljs-comment\">//This series continues till it reaches 1</span>\n\n<span class=\"hljs-comment\">//Author:Shawn</span>\n<span class=\"hljs-comment\">//Email:stepfencurryxiao@gmail.com</span>\n<span class=\"hljs-comment\">//Reference the C repo</span>\n\n<span class=\"hljs-keyword\">void</span> main() {\n  <span class=\"hljs-comment\">//The number</span>\n  <span class=\"hljs-built_in\">double</span> n = <span class=\"hljs-number\">20</span>;\n  <span class=\"hljs-comment\">//curr_no stores number n</span>\n  <span class=\"hljs-built_in\">double</span> curr_no = n;\n  <span class=\"hljs-comment\">//Loop till series reaches 1</span>\n  <span class=\"hljs-keyword\">while</span> (curr_no != <span class=\"hljs-number\">1</span>) {\n    <span class=\"hljs-comment\">//condition for even number</span>\n    <span class=\"hljs-keyword\">if</span> (curr_no % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">0</span>) {\n      curr_no = curr_no / <span class=\"hljs-number\">2</span>;\n      <span class=\"hljs-built_in\">print</span>(curr_no.toString() + <span class=\"hljs-string\">&quot;-&gt;&quot;</span>);\n    }\n    <span class=\"hljs-comment\">//condition for odd number</span>\n    <span class=\"hljs-keyword\">else</span> {\n      curr_no = (curr_no * <span class=\"hljs-number\">3</span>) + <span class=\"hljs-number\">1</span>;\n      <span class=\"hljs-built_in\">print</span>(curr_no.toString() + <span class=\"hljs-string\">&quot;-&gt;&quot;</span>);\n    }\n  }\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;1&quot;</span>);\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

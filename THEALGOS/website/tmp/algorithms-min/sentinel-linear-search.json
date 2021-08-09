@@ -1,0 +1,36 @@
+{
+  "slug": "sentinel-linear-search",
+  "name": "Sentinel Linear Search",
+  "categories": ["searches"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kelvin Salton do Prado",
+      "email": "kelvinpfw@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "convolutionfft",
+  "name": "ConvolutionFFT",
+  "categories": ["math"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Seth",
+      "email": "seth@elypia.org",
+      "commits": 1
+    },
+    {
+      "name": "JohnKara",
+      "email": "kcioannis@csd.auth.gr",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

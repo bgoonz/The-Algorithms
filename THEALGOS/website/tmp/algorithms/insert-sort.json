@@ -1,0 +1,15 @@
+{
+  "slug": "insert-sort",
+  "name": "Insert Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "sort/insert_Sort.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/sort/insert_Sort.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;dart:math&#x27;</span> <span class=\"hljs-keyword\">show</span> Random;\r\n\r\n<span class=\"hljs-keyword\">void</span> main() {\r\n  <span class=\"hljs-keyword\">final</span> seed = <span class=\"hljs-number\">100</span>, rnd = Random(), length = <span class=\"hljs-number\">100</span>;\r\n  <span class=\"hljs-keyword\">var</span> list =\r\n      <span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt;.generate(length, (i) =&gt; rnd.nextInt(seed), growable: <span class=\"hljs-keyword\">false</span>);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;before sorting:&#x27;</span>);\r\n  <span class=\"hljs-built_in\">print</span>(list);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;----------------------------------------------&#x27;</span>);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;After sorting:&#x27;</span>);\r\n  insertSort(list);\r\n  <span class=\"hljs-built_in\">print</span>(list);\r\n}\r\n\r\n<span class=\"hljs-keyword\">void</span> insertSort(<span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; a) {\r\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">1</span>; i &lt; a.length; i++) {\r\n    <span class=\"hljs-built_in\">int</span> j, t = a[i];\r\n    <span class=\"hljs-keyword\">for</span> (j = i - <span class=\"hljs-number\">1</span>; j &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; t &lt; a[j]; j--) {\r\n      a[j + <span class=\"hljs-number\">1</span>] = a[j];\r\n    }\r\n    <span class=\"hljs-keyword\">if</span> (j &lt; i - <span class=\"hljs-number\">1</span>) a[j + <span class=\"hljs-number\">1</span>] = t;\r\n  }\r\n}\r\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

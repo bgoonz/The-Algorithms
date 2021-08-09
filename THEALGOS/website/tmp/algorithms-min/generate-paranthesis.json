@@ -1,0 +1,16 @@
+{
+  "slug": "generate-paranthesis",
+  "name": "Generate Paranthesis",
+  "categories": ["backtracking"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

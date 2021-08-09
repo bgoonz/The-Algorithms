@@ -1,0 +1,21 @@
+{
+  "slug": "combination",
+  "name": "Combination",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/math/combination.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/combination.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    combination(n, r)\n        \nreturns the number of ways picking r unordered outcomes from\nn possibilities, without repetition\n\n# Arguments:\n- `n`: Positive integers of items to choose from\n- &#x27;r&#x27;: Positive integers of items to choose\n\nContributed By:- [Mayur Dahibhate](https://github.com/mayurdahibhate)\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">function</span> combination(n, r)\n\n    <span class=\"hljs-keyword\">function</span> factorial(n)        \n        fact = <span class=\"hljs-number\">1</span>\n        \n        <span class=\"hljs-keyword\">if</span> n == <span class=\"hljs-number\">0</span> || n == <span class=\"hljs-number\">1</span>\n            <span class=\"hljs-keyword\">return</span> fact\n        <span class=\"hljs-keyword\">end</span>\n         \n        <span class=\"hljs-keyword\">for</span> i = <span class=\"hljs-number\">1</span>:n\n            fact = fact * i\n        <span class=\"hljs-keyword\">end</span> \n        \n        <span class=\"hljs-keyword\">return</span> fact\n    <span class=\"hljs-keyword\">end</span>\n    \n    comb = factorial(n) / (factorial(r) * factorial(n - r))\n\n    <span class=\"hljs-keyword\">return</span> convert(<span class=\"hljs-built_in\">Int64</span>, comb)\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mayur Dahibhate",
+      "email": "52608503+mayurdahibhate@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

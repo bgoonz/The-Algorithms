@@ -1,0 +1,48 @@
+{
+  "slug": "average",
+  "name": "Average",
+  "categories": ["math"],
+  "implementations": {
+    "java": "",
+    "dart": "",
+    "kotlin": ""
+  },
+  "contributors": [
+    {
+      "name": "Stepfen Shawn",
+      "email": "m18824909883@163.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "rabbit",
+      "email": "d_rabbit@21cn.com",
+      "commits": 1
+    },
+    {
+      "name": "Adeoti Ayodeji",
+      "email": "33290249+Lord-sarcastic@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Michael Fried",
+      "email": "mikelfried@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "laurelr2020",
+      "email": "reganlaurell@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

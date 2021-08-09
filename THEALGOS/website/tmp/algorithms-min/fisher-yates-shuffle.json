@@ -1,0 +1,16 @@
+{
+  "slug": "fisher-yates-shuffle",
+  "name": "Fisher Yates Shuffle",
+  "categories": ["others"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "sum-of-arithmetic-series",
+  "name": "Sum of Arithmetic Series",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/sum_of_arithmetic_series.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/sum_of_arithmetic_series.py",
+      "code": "<span class=\"hljs-comment\"># DarkCoder</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">sum_of_series</span>(<span class=\"hljs-params\">first_term, common_diff, num_of_terms</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Find the sum of n terms in an arithmetic progression.\n\n    &gt;&gt;&gt; sum_of_series(1, 1, 10)\n    55.0\n    &gt;&gt;&gt; sum_of_series(1, 10, 100)\n    49600.0\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-built_in\">sum</span> = (num_of_terms / <span class=\"hljs-number\">2</span>) * (<span class=\"hljs-number\">2</span> * first_term + (num_of_terms - <span class=\"hljs-number\">1</span>) * common_diff)\n    <span class=\"hljs-comment\"># formula for sum of series</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">sum</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-built_in\">print</span>(sum_of_series(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">10</span>))\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "java": {
+      "dir": "Maths/SumOfArithmeticSeries.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/SumOfArithmeticSeries.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-comment\">/**\n * In mathematics, an arithmetic progression (AP) or arithmetic sequence is a sequence of numbers\n * such that the difference between the consecutive terms is constant. Difference here means the\n * second minus the first. For instance, the sequence 5, 7, 9, 11, 13, 15, . . . is an arithmetic\n * progression with common difference of 2.\n *\n * &lt;p&gt;Wikipedia: https://en.wikipedia.org/wiki/Arithmetic_progression\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">SumOfArithmeticSeries</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n\n    <span class=\"hljs-comment\">/* 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 */</span>\n    <span class=\"hljs-keyword\">assert</span> Double.compare(<span class=\"hljs-number\">55.0</span>, sumOfSeries(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">10</span>)) == <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">/* 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19 */</span>\n    <span class=\"hljs-keyword\">assert</span> Double.compare(<span class=\"hljs-number\">100.0</span>, sumOfSeries(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">10</span>)) == <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">/* 1 + 11 + 21 + 31 + 41 + 51 + 61 + 71 + 81 + 91 */</span>\n    <span class=\"hljs-keyword\">assert</span> Double.compare(<span class=\"hljs-number\">460.0</span>, sumOfSeries(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">10</span>)) == <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">/* 0.1 + 0.2 + 0.3 + 0.4 + 0.5 + 0.6 + 0.7 + 0.8 + 0.9 + 1.0 */</span>\n    <span class=\"hljs-keyword\">assert</span> Double.compare(<span class=\"hljs-number\">5.5</span>, sumOfSeries(<span class=\"hljs-number\">0.1</span>, <span class=\"hljs-number\">0.1</span>, <span class=\"hljs-number\">10</span>)) == <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-keyword\">assert</span> Double.compare(<span class=\"hljs-number\">49600.0</span>, sumOfSeries(<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">100</span>)) == <span class=\"hljs-number\">0</span>;\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Calculate sum of arithmetic series\n   *\n   * <span class=\"hljs-doctag\">@param</span> firstTerm the initial term of an arithmetic series\n   * <span class=\"hljs-doctag\">@param</span> commonDiff the common difference of an arithmetic series\n   * <span class=\"hljs-doctag\">@param</span> numOfTerms the total terms of an arithmetic series\n   * <span class=\"hljs-doctag\">@return</span> sum of given arithmetic series\n   */</span>\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">double</span> <span class=\"hljs-title function_\">sumOfSeries</span><span class=\"hljs-params\">(<span class=\"hljs-type\">double</span> firstTerm, <span class=\"hljs-type\">double</span> commonDiff, <span class=\"hljs-type\">int</span> numOfTerms)</span> {\n    <span class=\"hljs-keyword\">return</span> numOfTerms / <span class=\"hljs-number\">2.0</span> * (<span class=\"hljs-number\">2</span> * firstTerm + (numOfTerms - <span class=\"hljs-number\">1</span>) * commonDiff);\n  }\n}\n"
+    },
+    "julia": {
+      "dir": "src/math/sum_of_arithmetic_series.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/math/sum_of_arithmetic_series.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    sum_ap(first_term, diff, num_terms)\n\nFinds sum of a arithmetic progression series\n\n# Input parameters\n\n- first_term : first term of the series\n- diff       : common difference between consecutive terms\n- num_terms  : number of terms in the series till which we count sum\n\n# Example \n\n```julia\nsum_ap(1, 1, 10)    # returns 55.0 \nsum_ap(1, 10, 100)  # returns 49600.0\n```\n\nContributed By:- [Ashwani Rathee](https://github.com/ashwani-rathee)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">function</span> sum_ap(first_term, diff, num_terms)\n    <span class=\"hljs-comment\">#formula for sum of the ap series</span>\n    sum = (num_terms / <span class=\"hljs-number\">2</span>) * (<span class=\"hljs-number\">2</span> * first_term + (num_terms - <span class=\"hljs-number\">1</span>) * diff)\n    <span class=\"hljs-keyword\">return</span> sum\n<span class=\"hljs-keyword\">end</span>\n\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Ashwani Rathee",
+      "email": "ab669522@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Phyllipe Bezerra",
+      "email": "32442929+pmba@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "TheRealDarkCoder",
+      "email": "zuhayr2003@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

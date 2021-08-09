@@ -1,0 +1,36 @@
+{
+  "slug": "maxcharacter",
+  "name": "MaxCharacter",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/MaxCharacter.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/MaxCharacter.js",
+      "code": "<span class=\"hljs-comment\">/*\n  Given a string of characters, return the character that appears the most often.\n  Example: input = &quot;Hello World!&quot; return &quot;l&quot;\n*/</span>\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">maxCharacter</span> = (<span class=\"hljs-params\">value</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> value !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;The param should be a string&#x27;</span>)\n  } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (!value) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Error</span>(<span class=\"hljs-string\">&#x27;The param should be a valid string&#x27;</span>)\n  }\n\n  <span class=\"hljs-keyword\">const</span> occurrences = {}\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; value.<span class=\"hljs-property\">length</span>; i++) {\n    <span class=\"hljs-keyword\">const</span> char = value[i]\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-regexp\">/\\s/</span>.<span class=\"hljs-title function_\">test</span>(char)) <span class=\"hljs-keyword\">continue</span>\n    occurrences[char] = occurrences[char] + <span class=\"hljs-number\">1</span> || <span class=\"hljs-number\">1</span>\n  }\n  <span class=\"hljs-keyword\">let</span> maxCharacter = <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">let</span> maxCount = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-title class_\">Object</span>.<span class=\"hljs-title function_\">keys</span>(occurrences).<span class=\"hljs-title function_\">forEach</span>(<span class=\"hljs-function\"><span class=\"hljs-params\">char</span> =&gt;</span> {\n    <span class=\"hljs-keyword\">if</span> (occurrences[char] &gt; maxCount) {\n      maxCount = occurrences[char]\n      maxCharacter = char\n    }\n  })\n  <span class=\"hljs-keyword\">return</span> maxCharacter\n}\n\n<span class=\"hljs-keyword\">export</span> { maxCharacter }\n"
+    },
+    "php": {
+      "dir": "String/MaxCharacter.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/String/MaxCharacter.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n<span class=\"hljs-comment\">/**\n * This function returns\n * the character which is\n * repeated maximum no. of\n * times in the given string.\n *\n * <span class=\"hljs-doctag\">@param</span> string $string\n * <span class=\"hljs-doctag\">@return</span> string\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">maxCharacter</span>(<span class=\"hljs-params\"><span class=\"hljs-keyword\">string</span> <span class=\"hljs-variable\">$string</span></span>)\n</span>{\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">empty</span>(<span class=\"hljs-variable\">$string</span>)) {\n        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> \\<span class=\"hljs-built_in\">Exception</span>(<span class=\"hljs-string\">&#x27;Please pass a non-empty string value&#x27;</span>);\n    }\n\n    <span class=\"hljs-variable\">$characterCountTable</span> = []; <span class=\"hljs-comment\">// A variable to maintain the character counts</span>\n    <span class=\"hljs-variable\">$string</span>              = strtolower(<span class=\"hljs-variable\">$string</span>); <span class=\"hljs-comment\">// For case-insensitive checking</span>\n    <span class=\"hljs-variable\">$characters</span>          = str_split(<span class=\"hljs-variable\">$string</span>); <span class=\"hljs-comment\">// Splitting the string to a Character Array.</span>\n\n    <span class=\"hljs-keyword\">foreach</span> (<span class=\"hljs-variable\">$characters</span> <span class=\"hljs-keyword\">as</span> <span class=\"hljs-variable\">$character</span>) {\n        <span class=\"hljs-variable\">$currentCharacterCount</span> = <span class=\"hljs-number\">1</span>;\n        <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">isset</span>(<span class=\"hljs-variable\">$characterCountTable</span>[<span class=\"hljs-variable\">$character</span>])) {\n            <span class=\"hljs-variable\">$currentCharacterCount</span> = <span class=\"hljs-variable\">$characterCountTable</span>[<span class=\"hljs-variable\">$character</span>] + <span class=\"hljs-number\">1</span>;\n        }\n        <span class=\"hljs-variable\">$characterCountTable</span>[<span class=\"hljs-variable\">$character</span>] = <span class=\"hljs-variable\">$currentCharacterCount</span>;\n    }\n\n    arsort(<span class=\"hljs-variable\">$characterCountTable</span>);\n\n    <span class=\"hljs-keyword\">return</span> array_keys(<span class=\"hljs-variable\">$characterCountTable</span>)[<span class=\"hljs-number\">0</span>];\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Akshay Khale",
+      "email": "khale.akshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Carlos Carvalho",
+      "email": "jcarloss.carvalho@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

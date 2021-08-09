@@ -1,0 +1,21 @@
+{
+  "slug": "to-polar",
+  "name": "To Polar",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/maths/to_polar.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/maths/to_polar.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-params\">[r, theta]</span> = <span class=\"hljs-title\">topolar</span><span class=\"hljs-params\">(x,y)</span></span>\n<span class=\"hljs-comment\">%% Converts cartesian coordinates to polar.</span>\nr = <span class=\"hljs-built_in\">sqrt</span>(x^<span class=\"hljs-number\">2</span> + y^<span class=\"hljs-number\">2</span>);\n\n<span class=\"hljs-keyword\">if</span> x &gt;= <span class=\"hljs-number\">0</span>\n    theta = <span class=\"hljs-built_in\">atan</span>(y/x);\n<span class=\"hljs-keyword\">else</span>\n    theta = <span class=\"hljs-built_in\">atan</span>(y/x) + <span class=\"hljs-built_in\">pi</span>;\n<span class=\"hljs-keyword\">end</span>\n\n theta = theta*(<span class=\"hljs-number\">180</span>/<span class=\"hljs-built_in\">pi</span>);\n <span class=\"hljs-built_in\">disp</span>(<span class=\"hljs-string\">&#x27;Hypotenus&#x27;</span>)\n <span class=\"hljs-built_in\">disp</span>(r)\n <span class=\"hljs-built_in\">disp</span>(<span class=\"hljs-string\">&#x27;theta&#x27;</span>)\n <span class=\"hljs-built_in\">disp</span>(theta)\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "QuantumNovice",
+      "email": "43876848+QuantumNovice@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

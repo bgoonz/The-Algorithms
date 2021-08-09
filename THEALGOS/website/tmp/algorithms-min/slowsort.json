@@ -1,0 +1,32 @@
+{
+  "slug": "slowsort",
+  "name": "Slowsort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Naveen Hegde",
+      "email": "hegdenaveen1@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Abdeldjaouad Nusayr Medakene",
+      "email": "31663979+MrGeek1337@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

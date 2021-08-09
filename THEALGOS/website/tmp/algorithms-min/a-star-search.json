@@ -1,0 +1,21 @@
+{
+  "slug": "a-star-search",
+  "name": "A Star Search",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashish Bhanu Daulatabad",
+      "email": "supersonic12910@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "runlogisticregression",
+  "name": "runLogisticRegression",
+  "categories": ["machinelearning", "logisticregression"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "aneshkaul@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

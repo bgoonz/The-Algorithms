@@ -1,0 +1,15 @@
+{
+  "slug": "heirarchical-clustering",
+  "name": "Heirarchical Clustering",
+  "categories": ["clusteringalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Clustering-Algorithms/heirarchical_clustering.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Clustering-Algorithms/heirarchical_clustering.R",
+      "code": "clusters <span class=\"hljs-operator\">&lt;-</span> hclust<span class=\"hljs-punctuation\">(</span>dist<span class=\"hljs-punctuation\">(</span>iris<span class=\"hljs-punctuation\">[</span><span class=\"hljs-punctuation\">,</span> <span class=\"hljs-operator\">-</span><span class=\"hljs-number\">5</span><span class=\"hljs-punctuation\">]</span><span class=\"hljs-punctuation\">)</span><span class=\"hljs-punctuation\">)</span>\nplot<span class=\"hljs-punctuation\">(</span>clusters<span class=\"hljs-punctuation\">)</span>\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "doublepointcrossover",
+  "name": "DoublePointCrossover",
+  "categories": ["geneticalgorithm", "minimizationofpolynomialfunction"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

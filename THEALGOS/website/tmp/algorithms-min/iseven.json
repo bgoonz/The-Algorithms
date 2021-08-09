@@ -1,0 +1,16 @@
+{
+  "slug": "iseven",
+  "name": "IsEven",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "AbhinavXT",
+      "email": "abhinavpathaka17@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "breadth-first-search-2",
+  "name": "Breadth First Search 2",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/breadth_first_search_2.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/breadth_first_search_2.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nhttps://en.wikipedia.org/wiki/Breadth-first_search\npseudo-code:\nbreadth_first_search(graph G, start vertex s):\n// all nodes initially unexplored\nmark s as explored\nlet Q = queue data structure, initialized with s\nwhile Q is non-empty:\n    remove the first node of Q, call it v\n    for each edge(v, w):  // for w in graph[v]\n        if w unexplored:\n            mark w as explored\n            add w to Q (at the end)\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\nG = {\n    <span class=\"hljs-string\">&quot;A&quot;</span>: [<span class=\"hljs-string\">&quot;B&quot;</span>, <span class=\"hljs-string\">&quot;C&quot;</span>],\n    <span class=\"hljs-string\">&quot;B&quot;</span>: [<span class=\"hljs-string\">&quot;A&quot;</span>, <span class=\"hljs-string\">&quot;D&quot;</span>, <span class=\"hljs-string\">&quot;E&quot;</span>],\n    <span class=\"hljs-string\">&quot;C&quot;</span>: [<span class=\"hljs-string\">&quot;A&quot;</span>, <span class=\"hljs-string\">&quot;F&quot;</span>],\n    <span class=\"hljs-string\">&quot;D&quot;</span>: [<span class=\"hljs-string\">&quot;B&quot;</span>],\n    <span class=\"hljs-string\">&quot;E&quot;</span>: [<span class=\"hljs-string\">&quot;B&quot;</span>, <span class=\"hljs-string\">&quot;F&quot;</span>],\n    <span class=\"hljs-string\">&quot;F&quot;</span>: [<span class=\"hljs-string\">&quot;C&quot;</span>, <span class=\"hljs-string\">&quot;E&quot;</span>],\n}\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">breadth_first_search</span>(<span class=\"hljs-params\">graph: <span class=\"hljs-built_in\">dict</span>, start: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-built_in\">set</span>[<span class=\"hljs-built_in\">str</span>]:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; &#x27;&#x27;.join(sorted(breadth_first_search(G, &#x27;A&#x27;)))\n    &#x27;ABCDEF&#x27;\n    &quot;&quot;&quot;</span>\n    explored = {start}\n    queue = [start]\n    <span class=\"hljs-keyword\">while</span> queue:\n        v = queue.pop(<span class=\"hljs-number\">0</span>)  <span class=\"hljs-comment\"># queue.popleft()</span>\n        <span class=\"hljs-keyword\">for</span> w <span class=\"hljs-keyword\">in</span> graph[v]:\n            <span class=\"hljs-keyword\">if</span> w <span class=\"hljs-keyword\">not</span> <span class=\"hljs-keyword\">in</span> explored:\n                explored.add(w)\n                queue.append(w)\n    <span class=\"hljs-keyword\">return</span> explored\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(breadth_first_search(G, <span class=\"hljs-string\">&quot;A&quot;</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

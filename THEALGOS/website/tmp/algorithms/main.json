@@ -1,0 +1,71 @@
+{
+  "slug": "main",
+  "name": "Main",
+  "categories": ["datastructures", "hashmap", "hashing"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/HashMap/Hashing/Main.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/HashMap/Hashing/Main.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.HashMap.Hashing;\n\n<span class=\"hljs-keyword\">import</span> java.util.Scanner;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Main</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n\n    <span class=\"hljs-type\">int</span> choice, key;\n\n    <span class=\"hljs-type\">HashMap</span> <span class=\"hljs-variable\">h</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">HashMap</span>(<span class=\"hljs-number\">7</span>);\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">In</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in);\n\n    <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-literal\">true</span>) {\n      System.out.println(<span class=\"hljs-string\">&quot;Enter your Choice :&quot;</span>);\n      System.out.println(<span class=\"hljs-string\">&quot;1. Add Key&quot;</span>);\n      System.out.println(<span class=\"hljs-string\">&quot;2. Delete Key&quot;</span>);\n      System.out.println(<span class=\"hljs-string\">&quot;3. Print Table&quot;</span>);\n      System.out.println(<span class=\"hljs-string\">&quot;4. Exit&quot;</span>);\n\n      choice = In.nextInt();\n\n      <span class=\"hljs-keyword\">switch</span> (choice) {\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-number\">1</span>:\n          {\n            System.out.println(<span class=\"hljs-string\">&quot;Enter the Key: &quot;</span>);\n            key = In.nextInt();\n            h.insertHash(key);\n            <span class=\"hljs-keyword\">break</span>;\n          }\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-number\">2</span>:\n          {\n            System.out.println(<span class=\"hljs-string\">&quot;Enter the Key delete:  &quot;</span>);\n            key = In.nextInt();\n            h.deleteHash(key);\n            <span class=\"hljs-keyword\">break</span>;\n          }\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-number\">3</span>:\n          {\n            System.out.println(<span class=\"hljs-string\">&quot;Print table&quot;</span>);\n            h.displayHashtable();\n            <span class=\"hljs-keyword\">break</span>;\n          }\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-number\">4</span>:\n          {\n            In.close();\n            <span class=\"hljs-keyword\">return</span>;\n          }\n      }\n    }\n  }\n}\n"
+    },
+    "c": {
+      "dir": "data_structures/stack/stack_linked_list/main.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/data_structures/stack/stack_linked_list/main.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;assert.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&quot;stack.h&quot;</span></span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    Stack_T stk;\n    stk = Stack_init();\n    Stack_push(stk, (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-number\">1</span>);\n    Stack_push(stk, (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-number\">2</span>);\n    Stack_push(stk, (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-number\">3</span>);\n    Stack_push(stk, (<span class=\"hljs-type\">int</span> *)<span class=\"hljs-number\">4</span>);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Size: %d\\n&quot;</span>, Stack_size(stk));\n    Stack_print(stk);\n    Stack_pop(stk);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Stack after popping: \\n&quot;</span>);\n    Stack_print(stk);\n    Stack_pop(stk);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Stack after popping: \\n&quot;</span>);\n    Stack_print(stk);\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    },
+    "matlab-octave": {
+      "dir": "algorithms/Genetic-Algorithm/Minimization of polynomial function/main.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/Genetic-Algorithm/Minimization of polynomial function/main.m",
+      "code": "clc;\nclear;\nclose all;\n\n<span class=\"hljs-comment\">%% Problem Definition</span>\n\nproblem.CostFunction = @(x) minone(x);\nproblem.nVar = <span class=\"hljs-number\">100</span>;\n\n\n<span class=\"hljs-comment\">%% GA Parameters</span>\n\nparams.MaxIt = <span class=\"hljs-number\">150</span>;\nparams.nPop = <span class=\"hljs-number\">100</span>;\n\nparams.<span class=\"hljs-built_in\">beta</span> = <span class=\"hljs-number\">1</span>;\nparams.pC = <span class=\"hljs-number\">1</span>;\nparams.mu = <span class=\"hljs-number\">0.02</span>;\n\n<span class=\"hljs-comment\">%% Run GA</span>\n\nout = Run_GA(problem, params);\n\n\n<span class=\"hljs-comment\">%% Results</span>\n\n<span class=\"hljs-built_in\">figure</span>;\n<span class=\"hljs-built_in\">plot</span>(out.bestcost, <span class=\"hljs-string\">&#x27;LineWidth&#x27;</span>, <span class=\"hljs-number\">2</span>);\nxlabel(<span class=\"hljs-string\">&#x27;Iterations&#x27;</span>);\nylabel(<span class=\"hljs-string\">&#x27;Best Cost&#x27;</span>);\ngrid on;\n\n\n\n\n\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Maletha",
+      "email": "67141747+Abhishek-photon@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rupeshiya",
+      "email": "31209617+Rupeshiya@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "EAlexa",
+      "email": "rubi_81@outlook.de",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 2
+    },
+    {
+      "name": "Wesllhey Holanda",
+      "email": "wesllhey.holanda@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "shivg7706",
+      "email": "shivamgupta7706@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "hai dang",
+      "email": "haihoangdang91@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

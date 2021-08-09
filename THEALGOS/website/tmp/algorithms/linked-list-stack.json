@@ -1,0 +1,31 @@
+{
+  "slug": "linked-list-stack",
+  "name": "Linked List Stack",
+  "categories": ["datastructures", "stack"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "data_structures/Stack/Linked_List_Stack.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/data_structures/Stack/Linked_List_Stack.dart",
+      "code": "<span class=\"hljs-comment\">//Author: Shawn</span>\n<span class=\"hljs-comment\">//Email: stepfencurryxiao@gmail.com</span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Node</span>&lt;<span class=\"hljs-title\">T</span>&gt; </span>{\n  <span class=\"hljs-comment\">//the data of the Node</span>\n  T data;\n  Node next;\n\n  Node(T data) {\n    <span class=\"hljs-keyword\">this</span>.data = data;\n    <span class=\"hljs-keyword\">this</span>.next = <span class=\"hljs-keyword\">null</span>;\n  }\n}\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">LinkedListStack</span>&lt;<span class=\"hljs-title\">T</span>&gt; </span>{\n  <span class=\"hljs-comment\">//Top of stack</span>\n  Node&lt;T&gt; head;\n\n  <span class=\"hljs-comment\">//Size of stack</span>\n  <span class=\"hljs-built_in\">int</span> size;\n\n  LinkedListStack() {\n    <span class=\"hljs-keyword\">this</span>.head = <span class=\"hljs-keyword\">null</span>;\n    <span class=\"hljs-keyword\">this</span>.size = <span class=\"hljs-number\">0</span>;\n  }\n\n  <span class=\"hljs-comment\">//Add element at top of the stack</span>\n\n  <span class=\"hljs-keyword\">void</span> push(T element) {\n    Node&lt;T&gt; newNode = <span class=\"hljs-keyword\">new</span> Node&lt;T&gt;(element);\n    newNode.next = <span class=\"hljs-keyword\">this</span>.head;\n    <span class=\"hljs-keyword\">this</span>.head = newNode;\n    <span class=\"hljs-keyword\">this</span>.size++;\n  }\n\n  <span class=\"hljs-comment\">//Pop element from top at the stack</span>\n\n  T pop() {\n    T returnData = <span class=\"hljs-keyword\">null</span>;\n    <span class=\"hljs-keyword\">if</span> (size == <span class=\"hljs-number\">0</span>) {\n      <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The stack is empty!!!&quot;</span>);\n    } <span class=\"hljs-keyword\">else</span> {\n      Node&lt;T&gt; destroy = <span class=\"hljs-keyword\">this</span>.head;\n      <span class=\"hljs-keyword\">this</span>.head = <span class=\"hljs-keyword\">this</span>.head.next;\n      returnData = destroy.data;\n      <span class=\"hljs-keyword\">this</span>.size--;\n    }\n    <span class=\"hljs-keyword\">return</span> returnData;\n  }\n\n  <span class=\"hljs-built_in\">bool</span> isEmpty() {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.size == <span class=\"hljs-number\">0</span>;\n  }\n\n  <span class=\"hljs-built_in\">int</span> getSize() {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.size;\n  }\n}\n\n<span class=\"hljs-built_in\">int</span> main() {\n  LinkedListStack&lt;<span class=\"hljs-built_in\">String</span>&gt; Stack = <span class=\"hljs-keyword\">new</span> LinkedListStack&lt;<span class=\"hljs-built_in\">String</span>&gt;();\n  <span class=\"hljs-keyword\">var</span> returnData;\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Push 2 5 9 7 to the stack\\n&quot;</span>);\n  Stack.push(<span class=\"hljs-string\">&quot;2&quot;</span>);\n  Stack.push(<span class=\"hljs-string\">&quot;5&quot;</span>);\n  Stack.push(<span class=\"hljs-string\">&quot;9&quot;</span>);\n  Stack.push(<span class=\"hljs-string\">&quot;7&quot;</span>);\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Successful push!\\n&quot;</span>);\n  returnData = Stack.pop();\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Pop a data: <span class=\"hljs-subst\">$returnData</span>\\n&quot;</span>);\n  returnData = Stack.pop();\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Pop a data: <span class=\"hljs-subst\">$returnData</span>\\n&quot;</span>);\n  returnData = Stack.pop();\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Pop a data: <span class=\"hljs-subst\">$returnData</span>\\n&quot;</span>);\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "rotate-matrix",
+  "name": "Rotate Matrix",
+  "categories": ["matrix"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "obelisk0114",
+      "email": "obelisk0114@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "select-sort",
+  "name": "Select Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "sort/select_Sort.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/sort/select_Sort.dart",
+      "code": "<span class=\"hljs-keyword\">import</span> <span class=\"hljs-string\">&#x27;dart:math&#x27;</span> <span class=\"hljs-keyword\">show</span> Random;\r\n\r\n<span class=\"hljs-comment\">//main function,the program start</span>\r\n<span class=\"hljs-keyword\">void</span> main() {\r\n  <span class=\"hljs-keyword\">final</span> seed = <span class=\"hljs-number\">100</span>, rnd = Random(), length = <span class=\"hljs-number\">100</span>;\r\n  <span class=\"hljs-keyword\">var</span> list =\r\n      <span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt;.generate(length, (i) =&gt; rnd.nextInt(seed), growable: <span class=\"hljs-keyword\">false</span>);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;before sorting:&#x27;</span>);\r\n  <span class=\"hljs-built_in\">print</span>(list);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;--------------------------------------&#x27;</span>);\r\n  <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&#x27;After sorting:&#x27;</span>);\r\n  selectSort(list);\r\n  <span class=\"hljs-built_in\">print</span>(list);\r\n}\r\n\r\n<span class=\"hljs-keyword\">void</span> selectSort(<span class=\"hljs-built_in\">List</span>&lt;<span class=\"hljs-built_in\">int</span>&gt; a) {\r\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">0</span>; i &lt; a.length - <span class=\"hljs-number\">1</span>; i++) {\r\n    <span class=\"hljs-keyword\">var</span> mi = i;\r\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">var</span> j = i + <span class=\"hljs-number\">1</span>; j &lt; a.length; j++) {\r\n      <span class=\"hljs-keyword\">if</span> (a[j] &lt; a[mi]) mi = j;\r\n    }\r\n    <span class=\"hljs-keyword\">if</span> (i != mi) {\r\n      <span class=\"hljs-keyword\">var</span> t = a[i];\r\n      a[i] = a[mi];\r\n      a[mi] = t;\r\n    }\r\n  }\r\n}\r\n"
+    },
+    "matlab-octave": {
+      "dir": "algorithms/sorting/select_sort.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/sorting/select_sort.m",
+      "code": "<span class=\"hljs-comment\">%% Octave implementation for selection sort  </span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">arrayToSort</span> = <span class=\"hljs-title\">select_sort</span><span class=\"hljs-params\">(arrayToSort)</span></span>\n    <span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-number\">1</span>:<span class=\"hljs-built_in\">length</span>(arrayToSort)\n<span class=\"hljs-comment\">%%smallest element in the unsorted list</span>\n        minimum_index=<span class=\"hljs-built_in\">i</span>;\n            <span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">j</span>=<span class=\"hljs-built_in\">i</span>+<span class=\"hljs-number\">1</span>:<span class=\"hljs-built_in\">length</span>(arrayToSort)\n                <span class=\"hljs-keyword\">if</span> (arrayToSort(<span class=\"hljs-built_in\">j</span>) &lt; arrayToSort(minimum_index))\n                    minimum_index=<span class=\"hljs-built_in\">j</span>;\n                endif\n            endfor    \n<span class=\"hljs-comment\">%%replace the element with the minimum value of the unsorted array</span>\n        arrayToSort([<span class=\"hljs-built_in\">i</span> minimum_index]) = arrayToSort([minimum_index <span class=\"hljs-built_in\">i</span>]);\n    endfor\nendfunction"
+    }
+  },
+  "contributors": [
+    {
+      "name": "andrescontreras96",
+      "email": "contreras9996@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andres Contreras",
+      "email": "nsl-midintern1@NSL-ACONTRERAS.local",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

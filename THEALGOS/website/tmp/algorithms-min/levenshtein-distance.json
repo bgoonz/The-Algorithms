@@ -1,0 +1,105 @@
+{
+  "slug": "levenshtein-distance",
+  "name": "Levenshtein Distance",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "java": "",
+    "f-sharp": "",
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "nttzamos",
+      "email": "36950737+nttzamos@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "bogdandv",
+      "email": "bogdandv_14@yahoo.com",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "sangjun2",
+      "email": "sj27294626@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Daniel Müller",
+      "email": "danielmueller@limebird.de",
+      "commits": 1
+    },
+    {
+      "name": "kv19971",
+      "email": "kshitijverma999@hotmail.com",
+      "commits": 1
+    },
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "Dmytro Litvinov",
+      "email": "litvinov.dmytro.it@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kelvin Salton do Prado",
+      "email": "kelvinpfw@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vaibhavrajsingh2001",
+      "email": "vaibhavrajsingh2001@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 3
+    },
+    {
+      "name": "Luiz Mai",
+      "email": "lffmai@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

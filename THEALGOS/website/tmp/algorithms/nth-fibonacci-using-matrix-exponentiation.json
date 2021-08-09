@@ -1,0 +1,36 @@
+{
+  "slug": "nth-fibonacci-using-matrix-exponentiation",
+  "name": "Nth Fibonacci Using Matrix Exponentiation",
+  "categories": ["matrix"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "matrix/nth_fibonacci_using_matrix_exponentiation.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/matrix/nth_fibonacci_using_matrix_exponentiation.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nImplementation of finding nth fibonacci number using matrix exponentiation.\nTime Complexity is about O(log(n)*8), where 8 is the complexity of matrix\nmultiplication of size 2 by 2.\nAnd on the other hand complexity of bruteforce solution is O(n).\nAs we know\n    f[n] = f[n-1] + f[n-1]\nConverting to matrix,\n    [f(n),f(n-1)] = [[1,1],[1,0]] * [f(n-1),f(n-2)]\n-&gt;  [f(n),f(n-1)] = [[1,1],[1,0]]^2 * [f(n-2),f(n-3)]\n    ...\n    ...\n-&gt;  [f(n),f(n-1)] = [[1,1],[1,0]]^(n-1) * [f(1),f(0)]\nSo we just need the n times multiplication of the matrix [1,1],[1,0]].\nWe can decrease the n times multiplication by following the divide and conquer approach.\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">multiply</span>(<span class=\"hljs-params\">matrix_a, matrix_b</span>):\n    matrix_c = []\n    n = <span class=\"hljs-built_in\">len</span>(matrix_a)\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n        list_1 = []\n        <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n            val = <span class=\"hljs-number\">0</span>\n            <span class=\"hljs-keyword\">for</span> k <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n):\n                val = val + matrix_a[i][k] * matrix_b[k][j]\n            list_1.append(val)\n        matrix_c.append(list_1)\n    <span class=\"hljs-keyword\">return</span> matrix_c\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">identity</span>(<span class=\"hljs-params\">n</span>):\n    <span class=\"hljs-keyword\">return</span> [[<span class=\"hljs-built_in\">int</span>(row == column) <span class=\"hljs-keyword\">for</span> column <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)] <span class=\"hljs-keyword\">for</span> row <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(n)]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">nth_fibonacci_matrix</span>(<span class=\"hljs-params\">n</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; nth_fibonacci_matrix(100)\n    354224848179261915075\n    &gt;&gt;&gt; nth_fibonacci_matrix(-100)\n    -100\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> n\n    res_matrix = identity(<span class=\"hljs-number\">2</span>)\n    fibonacci_matrix = [[<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">1</span>], [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">0</span>]]\n    n = n - <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">while</span> n &gt; <span class=\"hljs-number\">0</span>:\n        <span class=\"hljs-keyword\">if</span> n % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">1</span>:\n            res_matrix = multiply(res_matrix, fibonacci_matrix)\n        fibonacci_matrix = multiply(fibonacci_matrix, fibonacci_matrix)\n        n = <span class=\"hljs-built_in\">int</span>(n / <span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">return</span> res_matrix[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">nth_fibonacci_bruteforce</span>(<span class=\"hljs-params\">n</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; nth_fibonacci_bruteforce(100)\n    354224848179261915075\n    &gt;&gt;&gt; nth_fibonacci_bruteforce(-100)\n    -100\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> n &lt;= <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> n\n    fib0 = <span class=\"hljs-number\">0</span>\n    fib1 = <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">2</span>, n + <span class=\"hljs-number\">1</span>):\n        fib0, fib1 = fib1, fib0 + fib1\n    <span class=\"hljs-keyword\">return</span> fib1\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-keyword\">for</span> ordinal <span class=\"hljs-keyword\">in</span> <span class=\"hljs-string\">&quot;0th 1st 2nd 3rd 10th 100th 1000th&quot;</span>.split():\n        n = <span class=\"hljs-built_in\">int</span>(<span class=\"hljs-string\">&quot;&quot;</span>.join(c <span class=\"hljs-keyword\">for</span> c <span class=\"hljs-keyword\">in</span> ordinal <span class=\"hljs-keyword\">if</span> c <span class=\"hljs-keyword\">in</span> <span class=\"hljs-string\">&quot;0123456789&quot;</span>))  <span class=\"hljs-comment\"># 1000th --&gt; 1000</span>\n        <span class=\"hljs-built_in\">print</span>(\n            <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{ordinal}</span> fibonacci number using matrix exponentiation is &quot;</span>\n            <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{nth_fibonacci_matrix(n)}</span> and using bruteforce is &quot;</span>\n            <span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{nth_fibonacci_bruteforce(n)}</span>\\n&quot;</span>\n        )\n    <span class=\"hljs-comment\"># from timeit import timeit</span>\n    <span class=\"hljs-comment\"># print(timeit(&quot;nth_fibonacci_matrix(1000000)&quot;,</span>\n    <span class=\"hljs-comment\">#              &quot;from main import nth_fibonacci_matrix&quot;, number=5))</span>\n    <span class=\"hljs-comment\"># print(timeit(&quot;nth_fibonacci_bruteforce(1000000)&quot;,</span>\n    <span class=\"hljs-comment\">#              &quot;from main import nth_fibonacci_bruteforce&quot;, number=5))</span>\n    <span class=\"hljs-comment\"># 2.3342058970001744</span>\n    <span class=\"hljs-comment\"># 57.256506615000035</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Md. Mahbubur Rahman",
+      "email": "mahbuburrahman2111@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

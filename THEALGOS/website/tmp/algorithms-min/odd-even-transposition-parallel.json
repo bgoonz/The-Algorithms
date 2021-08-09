@@ -1,0 +1,36 @@
+{
+  "slug": "odd-even-transposition-parallel",
+  "name": "Odd Even Transposition Parallel",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Samarth Sehgal",
+      "email": "samarthsehgal97@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "CharlesRitter",
+      "email": "crritte@g.clemson.edu",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "gcd-recursive-euclidean",
+  "name": "Gcd Recursive Euclidean",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

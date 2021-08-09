@@ -1,0 +1,10 @@
+{
+  "slug": "maclaurin-series",
+  "name": "Maclaurin Series",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

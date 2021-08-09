@@ -1,0 +1,27 @@
+{
+  "slug": "hello-world",
+  "name": "Hello World",
+  "categories": ["exercism", "helloworld"],
+  "implementations": {
+    "c": "",
+    "aarch64_assembly": ""
+  },
+  "contributors": [
+    {
+      "name": "lahcenlachgar",
+      "email": "lachgarlahcen@hotmail.com",
+      "commits": 1
+    },
+    {
+      "name": "A Silent Cat",
+      "email": "silentcat@protonmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

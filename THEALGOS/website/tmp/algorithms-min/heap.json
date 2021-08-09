@@ -1,0 +1,114 @@
+{
+  "slug": "heap",
+  "name": "Heap",
+  "categories": ["datastructures", "heap"],
+  "implementations": {
+    "python": "",
+    "java": "",
+    "rust": "",
+    "swift": ""
+  },
+  "contributors": [
+    {
+      "name": "Boyd Johnson",
+      "email": "boydjohnson@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Linda_pp",
+      "email": "rhysd@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Matthias Gilch",
+      "email": "matthias.gilch.mg@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mat Wood",
+      "email": "thepacketgeek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mark Huang",
+      "email": "hhzeos@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "lanzhiwang",
+      "email": "hzhilamp@163.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akash Ali",
+      "email": "45498607+AkashAli506@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Yasser A",
+      "email": "r7al.77@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sven Weidauer",
+      "email": "sven@5sw.de",
+      "commits": 2
+    },
+    {
+      "name": "Nicolas Renard",
+      "email": "nicolas.renard.76@outlook.fr",
+      "commits": 2
+    },
+    {
+      "name": "Ankit Agarwal",
+      "email": "ankit.agarwal02@snapdeal.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

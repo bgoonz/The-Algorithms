@@ -1,0 +1,21 @@
+{
+  "slug": "recursive-double-linear-search",
+  "name": "Recursive Double Linear Search",
+  "categories": ["searches"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "searches/recursive_double_linear_search.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/searches/recursive_double_linear_search.rb",
+      "code": "<span class=\"hljs-comment\"># Iterate through the array to find the index of key using recursion.</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">recursive_double_linear_search</span><span class=\"hljs-params\">(data, key, left = <span class=\"hljs-number\">0</span>, right = <span class=\"hljs-number\">0</span>)</span></span>\n  right &amp;&amp;= data.length - <span class=\"hljs-number\">1</span>\n\n  <span class=\"hljs-keyword\">return</span> -<span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">if</span> left &gt; right\n\n  <span class=\"hljs-keyword\">return</span> left <span class=\"hljs-keyword\">if</span> data[left] == key\n  <span class=\"hljs-keyword\">return</span> right <span class=\"hljs-keyword\">if</span> data[right] == key\n\n  recursive_double_linear_search(data, key, left + <span class=\"hljs-number\">1</span>, right - <span class=\"hljs-number\">1</span>)\n<span class=\"hljs-keyword\">end</span>\n\nputs(recursive_double_linear_search([<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">11</span>], <span class=\"hljs-number\">5</span>))\n<span class=\"hljs-comment\"># =&gt; 5</span>\n\nputs(recursive_double_linear_search([<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">3</span>], <span class=\"hljs-number\">4</span>))\n<span class=\"hljs-comment\"># =&gt; 2</span>\n\nputs(recursive_double_linear_search([<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">3</span>], <span class=\"hljs-number\">6</span>))\n<span class=\"hljs-comment\"># =&gt; -1</span>\n\nputs(recursive_double_linear_search([<span class=\"hljs-number\">5</span>], <span class=\"hljs-number\">5</span>))\n<span class=\"hljs-comment\"># =&gt; 0</span>\n\nputs(recursive_double_linear_search([], <span class=\"hljs-number\">1</span>))\n<span class=\"hljs-comment\"># =&gt; -1</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

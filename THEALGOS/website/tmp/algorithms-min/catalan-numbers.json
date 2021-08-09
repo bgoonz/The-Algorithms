@@ -1,0 +1,27 @@
+{
+  "slug": "catalan-numbers",
+  "name": "Catalan Numbers",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Md Rafi Akhtar",
+      "email": "alimdrafi@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Lakshay Akula",
+      "email": "Kommandat@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

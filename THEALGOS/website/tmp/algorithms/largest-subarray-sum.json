@@ -1,0 +1,21 @@
+{
+  "slug": "largest-subarray-sum",
+  "name": "Largest Subarray Sum",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/largest_subarray_sum.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/largest_subarray_sum.py",
+      "code": "<span class=\"hljs-keyword\">from</span> sys <span class=\"hljs-keyword\">import</span> maxsize\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">max_sub_array_sum</span>(<span class=\"hljs-params\">a: <span class=\"hljs-built_in\">list</span>, size: <span class=\"hljs-built_in\">int</span> = <span class=\"hljs-number\">0</span></span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; max_sub_array_sum([-13, -3, -25, -20, -3, -16, -23, -12, -5, -22, -15, -4, -7])\n    -3\n    &quot;&quot;&quot;</span>\n    size = size <span class=\"hljs-keyword\">or</span> <span class=\"hljs-built_in\">len</span>(a)\n    max_so_far = -maxsize - <span class=\"hljs-number\">1</span>\n    max_ending_here = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">0</span>, size):\n        max_ending_here = max_ending_here + a[i]\n        <span class=\"hljs-keyword\">if</span> max_so_far &lt; max_ending_here:\n            max_so_far = max_ending_here\n        <span class=\"hljs-keyword\">if</span> max_ending_here &lt; <span class=\"hljs-number\">0</span>:\n            max_ending_here = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">return</span> max_so_far\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    a = [-<span class=\"hljs-number\">13</span>, -<span class=\"hljs-number\">3</span>, -<span class=\"hljs-number\">25</span>, -<span class=\"hljs-number\">20</span>, <span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">16</span>, -<span class=\"hljs-number\">23</span>, -<span class=\"hljs-number\">12</span>, -<span class=\"hljs-number\">5</span>, -<span class=\"hljs-number\">22</span>, -<span class=\"hljs-number\">15</span>, -<span class=\"hljs-number\">4</span>, -<span class=\"hljs-number\">7</span>]\n    <span class=\"hljs-built_in\">print</span>((<span class=\"hljs-string\">&quot;Maximum contiguous sum is&quot;</span>, max_sub_array_sum(a, <span class=\"hljs-built_in\">len</span>(a))))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "anubhav-sharma13",
+      "email": "45630457+anubhav-sharma13@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

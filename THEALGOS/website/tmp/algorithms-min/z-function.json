@@ -1,0 +1,27 @@
+{
+  "slug": "z-function",
+  "name": "Z Function",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "f-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "vakhokoto",
+      "email": "v.kotoreishvili@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Nika Losaberidze",
+      "email": "nlosa16@freeuni.edu.ge",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

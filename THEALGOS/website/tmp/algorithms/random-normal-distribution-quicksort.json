@@ -1,0 +1,46 @@
+{
+  "slug": "random-normal-distribution-quicksort",
+  "name": "Random Normal Distribution Quicksort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "sorts/random_normal_distribution_quicksort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/sorts/random_normal_distribution_quicksort.py",
+      "code": "<span class=\"hljs-keyword\">from</span> random <span class=\"hljs-keyword\">import</span> randint\n<span class=\"hljs-keyword\">from</span> tempfile <span class=\"hljs-keyword\">import</span> TemporaryFile\n\n<span class=\"hljs-keyword\">import</span> numpy <span class=\"hljs-keyword\">as</span> np\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_inPlaceQuickSort</span>(<span class=\"hljs-params\">A, start, end</span>):\n    count = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">if</span> start &lt; end:\n        pivot = randint(start, end)\n        temp = A[end]\n        A[end] = A[pivot]\n        A[pivot] = temp\n\n        p, count = _inPlacePartition(A, start, end)\n        count += _inPlaceQuickSort(A, start, p - <span class=\"hljs-number\">1</span>)\n        count += _inPlaceQuickSort(A, p + <span class=\"hljs-number\">1</span>, end)\n    <span class=\"hljs-keyword\">return</span> count\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_inPlacePartition</span>(<span class=\"hljs-params\">A, start, end</span>):\n\n    count = <span class=\"hljs-number\">0</span>\n    pivot = randint(start, end)\n    temp = A[end]\n    A[end] = A[pivot]\n    A[pivot] = temp\n    newPivotIndex = start - <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span> index <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(start, end):\n\n        count += <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">if</span> A[index] &lt; A[end]:  <span class=\"hljs-comment\"># check if current val is less than pivot value</span>\n            newPivotIndex = newPivotIndex + <span class=\"hljs-number\">1</span>\n            temp = A[newPivotIndex]\n            A[newPivotIndex] = A[index]\n            A[index] = temp\n\n    temp = A[newPivotIndex + <span class=\"hljs-number\">1</span>]\n    A[newPivotIndex + <span class=\"hljs-number\">1</span>] = A[end]\n    A[end] = temp\n    <span class=\"hljs-keyword\">return</span> newPivotIndex + <span class=\"hljs-number\">1</span>, count\n\n\noutfile = TemporaryFile()\np = <span class=\"hljs-number\">100</span>  <span class=\"hljs-comment\"># 1000 elements are to be sorted</span>\n\n\nmu, sigma = <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">1</span>  <span class=\"hljs-comment\"># mean and standard deviation</span>\nX = np.random.normal(mu, sigma, p)\nnp.save(outfile, X)\n<span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The array is&quot;</span>)\n<span class=\"hljs-built_in\">print</span>(X)\n\n\noutfile.seek(<span class=\"hljs-number\">0</span>)  <span class=\"hljs-comment\"># using the same array</span>\nM = np.load(outfile)\nr = <span class=\"hljs-built_in\">len</span>(M) - <span class=\"hljs-number\">1</span>\nz = _inPlaceQuickSort(M, <span class=\"hljs-number\">0</span>, r)\n\n<span class=\"hljs-built_in\">print</span>(\n    <span class=\"hljs-string\">&quot;No of Comparisons for 100 elements selected from a standard normal distribution&quot;</span>\n    <span class=\"hljs-string\">&quot;is :&quot;</span>\n)\n<span class=\"hljs-built_in\">print</span>(z)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Prateek Chanda",
+      "email": "prateekkol21@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

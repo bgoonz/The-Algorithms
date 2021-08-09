@@ -1,0 +1,21 @@
+{
+  "slug": "multiple",
+  "name": "Multiple",
+  "categories": ["divisibilityofintegers"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/Divisibility_of_integers/multiple.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/Divisibility_of_integers/multiple.m",
+      "code": "<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">ans</span> = <span class=\"hljs-title\">multiple</span><span class=\"hljs-params\">(x, m)</span></span>\n\n  <span class=\"hljs-comment\">% multiple : checks whether the first number is </span>\n  <span class=\"hljs-comment\">% divisible through the second number.</span>\n  <span class=\"hljs-comment\">% INPUTS: The inputs must be integers.</span>\n  <span class=\"hljs-comment\">% OUTPUT: Is a boolean value 0 or 1.</span>\n  <span class=\"hljs-comment\">% THROWS: Throws a assertion error if the inputs invalid.</span>\n\n  assert((isnumeric(x) &amp;&amp; isnumeric(m)), <span class=\"hljs-string\">&quot;The inputs must be integers&quot;</span>)\n\n  <span class=\"hljs-keyword\">if</span> m == <span class=\"hljs-number\">0</span> \n    <span class=\"hljs-built_in\">ans</span> = (x == <span class=\"hljs-number\">0</span>);\n  <span class=\"hljs-keyword\">else</span>\n    <span class=\"hljs-built_in\">ans</span> = (<span class=\"hljs-built_in\">mod</span>(x,m) == <span class=\"hljs-number\">0</span>);\n  <span class=\"hljs-keyword\">end</span>\n\nendfunction"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

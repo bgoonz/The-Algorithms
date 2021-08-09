@@ -1,0 +1,36 @@
+{
+  "slug": "c-atoi-str-to-integer",
+  "name": "C Atoi Str to Integer",
+  "categories": ["conversions"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "conversions/c_atoi_str_to_integer.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/conversions/c_atoi_str_to_integer.c",
+      "code": "<span class=\"hljs-comment\">/**\n * \\file\n * \\brief Recoding the original atoi function in stdlib.h\n * \\author [Mohammed YMIK](https://github.com/medymik)W\n * The function convert a string passed to an integer\n */</span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;assert.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;string.h&gt;</span></span>\n\n<span class=\"hljs-comment\">/**\n * the function take a string and return an integer\n * \\param[out] str pointer to a char address\n */</span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">c_atoi</span><span class=\"hljs-params\">(<span class=\"hljs-keyword\">const</span> <span class=\"hljs-type\">char</span> *str)</span>\n{\n    <span class=\"hljs-type\">int</span> i;\n    <span class=\"hljs-type\">int</span> sign;\n    <span class=\"hljs-type\">long</span> value;\n    <span class=\"hljs-type\">long</span> prev;\n\n    i = <span class=\"hljs-number\">0</span>;\n    sign = <span class=\"hljs-number\">1</span>;\n    value = <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-comment\">/* skipping the spaces */</span>\n    <span class=\"hljs-keyword\">while</span> (((str[i] &lt;= <span class=\"hljs-number\">13</span> &amp;&amp; str[i] &gt;= <span class=\"hljs-number\">9</span>) || str[i] == <span class=\"hljs-number\">32</span>) &amp;&amp; str[i] != <span class=\"hljs-string\">&#x27;\\0&#x27;</span>)\n        i++;\n\n    <span class=\"hljs-comment\">/* store the sign if it is negative sign */</span>\n    <span class=\"hljs-keyword\">if</span> (str[i] == <span class=\"hljs-string\">&#x27;-&#x27;</span>)\n\t{\n        sign = <span class=\"hljs-number\">-1</span>;\n\ti++;\n\t}\n    <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (str[i] == <span class=\"hljs-string\">&#x27;+&#x27;</span>)\n\t{\n        sign = <span class=\"hljs-number\">1</span>;\n\ti++;\n\t}\n\n    <span class=\"hljs-comment\">/* converting char by char to a numeric value */</span>\n    <span class=\"hljs-keyword\">while</span> (str[i] &gt;= <span class=\"hljs-number\">48</span> &amp;&amp; str[i] &lt;= <span class=\"hljs-number\">57</span> &amp;&amp; str[i] != <span class=\"hljs-string\">&#x27;\\0&#x27;</span>)\n    {\n        prev = value;\n        value = value * <span class=\"hljs-number\">10</span> + sign * (str[i] - <span class=\"hljs-string\">&#x27;0&#x27;</span>);\n\n        <span class=\"hljs-comment\">/* managing the overflow */</span>\n        <span class=\"hljs-keyword\">if</span> (sign == <span class=\"hljs-number\">1</span> &amp;&amp; prev &gt; value)\n            <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-number\">-1</span>);\n        <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (sign == <span class=\"hljs-number\">-1</span> &amp;&amp; prev &lt; value)\n            <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-number\">0</span>);\n        i++;\n    }\n    <span class=\"hljs-keyword\">return</span> (value);\n}\n\n<span class=\"hljs-comment\">/**\n * test the function implementation\n */</span>\n<span class=\"hljs-type\">void</span> <span class=\"hljs-title function_\">test_c_atoi</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;&lt;&lt;&lt;&lt; TEST FUNCTION &gt;&gt;&gt;&gt;\\n&quot;</span>);\n    assert(c_atoi(<span class=\"hljs-string\">&quot;123&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;123&quot;</span>));\n    assert(c_atoi(<span class=\"hljs-string\">&quot;-123&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;-123&quot;</span>));\n    assert(c_atoi(<span class=\"hljs-string\">&quot;&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;&quot;</span>));\n    assert(c_atoi(<span class=\"hljs-string\">&quot;-h23&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;-h23&quot;</span>));\n    assert(c_atoi(<span class=\"hljs-string\">&quot;         23&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;         23&quot;</span>));\n    assert(c_atoi(<span class=\"hljs-string\">&quot;999999999&quot;</span>) == atoi(<span class=\"hljs-string\">&quot;999999999&quot;</span>));\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;&lt;&lt;&lt;&lt; TEST DONE &gt;&gt;&gt;&gt;\\n&quot;</span>);\n}\n\n<span class=\"hljs-comment\">/**\n * the main function take one argument of type char*\n * example : ./program 123\n */</span>\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> argc, <span class=\"hljs-type\">char</span> **argv)</span>\n{\n    test_c_atoi();\n\n    <span class=\"hljs-keyword\">if</span> (argc == <span class=\"hljs-number\">2</span>)\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Your number + 5 is %d\\n&quot;</span>, c_atoi(argv[<span class=\"hljs-number\">1</span>]) + <span class=\"hljs-number\">5</span>);\n        <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-number\">0</span>);\n    }\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;wrong number of parmeters\\n&quot;</span>);\n    <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-number\">1</span>);\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "BillKek",
+      "email": "51540758+BillKek@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohammed YMIK",
+      "email": "35063009+medymik@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Mohammed YMIK",
+      "email": "Mohammed.ymik@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "hexadecimal-to-octal2",
+  "name": "Hexadecimal to Octal2",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Chayoung You",
+      "email": "yousbe@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "hamiltons-cycle",
+  "name": "Hamiltons Cycle",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

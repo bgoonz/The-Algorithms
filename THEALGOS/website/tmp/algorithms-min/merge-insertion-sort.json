@@ -1,0 +1,27 @@
+{
+  "slug": "merge-insertion-sort",
+  "name": "Merge Insertion Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "ryuta69",
+      "email": "eyma22s.yu@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

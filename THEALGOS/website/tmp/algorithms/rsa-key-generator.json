@@ -1,0 +1,56 @@
+{
+  "slug": "rsa-key-generator",
+  "name": "Rsa Key Generator",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/rsa_key_generator.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/rsa_key_generator.py",
+      "code": "<span class=\"hljs-keyword\">import</span> os\n<span class=\"hljs-keyword\">import</span> random\n<span class=\"hljs-keyword\">import</span> sys\n\n<span class=\"hljs-keyword\">from</span> . <span class=\"hljs-keyword\">import</span> cryptomath_module <span class=\"hljs-keyword\">as</span> cryptoMath\n<span class=\"hljs-keyword\">from</span> . <span class=\"hljs-keyword\">import</span> rabin_miller <span class=\"hljs-keyword\">as</span> rabinMiller\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Making key files...&quot;</span>)\n    makeKeyFiles(<span class=\"hljs-string\">&quot;rsa&quot;</span>, <span class=\"hljs-number\">1024</span>)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Key files generation successful.&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">generateKey</span>(<span class=\"hljs-params\">keySize: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>], <span class=\"hljs-built_in\">tuple</span>[<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">int</span>]]:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Generating prime p...&quot;</span>)\n    p = rabinMiller.generateLargePrime(keySize)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Generating prime q...&quot;</span>)\n    q = rabinMiller.generateLargePrime(keySize)\n    n = p * q\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Generating e that is relatively prime to (p - 1) * (q - 1)...&quot;</span>)\n    <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\n        e = random.randrange(<span class=\"hljs-number\">2</span> ** (keySize - <span class=\"hljs-number\">1</span>), <span class=\"hljs-number\">2</span> ** (keySize))\n        <span class=\"hljs-keyword\">if</span> cryptoMath.gcd(e, (p - <span class=\"hljs-number\">1</span>) * (q - <span class=\"hljs-number\">1</span>)) == <span class=\"hljs-number\">1</span>:\n            <span class=\"hljs-keyword\">break</span>\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Calculating d that is mod inverse of e...&quot;</span>)\n    d = cryptoMath.find_mod_inverse(e, (p - <span class=\"hljs-number\">1</span>) * (q - <span class=\"hljs-number\">1</span>))\n\n    publicKey = (n, e)\n    privateKey = (n, d)\n    <span class=\"hljs-keyword\">return</span> (publicKey, privateKey)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">makeKeyFiles</span>(<span class=\"hljs-params\">name: <span class=\"hljs-built_in\">str</span>, keySize: <span class=\"hljs-built_in\">int</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-keyword\">if</span> os.path.exists(<span class=\"hljs-string\">&quot;%s_pubkey.txt&quot;</span> % (name)) <span class=\"hljs-keyword\">or</span> os.path.exists(\n        <span class=\"hljs-string\">&quot;%s_privkey.txt&quot;</span> % (name)\n    ):\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nWARNING:&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>(\n            <span class=\"hljs-string\">&#x27;&quot;%s_pubkey.txt&quot; or &quot;%s_privkey.txt&quot; already exists. \\n&#x27;</span>\n            <span class=\"hljs-string\">&quot;Use a different name or delete these files and re-run this program.&quot;</span>\n            % (name, name)\n        )\n        sys.exit()\n\n    publicKey, privateKey = generateKey(keySize)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;\\nWriting public key to file %s_pubkey.txt...&quot;</span> % name)\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;%s_pubkey.txt&quot;</span> % name, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> out_file:\n        out_file.write(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{keySize}</span>,<span class=\"hljs-subst\">{publicKey[<span class=\"hljs-number\">0</span>]}</span>,<span class=\"hljs-subst\">{publicKey[<span class=\"hljs-number\">1</span>]}</span>&quot;</span>)\n\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Writing private key to file %s_privkey.txt...&quot;</span> % name)\n    <span class=\"hljs-keyword\">with</span> <span class=\"hljs-built_in\">open</span>(<span class=\"hljs-string\">&quot;%s_privkey.txt&quot;</span> % name, <span class=\"hljs-string\">&quot;w&quot;</span>) <span class=\"hljs-keyword\">as</span> out_file:\n        out_file.write(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{keySize}</span>,<span class=\"hljs-subst\">{privateKey[<span class=\"hljs-number\">0</span>]}</span>,<span class=\"hljs-subst\">{privateKey[<span class=\"hljs-number\">1</span>]}</span>&quot;</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "CarsonHam",
+      "email": "carson.ham@utexas.edu",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

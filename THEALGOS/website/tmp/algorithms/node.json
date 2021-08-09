@@ -1,0 +1,41 @@
+{
+  "slug": "node",
+  "name": "Node",
+  "categories": ["datastructures", "binarytree"],
+  "body": {},
+  "implementations": {
+    "go": {
+      "dir": "datastructures/binary-tree/node.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/datastructures/binary-tree/node.go",
+      "code": "<span class=\"hljs-keyword\">package</span> binarytree\n\n<span class=\"hljs-comment\">// Node structure for Nodes</span>\n<span class=\"hljs-keyword\">type</span> Node <span class=\"hljs-keyword\">struct</span> {\n\tval   <span class=\"hljs-keyword\">int</span>\n\tleft  *Node\n\tright *Node\n}\n\n<span class=\"hljs-comment\">// NewNode Returns a new pointer to an empty Node</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">NewNode</span><span class=\"hljs-params\">(val <span class=\"hljs-keyword\">int</span>)</span> *<span class=\"hljs-title\">Node</span></span> {\n\t<span class=\"hljs-keyword\">return</span> &amp;Node{val, <span class=\"hljs-literal\">nil</span>, <span class=\"hljs-literal\">nil</span>}\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Tim Akermann",
+      "email": "ti.akermann@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shivg7706",
+      "email": "shivamgupta7706@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

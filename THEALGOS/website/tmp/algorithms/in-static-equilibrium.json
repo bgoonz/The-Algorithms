@@ -1,0 +1,41 @@
+{
+  "slug": "in-static-equilibrium",
+  "name": "In Static Equilibrium",
+  "categories": ["numericalanalysis"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "arithmetic_analysis/in_static_equilibrium.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/arithmetic_analysis/in_static_equilibrium.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\r\nChecks if a system of forces is in static equilibrium.\r\n&quot;&quot;&quot;</span>\r\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\r\n\r\n<span class=\"hljs-keyword\">from</span> numpy <span class=\"hljs-keyword\">import</span> array, cos, cross, ndarray, radians, sin\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">polar_force</span>(<span class=\"hljs-params\">\r\n    magnitude: <span class=\"hljs-built_in\">float</span>, angle: <span class=\"hljs-built_in\">float</span>, radian_mode: <span class=\"hljs-built_in\">bool</span> = <span class=\"hljs-literal\">False</span>\r\n</span>) -&gt; <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">float</span>]:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Resolves force along rectangular components.\r\n    (force, angle) =&gt; (force_x, force_y)\r\n    &gt;&gt;&gt; polar_force(10, 45)\r\n    [7.0710678118654755, 7.071067811865475]\r\n    &gt;&gt;&gt; polar_force(10, 3.14, radian_mode=True)\r\n    [-9.999987317275394, 0.01592652916486828]\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-keyword\">if</span> radian_mode:\r\n        <span class=\"hljs-keyword\">return</span> [magnitude * cos(angle), magnitude * sin(angle)]\r\n    <span class=\"hljs-keyword\">return</span> [magnitude * cos(radians(angle)), magnitude * sin(radians(angle))]\r\n\r\n\r\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">in_static_equilibrium</span>(<span class=\"hljs-params\">\r\n    forces: ndarray, location: ndarray, eps: <span class=\"hljs-built_in\">float</span> = <span class=\"hljs-number\">10</span> ** -<span class=\"hljs-number\">1</span>\r\n</span>) -&gt; <span class=\"hljs-built_in\">bool</span>:\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;\r\n    Check if a system is in equilibrium.\r\n    It takes two numpy.array objects.\r\n    forces ==&gt;  [\r\n                        [force1_x, force1_y],\r\n                        [force2_x, force2_y],\r\n                        ....]\r\n    location ==&gt;  [\r\n                        [x1, y1],\r\n                        [x2, y2],\r\n                        ....]\r\n    &gt;&gt;&gt; force = array([[1, 1], [-1, 2]])\r\n    &gt;&gt;&gt; location = array([[1, 0], [10, 0]])\r\n    &gt;&gt;&gt; in_static_equilibrium(force, location)\r\n    False\r\n    &quot;&quot;&quot;</span>\r\n    <span class=\"hljs-comment\"># summation of moments is zero</span>\r\n    moments: ndarray = cross(location, forces)\r\n    sum_moments: <span class=\"hljs-built_in\">float</span> = <span class=\"hljs-built_in\">sum</span>(moments)\r\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">abs</span>(sum_moments) &lt; eps\r\n\r\n\r\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\r\n    <span class=\"hljs-comment\"># Test to check if it works</span>\r\n    forces = array(\r\n        [polar_force(<span class=\"hljs-number\">718.4</span>, <span class=\"hljs-number\">180</span> - <span class=\"hljs-number\">30</span>), polar_force(<span class=\"hljs-number\">879.54</span>, <span class=\"hljs-number\">45</span>), polar_force(<span class=\"hljs-number\">100</span>, -<span class=\"hljs-number\">90</span>)]\r\n    )\r\n\r\n    location = array([[<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>]])\r\n\r\n    <span class=\"hljs-keyword\">assert</span> in_static_equilibrium(forces, location)\r\n\r\n    <span class=\"hljs-comment\"># Problem 1 in image_data/2D_problems.jpg</span>\r\n    forces = array(\r\n        [\r\n            polar_force(<span class=\"hljs-number\">30</span> * <span class=\"hljs-number\">9.81</span>, <span class=\"hljs-number\">15</span>),\r\n            polar_force(<span class=\"hljs-number\">215</span>, <span class=\"hljs-number\">180</span> - <span class=\"hljs-number\">45</span>),\r\n            polar_force(<span class=\"hljs-number\">264</span>, <span class=\"hljs-number\">90</span> - <span class=\"hljs-number\">30</span>),\r\n        ]\r\n    )\r\n\r\n    location = array([[<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>]])\r\n\r\n    <span class=\"hljs-keyword\">assert</span> in_static_equilibrium(forces, location)\r\n\r\n    <span class=\"hljs-comment\"># Problem in image_data/2D_problems_1.jpg</span>\r\n    forces = array([[<span class=\"hljs-number\">0</span>, -<span class=\"hljs-number\">2000</span>], [<span class=\"hljs-number\">0</span>, -<span class=\"hljs-number\">1200</span>], [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">15600</span>], [<span class=\"hljs-number\">0</span>, -<span class=\"hljs-number\">12400</span>]])\r\n\r\n    location = array([[<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">0</span>], [<span class=\"hljs-number\">12</span>, <span class=\"hljs-number\">0</span>]])\r\n\r\n    <span class=\"hljs-keyword\">assert</span> in_static_equilibrium(forces, location)\r\n\r\n    <span class=\"hljs-keyword\">import</span> doctest\r\n\r\n    doctest.testmod()\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "QuantumNovice",
+      "email": "43876848+QuantumNovice@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "algobytewise",
+      "email": "algobytewise@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "alternative-string-arrange",
+  "name": "Alternative String Arrange",
+  "categories": ["strings"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "SURYAPRATAP SINGH SURYAVANSHI",
+      "email": "67123991+suryapratapsinghsuryavanshi@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

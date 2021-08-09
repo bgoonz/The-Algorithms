@@ -1,0 +1,31 @@
+{
+  "slug": "generictree",
+  "name": "GenericTree",
+  "categories": ["datastructures", "tree"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "JayH2018",
+      "email": "42029911+JayH2018@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "ParitoshAggarwal",
+      "email": "paritoshmait@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

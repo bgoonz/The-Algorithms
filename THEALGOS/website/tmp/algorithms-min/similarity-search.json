@@ -1,0 +1,16 @@
+{
+  "slug": "similarity-search",
+  "name": "Similarity Search",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Steve Kim",
+      "email": "54872857+SteveKimSR@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

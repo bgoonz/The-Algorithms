@@ -1,0 +1,16 @@
+{
+  "slug": "stackes6",
+  "name": "StackES6",
+  "categories": ["datastructures", "stack"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Kolotushkin Maxim",
+      "email": "58226682+Makso83@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

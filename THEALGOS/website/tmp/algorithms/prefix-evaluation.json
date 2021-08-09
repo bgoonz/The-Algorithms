@@ -1,0 +1,21 @@
+{
+  "slug": "prefix-evaluation",
+  "name": "Prefix Evaluation",
+  "categories": ["datastructures", "stacks"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/stacks/prefix_evaluation.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/stacks/prefix_evaluation.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nPython3 program to evaluate a prefix expression.\n&quot;&quot;&quot;</span>\n\ncalc = {\n    <span class=\"hljs-string\">&quot;+&quot;</span>: <span class=\"hljs-keyword\">lambda</span> x, y: x + y,\n    <span class=\"hljs-string\">&quot;-&quot;</span>: <span class=\"hljs-keyword\">lambda</span> x, y: x - y,\n    <span class=\"hljs-string\">&quot;*&quot;</span>: <span class=\"hljs-keyword\">lambda</span> x, y: x * y,\n    <span class=\"hljs-string\">&quot;/&quot;</span>: <span class=\"hljs-keyword\">lambda</span> x, y: x / y,\n}\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">is_operand</span>(<span class=\"hljs-params\">c</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Return True if the given char c is an operand, e.g. it is a number\n\n    &gt;&gt;&gt; is_operand(&quot;1&quot;)\n    True\n    &gt;&gt;&gt; is_operand(&quot;+&quot;)\n    False\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> c.isdigit()\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">evaluate</span>(<span class=\"hljs-params\">expression</span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Evaluate a given expression in prefix notation.\n    Asserts that the given expression is valid.\n\n    &gt;&gt;&gt; evaluate(&quot;+ 9 * 2 6&quot;)\n    21\n    &gt;&gt;&gt; evaluate(&quot;/ * 10 2 + 4 1 &quot;)\n    4.0\n    &quot;&quot;&quot;</span>\n    stack = []\n\n    <span class=\"hljs-comment\"># iterate over the string in reverse order</span>\n    <span class=\"hljs-keyword\">for</span> c <span class=\"hljs-keyword\">in</span> expression.split()[::-<span class=\"hljs-number\">1</span>]:\n\n        <span class=\"hljs-comment\"># push operand to stack</span>\n        <span class=\"hljs-keyword\">if</span> is_operand(c):\n            stack.append(<span class=\"hljs-built_in\">int</span>(c))\n\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-comment\"># pop values from stack can calculate the result</span>\n            <span class=\"hljs-comment\"># push the result onto the stack again</span>\n            o1 = stack.pop()\n            o2 = stack.pop()\n            stack.append(calc[c](o1, o2))\n\n    <span class=\"hljs-keyword\">return</span> stack.pop()\n\n\n<span class=\"hljs-comment\"># Driver code</span>\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    test_expression = <span class=\"hljs-string\">&quot;+ 9 * 2 6&quot;</span>\n    <span class=\"hljs-built_in\">print</span>(evaluate(test_expression))\n\n    test_expression = <span class=\"hljs-string\">&quot;/ * 10 2 + 4 1 &quot;</span>\n    <span class=\"hljs-built_in\">print</span>(evaluate(test_expression))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Leon Morten Richter",
+      "email": "31622033+M0r13n@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

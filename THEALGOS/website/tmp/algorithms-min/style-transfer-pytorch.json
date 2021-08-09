@@ -1,0 +1,16 @@
+{
+  "slug": "style-transfer-pytorch",
+  "name": "Style Transfer Pytorch",
+  "categories": ["neuralnetwork"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "sushmit-goyal",
+      "email": "sushmitarvindgoyal@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

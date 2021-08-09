@@ -1,0 +1,46 @@
+{
+  "slug": "pigeon-sort",
+  "name": "Pigeon Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Hiyabye",
+      "email": "jihoon7373@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "wuyudi",
+      "email": "wuyudi1109@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Parth Paradkar",
+      "email": "parthparadkar3@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "José Henrique Ivanchechen",
+      "email": "joseivanchechen@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

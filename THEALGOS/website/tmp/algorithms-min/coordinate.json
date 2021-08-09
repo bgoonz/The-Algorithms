@@ -1,0 +1,16 @@
+{
+  "slug": "coordinate",
+  "name": "Coordinate",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Enoch-Moke",
+      "email": "86700309+Enoch-Moke@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

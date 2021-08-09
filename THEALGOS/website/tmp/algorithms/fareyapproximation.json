@@ -1,0 +1,21 @@
+{
+  "slug": "fareyapproximation",
+  "name": "FareyApproximation",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/FareyApproximation.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/FareyApproximation.js",
+      "code": "<span class=\"hljs-comment\">/*\n* Reference: https://en.wikipedia.org/wiki/Farey_sequence\n* Inspiration: https://www.youtube.com/watch?v=7LKy3lrkTRA\n*\n* Farey Approximation algorithm is an algorithm to\n* approximate a reduced fraction value for a certain\n* decimal number x where 0 &lt; x &lt; 1.\n*\n* The algorithm works by keeping two fractional upper and\n* lower bounds which start at 0 / 1 and 1 / 1. These values\n* are then used to find the &quot;mediate&quot; which is a value between\n* the two fractions.\n*\n* For any two fractions a / b and c / d,\n* mediate = a + c / b + d\n*\n* Then it is checked if the decimal is greater than or less\n* than the mediate and then the lower or the upper value is\n* set to be the mediate respectively.\n*\n* This is repeated for n times and then the mediate is\n* returned.\n*\n* This is explained in a greater detail in the &quot;Inspiration&quot;\n* link.\n*/</span>\n\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">fareyApproximation</span> (decimal, repeat = <span class=\"hljs-number\">20</span>) {\n  <span class=\"hljs-keyword\">let</span> a = <span class=\"hljs-number\">0</span>; <span class=\"hljs-keyword\">let</span> b = <span class=\"hljs-number\">1</span>; <span class=\"hljs-keyword\">let</span> c = <span class=\"hljs-number\">1</span>; <span class=\"hljs-keyword\">let</span> d = <span class=\"hljs-number\">1</span>; <span class=\"hljs-keyword\">let</span> numerator; <span class=\"hljs-keyword\">let</span> denominator\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; repeat; i++) {\n    numerator = a + c\n    denominator = b + d\n\n    <span class=\"hljs-keyword\">if</span> (decimal &gt; numerator / denominator) {\n      [a, b] = [numerator, denominator]\n    } <span class=\"hljs-keyword\">else</span> {\n      [c, d] = [numerator, denominator]\n    }\n  }\n\n  <span class=\"hljs-keyword\">return</span> { numerator, denominator }\n}\n\n<span class=\"hljs-keyword\">export</span> { fareyApproximation }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rak Laptudirm",
+      "email": "raklaptudirm@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

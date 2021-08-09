@@ -1,0 +1,21 @@
+{
+  "slug": "rail-fence-cipher",
+  "name": "Rail Fence Cipher",
+  "categories": ["ciphers"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PotatoK123",
+      "email": "56174807+PotatoK123@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

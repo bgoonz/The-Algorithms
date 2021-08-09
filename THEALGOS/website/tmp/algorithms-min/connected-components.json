@@ -1,0 +1,48 @@
+{
+  "slug": "connected-components",
+  "name": "Connected Components",
+  "categories": ["graphs"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nika Losaberidze",
+      "email": "nlosa16@freeuni.edu.ge",
+      "commits": 1
+    },
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Ayaan Khan",
+      "email": "ayaankhan98@gmail.com",
+      "commits": 11
+    }
+  ],
+  "explanationUrl": {}
+}

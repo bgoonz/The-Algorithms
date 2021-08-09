@@ -1,0 +1,16 @@
+{
+  "slug": "find-the-highest-altitude",
+  "name": "Find the Highest Altitude",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

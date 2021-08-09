@@ -1,0 +1,46 @@
+{
+  "slug": "absolutemin",
+  "name": "AbsoluteMin",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Maths/AbsoluteMin.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Maths/AbsoluteMin.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Maths;\n\n<span class=\"hljs-keyword\">import</span> java.util.Arrays;\n\n<span class=\"hljs-comment\">/**\n * description:\n *\n * &lt;p&gt;absMin([0, 5, 1, 11]) = 0, absMin([3 , -10, -2]) = -2\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">AbsoluteMin</span> {\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">int</span>[] testnums = {<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">16</span>};\n    <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-title function_\">absMin</span><span class=\"hljs-params\">(testnums)</span> == <span class=\"hljs-number\">0</span>;\n\n    <span class=\"hljs-type\">int</span>[] numbers = {<span class=\"hljs-number\">3</span>, -<span class=\"hljs-number\">10</span>, -<span class=\"hljs-number\">2</span>};\n    System.out.println(<span class=\"hljs-string\">&quot;absMin(&quot;</span> + Arrays.toString(numbers) + <span class=\"hljs-string\">&quot;) = &quot;</span> + absMin(numbers));\n  }\n\n  <span class=\"hljs-comment\">/**\n   * get the value, returns the absolute min value min\n   *\n   * <span class=\"hljs-doctag\">@param</span> numbers contains elements\n   * <span class=\"hljs-doctag\">@return</span> the absolute min value\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">absMin</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span>[] numbers)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">absMinValue</span> <span class=\"hljs-operator\">=</span> numbers[<span class=\"hljs-number\">0</span>];\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>, length = numbers.length; i &lt; length; ++i) {\n      <span class=\"hljs-keyword\">if</span> (Math.abs(numbers[i]) &lt; Math.abs(absMinValue)) {\n        absMinValue = numbers[i];\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> absMinValue;\n  }\n}\n"
+    },
+    "php": {
+      "dir": "Maths/AbsoluteMin.php",
+      "url": "https://github.com/TheAlgorithms/php/tree/master/Maths/AbsoluteMin.php",
+      "code": "<span class=\"hljs-meta\">&lt;?php</span>\n<span class=\"hljs-comment\">/**\n * This function calculates\n * Absolute min values from\n * the different numbers\n * provided.\n *\n * <span class=\"hljs-doctag\">@param</span> decimal $numbers A variable sized number input\n * <span class=\"hljs-doctag\">@return</span> decimal $absoluteMin Absolute min value\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">absolute_min</span>(<span class=\"hljs-params\">...<span class=\"hljs-variable\">$numbers</span></span>)\n</span>{\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">empty</span>(<span class=\"hljs-variable\">$numbers</span>)) {\n        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> \\<span class=\"hljs-built_in\">Exception</span>(<span class=\"hljs-string\">&#x27;Please pass values to find absolute min value&#x27;</span>);\n    }\n\n    <span class=\"hljs-variable\">$absoluteMin</span> = <span class=\"hljs-variable\">$numbers</span>[<span class=\"hljs-number\">0</span>];\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-variable\">$loopIndex</span> = <span class=\"hljs-number\">0</span>; <span class=\"hljs-variable\">$loopIndex</span> &lt; count(<span class=\"hljs-variable\">$numbers</span>); <span class=\"hljs-variable\">$loopIndex</span>++) {\n        <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-variable\">$numbers</span>[<span class=\"hljs-variable\">$loopIndex</span>] &lt; <span class=\"hljs-variable\">$absoluteMin</span>) {\n            <span class=\"hljs-variable\">$absoluteMin</span> = <span class=\"hljs-variable\">$numbers</span>[<span class=\"hljs-variable\">$loopIndex</span>];\n        }\n    }\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-variable\">$absoluteMin</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    },
+    {
+      "name": "Ray S",
+      "email": "68674276+rbshealy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Arogon1",
+      "email": "40372809+Arogon1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

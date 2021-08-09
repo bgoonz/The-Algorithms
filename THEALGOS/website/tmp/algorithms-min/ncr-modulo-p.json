@@ -1,0 +1,10 @@
+{
+  "slug": "ncr-modulo-p",
+  "name": "Ncr Modulo P",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

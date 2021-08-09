@@ -1,0 +1,61 @@
+{
+  "slug": "brute-force-caesar-cipher",
+  "name": "Brute Force Caesar Cipher",
+  "categories": ["ciphers"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "ciphers/brute_force_caesar_cipher.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/ciphers/brute_force_caesar_cipher.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">decrypt</span>(<span class=\"hljs-params\">message: <span class=\"hljs-built_in\">str</span></span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; decrypt(&#x27;TMDETUX PMDVU&#x27;)\n    Decryption using Key #0: TMDETUX PMDVU\n    Decryption using Key #1: SLCDSTW OLCUT\n    Decryption using Key #2: RKBCRSV NKBTS\n    Decryption using Key #3: QJABQRU MJASR\n    Decryption using Key #4: PIZAPQT LIZRQ\n    Decryption using Key #5: OHYZOPS KHYQP\n    Decryption using Key #6: NGXYNOR JGXPO\n    Decryption using Key #7: MFWXMNQ IFWON\n    Decryption using Key #8: LEVWLMP HEVNM\n    Decryption using Key #9: KDUVKLO GDUML\n    Decryption using Key #10: JCTUJKN FCTLK\n    Decryption using Key #11: IBSTIJM EBSKJ\n    Decryption using Key #12: HARSHIL DARJI\n    Decryption using Key #13: GZQRGHK CZQIH\n    Decryption using Key #14: FYPQFGJ BYPHG\n    Decryption using Key #15: EXOPEFI AXOGF\n    Decryption using Key #16: DWNODEH ZWNFE\n    Decryption using Key #17: CVMNCDG YVMED\n    Decryption using Key #18: BULMBCF XULDC\n    Decryption using Key #19: ATKLABE WTKCB\n    Decryption using Key #20: ZSJKZAD VSJBA\n    Decryption using Key #21: YRIJYZC URIAZ\n    Decryption using Key #22: XQHIXYB TQHZY\n    Decryption using Key #23: WPGHWXA SPGYX\n    Decryption using Key #24: VOFGVWZ ROFXW\n    Decryption using Key #25: UNEFUVY QNEWV\n    &quot;&quot;&quot;</span>\n    LETTERS = <span class=\"hljs-string\">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>\n    <span class=\"hljs-keyword\">for</span> key <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(LETTERS)):\n        translated = <span class=\"hljs-string\">&quot;&quot;</span>\n        <span class=\"hljs-keyword\">for</span> symbol <span class=\"hljs-keyword\">in</span> message:\n            <span class=\"hljs-keyword\">if</span> symbol <span class=\"hljs-keyword\">in</span> LETTERS:\n                num = LETTERS.find(symbol)\n                num = num - key\n                <span class=\"hljs-keyword\">if</span> num &lt; <span class=\"hljs-number\">0</span>:\n                    num = num + <span class=\"hljs-built_in\">len</span>(LETTERS)\n                translated = translated + LETTERS[num]\n            <span class=\"hljs-keyword\">else</span>:\n                translated = translated + symbol\n        <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">f&quot;Decryption using Key #<span class=\"hljs-subst\">{key}</span>: <span class=\"hljs-subst\">{translated}</span>&quot;</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    message = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Encrypted message: &quot;</span>)\n    message = message.upper()\n    decrypt(message)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "ParthS007",
+      "email": "parth1989shandilya@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jenia Dysin",
+      "email": "jenia90@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

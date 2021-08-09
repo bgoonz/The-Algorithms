@@ -1,0 +1,16 @@
+{
+  "slug": "rungradientdescent",
+  "name": "runGradientDescent",
+  "categories": ["machinelearning", "gradientdescent"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Anesh Kaul",
+      "email": "koulanish787@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

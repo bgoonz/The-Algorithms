@@ -1,0 +1,36 @@
+{
+  "slug": "split",
+  "name": "Split",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "strings/split.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/strings/split.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">split</span>(<span class=\"hljs-params\">string: <span class=\"hljs-built_in\">str</span>, separator: <span class=\"hljs-built_in\">str</span> = <span class=\"hljs-string\">&quot; &quot;</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Will split the string up into all the values separated by the separator\n    (defaults to spaces)\n\n    &gt;&gt;&gt; split(&quot;apple#banana#cherry#orange&quot;,separator=&#x27;#&#x27;)\n    [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;orange&#x27;]\n\n    &gt;&gt;&gt; split(&quot;Hello there&quot;)\n    [&#x27;Hello&#x27;, &#x27;there&#x27;]\n\n    &gt;&gt;&gt; split(&quot;11/22/63&quot;,separator = &#x27;/&#x27;)\n    [&#x27;11&#x27;, &#x27;22&#x27;, &#x27;63&#x27;]\n\n    &gt;&gt;&gt; split(&quot;12:43:39&quot;,separator = &quot;:&quot;)\n    [&#x27;12&#x27;, &#x27;43&#x27;, &#x27;39&#x27;]\n    &quot;&quot;&quot;</span>\n\n    split_words = []\n\n    last_index = <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span> index, char <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(string):\n        <span class=\"hljs-keyword\">if</span> char == separator:\n            split_words.append(string[last_index:index])\n            last_index = index + <span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">elif</span> index + <span class=\"hljs-number\">1</span> == <span class=\"hljs-built_in\">len</span>(string):\n            split_words.append(string[last_index : index + <span class=\"hljs-number\">1</span>])\n    <span class=\"hljs-keyword\">return</span> split_words\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">from</span> doctest <span class=\"hljs-keyword\">import</span> testmod\n\n    testmod()\n"
+    },
+    "f-sharp": {
+      "dir": "Algorithms/Strings/Split.fs",
+      "url": "https://github.com/TheAlgorithms/f-sharp/tree/master/Algorithms/Strings/Split.fs",
+      "code": "﻿<span class=\"hljs-keyword\">namespace</span> Algorithms.Strings\r\n\r\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">type</span> <span class=\"hljs-title\">Split</span></span>() =\r\n    <span class=\"hljs-comment\">/// &lt;summary&gt;</span>\r\n    <span class=\"hljs-comment\">/// Will split the string up into all the values separated by the separator</span>\r\n    <span class=\"hljs-comment\">/// &lt;/summary&gt;</span>\r\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;str&quot;&gt;String to split into lists&lt;/param&gt;</span>\r\n    <span class=\"hljs-comment\">/// &lt;param name=&quot;separator&quot;&gt;The separator on what you would like to separate your strings&lt;/param&gt;</span>\r\n    <span class=\"hljs-comment\">/// &lt;returns&gt;A string list&lt;/returns&gt;</span>\r\n    <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">member</span> Split(str: string, ?separator0: char): string list =\r\n        <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> newStringList: string list = []\r\n        <span class=\"hljs-keyword\">let</span> separator = defaultArg separator0 &#x27; &#x27;\r\n        <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">mutable</span> value = <span class=\"hljs-string\">&quot;&quot;</span>\r\n\r\n        <span class=\"hljs-keyword\">if</span> str.Contains separator <span class=\"hljs-keyword\">then</span>\r\n            <span class=\"hljs-keyword\">for</span> c <span class=\"hljs-keyword\">in</span> str <span class=\"hljs-keyword\">do</span>\r\n                <span class=\"hljs-keyword\">match</span> (string) c <span class=\"hljs-keyword\">with</span>\r\n                | c <span class=\"hljs-keyword\">when</span> c.Contains separator -&gt;\r\n                    newStringList &lt;- newStringList |&gt; List.append &lt;| [ value ]\r\n                    value &lt;- <span class=\"hljs-string\">&quot;&quot;</span>\r\n                | _ -&gt; value &lt;- value + (string) c\r\n\r\n            <span class=\"hljs-keyword\">if</span> value &lt;&gt; <span class=\"hljs-string\">&quot;&quot;</span> <span class=\"hljs-keyword\">then</span>\r\n                newStringList &lt;- newStringList |&gt; List.append &lt;| [ value ]\r\n                value &lt;- <span class=\"hljs-string\">&quot;&quot;</span>\r\n        <span class=\"hljs-keyword\">else</span>\r\n            newStringList &lt;- [ value ]\r\n\r\n        newStringList\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Cole Mollica",
+      "email": "30614241+coleman2246@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

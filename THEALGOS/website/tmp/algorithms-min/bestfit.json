@@ -1,0 +1,16 @@
+{
+  "slug": "bestfit",
+  "name": "BestFit",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Dekas Dimitrios",
+      "email": "dimitridekas@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

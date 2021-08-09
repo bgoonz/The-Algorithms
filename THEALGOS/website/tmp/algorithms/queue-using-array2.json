@@ -1,0 +1,21 @@
+{
+  "slug": "queue-using-array2",
+  "name": "Queue Using Array2",
+  "categories": ["datastructures"],
+  "body": {},
+  "implementations": {
+    "c-plus-plus": {
+      "dir": "data_structures/queue_using_array2.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/data_structures/queue_using_array2.cpp",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span></span>\n<span class=\"hljs-keyword\">using</span> <span class=\"hljs-keyword\">namespace</span> std;\n\n<span class=\"hljs-type\">int</span> queue[<span class=\"hljs-number\">10</span>];\n<span class=\"hljs-type\">int</span> front = <span class=\"hljs-number\">0</span>;\n<span class=\"hljs-type\">int</span> rear = <span class=\"hljs-number\">0</span>;\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">Enque</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> x)</span> </span>{\n    <span class=\"hljs-keyword\">if</span> (rear == <span class=\"hljs-number\">10</span>) {\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nOverflow&quot;</span>;\n    } <span class=\"hljs-keyword\">else</span> {\n        queue[rear++] = x;\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">Deque</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-keyword\">if</span> (front == rear) {\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nUnderflow&quot;</span>;\n    }\n\n    <span class=\"hljs-keyword\">else</span> {\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n&quot;</span> &lt;&lt; queue[front++] &lt;&lt; <span class=\"hljs-string\">&quot; deleted&quot;</span>;\n        <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = front; i &lt; rear; i++) {\n            queue[i - front] = queue[i];\n        }\n        rear = rear - front;\n        front = <span class=\"hljs-number\">0</span>;\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">void</span> <span class=\"hljs-title\">show</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = front; i &lt; rear; i++) {\n        cout &lt;&lt; queue[i] &lt;&lt; <span class=\"hljs-string\">&quot;\\t&quot;</span>;\n    }\n}\n\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-type\">int</span> ch, x;\n    <span class=\"hljs-keyword\">do</span> {\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n1. Enque&quot;</span>;\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n2. Deque&quot;</span>;\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\n3. Print&quot;</span>;\n        cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nEnter Your Choice : &quot;</span>;\n        cin &gt;&gt; ch;\n        <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">1</span>) {\n            cout &lt;&lt; <span class=\"hljs-string\">&quot;\\nInsert : &quot;</span>;\n            cin &gt;&gt; x;\n            <span class=\"hljs-built_in\">Enque</span>(x);\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">2</span>) {\n            <span class=\"hljs-built_in\">Deque</span>();\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-number\">3</span>) {\n            <span class=\"hljs-built_in\">show</span>();\n        }\n    } <span class=\"hljs-keyword\">while</span> (ch != <span class=\"hljs-number\">0</span>);\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

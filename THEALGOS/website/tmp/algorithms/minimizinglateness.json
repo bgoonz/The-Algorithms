@@ -1,0 +1,36 @@
+{
+  "slug": "minimizinglateness",
+  "name": "MinimizingLateness",
+  "categories": ["minimizinglateness"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "MinimizingLateness/MinimizingLateness.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/MinimizingLateness/MinimizingLateness.java",
+      "code": "<span class=\"hljs-keyword\">package</span> MinimizingLateness;\n\n<span class=\"hljs-keyword\">import</span> java.io.BufferedReader;\n<span class=\"hljs-keyword\">import</span> java.io.FileReader;\n<span class=\"hljs-keyword\">import</span> java.io.IOException;\n<span class=\"hljs-keyword\">import</span> java.util.StringTokenizer;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">MinimizingLateness</span> {\n\n  <span class=\"hljs-keyword\">private</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Schedule</span> { <span class=\"hljs-comment\">// Schedule class</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">t</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// Time required for the operation to be performed</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">d</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// Time the job should be completed</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">s</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// Start time of the task</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">f</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// End time of the operation</span>\n\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">Schedule</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> t, <span class=\"hljs-type\">int</span> d)</span> {\n      <span class=\"hljs-built_in\">this</span>.t = t;\n      <span class=\"hljs-built_in\">this</span>.d = d;\n    }\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> <span class=\"hljs-keyword\">throws</span> IOException {\n    StringTokenizer token;\n\n    <span class=\"hljs-type\">BufferedReader</span> <span class=\"hljs-variable\">in</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">BufferedReader</span>(<span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">FileReader</span>(<span class=\"hljs-string\">&quot;MinimizingLateness/lateness_data.txt&quot;</span>));\n    <span class=\"hljs-type\">String</span> <span class=\"hljs-variable\">ch</span> <span class=\"hljs-operator\">=</span> in.readLine();\n    <span class=\"hljs-keyword\">if</span> (ch == <span class=\"hljs-literal\">null</span> || ch.isEmpty()) {\n      in.close();\n      <span class=\"hljs-keyword\">return</span>;\n    }\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">indexCount</span> <span class=\"hljs-operator\">=</span> Integer.parseInt(ch);\n    System.out.println(<span class=\"hljs-string\">&quot;Input Data : &quot;</span>);\n    System.out.println(indexCount); <span class=\"hljs-comment\">// number of operations</span>\n    Schedule[] array = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Schedule</span>[indexCount]; <span class=\"hljs-comment\">// Create an array to hold the operation</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">while</span> ((ch = in.readLine()) != <span class=\"hljs-literal\">null</span>) {\n      token = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">StringTokenizer</span>(ch, <span class=\"hljs-string\">&quot; &quot;</span>);\n      <span class=\"hljs-comment\">// Include the time required for the operation to be performed in the array and the time it</span>\n      <span class=\"hljs-comment\">// should be completed.</span>\n      array[i] =\n          <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Schedule</span>(Integer.parseInt(token.nextToken()), Integer.parseInt(token.nextToken()));\n      i++;\n      System.out.println(array[i - <span class=\"hljs-number\">1</span>].t + <span class=\"hljs-string\">&quot; &quot;</span> + array[i - <span class=\"hljs-number\">1</span>].d);\n    }\n\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">tryTime</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// Total time worked</span>\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">lateness</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; <span class=\"hljs-comment\">// Lateness</span>\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">j</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">0</span>; j &lt; indexCount - <span class=\"hljs-number\">1</span>; j++) {\n      array[j].s = tryTime; <span class=\"hljs-comment\">// Start time of the task</span>\n      array[j].f = tryTime + array[j].t; <span class=\"hljs-comment\">// Time finished</span>\n      tryTime = tryTime + array[j].t; <span class=\"hljs-comment\">// Add total work time</span>\n      <span class=\"hljs-comment\">// Lateness</span>\n      lateness = lateness + Math.max(<span class=\"hljs-number\">0</span>, tryTime - array[j].d);\n    }\n    System.out.println();\n    System.out.println(<span class=\"hljs-string\">&quot;Output Data : &quot;</span>);\n    System.out.println(lateness);\n    in.close();\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "EAlexa",
+      "email": "rubi_81@outlook.de",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "SeonJae",
+      "email": "dbtjswo4733@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,108 @@
+@media (min-width: 600px) {
+  .twoCols {
+    display: grid;
+    grid-template-columns: 47.5% 5% 47.5%;
+  }
+}
+
+.twoCols {
+  margin-top: -40px;
+}
+
+.twoCols > div {
+  margin-bottom: 40px;
+}
+
+.title {
+  margin-top: -40px !important;
+  padding-top: 80px !important;
+  margin-bottom: 20px !important;
+}
+
+.card {
+  padding: 30px;
+  margin-bottom: -25px;
+  margin-top: -25px;
+}
+
+.card > div {
+  margin-bottom: -40px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.languages {
+  margin-top: 20px;
+}
+
+.github {
+  margin-top: 20px !important;
+  background-color: black !important;
+  color: white !important;
+  margin-right: 10px !important;
+}
+
+.github svg {
+  margin-right: 7px;
+  transform: scale(1.1);
+}
+
+.weblate {
+  margin-top: 20px !important;
+  background-color: #2eccaa !important;
+  color: black !important;
+}
+
+.weblate svg {
+  margin-right: 7px;
+  transform: scale(1.1);
+}
+
+.donate {
+  margin-top: 20px !important;
+  background-color: #f6c915 !important;
+  color: black !important;
+}
+
+.donate svg {
+  margin-right: 5px;
+}
+
+.social > div {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialTitle {
+  margin-bottom: 30px !important;
+}
+
+.socialButtons {
+  display: flex;
+}
+
+.socialButtons div {
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.socialButtons a {
+  font-size: 2rem;
+  padding: 17px;
+}
+
+.socialButtons div:nth-child(1) {
+  margin-left: 0;
+}
+
+.socialButtons svg {
+  height: 1em;
+  width: 1em;
+}
+
+:global(.dark) .socialButtons svg {
+  fill: white;
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "findhcf",
+  "name": "FindHcf",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/FindHcf.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/FindHcf.js",
+      "code": "<span class=\"hljs-comment\">/*\n    author: redfly1\n    More about HCF:\n        https://en.wikipedia.org/wiki/Greatest_common_divisor\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">findHCF</span> = (<span class=\"hljs-params\">x, y</span>) =&gt; {\n  <span class=\"hljs-comment\">// If the input numbers are less than 1 return an error message.</span>\n  <span class=\"hljs-keyword\">if</span> (x &lt; <span class=\"hljs-number\">1</span> || y &lt; <span class=\"hljs-number\">1</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;Please enter values greater than zero.&#x27;</span>\n  }\n\n  <span class=\"hljs-comment\">// If the input numbers are not integers return an error message.</span>\n  <span class=\"hljs-keyword\">if</span> (x !== <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">round</span>(x) || y !== <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">round</span>(y)) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&#x27;Please enter whole numbers.&#x27;</span>\n  }\n\n  <span class=\"hljs-comment\">// Now apply Euclid&#x27;s algorithm to the two numbers.</span>\n  <span class=\"hljs-keyword\">while</span> (<span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">max</span>(x, y) % <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">min</span>(x, y) !== <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">if</span> (x &gt; y) {\n      x %= y\n    } <span class=\"hljs-keyword\">else</span> {\n      y %= x\n    }\n  }\n\n  <span class=\"hljs-comment\">// When the while loop finishes the minimum of x and y is the HCF.</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title class_\">Math</span>.<span class=\"hljs-title function_\">min</span>(x, y)\n}\n\n<span class=\"hljs-keyword\">export</span> { findHCF }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Novojit Saha",
+      "email": "55886194+redfly1@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shivam Arora",
+      "email": "shivam.arora@inficold.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "hanoi",
+  "name": "Hanoi",
+  "categories": ["others", "restrictedtowerofhanoi", "main"],
+  "implementations": {
+    "java": "",
+    "rust": ""
+  },
+  "contributors": [
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "lukabavdaz",
+      "email": "lukabavdaz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Vasu Tomar",
+      "email": "vasutomar26@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "WILFRIED NJANGUI",
+      "email": "wilfried.njangui@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

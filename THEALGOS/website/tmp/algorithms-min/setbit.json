@@ -1,0 +1,16 @@
+{
+  "slug": "setbit",
+  "name": "SetBit",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "AbhinavXT",
+      "email": "abhinavpathaka17@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

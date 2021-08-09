@@ -1,0 +1,26 @@
+{
+  "slug": "isdivisible",
+  "name": "IsDivisible",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/IsDivisible.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/IsDivisible.js",
+      "code": "<span class=\"hljs-comment\">// Checks if a number is divisible by another number.</span>\n\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">isDivisible</span> = (<span class=\"hljs-params\">num1, num2</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-title class_\">Number</span>.<span class=\"hljs-built_in\">isFinite</span>(num1) || !<span class=\"hljs-title class_\">Number</span>.<span class=\"hljs-built_in\">isFinite</span>(num2)) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;Expected a number&#x27;</span>)\n  }\n  <span class=\"hljs-keyword\">if</span> (num2 === <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">return</span> num1 % num2 === <span class=\"hljs-number\">0</span>\n}\n\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">isDivisible</span>(<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">5</span>)) <span class=\"hljs-comment\">// returns true</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">isDivisible</span>(<span class=\"hljs-number\">123498175</span>, <span class=\"hljs-number\">5</span>)) <span class=\"hljs-comment\">// returns true</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">isDivisible</span>(<span class=\"hljs-number\">99</span>, <span class=\"hljs-number\">5</span>)) <span class=\"hljs-comment\">// returns false</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Japoncio3k",
+      "email": "49957327+Japoncio3k@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Masahiko Shin",
+      "email": "contact@shin-translation.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

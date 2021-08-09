@@ -1,0 +1,16 @@
+{
+  "slug": "quaternions",
+  "name": "Quaternions",
+  "categories": ["geometry"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

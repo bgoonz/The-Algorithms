@@ -1,0 +1,32 @@
+{
+  "slug": "recursive-insertion-sort",
+  "name": "Recursive Insertion Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "scala": ""
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Matthew",
+      "email": "MatthewG25@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sharan Krishnan",
+      "email": "58838321+shrabian@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

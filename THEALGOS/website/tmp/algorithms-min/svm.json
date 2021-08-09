@@ -1,0 +1,10 @@
+{
+  "slug": "svm",
+  "name": "SVM",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

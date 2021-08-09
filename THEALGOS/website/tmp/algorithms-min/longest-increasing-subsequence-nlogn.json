@@ -1,0 +1,31 @@
+{
+  "slug": "longest-increasing-subsequence-nlogn",
+  "name": "Longest Increasing Subsequence (Nlogn)",
+  "categories": ["dynamicprogramming"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "John Law",
+      "email": "johnlaw.po@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "rohan",
+      "email": "rgkbitw@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

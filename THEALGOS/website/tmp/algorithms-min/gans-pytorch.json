@@ -1,0 +1,16 @@
+{
+  "slug": "gans-pytorch",
+  "name": "GANs PyTorch",
+  "categories": ["neuralnetwork", "ganspytorchvanillalsdc"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "KARAN",
+      "email": "im.karan23@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

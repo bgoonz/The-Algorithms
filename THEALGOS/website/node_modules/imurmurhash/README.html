@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="imurmurhash.js">iMurmurHash.js</h1>
+<p>An incremental implementation of the MurmurHash3 (32-bit) hashing algorithm for JavaScript based on <a href="https://github.com/garycourt/murmurhash-js">Gary Court’s implementation</a> with <a href="https://github.com/kazuyukitanimura/murmurhash-js">kazuyukitanimura’s modifications</a>.</p>
+<p>This version works significantly faster than the non-incremental version if you need to hash many small strings into a single hash, since string concatenation (to build the single string to pass the non-incremental version) is fairly costly. In one case tested, using the incremental version was about 50% faster than concatenating 5-10 strings and then hashing.</p>
+<h2 id="installation">Installation</h2>
+<p>To use iMurmurHash in the browser, <a href="https://raw.github.com/jensyt/imurmurhash-js/master/imurmurhash.min.js">download the latest version</a> and include it as a script on your site.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;/scripts/imurmurhash.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">// Your code here, access iMurmurHash using the global object MurmurHash3</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
+<hr />
+<p>To use iMurmurHash in Node.js, install the module using NPM:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">npm</span> install imurmurhash</a></code></pre></div>
+<p>Then simply include it in your scripts:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1">MurmurHash3 <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;imurmurhash&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<h2 id="quick-example">Quick Example</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// Create the initial hash</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">var</span> hashState <span class="op">=</span> <span class="at">MurmurHash3</span>(<span class="st">&#39;string&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co">// Incrementally add text</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="va">hashState</span>.<span class="at">hash</span>(<span class="st">&#39;more strings&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="va">hashState</span>.<span class="at">hash</span>(<span class="st">&#39;even more strings&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">// All calls can be chained if desired</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="va">hashState</span>.<span class="at">hash</span>(<span class="st">&#39;and&#39;</span>).<span class="at">hash</span>(<span class="st">&#39;some&#39;</span>).<span class="at">hash</span>(<span class="st">&#39;more&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-10" title="10"></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">// Get a result</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="va">hashState</span>.<span class="at">result</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">// returns 0xe4ccfe6b</span></a></code></pre></div>
+<h2 id="functions">Functions</h2>
+<h3 id="murmurhash3-string-seed">MurmurHash3 ([string], [seed])</h3>
+<p>Get a hash state object, optionally initialized with the given <em>string</em> and <em>seed</em>. <em>Seed</em> must be a positive integer if provided. Calling this function without the <code>new</code> keyword will return a cached state object that has been reset. This is safe to use as long as the object is only used from a single thread and no other hashes are created while operating on this one. If this constraint cannot be met, you can use <code>new</code> to create a new state object. For example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// Use the cached object, calling the function again will return the same</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">// object (but reset, so the current state would be lost)</span></a>
+<a class="sourceLine" id="cb5-3" title="3">hashState <span class="op">=</span> <span class="at">MurmurHash3</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">...</a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">// Create a new object that can be safely used however you wish. Calling the</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">// function again will simply return a new state object, and no state loss</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">// will occur, at the cost of creating more objects.</span></a>
+<a class="sourceLine" id="cb5-9" title="9">hashState <span class="op">=</span> <span class="kw">new</span> <span class="at">MurmurHash3</span>()<span class="op">;</span></a></code></pre></div>
+<p>Both methods can be mixed however you like if you have different use cases.</p>
+<hr />
+<h3 id="murmurhash3.prototype.hash-string">MurmurHash3.prototype.hash (string)</h3>
+<p>Incrementally add <em>string</em> to the hash. This can be called as many times as you want for the hash state object, including after a call to <code>result()</code>. Returns <code>this</code> so calls can be chained.</p>
+<hr />
+<h3 id="murmurhash3.prototype.result">MurmurHash3.prototype.result ()</h3>
+<p>Get the result of the hash as a 32-bit positive integer. This performs the tail and finalizer portions of the algorithm, but does not store the result in the state object. This means that it is perfectly safe to get results and then continue adding strings via <code>hash</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// Do the whole string at once</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="at">MurmurHash3</span>(<span class="st">&#39;this is a test string&#39;</span>).<span class="at">result</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">// 0x70529328</span></a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">// Do part of the string, get a result, then the other part</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="kw">var</span> m <span class="op">=</span> <span class="at">MurmurHash3</span>(<span class="st">&#39;this is a&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="va">m</span>.<span class="at">result</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co">// 0xbfc4f834</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="va">m</span>.<span class="at">hash</span>(<span class="st">&#39; test string&#39;</span>).<span class="at">result</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="co">// 0x70529328 (same as above)</span></a></code></pre></div>
+<hr />
+<h3 id="murmurhash3.prototype.reset-seed">MurmurHash3.prototype.reset ([seed])</h3>
+<p>Reset the state object for reuse, optionally using the given <em>seed</em> (defaults to 0 like the constructor). Returns <code>this</code> so calls can be chained.</p>
+<hr />
+<h2 id="license-mit">License (MIT)</h2>
+<p>Copyright (c) 2013 Gary Court, Jens Taylor</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</body>
+</html>

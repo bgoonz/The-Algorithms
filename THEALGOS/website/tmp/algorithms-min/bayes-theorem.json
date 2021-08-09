@@ -1,0 +1,21 @@
+{
+  "slug": "bayes-theorem",
+  "name": "Bayes Theorem",
+  "categories": ["probability"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dylan Robertson",
+      "email": "31269647+RobotRage@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

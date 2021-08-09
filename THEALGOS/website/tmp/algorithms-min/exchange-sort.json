@@ -1,0 +1,16 @@
+{
+  "slug": "exchange-sort",
+  "name": "Exchange Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "PoolOfDeath20",
+      "email": "gervinfungdaxuen@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

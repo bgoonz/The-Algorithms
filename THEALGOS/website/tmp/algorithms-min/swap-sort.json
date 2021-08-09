@@ -1,0 +1,21 @@
+{
+  "slug": "swap-sort",
+  "name": "Swap Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Abhinn Mishra",
+      "email": "49574460+mishraabhinn@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

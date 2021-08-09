@@ -1,0 +1,16 @@
+{
+  "slug": "text-search",
+  "name": "Text Search",
+  "categories": ["searches"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

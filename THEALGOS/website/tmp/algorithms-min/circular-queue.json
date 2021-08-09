@@ -1,0 +1,59 @@
+{
+  "slug": "circular-queue",
+  "name": "Circular Queue",
+  "categories": ["datastructures", "queue"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "dart": "",
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vijay Siva",
+      "email": "vijay.sivasubramaniam@instacart.com",
+      "commits": 1
+    },
+    {
+      "name": "Sandeepan-Das",
+      "email": "sandeepandas2000@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Himanshu Bhatnagar",
+      "email": "33115688+Himan10@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kunal Jain",
+      "email": "30985312+kjain1810@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "kjain1810",
+      "email": "kunaljain.2000@yahoo.in",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

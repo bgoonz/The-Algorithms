@@ -1,0 +1,21 @@
+{
+  "slug": "gauss-jordan-elimination",
+  "name": "Gauss-Jordan Elimination",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "1fisedi",
+      "email": "51143882+1fisedi@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

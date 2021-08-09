@@ -1,0 +1,10 @@
+{
+  "slug": "random-forest",
+  "name": "Random Forest",
+  "categories": ["classificationalgorithms"],
+  "implementations": {
+    "r": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

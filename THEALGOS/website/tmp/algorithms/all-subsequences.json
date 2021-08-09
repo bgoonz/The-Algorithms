@@ -1,0 +1,46 @@
+{
+  "slug": "all-subsequences",
+  "name": "All Subsequences",
+  "categories": ["backtracking"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "backtracking/all_subsequences.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/backtracking/all_subsequences.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nIn this problem, we want to determine all possible subsequences\nof the given sequence. We use backtracking to solve this problem.\n\nTime complexity: O(2^n),\nwhere n denotes the length of the given sequence.\n&quot;&quot;&quot;</span>\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">Any</span>, <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">generate_all_subsequences</span>(<span class=\"hljs-params\">sequence: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Any</span>]</span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    create_state_space_tree(sequence, [], <span class=\"hljs-number\">0</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">create_state_space_tree</span>(<span class=\"hljs-params\">\n    sequence: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Any</span>], current_subsequence: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Any</span>], index: <span class=\"hljs-built_in\">int</span>\n</span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Creates a state space tree to iterate through each branch using DFS.\n    We know that each state has exactly two children.\n    It terminates when it reaches the end of the given sequence.\n    &quot;&quot;&quot;</span>\n\n    <span class=\"hljs-keyword\">if</span> index == <span class=\"hljs-built_in\">len</span>(sequence):\n        <span class=\"hljs-built_in\">print</span>(current_subsequence)\n        <span class=\"hljs-keyword\">return</span>\n\n    create_state_space_tree(sequence, current_subsequence, index + <span class=\"hljs-number\">1</span>)\n    current_subsequence.append(sequence[index])\n    create_state_space_tree(sequence, current_subsequence, index + <span class=\"hljs-number\">1</span>)\n    current_subsequence.pop()\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    seq: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Any</span>] = [<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">4</span>]\n    generate_all_subsequences(seq)\n\n    seq.clear()\n    seq.extend([<span class=\"hljs-string\">&quot;A&quot;</span>, <span class=\"hljs-string\">&quot;B&quot;</span>, <span class=\"hljs-string\">&quot;C&quot;</span>])\n    generate_all_subsequences(seq)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Tapajyoti Bose",
+      "email": "44058757+ruppysuppy@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Erfan Alimohammadi",
+      "email": "erfan.aa@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

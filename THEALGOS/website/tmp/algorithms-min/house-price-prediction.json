@@ -1,0 +1,16 @@
+{
+  "slug": "house-price-prediction",
+  "name": "House Price Prediction",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Aakash19MS0001",
+      "email": "73153443+Aakash19MS0001@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

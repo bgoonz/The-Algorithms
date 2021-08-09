@@ -1,0 +1,16 @@
+{
+  "slug": "binomial-distribution",
+  "name": "Binomial Distribution",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "XxSamixX123",
+      "email": "60960667+XxSamixX123@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

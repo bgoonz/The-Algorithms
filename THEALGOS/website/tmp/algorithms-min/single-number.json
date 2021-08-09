@@ -1,0 +1,16 @@
+{
+  "slug": "single-number",
+  "name": "Single Number",
+  "categories": ["datastructures", "array"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

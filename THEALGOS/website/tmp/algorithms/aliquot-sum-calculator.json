@@ -1,0 +1,21 @@
+{
+  "slug": "aliquot-sum-calculator",
+  "name": "Aliquot Sum Calculator",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "c-sharp": {
+      "dir": "Algorithms/Numeric/AliquotSumCalculator.cs",
+      "url": "https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Numeric/AliquotSumCalculator.cs",
+      "code": "﻿<span class=\"hljs-keyword\">using</span> System;\n\n<span class=\"hljs-keyword\">namespace</span> <span class=\"hljs-title\">Algorithms.Numeric</span>\n{\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     In number theory, the aliquot sum s(n) of a positive integer n is the sum of all proper divisors</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     of n, that is, all divisors of n other than n itself. For example, the proper divisors of 15</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     (that is, the positive divisors of 15 that are not equal to 15) are 1, 3 and 5, so the aliquot</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     sum of 15 is 9 i.e. (1 + 3 + 5). Wikipedia: https://en.wikipedia.org/wiki/Aliquot_sum.</span>\n    <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n    <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">AliquotSumCalculator</span>\n    {\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span>     Finds the aliquot sum of an integer number.</span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;/summary&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;param name=&quot;number&quot;&gt;</span>Positive number.<span class=\"hljs-doctag\">&lt;/param&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;returns&gt;</span>The Aliquot Sum.<span class=\"hljs-doctag\">&lt;/returns&gt;</span></span>\n        <span class=\"hljs-comment\"><span class=\"hljs-doctag\">///</span> <span class=\"hljs-doctag\">&lt;exception cref=&quot;ArgumentException&quot;&gt;</span>Error number is not on interval (0.0; int.MaxValue).<span class=\"hljs-doctag\">&lt;/exception&gt;</span></span>\n        <span class=\"hljs-function\"><span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-built_in\">int</span> <span class=\"hljs-title\">CalculateAliquotSum</span>(<span class=\"hljs-params\"><span class=\"hljs-built_in\">int</span> number</span>)</span>\n        {\n            <span class=\"hljs-keyword\">if</span> (number &lt; <span class=\"hljs-number\">0</span>)\n            {\n                <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> ArgumentException(<span class=\"hljs-string\">$&quot;<span class=\"hljs-subst\">{<span class=\"hljs-keyword\">nameof</span>(number)}</span> cannot be negative&quot;</span>);\n            }\n\n            <span class=\"hljs-keyword\">var</span> sum = <span class=\"hljs-number\">0</span>;\n            <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-built_in\">int</span> i = <span class=\"hljs-number\">1</span>, limit = number / <span class=\"hljs-number\">2</span>; i &lt;= limit; ++i)\n            {\n                <span class=\"hljs-keyword\">if</span> (number % i == <span class=\"hljs-number\">0</span>)\n                {\n                    sum += i;\n                }\n            }\n\n            <span class=\"hljs-keyword\">return</span> sum;\n        }\n    }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

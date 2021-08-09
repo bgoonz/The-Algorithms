@@ -1,0 +1,21 @@
+{
+  "slug": "dijkstras-two-stack-algorithm",
+  "name": "Dijkstras Two Stack Algorithm",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Alex Joslin",
+      "email": "aljoslin13@yahoo.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

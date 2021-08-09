@@ -1,0 +1,36 @@
+{
+  "slug": "stackarraylist",
+  "name": "StackArrayList",
+  "categories": ["datastructures", "stacks"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "DataStructures/Stacks/StackArrayList.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/DataStructures/Stacks/StackArrayList.java",
+      "code": "<span class=\"hljs-keyword\">package</span> DataStructures.Stacks;\n\n<span class=\"hljs-keyword\">import</span> java.util.ArrayList;\n<span class=\"hljs-keyword\">import</span> java.util.EmptyStackException;\n\n<span class=\"hljs-comment\">/**\n * This class implements a Stack using an ArrayList.\n *\n * &lt;p&gt;A stack is exactly what it sounds like. An element gets added to the top of the stack and only\n * the element on the top may be removed.\n *\n * &lt;p&gt;This is an ArrayList Implementation of a stack, where size is not a problem we can extend the\n * stack as much as we want.\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">StackArrayList</span> {\n\n  <span class=\"hljs-comment\">/** Driver Code */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">StackArrayList</span> <span class=\"hljs-variable\">stack</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">StackArrayList</span>();\n    <span class=\"hljs-keyword\">assert</span> stack.isEmpty();\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; i &lt;= <span class=\"hljs-number\">5</span>; ++i) {\n      stack.push(i);\n      <span class=\"hljs-keyword\">assert</span> stack.size() == i;\n    }\n\n    <span class=\"hljs-keyword\">assert</span> stack.size() == <span class=\"hljs-number\">5</span>;\n    <span class=\"hljs-keyword\">assert</span> stack.peek() == <span class=\"hljs-number\">5</span> &amp;&amp; stack.pop() == <span class=\"hljs-number\">5</span> &amp;&amp; stack.peek() == <span class=\"hljs-number\">4</span>;\n\n    <span class=\"hljs-comment\">/* pop elements at the top of this stack one by one */</span>\n    <span class=\"hljs-keyword\">while</span> (!stack.isEmpty()) {\n      stack.pop();\n    }\n    <span class=\"hljs-keyword\">assert</span> stack.isEmpty();\n\n    <span class=\"hljs-keyword\">try</span> {\n      stack.pop();\n      <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-literal\">false</span>; <span class=\"hljs-comment\">/* this should not happen */</span>\n    } <span class=\"hljs-keyword\">catch</span> (EmptyStackException e) {\n      <span class=\"hljs-keyword\">assert</span> <span class=\"hljs-literal\">true</span>; <span class=\"hljs-comment\">/* this should happen */</span>\n    }\n  }\n\n  <span class=\"hljs-comment\">/** ArrayList representation of the stack */</span>\n  <span class=\"hljs-keyword\">private</span> ArrayList&lt;Integer&gt; stack;\n\n  <span class=\"hljs-comment\">/** Constructor */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-title function_\">StackArrayList</span><span class=\"hljs-params\">()</span> {\n    stack = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">ArrayList</span>&lt;&gt;();\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Adds value to the end of list which is the top for stack\n   *\n   * <span class=\"hljs-doctag\">@param</span> value value to be added\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">push</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> value)</span> {\n    stack.add(value);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Removes the element at the top of this stack and returns\n   *\n   * <span class=\"hljs-doctag\">@return</span> Element popped\n   * <span class=\"hljs-doctag\">@throws</span> EmptyStackException if the stack is empty.\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">pop</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">if</span> (isEmpty()) {\n      <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">EmptyStackException</span>();\n    }\n\n    <span class=\"hljs-comment\">/* remove the element on the top of the stack */</span>\n    <span class=\"hljs-keyword\">return</span> stack.remove(stack.size() - <span class=\"hljs-number\">1</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Test if the stack is empty.\n   *\n   * <span class=\"hljs-doctag\">@return</span> {<span class=\"hljs-doctag\">@code</span> true} if this stack is empty, {<span class=\"hljs-doctag\">@code</span> false} otherwise.\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">boolean</span> <span class=\"hljs-title function_\">isEmpty</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> stack.isEmpty();\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Return the element at the top of this stack without removing it from the stack.\n   *\n   * <span class=\"hljs-doctag\">@return</span> the element at the top of this stack.\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">peek</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">if</span> (isEmpty()) {\n      <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">EmptyStackException</span>();\n    }\n    <span class=\"hljs-keyword\">return</span> stack.get(stack.size() - <span class=\"hljs-number\">1</span>);\n  }\n\n  <span class=\"hljs-comment\">/**\n   * Return size of this stack.\n   *\n   * <span class=\"hljs-doctag\">@return</span> size of this stack.\n   */</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">size</span><span class=\"hljs-params\">()</span> {\n    <span class=\"hljs-keyword\">return</span> stack.size();\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hayder Hassan",
+      "email": "hayderh@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "wiggle-sort",
+  "name": "Wiggle Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "sorts/wiggle_sort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/sorts/wiggle_sort.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nWiggle Sort.\n\nGiven an unsorted array nums, reorder it such\nthat nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]....\nFor example:\nif input numbers = [3, 5, 2, 1, 6, 4]\none possible Wiggle Sorted answer is [3, 5, 1, 6, 2, 4].\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">wiggle_sort</span>(<span class=\"hljs-params\">nums: <span class=\"hljs-built_in\">list</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Python implementation of wiggle.\n    Example:\n    &gt;&gt;&gt; wiggle_sort([0, 5, 3, 2, 2])\n    [0, 5, 2, 3, 2]\n    &gt;&gt;&gt; wiggle_sort([])\n    []\n    &gt;&gt;&gt; wiggle_sort([-2, -5, -45])\n    [-45, -2, -5]\n    &gt;&gt;&gt; wiggle_sort([-2.1, -5.68, -45.11])\n    [-45.11, -2.1, -5.68]\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">for</span> i, _ <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">enumerate</span>(nums):\n        <span class=\"hljs-keyword\">if</span> (i % <span class=\"hljs-number\">2</span> == <span class=\"hljs-number\">1</span>) == (nums[i - <span class=\"hljs-number\">1</span>] &gt; nums[i]):\n            nums[i - <span class=\"hljs-number\">1</span>], nums[i] = nums[i], nums[i - <span class=\"hljs-number\">1</span>]\n\n    <span class=\"hljs-keyword\">return</span> nums\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Enter the array elements:&quot;</span>)\n    array = <span class=\"hljs-built_in\">list</span>(<span class=\"hljs-built_in\">map</span>(<span class=\"hljs-built_in\">int</span>, <span class=\"hljs-built_in\">input</span>().split()))\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;The unsorted array is:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(array)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Array after Wiggle sort:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(wiggle_sort(array))\n"
+    },
+    "javascript": {
+      "dir": "Sorts/WiggleSort.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Sorts/WiggleSort.js",
+      "code": "<span class=\"hljs-comment\">/*\n * Wiggle sort sorts the array into a wave like array.\n * An array ‘arr[0..n-1]’ is sorted in wave form if arr[0] &gt;= arr[1] &lt;= arr[2] &gt;= arr[3] &lt;= arr[4] &gt;= …..\n *\n */</span>\n\n<span class=\"hljs-comment\">/* eslint no-extend-native: [&quot;off&quot;, { &quot;exceptions&quot;: [&quot;Object&quot;] }] */</span>\n<span class=\"hljs-title class_\">Array</span>.<span class=\"hljs-property\"><span class=\"hljs-keyword\">prototype</span></span>.<span class=\"hljs-property\">wiggleSort</span> = <span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\"></span>) {\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; <span class=\"hljs-variable language_\">this</span>.<span class=\"hljs-property\">length</span>; ++i) {\n    <span class=\"hljs-keyword\">const</span> shouldNotBeLessThan = i % <span class=\"hljs-number\">2</span>\n    <span class=\"hljs-keyword\">const</span> isLessThan = <span class=\"hljs-variable language_\">this</span>[i] &lt; <span class=\"hljs-variable language_\">this</span>[i + <span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">if</span> (shouldNotBeLessThan &amp;&amp; isLessThan) {\n      [<span class=\"hljs-variable language_\">this</span>[i], <span class=\"hljs-variable language_\">this</span>[i + <span class=\"hljs-number\">1</span>]] = [<span class=\"hljs-variable language_\">this</span>[i + <span class=\"hljs-number\">1</span>], <span class=\"hljs-variable language_\">this</span>[i]]\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-variable language_\">this</span>\n}\n\n<span class=\"hljs-comment\">// Implementation of wiggle sort</span>\n\n<span class=\"hljs-keyword\">const</span> arr = [<span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">4</span>]\n<span class=\"hljs-comment\">// Array before Wiggle Sort</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(arr) <span class=\"hljs-comment\">// [3, 5, 2, 1, 6, 4]</span>\n\narr.<span class=\"hljs-title function_\">wiggleSort</span>()\n<span class=\"hljs-comment\">// Array after wiggle sort</span>\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(arr) <span class=\"hljs-comment\">// [ 3, 5, 2, 6, 1, 4 ]</span>\n"
+    },
+    "c-plus-plus": {
+      "dir": "sorting/wiggle_sort.cpp",
+      "url": "https://github.com/TheAlgorithms/c-plus-plus/tree/master/sorting/wiggle_sort.cpp",
+      "code": "<span class=\"hljs-comment\">/**\n * \\addtogroup sorting Sorting Algorithms\n * @{\n * \\file\n * \\brief [Wiggle Sort Algorithm]\n * (https://leetcode.com/problems/wiggle-sort-ii/) Implementation\n *\n * \\author [Roshan Kanwar](http://github.com/roshan0708)\n *\n * \\details\n * Wiggle Sort sorts the array into a wave like array.\n * An array ‘arr[0..n-1]’ is sorted in wave form,\n * if arr[0] &gt;= arr[1] &lt;= arr[2] &gt;= arr[3] &lt;= arr[4] &gt;= …..\n *\n * \\example\n * arr = [1,1,5,6,1,4], after wiggle sort arr will become equal to [1,1,6,1,5,4]\n * arr = [2,8,9,1,7], after wiggle sort arr will become equal to [8,2,9,1,7]\n */</span>\n\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;algorithm&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;cassert&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;ctime&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;iostream&gt;</span>  <span class=\"hljs-comment\">/// for io operations</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;vector&gt;</span></span>\n\n<span class=\"hljs-comment\">/**\n * @namespace sorting\n * @brief Sorting algorithms\n */</span>\n<span class=\"hljs-keyword\">namespace</span> sorting {\n<span class=\"hljs-comment\">/**\n * @namespace wiggle_sort\n * @brief Functions for [Wiggle\n * Sort](https://leetcode.com/problems/wiggle-sort-ii/) algorithm\n */</span>\n<span class=\"hljs-keyword\">namespace</span> wiggle_sort {\n\n<span class=\"hljs-comment\">/**\n *\n * @brief Function used for sorting the elements in wave form.\n * @details\n * Checking whether the even indexed elements are greater than\n * their adjacent odd elements.\n * Traversing all even indexed elements of the input arr.\n * If current element is smaller than the previous odd element, swap them.\n * If current element is smaller than the next odd element, swap them.\n *\n * @param arr input array (unsorted elements)\n *\n */</span>\n<span class=\"hljs-keyword\">template</span> &lt;<span class=\"hljs-keyword\">typename</span> T&gt;  <span class=\"hljs-comment\">// this allows to have vectors of ints, double, float,</span>\n                       <span class=\"hljs-comment\">// etc</span>\n                       <span class=\"hljs-function\">std::vector&lt;T&gt; <span class=\"hljs-title\">wiggleSort</span><span class=\"hljs-params\">(<span class=\"hljs-keyword\">const</span> std::vector&lt;T&gt; &amp;arr)</span> </span>{\n    <span class=\"hljs-type\">uint32_t</span> size = arr.<span class=\"hljs-built_in\">size</span>();\n\n    <span class=\"hljs-function\">std::vector&lt;T&gt; <span class=\"hljs-title\">out</span><span class=\"hljs-params\">(\n        arr)</span></span>;  <span class=\"hljs-comment\">// create a copy of input vector. this way, the original input</span>\n               <span class=\"hljs-comment\">// vector does not get modified. a sorted array is is returned.</span>\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; size; i += <span class=\"hljs-number\">2</span>) {\n        <span class=\"hljs-keyword\">if</span> (i &gt; <span class=\"hljs-number\">0</span> &amp;&amp; out[i - <span class=\"hljs-number\">1</span>] &gt; out[i]) {\n            std::<span class=\"hljs-built_in\">swap</span>(out[i], out[i - <span class=\"hljs-number\">1</span>]);  <span class=\"hljs-comment\">// swapping the two values</span>\n        }\n\n        <span class=\"hljs-keyword\">if</span> (i &lt; size - <span class=\"hljs-number\">1</span> &amp;&amp; out[i] &lt; out[i + <span class=\"hljs-number\">1</span>]) {\n            std::<span class=\"hljs-built_in\">swap</span>(out[i], out[i + <span class=\"hljs-number\">1</span>]);  <span class=\"hljs-comment\">// swapping the two values</span>\n        }\n    }\n\n    <span class=\"hljs-keyword\">return</span> out;  <span class=\"hljs-comment\">// returns the sorted vector</span>\n}\n}  <span class=\"hljs-comment\">// namespace wiggle_sort</span>\n}  <span class=\"hljs-comment\">// namespace sorting</span>\n\n<span class=\"hljs-comment\">/**\n *\n * @brief Utility function used for printing the elements.\n * Prints elements of the array after they&#x27;re sorted using wiggle sort\n * algorithm.\n *\n * @param arr array containing the sorted elements\n *\n */</span>\n<span class=\"hljs-keyword\">template</span> &lt;<span class=\"hljs-keyword\">typename</span> T&gt;\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">void</span> <span class=\"hljs-title\">displayElements</span><span class=\"hljs-params\">(<span class=\"hljs-keyword\">const</span> std::vector&lt;T&gt; &amp;arr)</span> </span>{\n    <span class=\"hljs-type\">uint32_t</span> size = arr.<span class=\"hljs-built_in\">size</span>();\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Sorted elements are as follows: &quot;</span>;\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;[&quot;</span>;\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> i = <span class=\"hljs-number\">0</span>; i &lt; size; i++) {\n        std::cout &lt;&lt; arr[i];\n        <span class=\"hljs-keyword\">if</span> (i != size - <span class=\"hljs-number\">1</span>) {\n            std::cout &lt;&lt; <span class=\"hljs-string\">&quot;, &quot;</span>;\n        }\n    }\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;]&quot;</span> &lt;&lt; std::endl;\n}\n\n<span class=\"hljs-comment\">/**\n * Test function\n * @returns void\n */</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">void</span> <span class=\"hljs-title\">test</span><span class=\"hljs-params\">()</span> </span>{\n    std::<span class=\"hljs-built_in\">srand</span>(std::<span class=\"hljs-built_in\">time</span>(<span class=\"hljs-literal\">nullptr</span>));  <span class=\"hljs-comment\">// initialize random number generator</span>\n\n    <span class=\"hljs-function\">std::vector&lt;<span class=\"hljs-type\">float</span>&gt; <span class=\"hljs-title\">data1</span><span class=\"hljs-params\">(<span class=\"hljs-number\">100</span>)</span></span>;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">auto</span> &amp;d : data1) {  <span class=\"hljs-comment\">// generate random numbers between -5.0 and 4.99</span>\n        d = <span class=\"hljs-built_in\">float</span>(std::<span class=\"hljs-built_in\">rand</span>() % <span class=\"hljs-number\">1000</span> - <span class=\"hljs-number\">500</span>) / <span class=\"hljs-number\">100.f</span>;\n    }\n\n    std::vector&lt;<span class=\"hljs-type\">float</span>&gt; sorted = sorting::wiggle_sort::<span class=\"hljs-built_in\">wiggleSort</span>&lt;<span class=\"hljs-type\">float</span>&gt;(data1);\n\n    <span class=\"hljs-built_in\">displayElements</span>(sorted);\n\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">uint32_t</span> j = <span class=\"hljs-number\">0</span>; j &lt; data1.<span class=\"hljs-built_in\">size</span>(); j += <span class=\"hljs-number\">2</span>) {\n        <span class=\"hljs-built_in\">assert</span>(data1[j] &lt;= data1[j + <span class=\"hljs-number\">1</span>] &amp;&amp;\n               data1[j + <span class=\"hljs-number\">1</span>] &gt;= data1[j + <span class=\"hljs-number\">2</span>]);  <span class=\"hljs-comment\">// check the validation condition</span>\n    }\n\n    std::cout &lt;&lt; <span class=\"hljs-string\">&quot;Test 1 passed\\n&quot;</span>;\n}\n\n<span class=\"hljs-comment\">/** Driver Code */</span>\n<span class=\"hljs-function\"><span class=\"hljs-type\">int</span> <span class=\"hljs-title\">main</span><span class=\"hljs-params\">()</span> </span>{\n    <span class=\"hljs-built_in\">test</span>();\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n\n<span class=\"hljs-comment\">/** @} */</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Akarsh",
+      "email": "akarsh.satija@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mehdi ALAOUI",
+      "email": "alaoui.mehdi.1995@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Roshan Kanwar",
+      "email": "roshan.18je0696@am.iitism.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Guillaume Rochedix",
+      "email": "33205665+BriseBalloches@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ishani",
+      "email": "ishanigarkoti08@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "PatOnTheBack",
+      "email": "51241310+PatOnTheBack@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

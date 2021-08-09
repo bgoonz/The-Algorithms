@@ -1,0 +1,36 @@
+{
+  "slug": "validbstornot",
+  "name": "ValidBSTOrNot",
+  "categories": ["datastructures", "tree"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Maria Lungeanu",
+      "email": "Maria.Lungeanu@anritsu.com",
+      "commits": 1
+    },
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "ayaanfaiz",
+      "email": "ayaan2103@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

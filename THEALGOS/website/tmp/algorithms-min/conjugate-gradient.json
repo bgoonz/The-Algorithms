@@ -1,0 +1,21 @@
+{
+  "slug": "conjugate-gradient",
+  "name": "Conjugate Gradient",
+  "categories": ["linearalgebra", "src"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "zakademic",
+      "email": "67771932+zakademic@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

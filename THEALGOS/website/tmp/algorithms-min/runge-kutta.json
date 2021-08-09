@@ -1,0 +1,32 @@
+{
+  "slug": "runge-kutta",
+  "name": "Runge Kutta",
+  "categories": ["math"],
+  "implementations": {
+    "python": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Kaustubh Damania",
+      "email": "kaustubh.damania@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "rudraprasaddas",
+      "email": "72852551+rudraprasaddas@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ankur Chattopadhyay",
+      "email": "39518771+chttrjeankr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Stephen",
+      "email": "24819660+infrontoftheforest@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

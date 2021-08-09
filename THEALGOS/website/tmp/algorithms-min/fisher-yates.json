@@ -1,0 +1,26 @@
+{
+  "slug": "fisher-yates",
+  "name": "Fisher Yates",
+  "categories": ["others"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Doppon",
+      "email": "zaxpkuraudo7777@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Pablo Hildo",
+      "email": "pablohildo@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

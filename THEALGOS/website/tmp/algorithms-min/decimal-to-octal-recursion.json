@@ -1,0 +1,21 @@
+{
+  "slug": "decimal-to-octal-recursion",
+  "name": "Decimal to Octal Recursion",
+  "categories": ["conversions"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "Aromal Anil",
+      "email": "49222186+aromalanil@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

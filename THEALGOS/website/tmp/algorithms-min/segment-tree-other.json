@@ -1,0 +1,21 @@
+{
+  "slug": "segment-tree-other",
+  "name": "Segment Tree Other",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "lanzhiwang",
+      "email": "hzhilamp@163.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

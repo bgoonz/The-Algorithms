@@ -1,0 +1,15 @@
+{
+  "slug": "dimensionality-reduction-algorithms",
+  "name": "Dimensionality Reduction Algorithms",
+  "categories": ["datapreprocessing"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Data-Preprocessing/dimensionality_reduction_algorithms.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Data-Preprocessing/dimensionality_reduction_algorithms.R",
+      "code": "library<span class=\"hljs-punctuation\">(</span>stats<span class=\"hljs-punctuation\">)</span>\npca <span class=\"hljs-operator\">&lt;-</span> princomp<span class=\"hljs-punctuation\">(</span>train<span class=\"hljs-punctuation\">,</span> cor <span class=\"hljs-operator\">=</span> <span class=\"hljs-literal\">TRUE</span><span class=\"hljs-punctuation\">)</span>\ntrain_reduced  <span class=\"hljs-operator\">&lt;-</span> predict<span class=\"hljs-punctuation\">(</span>pca<span class=\"hljs-punctuation\">,</span>train<span class=\"hljs-punctuation\">)</span>\ntest_reduced  <span class=\"hljs-operator\">&lt;-</span> predict<span class=\"hljs-punctuation\">(</span>pca<span class=\"hljs-punctuation\">,</span>test<span class=\"hljs-punctuation\">)</span>\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

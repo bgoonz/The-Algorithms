@@ -1,0 +1,26 @@
+{
+  "slug": "eulersfunction",
+  "name": "EulersFunction",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/EulersFunction.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/EulersFunction.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-comment\">/**\n * You can read more about Euler&#x27;s totient function\n *\n * &lt;p&gt;See https://en.wikipedia.org/wiki/Euler%27s_totient_function\n */</span>\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">EulersFunction</span> {\n  <span class=\"hljs-comment\">// This method returns us number of x that (x &lt; n) and gcd(x, n) == 1 in O(sqrt(n)) time</span>\n  <span class=\"hljs-comment\">// complexity;</span>\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">getEuler</span><span class=\"hljs-params\">(<span class=\"hljs-type\">int</span> n)</span> {\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">result</span> <span class=\"hljs-operator\">=</span> n;\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">2</span>; i * i &lt;= n; i++) {\n      <span class=\"hljs-keyword\">if</span> (n % i == <span class=\"hljs-number\">0</span>) {\n        <span class=\"hljs-keyword\">while</span> (n % i == <span class=\"hljs-number\">0</span>) n /= i;\n        result -= result / i;\n      }\n    }\n    <span class=\"hljs-keyword\">if</span> (n &gt; <span class=\"hljs-number\">1</span>) result -= result / n;\n    <span class=\"hljs-keyword\">return</span> result;\n  }\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">i</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-number\">1</span>; i &lt; <span class=\"hljs-number\">100</span>; i++) {\n      System.out.println(getEuler(i));\n    }\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Bolot Bekbolotov",
+      "email": "bekbolotov.bolot@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

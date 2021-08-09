@@ -1,0 +1,10 @@
+{
+  "slug": "factorial-trailing-zeroes",
+  "name": "Factorial Trailing Zeroes",
+  "categories": ["others"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

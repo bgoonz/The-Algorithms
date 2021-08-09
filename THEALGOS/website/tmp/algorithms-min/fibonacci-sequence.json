@@ -1,0 +1,16 @@
+{
+  "slug": "fibonacci-sequence",
+  "name": "Fibonacci Sequence",
+  "categories": ["math"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

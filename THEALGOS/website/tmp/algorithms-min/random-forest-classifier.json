@@ -1,0 +1,32 @@
+{
+  "slug": "random-forest-classifier",
+  "name": "Random Forest Classifier",
+  "categories": ["machinelearning"],
+  "implementations": {
+    "python": "",
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "Prince Gangurde",
+      "email": "50592495+Prince326@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Miggelito",
+      "email": "a.bidakowski@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Satyam-Bhalla",
+      "email": "satyambhalla17@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

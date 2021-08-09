@@ -1,0 +1,10 @@
+{
+  "slug": "basic-of-tensorflow",
+  "name": "Basic of TensorFlow",
+  "categories": ["machinelearning", "basicsoftensorflow"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

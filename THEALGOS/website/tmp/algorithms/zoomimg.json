@@ -1,0 +1,21 @@
+{
+  "slug": "zoomimg",
+  "name": "Zoomimg",
+  "categories": ["imageprocessing", "nearestneighbhorinterpolation"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/ImageProcessing/Nearest Neighbhor Interpolation/zoomimg.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/ImageProcessing/Nearest Neighbhor Interpolation/zoomimg.m",
+      "code": "clc;\nclear variables;\nimage=imread(<span class=\"hljs-string\">&#x27;lena_color.bmp&#x27;</span>);\n[r,c,d] = <span class=\"hljs-built_in\">size</span>(image);\nzoom = <span class=\"hljs-number\">1.5</span>;\nzr=zoom*r;\nzc=zoom*c;\n\n<span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-number\">1</span>:<span class=\"hljs-number\">1</span>:zr\n     <span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">j</span>=<span class=\"hljs-number\">1</span>:<span class=\"hljs-number\">1</span>:zc\n         x=<span class=\"hljs-built_in\">i</span>/zoom;\n         mapi=<span class=\"hljs-built_in\">round</span>(x);\n         y=<span class=\"hljs-built_in\">j</span>/zoom;\n         mapj=<span class=\"hljs-built_in\">round</span>(y);\n          <span class=\"hljs-keyword\">if</span> mapi==<span class=\"hljs-number\">0</span>\n            mapi=<span class=\"hljs-number\">1</span>;\n         <span class=\"hljs-keyword\">end</span>\n         <span class=\"hljs-keyword\">if</span> mapj==<span class=\"hljs-number\">0</span>\n             mapj=<span class=\"hljs-number\">1</span>;\n         <span class=\"hljs-keyword\">end</span>\n         res(<span class=\"hljs-built_in\">i</span>,<span class=\"hljs-built_in\">j</span>)=image(mapi,mapj);\n     <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-built_in\">figure</span>\nimshow(image);\n<span class=\"hljs-built_in\">figure</span>\nimshow(res);"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Navkiran",
+      "email": "singh.navkiran1515@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

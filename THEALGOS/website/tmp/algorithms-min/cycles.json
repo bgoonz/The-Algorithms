@@ -1,0 +1,26 @@
+{
+  "slug": "cycles",
+  "name": "Cycles",
+  "categories": ["datastructures", "graphs"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shivg7706",
+      "email": "shivamgupta7706@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "EAlexa",
+      "email": "rubi_81@outlook.de",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

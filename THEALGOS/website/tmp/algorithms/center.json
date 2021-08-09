@@ -1,0 +1,26 @@
+{
+  "slug": "center",
+  "name": "Center",
+  "categories": ["statistics"],
+  "body": {},
+  "implementations": {
+    "haskell": {
+      "dir": "src/Statistics/Center.hs",
+      "url": "https://github.com/TheAlgorithms/haskell/tree/master/src/Statistics/Center.hs",
+      "code": "<span class=\"hljs-keyword\">module</span> Statistics.Center <span class=\"hljs-keyword\">where</span>\n\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-keyword\">qualified</span> Data.Sort <span class=\"hljs-keyword\">as</span> S\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-keyword\">qualified</span> Data.Vector.Generic <span class=\"hljs-keyword\">as</span> VG\n<span class=\"hljs-keyword\">import</span> <span class=\"hljs-keyword\">qualified</span> Data.Vector.Algorithms.Intro <span class=\"hljs-keyword\">as</span> VGAI\n\n<span class=\"hljs-comment\">-- Measures of central tendency.</span>\n\n<span class=\"hljs-title\">arithmeticMean</span> :: (<span class=\"hljs-type\">Foldable</span> t, <span class=\"hljs-type\">Fractional</span> a) =&gt; t a -&gt; a\n<span class=\"hljs-title\">arithmeticMean</span> vals = (sum vals) / (fromIntegral $ length vals)\n\n<span class=\"hljs-title\">geometricMean</span> :: (<span class=\"hljs-type\">Foldable</span> t, <span class=\"hljs-type\">Floating</span> a) =&gt; t a -&gt; a\n<span class=\"hljs-title\">geometricMean</span> vals = (product vals) ** (<span class=\"hljs-number\">1</span>/(fromIntegral $ length vals))\n\n<span class=\"hljs-title\">harmonicMean</span> :: (<span class=\"hljs-type\">Foldable</span> t, <span class=\"hljs-type\">Functor</span> t, <span class=\"hljs-type\">Fractional</span> a) =&gt; t a -&gt; a\n<span class=\"hljs-title\">harmonicMean</span> vals = (sum $ fmap (<span class=\"hljs-number\">1</span>/) vals) / (fromIntegral $ length vals)\n\n<span class=\"hljs-comment\">-- For median, since the containers are sorted differently, we need to use</span>\n<span class=\"hljs-comment\">-- different methods</span>\n\n<span class=\"hljs-title\">medianList</span> :: (<span class=\"hljs-type\">Fractional</span> a, <span class=\"hljs-type\">Ord</span> a) =&gt; [a] -&gt; a\n<span class=\"hljs-title\">medianList</span> = medianListSorted . <span class=\"hljs-type\">S</span>.sort\n\n<span class=\"hljs-title\">medianVector</span>\n  :: (<span class=\"hljs-type\">VG</span>.<span class=\"hljs-type\">Vector</span> vector a, <span class=\"hljs-type\">Foldable</span> vector, <span class=\"hljs-type\">Fractional</span> a, <span class=\"hljs-type\">Ord</span> a)\n  =&gt; vector a -&gt; a\n<span class=\"hljs-title\">medianVector</span> = medianVectorSorted . <span class=\"hljs-type\">VG</span>.modify <span class=\"hljs-type\">VGAI</span>.sort\n\n<span class=\"hljs-comment\">-- When sorted, the two median algorithms are quite similar. We can reduce</span>\n<span class=\"hljs-comment\">-- duplication by adding an export list to the module and using more</span>\n<span class=\"hljs-comment\">-- higher-order functions but let&#x27;s leave this for a different PR.</span>\n\n<span class=\"hljs-title\">medianListSorted</span> :: <span class=\"hljs-type\">Fractional</span> a =&gt; [a] -&gt; a\n<span class=\"hljs-title\">medianListSorted</span> vals\n  | odd n = vals !! mid\n  | otherwise = arithmeticMean $ take <span class=\"hljs-number\">2</span> $ drop (mid - <span class=\"hljs-number\">1</span>) vals\n  <span class=\"hljs-keyword\">where</span>\n    n = length vals\n    mid = n `div` <span class=\"hljs-number\">2</span>\n\n<span class=\"hljs-title\">medianVectorSorted</span>\n  :: (<span class=\"hljs-type\">VG</span>.<span class=\"hljs-type\">Vector</span> vector a, <span class=\"hljs-type\">Foldable</span> vector, <span class=\"hljs-type\">Fractional</span> a)\n  =&gt; vector a -&gt; a\n<span class=\"hljs-title\">medianVectorSorted</span> vals\n  | odd n = vals <span class=\"hljs-type\">VG</span>.! mid\n  | otherwise = arithmeticMean $ <span class=\"hljs-type\">VG</span>.take <span class=\"hljs-number\">2</span> $ <span class=\"hljs-type\">VG</span>.drop (mid - <span class=\"hljs-number\">1</span>) vals\n  <span class=\"hljs-keyword\">where</span>\n    n = length vals\n    mid = n `div` <span class=\"hljs-number\">2</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Mihai Maruseac",
+      "email": "mihai.maruseac@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

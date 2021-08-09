@@ -1,0 +1,21 @@
+{
+  "slug": "ascending-priority-queue",
+  "name": "Ascending Priority Queue",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "Sombit Bose",
+      "email": "sombit.bose15@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Shubham Sah",
+      "email": "42349247+shubhamsah@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

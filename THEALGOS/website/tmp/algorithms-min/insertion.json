@@ -1,0 +1,21 @@
+{
+  "slug": "insertion",
+  "name": "Insertion",
+  "categories": ["sorts"],
+  "implementations": {
+    "rust": ""
+  },
+  "contributors": [
+    {
+      "name": "Sebastian Andersson",
+      "email": "sebastian@bittr.nu",
+      "commits": 1
+    },
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "hash-djb2",
+  "name": "Hash Djb2",
+  "categories": ["hashing"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

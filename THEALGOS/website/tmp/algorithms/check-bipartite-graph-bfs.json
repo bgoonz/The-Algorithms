@@ -1,0 +1,36 @@
+{
+  "slug": "check-bipartite-graph-bfs",
+  "name": "Check Bipartite Graph Bfs",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "graphs/check_bipartite_graph_bfs.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/graphs/check_bipartite_graph_bfs.py",
+      "code": "<span class=\"hljs-comment\"># Check whether Graph is Bipartite or Not using BFS</span>\n\n\n<span class=\"hljs-comment\"># A Bipartite Graph is a graph whose vertices can be divided into two independent sets,</span>\n<span class=\"hljs-comment\"># U and V such that every edge (u, v) either connects a vertex from U to V or a vertex</span>\n<span class=\"hljs-comment\"># from V to U. In other words, for every edge (u, v), either u belongs to U and v to V,</span>\n<span class=\"hljs-comment\"># or u belongs to V and v to U. We can also say that there is no edge that connects</span>\n<span class=\"hljs-comment\"># vertices of same set.</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">checkBipartite</span>(<span class=\"hljs-params\">graph</span>):\n    queue = []\n    visited = [<span class=\"hljs-literal\">False</span>] * <span class=\"hljs-built_in\">len</span>(graph)\n    color = [-<span class=\"hljs-number\">1</span>] * <span class=\"hljs-built_in\">len</span>(graph)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">bfs</span>():\n        <span class=\"hljs-keyword\">while</span> queue:\n            u = queue.pop(<span class=\"hljs-number\">0</span>)\n            visited[u] = <span class=\"hljs-literal\">True</span>\n\n            <span class=\"hljs-keyword\">for</span> neighbour <span class=\"hljs-keyword\">in</span> graph[u]:\n\n                <span class=\"hljs-keyword\">if</span> neighbour == u:\n                    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n                <span class=\"hljs-keyword\">if</span> color[neighbour] == -<span class=\"hljs-number\">1</span>:\n                    color[neighbour] = <span class=\"hljs-number\">1</span> - color[u]\n                    queue.append(neighbour)\n\n                <span class=\"hljs-keyword\">elif</span> color[neighbour] == color[u]:\n                    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-built_in\">len</span>(graph)):\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> visited[i]:\n            queue.append(i)\n            color[i] = <span class=\"hljs-number\">0</span>\n            <span class=\"hljs-keyword\">if</span> bfs() <span class=\"hljs-keyword\">is</span> <span class=\"hljs-literal\">False</span>:\n                <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">False</span>\n\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">True</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-comment\"># Adjacency List of graph</span>\n    <span class=\"hljs-built_in\">print</span>(checkBipartite({<span class=\"hljs-number\">0</span>: [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>], <span class=\"hljs-number\">1</span>: [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>], <span class=\"hljs-number\">2</span>: [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">3</span>], <span class=\"hljs-number\">3</span>: [<span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">2</span>]}))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Farhan",
+      "email": "farhankasmani956@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

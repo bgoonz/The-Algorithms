@@ -1,0 +1,31 @@
+{
+  "slug": "graphs",
+  "name": "Graphs",
+  "categories": ["datastructures", "graphs"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "khalil2535",
+      "email": "khalil2535@localhost",
+      "commits": 1
+    },
+    {
+      "name": "zacharyjones123",
+      "email": "zrjones@ncsu.edu",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    },
+    {
+      "name": "rei2hu",
+      "email": "thornas.chang@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

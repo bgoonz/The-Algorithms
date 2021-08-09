@@ -1,0 +1,26 @@
+{
+  "slug": "density",
+  "name": "Density",
+  "categories": ["graphs"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Graphs/Density.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Graphs/Density.js",
+      "code": "<span class=\"hljs-comment\">/*\nThe density of a network is a measure of how many edges exist proportional to\nhow many edges would exist in a complete network (where all possible edges).\nhttps://networkx.org/documentation/networkx-1.9/reference/generated/networkx.classes.function.density.html\n*/</span>\n<span class=\"hljs-keyword\">function</span> <span class=\"hljs-title function_\">density</span> (numberOfNodes, numberOfEdges, isDirected = <span class=\"hljs-literal\">false</span>) {\n  <span class=\"hljs-keyword\">const</span> multi = isDirected ? <span class=\"hljs-number\">1</span> : <span class=\"hljs-number\">2</span>\n  <span class=\"hljs-keyword\">return</span> (multi * numberOfEdges) / (numberOfNodes * (numberOfNodes - <span class=\"hljs-number\">1</span>))\n}\n\n<span class=\"hljs-variable language_\">console</span>.<span class=\"hljs-title function_\">log</span>(<span class=\"hljs-title function_\">density</span>(<span class=\"hljs-number\">10</span>, <span class=\"hljs-number\">2</span>))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Rodrigo Morais",
+      "email": "58960796+rodigu@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rodrigo",
+      "email": "rmoraisu@protonmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

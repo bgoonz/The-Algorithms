@@ -1,0 +1,16 @@
+{
+  "slug": "hyperbolic-tangentwithout-inbuilt",
+  "name": "Hyperbolic tangent(without Inbuilt)",
+  "categories": ["machinelearning", "activationfunctions"],
+  "implementations": {
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

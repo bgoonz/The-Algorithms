@@ -1,0 +1,16 @@
+{
+  "slug": "hex-to-bin",
+  "name": "Hex to Bin",
+  "categories": ["conversions"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "TANMAY SRIVASTAVA",
+      "email": "77936821+ktsrivastava29@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

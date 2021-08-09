@@ -1,0 +1,26 @@
+{
+  "slug": "monte-carlo-pi",
+  "name": "Monte Carlo Pi",
+  "categories": ["others", "montecarlopi"],
+  "implementations": {
+    "go": ""
+  },
+  "contributors": [
+    {
+      "name": "Brayo",
+      "email": "vukubrian@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Anderson Queiroz",
+      "email": "contato@andersonq.eti.br",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

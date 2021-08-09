@@ -1,0 +1,26 @@
+{
+  "slug": "n-queens-all-solution-optimised",
+  "name": "N Queens All Solution Optimised",
+  "categories": ["backtracking"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sombit Bose",
+      "email": "sombit.bose15@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

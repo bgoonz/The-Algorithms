@@ -1,0 +1,21 @@
+{
+  "slug": "array-stack",
+  "name": "Array Stack",
+  "categories": ["datastructures", "stack"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

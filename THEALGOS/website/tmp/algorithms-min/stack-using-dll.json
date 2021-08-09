@@ -1,0 +1,21 @@
+{
+  "slug": "stack-using-dll",
+  "name": "Stack Using Dll",
+  "categories": ["datastructures", "stacks"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhakad9",
+      "email": "53108891+Dhakad9@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

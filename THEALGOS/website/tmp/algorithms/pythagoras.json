@@ -1,0 +1,36 @@
+{
+  "slug": "pythagoras",
+  "name": "Pythagoras",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "maths/pythagoras.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/maths/pythagoras.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;Uses Pythagoras theorem to calculate the distance between two points in space.&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">import</span> math\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Point</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, x, y, z</span>):\n        self.x = x\n        self.y = y\n        self.z = z\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__repr__</span>(<span class=\"hljs-params\">self</span>) -&gt; <span class=\"hljs-built_in\">str</span>:\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">f&quot;Point(<span class=\"hljs-subst\">{self.x}</span>, <span class=\"hljs-subst\">{self.y}</span>, <span class=\"hljs-subst\">{self.z}</span>)&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">distance</span>(<span class=\"hljs-params\">a: Point, b: Point</span>) -&gt; <span class=\"hljs-built_in\">float</span>:\n    <span class=\"hljs-keyword\">return</span> math.sqrt(<span class=\"hljs-built_in\">abs</span>((b.x - a.x) ** <span class=\"hljs-number\">2</span> + (b.y - a.y) ** <span class=\"hljs-number\">2</span> + (b.z - a.z) ** <span class=\"hljs-number\">2</span>))\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">test_distance</span>() -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; point1 = Point(2, -1, 7)\n    &gt;&gt;&gt; point2 = Point(1, -3, 5)\n    &gt;&gt;&gt; print(f&quot;Distance from {point1} to {point2} is {distance(point1, point2)}&quot;)\n    Distance from Point(2, -1, 7) to Point(1, -3, 5) is 3.0\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">pass</span>\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    },
+    "go": {
+      "dir": "math/pythagoras/pythagoras.go",
+      "url": "https://github.com/TheAlgorithms/go/tree/master/math/pythagoras/pythagoras.go",
+      "code": "<span class=\"hljs-keyword\">package</span> pythagoras\n\n<span class=\"hljs-keyword\">import</span> (\n\t<span class=\"hljs-string\">&quot;math&quot;</span>\n)\n\n<span class=\"hljs-comment\">//Vector defines a tuple with 3 values in 3d-space</span>\n<span class=\"hljs-keyword\">type</span> Vector <span class=\"hljs-keyword\">struct</span> {\n\tx <span class=\"hljs-keyword\">float64</span>\n\ty <span class=\"hljs-keyword\">float64</span>\n\tz <span class=\"hljs-keyword\">float64</span>\n}\n\n<span class=\"hljs-comment\">//Distance calculates the distance between to vectors with the   Pythagoras theorem</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">func</span> <span class=\"hljs-title\">Distance</span><span class=\"hljs-params\">(a, b Vector)</span> <span class=\"hljs-title\">float64</span></span> {\n\tres := math.Pow(b.x-a.x, <span class=\"hljs-number\">2.0</span>) + math.Pow(b.y-a.y, <span class=\"hljs-number\">2.0</span>) + math.Pow(b.z-a.z, <span class=\"hljs-number\">2.0</span>)\n\t<span class=\"hljs-keyword\">return</span> math.Sqrt(res)\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "localleon",
+      "email": "leon.rauschenbach@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Bruno Santos",
+      "email": "7022432+dunderbruno@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

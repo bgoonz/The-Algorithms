@@ -1,0 +1,21 @@
+{
+  "slug": "gelu",
+  "name": "GELU",
+  "categories": ["machinelearning", "activationfunctions"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/machine_learning/Activation Functions/GELU.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/machine_learning/Activation Functions/GELU.m",
+      "code": "<span class=\"hljs-comment\">%GELU function</span>\nx = <span class=\"hljs-number\">-10</span>:<span class=\"hljs-number\">0.01</span>:<span class=\"hljs-number\">10</span>;\ny = (<span class=\"hljs-number\">1</span>/<span class=\"hljs-number\">2</span>*x).*(<span class=\"hljs-number\">1</span>+<span class=\"hljs-built_in\">tanh</span>(<span class=\"hljs-built_in\">sqrt</span>(<span class=\"hljs-number\">2</span>/<span class=\"hljs-built_in\">pi</span>)*(x+<span class=\"hljs-number\">0.044715</span>*power(x,<span class=\"hljs-number\">3</span>))));\n<span class=\"hljs-built_in\">plot</span>(x,y);\nxlabel(<span class=\"hljs-string\">&#x27;x&#x27;</span>);\nylabel(<span class=\"hljs-string\">&#x27;y&#x27;</span>);\ngrid on\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Yukti Khosla",
+      "email": "44090430+Yukti-09@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

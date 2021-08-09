@@ -1,0 +1,10 @@
+{
+  "slug": "fast-search",
+  "name": "Fast Search",
+  "categories": ["datastructures", "linkedlist"],
+  "implementations": {
+    "c-sharp": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "wildcard-matching",
+  "name": "Wildcard Matching",
+  "categories": ["backtracking"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Swastika Gupta",
+      "email": "64654203+Swastyy@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

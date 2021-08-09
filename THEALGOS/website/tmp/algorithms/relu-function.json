@@ -1,0 +1,26 @@
+{
+  "slug": "relu-function",
+  "name": "Relu Function",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "dart": {
+      "dir": "maths/relu_function.dart",
+      "url": "https://github.com/TheAlgorithms/dart/tree/master/maths/relu_function.dart",
+      "code": "<span class=\"hljs-comment\">// Program to Implement RELU function</span>\n<span class=\"hljs-comment\">// RELU function is commonly used in Machine learning as an activation function</span>\n\n<span class=\"hljs-built_in\">int</span> relu_func(<span class=\"hljs-keyword\">var</span> x) {\n  <span class=\"hljs-comment\">// here x passed is value passed in the function relu</span>\n  <span class=\"hljs-keyword\">if</span> (x &gt; <span class=\"hljs-number\">0</span>)\n    <span class=\"hljs-keyword\">return</span> x;\n  <span class=\"hljs-keyword\">else</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n\n<span class=\"hljs-comment\">//Driver function for RELU function</span>\n<span class=\"hljs-built_in\">int</span> main() {\n  <span class=\"hljs-keyword\">var</span> a = <span class=\"hljs-number\">5</span>;\n  <span class=\"hljs-built_in\">print</span>(relu_func(a));\n  <span class=\"hljs-keyword\">var</span> b = <span class=\"hljs-number\">-1</span>;\n  <span class=\"hljs-built_in\">print</span>(relu_func(b));\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "KAUSHAL DEVRARI",
+      "email": "71590645+KaushalDevrari@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

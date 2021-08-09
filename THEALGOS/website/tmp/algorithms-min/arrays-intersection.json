@@ -1,0 +1,16 @@
+{
+  "slug": "arrays-intersection",
+  "name": "Arrays Intersection",
+  "categories": ["datastructures", "hashtable"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

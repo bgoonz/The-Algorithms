@@ -1,0 +1,33 @@
+{
+  "slug": "kmeans",
+  "name": "Kmeans",
+  "categories": ["general"],
+  "implementations": {
+    "rust": "",
+    "r": "",
+    "matlab-octave": ""
+  },
+  "contributors": [
+    {
+      "name": "Arnav Borborah",
+      "email": "arnavborborah11@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Anshul",
+      "email": "malikanshul29@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Baxter Eaves",
+      "email": "baxyjr@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "cozek",
+      "email": "kaushikamardas@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

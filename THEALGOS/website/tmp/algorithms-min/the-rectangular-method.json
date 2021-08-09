@@ -1,0 +1,16 @@
+{
+  "slug": "the-rectangular-method",
+  "name": "The Rectangular Method",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [
+    {
+      "name": "CheshirLvova",
+      "email": "ksoovnaila@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

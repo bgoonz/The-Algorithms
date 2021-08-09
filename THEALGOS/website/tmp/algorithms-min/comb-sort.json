@@ -1,0 +1,137 @@
+{
+  "slug": "comb-sort",
+  "name": "Comb Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "java": "",
+    "c": "",
+    "f-sharp": "",
+    "aarch64_assembly": "",
+    "dart": "",
+    "r": "",
+    "ruby": "",
+    "matlab-octave": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "vanitaneja22",
+      "email": "vani.taneja123@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "stepfencurryxiao",
+      "email": "stepfencurryxiao@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "maxbarsukov",
+      "email": "maximbarsukov@bk.ru",
+      "commits": 1
+    },
+    {
+      "name": "zoomdong",
+      "email": "1344492820@qq.com",
+      "commits": 1
+    },
+    {
+      "name": "KuLi",
+      "email": "KuLi@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Gabriele Bruno Franco",
+      "email": "gabrielebrunofranco@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "valery noname",
+      "email": "valerydec17@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "nik",
+      "email": "nikitap4.92@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sandeep Roy",
+      "email": "sandeep.roy@infosys.com",
+      "commits": 1
+    },
+    {
+      "name": "sandeeproy99",
+      "email": "33170898+sandeeproy99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Uvaish Zafri",
+      "email": "uvaishzafri1@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Ayaan Khan",
+      "email": "ayaankhan98@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Kelvin Salton do Prado",
+      "email": "kelvinpfw@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    },
+    {
+      "name": "marsonya",
+      "email": "akhil.marsonya27@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Mertcan Davulcu",
+      "email": "54983926+mertcandav@users.noreply.github.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

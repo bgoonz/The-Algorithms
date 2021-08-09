@@ -1,0 +1,31 @@
+{
+  "slug": "print-reverse",
+  "name": "Print Reverse",
+  "categories": ["datastructures", "linkedlist"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/linked_list/print_reverse.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/linked_list/print_reverse.py",
+      "code": "<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Node</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, data=<span class=\"hljs-literal\">None</span></span>):\n        self.data = data\n        self.<span class=\"hljs-built_in\">next</span> = <span class=\"hljs-literal\">None</span>\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__repr__</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-string\">&quot;&quot;&quot;Returns a visual representation of the node and all its following nodes.&quot;&quot;&quot;</span>\n        string_rep = []\n        temp = self\n        <span class=\"hljs-keyword\">while</span> temp:\n            string_rep.append(<span class=\"hljs-string\">f&quot;<span class=\"hljs-subst\">{temp.data}</span>&quot;</span>)\n            temp = temp.<span class=\"hljs-built_in\">next</span>\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">&quot;-&gt;&quot;</span>.join(string_rep)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">make_linked_list</span>(<span class=\"hljs-params\">elements_list: <span class=\"hljs-type\">List</span></span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;Creates a Linked List from the elements of the given sequence\n    (list/tuple) and returns the head of the Linked List.\n    &gt;&gt;&gt; make_linked_list([])\n    Traceback (most recent call last):\n        ...\n    Exception: The Elements List is empty\n    &gt;&gt;&gt; make_linked_list([7])\n    7\n    &gt;&gt;&gt; make_linked_list([&#x27;abc&#x27;])\n    abc\n    &gt;&gt;&gt; make_linked_list([7, 25])\n    7-&gt;25\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> elements_list:\n        <span class=\"hljs-keyword\">raise</span> Exception(<span class=\"hljs-string\">&quot;The Elements List is empty&quot;</span>)\n\n    current = head = Node(elements_list[<span class=\"hljs-number\">0</span>])\n    <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-built_in\">len</span>(elements_list)):\n        current.<span class=\"hljs-built_in\">next</span> = Node(elements_list[i])\n        current = current.<span class=\"hljs-built_in\">next</span>\n    <span class=\"hljs-keyword\">return</span> head\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">print_reverse</span>(<span class=\"hljs-params\">head_node: Node</span>) -&gt; <span class=\"hljs-literal\">None</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;Prints the elements of the given Linked List in reverse order\n    &gt;&gt;&gt; print_reverse([])\n    &gt;&gt;&gt; linked_list = make_linked_list([69, 88, 73])\n    &gt;&gt;&gt; print_reverse(linked_list)\n    73\n    88\n    69\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> head_node <span class=\"hljs-keyword\">is</span> <span class=\"hljs-keyword\">not</span> <span class=\"hljs-literal\">None</span> <span class=\"hljs-keyword\">and</span> <span class=\"hljs-built_in\">isinstance</span>(head_node, Node):\n        print_reverse(head_node.<span class=\"hljs-built_in\">next</span>)\n        <span class=\"hljs-built_in\">print</span>(head_node.data)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n    <span class=\"hljs-keyword\">from</span> doctest <span class=\"hljs-keyword\">import</span> testmod\n\n    testmod()\n\n    linked_list = make_linked_list([<span class=\"hljs-number\">14</span>, <span class=\"hljs-number\">52</span>, <span class=\"hljs-number\">14</span>, <span class=\"hljs-number\">12</span>, <span class=\"hljs-number\">43</span>])\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Linked List:&quot;</span>)\n    <span class=\"hljs-built_in\">print</span>(linked_list)\n    <span class=\"hljs-built_in\">print</span>(<span class=\"hljs-string\">&quot;Elements in Reverse:&quot;</span>)\n    print_reverse(linked_list)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    main()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Sherman Hui",
+      "email": "11592023+shermanhui@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Hanif Ali",
+      "email": "alihanif016@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

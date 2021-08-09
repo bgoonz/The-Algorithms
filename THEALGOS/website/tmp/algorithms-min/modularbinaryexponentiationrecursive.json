@@ -1,0 +1,21 @@
+{
+  "slug": "modularbinaryexponentiationrecursive",
+  "name": "ModularBinaryExponentiationRecursive",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Utkarsh Chaudhary",
+      "email": "f2016303@pilani.bits-pilani.ac.in",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

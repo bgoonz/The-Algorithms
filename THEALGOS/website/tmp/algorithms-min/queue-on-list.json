@@ -1,0 +1,51 @@
+{
+  "slug": "queue-on-list",
+  "name": "Queue on List",
+  "categories": ["datastructures", "queue"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Vipul Rai",
+      "email": "vipulrai8891@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "luanjerry",
+      "email": "50862638+luanjerry@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "RGauthamRam",
+      "email": "30320759+RGauthamRam@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "",
+      "email": "shyam.thiagarajan@gmail.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

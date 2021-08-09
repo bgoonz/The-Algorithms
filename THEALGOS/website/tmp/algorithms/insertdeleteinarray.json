@@ -1,0 +1,31 @@
+{
+  "slug": "insertdeleteinarray",
+  "name": "InsertDeleteInArray",
+  "categories": ["others"],
+  "body": {},
+  "implementations": {
+    "java": {
+      "dir": "Others/InsertDeleteInArray.java",
+      "url": "https://github.com/TheAlgorithms/java/tree/master/Others/InsertDeleteInArray.java",
+      "code": "<span class=\"hljs-keyword\">package</span> Others;\n\n<span class=\"hljs-keyword\">import</span> java.util.*;\n\n<span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">InsertDeleteInArray</span> {\n\n  <span class=\"hljs-keyword\">public</span> <span class=\"hljs-keyword\">static</span> <span class=\"hljs-keyword\">void</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">(String[] args)</span> {\n    <span class=\"hljs-type\">Scanner</span> <span class=\"hljs-variable\">s</span> <span class=\"hljs-operator\">=</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">Scanner</span>(System.in); <span class=\"hljs-comment\">// Input statement</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Enter the size of the array&quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">size</span> <span class=\"hljs-operator\">=</span> s.nextInt();\n    <span class=\"hljs-type\">int</span> a[] = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">int</span>[size];\n    <span class=\"hljs-type\">int</span> i;\n\n    <span class=\"hljs-comment\">// To enter the initial elements</span>\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; size; i++) {\n      System.out.println(<span class=\"hljs-string\">&quot;Enter the element&quot;</span>);\n      a[i] = s.nextInt();\n    }\n\n    <span class=\"hljs-comment\">// To insert a new element(we are creating a new array)</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Enter the index at which the element should be inserted&quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">insert_pos</span> <span class=\"hljs-operator\">=</span> s.nextInt();\n    System.out.println(<span class=\"hljs-string\">&quot;Enter the element to be inserted&quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">ins</span> <span class=\"hljs-operator\">=</span> s.nextInt();\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">size2</span> <span class=\"hljs-operator\">=</span> size + <span class=\"hljs-number\">1</span>;\n    <span class=\"hljs-type\">int</span> b[] = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">int</span>[size2];\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; size2; i++) {\n      <span class=\"hljs-keyword\">if</span> (i &lt;= insert_pos) {\n        b[i] = a[i];\n      } <span class=\"hljs-keyword\">else</span> {\n        b[i] = a[i - <span class=\"hljs-number\">1</span>];\n      }\n    }\n    b[insert_pos] = ins;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; size2; i++) {\n      System.out.println(b[i]);\n    }\n\n    <span class=\"hljs-comment\">// To delete an element given the index</span>\n    System.out.println(<span class=\"hljs-string\">&quot;Enter the index at which element is to be deleted&quot;</span>);\n    <span class=\"hljs-type\">int</span> <span class=\"hljs-variable\">del_pos</span> <span class=\"hljs-operator\">=</span> s.nextInt();\n    <span class=\"hljs-keyword\">for</span> (i = del_pos; i &lt; size2 - <span class=\"hljs-number\">1</span>; i++) {\n      b[i] = b[i + <span class=\"hljs-number\">1</span>];\n    }\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; size2 - <span class=\"hljs-number\">1</span>; i++) System.out.println(b[i]);\n    s.close();\n  }\n}\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Hassan",
+      "email": "hassan.elseoudy@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "unknown",
+      "email": "cnddhks846@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "convex-hull",
+  "name": "Convex Hull",
+  "categories": ["divideandconquer"],
+  "implementations": {
+    "python": "",
+    "rust": ""
+  },
+  "contributors": [
+    {
+      "name": "Simon Lammer",
+      "email": "lammer.simon@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "ELNS",
+      "email": "57490926+EverLookNeverSee@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "GeorgeChambi",
+      "email": "charalambous99@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Denis Trofimov",
+      "email": "silaradost@yandex.ru",
+      "commits": 1
+    },
+    {
+      "name": "Pierre Gimalac",
+      "email": "pierre.gimalac@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Maxwell Aladago",
+      "email": "maxwell.aladago@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

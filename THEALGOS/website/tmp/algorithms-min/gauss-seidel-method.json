@@ -1,0 +1,10 @@
+{
+  "slug": "gauss-seidel-method",
+  "name": "Gauss Seidel Method",
+  "categories": ["numericalmethods"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

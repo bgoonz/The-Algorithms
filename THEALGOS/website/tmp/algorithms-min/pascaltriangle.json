@@ -1,0 +1,37 @@
+{
+  "slug": "pascaltriangle",
+  "name": "PascalTriangle",
+  "categories": ["math"],
+  "implementations": {
+    "javascript": "",
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "vinayak",
+      "email": "itssvinayak@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nour B",
+      "email": "56294154+nourrrrrrrr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "joker123",
+      "email": "56662119+leechiyun@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

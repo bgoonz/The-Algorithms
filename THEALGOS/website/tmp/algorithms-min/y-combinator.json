@@ -1,0 +1,10 @@
+{
+  "slug": "y-combinator",
+  "name": "Y Combinator",
+  "categories": ["others"],
+  "implementations": {
+    "aarch64_assembly": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "polynomial-evaluation",
+  "name": "Polynomial Evaluation",
+  "categories": ["math"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Shoaib Asgar",
+      "email": "shoaib.mca19.du@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Stephen",
+      "email": "24819660+infrontoftheforest@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

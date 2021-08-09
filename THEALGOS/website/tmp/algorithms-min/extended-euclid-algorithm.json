@@ -1,0 +1,10 @@
+{
+  "slug": "extended-euclid-algorithm",
+  "name": "Extended Euclid Algorithm",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

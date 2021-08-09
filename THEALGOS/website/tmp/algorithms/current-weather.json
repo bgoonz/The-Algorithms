@@ -1,0 +1,26 @@
+{
+  "slug": "current-weather",
+  "name": "Current Weather",
+  "categories": ["webprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "web_programming/current_weather.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/web_programming/current_weather.py",
+      "code": "<span class=\"hljs-keyword\">import</span> requests\n\nAPPID = <span class=\"hljs-string\">&quot;&quot;</span>  <span class=\"hljs-comment\"># &lt;-- Put your OpenWeatherMap appid here!</span>\nURL_BASE = <span class=\"hljs-string\">&quot;http://api.openweathermap.org/data/2.5/&quot;</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">current_weather</span>(<span class=\"hljs-params\">q: <span class=\"hljs-built_in\">str</span> = <span class=\"hljs-string\">&quot;Chicago&quot;</span>, appid: <span class=\"hljs-built_in\">str</span> = APPID</span>) -&gt; <span class=\"hljs-built_in\">dict</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;https://openweathermap.org/api&quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> requests.get(URL_BASE + <span class=\"hljs-string\">&quot;weather&quot;</span>, params=<span class=\"hljs-built_in\">locals</span>()).json()\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">weather_forecast</span>(<span class=\"hljs-params\">q: <span class=\"hljs-built_in\">str</span> = <span class=\"hljs-string\">&quot;Kolkata, India&quot;</span>, appid: <span class=\"hljs-built_in\">str</span> = APPID</span>) -&gt; <span class=\"hljs-built_in\">dict</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;https://openweathermap.org/forecast5&quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> requests.get(URL_BASE + <span class=\"hljs-string\">&quot;forecast&quot;</span>, params=<span class=\"hljs-built_in\">locals</span>()).json()\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">weather_onecall</span>(<span class=\"hljs-params\">lat: <span class=\"hljs-built_in\">float</span> = <span class=\"hljs-number\">55.68</span>, lon: <span class=\"hljs-built_in\">float</span> = <span class=\"hljs-number\">12.57</span>, appid: <span class=\"hljs-built_in\">str</span> = APPID</span>) -&gt; <span class=\"hljs-built_in\">dict</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;https://openweathermap.org/api/one-call-api&quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">return</span> requests.get(URL_BASE + <span class=\"hljs-string\">&quot;onecall&quot;</span>, params=<span class=\"hljs-built_in\">locals</span>()).json()\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">from</span> pprint <span class=\"hljs-keyword\">import</span> pprint\n\n    <span class=\"hljs-keyword\">while</span> <span class=\"hljs-literal\">True</span>:\n        location = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter a location:&quot;</span>).strip()\n        <span class=\"hljs-keyword\">if</span> location:\n            pprint(current_weather(location))\n        <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-keyword\">break</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Swapnanil Dutta",
+      "email": "47251193+swapnanildutta@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

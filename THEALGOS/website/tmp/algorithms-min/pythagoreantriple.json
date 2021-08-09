@@ -1,0 +1,16 @@
+{
+  "slug": "pythagoreantriple",
+  "name": "PythagoreanTriple",
+  "categories": ["math"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Ray",
+      "email": "rbshealy@live.unc.edu",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

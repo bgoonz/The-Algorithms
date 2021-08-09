@@ -1,0 +1,16 @@
+{
+  "slug": "jumpgame",
+  "name": "Jumpgame",
+  "categories": ["greedyalgorithms"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Rakshaa Viswanathan",
+      "email": "46165429+rakshaa2000@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

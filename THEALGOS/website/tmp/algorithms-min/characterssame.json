@@ -1,0 +1,16 @@
+{
+  "slug": "characterssame",
+  "name": "CharactersSame",
+  "categories": ["strings"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

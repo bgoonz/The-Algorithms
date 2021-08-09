@@ -1,0 +1,21 @@
+{
+  "slug": "random-search",
+  "name": "Random Search",
+  "categories": ["searches"],
+  "body": {},
+  "implementations": {
+    "matlab-octave": {
+      "dir": "algorithms/Searching/random_search.m",
+      "url": "https://github.com/TheAlgorithms/matlab-octave/tree/master/algorithms/Searching/random_search.m",
+      "code": "<span class=\"hljs-comment\">%% Random Search Algorithm (Pure Random Search Algorithm)</span>\n\n<span class=\"hljs-comment\">% This code finds the minimum of f(x) = x(1)^2 + x(2)^2</span>\n<span class=\"hljs-comment\">% in which -5 &lt; x(i) &lt; 5</span>\n<span class=\"hljs-comment\">% This function is a convex and the minimum is at (0,0)</span>\n<span class=\"hljs-comment\">% The RSA is the simplest algorithm to solve optimization problem</span>\n<span class=\"hljs-comment\">% it is not efficient and it sometimes cannot solve the problem</span>\n\nclc\nclose all\nclear all\ndim=<span class=\"hljs-number\">2</span>;\npopsize=<span class=\"hljs-number\">100</span>;\nftarget=<span class=\"hljs-number\">0.01</span>;\nnumIter=<span class=\"hljs-number\">100</span>;\nObjFun=@(x) sum(x.^<span class=\"hljs-number\">2</span>);\n<span class=\"hljs-keyword\">for</span> <span class=\"hljs-built_in\">i</span>=<span class=\"hljs-number\">1</span>:numIter\n    candidate=<span class=\"hljs-number\">10</span>*<span class=\"hljs-built_in\">rand</span>(dim,popsize)<span class=\"hljs-number\">-5</span>;\n    best,=<span class=\"hljs-built_in\">min</span>(feval(ObjFun,candidate));\n    <span class=\"hljs-keyword\">if</span> best &lt;= ftarget\n        <span class=\"hljs-keyword\">break</span>;\n    <span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-keyword\">end</span>\n<span class=\"hljs-built_in\">disp</span>(best);\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Mehra",
+      "email": "52788025+Triaro@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

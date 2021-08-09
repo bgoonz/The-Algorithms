@@ -1,0 +1,16 @@
+{
+  "slug": "geometric-mean",
+  "name": "Geometric Mean",
+  "categories": ["math", "series"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Ayush Bisht",
+      "email": "61404154+ayushbisht2001@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

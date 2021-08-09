@@ -1,0 +1,10 @@
+{
+  "slug": "fibonacci-sum",
+  "name": "Fibonacci Sum",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

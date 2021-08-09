@@ -1,0 +1,16 @@
+{
+  "slug": "elliptic-curve-key-exchange",
+  "name": "Elliptic Curve Key Exchange",
+  "categories": ["ciphers"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Ashish Bhanu Daulatabad",
+      "email": "supersonic12910@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

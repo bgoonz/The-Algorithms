@@ -1,0 +1,15 @@
+{
+  "slug": "random-forest",
+  "name": "Random Forest",
+  "categories": ["classificationalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Classification-Algorithms/random_forest.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Classification-Algorithms/random_forest.R",
+      "code": "library<span class=\"hljs-punctuation\">(</span>randomForest<span class=\"hljs-punctuation\">)</span>\nx <span class=\"hljs-operator\">&lt;-</span> cbind<span class=\"hljs-punctuation\">(</span>x_train<span class=\"hljs-punctuation\">,</span>y_train<span class=\"hljs-punctuation\">)</span>\n<span class=\"hljs-comment\"># Fitting model</span>\nfit <span class=\"hljs-operator\">&lt;-</span> randomForest<span class=\"hljs-punctuation\">(</span>Species <span class=\"hljs-operator\">~</span> .<span class=\"hljs-punctuation\">,</span> x<span class=\"hljs-punctuation\">,</span>ntree<span class=\"hljs-operator\">=</span><span class=\"hljs-number\">500</span><span class=\"hljs-punctuation\">)</span>\nsummary<span class=\"hljs-punctuation\">(</span>fit<span class=\"hljs-punctuation\">)</span>\n<span class=\"hljs-comment\"># Predict Output </span>\npredicted<span class=\"hljs-operator\">=</span> predict<span class=\"hljs-punctuation\">(</span>fit<span class=\"hljs-punctuation\">,</span>x_test<span class=\"hljs-punctuation\">)</span>\n"
+    }
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

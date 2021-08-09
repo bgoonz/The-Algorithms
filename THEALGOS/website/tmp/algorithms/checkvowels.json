@@ -1,0 +1,21 @@
+{
+  "slug": "checkvowels",
+  "name": "CheckVowels",
+  "categories": ["strings"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "String/CheckVowels.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/String/CheckVowels.js",
+      "code": "<span class=\"hljs-comment\">/*\n  Given a string of words or phrases, count the number of vowels.\n  Example: input = &quot;hello world&quot; return 3\n */</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">checkVowels</span> = (<span class=\"hljs-params\">value</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> value !== <span class=\"hljs-string\">&#x27;string&#x27;</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;The first param should be a string&#x27;</span>)\n  }\n  <span class=\"hljs-keyword\">const</span> vowels = [<span class=\"hljs-string\">&#x27;a&#x27;</span>, <span class=\"hljs-string\">&#x27;e&#x27;</span>, <span class=\"hljs-string\">&#x27;i&#x27;</span>, <span class=\"hljs-string\">&#x27;o&#x27;</span>, <span class=\"hljs-string\">&#x27;u&#x27;</span>]\n  <span class=\"hljs-keyword\">let</span> countVowels = <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; value.<span class=\"hljs-property\">length</span>; i++) {\n    <span class=\"hljs-keyword\">const</span> char = value[i].<span class=\"hljs-title function_\">toLowerCase</span>()\n    <span class=\"hljs-keyword\">if</span> (vowels.<span class=\"hljs-title function_\">includes</span>(char)) {\n      countVowels++\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> countVowels\n}\n\n<span class=\"hljs-keyword\">export</span> { checkVowels }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Carlos Carvalho",
+      "email": "jcarloss.carvalho@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

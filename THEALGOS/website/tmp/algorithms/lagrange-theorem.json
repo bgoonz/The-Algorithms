@@ -1,0 +1,26 @@
+{
+  "slug": "lagrange-theorem",
+  "name": "Lagrange Theorem",
+  "categories": ["numericalmethods"],
+  "body": {},
+  "implementations": {
+    "c": {
+      "dir": "numerical_methods/lagrange_theorem.c",
+      "url": "https://github.com/TheAlgorithms/c/tree/master/numerical_methods/lagrange_theorem.c",
+      "code": "<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;math.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdio.h&gt;</span></span>\n<span class=\"hljs-meta\">#<span class=\"hljs-keyword\">include</span> <span class=\"hljs-string\">&lt;stdlib.h&gt;</span></span>\n\n<span class=\"hljs-type\">int</span> <span class=\"hljs-title function_\">main</span><span class=\"hljs-params\">()</span>\n{\n    <span class=\"hljs-type\">float</span> x[<span class=\"hljs-number\">20</span>], y[<span class=\"hljs-number\">20</span>], a, sum, p;\n    <span class=\"hljs-type\">int</span> n, i, j;\n\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Enter the no of entry to insert-&gt;&quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%d&quot;</span>, &amp;n);\n\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++)\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;enter the value of x%d-&gt;&quot;</span>, i);\n        <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%f&quot;</span>, &amp;x[i]);\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;enter the value of y%d-&gt;&quot;</span>, i);\n        <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%f&quot;</span>, &amp;y[i]);\n    }\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\n X \\t\\t Y \\n&quot;</span>);\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;----------------------------\\n&quot;</span>);\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++)\n    {\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%f\\t&quot;</span>, x[i]);\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;%f\\n&quot;</span>, y[i]);\n    }\n    <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;\\nenter the value of x for interpolation:&quot;</span>);\n    <span class=\"hljs-built_in\">scanf</span>(<span class=\"hljs-string\">&quot;%f&quot;</span>, &amp;a);\n    sum = <span class=\"hljs-number\">0</span>;\n    <span class=\"hljs-keyword\">for</span> (i = <span class=\"hljs-number\">0</span>; i &lt; n; i++)\n    {\n        p = <span class=\"hljs-number\">1.0</span>;\n        <span class=\"hljs-keyword\">for</span> (j = <span class=\"hljs-number\">0</span>; j &lt; n; j++)\n        {\n            <span class=\"hljs-keyword\">if</span> (i != j)\n            {\n                p = p * (a - x[j]) / (x[i] - x[j]);\n            }\n            sum = sum + y[i] * p;\n        }\n        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;ans is-&gt;%f&quot;</span>, sum);\n\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;\n    }\n}"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Harshil Darji",
+      "email": "darjiharshil2994@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

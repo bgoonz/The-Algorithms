@@ -1,0 +1,16 @@
+{
+  "slug": "palindrome-string-recursion",
+  "name": "Palindrome String Recursion",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

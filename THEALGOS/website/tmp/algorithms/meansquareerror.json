@@ -1,0 +1,26 @@
+{
+  "slug": "meansquareerror",
+  "name": "MeanSquareError",
+  "categories": ["math"],
+  "body": {},
+  "implementations": {
+    "javascript": {
+      "dir": "Maths/MeanSquareError.js",
+      "url": "https://github.com/TheAlgorithms/javascript/tree/master/Maths/MeanSquareError.js",
+      "code": "<span class=\"hljs-comment\">// Wikipedia: https://en.wikipedia.org/wiki/Mean_squared_error</span>\n\n<span class=\"hljs-keyword\">const</span> <span class=\"hljs-title function_\">meanSquaredError</span> = (<span class=\"hljs-params\">predicted, expected</span>) =&gt; {\n  <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-title class_\">Array</span>.<span class=\"hljs-title function_\">isArray</span>(predicted) || !<span class=\"hljs-title class_\">Array</span>.<span class=\"hljs-title function_\">isArray</span>(expected)) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;Argument must be an Array&#x27;</span>)\n  }\n\n  <span class=\"hljs-keyword\">if</span> (predicted.<span class=\"hljs-property\">length</span> !== expected.<span class=\"hljs-property\">length</span>) {\n    <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-title class_\">TypeError</span>(<span class=\"hljs-string\">&#x27;The two lists must be of equal length&#x27;</span>)\n  }\n\n  <span class=\"hljs-keyword\">let</span> err = <span class=\"hljs-number\">0</span>\n\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">0</span>; i &lt; expected.<span class=\"hljs-property\">length</span>; i++) {\n    err += (expected[i] - predicted[i]) ** <span class=\"hljs-number\">2</span>\n  }\n\n  <span class=\"hljs-keyword\">return</span> err / expected.<span class=\"hljs-property\">length</span>\n}\n\n<span class=\"hljs-keyword\">export</span> { meanSquaredError }\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Stas",
+      "email": "real.peha@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Ephraim Atta-Duncan",
+      "email": "55143799+dephraiim@users.noreply.github.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

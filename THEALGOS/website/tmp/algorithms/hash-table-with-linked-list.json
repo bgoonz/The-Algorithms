@@ -1,0 +1,46 @@
+{
+  "slug": "hash-table-with-linked-list",
+  "name": "Hash Table with Linked List",
+  "categories": ["datastructures", "hashing"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/hashing/hash_table_with_linked_list.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/hashing/hash_table_with_linked_list.py",
+      "code": "<span class=\"hljs-keyword\">from</span> collections <span class=\"hljs-keyword\">import</span> deque\n\n<span class=\"hljs-keyword\">from</span> .hash_table <span class=\"hljs-keyword\">import</span> HashTable\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">HashTableWithLinkedList</span>(<span class=\"hljs-title class_ inherited__\">HashTable</span>):\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, *args, **kwargs</span>):\n        <span class=\"hljs-built_in\">super</span>().__init__(*args, **kwargs)\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_set_value</span>(<span class=\"hljs-params\">self, key, data</span>):\n        self.values[key] = deque([]) <span class=\"hljs-keyword\">if</span> self.values[key] <span class=\"hljs-keyword\">is</span> <span class=\"hljs-literal\">None</span> <span class=\"hljs-keyword\">else</span> self.values[key]\n        self.values[key].appendleft(data)\n        self._keys[key] = self.values[key]\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">balanced_factor</span>(<span class=\"hljs-params\">self</span>):\n        <span class=\"hljs-keyword\">return</span> (\n            <span class=\"hljs-built_in\">sum</span>([self.charge_factor - <span class=\"hljs-built_in\">len</span>(slot) <span class=\"hljs-keyword\">for</span> slot <span class=\"hljs-keyword\">in</span> self.values])\n            / self.size_table\n            * self.charge_factor\n        )\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">_collision_resolution</span>(<span class=\"hljs-params\">self, key, data=<span class=\"hljs-literal\">None</span></span>):\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-keyword\">not</span> (\n            <span class=\"hljs-built_in\">len</span>(self.values[key]) == self.charge_factor <span class=\"hljs-keyword\">and</span> self.values.count(<span class=\"hljs-literal\">None</span>) == <span class=\"hljs-number\">0</span>\n        ):\n            <span class=\"hljs-keyword\">return</span> key\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">super</span>()._collision_resolution(key, data)\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "KDH",
+      "email": "ehdgua01@naver.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Bruno Simas Hadlich",
+      "email": "brunosimashadlich@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "gabriel",
+      "email": "gabriel.goncalves@trilogo.com.br",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

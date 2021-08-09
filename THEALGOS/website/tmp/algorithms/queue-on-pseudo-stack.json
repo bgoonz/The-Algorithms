@@ -1,0 +1,36 @@
+{
+  "slug": "queue-on-pseudo-stack",
+  "name": "Queue on Pseudo Stack",
+  "categories": ["datastructures", "queue"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "data_structures/queue/queue_on_pseudo_stack.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/data_structures/queue/queue_on_pseudo_stack.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;Queue represented by a pseudo stack (represented by a list with pop and append)&quot;&quot;&quot;</span>\r\n\r\n\r\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">Queue</span>:\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self</span>):\r\n        self.stack = []\r\n        self.length = <span class=\"hljs-number\">0</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__str__</span>(<span class=\"hljs-params\">self</span>):\r\n        printed = <span class=\"hljs-string\">&quot;&lt;&quot;</span> + <span class=\"hljs-built_in\">str</span>(self.stack)[<span class=\"hljs-number\">1</span>:-<span class=\"hljs-number\">1</span>] + <span class=\"hljs-string\">&quot;&gt;&quot;</span>\r\n        <span class=\"hljs-keyword\">return</span> printed\r\n\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Enqueues {@code item}\r\n    @param item\r\n        item to enqueue&quot;&quot;&quot;</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">put</span>(<span class=\"hljs-params\">self, item</span>):\r\n        self.stack.append(item)\r\n        self.length = self.length + <span class=\"hljs-number\">1</span>\r\n\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Dequeues {@code item}\r\n    @requirement: |self.length| &gt; 0\r\n    @return dequeued\r\n        item that was dequeued&quot;&quot;&quot;</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">get</span>(<span class=\"hljs-params\">self</span>):\r\n        self.rotate(<span class=\"hljs-number\">1</span>)\r\n        dequeued = self.stack[self.length - <span class=\"hljs-number\">1</span>]\r\n        self.stack = self.stack[:-<span class=\"hljs-number\">1</span>]\r\n        self.rotate(self.length - <span class=\"hljs-number\">1</span>)\r\n        self.length = self.length - <span class=\"hljs-number\">1</span>\r\n        <span class=\"hljs-keyword\">return</span> dequeued\r\n\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Rotates the queue {@code rotation} times\r\n    @param rotation\r\n        number of times to rotate queue&quot;&quot;&quot;</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">rotate</span>(<span class=\"hljs-params\">self, rotation</span>):\r\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(rotation):\r\n            temp = self.stack[<span class=\"hljs-number\">0</span>]\r\n            self.stack = self.stack[<span class=\"hljs-number\">1</span>:]\r\n            self.put(temp)\r\n            self.length = self.length - <span class=\"hljs-number\">1</span>\r\n\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Reports item at the front of self\r\n    @return item at front of self.stack&quot;&quot;&quot;</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">front</span>(<span class=\"hljs-params\">self</span>):\r\n        front = self.get()\r\n        self.put(front)\r\n        self.rotate(self.length - <span class=\"hljs-number\">1</span>)\r\n        <span class=\"hljs-keyword\">return</span> front\r\n\r\n    <span class=\"hljs-string\">&quot;&quot;&quot;Returns the length of this.stack&quot;&quot;&quot;</span>\r\n\r\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">size</span>(<span class=\"hljs-params\">self</span>):\r\n        <span class=\"hljs-keyword\">return</span> self.length\r\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "",
+      "email": "shyam.thiagarajan@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

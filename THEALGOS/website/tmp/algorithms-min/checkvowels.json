@@ -1,0 +1,16 @@
+{
+  "slug": "checkvowels",
+  "name": "CheckVowels",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": ""
+  },
+  "contributors": [
+    {
+      "name": "Carlos Carvalho",
+      "email": "jcarloss.carvalho@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

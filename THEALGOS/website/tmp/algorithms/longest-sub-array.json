@@ -1,0 +1,46 @@
+{
+  "slug": "longest-sub-array",
+  "name": "Longest Sub Array",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "dynamic_programming/longest_sub_array.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/dynamic_programming/longest_sub_array.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nAuthor  : Yvonne\n\nThis is a pure Python implementation of Dynamic Programming solution to the\n    longest_sub_array problem.\n\nThe problem is  :\nGiven an array, to find the longest and continuous sub array and get the max sum of the\n    sub array in the given array.\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">class</span> <span class=\"hljs-title class_\">SubArray</span>:\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">__init__</span>(<span class=\"hljs-params\">self, arr</span>):\n        <span class=\"hljs-comment\"># we need a list not a string, so do something to change the type</span>\n        self.array = arr.split(<span class=\"hljs-string\">&quot;,&quot;</span>)\n        <span class=\"hljs-built_in\">print</span>((<span class=\"hljs-string\">&quot;the input array is:&quot;</span>, self.array))\n\n    <span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">solve_sub_array</span>(<span class=\"hljs-params\">self</span>):\n        rear = [<span class=\"hljs-built_in\">int</span>(self.array[<span class=\"hljs-number\">0</span>])] * <span class=\"hljs-built_in\">len</span>(self.array)\n        sum_value = [<span class=\"hljs-built_in\">int</span>(self.array[<span class=\"hljs-number\">0</span>])] * <span class=\"hljs-built_in\">len</span>(self.array)\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> <span class=\"hljs-built_in\">range</span>(<span class=\"hljs-number\">1</span>, <span class=\"hljs-built_in\">len</span>(self.array)):\n            sum_value[i] = <span class=\"hljs-built_in\">max</span>(\n                <span class=\"hljs-built_in\">int</span>(self.array[i]) + sum_value[i - <span class=\"hljs-number\">1</span>], <span class=\"hljs-built_in\">int</span>(self.array[i])\n            )\n            rear[i] = <span class=\"hljs-built_in\">max</span>(sum_value[i], rear[i - <span class=\"hljs-number\">1</span>])\n        <span class=\"hljs-keyword\">return</span> rear[<span class=\"hljs-built_in\">len</span>(self.array) - <span class=\"hljs-number\">1</span>]\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    whole_array = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;please input some numbers:&quot;</span>)\n    array = SubArray(whole_array)\n    re = array.solve_sub_array()\n    <span class=\"hljs-built_in\">print</span>((<span class=\"hljs-string\">&quot;the results is:&quot;</span>, re))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "97arushisharma",
+      "email": "97arushisharma@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Yvonne",
+      "email": "yvonne0423@126.com",
+      "commits": 1
+    },
+    {
+      "name": "umesh",
+      "email": "umeshmalhotra1995@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

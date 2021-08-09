@@ -1,0 +1,21 @@
+{
+  "slug": "countsinglylinkedlistrecursion",
+  "name": "CountSinglyLinkedListRecursion",
+  "categories": ["datastructures", "list"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Dennis Nilsson",
+      "email": "71315756+DennisVNilsson@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

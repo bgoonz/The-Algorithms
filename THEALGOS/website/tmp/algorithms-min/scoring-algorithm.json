@@ -1,0 +1,21 @@
+{
+  "slug": "scoring-algorithm",
+  "name": "Scoring Algorithm",
+  "categories": ["others"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Mark",
+      "email": "markhappy200@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

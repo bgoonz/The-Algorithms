@@ -1,0 +1,16 @@
+{
+  "slug": "queue-using-array2",
+  "name": "Queue Using Array2",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

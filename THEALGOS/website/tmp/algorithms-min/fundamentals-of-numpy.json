@@ -1,0 +1,10 @@
+{
+  "slug": "fundamentals-of-numpy",
+  "name": "Fundamentals of Numpy",
+  "categories": ["machinelearning", "numpy"],
+  "implementations": {
+    "jupyter": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

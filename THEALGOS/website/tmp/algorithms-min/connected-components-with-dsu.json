@@ -1,0 +1,46 @@
+{
+  "slug": "connected-components-with-dsu",
+  "name": "Connected Components with Dsu",
+  "categories": ["graphs"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Ayaan Khan",
+      "email": "ayaankhan98@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Sagar Pandya",
+      "email": "31953933+sagarpandyansit@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Filip Hlasek",
+      "email": "fhlasek@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "coderanant",
+      "email": "coderanant@gmail.com",
+      "commits": 3
+    },
+    {
+      "name": "Sagar Pandya",
+      "email": "sagar.pandya1999@gmail.com",
+      "commits": 7
+    }
+  ],
+  "explanationUrl": {}
+}

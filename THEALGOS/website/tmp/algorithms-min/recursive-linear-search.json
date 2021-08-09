@@ -1,0 +1,16 @@
+{
+  "slug": "recursive-linear-search",
+  "name": "Recursive Linear Search",
+  "categories": ["searches"],
+  "implementations": {
+    "ruby": ""
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 2
+    }
+  ],
+  "explanationUrl": {}
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "pascal-triangle-ii",
+  "name": "Pascal Triangle Ii",
+  "categories": ["dynamicprogramming"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "maths/pascal_triangle_ii.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/maths/pascal_triangle_ii.rb",
+      "code": "<span class=\"hljs-comment\"># Given an integer row_index, return the rowIndexth (0-indexed) row of the Pascal&#x27;s triangle. </span>\n\n<span class=\"hljs-comment\"># Example 1:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Input: row_index = 3</span>\n<span class=\"hljs-comment\"># Output: [1,3,3,1]</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 2:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Input: row_index = 0</span>\n<span class=\"hljs-comment\"># Output: [1]</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Example 3:</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Input: row_index = 1</span>\n<span class=\"hljs-comment\"># Output: [1,1]</span>\n\n<span class=\"hljs-comment\"># Complexity Analysis</span>\n<span class=\"hljs-comment\"># </span>\n<span class=\"hljs-comment\"># Time complexity: O(k).</span>\n<span class=\"hljs-comment\"># Space complexity: O(k).</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">get_row</span><span class=\"hljs-params\">(row_index)</span></span>\n  (<span class=\"hljs-number\">0</span>..row_index).map {<span class=\"hljs-params\">|num|</span> combination(row_index, num) }\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">combination</span><span class=\"hljs-params\">(num1, num2)</span></span>\n  factorial(num1) / (factorial(num2) * factorial(num1 - num2))\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">factorial</span><span class=\"hljs-params\">(num)</span></span>\n  (<span class=\"hljs-number\">1</span>..num).inject(<span class=\"hljs-number\">1</span>) { <span class=\"hljs-params\">|res, i|</span> res * i }\n<span class=\"hljs-keyword\">end</span>\n\nrow_index = <span class=\"hljs-number\">3</span>\nprint(get_row(row_index))\n<span class=\"hljs-comment\"># =&gt; [1,3,3,1]</span>\n\nrow_index = <span class=\"hljs-number\">0</span>\nprint(get_row(row_index))\n<span class=\"hljs-comment\"># =&gt; [1]</span>\n\nrow_index = <span class=\"hljs-number\">1</span>\nprint(get_row(row_index))\n<span class=\"hljs-comment\"># =&gt; [1,1]</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 8
+    }
+  ],
+  "explanationUrl": {}
+}

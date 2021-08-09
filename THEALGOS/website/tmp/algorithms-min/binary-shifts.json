@@ -1,0 +1,21 @@
+{
+  "slug": "binary-shifts",
+  "name": "Binary Shifts",
+  "categories": ["bitmanipulation"],
+  "implementations": {
+    "python": ""
+  },
+  "contributors": [
+    {
+      "name": "Elisha Hollander",
+      "email": "just4now666666@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Leyza",
+      "email": "56138111+Leyza@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

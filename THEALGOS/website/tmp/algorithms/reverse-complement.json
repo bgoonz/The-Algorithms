@@ -1,0 +1,31 @@
+{
+  "slug": "reverse-complement",
+  "name": "Reverse Complement",
+  "categories": ["projectrosalind"],
+  "body": {},
+  "implementations": {
+    "julia": {
+      "dir": "src/project-rosalind/reverse_complement.jl",
+      "url": "https://github.com/TheAlgorithms/julia/tree/master/src/project-rosalind/reverse_complement.jl",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\n    reverse_complement(s::AbstractString)\nGiven: A DNA string s of length at most 1000 bp.\n\nReturn: The reverse complement s^c of s.\n&quot;&quot;&quot;</span>\n\n\n<span class=\"hljs-keyword\">function</span> reverse_complement(s::<span class=\"hljs-built_in\">AbstractString</span>)\n\trules = <span class=\"hljs-built_in\">Dict</span>(<span class=\"hljs-string\">&#x27;A&#x27;</span> =&gt; <span class=\"hljs-string\">&#x27;T&#x27;</span>, <span class=\"hljs-string\">&#x27;T&#x27;</span> =&gt; <span class=\"hljs-string\">&#x27;A&#x27;</span>, <span class=\"hljs-string\">&#x27;G&#x27;</span> =&gt; <span class=\"hljs-string\">&#x27;C&#x27;</span>, <span class=\"hljs-string\">&#x27;C&#x27;</span> =&gt; <span class=\"hljs-string\">&#x27;G&#x27;</span>)\n\t<span class=\"hljs-keyword\">return</span> map(x -&gt; rules[x], reverse(s))\n<span class=\"hljs-keyword\">end</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jean-Francois Baffier",
+      "email": "jf@baffier.fr",
+      "commits": 1
+    },
+    {
+      "name": "Ved Mahajan",
+      "email": "74182892+Ved-Mahajan@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

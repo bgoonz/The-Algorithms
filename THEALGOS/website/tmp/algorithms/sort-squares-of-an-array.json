@@ -1,0 +1,31 @@
+{
+  "slug": "sort-squares-of-an-array",
+  "name": "Sort Squares of an Array",
+  "categories": ["datastructures", "array"],
+  "body": {},
+  "implementations": {
+    "ruby": {
+      "dir": "data_structures/arrays/sort_squares_of_an_array.rb",
+      "url": "https://github.com/TheAlgorithms/ruby/tree/master/data_structures/arrays/sort_squares_of_an_array.rb",
+      "code": "<span class=\"hljs-comment\"># Arrays - Sorted Squares</span>\n\n<span class=\"hljs-comment\"># Algorithm challenge description:</span>\n<span class=\"hljs-comment\"># Given an integer array nums sorted in non-decreasing order</span>\n<span class=\"hljs-comment\"># return an array of the squares of each number sorted in non-decreasing order.</span>\n<span class=\"hljs-comment\"># Input: [4, -1, -9, 2]</span>\n<span class=\"hljs-comment\"># Output: [1, 4, 16, 81]</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 1: is using Ruby function (for sure)!</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">sorted_squares</span><span class=\"hljs-params\">(nums)</span></span>\n  nums.map! { <span class=\"hljs-params\">|num|</span> num**<span class=\"hljs-number\">2</span> }.sort\n<span class=\"hljs-keyword\">end</span>\nprint(sorted_squares([<span class=\"hljs-number\">4</span>, -<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">2</span>]))\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 2: is using bubble sort</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">bubble_sort</span><span class=\"hljs-params\">(array)</span></span>\n  array_length = array.size\n  <span class=\"hljs-keyword\">return</span> array <span class=\"hljs-keyword\">if</span> array_length &lt;= <span class=\"hljs-number\">1</span>\n\n  loop <span class=\"hljs-keyword\">do</span>\n    swapped = <span class=\"hljs-literal\">false</span>\n    (array_length - <span class=\"hljs-number\">1</span>).times <span class=\"hljs-keyword\">do</span> <span class=\"hljs-params\">|i|</span>\n      <span class=\"hljs-keyword\">if</span> array[i] &gt; array[i + <span class=\"hljs-number\">1</span>]\n        array[i], array[i + <span class=\"hljs-number\">1</span>] = array[i + <span class=\"hljs-number\">1</span>], array[i]\n        swapped = <span class=\"hljs-literal\">true</span>\n      <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">end</span>\n    <span class=\"hljs-keyword\">break</span> <span class=\"hljs-keyword\">unless</span> swapped\n  <span class=\"hljs-keyword\">end</span>\n  array\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time complexity: O(n logn), where n is the length of the array.</span>\n<span class=\"hljs-comment\"># Space complexity: O(n) or O(logn)</span>\n<span class=\"hljs-comment\">#</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">sorted_squares</span><span class=\"hljs-params\">(nums)</span></span>\n  <span class=\"hljs-comment\"># This takes O(n)</span>\n  nums.map! { <span class=\"hljs-params\">|num|</span> num**<span class=\"hljs-number\">2</span> }\n  <span class=\"hljs-comment\"># This can take Ο(n logn)</span>\n  bubble_sort(nums)\n<span class=\"hljs-keyword\">end</span>\nprint(sorted_squares([<span class=\"hljs-number\">4</span>, -<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">2</span>]))\n\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Approach 3: solving without ruby sort method. Using two-pointers</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-comment\"># Time complexity: O(n), where n is the length of the array.</span>\n<span class=\"hljs-comment\"># Space complexity: O(n), if you take output into account and O(1) otherwise.</span>\n<span class=\"hljs-comment\">#</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">sorted_squares</span><span class=\"hljs-params\">(nums)</span></span>\n  p1 = <span class=\"hljs-number\">0</span>\n  p2 = nums.length - <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-comment\"># since we&#x27;re returing the result in ascending order,</span>\n  <span class=\"hljs-comment\"># we&#x27;ll fill in the array from the end</span>\n  max_index = p2\n  output = []\n  <span class=\"hljs-keyword\">while</span> p1 &lt; p2\n    nums1_square = nums[p1] * nums[p1]\n    nums2_square = nums[p2] * nums[p2]\n    <span class=\"hljs-keyword\">if</span> nums1_square &lt; nums2_square\n      output[max_index] = nums2_square\n      p2 -= <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">elsif</span> nums1_square &gt; nums2_square\n      output[max_index] = nums1_square\n      p1 += <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span>\n      output[max_index] = nums1_square\n      max_index -= <span class=\"hljs-number\">1</span>\n      output[max_index] = nums2_square\n      p1 += <span class=\"hljs-number\">1</span>\n      p2 -= <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">end</span>\n    max_index -= <span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">end</span>\n  <span class=\"hljs-comment\"># to account for any remaining value left in the input array</span>\n  output[max_index] = nums[p1] * nums[p2] <span class=\"hljs-keyword\">if</span> p1 == p2\n  output\n<span class=\"hljs-keyword\">end</span>\n\nprint(sorted_squares([<span class=\"hljs-number\">4</span>, -<span class=\"hljs-number\">1</span>, -<span class=\"hljs-number\">9</span>, <span class=\"hljs-number\">2</span>]))\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Vitor Oliveira",
+      "email": "vbrazo@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "60627484+jsca-kwok@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Jessica Kwok",
+      "email": "jessicatckwok@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

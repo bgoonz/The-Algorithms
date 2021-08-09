@@ -1,0 +1,16 @@
+{
+  "slug": "splay",
+  "name": "Splay",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "julia": ""
+  },
+  "contributors": [
+    {
+      "name": "Rratic",
+      "email": "Rratic@163.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

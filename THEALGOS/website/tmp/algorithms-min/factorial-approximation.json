@@ -1,0 +1,16 @@
+{
+  "slug": "factorial-approximation",
+  "name": "Factorial Approximation",
+  "categories": ["math"],
+  "implementations": {
+    "dart": ""
+  },
+  "contributors": [
+    {
+      "name": "Parowicz",
+      "email": "arturparowicz@gmail.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}

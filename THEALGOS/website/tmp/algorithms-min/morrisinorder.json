@@ -1,0 +1,26 @@
+{
+  "slug": "morrisinorder",
+  "name": "Morrisinorder",
+  "categories": ["datastructures"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Shruti Sheoran",
+      "email": "shruti.sheoran03@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

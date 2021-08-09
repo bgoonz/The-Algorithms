@@ -1,0 +1,16 @@
+{
+  "slug": "stringmatchfiniteautomata",
+  "name": "StringMatchFiniteAutomata",
+  "categories": ["others"],
+  "implementations": {
+    "java": ""
+  },
+  "contributors": [
+    {
+      "name": "Prateek Kumar Oraon",
+      "email": "b170078@nitsikkim.ac.in",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

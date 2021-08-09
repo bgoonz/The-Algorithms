@@ -1,0 +1,41 @@
+{
+  "slug": "recursive-insertion-sort",
+  "name": "Recursive Insertion Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "sorts/recursive_insertion_sort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/sorts/recursive_insertion_sort.py",
+      "code": "<span class=\"hljs-string\">&quot;&quot;&quot;\nA recursive implementation of the insertion sort algorithm\n&quot;&quot;&quot;</span>\n\n<span class=\"hljs-keyword\">from</span> __future__ <span class=\"hljs-keyword\">import</span> annotations\n\n<span class=\"hljs-keyword\">from</span> typing <span class=\"hljs-keyword\">import</span> <span class=\"hljs-type\">List</span>\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">rec_insertion_sort</span>(<span class=\"hljs-params\">collection: <span class=\"hljs-built_in\">list</span>, n: <span class=\"hljs-built_in\">int</span></span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Given a collection of numbers and its length, sorts the collections\n    in ascending order\n\n    :param collection: A mutable collection of comparable elements\n    :param n: The length of collections\n\n    &gt;&gt;&gt; col = [1, 2, 1]\n    &gt;&gt;&gt; rec_insertion_sort(col, len(col))\n    &gt;&gt;&gt; print(col)\n    [1, 1, 2]\n\n    &gt;&gt;&gt; col = [2, 1, 0, -1, -2]\n    &gt;&gt;&gt; rec_insertion_sort(col, len(col))\n    &gt;&gt;&gt; print(col)\n    [-2, -1, 0, 1, 2]\n\n    &gt;&gt;&gt; col = [1]\n    &gt;&gt;&gt; rec_insertion_sort(col, len(col))\n    &gt;&gt;&gt; print(col)\n    [1]\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># Checks if the entire collection has been sorted</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(collection) &lt;= <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">or</span> n &lt;= <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span>\n\n    insert_next(collection, n - <span class=\"hljs-number\">1</span>)\n    rec_insertion_sort(collection, n - <span class=\"hljs-number\">1</span>)\n\n\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">insert_next</span>(<span class=\"hljs-params\">collection: <span class=\"hljs-built_in\">list</span>, index: <span class=\"hljs-built_in\">int</span></span>):\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    Inserts the &#x27;(index-1)th&#x27; element into place\n\n    &gt;&gt;&gt; col = [3, 2, 4, 2]\n    &gt;&gt;&gt; insert_next(col, 1)\n    &gt;&gt;&gt; print(col)\n    [2, 3, 4, 2]\n\n    &gt;&gt;&gt; col = [3, 2, 3]\n    &gt;&gt;&gt; insert_next(col, 2)\n    &gt;&gt;&gt; print(col)\n    [3, 2, 3]\n\n    &gt;&gt;&gt; col = []\n    &gt;&gt;&gt; insert_next(col, 1)\n    &gt;&gt;&gt; print(col)\n    []\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-comment\"># Checks order between adjacent elements</span>\n    <span class=\"hljs-keyword\">if</span> index &gt;= <span class=\"hljs-built_in\">len</span>(collection) <span class=\"hljs-keyword\">or</span> collection[index - <span class=\"hljs-number\">1</span>] &lt;= collection[index]:\n        <span class=\"hljs-keyword\">return</span>\n\n    <span class=\"hljs-comment\"># Swaps adjacent elements since they are not in ascending order</span>\n    collection[index - <span class=\"hljs-number\">1</span>], collection[index] = (\n        collection[index],\n        collection[index - <span class=\"hljs-number\">1</span>],\n    )\n\n    insert_next(collection, index + <span class=\"hljs-number\">1</span>)\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    numbers = <span class=\"hljs-built_in\">input</span>(<span class=\"hljs-string\">&quot;Enter integers separated by spaces: &quot;</span>)\n    number_list: <span class=\"hljs-type\">List</span>[<span class=\"hljs-built_in\">int</span>] = [<span class=\"hljs-built_in\">int</span>(num) <span class=\"hljs-keyword\">for</span> num <span class=\"hljs-keyword\">in</span> numbers.split()]\n    rec_insertion_sort(number_list, <span class=\"hljs-built_in\">len</span>(number_list))\n    <span class=\"hljs-built_in\">print</span>(number_list)\n"
+    },
+    "scala": {
+      "dir": "src/main/scala/Sort/RecursiveInsertionSort.scala",
+      "url": "https://github.com/TheAlgorithms/scala/tree/master/src/main/scala/Sort/RecursiveInsertionSort.scala",
+      "code": "<span class=\"hljs-keyword\">package</span> <span class=\"hljs-type\">Sort</span>\n\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">object</span> <span class=\"hljs-title\">RecursiveInsertionSort</span> </span>{\n\n  <span class=\"hljs-comment\">/**\n    *\n    * @param array - a List of unsorted integers\n    * @return - sequence of sorted integers @array\n    */</span>\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">recursiveInsertionSort</span></span>(array: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>]): <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>] = {\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">insertion</span></span>(x: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>]): <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>] = {\n      x <span class=\"hljs-keyword\">match</span> {\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-type\">List</span>() =&gt; <span class=\"hljs-type\">List</span>()\n        <span class=\"hljs-keyword\">case</span> x :: xs =&gt; ins(x, insertion(xs))\n      }\n    }\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">ins</span></span>(x: <span class=\"hljs-type\">Int</span>, xs: <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>]): <span class=\"hljs-type\">List</span>[<span class=\"hljs-type\">Int</span>] = {\n      xs <span class=\"hljs-keyword\">match</span> {\n        <span class=\"hljs-keyword\">case</span> <span class=\"hljs-type\">List</span>() =&gt; <span class=\"hljs-type\">List</span>(x)\n        <span class=\"hljs-keyword\">case</span> x2 :: xs2 =&gt; <span class=\"hljs-keyword\">if</span> (x &lt;= x2) x :: xs <span class=\"hljs-keyword\">else</span> x2 :: ins(x, xs2)\n      }\n    }\n\n    insertion(array)\n  }\n}"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Varun Upadhyay",
+      "email": "varun.u28@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Matthew",
+      "email": "MatthewG25@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Sharan Krishnan",
+      "email": "58838321+shrabian@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

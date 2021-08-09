@@ -1,0 +1,16 @@
+{
+  "slug": "shunting-yard",
+  "name": "Shunting Yard",
+  "categories": ["algorithms", "parsing", "shuntingyard"],
+  "implementations": {
+    "swift": ""
+  },
+  "contributors": [
+    {
+      "name": "Sven Weidauer",
+      "email": "sven@5sw.de",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

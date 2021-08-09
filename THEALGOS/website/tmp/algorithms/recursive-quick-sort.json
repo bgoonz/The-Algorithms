@@ -1,0 +1,21 @@
+{
+  "slug": "recursive-quick-sort",
+  "name": "Recursive Quick Sort",
+  "categories": ["sorts"],
+  "body": {},
+  "implementations": {
+    "python": {
+      "dir": "sorts/recursive_quick_sort.py",
+      "url": "https://github.com/TheAlgorithms/python/tree/master/sorts/recursive_quick_sort.py",
+      "code": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">quick_sort</span>(<span class=\"hljs-params\">data: <span class=\"hljs-built_in\">list</span></span>) -&gt; <span class=\"hljs-built_in\">list</span>:\n    <span class=\"hljs-string\">&quot;&quot;&quot;\n    &gt;&gt;&gt; for data in ([2, 1, 0], [2.2, 1.1, 0], &quot;quick_sort&quot;):\n    ...     quick_sort(data) == sorted(data)\n    True\n    True\n    True\n    &quot;&quot;&quot;</span>\n    <span class=\"hljs-keyword\">if</span> <span class=\"hljs-built_in\">len</span>(data) &lt;= <span class=\"hljs-number\">1</span>:\n        <span class=\"hljs-keyword\">return</span> data\n    <span class=\"hljs-keyword\">else</span>:\n        <span class=\"hljs-keyword\">return</span> (\n            quick_sort([e <span class=\"hljs-keyword\">for</span> e <span class=\"hljs-keyword\">in</span> data[<span class=\"hljs-number\">1</span>:] <span class=\"hljs-keyword\">if</span> e &lt;= data[<span class=\"hljs-number\">0</span>]])\n            + [data[<span class=\"hljs-number\">0</span>]]\n            + quick_sort([e <span class=\"hljs-keyword\">for</span> e <span class=\"hljs-keyword\">in</span> data[<span class=\"hljs-number\">1</span>:] <span class=\"hljs-keyword\">if</span> e &gt; data[<span class=\"hljs-number\">0</span>]])\n        )\n\n\n<span class=\"hljs-keyword\">if</span> __name__ == <span class=\"hljs-string\">&quot;__main__&quot;</span>:\n    <span class=\"hljs-keyword\">import</span> doctest\n\n    doctest.testmod()\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Metehan",
+      "email": "metehaansever@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

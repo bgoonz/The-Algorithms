@@ -1,0 +1,26 @@
+{
+  "slug": "multikey-quick-sort",
+  "name": "Multikey Quick Sort",
+  "categories": ["sorts"],
+  "implementations": {
+    "c": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "krishna.vedala@ieee.org",
+      "commits": 1
+    },
+    {
+      "name": "Jian",
+      "email": "jianloongliew@gmail.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

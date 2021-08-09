@@ -1,0 +1,168 @@
+{
+  "slug": "binary-search-tree",
+  "name": "Binary Search Tree",
+  "categories": ["datastructures", "binarytree"],
+  "implementations": {
+    "python": "",
+    "javascript": "",
+    "c-plus-plus": "",
+    "c": "",
+    "haskell": "",
+    "go": "",
+    "rust": "",
+    "c-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "David Leal",
+      "email": "halfpacho@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Matthias Gilch",
+      "email": "matthias.gilch.mg@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "JarredAllen",
+      "email": "jarredallen73@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "AlexDvorak",
+      "email": "opti.jawsome@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Artur Parowicz",
+      "email": "arturparowicz@gmail,com",
+      "commits": 1
+    },
+    {
+      "name": "Taj",
+      "email": "tjgurwara99@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Rak Laptudirm",
+      "email": "68542775+raklaptudirm@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Juliano Nunes",
+      "email": "julianomarquesnunes@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 1
+    },
+    {
+      "name": "Mohit Sharma",
+      "email": "mohit1532.cse16@chitkara.edu.in",
+      "commits": 1
+    },
+    {
+      "name": "Nishant Ingle",
+      "email": "30694286+Nishant-Ingle@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "liushubin lwx470335",
+      "email": "liushubin1@huawei.com",
+      "commits": 1
+    },
+    {
+      "name": "Dhruv Manilawala",
+      "email": "dhruvmanila@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "SiddhantBobde",
+      "email": "58205856+SiddhantBobde@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "matkosoric",
+      "email": "soric.matko@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Hocnonsense",
+      "email": "48747984+Hocnonsense@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "William Zhang",
+      "email": "39932068+WilliamHYZhang@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Mickaël Schoentgen",
+      "email": "contact@tiger-222.fr",
+      "commits": 1
+    },
+    {
+      "name": "cclauss",
+      "email": "cclauss@bluewin.ch",
+      "commits": 1
+    },
+    {
+      "name": "Andrii Siriak",
+      "email": "siryaka@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "apple",
+      "email": "1991585851@qq.com",
+      "commits": 2
+    },
+    {
+      "name": "Himanshu Shekhar",
+      "email": "himanshushekharb16@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Walt",
+      "email": "32001362+Walt280@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Krishna Vedala",
+      "email": "7001608+kvedala@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Gabriel",
+      "email": "g4briel.4lves@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "onlinejudge95",
+      "email": "44158581+onlinejudge95@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Christian Bender",
+      "email": "christianbender89@web.de",
+      "commits": 4
+    },
+    {
+      "name": "Pablo",
+      "email": "pablo9891@gmail.com",
+      "commits": 4
+    },
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 5
+    },
+    {
+      "name": "Ashwin Narayan",
+      "email": "ashwinnarayan1994@gmail.com",
+      "commits": 5
+    }
+  ],
+  "explanationUrl": {}
+}

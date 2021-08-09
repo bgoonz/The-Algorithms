@@ -1,0 +1,59 @@
+{
+  "slug": "reversestring",
+  "name": "ReverseString",
+  "categories": ["strings"],
+  "implementations": {
+    "javascript": "",
+    "java": "",
+    "dart": "",
+    "php": ""
+  },
+  "contributors": [
+    {
+      "name": "Christian Clauss",
+      "email": "cclauss@me.com",
+      "commits": 1
+    },
+    {
+      "name": "Akshay Khale",
+      "email": "khaleakshay@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Mauricio Flores Hernandez",
+      "email": "mau1361317@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Nour B",
+      "email": "56294154+nourrrrrrrr@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "Kenneth Nero",
+      "email": "kbn1798@rit.edu",
+      "commits": 1
+    },
+    {
+      "name": "Cristian Lupu",
+      "email": "khez@users.noreply.github.com",
+      "commits": 2
+    },
+    {
+      "name": "Alexandre Xavier",
+      "email": "ale.bxsantos@gmail.com",
+      "commits": 2
+    },
+    {
+      "name": "Libin Yang",
+      "email": "szuyanglb@outlook.com",
+      "commits": 3
+    }
+  ],
+  "explanationUrl": {}
+}

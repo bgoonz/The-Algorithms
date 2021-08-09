@@ -1,0 +1,21 @@
+{
+  "slug": "gmm",
+  "name": "Gmm",
+  "categories": ["clusteringalgorithms"],
+  "body": {},
+  "implementations": {
+    "r": {
+      "dir": "Clustering-Algorithms/gmm.R",
+      "url": "https://github.com/TheAlgorithms/r/tree/master/Clustering-Algorithms/gmm.R",
+      "code": "library<span class=\"hljs-punctuation\">(</span>mclust<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-comment\"># Gaussian mixture model (GMM)</span>\ngmm_fit <span class=\"hljs-operator\">&lt;-</span> Mclust<span class=\"hljs-punctuation\">(</span>iris<span class=\"hljs-punctuation\">[</span><span class=\"hljs-punctuation\">,</span> <span class=\"hljs-number\">1</span><span class=\"hljs-operator\">:</span><span class=\"hljs-number\">4</span><span class=\"hljs-punctuation\">]</span><span class=\"hljs-punctuation\">)</span> <span class=\"hljs-comment\"># Fit a GMM model</span>\nsummary<span class=\"hljs-punctuation\">(</span>gmm_fit<span class=\"hljs-punctuation\">)</span> <span class=\"hljs-comment\"># Summary table </span>\nplot<span class=\"hljs-punctuation\">(</span>gmm_fit<span class=\"hljs-punctuation\">,</span> <span class=\"hljs-string\">&#x27;BIC&#x27;</span><span class=\"hljs-punctuation\">)</span> <span class=\"hljs-comment\"># Select model based on BIC</span>\n"
+    }
+  },
+  "contributors": [
+    {
+      "name": "AndyC_WC",
+      "email": "45092498+andyc1997@users.noreply.github.com",
+      "commits": 1
+    }
+  ],
+  "explanationUrl": {}
+}

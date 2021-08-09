@@ -1,0 +1,10 @@
+{
+  "slug": "gcd-iterative-euclidean",
+  "name": "Gcd Iterative Euclidean",
+  "categories": ["math"],
+  "implementations": {
+    "c-plus-plus": ""
+  },
+  "contributors": [],
+  "explanationUrl": {}
+}

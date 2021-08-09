@@ -1,0 +1,27 @@
+{
+  "slug": "capitalize",
+  "name": "Capitalize",
+  "categories": ["strings"],
+  "implementations": {
+    "python": "",
+    "f-sharp": ""
+  },
+  "contributors": [
+    {
+      "name": "mohammadreza490",
+      "email": "47437328+mohammadreza490@users.noreply.github.com",
+      "commits": 1
+    },
+    {
+      "name": "shellhub",
+      "email": "shellhub.me@gmail.com",
+      "commits": 1
+    },
+    {
+      "name": "Allister Isaiah Harvey",
+      "email": "41553768+powpow58@users.noreply.github.com",
+      "commits": 4
+    }
+  ],
+  "explanationUrl": {}
+}
