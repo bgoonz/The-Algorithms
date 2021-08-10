@@ -7,7 +7,7 @@ dependencies:
   coverage: ^0.14.1
 
 dev_dependencies:
-  stack: ^0.0.1
+  stack: ^0.2.0
 
 environment:
   sdk: ">=2.10.0 <3.0.0"
