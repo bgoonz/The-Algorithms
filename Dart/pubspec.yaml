@@ -4,7 +4,7 @@ repository: https://github.com/TheAlgorithms/Dart
 
 dependencies:
   test: ^1.15.4
-  coverage: ^0.14.1
+  coverage: ^0.15.0
 
 dev_dependencies:
   stack: ^0.0.1
