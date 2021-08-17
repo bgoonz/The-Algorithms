@@ -12,6 +12,8 @@
 
 
 
+- [NETLIFY](https://app.netlify.com/teams/bgoonz/overview)
+
 
 <details>
 <summary>                         FOLDERS                              </summary>
